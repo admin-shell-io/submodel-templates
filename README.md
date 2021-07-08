@@ -1,3 +1,3 @@
 # submodel-templates
 Submodel Templates for AAS
-In planning.
+In planning...
