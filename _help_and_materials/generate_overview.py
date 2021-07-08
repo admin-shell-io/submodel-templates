@@ -232,7 +232,6 @@ if __name__ == "__main__":
 
      # make HTML include
      inc = HtmlBuilder()
-     inc.AddSvgHead()
      inc.AddTableHeader(["Type SMT", "Name", "Version", "Revision", "Criteria"])
 
      for te in entries:
@@ -250,7 +249,6 @@ if __name__ == "__main__":
           inc.AddTableCells([te.SmtType, href, te.Ver, te.Rev, badges])
 
      inc.AddTableFooter()
-     inc.AddSvgFooter()
-     inc.WriteToFile('overview_Submodel_templates.svg')
+     inc.WriteToFile('overview_Submodel_templates.html-inc')
 
      pass
