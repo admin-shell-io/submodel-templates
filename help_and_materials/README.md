@@ -6,7 +6,7 @@ This folder shall provide further advice and materials.
 
 On top level, the repo organizes a linear list of Submodel templates. For each of these Submodel templates, multiple versions are foreseen by the folder structure. Versioning follows semantic versioning, with version (breaking changes) and revision (non-breaking changes).
 
-For each Submodel template, the following information is provided:
+For each Submodel template (SMT), the following information is provided:
 
 ### README.md
 
@@ -58,9 +58,13 @@ Says "This version is in productive use and supported by AASX Package Explorer."
 
 Currently, the following criteria or tags are discussed.
 
-| Criteria      | Description                            | Badge | URL
-| ------------- | -------------------------------------- | ----- | --------------------------------------------------------|
-|               | Specification document exists          | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green |
+| Criteria description                                                    | Badge | URL
+| ----------------------------------------------------------------------- | ----- | --------------------------------------------------------|
+| Specification document exists                                           | ![Template](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green |
+| Submodel template is the only one existing for a single domain          | ![Unique](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Unique&color=b5179e) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Unique&color=b5179e |
+| Defined for a specific domain                                           | ![Domain](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Domain&color=7209b7) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Domain&color=7209b7 |
+| Submodel template is preferred and well accepted for a domain           | ![Pref](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Pref&color=560bad) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Pref&color=560bad |
+
 
 bla
 
