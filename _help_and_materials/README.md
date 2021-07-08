@@ -64,4 +64,7 @@ Currently, the following criteria or tags are discussed.
 
 bla
 
+# Color palette
+
+see (https://coolors.co/f72585-b5179e-7209b7-560bad-480ca8-3a0ca3-3f37c9-4361ee-4895ef-4cc9f0).
 
