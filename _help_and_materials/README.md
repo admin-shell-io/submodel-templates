@@ -6,7 +6,7 @@ This folder shall provide further advice and materials.
 
 On top level, the repo organizes a linear list of Submodel templates. For each of these Submodel templates, multiple versions are foreseen by the folder structure. Versioning follows semantic versioning, with version (breaking changes) and revision (non-breaking changes).
 
-For each Submodel template, the following information is provided:
+For each Submodel template (SMT), the following information is provided:
 
 ### README.md
 
@@ -56,15 +56,58 @@ Says "This version is in productive use and supported by AASX Package Explorer."
 
 ### Submodel template criteria
 
+
+
+# Available Submodel template criteria
+
 Currently, the following criteria or tags are discussed.
 
-| Criteria      | Description                            | Badge | URL
-| ------------- | -------------------------------------- | ----- | --------------------------------------------------------|
-|               | Specification document exists          | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green |
-
-bla
+| Criteria description                                                    | Badge | URL
+| ----------------------------------------------------------------------- | ----- | --------------------------------------------------------|
+| Specification document exists                                           | ![Template](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green |
+| Submodel template is the only one existing for a single domain          | ![Unique](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Unique&color=b5179e) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Unique&color=b5179e |
+| Submodel template is preferred and well accepted for a domain           | ![Pref](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Pref&color=560bad) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Pref&color=560bad |
+| Defined for a specific domain                                           | ![Domain](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Domain&color=7209b7) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Domain&color=7209b7 |
+| Submodel template is a base model for type asset                        | ![Base](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Base&color=480ca8) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Base&color=480ca8 |
+| Submodel template was derived (extended) from another submodel          | ![Ext](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Ext&color=3a0ca3) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Ext&color=3a0ca3 |
+| Submodel template is maintained by a single company                     | ![Vendor](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Vendor&color=3f37c9) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Vendor&color=3f37c9 |
+| Submodel template is maintained by a single company                     | ![Vendor](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Vendor&color=3f37c9) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Vendor&color=3f37c9 |
+| Submodel template is maintained by external consortium                  | ![Consort](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Consort&color=4361ee) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Consrot&color=4361ee |
+| Submodel template is maintained by an international standard            | ![Std](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Std&color=4895ef) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Std&color=4895ef |
+| Submodel template supports ECLASS properties                            | ![ECLASS](https://img.shields.io/static/v1?style=plastic&label=SMT&message=ECLASS&color=000055) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=ECLASS&color=000055 |
 
 # Color palette
 
 see (https://coolors.co/f72585-b5179e-7209b7-560bad-480ca8-3a0ca3-3f37c9-4361ee-4895ef-4cc9f0).
 
+# Example
+
+```
+# ZVEI Digital Nameplate V1.0
+
+This is a Submodel template specification for the Asset Adminstration Shell.
+
+(https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green)
+(https://img.shields.io/static/v1?style=plastic&label=SMT&message=Base&color=480ca8)
+(https://img.shields.io/static/v1?style=plastic&label=SMT&message=ECLASS&color=000055)
+
+## Scope of the Submodel 
+
+This Submodel template aims at interoperable provision of information describing the nameplate of the asset of the respective Asset Administration Shell. Central element is the provision of properties, ideally interoperable by the means of dictionaries such as ECLASS and IEC CDD (Common Data Dictionary). The purpose of this document is to make selected specifications of submodels in such manner that information about assets and their nameplate can be exchanged in a meaningful way between partners in a value creation network. It targets equipment for process industry  and factory automation by defining standardized meta data.  
+The intended use-case is the provision of a standardized property structure within a digital nameplate, which enables the interoperability of digital nameplates from different manufacturers. 
+This concept can serve as a basis for standardizing the respective submodel. The conception is based on existing norms, directives and standards so that a far-reaching acceptance can be achieved.  
+Beside standardized submodel this template also introduces standardized SubmodelElementCollections (SMC) in order to improve the interoperability while modelling partial aspects within submodels. The standardized SMCs include address and asset product marking. 
+
+## About this version
+
+This version is the first version officially published by ZVEI and Plattform Industrie 4.0.
+It is succeeding the version of "Digital Typeplate by HSU".
+
+## Difference to prior versions
+
+No prior versions were published.
+
+## Status
+
+This version is in productive use and supported by AASX Package Explorer.
+```
