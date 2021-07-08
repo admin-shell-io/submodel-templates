@@ -15,3 +15,8 @@ This folder contains Submodel Templates, which were and are published by IDTA an
 ## Submodel Templates knwon to the IDTA
 
 This folder contains Submodel Templates, which are known to the IDTA, but currently not subject of an IDTA registration process.
+
+# Overview
+
+This links to a generated html file showing all Submodel templates:
+[Link](https://htmlpreview.github.io/?https://raw.githubusercontent.com/admin-shell-io/submodel-templates/main/_help_and_materials/overview_Submodel_templates.html?token=APUNMR5JHY57DD45235OT3DA45X7I)
