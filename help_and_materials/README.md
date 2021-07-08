@@ -62,10 +62,14 @@ Currently, the following criteria or tags are discussed.
 | ----------------------------------------------------------------------- | ----- | --------------------------------------------------------|
 | Specification document exists                                           | ![Template](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green |
 | Submodel template is the only one existing for a single domain          | ![Unique](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Unique&color=b5179e) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Unique&color=b5179e |
-| Defined for a specific domain                                           | ![Domain](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Domain&color=7209b7) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Domain&color=7209b7 |
 | Submodel template is preferred and well accepted for a domain           | ![Pref](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Pref&color=560bad) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Pref&color=560bad |
-
-
-bla
+| Defined for a specific domain                                           | ![Domain](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Domain&color=7209b7) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Domain&color=7209b7 |
+| Submodel template is a base model for type asset                        | ![Base](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Base&color=480ca8) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Base&color=480ca8 |
+| Submodel template was derived (extended) from another submodel          | ![Ext](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Ext&color=3a0ca3) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Ext&color=3a0ca3 |
+| Submodel template is maintained by a single company                     | ![Vendor](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Vendor&color=3f37c9) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Vendor&color=3f37c9 |
+| Submodel template is maintained by a single company                     | ![Vendor](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Vendor&color=3f37c9) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Vendor&color=3f37c9 |
+| Submodel template is maintained by external consortium                  | ![Consort](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Consort&color=4361ee) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Consrot&color=4361ee |
+| Submodel template is maintained by an international standard            | ![Std](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Std&color=4895ef) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=Std&color=4895ef |
+| Submodel template supports ECLASS properties                            | ![ECLASS](https://img.shields.io/static/v1?style=plastic&label=SMT&message=ECLASS&color=000055) | https://img.shields.io/static/v1?style=plastic&label=SMT&message=ECLASS&color=000055 |
 
 
