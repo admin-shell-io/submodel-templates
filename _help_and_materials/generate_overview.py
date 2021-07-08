@@ -163,6 +163,16 @@ tr:nth-child(odd) {
      def AddFooter(self):
           self.doc += '</body></html>' + os.linesep
 
+     def AddSvgHead(self):
+          self.doc += """<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+<foreignObject width="100" height="100">
+    <div xmlns="http://www.w3.org/1999/xhtml">""" + os.linesep
+
+     def AddSvgFooter(self):
+          self.doc += """</div>
+</foreignObject>
+</svg>""" + os.linesep
+
      def AddHeader(self, level, text):
           self.doc += f'<{level}>{text}</{level}>' + os.linesep
 
@@ -222,6 +232,7 @@ if __name__ == "__main__":
 
      # make HTML include
      inc = HtmlBuilder()
+     inc.AddSvgHead()
      inc.AddTableHeader(["Type SMT", "Name", "Version", "Revision", "Criteria"])
 
      for te in entries:
@@ -239,6 +250,7 @@ if __name__ == "__main__":
           inc.AddTableCells([te.SmtType, href, te.Ver, te.Rev, badges])
 
      inc.AddTableFooter()
-     inc.WriteToFile('overview_Submodel_templates.html-inc')
+     inc.AddSvgFooter()
+     inc.WriteToFile('overview_Submodel_templates.svg')
 
      pass
