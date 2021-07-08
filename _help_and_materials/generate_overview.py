@@ -220,4 +220,25 @@ if __name__ == "__main__":
      html.AddFooter()
      html.WriteToFile('overview_Submodel_templates.html')
 
+     # make HTML include
+     inc = HtmlBuilder()
+     inc.AddTableHeader(["Type SMT", "Name", "Version", "Revision", "Criteria"])
+
+     for te in entries:
+
+          # prepare Badges
+          badges = "" 
+          for b in te.Badges:
+               bb = b.replace('(', '<img src="')
+               bb = bb.replace(')', '">&nbsp;')
+               badges += bb
+
+          # prepare link for name
+          href = f'<a href="{te.Link}">{te.SmtName}</a>'
+
+          inc.AddTableCells([te.SmtType, href, te.Ver, te.Rev, badges])
+
+     inc.AddTableFooter()
+     inc.WriteToFile('overview_Submodel_templates.html-inc')
+
      pass
