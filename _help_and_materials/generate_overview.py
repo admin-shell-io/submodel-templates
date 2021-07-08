@@ -191,6 +191,9 @@ tr:nth-child(odd) {
      def AddTableFooter(self):
           self.doc += '</table>' + os.linesep
 
+     def AddLine(self, line):
+          self.doc += '' + line + os.linesep
+
      def WriteToFile(self, fn):
           f = open(fn, 'w')
           f.write(self.doc)
@@ -232,6 +235,8 @@ if __name__ == "__main__":
 
      # make HTML include
      inc = HtmlBuilder()
+     inc.AddLine("# Overview table")
+     inc.AddLine("")
      inc.AddTableHeader(["Type SMT", "Name", "Version", "Revision", "Criteria"])
 
      for te in entries:
@@ -249,6 +254,6 @@ if __name__ == "__main__":
           inc.AddTableCells([te.SmtType, href, te.Ver, te.Rev, badges])
 
      inc.AddTableFooter()
-     inc.WriteToFile('overview_Submodel_templates.html-inc')
+     inc.WriteToFile('overview_Submodel_templates.md')
 
      pass
