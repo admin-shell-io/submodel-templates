@@ -2,9 +2,9 @@
 
 This is a Submodel template specification for the Asset Adminstration Shell.
 
-(https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green)
-(https://img.shields.io/static/v1?style=plastic&label=SMT&message=Base&color=480ca8)
-(https://img.shields.io/static/v1?style=plastic&label=SMT&message=ECLASS&color=000055)
+![Template](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green)
+![Base](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Base&color=480ca8)
+![ECLASS](https://img.shields.io/static/v1?style=plastic&label=SMT&message=ECLASS&color=000055)
 
 ## Scope of the Submodel 
 
