@@ -164,7 +164,7 @@ tr:nth-child(even) {
      background-color: #fffff0;
 }
 tr:nth-child(odd) {
-     background-color: #ffff80;
+     background-color: #f3f3f3;
 }
 </style>
 <meta charset=utf-8>
