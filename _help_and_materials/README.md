@@ -121,4 +121,4 @@ The script is supposed to be executed in this folder (no arguments).
 
 Note: a command line for repository owners might be:
 
-```cd _help_and_materials/; python ./generate_overview.py; cd ..; git add --all; git commit -am "Script run"; git push```
+```git pull; cd _help_and_materials/; python ./generate_overview.py; cd ..; git add --all; git commit -am "Script run"; git push```
