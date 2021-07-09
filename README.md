@@ -6,15 +6,15 @@ Within this repository, the Submodel Templates are organized in 3 folders:
 
 ## Submodel Templates in preparation by IDTA
 
-This folder contains Submodel Templates, which are currently in preparation and already publicly available. Feedback might be provided by the issues tracker.
+The folder `development` contains Submodel Templates, which are currently in preparation and already publicly available. Feedback might be provided by the issues tracker.
 
 ## Submodel Templates published by IDTA
 
-This folder contains Submodel Templates, which were and are published by IDTA and Industrie 4.0.
+The folder `published` contains Submodel Templates, which were and are published by IDTA and Industrie 4.0.
 
 ## Submodel Templates known to the IDTA
 
-This folder contains Submodel Templates, which are known to the IDTA, but currently not subject of an IDTA registration process.
+The folder `yellow_pages` contains Submodel Templates, which are known to the IDTA, but currently not subject of an IDTA registration process.
 
 # Table of IDTA Submodel templates
 
