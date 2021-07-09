@@ -113,3 +113,12 @@ No prior versions were published.
 
 This version is in productive use and supported by AASX Package Explorer.
 ```
+
+# Script for auto-generating table
+
+The python script `generate_overview.py` will automatically generate .html and .md files and (optionally) modify the `../README.md` homepage as well.
+The script is supposed to be executed in this folder (no arguments).
+
+Note: a command line for repository owners might be:
+
+```cd _help_and_materials/; python ./generate_overview.py; cd ..; git add --all; git commit -am "Script run"; git push```
