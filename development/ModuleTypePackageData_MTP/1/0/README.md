@@ -4,6 +4,7 @@ This is a Submodel template specification for the Asset Adminstration Shell.
 
 ![Template](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green)
 ![Unique](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Unique&color=b5179e)
+![Std](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Std&color=4895ef)
 
 ## Scope of the Submodel 
 
