@@ -4,7 +4,7 @@ This internet repository provides Submodel Templates for Asset Administration Sh
 
 Within this repository, the Submodel Templates are organized in 3 folders:
 
-## Submodel Templates in preparation by IDTA
+## Submodel Templates in development by IDTA
 
 The folder `development` contains Submodel Templates, which are currently in preparation and already publicly available. Feedback might be provided by the issues tracker.
 
