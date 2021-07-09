@@ -6,6 +6,14 @@ import re
 # constants
 rootOfGithub = 'https://github.com/admin-shell-io/submodel-templates/tree/main/'
 
+topReadmeFn = '../README.md'
+topReadmeHeader = 'Table of IDTA Submodel templates'
+
+class Badge:
+     def __init__(self):
+          self.Name = ""
+          self.Link = ""
+
 class TableEntry:
      def __init__(self):
           self.SmtType = ""
@@ -45,8 +53,12 @@ def process_smt_file(fn, smtType):
                     break
 
                #find badge?
-               if ln.startswith('(') and ln.endswith(')'):
-                    badges.append(ln)
+               m2 = re.match(r'!\[(\w+)\]\(([^)]+)\)', ln)
+               if m2:
+                    b = Badge()
+                    b.Name = m2.group(1)
+                    b.Link = m2.group(2)
+                    badges.append(b)
                     continue
 
                # non empty text line
@@ -158,41 +170,57 @@ tr:nth-child(odd) {
 <meta charset=utf-8>
 <title>blah</title>
 </head>
-<body>""" + os.linesep
+<body>""" + '\n'
 
      def AddFooter(self):
-          self.doc += '</body></html>' + os.linesep
+          self.doc += '</body></html>' + '\n'
 
      def AddSvgHead(self):
           self.doc += """<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
 <foreignObject width="100" height="100">
-    <div xmlns="http://www.w3.org/1999/xhtml">""" + os.linesep
+    <div xmlns="http://www.w3.org/1999/xhtml">""" + '\n'
 
      def AddSvgFooter(self):
           self.doc += """</div>
 </foreignObject>
-</svg>""" + os.linesep
+</svg>""" + '\n'
 
      def AddHeader(self, level, text):
-          self.doc += f'<{level}>{text}</{level}>' + os.linesep
+          self.doc += f'<{level}>{text}</{level}>' + '\n'
 
      def AddTableHeader(self, columns):
-          self.doc += '<table style="width:100%"><tr>' + os.linesep
+          self.doc += '<table style="width:100%"><tr>' + '\n'
           for c in columns:
-               self.doc += f'<th>{c}</th>' + os.linesep
-          self.doc += '</tr>' + os.linesep
+               self.doc += f'<th>{c}</th>' + '\n'
+          self.doc += '</tr>' + '\n'
 
      def AddTableCells(self, columns):
-          self.doc += '<tr>' + os.linesep
+          self.doc += '<tr>' + '\n'
           for c in columns:
-               self.doc += f'<td>{c}</td>' + os.linesep
-          self.doc += '</tr>' + os.linesep
+               self.doc += f'<td>{c}</td>' + '\n'
+          self.doc += '</tr>' + '\n'
 
      def AddTableFooter(self):
-          self.doc += '</table>' + os.linesep
+          self.doc += '</table>' + '\n'
 
-     def AddLine(self, line):
-          self.doc += '' + line + os.linesep
+     def AddMdLine(self, line):
+          self.doc += '' + line + '\n'
+
+     def AddMdTableHeader(self, columns):
+          line = "| "
+          for c in columns:
+               line += c + " | "
+          self.doc += line + '\n'
+          line = "| "
+          for c in columns:
+               line += " ---------- | "
+          self.doc += line + '\n'
+
+     def AddMdTableCells(self, columns):
+          line = "| "
+          for c in columns:
+               line += c + " | "
+          self.doc += line + '\n'
 
      def WriteToFile(self, fn):
           f = open(fn, 'w')
@@ -212,17 +240,15 @@ if __name__ == "__main__":
      # make HTML
      html = HtmlBuilder()
      html.AddHead()
-     html.AddHeader("h1", "Table of IDTA Submodel templates")
-     html.AddTableHeader(["Type SMT", "Name", "Version", "Revision", "Criteria"])
+     html.AddHeader('h1', topReadmeHeader)
+     html.AddTableHeader(['Type SMT', 'Name', 'Version', 'Revision', 'Criteria'])
 
      for te in entries:
 
           # prepare Badges
-          badges = "" 
+          badges = '' 
           for b in te.Badges:
-               bb = b.replace('(', '<img src="')
-               bb = bb.replace(')', '">&nbsp;')
-               badges += bb
+               badges += f'<img src="{b.Link}">&nbsp;'
 
           # prepare link for name
           href = f'<a href="{te.Link}">{te.SmtName}</a>'
@@ -235,25 +261,40 @@ if __name__ == "__main__":
 
      # make HTML include
      inc = HtmlBuilder()
-     inc.AddLine("# Overview table")
-     inc.AddLine("")
-     inc.AddTableHeader(["Type SMT", "Name", "Version", "Revision", "Criteria"])
+     inc.AddMdLine('# ' + topReadmeHeader)
+     inc.AddMdLine('')
+     inc.AddMdTableHeader(['Type SMT', 'Name', 'Version', 'Revision', 'Criteria'])
 
      for te in entries:
 
           # prepare Badges
-          badges = "" 
+          badges = '' 
           for b in te.Badges:
-               bb = b.replace('(', '<img src="')
-               bb = bb.replace(')', '">&nbsp;')
-               badges += bb
+               badges += f'![{b.Name}]({b.Link})  '
 
           # prepare link for name
-          href = f'<a href="{te.Link}">{te.SmtName}</a>'
+          href = f'[{te.SmtName}]({te.Link})'
 
-          inc.AddTableCells([te.SmtType, href, te.Ver, te.Rev, badges])
+          inc.AddMdTableCells([te.SmtType, href, te.Ver, te.Rev, badges])
 
-     inc.AddTableFooter()
      inc.WriteToFile('overview_Submodel_templates.md')
+
+     # online modify
+     if topReadmeFn is not None:
+
+          # read the whole markdown
+          with open(topReadmeFn,"r") as f:
+               genMd = f.read()
+
+          # can find the correct header; if so, remove the section, add the generated MD
+          p = genMd.find('# ' + topReadmeHeader)
+          if p > 0:
+               # modify
+               genMd = genMd[:p]
+               genMd += inc.doc
+
+               # only write then
+               with open(topReadmeFn,"w") as f:
+                    f.write(genMd)
 
      pass

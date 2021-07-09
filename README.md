@@ -16,7 +16,8 @@ This folder contains Submodel Templates, which were and are published by IDTA an
 
 This folder contains Submodel Templates, which are known to the IDTA, but currently not subject of an IDTA registration process.
 
-# Overview
+# Table of IDTA Submodel templates
 
-This links to a generated html file showing all Submodel templates:
-[Link](https://htmlpreview.github.io/?https://raw.githubusercontent.com/admin-shell-io/submodel-templates/main/_help_and_materials/overview_Submodel_templates.html?token=APUNMR5JHY57DD45235OT3DA45X7I)
+| Type SMT | Name | Version | Revision | Criteria | 
+|  ---------- |  ---------- |  ---------- |  ---------- |  ---------- | 
+| Published | [ZVEI Digital Nameplate V1.0](https://github.com/admin-shell-io/submodel-templates/tree/main/published/ZVEI_Digital_Nameplate/1/0) | 1 | 0 | ![Template](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green)  ![Base](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Base&color=480ca8)  ![ECLASS](https://img.shields.io/static/v1?style=plastic&label=SMT&message=ECLASS&color=000055)   | 
