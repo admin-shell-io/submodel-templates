@@ -263,7 +263,9 @@ if __name__ == "__main__":
      inc = HtmlBuilder()
      inc.AddMdLine('# ' + topReadmeHeader)
      inc.AddMdLine('')
-     inc.AddMdTableHeader(['Type SMT', 'Name', 'Version', 'Revision', 'Criteria'])
+     inc.AddMdLine('(this table is auto-generated)')
+     inc.AddMdLine('')
+     inc.AddMdTableHeader(['Type SMT', 'Name', 'Ver', 'Rev', 'Criteria'])
 
      for te in entries:
 
