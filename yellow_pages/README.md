@@ -1,4 +1,4 @@
-# Submodel templates knwon to the IDTA
+# Submodel templates known to the IDTA
 
 This folder contains Submodel templates, which are known to the IDTA, but currently not subject of a registration process.
 
