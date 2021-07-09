@@ -18,7 +18,7 @@ This document holds the actual specification for the Submodel template. This is 
 
 An appendix holding a serializiation of a Submodel of kind = Template might exist in this document.
 
-### Submodel template (SMT_*.aasx)
+### Submodel template (SMT_pure_*.aasx)
 
 This file holds an AASX, e.g. edited by the [AASX Package Explorer](https://github.com/admin-shell-io/aasx-package-explorer), which contains one or more Submodels of kind = Template. These shall be described by the above document. No Qualifiers for generic forms or such shall be contained.
 
