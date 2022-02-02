@@ -11,12 +11,11 @@ This is a Submodel template specification for the Asset Adminstration Shell.
 "With the AAS submodel ""Simulation"", simulation models from ""Suppliers"" can be made available across manufacturers for use by an ""Integrator"". The integrator can thus pursue various simulation goals in the evaluation of solutions, which are described in the AAS submodel. 
 A minimal model is described with a minimal set of basic features, which addresses all components and partial solutions. Thus, already available models can be found and integrated more easily.
 In a further step it is considered how a component-specific standardization must look like, in order to make also a manufacturer-spreading simple exchange of simulation models for partial solutions possible. E.g. using the example of drive components / solutions."
-![image](https://user-images.githubusercontent.com/93717810/152130940-236b2f9f-81eb-494c-9afe-bece150da97d.png)
 
 
 ## About this version
 
-This version is the first version officially published by ZVEI and Plattform Industrie 4.0.
+This version is the first version officially published by IDTA.
 
 ## Difference to prior versions
 
