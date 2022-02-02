@@ -1,4 +1,3 @@
-# Simulation
 # Simulation (Version 1.0)
 
 This is a Submodel template specification for the Asset Adminstration Shell.
@@ -9,11 +8,11 @@ This is a Submodel template specification for the Asset Adminstration Shell.
 
 ## Scope of the Submodel 
 
-The submodels defined in this document describe the integration of PEA (instance) 
-and MTP (type) information into an AAS. The models do not intend to cover asset 
-aspects addressed by further submodel definitions like technical data [8] or 
-digital nameplate. Therefore, introduced models should be used along with 
-mentioned ones to complete the AAS of the respective asset.
+"With the AAS submodel ""Simulation"", simulation models from ""Suppliers"" can be made available across manufacturers for use by an ""Integrator"". The integrator can thus pursue various simulation goals in the evaluation of solutions, which are described in the AAS submodel. 
+A minimal model is described with a minimal set of basic features, which addresses all components and partial solutions. Thus, already available models can be found and integrated more easily.
+In a further step it is considered how a component-specific standardization must look like, in order to make also a manufacturer-spreading simple exchange of simulation models for partial solutions possible. E.g. using the example of drive components / solutions."
+![image](https://user-images.githubusercontent.com/93717810/152130940-236b2f9f-81eb-494c-9afe-bece150da97d.png)
+
 
 ## About this version
 
