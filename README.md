@@ -1,9 +1,8 @@
 [![Creative Commons License](
-https://i.creativecommons.org/l/by-nd/3.0/88x31.png
+https://licensebuttons.net/l/by/4.0/88x31.png
 )](
-http://creativecommons.org/licenses/by-nd/3.0/
+https://creativecommons.org/licenses/by/4.0/
 )
-
 
 # Repo submodel-templates
 
