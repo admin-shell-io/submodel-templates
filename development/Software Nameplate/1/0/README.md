@@ -14,7 +14,7 @@ This Submodel template specifies a basic set of SubmodelElements in order to des
 
 ## About this version
 
-This version is the first version officially published by IDTA.
+This version is the first version to be officially published by IDTA.
 
 ## Difference to prior versions
 
@@ -22,6 +22,5 @@ No prior versions were offically published.
 
 ## Status
 
-This version is in productive use and supported by AASX Package Explorer (out of the box).
-
+This version is in development. 
 
