@@ -15,7 +15,7 @@ In a further step it is considered how a component-specific standardization must
 
 ## About this version
 
-This version is the first version officially published by IDTA.
+This version is the first version to be officially published by IDTA.
 
 ## Difference to prior versions
 
@@ -23,5 +23,5 @@ No prior versions were offically published.
 
 ## Status
 
-This version is in productive use and supported by AASX Package Explorer (out of the box).
+This version is in development. The provided generic forms JSON allows authoring Submodel instances by AASX Package Explorer.
 
