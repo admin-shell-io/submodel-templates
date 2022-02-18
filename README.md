@@ -23,7 +23,7 @@ The folder `yellow_pages` contains Submodel templates, which are known to the ID
 ## Collaboration Mode
 
 For the time being this repository is maintained by the IDTA office. In the future it is planned to allow pull request via CLA (contributor license agreement). 
-Please use the issue tracker of this repository to provide feedback. 
+Please use the issue tracker [submit a new issue](https://github.com/admin-shell-io/submodel-templates/issues/new) of this repository to provide feedback. 
 
 # Table of IDTA Submodel templates
 
