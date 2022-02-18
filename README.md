@@ -20,6 +20,11 @@ The folder `published` contains Submodel templates, which were and are published
 
 The folder `yellow_pages` contains Submodel templates, which are known to the IDTA, but currently not subject of an IDTA registration process.
 
+## Collaboration Mode
+
+For the time being this repository is maintained by the IDTA office. In the future it is planned to allow pull request via CLA (contributor license agreement). 
+Please use the issue tracker of this repository to provide feedback. 
+
 # Table of IDTA Submodel templates
 
 (this table is auto-generated)
