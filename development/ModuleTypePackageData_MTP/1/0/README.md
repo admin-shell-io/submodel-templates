@@ -16,7 +16,7 @@ mentioned ones to complete the AAS of the respective asset.
 
 ## About this version
 
-This version is the first version officially published by ZVEI and Plattform Industrie 4.0.
+This version is the first version to be officially published by IDTA.
 
 ## Difference to prior versions
 
@@ -24,4 +24,4 @@ No prior versions were offically published.
 
 ## Status
 
-This version is in development. This version is in productive use and supported by AASX Package Explorer (out of the box).
+This version is in development and supported by AASX Package Explorer (out of the box).
