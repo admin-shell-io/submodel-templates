@@ -1,4 +1,4 @@
-# Submodel for Inclusion of Module Type Package (MTP) Data into Asset Administration Shell (Version 1.0) 
+# Inclusion of Module Type Package (MTP) Data into Asset Administration Shell (Version 1.0) 
 
 This is a Submodel template specification for the Asset Adminstration Shell.
 
