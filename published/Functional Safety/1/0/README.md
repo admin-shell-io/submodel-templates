@@ -1,4 +1,4 @@
-# Submodel for functional safety for safety-relevant devices (Version 1.0) 
+# Functional safety for safety-relevant devices (Version 1.0) 
 
 This is a Submodel template specification for the Asset Adminstration Shell.
 
