@@ -19,7 +19,7 @@ No prior versions were offically published.
 
 ## Status
 
-This version is in productive use and supported by AASX Package Explorer (out of the box)
+This version is in productive use and supported by AASX Package Explorer (out of the box).
 
 
 
