@@ -29,5 +29,6 @@ No prior versions were offically published.
 
 ## Status
 
-This version is in development. 
+This submodel has been released as Version 1.0. The working group is currently in the process of further developing Version 1.1. For more specific details, feel free to reach out directly to the IDTA office.
+
 
