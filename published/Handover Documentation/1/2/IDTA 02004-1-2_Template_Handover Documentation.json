@@ -1,0 +1,2141 @@
+{
+  "semanticId": {
+    "keys": [
+      {
+        "type": "Submodel",
+        "local": true,
+        "value": "0173-1#01-AHF578#001",
+        "index": 0,
+        "idType": "IRDI"
+      }
+    ]
+  },
+  "qualifiers": [],
+  "hasDataSpecification": [],
+  "identification": {
+    "idType": "IRI",
+    "id": "https://admin-shell.io/IDTA02004-1-2"
+  },
+  "administration": {
+    "version": "1",
+    "revision": "2"
+  },
+  "idShort": "HandoverDocumentation",
+  "category": "PARAMETER",
+  "modelType": {
+    "name": "Submodel"
+  },
+  "kind": "Template",
+  "submodelElements": [
+    {
+      "value": "",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-ABH990#001",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "local": false,
+                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "type": "Relevance",
+          "valueType": "",
+          "value": "optional",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "numberOfDocuments",
+      "category": "PARAMETER",
+      "modelType": {
+        "name": "Property"
+      },
+      "valueType": {
+        "dataObjectType": {
+          "name": "integer"
+        }
+      },
+      "kind": "Template"
+    },
+    {
+      "ordered": false,
+      "allowDuplicates": false,
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-ABI500#001/0173-1#01-AHF579#001*01",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "local": false,
+                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "type": "Cardinality",
+          "valueType": "",
+          "value": "ZeroToMany",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "Document",
+      "modelType": {
+        "name": "SubmodelElementCollection"
+      },
+      "value": [
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-ABI501#001/0173-1#01-AHF580#001*01",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "local": false,
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "type": "Cardinality",
+              "valueType": "",
+              "value": "OneToMany",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "DocumentId",
+          "category": "PARAMETER",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABH994#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "1213455566",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "DocumentDomainId",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "string"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Identification of the domain in which the given DocumentId is unique. The domain ID can e.g., be the name or acronym of the providing organisation."
+                }
+              ]
+            },
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO099#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "XF90-884",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "ValueId",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "string"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Identification number of the Document within a given domain, e.g. the providing organisation."
+                }
+              ]
+            },
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABH995#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "true",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "IsPrimary",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "boolean"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Flag indicating that a DocumentId within a collection of at least two DocumentId`s is the ‘primary’ identifier for the document. This is the preferred ID of the document (commonly from the point of view of the owner of the asset). Note: can be omitted, if the ID is not primary. Note: can be omitted, if only one ID is for a Document. Contraint: only one DocumentId in a collection may be marked as primary."
+                }
+              ]
+            }
+          ],
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Set of document identifiers for the Document. One ID in this collection should be used as a preferred ID"
+            }
+          ]
+        },
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-ABI502#001/0173-1#01-AHF581#001*01",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "local": false,
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "type": "Cardinality",
+              "valueType": "",
+              "value": "OneToMany",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "DocumentClassification",
+          "category": "PARAMETER",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABH996#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "03-02",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "ClassId",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "string"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Unique ID of the document class within a ClassficationSystem. Constraint: If ClassificationSystem is set to “VDI2770:2018”, the given IDs of VDI2770:2018 shall be used"
+                }
+              ]
+            },
+            {
+              "value": {
+                "langString": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO102#003",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "Operation@en",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "ClassName",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "List of language-dependent names of the selected ClassID. Constraint: If ClassificationSystem is set to “VDI2770:2018” then the given names of VDI2770:2018 need be used. Constraint: languages shall match at least the language specifications of the included DocumentVersions (below)."
+                }
+              ]
+            },
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABH997#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "VDI2770:2018",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "ClassificationSystem",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "string"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Identification of the classification system. For classifications according VDI 2270 always set to \"VDI2770:2018\". Further classification systems are commonly used, such as \"IEC61355-1:2008\"."
+                }
+              ]
+            }
+          ],
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Set of information for describing the classification of the Document according to ClassificationSystems. Constraint: at least one classification according to VDI 2770 shall be provided."
+            }
+          ]
+        },
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-ABI503#001/0173-1#01-AHF582#001*01",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "local": false,
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "type": "Cardinality",
+              "valueType": "",
+              "value": "ZeroToMany",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "DocumentVersion",
+          "category": "PARAMETER",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAN468#006",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "OneToMany",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "en",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "AllowedIdShort",
+                  "valueType": "",
+                  "value": "Language[\\d{2,3}]",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "Language",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "string"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "This property contains a list of languages used within the DocumentVersion. Each property codes one language identification according to ISO 639-1 or ISO 639-2 used in the Document."
+                }
+              ]
+            },
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO100#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "V1.2",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "DocumentVersionId",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "string"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Unambigous identification number of a DocumentVersion."
+                }
+              ]
+            },
+            {
+              "value": {
+                "langString": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO105#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "Examplary title@en",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "Title",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "List of language-dependent titles of the Document. Constraint: For each language-depended Title a Summary and at least one KeyWord shall exist for the given language."
+                }
+              ]
+            },
+            {
+              "value": {
+                "langString": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABH998#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "Examplary subtitle@en",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "SubTitle",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "List of language-dependent subtitles of the Document."
+                }
+              ]
+            },
+            {
+              "value": {
+                "langString": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO106#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "Abstract@en",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "Summary",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "List of language-dependent summaries of the Document. Constraint: For each language-depended Summary a Title and at least one KeyWord shall exist for the given language."
+                }
+              ]
+            },
+            {
+              "value": {
+                "langString": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABH999#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "Examplary keywords@en",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "KeyWords",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "List of language-dependent keywords of the Document. Note: Mutiple keywords are given as comma separated list for each language. Constraint: For each language-depended KeyWord a Title and Summary shall exist for the given language. Note: This can be intentionally a blank."
+                }
+              ]
+            },
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABI000#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "2020-02-06",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "StatusSetDate",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "date"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Date when the document status was set. Format is YYYY-MM-dd."
+                }
+              ]
+            },
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABI001#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "Released",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "StatusValue",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "string"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Each document version represents a point in time in the document life cycle. This status value refers to the milestones in the document life cycle. The following two values should be used for the application of this guideline: InReview (under review), Released (released)"
+                }
+              ]
+            },
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABI002#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "Example company",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "OrganizationName",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "string"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Organiziation short name of the author of the Document."
+                }
+              ]
+            },
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABI004#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "Example company Ltd.",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "OrganizationOfficialName",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "string"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Official name of the organization of author of the Document."
+                }
+              ]
+            },
+            {
+              "value": {
+                "keys": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABI006#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "ZeroToMany",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "AllowedIdShort",
+                  "valueType": "",
+                  "value": "RefersTo[\\d{2,3}]",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "RefersTo",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "ReferenceElement"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Forms a generic RefersTo-relationship to another Document or DocumentVersion. They have a loose relationship. Constraint: reference targets a SMC \"Document\" or a “DocumentVersion”."
+                }
+              ]
+            },
+            {
+              "value": {
+                "keys": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABI007#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "ZeroToMany",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "AllowedIdShort",
+                  "valueType": "",
+                  "value": "BasedOn[\\d{2,3}]",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "BasedOn",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "ReferenceElement"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Forms a BasedOn-relationship to another Document or DocumentVersion. Typically states, that the content of the document bases on another document (e.g. specification requirements). Both have a strong relationship. Constraint: reference targets a SMC \"Document\" or a “DocumentVersion”."
+                }
+              ]
+            },
+            {
+              "value": {
+                "keys": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABI008#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "ZeroToMany",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "AllowedIdShort",
+                  "valueType": "",
+                  "value": "TranslationOf[\\d{2,3}]",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TranslationOf",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "ReferenceElement"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Forms a TranslationOf-relationship to another Document or DocumentVersion. Both have a strong relationship. Constaint: The (language independent) content must be identical in both documents or document versions. Constraint: reference targets a SMC \"Document\" or a “DocumentVersion”."
+                }
+              ]
+            },
+            {
+              "ordered": false,
+              "allowDuplicates": false,
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABI504#001/0173-1#01-AHF583#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "OneToMany",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "docu_cecc_fullmanual_DE.PDF",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "AllowedIdShort",
+                  "valueType": "",
+                  "value": "DigitalFile[\\d{2,3}]",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "DigitalFile",
+              "modelType": {
+                "name": "SubmodelElementCollection"
+              },
+              "value": [
+                {
+                  "value": "",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "local": true,
+                        "value": "0173-1#02-AAO214#002 ",
+                        "index": 0,
+                        "idType": "IRDI"
+                      }
+                    ]
+                  },
+                  "constraints": [
+                    {
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "local": false,
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                            "index": 0,
+                            "idType": "IRI"
+                          }
+                        ]
+                      },
+                      "type": "Cardinality",
+                      "valueType": "",
+                      "value": "One",
+                      "modelType": {
+                        "name": "Qualifier"
+                      }
+                    }
+                  ],
+                  "hasDataSpecification": [],
+                  "idShort": "MimeType",
+                  "category": "PARAMETER",
+                  "modelType": {
+                    "name": "Property"
+                  },
+                  "valueType": {
+                    "dataObjectType": {
+                      "name": "string"
+                    }
+                  },
+                  "kind": "Template",
+                  "descriptions": [
+                    {
+                      "language": "en",
+                      "text": "The MIME-Type classifies the data of massage."
+                    }
+                  ]
+                },
+                {
+                  "value": "",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "local": true,
+                        "value": "0173-1#02-ABI005#001 ",
+                        "index": 0,
+                        "idType": "IRDI"
+                      }
+                    ]
+                  },
+                  "constraints": [
+                    {
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "local": false,
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                            "index": 0,
+                            "idType": "IRI"
+                          }
+                        ]
+                      },
+                      "type": "Cardinality",
+                      "valueType": "",
+                      "value": "One",
+                      "modelType": {
+                        "name": "Qualifier"
+                      }
+                    }
+                  ],
+                  "hasDataSpecification": [],
+                  "idShort": "DocumentPath",
+                  "category": "PARAMETER",
+                  "modelType": {
+                    "name": "Property"
+                  },
+                  "valueType": {
+                    "dataObjectType": {
+                      "name": "string"
+                    }
+                  },
+                  "kind": "Template",
+                  "descriptions": [
+                    {
+                      "language": "en",
+                      "text": "The document path leads to the document."
+                    }
+                  ]
+                }
+              ],
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Note: each DigitalFile represents the same content or Document version, but can be provided in different technical formats (PDF, PDFA, html..) or by a link."
+                }
+              ]
+            },
+            {
+              "ordered": false,
+              "allowDuplicates": false,
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-ABI505#001 /0173-1#01-AHF584#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "",
+                  "value": "ZeroToMany",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "",
+                  "value": "docu_cecc_fullmanual_DE.jpg",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                },
+                {
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "local": false,
+                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "type": "AllowedIdShort",
+                  "valueType": "",
+                  "value": "PreviewFile[\\d{2,3}]",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "PreviewFile",
+              "category": "PARAMETER",
+              "modelType": {
+                "name": "SubmodelElementCollection"
+              },
+              "value": [
+                {
+                  "value": "",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "local": true,
+                        "value": "0173-1#02-AAO214#002 ",
+                        "index": 0,
+                        "idType": "IRDI"
+                      }
+                    ]
+                  },
+                  "constraints": [
+                    {
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "local": false,
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                            "index": 0,
+                            "idType": "IRI"
+                          }
+                        ]
+                      },
+                      "type": "Cardinality",
+                      "valueType": "",
+                      "value": "One",
+                      "modelType": {
+                        "name": "Qualifier"
+                      }
+                    }
+                  ],
+                  "hasDataSpecification": [],
+                  "idShort": "MimeType",
+                  "category": "PARAMETER",
+                  "modelType": {
+                    "name": "Property"
+                  },
+                  "valueType": {
+                    "dataObjectType": {
+                      "name": "string"
+                    }
+                  },
+                  "kind": "Template",
+                  "descriptions": [
+                    {
+                      "language": "en",
+                      "text": "The MIME-Type classifies the data of massage."
+                    }
+                  ]
+                },
+                {
+                  "value": "",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "local": true,
+                        "value": "0173-1#02-ABI005#001 ",
+                        "index": 0,
+                        "idType": "IRDI"
+                      }
+                    ]
+                  },
+                  "constraints": [
+                    {
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "local": false,
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                            "index": 0,
+                            "idType": "IRI"
+                          }
+                        ]
+                      },
+                      "type": "Cardinality",
+                      "valueType": "",
+                      "value": "One",
+                      "modelType": {
+                        "name": "Qualifier"
+                      }
+                    }
+                  ],
+                  "hasDataSpecification": [],
+                  "idShort": "DocumentPath",
+                  "category": "PARAMETER",
+                  "modelType": {
+                    "name": "Property"
+                  },
+                  "valueType": {
+                    "dataObjectType": {
+                      "name": "string"
+                    }
+                  },
+                  "kind": "Template",
+                  "descriptions": [
+                    {
+                      "language": "en",
+                      "text": "The document path leads to the document."
+                    }
+                  ]
+                }
+              ],
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Provides a preview image of the DocumentVersion, e.g. first page, in a commonly used image format and low resolution. Note: low resolution e.g. < 512 x 512 pixels. Constraint: the MIME type needs to match the file type. Allowed file types are JPG, PNG, BMP."
+                }
+              ]
+            }
+          ],
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Information elements of individual VDI 2770 DocumentVersion entities. Note: at the time of handover, this collection shall include at least one DocumentVersion."
+            }
+          ]
+        },
+        {
+          "value": {
+            "keys": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "local": false,
+                "value": "https://admin-shell.io/vdi/2770/1/0/Document/DocumentedEntity",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "local": false,
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "type": "Cardinality",
+              "valueType": "",
+              "value": "ZeroToMany",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "DocumentedEntity",
+          "category": "PARAMETER",
+          "modelType": {
+            "name": "ReferenceElement"
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Identifies entities, which are subject to the Document. Note: can be omitted, if the subject of the Document is the overall Asset of the Asset Administration Shell. Note: if no Entity according clause 2.2 is referenced, this ReferenceElement is not required at all. Note: This mechanism substitutes the ObjectId-provision of the VDI2770 (see section 2.2 and appendix B)."
+            }
+          ]
+        }
+      ],
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Each SMC describes a Document (see IEC 82045-1 and IEC 8245-2), which is associated to the particular Asset Administration Shell."
+        }
+      ]
+    },
+    {
+      "entityType": "CoManagedEntity",
+      "asset": {
+        "keys": []
+      },
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "local": false,
+            "value": "https://admin-shell.io/vdi/2770/1/0/EntityForDocumentation",
+            "index": 0,
+            "idType": "IRI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "local": false,
+                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "type": "Cardinality",
+          "valueType": "",
+          "value": "ZeroToMany",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "Entity",
+      "category": "PARAMETER",
+      "modelType": {
+        "name": "Entity"
+      },
+      "statements": [],
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "States, that the described Entity is an important entity for documentation of the superordinate Asset of the Asset Administration Shell. Note: typically, such Entities are well-identified sub-parts of the Asset, such as supplier parts delivered to the manufacturer of the Asset."
+        }
+      ]
+    }
+  ],
+  "descriptions": [
+    {
+      "language": "en",
+      "text": "The Submodel defines a set meta data for the handover of documentation from the manufacturer to the operator for industrial equipment."
+    }
+  ]
+}
