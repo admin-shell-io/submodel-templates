@@ -1,0 +1,1356 @@
+{
+  "semanticId": {
+    "keys": [
+      {
+        "type": "ConceptDescription",
+        "local": true,
+        "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations",
+        "index": 0,
+        "idType": "IRI"
+      }
+    ]
+  },
+  "qualifiers": [],
+  "hasDataSpecification": [],
+  "identification": {
+    "idType": "IRI",
+    "id": "https://example.com/ids/sm/1231_6162_1022_9579"
+  },
+  "idShort": "ContactInformations",
+  "modelType": {
+    "name": "Submodel"
+  },
+  "kind": "Template",
+  "submodelElements": [
+    {
+      "ordered": false,
+      "allowDuplicates": true,
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation",
+            "index": 0,
+            "idType": "IRI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "OneToMany",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "ContactInformation",
+      "modelType": {
+        "name": "SubmodelElementCollection"
+      },
+      "value": [
+        {
+          "value": "0173-1#07-AAS931#001",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO204#003",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "RoleOfContactPerson",
+          "modelType": {
+            "name": "Property"
+          },
+          "valueType": {
+            "dataObjectType": {
+              "name": "String"
+            }
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "enumeration: 0173-1#07-AAS927#001 (administrativ contact), 0173-1#07-AAS928#001 (commercial contact), 0173-1#07-AAS929#001 (other contact), 0173-1#07-AAS930#001 (hazardous goods contact), 0173-1#07-AAS931#001 (technical contact). Note: the above mentioned ECLASS enumeration should be declared as “open” for further addition. ECLASS enumeration IRDI is preferable. If no IRDI available, custom input as String may also be accepted."
+            }
+          ]
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "en",
+                "text": "DE"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO134#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "NationalCode",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": " Note: country codes defined accord. to ISO 3166-1. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+            }
+          ]
+        },
+        {
+          "value": "de",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Language",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToMany",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Language",
+          "modelType": {
+            "name": "Property"
+          },
+          "valueType": {
+            "dataObjectType": {
+              "name": "String"
+            }
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Note: language codes defined accord. to ISO 639-1. Note: as per ECLASS definition, Expression and representation of thoughts, information, feelings, ideas through characters."
+            }
+          ]
+        },
+        {
+          "value": "Z",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/TimeZone",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "TimeZone",
+          "modelType": {
+            "name": "Property"
+          },
+          "valueType": {
+            "dataObjectType": {
+              "name": "string"
+            }
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Note: notation accord. to ISO 8601 Note: for time in UTC the zone designator “Z” is to be used"
+            }
+          ]
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "de",
+                "text": "Musterstadt"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO132#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "CityTown",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "en",
+                "text": "ABC Company"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAW001#001",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Company",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "de",
+                "text": "Vertrieb"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO127#003",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Department",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Phone",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": {
+                "langString": [
+                  {
+                    "language": "en",
+                    "text": "+491234567890"
+                  }
+                ]
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO136#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TelephoneNumber",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                }
+              ]
+            },
+            {
+              "value": "0173-1#07-AAS754#001",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO137#003",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TypeOfTelephone",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": " enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS755#001 (office mobile), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home), 0173-1#07-AAS759#001 (private mobile)"
+                }
+              ]
+            },
+            {
+              "value": {
+                "langString": [
+                  {
+                    "language": "de",
+                    "text": "Montag – Freitag 08:00 bis 16:00"
+                  }
+                ]
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "AvailableTime",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template"
+            }
+          ],
+          "kind": "Template"
+        },
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAQ834#005",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Fax",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": {
+                "langString": [
+                  {
+                    "language": "en",
+                    "text": "+491234567890"
+                  }
+                ]
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO195#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "FaxNumber",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                }
+              ]
+            },
+            {
+              "value": " 0173-1#07-AAS754#001",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO196#003",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TypeOfFaxNumber",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS758#001 (home)"
+                }
+              ]
+            }
+          ],
+          "kind": "Template"
+        },
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAQ836#005",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Email",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": "email@muster-ag.de",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO198#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "EmailAddress",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template"
+            },
+            {
+              "value": {
+                "langString": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO200#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "PublicKey",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                }
+              ]
+            },
+            {
+              "value": "0173-1#07-AAS754#001",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO199#003",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TypeOfEmailAddress",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home)"
+                }
+              ]
+            },
+            {
+              "value": {
+                "langString": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO201#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TypeOfPublicKey",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template"
+            }
+          ],
+          "kind": "Template"
+        },
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToMany",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "IPCommunication{00}",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAQ326#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "AddressOfAdditionalLink",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template"
+            },
+            {
+              "value": "Chat",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ ContactInformations/ContactInformation/IPCommunication/TypeOfCommunication",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TypeOfCommunication",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template"
+            },
+            {
+              "value": {
+                "langString": [
+                  {
+                    "language": "de",
+                    "text": "Montag – Freitag 08:00 bis 16:00"
+                  }
+                ]
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "AvailableTime",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template"
+            }
+          ],
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "de",
+                "text": "Musterstraße 1"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO128#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Street",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "de",
+                "text": "12345"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO129#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Zipcode",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+            }
+          ]
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "en",
+                "text": "PF 1234"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO130#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "POBox",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "en",
+                "text": "12345"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO131#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "ZipCodeOfPOBox",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+            }
+          ]
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "de",
+                "text": "Muster-Bundesland"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO133#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "StateCounty",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO205#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "NameOfContact",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO206#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "FirstName",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO207#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "MiddleNames",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO208#003",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Title",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO209#003",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "AcademicTitle",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO210#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "FurtherDetailsOfContact",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": "",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAQ326#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "AddressOfAdditionalLink",
+          "modelType": {
+            "name": "Property"
+          },
+          "valueType": {
+            "dataObjectType": {
+              "name": "String"
+            }
+          },
+          "kind": "Template"
+        }
+      ],
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "The SMC “ContactInformation” contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
+        }
+      ]
+    }
+  ]
+}
