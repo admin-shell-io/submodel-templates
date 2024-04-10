@@ -26,3 +26,6 @@ No prior versions were offically published.
 ## Status
 
 This version is in productive use and supported by AASX Package Explorer (out of the box)
+
+## AASX-File Update - Version 3.0
+This AASX-file for the template is updated to Version 3.0 in the Metamodel "Specification of the Asset Administration Shell". The Submodel content remains unchanged.
