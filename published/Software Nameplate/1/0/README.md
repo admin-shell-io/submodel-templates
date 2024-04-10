@@ -35,3 +35,6 @@ No prior versions were offically published.
 This version is in productive use and supported by AASX Package Explorer (out of the box)
 
 
+## Update of AASX File for Compatibility with Version 3.0 of the "Asset Administration Shell" Metamodel Specification.
+
+The AASX file has been updated for compatibility with version 3.0 of the Asset Administration Shell metamodel specification. The contents of the submodel remain unchanged.
