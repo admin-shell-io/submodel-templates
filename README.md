@@ -4,17 +4,17 @@ https://licensebuttons.net/l/by/4.0/88x31.png
 https://creativecommons.org/licenses/by/4.0/)
 # Repo submodel-templates
 
-This internet repository provides Submodel Templates (SMT) for Asset Administration Shell (AAS). For an overview confer the [Reading guide AAS](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Asset_Administration_Shell_Reading_Guide.html). For details of the meta model for AAS see [Details of the AAS V3.0RC01](https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part1_V3.html).
+This internet repository provides Submodel Templates (SMT) for Asset Administration Shell (AAS). For an overview confer the [Reading guide AAS](https://www.plattform-i40.de/IP/Redaktion/DE/Downloads/Publikation/AAS-ReadingGuide_202201.html). For details of the meta model for AAS see [Details of the AAS V3.0RC01](https://industrialdigitaltwin.org/content-hub/aasspecifications/idta_01001-3-0_metamodel).
 
 Within this repository, the Submodel Templates are organized in 3 folders:
 
 ## Submodel Templates in development by IDTA
 
-The folder `development` contains Submodel templates, which are currently in preparation and already publicly available. Feedback might be provided by the issues tracker.
+The folder `development` contains Submodel templates, which are currently in development pha and already publicly available. Feedback might be provided by the issues tracker.
 
 ## Submodel Templates published by IDTA
 
-The folder `published` contains Submodel templates, which were and are published by IDTA and Industrie 4.0. These are called 'registered' Submodel templates.
+The folder `published` contains Submodel templates, which are published by IDTA and Industrie 4.0. These are called 'registered' Submodel templates.
 
 ## Submodel Templates known to the IDTA
 
