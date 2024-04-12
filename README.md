@@ -4,7 +4,8 @@ https://licensebuttons.net/l/by/4.0/88x31.png
 https://creativecommons.org/licenses/by/4.0/)
 # Repo submodel-templates
 
-This internet repository provides Submodel Templates (SMT) for Asset Administration Shell (AAS). For an overview confer the [Reading guide AAS](https://www.plattform-i40.de/IP/Redaktion/DE/Downloads/Publikation/AAS-ReadingGuide_202201.html). For details of the meta model for AAS see [Details of the AAS V3.0RC01](https://industrialdigitaltwin.org/content-hub/aasspecifications/idta_01001-3-0_metamodel).
+This internet repository provides Submodel Templates (SMT) for Asset Administration Shell (AAS). For an overview confer the [AAS
+Reading Guide](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/2022-12-07_IDTA_AAS-Reading-Guide.pdf). For details of the meta model for AAS see [Specification of the Asset Administration Shell Part 1: Metamodel](https://industrialdigitaltwin.org/content-hub/aasspecifications/idta_01001-3-0_metamodel).
 
 Within this repository, the Submodel Templates are organized in 3 folders:
 
@@ -49,4 +50,7 @@ Please use the issue tracker [submit a new issue](https://github.com/admin-shell
 | Published | [Reliability(Version 1.0)](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Reliability/1/0) | 1 | 0 | ![Template](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green) ![Unique](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Unique&color=b5179e) ![Std](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Std&color=4895ef) |
 | Published | [Sizing of Power Drive Trains(Version 1.0)](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Sizing%20of%20Power%20Drive%20Trains/1/0) | 1 | 0 | ![Template](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green) ![Unique](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Unique&color=b5179e) ![Std](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Std&color=4895ef) |
 | Published | [Time Series Data(Version 1.0)](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Time%20Series%20Data/1/1) | 1 | 1 | ![Template](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green) ![Unique](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Unique&color=b5179e) ![Std](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Std&color=4895ef) |
+| Published | [Service Request Notification(Version 1.0)](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Service%20Request%20Notification/1/0) | 1 | 0 | ![Template](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green) ![Base](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Base&color=480ca8) ![ECLASS](https://img.shields.io/static/v1?style=plastic&label=SMT&message=ECLASS&color=000055) |
+| Published | [Carbon Footprint(Version 1.0)](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Carbon%20Footprint) | - | - | ![Template](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Template&color=green) ![Unique](https://img.shields.io/static/v1?style=plastic&label=SMT&message=Unique&color=b5179e) ![ECLASS](https://img.shields.io/static/v1?style=plastic&label=SMT&message=ECLASS&color=000055) |
+
 
