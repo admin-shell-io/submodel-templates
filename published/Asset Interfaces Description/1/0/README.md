@@ -59,5 +59,6 @@ No prior versions were offically published.
 
 ## Status
 
-This version is in productive use and supported by AASX Package Explorer (out of the box)
+This version is in productive use and supported by AASX Package Explorer (out of the box).
+Additionally, Eclipse Thingweb implements it at <https://github.com/eclipse-thingweb/td-tools/tree/main/node/aas-aid> which is published on [npm](https://www.npmjs.com/package/@thingweb/aas-aid).
 
