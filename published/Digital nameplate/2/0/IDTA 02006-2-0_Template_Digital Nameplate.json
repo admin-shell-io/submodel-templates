@@ -1,0 +1,4570 @@
+﻿{
+  "semanticId": {
+    "keys": [
+      {
+        "type": "ConceptDescription",
+        "local": true,
+        "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate",
+        "index": 0,
+        "idType": "IRI"
+      }
+    ]
+  },
+  "qualifiers": [],
+  "hasDataSpecification": [],
+  "identification": {
+    "idType": "IRI",
+    "id": "www.example.com/ids/sm/1225_9020_5022_1974"
+  },
+  "idShort": "Nameplate",
+  "modelType": {
+    "name": "Submodel"
+  },
+  "kind": "Template",
+  "submodelElements": [
+    {
+      "value": "https://www.domain-abc.com/Model-Nr-1234/Serial-Nr-5678",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAY811#001",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "One",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "URIOfTheProduct",
+      "modelType": {
+        "name": "Property"
+      },
+      "valueType": {
+        "dataObjectType": {
+          "name": "String"
+        }
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61987#ABN590#001 URI of product instance "
+        }
+      ]
+    },
+    {
+      "value": {
+        "langString": [
+          {
+            "language": "de",
+            "text": "Muster AG"
+          }
+        ]
+      },
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAO677#002",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "One",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "ManufacturerName",
+      "modelType": {
+        "name": "MultiLanguageProperty"
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61987#ABA565#007 manufacturer Note: mandatory property according to EU Machine Directive 2006/42/EC. "
+        }
+      ]
+    },
+    {
+      "value": {
+        "langString": [
+          {
+            "language": "en",
+            "text": "ABC-123"
+          }
+        ]
+      },
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAW338#001",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "One",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "ManufacturerProductDesignation",
+      "modelType": {
+        "name": "MultiLanguageProperty"
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61987#ABA567#007 name of product Note: Short designation of the product is meant. Note: mandatory property according to EU Machine Directive 2006/42/EC. "
+        }
+      ]
+    },
+    {
+      "ordered": false,
+      "allowDuplicates": true,
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation",
+            "index": 0,
+            "idType": "IRI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "One",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "ContactInformation",
+      "modelType": {
+        "name": "SubmodelElementCollection"
+      },
+      "value": [
+        {
+          "value": "0173-1#07-AAS931#001",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO204#003",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "RoleOfContactPerson",
+          "modelType": {
+            "name": "Property"
+          },
+          "valueType": {
+            "dataObjectType": {
+              "name": "String"
+            }
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "enumeration: 0173-1#07-AAS927#001 (administrativ contact), 0173-1#07-AAS928#001 (commercial contact), 0173-1#07-AAS929#001 (other contact), 0173-1#07-AAS930#001 (hazardous goods contact), 0173-1#07-AAS931#001 (technical contact). Note: the above mentioned ECLASS enumeration should be declared as “open” for further addition. ECLASS enumeration IRDI is preferable. If no IRDI available, custom input as String may also be accepted."
+            }
+          ]
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "en",
+                "text": "DE"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO134#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "One",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "NationalCode",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Note: see also [IRDI] 0112/2///61360_4#ADA005#001 country code. country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes. Mandatory property according to EU Machine Directive 2006/42/EC. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+            }
+          ]
+        },
+        {
+          "value": "de",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Language",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToMany",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Language",
+          "modelType": {
+            "name": "Property"
+          },
+          "valueType": {
+            "dataObjectType": {
+              "name": "String"
+            }
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Note: language codes defined accord. to ISO 639-1. Note: as per ECLASS definition, Expression and representation of thoughts, information, feelings, ideas through characters."
+            }
+          ]
+        },
+        {
+          "value": "Z",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/TimeZone",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "TimeZone",
+          "modelType": {
+            "name": "Property"
+          },
+          "valueType": {
+            "dataObjectType": {
+              "name": "string"
+            }
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Note: notation accord. to ISO 8601 Note: for time in UTC the zone designator “Z” is to be used"
+            }
+          ]
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "de",
+                "text": "Musterstadt"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO132#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "One",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "CityTown",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Note: see also [IRDI] 0112/2///61987#ABA129#001 city/town. Mandatory property according to EU Machine Directive 2006/42/EC."
+            }
+          ]
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "en",
+                "text": "ABC Company"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAW001#001",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Company",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "de",
+                "text": "Vertrieb"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO127#003",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Department",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Phone",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": {
+                "langString": [
+                  {
+                    "language": "en",
+                    "text": "+491234567890"
+                  }
+                ]
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO136#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TelephoneNumber",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                }
+              ]
+            },
+            {
+              "value": "0173-1#07-AAS754#001",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO137#003",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TypeOfTelephone",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": " enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS755#001 (office mobile), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home), 0173-1#07-AAS759#001 (private mobile)"
+                }
+              ]
+            },
+            {
+              "value": {
+                "langString": [
+                  {
+                    "language": "de",
+                    "text": "Montag – Freitag 08:00 bis 16:00"
+                  }
+                ]
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "AvailableTime",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template"
+            }
+          ],
+          "kind": "Template"
+        },
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAQ834#005",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Fax",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": {
+                "langString": [
+                  {
+                    "language": "en",
+                    "text": "+491234567890"
+                  }
+                ]
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO195#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "FaxNumber",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                }
+              ]
+            },
+            {
+              "value": " 0173-1#07-AAS754#001",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO196#003",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TypeOfFaxNumber",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS758#001 (home)"
+                }
+              ]
+            }
+          ],
+          "kind": "Template"
+        },
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAQ836#005",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Email",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": "email@muster-ag.de",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO198#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "EmailAddress",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template"
+            },
+            {
+              "value": {
+                "langString": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO200#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "PublicKey",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                }
+              ]
+            },
+            {
+              "value": "0173-1#07-AAS754#001",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO199#003",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TypeOfEmailAddress",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home)"
+                }
+              ]
+            },
+            {
+              "value": {
+                "langString": []
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO201#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TypeOfPublicKey",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template"
+            }
+          ],
+          "kind": "Template"
+        },
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToMany",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "IPCommunication{00}",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAQ326#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "AddressOfAdditionalLink",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template"
+            },
+            {
+              "value": "Chat",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ ContactInformations/ContactInformation/IPCommunication/TypeOfCommunication",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "TypeOfCommunication",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template"
+            },
+            {
+              "value": {
+                "langString": [
+                  {
+                    "language": "de",
+                    "text": "Montag – Freitag 08:00 bis 16:00"
+                  }
+                ]
+              },
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "AvailableTime",
+              "modelType": {
+                "name": "MultiLanguageProperty"
+              },
+              "kind": "Template"
+            }
+          ],
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "de",
+                "text": "Musterstraße 1"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO128#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "One",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Street",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Note: see also [IRDI] 0112/2///61987#ABA286#001 street. Mandatory property according to EU Machine Directive 2006/42/EC"
+            }
+          ]
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "de",
+                "text": "12345"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO129#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "One",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Zipcode",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Note: see also [IRDI] 0112/2///61987#ABA281#001 ZIP/Postal code. Mandatory property according to EU Machine Directive 2006/42/EC. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+            }
+          ]
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "en",
+                "text": "PF 1234"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO130#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "POBox",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "en",
+                "text": "12345"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO131#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "ZipCodeOfPOBox",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+            }
+          ]
+        },
+        {
+          "value": {
+            "langString": [
+              {
+                "language": "de",
+                "text": "Muster-Bundesland"
+              }
+            ]
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO133#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "StateCounty",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO205#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "NameOfContact",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO206#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "FirstName",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO207#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "MiddleNames",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO208#003",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "Title",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO209#003",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "AcademicTitle",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": {
+            "langString": []
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAO210#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "FurtherDetailsOfContact",
+          "modelType": {
+            "name": "MultiLanguageProperty"
+          },
+          "kind": "Template"
+        },
+        {
+          "value": "",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#02-AAQ326#002",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "ZeroToOne",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "AddressOfAdditionalLink",
+          "modelType": {
+            "name": "Property"
+          },
+          "valueType": {
+            "dataObjectType": {
+              "name": "String"
+            }
+          },
+          "kind": "Template"
+        }
+      ],
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "The SMC “ContactInformation” contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required. Note: physical address is a mandatory property according to EU Machine Directive 2006/42/EC"
+        }
+      ]
+    },
+    {
+      "value": {
+        "langString": [
+          {
+            "language": "en",
+            "text": "flow meter"
+          }
+        ]
+      },
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAU732#001",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "ManufacturerProductRoot",
+      "modelType": {
+        "name": "MultiLanguageProperty"
+      },
+      "kind": "Template"
+    },
+    {
+      "value": {
+        "langString": [
+          {
+            "language": "en",
+            "text": "Type ABC"
+          }
+        ]
+      },
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAU731#001",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "ManufacturerProductFamily",
+      "modelType": {
+        "name": "MultiLanguageProperty"
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: conditionally mandatory property according to EU Machine Directive 2006/42/EC. One of the two properties must be provided: ManufacturerProductFamily (0173-1#02-AAU731#001) or ManufacturerProductType (0173-1#02-AAO057#002). "
+        }
+      ]
+    },
+    {
+      "value": {
+        "langString": [
+          {
+            "language": "en",
+            "text": "FM-ABC-1234"
+          }
+        ]
+      },
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAO057#002",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "ManufacturerProductType",
+      "modelType": {
+        "name": "MultiLanguageProperty"
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61987#ABA300#006 code of product Note: conditionally mandatory property according to EU Machine Directive 2006/42/EC. One of the two properties must be provided: ManufacturerProductFamily (0173-1#02-AAU731#001) or ManufacturerProductType (0173-1#02-AAO057#002). "
+        }
+      ]
+    },
+    {
+      "value": {
+        "langString": [
+          {
+            "language": "en",
+            "text": "FMABC1234"
+          }
+        ]
+      },
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAO227#002",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "OrderCodeOfManufacturer",
+      "modelType": {
+        "name": "MultiLanguageProperty"
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61987#ABA950#006 order code of product Note: Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+        }
+      ]
+    },
+    {
+      "value": {
+        "langString": [
+          {
+            "language": "en",
+            "text": "FM11-ABC22-123456"
+          }
+        ]
+      },
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAO676#003",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "ProductArticleNumberOfManufacturer",
+      "modelType": {
+        "name": "MultiLanguageProperty"
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61987#ABA581#006 article number Note: Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+        }
+      ]
+    },
+    {
+      "value": "12345678",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAM556#002",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "SerialNumber",
+      "modelType": {
+        "name": "Property"
+      },
+      "valueType": {
+        "dataObjectType": {
+          "name": "String"
+        }
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61987#ABA951#007 serial number "
+        }
+      ]
+    },
+    {
+      "value": "2022",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAP906#001",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "One",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "YearOfConstruction",
+      "modelType": {
+        "name": "Property"
+      },
+      "valueType": {
+        "dataObjectType": {
+          "name": "String"
+        }
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: mandatory property according to EU Machine Directive 2006/42/EC. "
+        }
+      ]
+    },
+    {
+      "value": "2022-01-01",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAR972#002",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "DateOfManufacture",
+      "modelType": {
+        "name": "Property"
+      },
+      "valueType": {
+        "dataObjectType": {
+          "name": "date"
+        }
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61987#ABB757#007 date of manufacture Note: format by lexical representation: CCYY-MM-DD "
+        }
+      ]
+    },
+    {
+      "value": {
+        "langString": [
+          {
+            "language": "en",
+            "text": "1.0.0"
+          }
+        ]
+      },
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAN270#002",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "HardwareVersion",
+      "modelType": {
+        "name": "MultiLanguageProperty"
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61987#ABA926#006 hardware version Note: Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+        }
+      ]
+    },
+    {
+      "value": {
+        "langString": [
+          {
+            "language": "en",
+            "text": "1.0"
+          }
+        ]
+      },
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAM985#002",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "FirmwareVersion",
+      "modelType": {
+        "name": "MultiLanguageProperty"
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61987#ABA302#004 firmware version Note: Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+        }
+      ]
+    },
+    {
+      "value": {
+        "langString": [
+          {
+            "language": "en",
+            "text": "1.0.0"
+          }
+        ]
+      },
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAM737#002",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "SoftwareVersion",
+      "modelType": {
+        "name": "MultiLanguageProperty"
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61987#ABA601#006 software version Note: Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+        }
+      ]
+    },
+    {
+      "value": "DE",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#02-AAO259#004",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "CountryOfOrigin",
+      "modelType": {
+        "name": "Property"
+      },
+      "valueType": {
+        "dataObjectType": {
+          "name": "String"
+        }
+      },
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: see also [IRDI] 0112/2///61360_4#ADA034#001 country of origin Note: Country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes "
+        }
+      ]
+    },
+    {
+      "mimeType": "",
+      "value": "",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/CompanyLogo ",
+            "index": 0,
+            "idType": "IRI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "CompanyLogo",
+      "modelType": {
+        "name": "File"
+      },
+      "kind": "Template"
+    },
+    {
+      "ordered": false,
+      "allowDuplicates": true,
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#01-AGZ673#001",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "Markings",
+      "modelType": {
+        "name": "SubmodelElementCollection"
+      },
+      "value": [
+        {
+          "ordered": false,
+          "allowDuplicates": true,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#01-AHD206#001",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [],
+          "hasDataSpecification": [],
+          "idShort": "Marking",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": "0173-1#07-DAA603#004",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/MarkingName",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "MarkingName",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Note: see also [IRDI] 0173-1#02-BAB392#015 certificate/approval valueId with ECLASS enumeration IRDI is preferable, e.g. [IRDI] 0173-1#07-DAA603#004 for CE. If no IRDI available, string value can also be accepted. Note: CE marking is declared as mandatory according to Blue Guide of the EU-Commission "
+                }
+              ]
+            },
+            {
+              "value": "KEMA99IECEX1105/128",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0112/2///61987#ABH783#001",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "DesignationOfCertificateOrApproval",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Note: Approval identifier, reference to the certificate number, to be entered without spaces "
+                }
+              ]
+            },
+            {
+              "value": "2022-01-01",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/IssueDate",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "IssueDate",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "Date"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day "
+                }
+              ]
+            },
+            {
+              "value": "2022-01-01",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExpiryDate",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "ExpiryDate",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "Date"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Note: see also ([IRDI] 0173-1#02-AAO997#001 Validity date Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day "
+                }
+              ]
+            },
+            {
+              "mimeType": "",
+              "value": "/aasx/Nameplate/marking_ce.png ",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/MarkingFile",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "MarkingFile",
+              "modelType": {
+                "name": "File"
+              },
+              "kind": "Template"
+            },
+            {
+              "value": "0044",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/MarkingAdditionalText",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToMany",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "MarkingAdditionalText",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template",
+              "descriptions": [
+                {
+                  "language": "en",
+                  "text": "Note: see also [IRDI] 0173-1#02-AAM954#002 details of other certificate "
+                }
+              ]
+            },
+            {
+              "ordered": false,
+              "allowDuplicates": true,
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "ZeroToOne",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "ExplosionSafeties",
+              "modelType": {
+                "name": "SubmodelElementCollection"
+              },
+              "value": [
+                {
+                  "ordered": false,
+                  "allowDuplicates": true,
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "local": true,
+                        "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties/ExplosionSafety",
+                        "index": 0,
+                        "idType": "IRI"
+                      }
+                    ]
+                  },
+                  "constraints": [
+                    {
+                      "type": "Multiplicity",
+                      "valueType": "",
+                      "value": "OneToMany",
+                      "modelType": {
+                        "name": "Qualifier"
+                      }
+                    }
+                  ],
+                  "hasDataSpecification": [],
+                  "idShort": "ExplosionSafety",
+                  "modelType": {
+                    "name": "SubmodelElementCollection"
+                  },
+                  "value": [
+                    {
+                      "value": "KEMA99IECEX1105/128",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "local": true,
+                            "value": "0112/2///61987#ABH783#001",
+                            "index": 0,
+                            "idType": "IRDI"
+                          }
+                        ]
+                      },
+                      "constraints": [
+                        {
+                          "type": "Multiplicity",
+                          "valueType": "",
+                          "value": "ZeroToOne",
+                          "modelType": {
+                            "name": "Qualifier"
+                          }
+                        }
+                      ],
+                      "hasDataSpecification": [],
+                      "idShort": "DesignationOfCertificateOrApproval",
+                      "modelType": {
+                        "name": "Property"
+                      },
+                      "valueType": {
+                        "dataObjectType": {
+                          "name": "String"
+                        }
+                      },
+                      "kind": "Template",
+                      "descriptions": [
+                        {
+                          "language": "en",
+                          "text": "Note: Approval identifier, reference to the certificate number, to be entered without spaces "
+                        }
+                      ]
+                    },
+                    {
+                      "value": {
+                        "langString": [
+                          {
+                            "language": "en",
+                            "text": "ATEX"
+                          }
+                        ]
+                      },
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "local": true,
+                            "value": "0173-1#02-AAM812#003",
+                            "index": 0,
+                            "idType": "IRDI"
+                          }
+                        ]
+                      },
+                      "constraints": [
+                        {
+                          "type": "Multiplicity",
+                          "valueType": "",
+                          "value": "ZeroToOne",
+                          "modelType": {
+                            "name": "Qualifier"
+                          }
+                        }
+                      ],
+                      "hasDataSpecification": [],
+                      "idShort": "TypeOfApproval",
+                      "modelType": {
+                        "name": "MultiLanguageProperty"
+                      },
+                      "kind": "Template",
+                      "descriptions": [
+                        {
+                          "language": "en",
+                          "text": "Note: see also [IRDI] 0112/2///61987#ABA231#008 type of hazardous area approval Note: name of the approval system, e.g. ATEX, IECEX, NEC, EAC, CCC, CEC Note: only values from the enumeration should be used as stated. For additional systems further values can be used. Note: Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                        }
+                      ]
+                    },
+                    {
+                      "value": {
+                        "langString": [
+                          {
+                            "language": "en",
+                            "text": "PTB"
+                          }
+                        ]
+                      },
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "local": true,
+                            "value": "0173-1#02-AAM632#001",
+                            "index": 0,
+                            "idType": "IRDI"
+                          }
+                        ]
+                      },
+                      "constraints": [
+                        {
+                          "type": "Multiplicity",
+                          "valueType": "",
+                          "value": "ZeroToOne",
+                          "modelType": {
+                            "name": "Qualifier"
+                          }
+                        }
+                      ],
+                      "hasDataSpecification": [],
+                      "idShort": "ApprovalAgencyTestingAgency",
+                      "modelType": {
+                        "name": "MultiLanguageProperty"
+                      },
+                      "kind": "Template",
+                      "descriptions": [
+                        {
+                          "language": "en",
+                          "text": "Note: see also [IRDI] 0112/2///61987#ABA634#004 approval agency/testing agency Note: name of the agency, which has issued the certificate, e.g. PTB, KEMA, CSA, SIRA Note: only values from the enumeration should be used as stated. For additional systems further values can be used. Note: Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                        }
+                      ]
+                    },
+                    {
+                      "value": "db",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "local": true,
+                            "value": "0173-1#02-AAQ325#003",
+                            "index": 0,
+                            "idType": "IRDI"
+                          }
+                        ]
+                      },
+                      "constraints": [
+                        {
+                          "type": "Multiplicity",
+                          "valueType": "",
+                          "value": "ZeroToOne",
+                          "modelType": {
+                            "name": "Qualifier"
+                          }
+                        }
+                      ],
+                      "hasDataSpecification": [],
+                      "idShort": "TypeOfProtection",
+                      "modelType": {
+                        "name": "Property"
+                      },
+                      "valueType": {
+                        "dataObjectType": {
+                          "name": "String"
+                        }
+                      },
+                      "kind": "Template",
+                      "descriptions": [
+                        {
+                          "language": "en",
+                          "text": "Note: see also [IRDI] 0112/2///61987#ABA589#002 type of protection (Ex) Note:  ·       Type of protection for the device as listed in the certificate ·       Symbol(s) for the Type of protection. Several types of protection are separated by a semicolon “;” ·       If several TypeOfProtection are listed in the same certificate, for each TypeOfProtection a separate SMC “Explosion Safety” shall be provided "
+                        }
+                      ]
+                    },
+                    {
+                      "value": "250",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "local": true,
+                            "value": "0173-1#02-AAN532#003",
+                            "index": 0,
+                            "idType": "IRDI"
+                          }
+                        ]
+                      },
+                      "constraints": [
+                        {
+                          "type": "Multiplicity",
+                          "valueType": "",
+                          "value": "ZeroToOne",
+                          "modelType": {
+                            "name": "Qualifier"
+                          }
+                        }
+                      ],
+                      "hasDataSpecification": [],
+                      "idShort": "RatedInsulationVoltage",
+                      "modelType": {
+                        "name": "Property"
+                      },
+                      "valueType": {
+                        "dataObjectType": {
+                          "name": "Decimal"
+                        }
+                      },
+                      "kind": "Template",
+                      "descriptions": [
+                        {
+                          "language": "en",
+                          "text": "Note: Um(eff) Note: Insulation voltage, if specified in the certificate "
+                        }
+                      ]
+                    },
+                    {
+                      "value": {
+                        "keys": []
+                      },
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "local": true,
+                            "value": "0112/2///61987#ABO102#001",
+                            "index": 0,
+                            "idType": "IRDI"
+                          }
+                        ]
+                      },
+                      "constraints": [
+                        {
+                          "type": "Multiplicity",
+                          "valueType": "",
+                          "value": "ZeroToOne",
+                          "modelType": {
+                            "name": "Qualifier"
+                          }
+                        }
+                      ],
+                      "hasDataSpecification": [],
+                      "idShort": "InstructionsControlDrawing",
+                      "modelType": {
+                        "name": "ReferenceElement"
+                      },
+                      "kind": "Template",
+                      "descriptions": [
+                        {
+                          "language": "en",
+                          "text": "Note: Reference to the instruction manual or control drawing "
+                        }
+                      ]
+                    },
+                    {
+                      "value": "X",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "local": true,
+                            "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties/ExplosionSafety/SpecificConditionsForUse",
+                            "index": 0,
+                            "idType": "IRI"
+                          }
+                        ]
+                      },
+                      "constraints": [
+                        {
+                          "type": "Multiplicity",
+                          "valueType": "",
+                          "value": "ZeroToOne",
+                          "modelType": {
+                            "name": "Qualifier"
+                          }
+                        }
+                      ],
+                      "hasDataSpecification": [],
+                      "idShort": "SpecificConditionsForUse",
+                      "modelType": {
+                        "name": "Property"
+                      },
+                      "valueType": {
+                        "dataObjectType": {
+                          "name": "string"
+                        }
+                      },
+                      "kind": "Template",
+                      "descriptions": [
+                        {
+                          "language": "en",
+                          "text": "Note: X if any, otherwise no entry"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "U",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "local": true,
+                            "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties/ExplosionSafety/IncompleteDevice",
+                            "index": 0,
+                            "idType": "IRI"
+                          }
+                        ]
+                      },
+                      "constraints": [
+                        {
+                          "type": "Multiplicity",
+                          "valueType": "",
+                          "value": "ZeroToOne",
+                          "modelType": {
+                            "name": "Qualifier"
+                          }
+                        }
+                      ],
+                      "hasDataSpecification": [],
+                      "idShort": "IncompleteDevice",
+                      "modelType": {
+                        "name": "Property"
+                      },
+                      "valueType": {
+                        "dataObjectType": {
+                          "name": "string"
+                        }
+                      },
+                      "kind": "Template"
+                    },
+                    {
+                      "ordered": false,
+                      "allowDuplicates": false,
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "local": true,
+                            "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties/ExplosionSafety/AmbientConditions",
+                            "index": 0,
+                            "idType": "IRI"
+                          }
+                        ]
+                      },
+                      "constraints": [
+                        {
+                          "type": "Multiplicity",
+                          "valueType": "",
+                          "value": "ZeroToOne",
+                          "modelType": {
+                            "name": "Qualifier"
+                          }
+                        }
+                      ],
+                      "hasDataSpecification": [],
+                      "idShort": "AmbientConditions",
+                      "modelType": {
+                        "name": "SubmodelElementCollection"
+                      },
+                      "value": [
+                        {
+                          "value": "2G",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAK297#004",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "DeviceCategory",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA467#002 equipment/device category Note: editorial definiton: Category of device in accordance with directive 2014/34/EU Note: Equipment category according to the ATEX system. According to the current nameplate, also the combination “GD” is permitted Note: The combination “GD” is no longer accepted and was changed in the standards. Currently the marking for “G” and “D” must be provided in a separate marking string. Older devices may still exist with the marking “GD”. "
+                            }
+                          ]
+                        },
+                        {
+                          "value": {
+                            "langString": [
+                              {
+                                "language": "en",
+                                "text": "Gb"
+                              }
+                            ]
+                          },
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAM668#001",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "EquipmentProtectionLevel",
+                          "modelType": {
+                            "name": "MultiLanguageProperty"
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA464#005 equipment protection level Note: editorial definition: Level of protection assigned to equipment based on its likelihood of becoming a source of ignition Note: Equipment protection level according to the IEC standards. According to the current nameplate, also the combination “GD” is permitted Note: The combination “GD” is no longer accepted and was changed in the standards. Currently the marking for “G” and “D” must be provided in a separate marking string. Older devices may still exist with the marking “GD”. Note: Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                            }
+                          ]
+                        },
+                        {
+                          "value": "Class I, Division 2",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties/ExplosionSafety/RegionalSpecificMarking",
+                                "index": 0,
+                                "idType": "IRI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "RegionalSpecificMarking",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template"
+                        },
+                        {
+                          "value": "db",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAQ325#003",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "TypeOfProtection",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA589#002 type of protection (Ex) Note: Symbol(s) for the Type of protection. Several types of protection are separated by a semicolon “;” "
+                            }
+                          ]
+                        },
+                        {
+                          "value": "IIC",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAT372#001",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "ExplosionGroup",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA961#007 permitted gas group/explosion group Note: Equipment grouping according to IEC 60079-0 is meant by this property Note: Symbol(s) for the gas group (IIA…IIC) or dust group (IIIA…IIIC) "
+                            }
+                          ]
+                        },
+                        {
+                          "value": "-40",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAZ952#001",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "MinimumAmbientTemperature",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "Decimal"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA621#007 minimum ambient temperature Note: editorial defnition: lower limit of the temperature range of the environment in which the component, the pipework or the system can be operated Note: Rated minimum ambient temperature Note: Positive temperatures are listed without “+” sign. If several temperatures ranges are marked, only the most general range shall be indicated in the template, which is consistent with the specified temperature class or maximum surface temperature. Other temperature ranges and temperature classes/maximum surface temperatures may be listed in the instructions."
+                            }
+                          ]
+                        },
+                        {
+                          "value": "120",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-BAA039#010",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "MaxAmbientTemperature",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "Decimal"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA623#007 maximum ambient temperature Note: editorial definition: upper limit of the temperature range of the environment in which the component, the pipework or the system can be operated Note: Rated maximum ambient temperature Note: Positive temperatures are listed without “+” sign. If several temperatures ranges are marked, only the most general range shall be indicated in the template, which is consistent with the specified temperature class or maximum surface temperature. Other temperature ranges and temperature classes/maximum surface temperatures may be listed in the instructions."
+                            }
+                          ]
+                        },
+                        {
+                          "value": "100",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAM666#005",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "MaxSurfaceTemperatureForDustProof",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "Decimal"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABB159#004 maximum surface temperature for dust-proof Note: Maximum surface temperature of the device (dust layer ≤ 5 mm) for specified maximum ambient and maximum process temperature, relevant for Group III only Note: Positive temperatures are listed without “+” sign. If several temperatures ranges are marked, only the most general range shall be indicated in the template, which is consistent with the specified temperature class or maximum surface temperature. Other temperature ranges and temperature classes/maximum surface temperatures may be listed in the instructions."
+                            }
+                          ]
+                        },
+                        {
+                          "value": "T4",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAO371#004",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "TemperatureClass",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA593#002 temperature class Note: editorial definition: classification system of electrical apparatus, based on its maximum surface temperature, intended for use in an explosive atmospheres with flammable gas, vapour or mist. Note: Temperature class for specified maximum ambient and maximum process temperature, relevant for Group II only (Further combinations may be provided in the instruction manual). "
+                            }
+                          ]
+                        }
+                      ],
+                      "kind": "Template",
+                      "descriptions": [
+                        {
+                          "language": "en",
+                          "text": "Note: If the device is mounted in the process boundary, ambient and process conditions are provided separately. "
+                        }
+                      ]
+                    },
+                    {
+                      "ordered": false,
+                      "allowDuplicates": false,
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "local": true,
+                            "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties/ExplosionSafety/ProcessConditions",
+                            "index": 0,
+                            "idType": "IRI"
+                          }
+                        ]
+                      },
+                      "constraints": [
+                        {
+                          "type": "Multiplicity",
+                          "valueType": "",
+                          "value": "ZeroToOne",
+                          "modelType": {
+                            "name": "Qualifier"
+                          }
+                        }
+                      ],
+                      "hasDataSpecification": [],
+                      "idShort": "ProcessConditions",
+                      "modelType": {
+                        "name": "SubmodelElementCollection"
+                      },
+                      "value": [
+                        {
+                          "value": "1G",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAK297#004",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "DeviceCategory",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA467#002 equipment/device category Note: editorial defnition: Category of device in accordance with directive 2014/34/EU Note: Equipment category according to the ATEX system. "
+                            }
+                          ]
+                        },
+                        {
+                          "value": {
+                            "langString": [
+                              {
+                                "language": "en",
+                                "text": "Ga"
+                              }
+                            ]
+                          },
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAM668#001",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "EquipmentProtectionLevel",
+                          "modelType": {
+                            "name": "MultiLanguageProperty"
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA464#005 equipment protection level Note: editorial defnition: Level of protection assigned to equipment based on its likelihood of becoming a source of ignition Note: Equipment protection level according to the IEC or other standards, e.g. Ga (IEC), Class I/Division 1 (US), Zone (EAC) Note: Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                            }
+                          ]
+                        },
+                        {
+                          "value": "IS",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties/ExplosionSafety/RegionalSpecificMarking",
+                                "index": 0,
+                                "idType": "IRI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "RegionalSpecificMarking",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template"
+                        },
+                        {
+                          "value": "ia",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAQ325#003",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "TypeOfProtection",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA589#002 type of protection (Ex) Note: Symbol(s) for the Type of protection. Several types of protection are separated by a semicolon “;” "
+                            }
+                          ]
+                        },
+                        {
+                          "value": "IIC",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAT372#001",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "ExplosionGroup",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA961#007 permitted gas group/explosion group Note: editorial definition: classification of dangerous gaseous substances based on their ability to be ignited Note: Equipment grouping according to IEC 60079-0 is meant by this property Note: Symbol(s) for the gas group (IIA…IIC) or dust group (IIIA…IIIC) "
+                            }
+                          ]
+                        },
+                        {
+                          "value": "-40",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAN309#004",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "LowerLimitingValueOfProcessTemperature",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "Decimal"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: Rated minimum process temperature Note: Positive temperatures are listed without “+” sign. If several temperatures ranges are marked, only the most general range shall be indicated in the template, which is consistent with the specified temperature class or maximum surface temperature. Other temperature ranges and temperature classes/maximum surface temperatures may be listed in the instructions."
+                            }
+                          ]
+                        },
+                        {
+                          "value": "120",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAN307#004",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "UpperLimitingValueOfProcessTemperature",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "Decimal"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: Rated maximum process temperature Note: Positive temperatures are listed without “+” sign. If several temperatures ranges are marked, only the most general range shall be indicated in the template, which is consistent with the specified temperature class or maximum surface temperature. Other temperature ranges and temperature classes/maximum surface temperatures may be listed in the instructions."
+                            }
+                          ]
+                        },
+                        {
+                          "value": "85",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAM666#005",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "MaxSurfaceTemperatureForDustProof",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "Decimal"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABB159#004 maximum surface temperature for dust-proof Note: Maximum surface temperature (dust layer ≤ 5 mm) for specified maximum ambient and maximum process temperature, relevant for Group III only Note: Positive temperatures are listed without “+” sign. If several temperatures ranges are marked, only the most general range shall be indicated in the template, which is consistent with the specified temperature class or maximum surface temperature. Other temperature ranges and temperature classes/maximum surface temperatures may be listed in the instructions."
+                            }
+                          ]
+                        },
+                        {
+                          "value": "T4",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAO371#004",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "TemperatureClass",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA593#002 temperature class Note: editorial definition: classification system of electrical apparatus, based on its maximum surface temperature, intended for use in an explosive atmospheres with flammable gas, vapour or mist. Note: Temperature class for specified maximum ambient and maximum process temperature, relevant for Group II only (Further combinations may be provided in the instruction manual). "
+                            }
+                          ]
+                        }
+                      ],
+                      "kind": "Template",
+                      "descriptions": [
+                        {
+                          "language": "en",
+                          "text": "Note: If the device is mounted in the process boundary, ambient and process conditions are provided separately. "
+                        }
+                      ]
+                    },
+                    {
+                      "ordered": false,
+                      "allowDuplicates": false,
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "local": true,
+                            "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties/ExplosionSafety/ExternalElectricalCircuit",
+                            "index": 0,
+                            "idType": "IRI"
+                          }
+                        ]
+                      },
+                      "constraints": [
+                        {
+                          "type": "Multiplicity",
+                          "valueType": "",
+                          "value": "ZeroToMany",
+                          "modelType": {
+                            "name": "Qualifier"
+                          }
+                        }
+                      ],
+                      "hasDataSpecification": [],
+                      "idShort": "ExternalElectricalCircuit",
+                      "modelType": {
+                        "name": "SubmodelElementCollection"
+                      },
+                      "value": [
+                        {
+                          "value": "+/-",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0112/2///61987#ABB147#004",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "DesignationOfElectricalTerminal",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: For each circuit the designation of the terminals shall be specified. If several circuits are provided with the same parameters, their terminal pairs are listed and separated by a semicolon. If several circuits belong to one channel this shall be described in the instructions. "
+                            }
+                          ]
+                        },
+                        {
+                          "value": "db",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAQ325#003",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "TypeOfProtection",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA589#002 type of protection (Ex)) Note:  ·       Type of protection for the device as listed in the certificate ·       Symbol(s) for the Type of protection. Several types of protection are separated by a semicolon “;” ·       If several TypeOfProtection are listed in the same certificate, for each TypeOfProtection a separate SMC “Explosion Safety” shall be provided "
+                            }
+                          ]
+                        },
+                        {
+                          "value": {
+                            "langString": [
+                              {
+                                "language": "en",
+                                "text": "Ga"
+                              }
+                            ]
+                          },
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAM668#001",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "EquipmentProtectionLevel",
+                          "modelType": {
+                            "name": "MultiLanguageProperty"
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA464#005 equipment protection level Note: editorial definition: Level of protection assigned to equipment based on its likelihood of becoming a source of ignition Note: EPL according to IEC standards Note: value should be chosen from an enumeration list with values “Ga, Gb, Gc, Da, Db, Dc, Ma, Mb”  Note: Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                            }
+                          ]
+                        },
+                        {
+                          "value": "IIC",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAT372#001",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "ExplosionGroup",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABA961#007 permitted gas group/explosion group Note: editorial definition: classification of dangerous gaseous substances based on their ability to be ignited Note: Equipment grouping according to IEC 60079-0 is meant by this property Note: Symbol(s) for the gas group (IIA…IIC) or dust group (IIIA…IIIC) "
+                            }
+                          ]
+                        },
+                        {
+                          "value": "linear",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties/ExplosionSafety/ExternalElectricalCircuit/Characteristics",
+                                "index": 0,
+                                "idType": "IRI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "Characteristics",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: linear/ non-linear "
+                            }
+                          ]
+                        },
+                        {
+                          "value": "x",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties/ExplosionSafety/ExternalElectricalCircuit/Fisco",
+                                "index": 0,
+                                "idType": "IRI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "Fisco",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: Enter “x” if relevant "
+                            }
+                          ]
+                        },
+                        {
+                          "value": "x",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate/Markings/Marking/ExplosionSafeties/ExplosionSafety/ExternalElectricalCircuit/TwoWISE",
+                                "index": 0,
+                                "idType": "IRI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "TwoWISE",
+                          "modelType": {
+                            "name": "Property"
+                          },
+                          "valueType": {
+                            "dataObjectType": {
+                              "name": "String"
+                            }
+                          },
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: Enter “x” if relevant "
+                            }
+                          ]
+                        },
+                        {
+                          "ordered": false,
+                          "allowDuplicates": false,
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAQ380#006",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "SafetyRelatedPropertiesForPassiveBehaviour",
+                          "modelType": {
+                            "name": "SubmodelElementCollection"
+                          },
+                          "value": [
+                            {
+                              "value": "1250",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "ConceptDescription",
+                                    "local": true,
+                                    "value": "0173-1#02-AAQ372#003",
+                                    "index": 0,
+                                    "idType": "IRDI"
+                                  }
+                                ]
+                              },
+                              "constraints": [
+                                {
+                                  "type": "Multiplicity",
+                                  "valueType": "",
+                                  "value": "ZeroToOne",
+                                  "modelType": {
+                                    "name": "Qualifier"
+                                  }
+                                }
+                              ],
+                              "hasDataSpecification": [],
+                              "idShort": "MaxInputPower",
+                              "modelType": {
+                                "name": "Property"
+                              },
+                              "valueType": {
+                                "dataObjectType": {
+                                  "name": "Decimal"
+                                }
+                              },
+                              "kind": "Template",
+                              "descriptions": [
+                                {
+                                  "language": "en",
+                                  "text": "Note: see also [IRDI] 0112/2///61987#ABA981#001 maximum input power (Pi) Note: Limit value for input power "
+                                }
+                              ]
+                            },
+                            {
+                              "value": "30",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "ConceptDescription",
+                                    "local": true,
+                                    "value": "0173-1#02-AAM638#003",
+                                    "index": 0,
+                                    "idType": "IRDI"
+                                  }
+                                ]
+                              },
+                              "constraints": [
+                                {
+                                  "type": "Multiplicity",
+                                  "valueType": "",
+                                  "value": "ZeroToOne",
+                                  "modelType": {
+                                    "name": "Qualifier"
+                                  }
+                                }
+                              ],
+                              "hasDataSpecification": [],
+                              "idShort": "MaxInputVoltage",
+                              "modelType": {
+                                "name": "Property"
+                              },
+                              "valueType": {
+                                "dataObjectType": {
+                                  "name": "Decimal"
+                                }
+                              },
+                              "kind": "Template",
+                              "descriptions": [
+                                {
+                                  "language": "en",
+                                  "text": "Note: see also [IRDI] 0112/2///61987#ABA982#001 maximum input voltage (Ui) Note: Limit value for input voltage "
+                                }
+                              ]
+                            },
+                            {
+                              "value": "100",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "ConceptDescription",
+                                    "local": true,
+                                    "value": "0173-1#02-AAM642#004",
+                                    "index": 0,
+                                    "idType": "IRDI"
+                                  }
+                                ]
+                              },
+                              "constraints": [
+                                {
+                                  "type": "Multiplicity",
+                                  "valueType": "",
+                                  "value": "ZeroToOne",
+                                  "modelType": {
+                                    "name": "Qualifier"
+                                  }
+                                }
+                              ],
+                              "hasDataSpecification": [],
+                              "idShort": "MaxInputCurrent",
+                              "modelType": {
+                                "name": "Property"
+                              },
+                              "valueType": {
+                                "dataObjectType": {
+                                  "name": "Decimal"
+                                }
+                              },
+                              "kind": "Template",
+                              "descriptions": [
+                                {
+                                  "language": "en",
+                                  "text": "Note: see also [IRDI] 0112/2///61987#ABA983#001 maximum input current (Ii) Note: Limit value for input current "
+                                }
+                              ]
+                            },
+                            {
+                              "value": "0",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "ConceptDescription",
+                                    "local": true,
+                                    "value": "0173-1#02-AAM640#004",
+                                    "index": 0,
+                                    "idType": "IRDI"
+                                  }
+                                ]
+                              },
+                              "constraints": [
+                                {
+                                  "type": "Multiplicity",
+                                  "valueType": "",
+                                  "value": "ZeroToOne",
+                                  "modelType": {
+                                    "name": "Qualifier"
+                                  }
+                                }
+                              ],
+                              "hasDataSpecification": [],
+                              "idShort": "MaxInternalCapacitance",
+                              "modelType": {
+                                "name": "Property"
+                              },
+                              "valueType": {
+                                "dataObjectType": {
+                                  "name": "Decimal"
+                                }
+                              },
+                              "kind": "Template",
+                              "descriptions": [
+                                {
+                                  "language": "en",
+                                  "text": "Note: see also [IRDI] 0112/2///61987#ABA984#001 maximum internal capacitance (Ci) Note: Maximum internal capacitance of the circuit "
+                                }
+                              ]
+                            },
+                            {
+                              "value": "0",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "ConceptDescription",
+                                    "local": true,
+                                    "value": "0173-1#02-AAM639#003",
+                                    "index": 0,
+                                    "idType": "IRDI"
+                                  }
+                                ]
+                              },
+                              "constraints": [
+                                {
+                                  "type": "Multiplicity",
+                                  "valueType": "",
+                                  "value": "ZeroToOne",
+                                  "modelType": {
+                                    "name": "Qualifier"
+                                  }
+                                }
+                              ],
+                              "hasDataSpecification": [],
+                              "idShort": "MaxInternalInductance",
+                              "modelType": {
+                                "name": "Property"
+                              },
+                              "valueType": {
+                                "dataObjectType": {
+                                  "name": "Decimal"
+                                }
+                              },
+                              "kind": "Template",
+                              "descriptions": [
+                                {
+                                  "language": "en",
+                                  "text": "Note: see also [IRDI] 0112/2///61987#ABA985#001 maximum internal inductance (Li) Note: Maximum internal inductance of the circuit "
+                                }
+                              ]
+                            }
+                          ],
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABC586#001 Safety related properties for passive behaviour Note: IS-parameters for passive circuits, if relevant (e.g. 2 wire field devices, valves) "
+                            }
+                          ]
+                        },
+                        {
+                          "ordered": false,
+                          "allowDuplicates": false,
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "local": true,
+                                "value": "0173-1#02-AAQ381#006",
+                                "index": 0,
+                                "idType": "IRDI"
+                              }
+                            ]
+                          },
+                          "constraints": [
+                            {
+                              "type": "Multiplicity",
+                              "valueType": "",
+                              "value": "ZeroToOne",
+                              "modelType": {
+                                "name": "Qualifier"
+                              }
+                            }
+                          ],
+                          "hasDataSpecification": [],
+                          "idShort": "SafetyRelatedPropertiesForActiveBehaviour",
+                          "modelType": {
+                            "name": "SubmodelElementCollection"
+                          },
+                          "value": [
+                            {
+                              "value": "960",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "ConceptDescription",
+                                    "local": true,
+                                    "value": "0173-1#02-AAQ371#003",
+                                    "index": 0,
+                                    "idType": "IRDI"
+                                  }
+                                ]
+                              },
+                              "constraints": [
+                                {
+                                  "type": "Multiplicity",
+                                  "valueType": "",
+                                  "value": "ZeroToOne",
+                                  "modelType": {
+                                    "name": "Qualifier"
+                                  }
+                                }
+                              ],
+                              "hasDataSpecification": [],
+                              "idShort": "MaxOutputPower",
+                              "modelType": {
+                                "name": "Property"
+                              },
+                              "valueType": {
+                                "dataObjectType": {
+                                  "name": "Decimal"
+                                }
+                              },
+                              "kind": "Template",
+                              "descriptions": [
+                                {
+                                  "language": "en",
+                                  "text": "Note: see also [IRDI] 0112/2///61987#ABA987#001 maximum output power (Po) Note: Limit value for output power "
+                                }
+                              ]
+                            },
+                            {
+                              "value": "15.7",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "ConceptDescription",
+                                    "local": true,
+                                    "value": "0173-1#02-AAM635#003",
+                                    "index": 0,
+                                    "idType": "IRDI"
+                                  }
+                                ]
+                              },
+                              "constraints": [
+                                {
+                                  "type": "Multiplicity",
+                                  "valueType": "",
+                                  "value": "ZeroToOne",
+                                  "modelType": {
+                                    "name": "Qualifier"
+                                  }
+                                }
+                              ],
+                              "hasDataSpecification": [],
+                              "idShort": "MaxOutputVoltage",
+                              "modelType": {
+                                "name": "Property"
+                              },
+                              "valueType": {
+                                "dataObjectType": {
+                                  "name": "Decimal"
+                                }
+                              },
+                              "kind": "Template",
+                              "descriptions": [
+                                {
+                                  "language": "en",
+                                  "text": "Note: see also [IRDI] 0112/2///61987#ABA989#001 maximum output voltage (Uo) Note: Limit value for open circuits output voltage "
+                                }
+                              ]
+                            },
+                            {
+                              "value": "245",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "ConceptDescription",
+                                    "local": true,
+                                    "value": "0173-1#02-AAM641#004",
+                                    "index": 0,
+                                    "idType": "IRDI"
+                                  }
+                                ]
+                              },
+                              "constraints": [
+                                {
+                                  "type": "Multiplicity",
+                                  "valueType": "",
+                                  "value": "ZeroToOne",
+                                  "modelType": {
+                                    "name": "Qualifier"
+                                  }
+                                }
+                              ],
+                              "hasDataSpecification": [],
+                              "idShort": "MaxOutputCurrent",
+                              "modelType": {
+                                "name": "Property"
+                              },
+                              "valueType": {
+                                "dataObjectType": {
+                                  "name": "Decimal"
+                                }
+                              },
+                              "kind": "Template",
+                              "descriptions": [
+                                {
+                                  "language": "en",
+                                  "text": "Note: see also [IRDI] 0112/2///61987#ABA988#001maximum output current (Io) Note: Limit value for closed circuit output current "
+                                }
+                              ]
+                            },
+                            {
+                              "value": "2878",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "ConceptDescription",
+                                    "local": true,
+                                    "value": "0173-1#02-AAM637#004",
+                                    "index": 0,
+                                    "idType": "IRDI"
+                                  }
+                                ]
+                              },
+                              "constraints": [
+                                {
+                                  "type": "Multiplicity",
+                                  "valueType": "",
+                                  "value": "ZeroToOne",
+                                  "modelType": {
+                                    "name": "Qualifier"
+                                  }
+                                }
+                              ],
+                              "hasDataSpecification": [],
+                              "idShort": "MaxExternalCapacitance",
+                              "modelType": {
+                                "name": "Property"
+                              },
+                              "valueType": {
+                                "dataObjectType": {
+                                  "name": "Decimal"
+                                }
+                              },
+                              "kind": "Template",
+                              "descriptions": [
+                                {
+                                  "language": "en",
+                                  "text": "Note: see also [IRDI] 0112/2///61987#ABA990#001 maximum external capacitance (Co) Note: Maximum external capacitance to be connected to the circuit "
+                                }
+                              ]
+                            },
+                            {
+                              "value": "2.9",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "ConceptDescription",
+                                    "local": true,
+                                    "value": "0173-1#02-AAM636#003",
+                                    "index": 0,
+                                    "idType": "IRDI"
+                                  }
+                                ]
+                              },
+                              "constraints": [
+                                {
+                                  "type": "Multiplicity",
+                                  "valueType": "",
+                                  "value": "ZeroToOne",
+                                  "modelType": {
+                                    "name": "Qualifier"
+                                  }
+                                }
+                              ],
+                              "hasDataSpecification": [],
+                              "idShort": "MaxExternalInductance",
+                              "modelType": {
+                                "name": "Property"
+                              },
+                              "valueType": {
+                                "dataObjectType": {
+                                  "name": "Decimal"
+                                }
+                              },
+                              "kind": "Template",
+                              "descriptions": [
+                                {
+                                  "language": "en",
+                                  "text": "Note: see also [IRDI] 0112/2///61987#ABA991#001 maximum external inductance (Lo) Note: Maximum external inductance to be connected to the circuit "
+                                }
+                              ]
+                            },
+                            {
+                              "value": "",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "ConceptDescription",
+                                    "local": true,
+                                    "value": "0173-1#02-AAM634#003",
+                                    "index": 0,
+                                    "idType": "IRDI"
+                                  }
+                                ]
+                              },
+                              "constraints": [
+                                {
+                                  "type": "Multiplicity",
+                                  "valueType": "",
+                                  "value": "ZeroToOne",
+                                  "modelType": {
+                                    "name": "Qualifier"
+                                  }
+                                }
+                              ],
+                              "hasDataSpecification": [],
+                              "idShort": "MaxExternalInductanceResistanceRatio",
+                              "modelType": {
+                                "name": "Property"
+                              },
+                              "valueType": {
+                                "dataObjectType": {
+                                  "name": "Decimal"
+                                }
+                              },
+                              "kind": "Template",
+                              "descriptions": [
+                                {
+                                  "language": "en",
+                                  "text": "Note: see also [IRDI] 0112/2///61987#ABB145#001 maximum external inductance/resistance ratio (Lo/Ro) Note: External Inductance to Resistance ratio "
+                                }
+                              ]
+                            }
+                          ],
+                          "kind": "Template",
+                          "descriptions": [
+                            {
+                              "language": "en",
+                              "text": "Note: see also [IRDI] 0112/2///61987#ABC585#001 Safety related properties for active behaviour Note: IS-parameters for active circuits, if relevant (e.g. power supply, IS-barriers) "
+                            }
+                          ]
+                        }
+                      ],
+                      "kind": "Template",
+                      "descriptions": [
+                        {
+                          "language": "en",
+                          "text": "Note: If several external circuits can be connected to the device, this block shall provide a cardinality with the number of circuits Note: If for one external IS circuit several sets of safety parameters are provided (e.g. for several material groups), each set is specified in a separate block as a separate circuit. "
+                        }
+                      ]
+                    }
+                  ],
+                  "kind": "Template"
+                }
+              ],
+              "kind": "Template"
+            }
+          ],
+          "kind": "Template",
+          "descriptions": [
+            {
+              "language": "en",
+              "text": "Note: see also [IRDI] 0112/2///61987#ABH515#003 Certificate or approval Note: CE marking is declared as mandatory according to the Blue Guide of the EU-Commission "
+            }
+          ]
+        }
+      ],
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: CE marking is declared as mandatory according to EU Machine Directive 2006/42/EC."
+        }
+      ]
+    },
+    {
+      "ordered": false,
+      "allowDuplicates": true,
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "local": true,
+            "value": "0173-1#01-AGZ672#001",
+            "index": 0,
+            "idType": "IRDI"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "Multiplicity",
+          "valueType": "",
+          "value": "ZeroToOne",
+          "modelType": {
+            "name": "Qualifier"
+          }
+        }
+      ],
+      "hasDataSpecification": [],
+      "idShort": "AssetSpecificProperties",
+      "modelType": {
+        "name": "SubmodelElementCollection"
+      },
+      "value": [
+        {
+          "ordered": false,
+          "allowDuplicates": false,
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": true,
+                "value": "0173-1#01-AHD205#001",
+                "index": 0,
+                "idType": "IRDI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "OneToMany",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "GuidelineSpecificProperties{00}",
+          "modelType": {
+            "name": "SubmodelElementCollection"
+          },
+          "value": [
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": true,
+                    "value": "0173-1#02-AAO856#002",
+                    "index": 0,
+                    "idType": "IRDI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "One",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "GuidelineForConformityDeclaration",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template"
+            },
+            {
+              "value": "",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "local": false,
+                    "value": "www.example.com/ids/cd/3325_9020_5022_1074",
+                    "index": 0,
+                    "idType": "IRI"
+                  }
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "Multiplicity",
+                  "valueType": "",
+                  "value": "OneToMany",
+                  "modelType": {
+                    "name": "Qualifier"
+                  }
+                }
+              ],
+              "hasDataSpecification": [],
+              "idShort": "{arbitrary}",
+              "modelType": {
+                "name": "Property"
+              },
+              "valueType": {
+                "dataObjectType": {
+                  "name": "String"
+                }
+              },
+              "kind": "Template"
+            }
+          ],
+          "kind": "Template"
+        },
+        {
+          "value": "",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "local": false,
+                "value": "www.example.com/ids/cd/3325_9020_5022_1964",
+                "index": 0,
+                "idType": "IRI"
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "type": "Multiplicity",
+              "valueType": "",
+              "value": "OneToMany",
+              "modelType": {
+                "name": "Qualifier"
+              }
+            }
+          ],
+          "hasDataSpecification": [],
+          "idShort": "{arbitrary}",
+          "modelType": {
+            "name": "Property"
+          },
+          "valueType": {
+            "dataObjectType": {
+              "name": ""
+            }
+          },
+          "kind": "Template"
+        }
+      ],
+      "kind": "Template",
+      "descriptions": [
+        {
+          "language": "en",
+          "text": "Note: defined as “Asset specific nameplate information” per ECLASS "
+        }
+      ]
+    }
+  ],
+  "descriptions": [
+    {
+      "language": "en",
+      "text": "Contains the nameplate information attached to the product"
+    }
+  ]
+}
