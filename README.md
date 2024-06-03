@@ -17,10 +17,6 @@ The folder `development` contains Submodel templates, which are currently in dev
 
 The folder `published` contains Submodel templates, which are published by IDTA and Industrie 4.0. These are called 'registered' Submodel templates.
 
-## Submodel Templates known to the IDTA
-
-The folder `yellow_pages` contains Submodel templates, which are known to the IDTA, but currently not subject of an IDTA registration process.
-
 ## Collaboration Mode
 
 For the time being this repository is maintained by the IDTA office. In the future it is planned to allow pull request via CLA (contributor license agreement). 
