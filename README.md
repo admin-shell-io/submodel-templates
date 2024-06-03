@@ -9,10 +9,6 @@ Reading Guide](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/2022
 
 Within this repository, the Submodel Templates are organized in 3 folders:
 
-## Submodel Templates in development by IDTA
-
-The folder `development` contains Submodel templates, which are currently in development pha and already publicly available. Feedback might be provided by the issues tracker.
-
 ## Submodel Templates published by IDTA
 
 The folder `published` contains Submodel templates, which are published by IDTA and Industrie 4.0. These are called 'registered' Submodel templates.
