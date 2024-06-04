@@ -7,7 +7,6 @@ https://creativecommons.org/licenses/by/4.0/)
 This internet repository provides Submodel Templates (SMT) for Asset Administration Shell (AAS). For an overview confer the [AAS
 Reading Guide](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/2022-12-07_IDTA_AAS-Reading-Guide.pdf). For details of the meta model for AAS see [Specification of the Asset Administration Shell Part 1: Metamodel](https://industrialdigitaltwin.org/content-hub/aasspecifications/idta_01001-3-0_metamodel).
 
-Within this repository, the Submodel Templates are organized in 3 folders:
 
 ## Submodel Templates published by IDTA
 
