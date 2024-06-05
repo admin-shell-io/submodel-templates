@@ -18,9 +18,8 @@ For the time being this repository is maintained by the IDTA office. In the futu
 Please use the issue tracker [submit a new issue](https://github.com/admin-shell-io/submodel-templates/issues/new) of this repository to provide feedback. 
 
 ## Submodel templates in development
-The submodel development is currently being carried out within IDTA teams. If you have any inquiries regarding the submodel's development, you may direct your questions to the IDTA office [info@idtwin.org].
 
-
+The submodel currently under development is being managed by the IDTA. For any inquiries about the submodel's progress, please contact the IDTA office at [info@idtwin.org].
 
 # Table of IDTA Submodel templates
 
