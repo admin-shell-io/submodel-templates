@@ -17,6 +17,11 @@ The folder `published` contains Submodel templates, which are published by IDTA 
 For the time being this repository is maintained by the IDTA office. In the future it is planned to allow pull request via CLA (contributor license agreement). 
 Please use the issue tracker [submit a new issue](https://github.com/admin-shell-io/submodel-templates/issues/new) of this repository to provide feedback. 
 
+## Submodel templates in development
+The submodel development is currently being carried out within IDTA teams. If you have any inquiries regarding the submodel's development, you may direct your questions to the IDTA office [info@idtwin.org].
+
+
+
 # Table of IDTA Submodel templates
 
 (this table is auto-generated)
