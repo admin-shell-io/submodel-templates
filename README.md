@@ -19,7 +19,7 @@ Please use the issue tracker [submit a new issue](https://github.com/admin-shell
 
 ## Submodel templates in development
 
-The submodel currently under development is being managed by the IDTA. For any inquiries about the submodel's progress, please contact the [IDTA](officeinfo@idtwin.org).
+The submodel currently under development is being managed by the IDTA. For any inquiries about the submodel's progress, please contact the IDTA office (info@idtwin.org).
 You can find the list of submodels under development at this link: [Link](https://industrialdigitaltwin.org/en/content-hub/submodels).
 
 # Table of IDTA Submodel templates
