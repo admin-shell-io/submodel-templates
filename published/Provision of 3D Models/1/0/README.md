@@ -1,4 +1,4 @@
-# Provision of Simulation Models (Version 1.0) 
+# Provision of 3D Models (Version 1.0) 
 
 This is a Submodel template specification for the Asset Adminstration Shell.
 
