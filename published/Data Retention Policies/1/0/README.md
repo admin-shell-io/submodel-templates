@@ -1,4 +1,4 @@
-# Provision of Simulation Models (Version 1.0) 
+# Data Retention Policies (Version 1.0) 
 
 This is a Submodel template specification for the Asset Adminstration Shell.
 
