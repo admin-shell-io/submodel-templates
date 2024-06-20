@@ -1,4 +1,4 @@
-# Asset Interface Mapping Configuration (Version 1.0) 
+# Asset Interfaces Mapping Configuration (Version 1.0) 
 
 This is a Submodel template specification for the Asset Adminstration Shell.
 
