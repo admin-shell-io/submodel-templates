@@ -28,7 +28,26 @@ of AID versions may trigger the release of adapted AIMC versions.
 
 ![image](https://github.com/admin-shell-io/submodel-templates/assets/111876087/13b8b6c0-f2bb-4b64-bc10-d3bae3f2a517)
 
-
+Figure:AIMC usage in conjunction with AID Submodel
+The number legends in Figure 1 are described as follows:
+(1) Asset Interfaces Description Submodel: it holds the description model of the asset service (or asset 
+related service) interfaces and its datapoint.
+(2) Data Mapping Processor (DMP): This is a software component that provides connection to the asset 
+and exchanges data as defined within the AID Submodel. It also manages the mapping of retrieved 
+data to a desired SM according to AIMC SM definition.
+(3) Data transmission channel between Data Mapping Processor and asset service. Depending on the 
+underlying protocol (e.g. Modbus, MQTT) used by the asset service (and as described by the AID), 
+the specific data point can be requested/subscribed.
+(4) Data transmission channel between Data Mapping Processor and asset related service. Depending 
+on the underlying protocol (e.g. HTTP) used by the asset related service (and as described by the 
+AID), the specific data point can be requested/subscribed.
+(5) AIMC Submodel: it provides the necessary information about the mapping of the datapoints 
+described by the AID to elements in a desired submodel.
+(6) Operational Data Submodel: it is a target submodel where the (runtime) data is being stored. The 
+details about this location are in the AIMC. With AIMC's information, the Data Mapping Processor 
+can correctly map the asset's data to the right parts of the target submodel.
+(7) HTTP/REST AAS Interface used to enable communication between AAS server and external 
+applications.
 
 ## About this version
 
