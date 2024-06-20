@@ -29,7 +29,7 @@ of AID versions may trigger the release of adapted AIMC versions.
 ![image](https://github.com/admin-shell-io/submodel-templates/assets/111876087/13b8b6c0-f2bb-4b64-bc10-d3bae3f2a517)
 
 Figure:AIMC usage in conjunction with AID Submodel
-The number legends in Figure 1 are described as follows:
+The number legends in Figure are described as follows:
 (1) Asset Interfaces Description Submodel: it holds the description model of the asset service (or asset 
 related service) interfaces and its datapoint.
 (2) Data Mapping Processor (DMP): This is a software component that provides connection to the asset 
