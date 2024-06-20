@@ -23,7 +23,7 @@ The current approach of employee scheduling (shift planning) and operative emplo
 group leader will reach its limits in future Industry 4.0 production. The classic qualification matrix for planning 
 the necessary qualifications and skills will also no longer be sufficient. The manual creation and maintenance 
 of the matrix will get at its limits and is not interoperable.
-The "Workstation Worker Matching Data" Submodel is used to map the general-, ad hoc- and orderdependent demand of a workstation for qualifications and skills. In addition, further information will be 
+The "Workstation Worker Matching Data" Submodel is used to map the general-, ad hoc- and order dependent demand of a workstation for qualifications and skills. In addition, further information will be 
 provided by the Submodel that are relevant for operative worker deployment and employee scheduling.
 The demand for human qualifications and skills at a workstation is a result of the assignment of tasks (steps 
 of a workplan) to a workstation. This Submodel Template assumes that there is a tool existing that is 
