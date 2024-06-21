@@ -11,8 +11,6 @@ classification of material data within Enterprise Resource Planning (ERP), Produ
 (PIM), and Product Lifecycle Management (PLM) / Product Data Management (PDM) systems. A Material 
 Master must exist as an object so that Classifications to this Material can be assigned correspondingly.
 
-#### Core Functions and Application Areas:
-
 #### One-time Definition of Characteristics: 
 This Submodel allows users to define and configure relevant  material data characteristics once. These characteristics are derived from existing Submodels and 
 consolidated into a unified mapping, serving as the foundation for material creation across different systems.
