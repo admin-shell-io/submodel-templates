@@ -11,25 +11,25 @@ classification of material data within Enterprise Resource Planning (ERP), Produ
 (PIM), and Product Lifecycle Management (PLM) / Product Data Management (PDM) systems. A Material 
 Master must exist as an object so that Classifications to this Material can be assigned correspondingly.
 
-# Core Functions and Application Areas:
+#### Core Functions and Application Areas:
 
-# One-time Definition of Characteristics: 
+#### One-time Definition of Characteristics: 
 This Submodel allows users to define and configure relevant  material data characteristics once. These characteristics are derived from existing Submodels and 
 consolidated into a unified mapping, serving as the foundation for material creation across different systems.
 
-# Integrated Linking:
+#### Integrated Linking:
 Upon the retrieval of an Asset Administration Shell, the " Creation and classification of 
 materials in an ERP, PDM/PLM system" Submodel is directly linked to facilitate seamless integration and 
 creation of material data. This process supports the standardized collection and processing of material 
 information across system boundaries.
 
-# Import-capable Software Support: 
+#### Import-capable Software Support: 
 The implementation of this Submodel requires an import-capable 
 software solution that serves as the base for processing the " Creation and classification of materials in an 
 ERP, PDM/PLM system " Submodel and any additionally added Submodels. This software must be capable 
 of importing, processing, and linking the defined characteristics to the Asset Administration Shell.
 
-# Data Return and Reuse: 
+#### Data Return and Reuse: 
 After successful material creation, generated data such as material numbers are 
 returned to the Asset Administration Shell. These details can be used for creation in additional systems or 
 stored for archival purposes.
