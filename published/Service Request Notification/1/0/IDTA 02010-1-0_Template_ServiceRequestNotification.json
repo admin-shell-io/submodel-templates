@@ -1,0 +1,3348 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "ServiceRequestNotificationAAS",
+      "id": "https://admin-shell.io/idta/aas/ServiceRequestNotification/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/ServiceRequestNotification/1/0",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/ServiceRequestNotification/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "ServiceRequestNotification",
+      "description": [
+        {
+          "language": "en",
+          "text": "This submodel aims to standardize the description of a service request notification that can be used to create a service request notification for industrial assets or the asset creates it by itself."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ServiceRequestNotification/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "0173-1#01-AHX443#001"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "category": "PARAMETER",
+          "idShort": "NumberOfServiceRequestNotifications",
+          "displayName": [
+            {
+              "language": "de",
+              "text": "Anzahl Servicebedarfsmeldungen"
+            },
+            {
+              "language": "en",
+              "text": "Number Service Request Notification  "
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0173-1#02-ABI761#001"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "valueType": "xs:integer",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "ServiceRequestNotification",
+          "displayName": [
+            {
+              "language": "de",
+              "text": "Servicebedarfsmeldung"
+            },
+            {
+              "language": "en",
+              "text": "Service request notification"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0173-1#02-ABI788#001/0173-1#01-AHX444#001"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "ReportedBy",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Gemeldet von"
+                },
+                {
+                  "language": "en",
+                  "text": "Reported by"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI792#00/0173-1#01-AHX448#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "CustomerNumber",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Kundennummer"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Customer number"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABI769#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "SenderSystem",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Sendendes System"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Sender system"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABI770#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "entityType": "CoManagedEntity",
+                  "modelType": "Entity"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "NumberOfContacs",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Anzahl der Kontakte"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Number of contacts"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO203#004"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "ContactInformation",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Kontaktinformationen"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Contact information"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "The SMC \u201CContactInformation\u201D contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAQ837#007/0173-1#01-ADR448#007"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ServiceRequestNotificationId",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "ID der Bedarfsmeldung"
+                },
+                {
+                  "language": "en",
+                  "text": "ID of Service Request Notification"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI772#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Status",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABH938#002"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Priority",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Priorit\u00E4t der Meldung"
+                },
+                {
+                  "language": "en",
+                  "text": "Priority of notification"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI773#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "DefaultValue",
+                  "valueType": "xs:string",
+                  "value": "Medium"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "RelatedAsset",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Betroffenes Asset"
+                },
+                {
+                  "language": "en",
+                  "text": "Related Asset"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI774#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "entityType": "CoManagedEntity",
+              "modelType": "Entity"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ShortText",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Kurztext zur Servicebedarfsmeldung"
+                },
+                {
+                  "language": "en",
+                  "text": "Short text of Service Request"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI762#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Brief textual description of the subject matter"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ServiceType",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Typ des notwendigen Service"
+                },
+                {
+                  "language": "en",
+                  "text": "Type of requested service"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI763#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "DetailedInformation",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Detailinformationen zum Servicebedarf"
+                },
+                {
+                  "language": "en",
+                  "text": "Detailed information of service need"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI789#001/0173-1#01-AHX445#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "LongText",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Langtext zur Servicebedarfsmeldung"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Long text of Service Request "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABI764#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "StartOfFault",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Beginn der St\u00F6rung"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Start of fault"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABI765#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ErrorCode",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Fehlercode"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Error code"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABI766#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AttachedMedia",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Angeh\u00E4ngte Dateien"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Attached media"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABI790#001/0173-1#01-AHX446#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "category": "PARAMETER",
+                      "idShort": "NumberOfMedias",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Anzahl der Anh\u00E4nge"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Number of Media"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-ABI767#001"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:integer",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "Media",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Anhang"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Media"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-ABI791#001/0173-1#01-AHX447#001"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "valueType": "xs:string",
+                          "value": "OneToMany"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "DigitalFile",
+                          "displayName": [
+                            {
+                              "language": "de",
+                              "text": "Digitale Datei"
+                            },
+                            {
+                              "language": "en",
+                              "text": "Digital File"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABK126#001"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "ConceptQualifier",
+                              "type": "Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "contentType": "image/jpeg",
+                          "modelType": "File"
+                        },
+                        {
+                          "category": "PARAMETER",
+                          "idShort": "Comment",
+                          "displayName": [
+                            {
+                              "language": "de",
+                              "text": "Anmerkdung zur Datei"
+                            },
+                            {
+                              "language": "en",
+                              "text": "Comment to File"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABI768#001"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "ConceptQualifier",
+                              "type": "Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "language": "en",
+                              "text": "Explanations that refer to the attached file and relate to its use or origin"
+                            }
+                          ],
+                          "modelType": "MultiLanguageProperty"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "OnsiteContact",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Ansprechpartner vor Ort"
+                },
+                {
+                  "language": "en",
+                  "text": "Onsite contact"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI793#001/0173-1#01-AHX449#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "PartnerNumber",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Partnernummer"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Partner number"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABI771#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "NumberOfContacts",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Anzahl der Kontakte"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Number of contacts "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO203#004"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:integer",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "ContactInformation",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Kontaktinformationen"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Contact information"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "The SMC \u201CContactInformation\u201D contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAQ837#007/0173-1#01-ADR448#007"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "ContactInformation",
+      "administration": {
+        "version": "7",
+        "revision": "0"
+      },
+      "id": "0173-1#02-AAQ837#007/0173-1#01-ADR448#007",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Kontaktinformationen"
+              },
+              {
+                "language": "en",
+                "text": "Contact information"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The SMC \u201CContactInformation\u201D contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation "
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RoleOfContactPerson",
+      "id": "0173-1#02-AAO204#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "RoleOfContactPerson"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "function of a contact person in a process"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NationalCode",
+      "id": "0173-1#02-AAO134#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "NationalCode"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "code of a country"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Language",
+      "id": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Language",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Language"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Available language"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-AAO895#003"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CityTown",
+      "id": "0173-1#02-AAO132#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CityTown"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "town or city"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Company",
+      "id": "0173-1#02-AAW001#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Company"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the company"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Department",
+      "id": "0173-1#02-AAO127#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Department"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "administrative section within an organisation where a business partner is located"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Phone",
+      "id": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Phone"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Phone number including type"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TelephoneNumber",
+      "id": "0173-1#02-AAO136#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TelephoneNumber"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "complete telephone number to be called to reach a business partner"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TypeOfTelephone",
+      "id": "0173-1#02-AAO137#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TypeOfTelephone"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "characterization of a telephone according to its location or usage"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AvailableTime",
+      "id": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AvailableTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Specification of the available time window"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Fax",
+      "id": "0173-1#02-AAQ834#005",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Fax"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Fax number including type"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FaxNumber",
+      "id": "0173-1#02-AAO195#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FaxNumber"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "complete telephone number to be called to reach a business partner\u0027s fax machine"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TypeOfFaxNumber",
+      "id": "0173-1#02-AAO196#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TypeOfFaxNumber"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "characterization of the fax according its location or usage"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Email",
+      "id": "0173-1#02-AAQ836#005",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Email"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "E-mail address and encryption method"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "EmailAddress",
+      "id": "0173-1#02-AAO198#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "EmailAddress"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "electronic mail address of a business partner"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PublicKey",
+      "id": "0173-1#02-AAO200#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PublicKey"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "public part of an unsymmetrical key pair to sign or encrypt text or messages"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TypeOfEmailAddress",
+      "id": "0173-1#02-AAO199#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TypeOfEmailAddress"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "characterization of an e-mail address according to its location or usage"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TypeOfPublicKey",
+      "id": "0173-1#02-AAO201#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TypeOfPublicKey"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "characterization of a public key according to its encryption process"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IPCommunication0_00",
+      "id": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "IPCommunication0_00"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "ContactInformation/IPCommunication IP-based communication channels, e.g. chat or video call"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AddressOfAdditionalLink",
+      "id": "0173-1#02-AAQ326#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AddressOfAdditionalLink"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "web site address where information about the product or contact is given"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TypeOfCommunication",
+      "id": "https://admin-shell.io/zvei/nameplate/1/0/ ContactInformations/ContactInformation/IPCommunication/TypeOfCommunication",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TypeOfCommunication"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "characterization of an IP-based communication channel"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Street",
+      "id": "0173-1#02-AAO128#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Street"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "street name and house number"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Zipcode",
+      "id": "0173-1#02-AAO129#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Zipcode"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "ZIP code of address"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "POBox",
+      "id": "0173-1#02-AAO130#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "POBox"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "P.O. box number"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ZipCodeOfPOBox",
+      "id": "0173-1#02-AAO131#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ZipCodeOfPOBox"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "ZIP code of P.O. box address"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "StateCounty",
+      "id": "0173-1#02-AAO133#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "StateCounty"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "federal state a part of a state"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NameOfContact",
+      "id": "0173-1#02-AAO205#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "NameOfContact"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "surname of a contact person"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FirstName",
+      "id": "0173-1#02-AAO206#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FirstName"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "first name of a contact person"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MiddleNames",
+      "id": "0173-1#02-AAO207#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MiddleNames"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "middle names of contact person"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Title",
+      "id": "0173-1#02-AAO208#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Title"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "common, formal, religious, or other title preceding a contact person\u0027s name"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AcademicTitle",
+      "id": "0173-1#02-AAO209#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AcademicTitle"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "academic title preceding a contact person\u0027s name"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FurtherDetailsOfContact",
+      "id": "0173-1#02-AAO210#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FurtherDetailsOfContact"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "additional information of the contact person"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ServiceRequestNotification",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI788#001/0173-1#01-AHX444#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Servicebedarfsmeldung"
+              },
+              {
+                "language": "en",
+                "text": "Service request notification"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of information with which notifications are recorded and managed in the service and customer service area"
+              },
+              {
+                "language": "de",
+                "text": "Sammlung von Informationen mit denen im Service- und Kundendienstbereich Meldungen erfasst und verwaltet werden"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReportedBy",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI792#00/0173-1#01-AHX448#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Gemeldet von"
+              },
+              {
+                "language": "en",
+                "text": "Reported by"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Sammlung von einer oder mehreren nat\u00FCrlichen Personen oder einem Asset, welches die Meldung erstellt oder bekannt macht"
+              },
+              {
+                "language": "en",
+                "text": "Collection of one or more natural persons or assets that creates or publicizes the message"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ServiceRequestNotificationId",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI772#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "ID der Bedarfsmeldung"
+              },
+              {
+                "language": "en",
+                "text": "ID of request notification"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Nummer, die von einer Stelle der Meldung zugewiesen wird, um sie im weiteren Prozessablauf eindeutig zu identifizieren und zu referenzieren"
+              },
+              {
+                "language": "en",
+                "text": "Number assigned by an entity to the notification in order to uniquely identify and reference it in the further process flow"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "Status",
+      "displayName": [
+        {
+          "language": "de",
+          "text": "Status der Meldung"
+        },
+        {
+          "language": "en",
+          "text": "Status of notification"
+        }
+      ],
+      "administration": {
+        "version": "2",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABH938#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Status der Meldung"
+              },
+              {
+                "language": "en",
+                "text": "Status of notification"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Aktueller Bearbeitungszustand der Meldung innerhalb des Arbeitsablaufs"
+              },
+              {
+                "language": "en",
+                "text": "Current processing status of the notification within the workflow"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "in progress",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ567#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "sent",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA040#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "stopped",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ568#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "received",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA039#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "completed",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ565#002"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "Priority",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI773#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Priorit\u00E4t der Meldung"
+              },
+              {
+                "language": "en",
+                "text": "Priority of notification"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Bewertung des Vorrangs der Meldung, welcher sich aufgrund der Dringlichkeit oder Wichtigkeit ergibt"
+              },
+              {
+                "language": "en",
+                "text": "Rating of the primacy of the message, which results from the urgency or importance"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "Low",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA025#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Medium",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA026#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Very high",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA028#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "High",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA027#001"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RelatedAsset",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI774#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Betroffenes Asset"
+              },
+              {
+                "language": "en",
+                "text": "Related Asset"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Das von der Meldungsaktivit\u00E4t betroffene Objekt"
+              },
+              {
+                "language": "en",
+                "text": "The object affected by the notification activity"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ShortText",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI762#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Kurztext zur Servicebedarfsmeldung"
+              },
+              {
+                "language": "en",
+                "text": "Short text of service request notification"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Textuelle Kurzbeschreibung des Sachverhalts"
+              },
+              {
+                "language": "en",
+                "text": "Brief textual description of the subject matter"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "ServiceType",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI763#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Typ des notwendigen Service"
+              },
+              {
+                "language": "en",
+                "text": "Type of requested service"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Vordefinierte Klassifizierung einer angefragten Service-Dienstleistung"
+              },
+              {
+                "language": "en",
+                "text": "Predefined classification of a requested service"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "Application technology services",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA035#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Wear part",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA038#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Software/Firmware and Parameter Update",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA031#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Spare parts",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU493#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Inner Inspection",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-AAY785#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Repair",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU493#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Accessoires delivery",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-AAR847#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Retrofit measures (also conversion or modernization)",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA033#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Service Hotline Support ",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA036#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Preventive Maintenance",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA029#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Maintenance",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-AAR832#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "24 hours emergency parts service or delivery",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA034#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Other support",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA037#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Other Services",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA032#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Overhauling",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA030#001"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DetailedInformation",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI789#001/0173-1#01-AHX445#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Detailinformationen zum Servicebedarf"
+              },
+              {
+                "language": "en",
+                "text": "Detailed information of service"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Sammlung von ausf\u00FChrlich Informationen mit denen der vorliegende Sachverhalt im Service- und Kundendienstbereich beschrieben wird"
+              },
+              {
+                "language": "en",
+                "text": "Collection of in-depth information describing the situation concerned in the service and customer support area"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "OnsiteContact",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI793#001/0173-1#01-AHX449#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Ansprechpartner vor Ort"
+              },
+              {
+                "language": "en",
+                "text": "Onsite contact"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Sammlung von einer oder mehreren nat\u00FCrlichen Personen die sich in der gleichen oder nahen Lokalit\u00E4t zu dem Assets befinden"
+              },
+              {
+                "language": "en",
+                "text": "Collection of one or more natural persons located in the same or close locality to the asset"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "CustomerNumber",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI769#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Kundennummer"
+              },
+              {
+                "language": "en",
+                "text": "Customer number"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Ein alphanumerischer Schl\u00FCssel, der einen Kunden identifiziert"
+              },
+              {
+                "language": "en",
+                "text": "An alphanumeric key that identifies a customer"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SenderSystem",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI770#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Sendendes System"
+              },
+              {
+                "language": "en",
+                "text": "Sender system"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Asset, welches die Meldung erstellt oder bekannt macht"
+              },
+              {
+                "language": "en",
+                "text": "Assets that creates or makes known the notification"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "LongText",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI764#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Langtext zur Servicebedarfsmeldung"
+              },
+              {
+                "language": "en",
+                "text": "Long text of service request notification"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Textuelle ausf\u00FChrliche Beschreibung des Sachverhalts"
+              },
+              {
+                "language": "en",
+                "text": "Textual detailed description of the subject matter"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "StartOfFault",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI765#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Beginn der St\u00F6rung"
+              },
+              {
+                "language": "en",
+                "text": "Start of fault"
+              }
+            ],
+            "dataType": "TIMESTAMP",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Zeitpunkt, zu dem die betrachtete Situation eingetreten oder entstanden ist"
+              },
+              {
+                "language": "en",
+                "text": "Point in time at which the regarded situation happened or started"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "ErrorCode",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI766#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Fehlercode"
+              },
+              {
+                "language": "en",
+                "text": "Error code"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "technischer Schl\u00FCssel des Herstellers zur St\u00F6rungsbeschreibung"
+              },
+              {
+                "language": "en",
+                "text": "technical key of the manufacturer for malfunction description"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AttachedMedia",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI790#001/0173-1#01-AHX446#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Angeh\u00E4ngte Dateien"
+              },
+              {
+                "language": "en",
+                "text": "Attached media"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Sammlung von Dateianh\u00E4ngen, welche die Meldung erg\u00E4nzen und Zusatzinformatioen zur effizienten Bearbeitung der Meldung darstellen"
+              },
+              {
+                "language": "en",
+                "text": "Collection of file attachments that complement the notification and present additional information for processing the notification"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "PartnerNumber",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI771#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Partnernummer"
+              },
+              {
+                "language": "en",
+                "text": "Partner number"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Ein alphanumerischer Schl\u00FCssel, der einen Gesch\u00E4ftspartner identifiziert"
+              },
+              {
+                "language": "en",
+                "text": "An alphanumeric key that identifies a business partner"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Media",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI791#001/0173-1#01-AHX447#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Anhang"
+              },
+              {
+                "language": "en",
+                "text": "Media"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Datei, die als Beilage an die Meldung gef\u00FCgt ist"
+              },
+              {
+                "language": "en",
+                "text": "File attached to the notification"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AttachedMediaFile",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABK126#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Digitale Datei"
+              },
+              {
+                "language": "en",
+                "text": "Digital File"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Computerressource zur Aufzeichnung von Daten in einem Computerspeicherger\u00E4t, die in erster Linie durch ihren Dateinamen identifiziert wird"
+              },
+              {
+                "language": "en",
+                "text": "computer resource for recording data in a computer storage device, primarily identified by its file name"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "Comment",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI768#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Anmerkung zur Datei"
+              },
+              {
+                "language": "en",
+                "text": "Comment to File"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Erl\u00E4uterungen die sich auf die Angeh\u00E4ngte Datei beziehen und sich auf deren Verwendung oder Ursprung beziehen"
+              },
+              {
+                "language": "en",
+                "text": "Explanations that refer to the attached file and relate to its use or origin"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "NumberOfContacts",
+      "administration": {
+        "version": "4",
+        "revision": "0"
+      },
+      "id": "0173-1#02-AAO203#004",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Anzahl der Kontakte"
+              },
+              {
+                "language": "en",
+                "text": "Number of contacts "
+              }
+            ],
+            "dataType": "INTEGER_COUNT",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "category": "PARAMETER",
+      "idShort": "NumberOfMedia",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "0173-1#02-ABI767#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Anzahl der Anh\u00E4nge"
+              },
+              {
+                "language": "en",
+                "text": "Number of Media"
+              }
+            ],
+            "dataType": "INTEGER_COUNT",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
