@@ -1,0 +1,2855 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "CarbonFootprintAAS",
+      "id": "https://admin-shell.io/idta/aas/CarbonFootprint/0/9",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/CarbonFootprint/0/9",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/CarbonFootprint/0/9"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "CarbonFootprint",
+      "displayName": [
+        {
+          "language": "de",
+          "text": "C02 Footprint"
+        },
+        {
+          "language": "en",
+          "text": "Carbon Footprint"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "The Submodel provides the means to access the Carbon Footprint \u2026"
+        }
+      ],
+      "administration": {
+        "version": "0",
+        "revision": "9",
+        "templateId": "https://admin-shell.io/idta/CarbonFootprint/CarbonFootprint/0/9"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/CarbonFootprint/0/9",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/CarbonFootprint/CarbonFootprint/0/9"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "ProductCarbonFootprint",
+          "displayName": [
+            {
+              "language": "de",
+              "text": "Produkt C02-Fu\u00DFabdruck"
+            },
+            {
+              "language": "en",
+              "text": "Product carbon footprint"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Balance of greenhouse gas emissions along the entire life cycle\u2026"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprint/0/9"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "PCFCalculationMethod",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Folgenabsch\u00E4tzungsmethode / Berechnungsmethode"
+                },
+                {
+                  "language": "en",
+                  "text": "impact assessment method / calculation method"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Standard, method for determining the greenhouse gas emissions o\u2026"
+                },
+                {
+                  "language": "de",
+                  "text": "Norm, Standard, Verfahren zur Ermittlung der Treibhausgas-Emiss\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABG854#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "PCFCO2eq",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "CO2 eq Klimawandel"
+                },
+                {
+                  "language": "en",
+                  "text": "CO2 eq Climate Change"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Sum of all greenhouse gas emissions of a product according to t\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABG855#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:double",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "PCFReferenceValueForCalculation",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Referenzeinheit f\u00FCr die Berechnung"
+                },
+                {
+                  "language": "en",
+                  "text": "Reference value for calculation"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Quantity unit of the product to which the PCF information on th\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABG856#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "PCFQuantityOfMeasureForCalculation",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Mengenangabe f\u00FCr die Berechnung"
+                },
+                {
+                  "language": "en",
+                  "text": "quantity of measure for calculation"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Quantity of the product to which the PCF information on the CO2\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABG857#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:double",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "PCFLifeCyclePhase",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Lebenszyklusphase"
+                },
+                {
+                  "language": "en",
+                  "text": "life cycle phase"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Life cycle stages of the product according to the quantificatio\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABG858#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ExplanatoryStatement",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Erkl\u00E4rung"
+                },
+                {
+                  "language": "en",
+                  "text": "Explanatory statement"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Explanation which is needed or given so that a footprint commun\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CarbonFootprint/ExplanatoryStatement/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "contentType": "application/pdf",
+              "modelType": "File"
+            },
+            {
+              "idShort": "PCFGoodsAddressHandover",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "PCF Waren\u00FCbergabeadresse"
+                },
+                {
+                  "language": "en",
+                  "text": "PCF goods address hand-over"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates the place of hand-over of the goods "
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI497#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Street",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Street indication of the place of transfer of goods"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH956#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "HouseNumber",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Number for identification or differentiation of individual hous\u2026"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH957#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ZipCode",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Zip code of the goods transfer address"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH958#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "CityTown",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Indication of the city or town of the transfer of goods"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH959#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Country",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Country where the product is transmitted"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO259#005"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "PublicationDate",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Ver\u00F6ffentlichungsdatum"
+                },
+                {
+                  "language": "en",
+                  "text": "Publication date"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Time at which something was first published or made available"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CarbonFootprint/PublicationDate/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ExpirationDate",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Ablaufdatum"
+                },
+                {
+                  "language": "en",
+                  "text": "Expiration date"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Time at which something should no longer be used effectively be\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CarbonFootprint/ExpirationnDate/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "TransportCarbonFootprint",
+          "displayName": [
+            {
+              "language": "de",
+              "text": "Transport C02-Fu\u00DFabdruck"
+            },
+            {
+              "language": "en",
+              "text": "Transport carbon footprint"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Balance of greenhouse gas emissions generated by a transport se\u2026"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CarbonFootprint/TransportCarbonFootprint/0/9"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "TCFCalculationMethod",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "TCF Berechnungsmethode"
+                },
+                {
+                  "language": "en",
+                  "text": "TCF calculation method"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Standard, method for determining the greenhouse gas emissions f\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABG859#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "TCFCO2eq",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "TCF CO2eq"
+                },
+                {
+                  "language": "en",
+                  "text": "TCF CO2eq"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Sum of all greenhouse gas emissions from vehicle operation"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABG860#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:double",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "TCFReferenceValueForCalculation",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "TCF Bezugsgr\u00F6\u00DFe f\u00FCr die Berechnung"
+                },
+                {
+                  "language": "en",
+                  "text": "TCF reference value for calculation"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Amount of product to which the TCF carbon footprint statement r\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABG861#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "TCFQuantityOfMeasureForCalculation",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "TCF Mengenangabe f\u00FCr die Berechnung"
+                },
+                {
+                  "language": "en",
+                  "text": "TCF quantity of measure for calculation"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Quantity of the product to which the TCF information on the CO2\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABG862#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:double",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "TCFProcessesForGreenhouseGasEmissionInATransportService",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "TCF Prozesse f\u00FCr Treibhausgas-Emissionen bei Transportdiensten"
+                },
+                {
+                  "language": "en",
+                  "text": "TCF processes for greenhouse gas emissions in a transport servi\u2026"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Processes in a transport service to determine the sum of all di\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABG863#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ExplanatoryStatement",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Erkl\u00E4rung"
+                },
+                {
+                  "language": "en",
+                  "text": "Explanatory statement"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Explanation which is needed or given so that a footprint commun\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://example.com/ids/cd/3291_7022_2032_0718"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "contentType": "application/pdf",
+              "modelType": "File"
+            },
+            {
+              "idShort": "TCFGoodsTransportAddressTakeover",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Waren\u00FCbernahmeadresse f\u00FCr die Distributionsstufe"
+                },
+                {
+                  "language": "en",
+                  "text": "Goods transport address take-over for distribution stage"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indication of the place of receipt of goods "
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI499#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Street",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Stra\u00DFe"
+                    },
+                    {
+                      "language": "en",
+                      "text": "street"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Street indication of the place of transfer of goods"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH956#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "HouseNumber",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Hausnummer"
+                    },
+                    {
+                      "language": "en",
+                      "text": "house number"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Number for identification or differentiation of individual hous\u2026"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH957#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ZipCode",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Postleitzahl"
+                    },
+                    {
+                      "language": "en",
+                      "text": "zip code"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Zip code of the goods transfer address"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH958#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "CityTown",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Ort"
+                    },
+                    {
+                      "language": "en",
+                      "text": "city, town"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Indication of the city or town of the transfer of goods"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH959#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Country",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Land"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Country"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Country where the product is transmitted"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO259#005"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "TCFGoodsTransportAddressHandover",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Waren\u00FCbergabeadresse f\u00FCr die Distributionsstufe"
+                },
+                {
+                  "language": "en",
+                  "text": "Goods transport address hand-over for distribution stage"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates the hand-over address of the goods transport "
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI498#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Street",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Street indication of the place of transfer of goods"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH956#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "HouseNumber",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Number for identification or differentiation of individual hous\u2026"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH957#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ZipCode",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Zip code of the goods transfer address"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH958#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "CityTown",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Indication of the city or town of the transfer of goods"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH959#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Country",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Country where the product is transmitted"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO259#005"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "PublicationDate",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Ver\u00F6ffentlichungsdatum"
+                },
+                {
+                  "language": "en",
+                  "text": "Publication date"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Time at which something was first published or made available"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CarbonFootprint/PublicationDate/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ExpirationDate",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Ablaufdatum"
+                },
+                {
+                  "language": "en",
+                  "text": "Expiration Date"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Time at which something should no longer be used effectively be\u2026"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CarbonFootprint/ExpirationnDate/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "ExplanatoryStatement",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/CarbonFootprint/ExplanatoryStatement/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Erkl\u00E4rung"
+              },
+              {
+                "language": "en",
+                "text": "Explanatory statement"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Erforderliche oder vorhandene Erkl\u00E4rung, um sicherzustellen, da\u2026"
+              },
+              {
+                "language": "en",
+                "text": "Explanation which is needed or given so that a footprint commun\u2026"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PublicationDate",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/CarbonFootprint/PublicationDate/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Ver\u00F6ffentlichungsdatum"
+              },
+              {
+                "language": "en",
+                "text": "Publication date"
+              }
+            ],
+            "dataType": "DATE",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Zeitpunkt, zu dem etwas erstmals ver\u00F6ffentlicht oder verf\u00FCgbar \u2026"
+              },
+              {
+                "language": "en",
+                "text": "Time at which something was first published or made available"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExpirationDate",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/CarbonFootprint/ExpirationnDate/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Ablaufdatum"
+              },
+              {
+                "language": "en",
+                "text": "Expiration Date"
+              }
+            ],
+            "dataType": "DATE",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Zeitpunkt zu dem etwas nicht mehr wirksam verwendet werden soll\u2026"
+              },
+              {
+                "language": "en",
+                "text": "Time at which something should no longer be used effectively be\u2026"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PCFCalculationMethod",
+      "id": "0173-1#02-ABG854#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "impact assessment method / calculation method"
+              },
+              {
+                "language": "de",
+                "text": "Folgenabsch\u00E4tzungsmethode / Berechnungsmethode"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Norm, Standard, Verfahren zur Ermittlung der Treibhausgas-Emiss\u2026"
+              },
+              {
+                "language": "en",
+                "text": "standard, method for determining the greenhouse gas emissions o\u2026"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "ISO 14040",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV505#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "ISO 14067",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU218#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "IEC TS 63058",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU222#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "ISO 14044",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV506#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "EN 15804",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU223#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "PEP ecopassport",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU220#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "IEC 63366",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA792#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "GHG Protocol",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU221#002"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PCFCO2eq",
+      "id": "0173-1#02-ABG855#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CO2 eq Climate Change - total (for PCF and LCA)"
+              },
+              {
+                "language": "de",
+                "text": "CO2 eq Klimawandel - total (f\u00FCr PCF und LCA)"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "CO2"
+              }
+            ],
+            "unit": "CO2eq",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Summe aller Treibhausgas-Emissionen eines Produkts gem\u00E4\u00DF der Qu\u2026"
+              },
+              {
+                "language": "en",
+                "text": "sum of all greenhouse gas emissions of a product according to t\u2026"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PCFReferenceValueForCalculation",
+      "id": "0173-1#02-ABG856#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Reference value for calculation"
+              },
+              {
+                "language": "de",
+                "text": "Referenzeinheit f\u00FCr die Berechnung"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Quantity unit of the product to which the PCF information on th\u2026"
+              },
+              {
+                "language": "de",
+                "text": "Mengeneinheit des Produktes, auf das sich die PCF-Angabe zum CO\u2026"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "l",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ600#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "t",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ598#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "cbm",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ601#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "ml",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ599#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "g",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ596#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "piece",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ603#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "kg",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ597#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "qm",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ602#001"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PCFQuantityOfMeasureForCalculation",
+      "displayName": [
+        {
+          "language": "de",
+          "text": "Mengenangabe f\u00FCr die Berechnung"
+        },
+        {
+          "language": "en",
+          "text": "quantity of measure for calculation"
+        }
+      ],
+      "id": "0173-1#02-ABG857#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "quantity of measure for calculation"
+              },
+              {
+                "language": "de",
+                "text": "Mengenangabe f\u00FCr die Berechnung"
+              }
+            ],
+            "dataType": "REAL_COUNT",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Angabe der St\u00FCckzahl, Masse oder des Volumens zur Berechnung de\u2026"
+              },
+              {
+                "language": "en",
+                "text": "provides the quantity number of pieces or mass or volume to com\u2026"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PCFLifeCyclePhase",
+      "id": "0173-1#02-ABG858#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "life cycle phase (acc. EN 15804)"
+              },
+              {
+                "language": "de",
+                "text": "Lebenszyklusphase (nach EN 15804)"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "life cycle phase"
+              },
+              {
+                "language": "de",
+                "text": "Lebenszyklusphase"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Lebenszyklusphase des Produktes gem\u00E4\u00DF den Quantifizierungsvorga\u2026"
+              },
+              {
+                "language": "en",
+                "text": "life cycle stages of the product according to the quantificatio\u2026"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "A4 - transport to final destination",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU211#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B3 - repair",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV497#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "A1-A3",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ789#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "A1 - raw material supply (and upstream production)",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU208#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B1 - usage phase",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU212#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B5 - update/upgrade, refurbishing",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV499#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B7 - usage water consumption",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV501#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "A3 - production",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU210#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "C4 - landfill",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV504#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "D - reuse",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU214#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "C3 - recycling, waste treatment",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV503#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "A2 - cradle-to-gate transport to factory",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU209#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B2 - maintenance",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV498#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "C1 - reassembly",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV502#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "C2 - transport to recycler",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU213#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B6 - usage energy consumption",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV500#001"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PCFGoodsAddressHandover",
+      "id": "0173-1#02-ABI497#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PCF goods address hand-over"
+              },
+              {
+                "language": "de",
+                "text": "PCF Waren\u00FCbergabeadresse"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Bezeichnet den Ort der \u00DCbergabe der Ware"
+              },
+              {
+                "language": "en",
+                "text": "Indicates the place of hand-over of the goods"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TCFCalculationMethod",
+      "id": "0173-1#02-ABG859#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TCF calculation method"
+              },
+              {
+                "language": "de",
+                "text": "TCF Berechnungsmethode"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Norm, Standard, Verfahren zur Ermittlung der Treibhausgas-Emiss\u2026"
+              },
+              {
+                "language": "en",
+                "text": "Standard, method for determining the greenhouse gas emissions f\u2026"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "EN 16258",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU224#001"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TCFCO2eq",
+      "id": "0173-1#02-ABG860#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TCF CO2eq"
+              },
+              {
+                "language": "de",
+                "text": "TCF CO2eq"
+              }
+            ],
+            "unit": "C02eq",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Summe aller Treibhausgas-Emissionen des Fahrzeugbetriebes"
+              },
+              {
+                "language": "en",
+                "text": "Sum of all greenhouse gas emissions from vehicle operation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TCFReferenceValueForCalculation",
+      "id": "0173-1#02-ABG861#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TCF reference value for calculation"
+              },
+              {
+                "language": "de",
+                "text": "TCF Bezugsgr\u00F6\u00DFe f\u00FCr die Berechnung"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Amount of product to which the TCF carbon footprint statement r\u2026"
+              },
+              {
+                "language": "de",
+                "text": "Menge des Produktes, auf das sich die TCF-Angabe zum CO2-Fu\u00DFabd\u2026"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "kg",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ597#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "qm",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ602#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "t",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ598#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "cbm",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ601#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "ml",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ599#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "l",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ600#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "piece",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ603#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "g",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ596#001"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TCFQuantityOfMeasureForCalculation",
+      "displayName": [
+        {
+          "language": "de",
+          "text": "TCF Mengenangabe f\u00FCr die Berechnung"
+        },
+        {
+          "language": "en",
+          "text": "TCF quantity of measure for calculation"
+        }
+      ],
+      "id": "0173-1#02-ABG862#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TCF quantity of measure for calculation"
+              },
+              {
+                "language": "de",
+                "text": "TCF Mengenangabe f\u00FCr die Berechnung"
+              }
+            ],
+            "dataType": "REAL_COUNT",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Angabe der St\u00FCckzahl, Masse oder des Volumens zur Berechnung de\u2026"
+              },
+              {
+                "language": "en",
+                "text": "Mengenangabe des Produktes, auf das sich die TCF-Angabe zum CO2\u2026"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TCFProcessesForGreenhouseGasEmissionInATransportService",
+      "id": "0173-1#02-ABG863#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TCF processes for greenhouse gas emissions in a transport servi\u2026"
+              },
+              {
+                "language": "de",
+                "text": "TCF Prozesse f\u00FCr die Treibhausgas-Emissionen bei einer Transpor\u2026"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Prozesse bei einer Transportdienstleistung zur Ermittlung der S\u2026"
+              },
+              {
+                "language": "en",
+                "text": "Processes in a transport service to determine the sum of all di\u2026"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "WTW - Well-to-Wheel",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU217#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "WTT - Well-to-Tank",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU216#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "TTW - Tank-to-Wheel",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU215#001"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TCFGoodsTransportAddressTakeover",
+      "id": "0173-1#02-ABI499#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Goods transport address take-over for distribution stage"
+              },
+              {
+                "language": "de",
+                "text": "Waren\u00FCbernahmeadresse f\u00FCr die Distributionsstufe"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Angabe des Waren\u00FCbernahmeortes"
+              },
+              {
+                "language": "en",
+                "text": "indication of the place of receipt of goods"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TCFGoodsTransportAddressHandover",
+      "id": "0173-1#02-ABI498#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Goods transport address hand-over for distribution stage"
+              },
+              {
+                "language": "de",
+                "text": "Waren\u00FCbergabeadresse f\u00FCr die Distributionsstufe"
+              }
+            ],
+            "definition": [
+              {
+                "language": "de",
+                "text": "Bezeichnet die \u00DCbergabeadresse des Warentransportes"
+              },
+              {
+                "language": "en",
+                "text": "indicates the hand-over address of the goods transport"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Street",
+      "id": "0173-1#02-ABH956#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "street"
+              },
+              {
+                "language": "de",
+                "text": "Stra\u00DFe"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Stra\u00DFenangabe des Waren\u00FCbergabeortes"
+              },
+              {
+                "language": "en",
+                "text": "Street indication of the place of transfer of goods"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "HouseNumber",
+      "id": "0173-1#02-ABH957#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "house number"
+              },
+              {
+                "language": "de",
+                "text": "Hausnummer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Nummer zur Identifikation bzw. Unterscheidung einzelner H\u00E4user \u2026"
+              },
+              {
+                "language": "en",
+                "text": "Number for identification or differentiation of individual hous\u2026"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ZipCode",
+      "id": "0173-1#02-ABH958#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "zip code"
+              },
+              {
+                "language": "de",
+                "text": "Postleitzahl"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Postleitzahl der Waren\u00FCbergabeadresse"
+              },
+              {
+                "language": "en",
+                "text": "Zip code of the goods transfer address"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CityTown",
+      "id": "0173-1#02-ABH959#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "city, town"
+              },
+              {
+                "language": "de",
+                "text": "Ort"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Angabe der Stadt oder des Ortes der Waren\u00FCbergabe"
+              },
+              {
+                "language": "en",
+                "text": "Indication of the city or town of the transfer of goods"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Country",
+      "id": "0173-1#02-AAO259#005",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "country"
+              },
+              {
+                "language": "de",
+                "text": "Land"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Land, in dem das Produkt hergestellt wurde"
+              },
+              {
+                "language": "en",
+                "text": "country where the product was manufactured"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
