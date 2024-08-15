@@ -1,0 +1,1497 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "ControlComponentTypeAAS",
+      "id": "http://admin-shell.io/idta/aas/ControlComponentType/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "http://admin-shell.io/idta/asset/ControlComponentType/1/0",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "http://admin-shell.io/idta/SubmodelTemplate/ControlComponentType/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "ControlComponentType",
+      "id": "http://admin-shell.io/idta/SubmodelTemplate/ControlComponentType/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "http://admin-shell.io/idta/ControlComponent/Type/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "Interfaces",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of references to control interfaces supported by the component type, e.g. to elements of the Interface Metadata SMC of the Asset Interface Description submodel, the MTP submodel or OPC UA Server Datasheet submodel."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlComponent/Type/Interfaces/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "Multiplicity",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "Interface",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Reference to a single control interface. "
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlComponent/Type/Interface/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                },
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "PresetIdShort",
+                  "valueType": "xs:string",
+                  "value": "To be filled; normally same as idShort, might be with {00}"
+                }
+              ],
+              "modelType": "ReferenceElement"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "Skills",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of skills offered by the component type"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlComponent/Skills/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "Multiplicity",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "Skill",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Contains the basic information to call (request the execution of) a skill, e.g. its signature"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlComponent/Skill/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "PresetIdShort",
+                  "valueType": "xs:string",
+                  "value": "To be filled; normally same as idShort, might be with {00}"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "Name",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Name used to select the skill via its interface."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlComponent/Skill/Name/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "DisplayName",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Name to display the skill, e.g. in an HMI or GUI."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlComponent/Skill/DisplayName/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "Disabled",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Boolean property that defines if the skill is (currently) disabled, e.g. not licensed, tested, suitable."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlComponent/Skill/Disabled/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:boolean",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Modes",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Collection of operation, operating, operational or execution modes (depending on the standard), in which the skill is available/allowed to execute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlComponent/Skill/Modes/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "Mode",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Name of the operation, operating, operational or execution modes (depending on the standard), in which the skill is available/allowed to execute."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/ControlComponent/Skill/Mode/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "OneToMany"
+                        },
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "PresetIdShort",
+                          "valueType": "xs:string",
+                          "value": "To be filled; normally same as idShort, might be with {00}"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "Parameters",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Collection of parameters used for the configuration of the skill."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlComponent/Skill/Parameters/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "Parameter",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Parameter used for the configuration of the skill."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/ControlComponent/Skill/Parameter/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "ZeroToMany"
+                        },
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "PresetIdShort",
+                          "valueType": "xs:string",
+                          "value": "To be filled; normally same as idShort, might be with {00}"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "Name",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Name of the parameter."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Name/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "ConceptQualifier",
+                              "type": "Multiplicity",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "Direction",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Indicates whether the parameter is an input (In) or an output (Out) of the skill. An InOut parameter can be set from outside and can also be changed from skill itself. "
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Direction/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "ConceptQualifier",
+                              "type": "Multiplicity",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "Type",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Data type as string used to interpret the parameter. "
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Type/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "ConceptQualifier",
+                              "type": "Multiplicity",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "Values",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Collection of properties of the accepted values that the parameter may take."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Values/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "ConceptQualifier",
+                              "type": "Multiplicity",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "Errors",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Collection of references to the error codes of the component that may be triggered by this skill."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlComponent/Skill/Errors/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "Uses",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Collection of references to other skills, that this skill uses."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlComponent/Skill/Uses/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "Errors",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of all possible error codes that may appear in components of this type."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlComponent/Type/Errors/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "Multiplicity",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "ErrorCode",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Semantic description of the error code in multiple languages"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlComponent/Type/ErrorCode/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                },
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "PresetIdShort",
+                  "valueType": "xs:string",
+                  "value": "To be filled; normally same as idShort, might be with {00}"
+                }
+              ],
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Pressure Loss"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "Skills",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skills/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Skills"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Skills"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Skill",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Skill"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Skill"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Name",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Name/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Skill Name"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Name"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DisplayName",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/DisplayName/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DisplayName"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "DisplayName"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Disabled",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Disabled/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Disabled"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Disabled"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Modes",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Modes/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Modes"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Modes"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Mode",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Mode/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Mode"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Mode"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Parameters",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Parameters/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Parameters"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Parameters"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Parameter",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Parameter/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Parameter"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Parameter"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Name",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Name/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Parameter Name"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Name"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Direction",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Direction/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Parameter Direction"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Direction"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Type",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Type/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Parameter Type"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Type"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Values",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Values/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Values"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Values"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Errors",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Errors/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Errors"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Errors"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Uses",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Skill/Uses/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Uses"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Uses"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Type",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Type/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Control Componen Type"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Type"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Interfaces",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Type/Interfaces/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Interfaces"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Interfaces"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Interface",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Type/Interface/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Interface"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Interface"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Errors",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Type/Errors/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Errors"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Errors"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ErrorCode",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Type/ErrorCode/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ErrorCode"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ErrorCode"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Instance",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Instance/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Control Component Instance"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Instance"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Endpoints",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Instance/Endpoints/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Instance Endpoints"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Endpoints"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Endpoint",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Instance/Endpoint/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Instance Endpoint"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Endpoint"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Type",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/ControlComponent/Instance/Type/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Instance Type"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Type"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
