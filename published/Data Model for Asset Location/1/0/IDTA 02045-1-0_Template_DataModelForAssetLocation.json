@@ -1,0 +1,4945 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "DataModelforAssetLocationAAS",
+      "id": "https://admin-shell.io/idta/aas/DataModelforAssetLocation/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/aas/DataModelforAssetLocation/1/0",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/DataModelforAssetLocation/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "AssetLocation",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Submodel asset location"
+        },
+        {
+          "language": "de",
+          "text": "Teilmodell Assetstandort"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Submodel for tracking \u0026 tracing of the location of an assets"
+        },
+        {
+          "language": "de",
+          "text": "Teilmodell f\u00FCr das Tracking \u0026 Tracing des Standortes eines Assets"
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0",
+        "creator": {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/smt/assetlocation/1/0"
+            }
+          ]
+        },
+        "templateId": "AssetLocation"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DataModelforAssetLocation/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/smt/assetlocation/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "Addresses",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Addresses"
+            },
+            {
+              "language": "de",
+              "text": "Adressen"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "List with postal addresses where an object has been located"
+            },
+            {
+              "language": "de",
+              "text": "Liste mit Postadressen, an denen sich ein Asset aufgehalten hat"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/sml/addresses/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "orderRelevant": false,
+          "semanticIdListElement": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0173-1#01-ADR442#007"
+              }
+            ]
+          },
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Postal addresses where an object has been located"
+                },
+                {
+                  "language": "de",
+                  "text": "Postadresse an der ein Objekt lokalisiert wurde"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#01-ADR442#007"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "AddressLine1",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "address line 1"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Adresszeile 1"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "address line 1"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Adresszeile 1"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO124#004"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AddressLine2",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "address line 2"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Adresszeile 2"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "address line 2"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Adresszeile 2"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO125#004"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AddressLine3",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "address line 3"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Adresszeile 3"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "address line 3"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Adresszeile 3"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO126#004"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AddressOfAdditionalLink",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "address of additional link"
+                    },
+                    {
+                      "language": "de",
+                      "text": "zus\u00E4tzlicher Online-Verweis"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "address of additional link"
+                    },
+                    {
+                      "language": "de",
+                      "text": "zus\u00E4tzlicher Online-Verweis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAQ326#003"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AddressRemarks",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "address remarks"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Anmerkungen zur Adresse"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "address remarks"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Anmerkungen zur Adresse"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO202#004"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "NationalCode",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "national code"
+                    },
+                    {
+                      "language": "de",
+                      "text": "L\u00E4ndercode"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "national code"
+                    },
+                    {
+                      "language": "de",
+                      "text": "L\u00E4ndercode"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO134#003"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Statecounty",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "state/county"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Bundesland"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "state/county"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Bundesland"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO133#003"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Citytown",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "city/town"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Ort"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "city/town"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Ort"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO132#003"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Street",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "street"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Stra\u00DFe"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "street"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Stra\u00DFe"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO128#003"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "ZipCode",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "zip code"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Postleitzahl"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "zip code"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Postleitzahl"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO129#003"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        },
+        {
+          "idShort": "CoordinateSystems",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "coordinate systems"
+            },
+            {
+              "language": "de",
+              "text": "Koordinatensysteme"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "List with information about different coordinate systems that have been used to determine the location of an asset"
+            },
+            {
+              "language": "de",
+              "text": "Liste mit Informationen zu Koordinatensystemen die verwendet wurden, um die Assetposition zu bestimmen"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/sml/coordinatesystems/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "orderRelevant": true,
+          "semanticIdListElement": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/smc/coordinatesystemsrecord/1/0"
+              }
+            ]
+          },
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Coordinate reference system (CRS) record"
+                },
+                {
+                  "language": "de",
+                  "text": "Listeneintrag f\u00FCr ein Koordinatenreferenzsystem (CRS)"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/smc/coordinatesystemsrecord/1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "CoordinateSystemName",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "coordinate system name"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Koordinatensystenbezeichnung"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/coordinatesystemname/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "CoordinateSystemId",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "coordinate system (ID)"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Koordinatensystem (ID)"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/coordinatesystemid/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "CoordinateSystemType",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "coordinate system type"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Koordinatensystemtyp"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/coordinatesystemtype/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "ElevationReference",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "elevation reference"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Referenz der H\u00F6henangabe"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/elevationreference/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "SeaLevelOfBaseHeight",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "sea level of base height"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Seeh\u00F6he der Basish\u00F6he"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/sealevelofbaseheight/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "GroundControlPoints",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "ground control points"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Bodenkontrollpunkte"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Arrays containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Arrays, die ein Mapping von geographischen Koordinaten (L\u00E4ngengrad, Breitengrad) nach WGS84 (EPSG:4326) in relative Koordinaten (x,y) enthalten"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/sml/groundcontrolpoints/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "orderRelevant": true,
+                  "semanticIdListElement": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/smc/groundcontrolpointsentry/1/0"
+                      }
+                    ]
+                  },
+                  "typeValueListElement": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "An array containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/smc/groundcontrolpointsentry/1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "GeographicCoordinates",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "geographic coordinates"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Geographische Koordinaten"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": " 0173-1#02-ABH934#002"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "idShort": "Longitude",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "longitude"
+                                },
+                                {
+                                  "language": "de",
+                                  "text": "L\u00E4ngengrad"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": " 0173-1#02-ABH961#002"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "valueType": "xs:double",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "Latitude",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "latitude"
+                                },
+                                {
+                                  "language": "de",
+                                  "text": "Breitengrad"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": " 0173-1#02-ABH960#002"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "valueType": "xs:double",
+                              "modelType": "Property"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                          "idShort": "RelativeCoordinates",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "relative coordinates"
+                            },
+                            {
+                              "language": "de",
+                              "text": "relative Koordinaten"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Coordinates within a cartisian coordinate system"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Koordinaten in einem kartesischen Koordinatensystem"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABG741#001"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "idShort": "X",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "X-coordinate"
+                                },
+                                {
+                                  "language": "de",
+                                  "text": "X-Koordinate"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/prop/x/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "valueType": "xs:float",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "Y",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Y-coordinate"
+                                },
+                                {
+                                  "language": "de",
+                                  "text": "Y-Koordinate"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/prop/y/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "valueType": "xs:float",
+                              "modelType": "Property"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        },
+        {
+          "idShort": "VisitedAreas",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "visited areas"
+            },
+            {
+              "language": "de",
+              "text": "besuchte Areale"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "List with areas (e.g., sites, buildings, field warehouses) where an asset has been located or is located"
+            },
+            {
+              "language": "de",
+              "text": "Liste mit Arealen (z.B. Standort, Geb\u00E4ude, Freilagerfl\u00E4che) an denen sich ein Asset befunden hat oder sich befindet"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/sml/visitedareas/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "orderRelevant": false,
+          "semanticIdListElement": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/smc/visitedareasrecord/1/0"
+              }
+            ]
+          },
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Areas (e.g., site, building, field warehouse) where an asset has been located or is located"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/smc/visitedareasrecord/1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "CoordinateSystemOfArea",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Reference to a local coordinate reference system for an area"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Referenz auf ein lokales Koordinatenreferenzsystem f\u00FCr ein Areal"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ref/coordinatesystemreference/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/smt/assetlocation"
+                      }
+                    ]
+                  },
+                  "modelType": "ReferenceElement"
+                },
+                {
+                  "idShort": "AddressReferences",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "List with references to addresses for the area (area addresses)"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Liste mit Referenzen zu Adressen f\u00FCr das Areal"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/sml/addressreferences/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "orderRelevant": true,
+                  "semanticIdListElement": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/sml/addressreferences/1/0"
+                      }
+                    ]
+                  },
+                  "typeValueListElement": "ReferenceElement",
+                  "value": [
+                    {
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Reference to an address"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Referenz zu einer Adresse"
+                        }
+                      ],
+                      "value": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://aas-connect.com/smt/data_model_for_asset_location"
+                          }
+                        ]
+                      },
+                      "modelType": "ReferenceElement"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                },
+                {
+                  "idShort": "AreaRegionCoordinates",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "area region coordinates"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Arealgrenzkoordinaten"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Coordinates forming a polygon that describes the area within the coordinate reference system of the area"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Koordinaten die ein Polygon formen, das die Grenzen eines Areals im Koordinatenrefernzsystem des Areals beschreibt"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/sml/regioncoordinates/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "orderRelevant": true,
+                  "semanticIdListElement": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/smc/regioncoordinateentry/1/0"
+                      }
+                    ]
+                  },
+                  "typeValueListElement": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "One coordinate of coordinates forming a polygon that describes the region of the area within the coordinate reference system of the area"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/smc/regioncoordinateentry/1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "X",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "X-coordinate"
+                            },
+                            {
+                              "language": "de",
+                              "text": "X-Koordinate"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/x/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:float",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "Y",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Y-coordinate"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Y-Koordinate"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/y/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:float",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                },
+                {
+                  "idShort": "KindOfArea",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "kind of area"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Arealart"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/kindofarea/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AreaName",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Area name"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Arealname"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Name of the area or building"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Name des Areals oder Geb\u00E4udes"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/areaname/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AreaId",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "area (ID)"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Areal (ID)"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Identification of an area "
+                    },
+                    {
+                      "language": "de",
+                      "text": "Ident einer Area "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/areaid/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AreaDesciption",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "area description"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Arealbeschreibung"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Description of an area"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Beschreibung eines Areals"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/mlp/areadescription/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "embeddedDataSpecifications": [
+                    {
+                      "dataSpecification": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+                          }
+                        ]
+                      },
+                      "dataSpecificationContent": {
+                        "preferredName": [
+                          {
+                            "language": "en",
+                            "text": "Description of an area"
+                          }
+                        ],
+                        "modelType": "DataSpecificationIec61360"
+                      }
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Description of an area"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "AreaLayout",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "area layout"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Areallayout"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "File with a layout (map) of the area (e.g., hall plan)"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Datei mit einem Areallayout (z.B. Hallenplan)"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/file/arealayout/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "contentType": "application/pdf",
+                  "modelType": "File"
+                },
+                {
+                  "idShort": "BuildingLevel",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "building level"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Stockwerk"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABJ094#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        },
+        {
+          "idShort": "AssetTraces",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "asset traces"
+            },
+            {
+              "language": "de",
+              "text": "Assetverfolgung"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of localization event records for sites, areas, fences and locations"
+            },
+            {
+              "language": "de",
+              "text": "Sammlung von Lokalisierungsevents f\u00FCr Standorte, Areale, Schranken und Positionen"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/smc/assettraces/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "AreaEventTimeSeriesData",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Reference to an AAS time series data Submodel instance of the same AAS with AreaRecords"
+                },
+                {
+                  "language": "de",
+                  "text": "Referenz zu einer AAS Submodel-Instanz der gleichen AAS mit Zeitreihendaten f\u00FCr AreaRecords"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "Submodel",
+                    "value": "https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0"
+                  }
+                ]
+              },
+              "modelType": "ReferenceElement"
+            },
+            {
+              "idShort": "LocationEventTimeSeriesData",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Reference to an AAS time series data Submodel instance of the same AAS with LocationRecords"
+                },
+                {
+                  "language": "de",
+                  "text": "Referenz zu einer AAS Submodel-Instanz der gleichen AAS mit Zeitreihendaten f\u00FCr FenceRecords"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "Submodel",
+                    "value": "https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0"
+                  }
+                ]
+              },
+              "modelType": "ReferenceElement"
+            },
+            {
+              "idShort": "AreaRecords",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "List with records for area localization events"
+                },
+                {
+                  "language": "de",
+                  "text": "Liste mit Datens\u00E4tzen f\u00FCr Areallokalisierungsereignisse"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/sml/arearecords/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "orderRelevant": true,
+              "semanticIdListElement": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/smc/arearecordsrecord/1/0"
+                  }
+                ]
+              },
+              "typeValueListElement": "SubmodelElementCollection",
+              "value": [
+                {
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Record of an area localization event"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/smc/arearecordsrecord/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "AreaRef",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Reference to the area where the event has been recorded for"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Referenz auf das Areal, zu dem das Event erfasst wurde"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/ref/areareference/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "value": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://admin-shell.io/idta/smt/assetlocation"
+                          }
+                        ]
+                      },
+                      "modelType": "ReferenceElement"
+                    },
+                    {
+                      "idShort": "Time",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Time "
+                        },
+                        {
+                          "language": "de",
+                          "text": "Zeitpunkt"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Time when the event occurred"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Zeitpunkt an dem das Ereignis aufgetreten ist"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": " 0173-1#02-ABF198#002"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:dateTime",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "EventId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "event (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Ereignis (ID)"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Identification of an event"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Ident eines events"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/eventid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "ProviderId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "provider (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Lieferant (ID)"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Identifikation of the location provider which triggered the event "
+                        },
+                        {
+                          "language": "de",
+                          "text": "Ident des Lieferenten der Positionsinformation, der das Event ausgel\u00F6st hat"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/providerid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "EventType",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "event type"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Eventtyp"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/eventtype/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementList"
+            },
+            {
+              "idShort": "LocationRecords",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "List with records for location (position) localization events"
+                },
+                {
+                  "language": "de",
+                  "text": "Liste mit Datens\u00E4tzen f\u00FCr Ereignisse betreffend der Lokalisierung (Positionsbestimmung)"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/sml/locationrecords/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "orderRelevant": true,
+              "semanticIdListElement": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/smc/locationrecordsrecord/1/0"
+                  }
+                ]
+              },
+              "typeValueListElement": "SubmodelElementCollection",
+              "value": [
+                {
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Record of a location (position) localization event"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/smc/locationrecordsrecord/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "CoordinateSystemReference",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Reference to a coordinate reference system for the position "
+                        },
+                        {
+                          "language": "de",
+                          "text": "Referenz auf das Koordinatenreferenzsystem f\u00FCr die Position"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/ref/coordinatesystemreference/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "value": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://aas-connect.com/smt/data_model_for_asset_location"
+                          }
+                        ]
+                      },
+                      "modelType": "ReferenceElement"
+                    },
+                    {
+                      "idShort": "Position",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "position"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Position"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Position of the asset"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-ABI783#001"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "X",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/x/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:float",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "Y",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/y/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:float",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "Z",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/z/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:float",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    },
+                    {
+                      "idShort": "ProviderId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "provider (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Lieferant (ID)"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Identifikation of the location provider which triggered the event "
+                        },
+                        {
+                          "language": "de",
+                          "text": "Ident des Lieferenten der Positionsinformation, der das Event ausgel\u00F6st hat"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/providerid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "ProviderType",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "provider type"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Versorgertyp"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/providertype/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "Accuracy",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Accuracy"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Genauigkeit"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/accuracy/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:double",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "MagneticHeading",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "magnetic heading"
+                        },
+                        {
+                          "language": "de",
+                          "text": "magnetische Ausrichtung"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/magneticheading/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:integer",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "TrueHeading",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "heading"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Ausrichtung"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/trueheading/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:integer",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "HeadingAccuracy",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "heading accuracy"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Steuerkursgenauigkeit"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/headingaccuracy/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:integer",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "Time",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "time"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Zeitpunkt"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "The time (timestamp) when the location data was generated (e.g., by a RTLS) "
+                        },
+                        {
+                          "language": "de",
+                          "text": "Der Zeitpunkt (Zeitstempel) zu dem die Lokalisierung erfolgt ist (z.B. durch ein RTLS)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-ABF198#002"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:dateTime",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "TransmissionTime",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "transmission time"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Sendezeitpunkt"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Time (timestemp) when the location information has been updated"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Zeitpunkt (Zeitstempel) an dem die Lokalisierungsinformation zuletzt ge\u00E4ndert wurde"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/transmissiontime/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:dateTime",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "LocationDescription",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "location description"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Ortsbeschreibung"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Location description (meta information for the position) , it is recommended to refer to the origin of the CRS"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Beschreibung des Orts (Metainformationen zur Position); es wird empfohlen, auf den Ursprung des Koordinatenreferenzsystems Bezug zu nehmen"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/mlp/locationdescription/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "embeddedDataSpecifications": [
+                        {
+                          "dataSpecification": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+                              }
+                            ]
+                          },
+                          "dataSpecificationContent": {
+                            "preferredName": [
+                              {
+                                "language": "en",
+                                "text": "locationdescription"
+                              }
+                            ],
+                            "modelType": "DataSpecificationIec61360"
+                          }
+                        }
+                      ],
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "Location description (meta information for the position) , it is recommended to refer to the origin of the CRS"
+                        }
+                      ],
+                      "modelType": "MultiLanguageProperty"
+                    },
+                    {
+                      "idShort": "Speed",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "speed"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Geschwindigkeit"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Speed of the asset at the time where the position was determined"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Geschwindigkeit des Assets zum Zeitpunkt an dem die Position bestimmt wurde"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": " 0173-1#02-AAV544#004"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:float",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "Course",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "course"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Kurs"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/course/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:integer",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "ReferencePointId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "reference point (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Referenzpunkt (ID)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/referencepointid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementList"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "AssetLocatingInformation",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection with additional information concerning the localization of an asset"
+            },
+            {
+              "language": "de",
+              "text": "Sammlung mit zus\u00E4tzlichen Informationen betreffend die Lokalisierung eines Assets"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/sml/assetlocatinginformation/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "Localizable",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "localizable"
+                },
+                {
+                  "language": "de",
+                  "text": "lokalisierbar"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/prop/localizable/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "AssetLocationServiceRealTimeCapability",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Realtime capability description"
+                },
+                {
+                  "language": "de",
+                  "text": "Beschreibung der Echtzeitf\u00E4higkeit"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Description of the extend and conditions for real time applications of the AAS"
+                },
+                {
+                  "language": "de",
+                  "text": "Beschreibung, inwieweit und unter welchen Bedingungen eine Echtzeitf\u00E4higkeit der AAS besteht"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/mlp/realtimecapabilityofaas/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "embeddedDataSpecifications": [
+                {
+                  "dataSpecification": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+                      }
+                    ]
+                  },
+                  "dataSpecificationContent": {
+                    "preferredName": [
+                      {
+                        "language": "en",
+                        "text": "Realtime capability description"
+                      }
+                    ],
+                    "modelType": "DataSpecificationIec61360"
+                  }
+                }
+              ],
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Description of the extend and conditions for real time applications of the AAS"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "idShort": "RealtimeLocationSourceType",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "real time location source type"
+                },
+                {
+                  "language": "de",
+                  "text": "Typ der Quelle f\u00FCr Echtzeitlokalisierung"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/prop/realtimelocationsourcetype/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "RealtimeLocationSource",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Real time location source"
+                },
+                {
+                  "language": "de",
+                  "text": "Quelle f\u00FCr Echtzeitlokalisierung"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/mlp/realtimelocationsource/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "embeddedDataSpecifications": [
+                {
+                  "dataSpecification": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+                      }
+                    ]
+                  },
+                  "dataSpecificationContent": {
+                    "preferredName": [
+                      {
+                        "language": "en",
+                        "text": "Course"
+                      }
+                    ],
+                    "modelType": "DataSpecificationIec61360"
+                  }
+                }
+              ],
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Information regarding a source for real time location data, e.g., URL and API documentation for DeepHub"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "CoordinateSystemName",
+      "id": "https://admin-shell.io/idta/prop/coordinatesystemname/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "coordinate system name"
+              },
+              {
+                "language": "de",
+                "text": "Koordinatensystenbezeichnung"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "coordinate system name"
+              },
+              {
+                "language": "de",
+                "text": "Koordinatensystenbezeichnung"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CoordinateSystemId",
+      "id": "https://admin-shell.io/idta/prop/coordinatesystemid/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "coordinate system (ID)"
+              },
+              {
+                "language": "de",
+                "text": "Koordinatensystem (ID)"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identification of a coordinate system"
+              },
+              {
+                "language": "de",
+                "text": "Ident eines Koordinatensystems"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Z",
+      "id": "https://admin-shell.io/idta/prop/z/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Z-coordinate"
+              },
+              {
+                "language": "de",
+                "text": "Z-Koordinate"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Z-coordinate"
+              }
+            ],
+            "unit": "m",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Z-coordinate (height) value within a coordinate system"
+              },
+              {
+                "language": "de",
+                "text": "Z-Koordinatenwert (H\u00F6he) in einem Koordinatensystem"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CoordinateSystemType",
+      "id": "https://admin-shell.io/idta/prop/coordinatesystemtype/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "coordinate system type"
+              },
+              {
+                "language": "de",
+                "text": "Koordinatensystemtyp"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Type of a coordinate system with the allowed enumeration values \u0022EPSG:4326\u0022 or \u0022LOCAL\u0022"
+              },
+              {
+                "language": "de",
+                "text": "Koordinatensystemtyp mit der erlaubten Enumeration \u0022EPSG:4326\u0022 oder \u0022LOCAL\u0022"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "EPSG:4326",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/coordinatesystemtype/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "LOCAL",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/coordinatesystemtype/1/0"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ElevationReference",
+      "id": "https://admin-shell.io/idta/prop/elevationreference/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "elevation reference"
+              },
+              {
+                "language": "de",
+                "text": "Referenz der H\u00F6henangabe"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Reference of the elevation information in a coordinate system; with the allowed enumeration values \u0022SEALEVEL\u0022 or \u0022LOCAL\u0022"
+              },
+              {
+                "language": "de",
+                "text": "Referenz der H\u00F6henangabe f\u00FCr ein Koordinatensystem mit der erlaubten Enumeration \u0022SEALEVEL\u0022 oder \u0022LOCAL\u0022"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "SEALEVEL",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/elevationreference/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "LOCAL",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/elevationreference/1/0"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SeaLevelOfBaseHeight",
+      "id": "https://admin-shell.io/idta/prop/sealevelofbaseheight/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "sea level of base height"
+              },
+              {
+                "language": "de",
+                "text": "Seeh\u00F6he der Basish\u00F6he"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "base height"
+              }
+            ],
+            "unit": "m",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Sea level of the base height of a coordinate system; normally the base height is at the origin of the coordinate system with Z=0,00 m "
+              },
+              {
+                "language": "de",
+                "text": "Seeh\u00F6he der Basish\u00F6he; normal ist die Basish\u00F6he in einem Koordinatensystem bei Z=0,00 m"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "X",
+      "id": "https://admin-shell.io/idta/prop/x/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "X-coordinate"
+              },
+              {
+                "language": "de",
+                "text": "X-Koordinate"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "X-coordinate"
+              }
+            ],
+            "unit": "m",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "X-coordinate value within a coordinate system"
+              },
+              {
+                "language": "de",
+                "text": "X-Koordinatenwert in einem Koordinatensystem"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Y",
+      "id": "https://admin-shell.io/idta/prop/y/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Y-coordinate"
+              },
+              {
+                "language": "de",
+                "text": "Y-Koordinate"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Y-coordinate"
+              }
+            ],
+            "unit": "m",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Y-coordinate value within a coordinate system"
+              },
+              {
+                "language": "de",
+                "text": "Y-Koordinatenwert in einem Koordinatensystem"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "description": [
+        {
+          "language": "en",
+          "text": "Coordinates forming polygon that describes a region (e.g. a site or area on a site) within the coordinate reference system of the region"
+        },
+        {
+          "language": "de",
+          "text": "Koordinaten die ein Polygon formen, das die Grenzen einer Region (z.B. Standort oder Area auf einem Standort) in dem Koordinatenrefernzsystem der Region beschreibt"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/sml/regioncoordinates/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "RegionCoordinates"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "VisitedSites",
+      "description": [
+        {
+          "language": "en",
+          "text": "List with geographic sites where an asset has been located or is located"
+        },
+        {
+          "language": "de",
+          "text": "Liste mit geographischen Standorten an denen sich ein Asset befunden hat oder sich befindet"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/sml/visitedsites/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "VisitedSites"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "description": [
+        {
+          "language": "en",
+          "text": "List with geographic areas (includes buildings) where an asset has been located or is located"
+        },
+        {
+          "language": "de",
+          "text": "Liste mit geographischen Arealen (schlie\u00DFt Geb\u00E4uden ein) an denen sich ein Asset befunden hat oder sich befindet"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/sml/visitedareas/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "VisitedArea"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "KindOfArea",
+      "id": "https://admin-shell.io/idta/prop/kindofarea/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "kind of area"
+              },
+              {
+                "language": "de",
+                "text": "Arealart"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Arealart"
+              },
+              {
+                "language": "de",
+                "text": "Arealart, die Enumeration \u0022AREA_NOT_SPECIFIED\u0022, \u0022BUILDING\u0022 und \u0022SITE\u0022 sollte verwendet werden"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "BUILDING",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/kindofarea/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "AREA_NOT_SPECIFIED",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/kindofarea/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "SITE",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/kindofarea/1/0"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "VisitedFences",
+      "description": [
+        {
+          "language": "en",
+          "text": "List with fences (monitored localization zones) where an asset has entered/left "
+        },
+        {
+          "language": "de",
+          "text": "Liste mit \u00FCberwachten Schranken (Lokalisierungsbereichen) die ein Asset betreten/verlassen hat"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/sml/visitedlocalizationfences/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "VisitedFences"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "EventType",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "event type"
+        },
+        {
+          "language": "de",
+          "text": "Eventtyp"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/prop/eventtype/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "event type"
+              },
+              {
+                "language": "de",
+                "text": "Eventtyp"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Type of an event that is triggered when an asset is located at a localization fence"
+              },
+              {
+                "language": "de",
+                "text": "Eventtyp f\u00FCr ein Ereignis, das ausgel\u00F6st wird, wenn ein Asst an einer Lokalisierungsschranke geortet wird"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "REGION_EXIT",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/eventtype/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "REGION_ENTRY",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/eventtype/1/0"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ProviderType",
+      "id": "https://admin-shell.io/idta/prop/providertype/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "provider type"
+              },
+              {
+                "language": "de",
+                "text": "Versorgertyp"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Type of the location information provider, e.g. \u0022UWB tag\u0022"
+              },
+              {
+                "language": "de",
+                "text": "Typ des Elements eines Lokalisierungssystems, das die Lokalisierungsinformation liefert, z.B. UWB-Tag"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Accuracy",
+      "id": "https://admin-shell.io/idta/prop/accuracy/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "accuracy"
+              },
+              {
+                "language": "de",
+                "text": "Genauigkeit"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "accuracy"
+              }
+            ],
+            "unit": "m",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The horizontal accuracy of the position data"
+              },
+              {
+                "language": "de",
+                "text": "Die waagerechte Genauigkeit der Positionsdaten"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MagneticHeading",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "magnetic heading"
+        },
+        {
+          "language": "de",
+          "text": "magnetische Ausrichtung"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/prop/magneticheading/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "magnetic heading"
+              },
+              {
+                "language": "de",
+                "text": "magnetische Ausrichtung"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "magnetic heading"
+              }
+            ],
+            "unit": "\u00B0",
+            "dataType": "INTEGER_COUNT",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The magnetic heading direction of the Asset"
+              },
+              {
+                "language": "de",
+                "text": "Die magnetische Ausrichtung des Assets"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "HeadingAccuracy",
+      "id": "https://admin-shell.io/idta/prop/headingaccuracy/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "heading accuracy"
+              },
+              {
+                "language": "de",
+                "text": "Steuerkursgenauigkeit"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "heading accuracy"
+              }
+            ],
+            "unit": "\u00B0",
+            "dataType": "INTEGER_COUNT",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The maximum deviation between the reported magnetic heading and the true heading"
+              },
+              {
+                "language": "de",
+                "text": "Die Maximale Abweichung zwischen dem angegebenen Steuerkurs und dem wahren Steuerkurs"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Course",
+      "id": "https://admin-shell.io/idta/prop/course/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Course"
+              },
+              {
+                "language": "de",
+                "text": "Kurz"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Course"
+              }
+            ],
+            "unit": "\u00B0",
+            "dataType": "INTEGER_COUNT",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The current course (\u0022compass direction\u0022) where the asset is heading to"
+              },
+              {
+                "language": "de",
+                "text": "Die aktuelle Kompassrichtung, in die sich das Asset bewegt"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReferencePointId",
+      "id": "https://admin-shell.io/idta/prop/referencepointid/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "reference point (ID)"
+              },
+              {
+                "language": "de",
+                "text": "Referenzpunkt (ID)"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identificator of a reference point at the Asset for which the position has been submitted"
+              },
+              {
+                "language": "de",
+                "text": "Ident eines Referenzpunktes (Position) am Asset f\u00FCr den die Positionsangabe \u00FCbermittelt wurde"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RealtimeCapabilityOfAAS",
+      "id": "https://admin-shell.io/idta/mlp/realtimecapabilityofaas/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Realtime capability description"
+              },
+              {
+                "language": "de",
+                "text": "Beschreibung der Echtzeitf\u00E4higkeit"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Description of the extend and conditions for real time applications of the AAS"
+              },
+              {
+                "language": "de",
+                "text": "Beschreibung, inwieweit und unter welchen Bedingungen eine Echtzeitf\u00E4higkeit der AAS besteht"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RealtimeLocationSource",
+      "id": "https://admin-shell.io/idta/mlp/realtimelocationsource/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Real time location source"
+              },
+              {
+                "language": "de",
+                "text": "Quelle f\u00FCr Echtzeitlokalisierung"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Information regarding a source for real time location data, e.g., URL and API documentation for DeepHub"
+              },
+              {
+                "language": "de",
+                "text": "Informationen \u00FCber eine Quelle f\u00FCr Echtzeitpositionen, z.B. URL und API-Dokumentation f\u00FCr DeepHub"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Localizable",
+      "id": "https://admin-shell.io/idta/prop/localizable/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "localizable"
+              },
+              {
+                "language": "de",
+                "text": "lokalisierbar"
+              }
+            ],
+            "dataType": "BOOLEAN",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Information wether the position can be currently updated with the correct position"
+              },
+              {
+                "language": "de",
+                "text": "Information, ob derzeit die aktuelle Position korrekt in die AAS gespielt werden kann"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RealtimeLocationSourceType",
+      "id": "https://admin-shell.io/idta/prop/realtimelocationsourcetype/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "real time location source type"
+              },
+              {
+                "language": "de",
+                "text": "Typ der Quelle f\u00FCr Echtzeitlokalisierung"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Type or name of the source that delivers real time information for the asset\u0027s location, e.g., OMLOX"
+              },
+              {
+                "language": "de",
+                "text": "Typ oder Name der Echtzeitquelle f\u00FCr Lokationsinformationen des Assets, z.B. OMLOX"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TrueHeading",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "true heading"
+        },
+        {
+          "language": "de",
+          "text": "wahre Ausrichtung"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/prop/trueheading/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "true heading"
+              },
+              {
+                "language": "de",
+                "text": "wahre Ausrichtung"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "true heading"
+              }
+            ],
+            "unit": "\u00B0",
+            "dataType": "INTEGER_COUNT",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The corrected magnetic heading direction of the Asset"
+              },
+              {
+                "language": "de",
+                "text": "Die korrigierte magnetische Ausrichtung des Assets"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TransmissionTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Time (timestemp) when the location information has been updated"
+        },
+        {
+          "language": "de",
+          "text": "Zeitpunkt (Zeitstempel) an dem die Lokalisierungsinformation zuletzt ge\u00E4ndert wurde"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/prop/transmissiontime/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "transmission time"
+              },
+              {
+                "language": "de",
+                "text": "Sendezeitpunkt"
+              }
+            ],
+            "dataType": "TIMESTAMP",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Time (timestamp) when the location information has been updated"
+              },
+              {
+                "language": "de",
+                "text": "Zeitpunkt (Zeitstempel) an dem die Lokalisierungsinformation zuletzt ge\u00E4ndert wurde"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "isLocatedIn",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "is located in"
+        },
+        {
+          "language": "de",
+          "text": "liegt in"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "First element of the relation is spatially located in the second element of the relation"
+        },
+        {
+          "language": "de",
+          "text": "Das erste Element der Relation liegt r\u00E4umlich im zweiten Element der Relation"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/rel/islocatedin/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "isLocatedIn"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ProviderId",
+      "description": [
+        {
+          "language": "en",
+          "text": "Identifikation of the location provider which triggered the event "
+        },
+        {
+          "language": "de",
+          "text": "Ident des Lieferenten der Positionsinformation, der das Event ausgel\u00F6st hat"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/prop/providerid/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ProviderId"
+              }
+            ],
+            "dataType": "STRING",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
