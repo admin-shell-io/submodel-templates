@@ -1,0 +1,1059 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "TechnicalDataAAS",
+      "id": "https://admin-shell.io/aas/TechnicalData/1/2",
+      "derivedFrom": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "AssetAdministrationShell",
+            "value": "https://admin-shell.io/aas/TechnicalData/1/2"
+          }
+        ]
+      },
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/asset/TechnicalData/1/2",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "TechnicalData",
+      "description": [
+        {
+          "language": "en",
+          "text": "Submodel containing techical data of the asset and associated product classificatons."
+        },
+        {
+          "language": "de",
+          "text": "Teilmodell, das die technischen Daten der Anlage und die zugeh\u00F6rigen Produktklassifizierungen enth\u00E4lt."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "2"
+      },
+      "id": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "GeneralInformation",
+          "description": [
+            {
+              "language": "en",
+              "text": "General information, for example ordering and manufacturer information."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/ZVEI/TechnicalData/GeneralInformation/1/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "ManufacturerName",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Legally valid designation of the natural or judicial body which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into the market."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO677#002"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "Example Company"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "ManufacturerLogo",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Imagefile for logo of manufacturer provided in common format (.png, .jpg)."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/ZVEI/TechnicalData/ManufacturerLogo/1/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "contentType": "image/png",
+              "modelType": "File"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ManufacturerProductDesignation",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Product designation as given by the mnaufacturer. Short description of the product, product group or function (short text) in common language."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAW338#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "Electrical energy accelerator@en"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ManufacturerArticleNumber",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "unique product identifier of the manufacturer "
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO676#003"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "A123-456"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ManufacturerOrderCode",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "By manufactures issued unique combination of numbers and letters used to identify the device for ordering"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO227#002"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "EEA-EX-200-S/47-Q3"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "ProductImage",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Image file for associated product provided in common format (.png, .jpg)."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/ZVEI/TechnicalData/ProductImage/1/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "contentType": "image/png",
+              "modelType": "File"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ProductClassifications",
+          "description": [
+            {
+              "language": "en",
+              "text": "Product classifications by association of product classes with common classification systems."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/ZVEI/TechnicalData/ProductClassifications/1/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "ProductClassificationItem",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Single product classification item by association with product class in a particular classification system or property dictionary."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/ZVEI/TechnicalData/ProductClassificationItem/1/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0"
+                      }
+                    ]
+                  },
+                  "type": "AllowedIdShort",
+                  "valueType": "xs:string",
+                  "value": "ProductClassificationItem[\\d{2,3}]"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ProductClassificationSystem",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Common name of the classification system."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/ZVEI/TechnicalData/ProductClassificationSystem/1/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                          }
+                        ]
+                      },
+                      "type": "ExampleValue",
+                      "valueType": "xs:string",
+                      "value": "ECLASS"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ClassificationSystemVersion",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Common version identifier of the used classification system, in order to distinguish different version of the property dictionary."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/ZVEI/TechnicalData/ClassificationSystemVersion/1/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                          }
+                        ]
+                      },
+                      "type": "ExampleValue",
+                      "valueType": "xs:string",
+                      "value": "9.0 (BASIC)"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ProductClassId",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Class of the associated product or industrial equipment in the classification system. According to the notation of the system."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/ZVEI/TechnicalData/ProductClassId/1/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                          }
+                        ]
+                      },
+                      "type": "ExampleValue",
+                      "valueType": "xs:string",
+                      "value": "27-01-88-77 | 0112/2///61987#ABA827#003"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "TechnicalProperties",
+          "description": [
+            {
+              "language": "en",
+              "text": "Individual characteristics that describe the product and its technical properties."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/ZVEI/TechnicalData/TechnicalProperties/1/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "ID___arbitrary1__",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Arbitrary SubmodelElement with semanticId possibly referring to a ConceptDescription can be used within the Technical Properties."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "NON_EMPTY_VALUE"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "Width@en= 32 [mm]"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ID___arbitrary2__",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Represents a SubmodelElement that is not described using a common classification system, a consortium specification, an open community standard, a published manufacturer specification or such."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SemanticIdNotAvailable/1/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "Length"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "MainSection",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Main subdivision possibility for properties."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/ZVEI/TechnicalData/MainSection/1/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0"
+                      }
+                    ]
+                  },
+                  "type": "AllowedIdShort",
+                  "valueType": "xs:string",
+                  "value": "MainSection[\\d{2,3}]"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "SubSection",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Subordinate subdivision possibility for properties."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/ZVEI/TechnicalData/SubSection/1/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0"
+                          }
+                        ]
+                      },
+                      "type": "AllowedIdShort",
+                      "valueType": "xs:string",
+                      "value": "SubSection[\\d{2,3}]"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "SubSection",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Subordinate subdivision possibility for properties."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/ZVEI/TechnicalData/SubSection/1/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0"
+                      }
+                    ]
+                  },
+                  "type": "AllowedIdShort",
+                  "valueType": "xs:string",
+                  "value": "SubSection[\\d{2,3}]"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "FurtherInformation",
+          "description": [
+            {
+              "language": "en",
+              "text": "Further information on the product, the validity of the information provided and this data record."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/ZVEI/TechnicalData/FurtherInformation/1/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "TextStatement",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Statement by the manufacturer in text form, e.g. scope of validity of the statements, scopes of application, conditions of operation."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/ZVEI/TechnicalData/TextStatement/1/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "Restricted use@en"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0"
+                      }
+                    ]
+                  },
+                  "type": "AllowedIdShort",
+                  "valueType": "xs:string",
+                  "value": "TextStatement[\\d{2,3}]"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ValidDate",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Denotes a date on which the data specified in the Submodel was valid from for the associated asset."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/ZVEI/TechnicalData/ManufacturerOrderCode/1/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "type": "ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "5/28/2021"
+                }
+              ],
+              "valueType": "xs:date",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ]
+}
