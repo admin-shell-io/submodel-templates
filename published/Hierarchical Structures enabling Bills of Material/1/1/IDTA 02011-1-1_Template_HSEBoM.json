@@ -1,0 +1,650 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "BillofMaterialAAS",
+      "id": "https://admin-shell.io/idta/aas/HierarchicalStructuresBoM/1/1",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/HierarchicalStructuresBoM/1/1",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/HierarchicalStructuresBoM/1/1"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "HierarchicalStructures",
+      "description": [
+        {
+          "language": "en",
+          "text": "The Submodel HierarchicalStructures identified by its semanticId. The Submodel idShort can be picked freely."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/HierarchicalStructuresBoM/1/1",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/HierarchicalStructures/1/1/Submodel"
+          }
+        ]
+      },
+      "qualifiers": [
+        {
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+              }
+            ]
+          },
+          "kind": "TemplateQualifier",
+          "type": "SMT/Cardinality",
+          "valueType": "xs:string",
+          "value": "ZeroToOne"
+        },
+        {
+          "kind": "TemplateQualifier",
+          "type": "EditIdShort",
+          "valueType": "xs:string",
+          "value": "True"
+        }
+      ],
+      "submodelElements": [
+        {
+          "idShort": "EntryNode",
+          "description": [
+            {
+              "language": "en",
+              "text": "Base entry point for the Entity tree in this Submodel, this must be a Self-managed Entity reflecting the Assets administrated in the AAS this Submodel is part of."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/HierarchicalStructures/EntryNode/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            },
+            {
+              "kind": "TemplateQualifier",
+              "type": "EditIdShort",
+              "valueType": "xs:string",
+              "value": "True"
+            }
+          ],
+          "statements": [
+            {
+              "idShort": "Node",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Base entry point for the Entity tree in this Submodel, this must be a Self-managed Entity reflecting the Assets administrated in the Asset Administration Shell this Submodel is part of. The idShort of the EntryNode can be picked freely and may reflect a name of the asset."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/HierarchicalStructures/Node/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                },
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "EditIdShort",
+                  "valueType": "xs:string",
+                  "value": "True"
+                }
+              ],
+              "statements": [
+                {
+                  "idShort": "Node",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/Node/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    },
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "EditIdShort",
+                      "valueType": "xs:string",
+                      "value": "True"
+                    }
+                  ],
+                  "entityType": "SelfManagedEntity",
+                  "globalAssetId": "https://admin-shell.io/idta/HierarchicalStructures/EntryNode/1/0",
+                  "modelType": "Entity"
+                },
+                {
+                  "idShort": "SameAs",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Reference between two Entities in the same Submodel or across Submodels."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/SameAs/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    },
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "EditIdShort",
+                      "valueType": "xs:string",
+                      "value": "True"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "EMPTY"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "EMPTY"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                },
+                {
+                  "idShort": "IsPartOf",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Modeling of logical connections between components and sub-components. Either this or \u0022HasPart\u0022 must be used, not both."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/IsPartOf/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    },
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "EditIdShort",
+                      "valueType": "xs:string",
+                      "value": "True"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "EMPTY"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "EMPTY"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                },
+                {
+                  "idShort": "HasPart",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Modeling of logical connections between components and sub-components. Either this or \u0022IsPartOf\u0022 must be used, not both."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    },
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "EditIdShort",
+                      "valueType": "xs:string",
+                      "value": "True"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "EMPTY"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "EMPTY"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                },
+                {
+                  "idShort": "BulkCount",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "To be used if bulk components are referenced, e.g., a 10x M4x30 screw."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:unsignedLong",
+                  "modelType": "Property"
+                }
+              ],
+              "entityType": "SelfManagedEntity",
+              "globalAssetId": "https://admin-shell.io/idta/HierarchicalStructures/EntryNode/1/0",
+              "modelType": "Entity"
+            },
+            {
+              "idShort": "SameAs",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Reference between two Entities in the same Submodel or across Submodels."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/HierarchicalStructures/SameAs/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                },
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "EditIdShort",
+                  "valueType": "xs:string",
+                  "value": "True"
+                }
+              ],
+              "first": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "EMPTY"
+                  }
+                ]
+              },
+              "second": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "EMPTY"
+                  }
+                ]
+              },
+              "modelType": "RelationshipElement"
+            },
+            {
+              "idShort": "IsPartOf",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Modeling of logical connections between asset and sub-asset. Either this or \u0022HasPart\u0022 must be used, not both."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/HierarchicalStructures/IsPartOf/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                },
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "EditIdShort",
+                  "valueType": "xs:string",
+                  "value": "True"
+                }
+              ],
+              "first": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "EMPTY"
+                  }
+                ]
+              },
+              "second": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "EMPTY"
+                  }
+                ]
+              },
+              "modelType": "RelationshipElement"
+            },
+            {
+              "idShort": "HasPart",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Modeling of logical connections between components and sub-components. Either this or \u0022IsPartOf\u0022 must be used, not both."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/HierarchicalStructures/HasPart/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                },
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "EditIdShort",
+                  "valueType": "xs:string",
+                  "value": "True"
+                }
+              ],
+              "first": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "EMPTY"
+                  }
+                ]
+              },
+              "second": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "EMPTY"
+                  }
+                ]
+              },
+              "modelType": "RelationshipElement"
+            }
+          ],
+          "entityType": "SelfManagedEntity",
+          "globalAssetId": "https://admin-shell.io/idta/HierarchicalStructures/EntryNode/1/0",
+          "modelType": "Entity"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "ArcheType",
+          "description": [
+            {
+              "language": "en",
+              "text": "ArcheType of the Submodel, there are three allowed enumeration entries: 1. \u201CFull\u201D, 2. \u201COneDown\u201D and 3. \u201COneUp\u201D. "
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/HierarchicalStructures/ArcheType/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            },
+            {
+              "kind": "TemplateQualifier",
+              "type": "FormChoices",
+              "valueType": "xs:string",
+              "value": "Full;OneDown;OneUp"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ]
+}
