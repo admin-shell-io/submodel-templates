@@ -1,0 +1,3145 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "WirelessCommunicationAAS",
+      "id": "https://admin-shell.io/idta/aas/WirelessCommunication/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/aas/WirelessCommunication/1/0",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/WirelessCommunication/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "category": "PARAMETER",
+      "idShort": "WirelessCommunication",
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains the wireless communication aspects of the asset."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/WirelessCommunication/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/WirelessCommunication/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "category": "CONSTANT",
+          "idShort": "WirelessCommunicationFunction",
+          "description": [
+            {
+              "language": "en",
+              "text": "hardware and software implementation of algorithms for wireless communication (VDI/VDE 2185 Part-4, 2019).  Describes the parameters of the wireless communication function. This includes parameters of the transmitter and receiver. Moreover information about intances that implement the communication function (e.g. modules) can also be descrebed here."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/WirelessCommunicationFunction/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "CommunicationCycle",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "This parameter describes the cycle with which the communication stack executes requests from the application and the wireless medium in ms."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/WirelessCommunicationFunction/CommunicationCycle/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "TechnologyStandard",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It includes the name of the technology, the release/version and other informaton."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/WirelessCommunicationFunction/TechnologyStandard/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "MediumAccess",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The media access control ensures for example that a communication request is served as far as the medium is free (CSMA) or it allocates the request to well defined time slots (TDMA). Combinations of these two as well as other access mechanisms are possible."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/ WirelessCommunicationFunction/ MediumAccess/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "MediumAccessType",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "It describes which technique is used for accesing the rado medium. It can be for example CSMA or TDMA. It highly depends on the Technology."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/ WirelessCommunicationFunction/ MediumAccess/ MediumAccessType/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "SlotConfiguration",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Depending on the mediung access type, the  slot configuration can be descrided as number of slots for downlink, uplink and shared slots."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/ WirelessCommunicationFunction/MediumAccess/SlotConfiguration/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "category": "PARAMETER",
+                      "idShort": "NumberOfDownlinkSlots",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Number of timeslots reserved for downlink communication."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/WirelessCommunication/WirelessCommunicationFunction/MediumAccess/SlotConfiguration/NumberOfDownlinkSlots/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "category": "PARAMETER",
+                      "idShort": "NumberOfUplinkSlots",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Number of timeslots reserved for uplink communication."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/WirelessCommunication/WirelessCommunicationFunction/MediumAccess/SlotConfiguration/NumberOfUplinkSlots/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "NumberOfSharedSlots",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Number of timeslots that are reserved for downlink and uplink communication."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/WirelessCommunication/ WirelessCommunicationFunction/ MediumAccess/SlotConfiguration/NumberOfSharedSlots/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "SecurityMechanism",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "This parameter specifies how the security objectives of the application are met by the implemented security mechanisms"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/ WirelessCommunicationFunction/ SecurityMechanism/1/0 "
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "WirelessNetworkRole",
+          "description": [
+            {
+              "language": "en",
+              "text": "It describes the role of the asset has in the network: accespoint, end node, repeater. It could also be an immaterial asset as an heatmap, or a wireless communication manager"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/WirelessCommunication/ WirelessNetworkRole/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "OneToMany"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "RadioFrequency",
+          "description": [
+            {
+              "language": "en",
+              "text": "It describes the characteristics of radio channel as frequency, band, bandwidth."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/WirelessCommunication/ RadioFrequency/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "FrequencyBand",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Contains information related with the frequency band used by the asset. It refers to a range of frequencies within the electromagnetic spectrum, which includes all frequencies of electromagnetic radiation. Different technologies and applications often use specific frequency bands for communication."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/RadioFrequency/FrequencyBand/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "category": "CONSTANT",
+                  "idShort": "BandIDList",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "List of bands that can be configured on the asset. "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "shell.io/idta/WirelessCommunication/RadioFrequency/FrequencyBand/BandIDList/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "BandIDCurrent",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "ID of current configured band."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "[IRI] https://admin-shell.io/idta/WirelessCommunication/RadioFrequency/FrequencyBand/BandIDCurrent/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "CenterFrequecy",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Center frequency in MHz of the current configured band."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/RadioFrequency/FrequencyBand/CenterFrequecy/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Bandwidth",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Bandwidth in MHz of current configured band. Bandwidth is the difference between upper cut-off frequency and lower cut-off frequency. The bandwidth is the range of frequencies occupied by a modulated carrier signal."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://example.com/ids/cd/3311_8081_2132_3696"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "RadioFrequencyChannel",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Refers to a specific channel of frequencies used for wireless communication. Radio communication technologies divide the spectrum into channels."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": " https://admin-shell.io/idta/WirelessCommunication/RadioFrequency/RadioFrequencyChannel/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "category": "CONSTANT",
+                  "idShort": "ChannelNumbering",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Most wireless technologies assign numbers to the specified radio channels. This parameter lists the specified numbers.  It may be used for some technologies (e.g bluetooth). Blacklisting can be considered."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/RadioFrequency/RadioFrequencyChannel/ChannelNumbering/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "UsedChannelCentreFrequency",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Centre frequency is the geometric mean of lower cut-off frequency   and upper cut-off frequency of a radio channel. This parameter assigns the centre frequencies to the radio channels. It serves to specify the utilized frequency, crucial for systems like Wi-Fi. However, in instances of channel-hopping technologies like BLE, IOLW, and WirelessHART, where channels dynamically change, it\u0027s recommended to leave this property empty."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://example.com/ids/cd/3311_8081_2132_3696"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "UsedChannelBandwidth",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Bandwidth is the difference between upper cut-off frequency and lower cut-off frequency. The bandwidth is the range of frequencies occupied by a modulated carrier signal. The data rate of reliable communication is directly proportional to the bandwidth of the signal used for the communication."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://example.com/ids/cd/3311_8081_2132_3696"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ReceptionQualityIndicator",
+          "description": [
+            {
+              "language": "en",
+              "text": "Set of parameters that describe the quality of reception. The availabitly of these parameter depends on the technology and implementations."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/WirelessCommunication/ ReceptionQuality/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "ParameterType",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It is a string that describes the parameter type depending on the technology."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "[IRI] https://admin-shell.io/idta/WirelessCommunication /ReceptionQualityIndicator/ParameterType/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Range",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The range delimits the limits that define the extent of acceptable values or conditions for the parameter. In the context of a reception quality indicator, one of the thresholds can typically be defined by the reception sensitivity parameter of some wireless modules. "
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/ReceptionQualityIndicator/Range/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "modelType": "Range"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "SpecifiedValue",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It is the value specified during the desing phase."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication /ReceptionQualityIndicator/SpecifiedValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:float",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "ReferenceValue",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It is the value configured In the commissioning phase."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/ ReceptionQualityIndicator/ReferenceValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:float",
+              "modelType": "Property"
+            },
+            {
+              "category": "VARIABLE",
+              "idShort": "CurrentValue",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It is the last received signal strength value stored by the communication module."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/ ReceptionQualityIndicator/CurrentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:float",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "OutputPower",
+          "description": [
+            {
+              "language": "en",
+              "text": "The transmit power is determined by the RF schematic of the wireless module. Depending on the wireless technology, standard or implementation it is fixed, adjustable in steps or free configurable. (VID/VDE 2185 Part4)"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/WirelessCommunication/ OutputPower/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "ParameterType",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It is a string that describes the parameter type depending on the technology."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "[IRI] https://admin-shell.io/idta/WirelessCommunication /ReceptionQualityIndicator/ParameterType/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Range",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The range delimits the limits that define the extent of acceptable values or conditions for the parameter. In the context of output power, it is typically defined by the maximum transmit power of the transceiver. "
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/OutputPower/Range/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "modelType": "Range"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "SpecifiedValue",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It is the value specified during the desing phase."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/OutputPower/SpecifiedValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0112/2///61360_4#AAF575"
+                      }
+                    ]
+                  },
+                  "kind": "ConceptQualifier",
+                  "type": "life cycle qual",
+                  "valueType": "xs:string",
+                  "value": "SPEC",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0112/2///61360_4#AAF579"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "valueType": "xs:float",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "ReferenceValue",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It is the value configured In the commissioning phase."
+                }
+              ],
+              "semanticId": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/OutputPower/ReferenceValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:float",
+              "modelType": "Property"
+            },
+            {
+              "category": "VARIABLE",
+              "idShort": "CurrentValue",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It is the last received signal strength value stored by the communication module."
+                }
+              ],
+              "semanticId": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/OutputPower/CurrentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:float",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "License",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/WirelessCommunication/ License/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "Applicant",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "A set of parameters that include the information about the license holder as well as the contact person."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "[IRI] https://admin-shell.io/idta/WirelessCommunication/License/Applicant/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "category": "CONSTANT",
+                  "idShort": "CompanyName",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Official name of the applying/responsible company"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/CompanyName/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "ContactSurname",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Name of the responsible person"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/ContactSurname/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "ContactFirstName",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "First name of the responsible"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/ContactFirstName/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Address",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Official company address"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/Address/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Phone",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Phone number"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/Phone/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Fax",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Fax number (optional parameter)."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/Fax/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Mail",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Contact mail address (optional parameter)"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/Mail/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Description",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Description of the intended use (Aproximately one page)."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/ Description/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "LicenseType",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Type of license: trial operation, normal operation."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/ LicenseType/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "Frequency",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "This list contains information about the used frequency or frequency ranges. Only one of the three fields must be filled in."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/License/Frequency/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Frequency",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Frequency for operation in the radio spectrum, subject to license application."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/Frequency/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Frequencies",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Frequencies for operation in the radio spectrum, subject to license application."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/Frequencies/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "FrequencyRange",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "List with \u201Cstart frequency\u201D and \u201Cstop frequency\u201D for operation in the radio spectrum, subject to license application."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/Frequencies/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "min": "10.0",
+                  "max": "50.0",
+                  "modelType": "Range"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "Operation",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "This list contains information on the period of use of the frequency ranges applied for."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/License/Operation/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Day",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Begin of operation Day"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/Operation/Day/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Month",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Begin of operation Month."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/Operation/Month/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Year",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Begin of operation year"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/Operation/Year/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Duration",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Duration of operation in Days"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/Operation/Duration/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "FixedStation",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "This list contains the geographical information of the fixed stations. Information must include both the postal and geographic address, as well as the height of the antennas."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/License/FixedStations/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Location",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Address of the location."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/FixedStations/Location/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "GeographicPosition",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Geographic Position in East and North degree, minute and second"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/ FixedStations/GeographicPosition/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AltitudeLocation",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Altitide above sea level."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/FixedStations/AltituteLocation/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "AltitudeAntenna",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Altitude above earth\u0027s surface."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/FixedStations/AltituteAntenna/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "StationID",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "FixedStations/NumberOfStations/1/0"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/FixedStations/NumberOfStations/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "MobileStation",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "This list contains the information about the mobile station (used geographical area, number of mobile stations and kind of operation)."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/License/MobileStations/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Region",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Region in which the mobile should be used."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/MobileStations/Region/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "StationID",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Number of mobile stations."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/MobileStations/NumberOfStations/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "KindOfOperation",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "One way or two way communication."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/MobileStations/KindOfOperation/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "LicenseAcquisitionTechnicalData",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "This list contains the technical parameters of the network."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/License/TechnicalData/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "EquipmentMarketing",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Name or code of the equipment."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/License/EquipmentMarketing/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Manufacturer",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Manufacturer of the equipment."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData /Manufacturer/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "DuplexMethod",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Duplex Mode (FDD or TDD)."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData /DuplexMethod/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AccessMethod",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Access Mode e.g. FDMA"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData /AccessMethod/1/"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "TypeOfModulation",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Type of Modulation e.g. FM"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData/TypeOfModulation/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Bandwidth",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Used Bandwith in MHz."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData/Bandwidth/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "TransmiterOutputPower",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Transmitter output power in dBm e.g. 10dBm"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData/TransmitterOutputPower/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AntennaGain",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Antenna Gain in dBi respectively antenna pattern."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData/AntennaGain/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Polarisation",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Polarisation of the antenna e.g. horizontal, vertical, \u2026"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData/Polarisation/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Azimuth",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Azimut of the antenna."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData /Azimuth/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Elevation",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Elevation of the antenna."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData/Elevation/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Interfaces",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Connection between radio system and other telecommunication systems."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData/Interfaces/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "Allocation",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Information about the time and status of application"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/License/Allocation/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "TimeOfRequest",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Date of application submission."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/Allocation/TimeOfRequest/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "TimeOfResponse",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Date of response from regulatory authority."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/Allocation/TimeOfResponse/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Status",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Response from the regulatory authority. Application approved/Application approved subject to compliance with conditions/Application rejected"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/Allocation/Status/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Conditions",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Conditions so that the license application is accepted. e.g. restriction of transmission power, alignment of the antenna"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/WirelessCommunication/Allocation/Conditions1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "Hardware",
+          "description": [
+            {
+              "language": "en",
+              "text": "Set of parameters that describe hardware aspects of the asset such as antenna type, connectors and interfaces during different life cycle phases."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/WirelessCommunication/Hardware/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "AntennaType",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It describes the antenna used for the wireless asset. (Monopole antenna, directional antenna, dipole antenna, special antenna). It defines also the antenna connector."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/Hardware/AntennaType/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "NumberOfAntennas",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It defines how many antennas the asset has."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/Hardware/NumberOfAntennas/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:short",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "ConnectorType",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Connector type of the antenna."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/Hardware/ConnectorType/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "AntennaHeight",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Height of the antenna."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/Hardware/AntennaHeight/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "Interfaces",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It describes the interfaces that the asset has: Ethernet, USB, Wireless, Digital IO, etc.."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/Hardware/Interface/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "Authentication",
+          "description": [
+            {
+              "language": "en",
+              "text": "It contains information needed for device authentication. It is required to verify the legitimacy of devices and ensuring secure network access. "
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/WirelessCommunication/Authentication/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "AuthenticationIdentifier",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "It is a parameter for device authentication in networks. It varies across wireless technologies, serving as a unique data piece presented during authentication, such as 5G\u0027s \u0022Access Point Name,\u0022 Bluetooth\u0027s \u0022Master ID,\u0022 and Wi-Fi\u0027s \u0022SSID.\u0022"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/AuthenticationIdentifier/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "AuthenticationKey",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Cryptographic codes or credentials used alongside the Authentication Identifier. "
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/WirelessCommunication/AuthenticationKey/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "category": "CONSTANT",
+      "idShort": "CommunicationCycle",
+      "id": "https://admin-shell.io/idta/WirelessCommunication/WirelessCommunicationFunction/CommunicationCycle/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CommunicationCycle"
+              }
+            ],
+            "unit": "milisseconds",
+            "symbol": "ms",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CenterFrequecy",
+      "description": [
+        {
+          "language": "en",
+          "text": "Center frequency in MHz of the current configured band."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/RadioFrequency/FrequencyBand/CenterFrequecy/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CenterFrequecy"
+              }
+            ],
+            "unit": "MHz",
+            "dataType": "REAL_MEASURE",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Range",
+      "description": [
+        {
+          "language": "en",
+          "text": "The range delimits the limits that define the extent of acceptable values or conditions for the parameter. In the context of a reception quality indicator, one of the thresholds can typically be defined by the reception sensitivity parameter of some wireless modules. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/ReceptionQualityIndicator/Range/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Range"
+              }
+            ],
+            "unit": "dBm",
+            "dataType": "REAL_MEASURE",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SpecifiedValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "It is the value specified during the desing phase."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication /ReceptionQualityIndicator/SpecifiedValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SpecifiedValue"
+              }
+            ],
+            "unit": "dBm",
+            "dataType": "REAL_MEASURE",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReferenceValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "It is the value configured In the commissioning phase."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/ ReceptionQualityIndicator/ReferenceValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReferenceValue"
+              }
+            ],
+            "unit": "dBm",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CurrentValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "It is the last received signal strength value stored by the communication module."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/ ReceptionQualityIndicator/CurrentValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CurrentValue"
+              }
+            ],
+            "unit": "dBm",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Range",
+      "description": [
+        {
+          "language": "en",
+          "text": "The range delimits the limits that define the extent of acceptable values or conditions for the parameter. In the context of output power, it is typically defined by the maximum transmit power of the transceiver. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/OutputPower/Range/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Range"
+              }
+            ],
+            "unit": "dBm",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SpecifiedValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "It is the value specified during the desing phase."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/OutputPower/SpecifiedValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SpecifiedValue"
+              }
+            ],
+            "unit": "dBm",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReferenceValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "It is the value configured In the commissioning phase."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/OutputPower/ReferenceValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReferenceValue"
+              }
+            ],
+            "unit": "dBm",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CurrentValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "It is the last received signal strength value stored by the communication module."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/OutputPower/CurrentValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CurrentValue"
+              }
+            ],
+            "unit": "dBm",
+            "dataType": "INTEGER_MEASURE",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Frequency",
+      "description": [
+        {
+          "language": "en",
+          "text": "Frequency for operation in the radio spectrum, subject to license application."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/License/Frequency/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Frequency"
+              }
+            ],
+            "unit": "MHz",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Frequencies",
+      "description": [
+        {
+          "language": "en",
+          "text": "Frequencies for operation in the radio spectrum, subject to license application."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/License/Frequencies/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Frequencies"
+              }
+            ],
+            "unit": "MHz",
+            "dataType": "REAL_MEASURE",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Bandwidth",
+      "description": [
+        {
+          "language": "en",
+          "text": "Used Bandwith in MHz."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData/Bandwidth/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Bandwidth"
+              }
+            ],
+            "unit": "MHz",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TransmiterOutputPower",
+      "description": [
+        {
+          "language": "en",
+          "text": "Transmitter output power in dBm e.g. 10dBm"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/WirelessCommunication/LicenseAcquisitionTechnicalData/TransmitterOutputPower/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TransmiterOutputPower"
+              }
+            ],
+            "unit": "dBm",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
