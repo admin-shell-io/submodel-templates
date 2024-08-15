@@ -1,0 +1,258 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "CreationandClassificationofMaterialsAAS",
+      "id": "https://admin-shell.io/idta/aas/CreationandClassificationofMaterials/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/CreationandClassificationofMaterials/1/0",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/CreationandClassificationofMaterials/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "BackendSpecificMaterialInformation",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/CreationandClassificationofMaterials/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/1/0/"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "MaterialSystemProperties",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Qualifier",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "MaterialType",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/MaterialType/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "BaseUnitOfMeasure",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "ttps://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/BaseUnitOfMeasure/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "language": "en",
+                  "text": "MaterialType"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "idShort": "MaterialStatus",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/MaterialStatus/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "Industry",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/Industry/1/0https://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/Industry/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "ProductName",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/ProductName/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "language": "en",
+                  "text": "ProductName"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "idShort": "MaterialNumber",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/MaterialNumber/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "Description",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/Description/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Description"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "idShort": "Plant",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/Plant/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ]
+}
