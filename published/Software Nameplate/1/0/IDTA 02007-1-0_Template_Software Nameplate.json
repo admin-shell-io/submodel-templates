@@ -1,0 +1,3755 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "SoftwareNameplateAAS",
+      "description": [
+        {
+          "language": "en",
+          "text": "My Test Software"
+        },
+        {
+          "language": "de",
+          "text": "Meine Testsoftware"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/aas/SoftwareNameplate/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/SoftwareNameplate/1/0",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/SoftwareNameplate/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "SoftwareNameplate",
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains the nameplate information attached to the software product"
+        }
+      ],
+      "administration": {
+        "version": "0",
+        "revision": "15"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/SoftwareNameplate/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0"
+          }
+        ]
+      },
+      "qualifiers": [
+        {
+          "kind": "ConceptQualifier",
+          "type": "FormTitle",
+          "valueType": "xs:string",
+          "value": "A template for a software nameplate submodel, v0.15"
+        },
+        {
+          "kind": "ConceptQualifier",
+          "type": "FormInfo",
+          "valueType": "xs:string",
+          "value": "This form is based on Version 0.15"
+        },
+        {
+          "kind": "ConceptQualifier",
+          "type": "FormUrl",
+          "valueType": "xs:string",
+          "value": "https://admin-shell.io/idta/SoftwareNameplate_15"
+        }
+      ],
+      "submodelElements": [
+        {
+          "idShort": "SoftwareNameplateType",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "Multiplicity",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "URIOfTheProduct",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAY811#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ManufacturerName",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO677#002"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ManufacturerProductDesignation",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAW338#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "ManufacturerProductDescription",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/ManufacturerProductDescription"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ManufacturerProductFamily",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAU731#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "idShort": "ManufacturerProductType",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO057#002"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "SoftwareType",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/SoftwareType"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "PLC Runtime",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Version",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/Version"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "0.9.1.0",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "VersionName",
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Name der Version"
+                },
+                {
+                  "language": "en",
+                  "text": "the name this particular version is given"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/VersionName"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "language": "en",
+                  "text": "R2021 beta"
+                },
+                {
+                  "language": "de",
+                  "text": "Stand 2021 beta"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "VersionInfo",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides a textual description of most relevant characteristics of the version of the software"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/VersionInfo"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Please do not install in productive environments!"
+                },
+                {
+                  "language": "de",
+                  "text": "Bitte nicht im Produktivsystem installieren!"
+                }
+              ],
+              "valueId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/ZVEI/AkItInAutomation/NameplateSoftware/ReleaseNotes/1/0//example.com/ids/cd/8500_7052_2012_2916"
+                  }
+                ]
+              },
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "ReleaseDate",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/ReleaseDate"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:date",
+              "value": "2022-02-07",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "ReleaseNotes",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides a textual description of most relevant characteristics of the version of the software"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/ReleaseNotes"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "language": "en",
+                  "text": "This release requires special configuration."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "ReleaseInformation",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "EMPTY"
+                },
+                {
+                  "language": "de",
+                  "text": "EMPTY"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/ReleaseInformation"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "BuildDate",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/BuildDate"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:date",
+              "value": "2020-11-19",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "InstallationURI",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates the resource, where the software is being provided by the manufacturer."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/InstallationURI"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:anyURI",
+              "value": "https://tud.de/inf/pk/demo-sw/download/DemoFirmware_09.zip",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "InstallationFile",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "EMPTY"
+                },
+                {
+                  "language": "de",
+                  "text": "EMPTY"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/InstallationFile"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "InstallerType",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates the type of installation package."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/InstallerType"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "1",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "InstallationChecksum",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "provides the checksum for the software available at InstallationURI"
+                },
+                {
+                  "language": "de",
+                  "text": "beinhaltet die Pr\u00FCfsumme f\u00FCr die Software, die \u00FCber InstallationURI angegeben ist"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/InstallationChecksum"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "0x2783",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "SoftwareNameplateInstance",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "Multiplicity",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "SerialNumber",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAM556#002"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "123456",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "InventoryTag",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "contains inventory information of the user"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InventoryTag"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "TU3-88D5",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "InstanceName",
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Der Name der konkreten Instanz"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstanceName"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "My Software Instance",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "InstalledVersion",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "indicates the actual version of the instance"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledVersion"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "0.9.1.0",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "InstallationDate",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "containes the time of installation of this instance"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstallationDate"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:date",
+              "value": "2020-11-19",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "InstallationPath",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates the path to the installed instance of the software."
+                },
+                {
+                  "language": "de",
+                  "text": "gibt den Pfad an, an dem diese Instanz der Software installiert wurde."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstallationPath"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:anyURI",
+              "value": "C:\\Windows\\Program Files\\Demo\\Firmware",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "InstallationSource",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstallationSource"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:anyURI",
+              "value": "https://tud.de/inf/pk/installation/firmware/src",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "InstalledOnArchitecture",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledOnArchitecture"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "x64",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "InstalledOnOS",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledOnOS"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "Windows 10",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "InstalledOnHost",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledOnHost"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "Feldger\u00E4t",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "InstalledModules",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledModules"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "InstalledModule",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledModule"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "main",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ConfigurationPaths",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPaths"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "VARIABLE",
+                  "idShort": "ConfigurationPath",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPath"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "category": "VARIABLE",
+                      "idShort": "ConfigurationURI",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPath"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:anyURI",
+                      "value": "C:\\Users\\mw30\\Documents\\ZVEI\\AKITinAutomation\\20210113",
+                      "modelType": "Property"
+                    },
+                    {
+                      "category": "VARIABLE",
+                      "idShort": "ConfigurationType",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationType"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:integer",
+                      "value": "1",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "SLAInformation",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/SLAInformation"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "Service level GOLD USER.",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Contact",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The SMC \u201CContactInformation\u201D contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "RoleOfContactPerson",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "enumeration: 0173-1#07-AAS927#001 (administrativ contact), 0173-1#07-AAS928#001 (commercial contact), 0173-1#07-AAS929#001 (other contact), 0173-1#07-AAS930#001 (hazardous goods contact), 0173-1#07-AAS931#001 (technical contact). Note: the above mentioned ECLASS enumeration should be declared as \u201Copen\u201D for further addition. ECLASS enumeration IRDI is preferable. If no IRDI available, custom input as String may also be accepted."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO204#003"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "0173-1#07-AAS931#001",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "NationalCode",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": " Note: country codes defined accord. to ISO 3166-1. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO134#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "DE"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "Language",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Note: language codes defined accord. to ISO 639-1. Note: as per ECLASS definition, Expression and representation of thoughts, information, feelings, ideas through characters."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Language"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "de",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "TimeZone",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Note: notation accord. to ISO 8601 Note: for time in UTC the zone designator \u201CZ\u201D is to be used"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/TimeZone"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "Z",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "CityTown",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO132#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "de",
+                      "text": "Musterstadt"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "Company",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAW001#001"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "ABC Company"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "Department",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO127#003"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "de",
+                      "text": "Vertrieb"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "Phone",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "TelephoneNumber",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAO136#002"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "\u002B491234567890"
+                        }
+                      ],
+                      "modelType": "MultiLanguageProperty"
+                    },
+                    {
+                      "idShort": "TypeOfTelephone",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": " enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS755#001 (office mobile), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home), 0173-1#07-AAS759#001 (private mobile)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAO137#003"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "value": "0173-1#07-AAS754#001",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "AvailableTime",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "language": "de",
+                          "text": "Montag \u2013 Freitag 08:00 bis 16:00"
+                        }
+                      ],
+                      "modelType": "MultiLanguageProperty"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "Fax",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAQ834#005"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "FaxNumber",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAO195#002"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "\u002B491234567890"
+                        }
+                      ],
+                      "modelType": "MultiLanguageProperty"
+                    },
+                    {
+                      "idShort": "TypeOfFaxNumber",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS758#001 (home)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAO196#003"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "value": " 0173-1#07-AAS754#001",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "Email",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAQ836#005"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "EmailAddress",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAO198#002"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "value": "email@muster-ag.de",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "PublicKey",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAO200#002"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "modelType": "MultiLanguageProperty"
+                    },
+                    {
+                      "idShort": "TypeOfEmailAddress",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAO199#003"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "value": "0173-1#07-AAS754#001",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "TypeOfPublicKey",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAO201#002"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "modelType": "MultiLanguageProperty"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "IPCommunication__00__",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "AddressOfAdditionalLink",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAQ326#002"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "TypeOfCommunication",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/zvei/nameplate/1/0/ ContactInformations/ContactInformation/IPCommunication/TypeOfCommunication"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "value": "Chat",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "AvailableTime",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Multiplicity",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "language": "de",
+                          "text": "Montag \u2013 Freitag 08:00 bis 16:00"
+                        }
+                      ],
+                      "modelType": "MultiLanguageProperty"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "Street",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO128#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "de",
+                      "text": "Musterstra\u00DFe 1"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "Zipcode",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO129#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "de",
+                      "text": "12345"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "POBox",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO130#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "PF 1234"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "ZipCodeOfPOBox",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO131#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "12345"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "StateCounty",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO133#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "de",
+                      "text": "Muster-Bundesland"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "NameOfContact",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO205#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "FirstName",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO206#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "MiddleNames",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO207#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "Title",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO208#003"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "AcademicTitle",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO209#003"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "FurtherDetailsOfContact",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO210#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "AddressOfAdditionalLink",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAQ326#002"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "SoftwareNameplate_Type",
+      "description": [
+        {
+          "language": "en",
+          "text": "This collection contains the type related information "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SoftwareNameplate_Type"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Type"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SoftwareNameplate_Instance",
+      "description": [
+        {
+          "language": "en",
+          "text": "This collection contains the type related information "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SoftwareNameplate_Instance"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Instance"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "URIOfTheProduct",
+      "id": "0173-1#02-AAY811#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "URIOfTheProduct"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ProductURI"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "unique global identification of the product using an universal resource identifier (URI)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerName",
+      "id": "0173-1#02-AAO677#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerName"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ManufacturerName"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerProductDesignation",
+      "id": "0173-1#02-AAW338#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerProductDesignation"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Designation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Short description of the product (short text) "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerProductDescription",
+      "description": [
+        {
+          "language": "en",
+          "text": "EMPTY"
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/ManufacturerProductDescription",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerProductDescription"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Description"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "A description of the software product, provided by the manufacturer"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerProductFamily",
+      "id": "0173-1#02-AAU731#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerProductFamily"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ProductFamily"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "2nd level of a 3 level manufacturer specific product hierarchy"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerProductType",
+      "id": "0173-1#02-AAO057#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerProductType"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ProductType"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Characteristic to differentiate between different products of a product family or special variants"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SoftwareType",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/SoftwareType",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "type of the software"
+              },
+              {
+                "language": "de",
+                "text": "Softwaretyp"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "SoftwareType"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "type of the software"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Version",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/Version",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Version"
+              },
+              {
+                "language": "de",
+                "text": "Version"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Version"
+              },
+              {
+                "language": "de",
+                "text": "Version"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The complete version information consisting of Major Version, Minor Version, Revision and Build Number"
+              },
+              {
+                "language": "de",
+                "text": "Die vollst\u00E4ndige Versionsnummer, bestehend aus Major Version, Minor Version, Revision und Build Number"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "VersionName",
+      "description": [
+        {
+          "language": "en",
+          "text": "The name this particular version is given."
+        },
+        {
+          "language": "de",
+          "text": "Der Name dieser Version."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/VersionName",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "version name"
+              },
+              {
+                "language": "de",
+                "text": "Versionsname"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "VersionName"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The name this particular version is given."
+              },
+              {
+                "language": "de",
+                "text": "Versionsname"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "VersionInfo",
+      "description": [
+        {
+          "language": "en",
+          "text": "Version Information"
+        },
+        {
+          "language": "de",
+          "text": "Versionsinformation"
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/VersionInfo",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Version Information"
+              },
+              {
+                "language": "de",
+                "text": "Versionsinformation"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "VersionInfo"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Provides a textual description of most relevant characteristics of the version of the software"
+              },
+              {
+                "language": "de",
+                "text": "Versionsinformation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReleaseDate",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/ReleaseDate",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReleaseDate"
+              },
+              {
+                "language": "de",
+                "text": "ReleaseDate"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ReleaseDate"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The moment in time, when this particular build of software was released."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReleaseNotes",
+      "description": [
+        {
+          "language": "en",
+          "text": "contains information about this release"
+        },
+        {
+          "language": "de",
+          "text": "enth\u00E4lt Informationen zum aktuellen Release"
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/ReleaseNotes",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Release Notes"
+              },
+              {
+                "language": "de",
+                "text": "Ausgabestandsinformationen"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ReleaseNotes"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "contains information about this release"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "BuildDate",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/BuildDate",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "BuildDate"
+              },
+              {
+                "language": "de",
+                "text": "BuildDate"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "BuildDate"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The moment in time, when this particular build of software was created."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstallationURI",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/InstallationURI",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "InstallationURI"
+              },
+              {
+                "language": "de",
+                "text": "Installation-URI"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "installationURI"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the resource, where the software is being provided by the manufacturer."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstallationFile",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/InstallationFile",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "InstallationFile"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "InstallationFile"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstallerType",
+      "description": [
+        {
+          "language": "en",
+          "text": "indicates the type of installer software"
+        },
+        {
+          "language": "de",
+          "text": "gibt den Typ der Installationssoftware an"
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/InstallerType",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Installer Type"
+              },
+              {
+                "language": "de",
+                "text": "Installationstyp"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "InstallerType"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the type of installation package."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstallationChecksum",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/InstallationChecksum",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Installation Checksum"
+              },
+              {
+                "language": "de",
+                "text": "Pr\u00FCfsumme der Installation"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Checksum"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "provides the checksum for the software available at InstallationURI"
+              },
+              {
+                "language": "de",
+                "text": "beinhaltet die Pr\u00FCfsumme f\u00FCr die Software, die \u00FCber InstallationURI angegeben ist"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SerialNumber",
+      "id": "0173-1#02-AAM556#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "serial number"
+              },
+              {
+                "language": "de",
+                "text": "Seriennummer"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "SerialNumber"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "unique combination of numbers and letters used to identify the device once it has been manufactured"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "instanceName",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstanceName",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "instance name"
+              },
+              {
+                "language": "de",
+                "text": "Instanzname"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "instancename"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The name of the software instance."
+              },
+              {
+                "language": "de",
+                "text": "Instanzname"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstalledVersion",
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledVersion",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "installed version"
+              },
+              {
+                "language": "de",
+                "text": "installierte Version"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Version"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The version information of the installed instance, consisting of Major Version, Minor Version, Revision and Build Number"
+              },
+              {
+                "language": "de",
+                "text": "Die vollst\u00E4ndige Versionsnummer der installierten Instanz, bestehend aus Major Version, Minor Version, Revision und Build Number"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstallationDate",
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstallationDate",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Installation Date"
+              },
+              {
+                "language": "de",
+                "text": "Tag der Installation"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "InstallDate"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Date of Installation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstallationPath",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the path to the installed instance of the software."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstallationPath",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Installation Path"
+              },
+              {
+                "language": "de",
+                "text": "Installationspfad"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "InstallPath"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the path to the installed instance of the software."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstallationSource",
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstallationSource",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Installation Source"
+              },
+              {
+                "language": "de",
+                "text": "Installationsquelle"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "InsSource"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the path to the installation files used in this instance of the software."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstalledOnArchitecture",
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledOnArchitecture",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "InstalledOnArchitecture"
+              },
+              {
+                "language": "de",
+                "text": "Installiert auf Architektur"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "InsOnArch"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the processor architecture this instance is installed on."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstalledOnOS",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledOnOS",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "InstalledOnOS"
+              },
+              {
+                "language": "en",
+                "text": "InstalledOnOS"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "InstalledOnOS"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the operating system this instance is installed on."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstalledOnHost",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the host system in case of a virtual environment."
+        },
+        {
+          "language": "de",
+          "text": "Gibt den Host an, falls es sich um eine virtuelle Umgebung handelt"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledOnHost",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Installed on Host"
+              },
+              {
+                "language": "de",
+                "text": "installiert auf Host"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "InsOnHost"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the host system in case of a virtual environment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstalledModules",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates which modules of a software have been installed."
+        },
+        {
+          "language": "de",
+          "text": "gibt an, welche Module der Software installiert wurden."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledModules",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "InstalledModules"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "InsModules"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InstalledModule",
+      "description": [
+        {
+          "language": "en",
+          "text": "Name of module"
+        },
+        {
+          "language": "de",
+          "text": "Name des Moduls"
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledModule",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Installed Module"
+              },
+              {
+                "language": "de",
+                "text": "Installiertes Modul"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "InsModule"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The name of a particular module installed."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConfigurationPaths",
+      "description": [
+        {
+          "language": "en",
+          "text": "collection of configuration path entries"
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPaths",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ConfigurationPaths"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ConfigPaths"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConfigurationPath",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the path to the configuration."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPath",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ConfigurationPath"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Configpath"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConfigurationURI",
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationURI",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Configuration URI"
+              },
+              {
+                "language": "de",
+                "text": "URI zur Konfiguration"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ConfigURI"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the path to the configuration."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConfigurationType",
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationType",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Type of Configuration"
+              },
+              {
+                "language": "de",
+                "text": "Typ der Konfiguration"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ConfigType"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the type of configuration (e.g. general configuration, user configuration)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InventoryTag",
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InventoryTag",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Inventory Tag"
+              },
+              {
+                "language": "de",
+                "text": "Inventarkennzeichen"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "InventoryTag"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Specifies an information used for inventory of the software."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SLAInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "Service Level Agreement Information"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/SLAInformation",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SLA Information"
+              },
+              {
+                "language": "de",
+                "text": "Information f\u00FCr SLA"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "SLAInformation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the actual service level agreements."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ContactInformation",
+      "id": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ContactInformation"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ContactInfo"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The SMC \u201CContactInformation\u201D contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "0173-1#02-AAQ837#005"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
