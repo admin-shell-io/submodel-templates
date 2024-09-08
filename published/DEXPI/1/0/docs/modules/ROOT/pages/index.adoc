@@ -180,26 +180,26 @@ Note that “card.” denotes cardinality which should be interpreted as the “
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 DEXPI 
 
 Note: the above idShort can differ from proposed “DEXPI” idShort, in order to enable multiple Submodels for an asset, e.g., inherited DEXP files from higher-level Submodel templates or assets.
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 Submodel (SM)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/DEXPI/1/0/Submodel 
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Asset Administration Shell with asset which is a plant segment the DEXPI file belongs to.
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 Submodel containing one or multiple DEXPI models for the asset.
 
 s| [SME type]
@@ -207,13 +207,12 @@ s| semanticId = [idType]value
 s| [valueType]
 s| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [SMC]
 
 PlantMetadata
@@ -250,8 +249,8 @@ element i.e. first DEXPI model and so on (“Model01”, “Model02”,
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 PlantMetadata
 
 
@@ -259,20 +258,20 @@ Note: the above idShort shall always be as stated.
 
 
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection (SMC)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/DEXPI/1/0/PlantMetadata
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Submodel with semanticId = https://admin-shell.io/idta/DEXPI/1/0/Submodel
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 Metadata attributes of the plant or plant segment. It includes a subset of generic DEXPI Package Metadata (section 5 of the DEXPI specification) plus some additional optional elements.
 
 Note: we keep all attributes optional due they optional definition in the DEXPI specification.
@@ -284,13 +283,12 @@ a| semanticId = [idType]value
 d| [valueType]
 a| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [SMC]
 
 PlantMetadata
@@ -788,24 +786,24 @@ a|
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 Model\{00}
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection (SMC)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/DEXPI/1/0/Model
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Submodel with semanticId = https://admin-shell.io/idta/DEXPI/1/0/Submodel
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 Container for a single DEXPI model.
 
 s| [SME type]
@@ -813,13 +811,12 @@ s| semanticId = [idType]value
 s| [valueType]
 s| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [SMC]
 
 ModelMetadata
@@ -889,27 +886,27 @@ Directory with model-specific mappings
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 ModelMetadata
 
 
 Note: the above idShort shall always be as stated.
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection (SMC)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/DEXPI/1/0/Model
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Submodel with idShort = Model\{00}
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 Metadata container for a single DEXPI model. This is a subset of generic DEXPI Package Metadata (section 5 of the specification).
 
 s| [SME type]
@@ -917,13 +914,12 @@ s| semanticId = [idType]value
 s| [valueType]
 s| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [Property]
 
 ApprovalDate
@@ -1132,28 +1128,28 @@ a|
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 MappingDirectory
 
 
 Note: the above idShort shall always be as stated.
 
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection (SMC)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/DEXPI/1/0/MappingDirectory
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 SMC with idShort = Model\{00}
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 Container for local-global mappings within the DEXPI model
 
 s| [SME type]
@@ -1161,13 +1157,12 @@ s| semanticId = [idType]value
 s| [valueType]
 s| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [SMC]
 
 \{LocalId within DEXPI} e.g., PlateHeatExchanger_1
@@ -1206,24 +1201,24 @@ corresponds to the DEXPI attribute values of "ProcessInstrumentationFunctionNumb
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 \{LocalId within DEXPI}
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection (SMC)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/DEXPI/1/0/TagMapping
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 SMC with idShort = MappingDirectory
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 Collection describing tag information
 
 s| [SME type]
@@ -1231,13 +1226,12 @@ s| semanticId = [idType]value
 s| [valueType]
 s| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [Property]
 
 TagName
@@ -1338,28 +1332,28 @@ capturing objects having a “SubTagNameAssignmentClass” DEXPI attribute.
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 \{LocalId within DEXPI}
 
 
 Note: the above idShort shall always be as stated.
 
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection (SMC)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/DEXPI/1/0/Metadata/SubTagMapping
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 SMC with idShort = MappingDirectory
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 Collection describing subtag information
 
 s| [SME type]
@@ -1367,13 +1361,12 @@ s| semanticId = [idType]value
 s| [valueType]
 s| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [Property]
 
 SubTagName
