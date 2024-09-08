@@ -98,7 +98,11 @@ ISA 106
 
 ==== UC1: DEXPI Handover
 
-The first use case for the Submodel is the handover of the P&ID Information Models, encoded as DEXPI. One especial gap in the existing DEXPI specification is the lack of possibility to bundle multiple DEXPI files into one package. This is explicitly made possible by the present Submodel template definition.
+The first use case for the Submodel is the handover of the P&ID Information Models, encoded as DEXPI.
+
+One especial gap in the existing DEXPI specification is the lack of possibility to bundle multiple DEXPI files into one package.
+
+This is explicitly made possible by the present Submodel template definition.
 
 In case of combining multiple DEXPI models within one AAS Submodel, we assume that the DEXPI models share the same plant (segment) they are describing.
 
@@ -115,10 +119,9 @@ Like other artifacts, DEXPI files are using local, i.e., file-unique, identifier
 
 These local element identifiers tend to change over time and there is also no warranty that there is no duplication of local IDs between different DEXPI models in one AAS Submodel (note that persistent IDs are planned in the upcoming DEXPI release 1.4 and will be incorporated in a future version of this submodel template).
 
-To prevent the possible overlaps between local identifiers, a set of stable references is needed which are guaranteed not to change over time and
-also to be unique in a larger context (ideally, globally).
+To prevent the possible overlaps between local identifiers, a set of stable references is needed which are guaranteed not to change over time and also to be unique in a larger context (ideally, globally).
 
-These stable references pave a way to a set of use-cases which is described in NAMUR position papers on AAS usage in process industriesfootnote:[https://www.namur.net/fileadmin/media_www/Dokumente/AK_POSITION_1.4_Verwaltungsschale-in-der-Prozessindustrie_Arten_EN_2023-05-03.pdf] footnote:[https://www.namur.net/fileadmin/media_www/Dokumente/AK_POSITION_1.4_Verwaltungsschale_Use-Cases_EN_2023-05-03.pdf].
+These stable references pave a way to a set of use-cases which is described in NAMUR position papers on AAS usage in process footnote:[https://www.namur.net/fileadmin/media_www/Dokumente/AK_POSITION_1.4_Verwaltungsschale_Use-Cases_EN_2023-05-03.pdf].
 
 ==== Design Decisions
 
@@ -160,7 +163,9 @@ Note that the Submodel can contain multiple DEXPI models sharing the same plant 
 
 The aim of the mapping directory is to create a reference between a locally identifiable element within the DEXPI model, e.g., a tagged element to an AssetId which can in a further step be resolved to one or many AASs supplying additional information on the DEXPI element, e.g., its requirements.
 
-This approach closes the gap of potentially non-unique and non-stable local Ids within the DEXPI file (originating from ProteusXML) specification (compare UC 2). The stable references are realized by common fragment reference techniques within the AAS information model.
+This approach closes the gap of potentially non-unique and non-stable local Ids within the DEXPI file (originating from ProteusXML) specification (compare UC 2).
+
+The stable references are realized by common fragment reference techniques within the AAS information model.
 
 Additionally, ReferenceElements can be included within the plant metadata to contain reference elements pointing to Entity objects contained in other Submodels, e.g., in a BOM submodel.
 
@@ -172,37 +177,43 @@ image:img2.png[UML class diagram of the Submodel]
 
 Note that “card.” denotes cardinality which should be interpreted as the “multiplicity” concept known from UML.
 
-[cols=",,,,",]
+[width="100%", cols="1,2,1,1"]
 |===
-|*idShort:* a|
-DEXPI
 
+s|{set:cellbgcolor:#0029cc} [white]#idShort#
+3+s|{set:cellbgcolor:transparent}
+DEXPI 
 
-====
-Note: the above idShort can differ from proposed “DEXPI” idShort, in
-====
+Note: the above idShort can differ from proposed “DEXPI” idShort, in order to enable multiple Submodels for an asset, e.g., inherited DEXP files from higher-level Submodel templates or assets.
 
-order to enable multiple Submodels for an asset, e.g., inherited DEXPI
-files from higher-level Submodel templates or assets.
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+s|{set:cellbgcolor:transparent}
+Submodel (SM)
 
-| | |
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+s|{set:cellbgcolor:transparent}
+[IRI] https://admin-shell.io/idta/DEXPI/1/0/Submodel 
 
-|*Class:* |Submodel (SM) | | |
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+s|{set:cellbgcolor:transparent}
+Asset Administration Shell with asset which is a plant segment the DEXPI file belongs to.
 
-|*semanticId:* |[IRI] https://admin-shell.io/idta/DEXPI/1/0/Submodel | |
-|
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+s|{set:cellbgcolor:transparent} 
+Submodel containing one or multiple DEXPI models for the asset.
 
-|*Parent:* |Asset Administration Shell with asset which is a plant
-segment the DEXPI file belongs to. | | |
+s| [SME type]
+s| semanticId = [idType]value
+s| [valueType]
+s| card.
 
-|*Explanation:* |Submodel containing one or multiple DEXPI models for
-the asset. | | |
+s|{set:cellbgcolor:#0029cc}
+[white]#idShort#
+s| [white]#Description@en#
+s| [white]#example#
+s|
 
-|*[SME type]* |*semanticId = [idType]value* |*[valueType]* |*card.* |
-
-|*idShort* |*Description@en* |*example* | |
-
-a|
+d|{set:cellbgcolor:transparent}
 [SMC]
 
 PlantMetadata
@@ -213,7 +224,7 @@ a|
 Container for the metadata of the plant segment which is described by
 the supplied DEXPI file
 
-|n/a |1 |
+|n/a |1
 
 a|
 [SMC]
@@ -233,48 +244,64 @@ element i.e. first DEXPI model and so on (“Model01”, “Model02”,
 |n/a |1..* |
 |===
 
-=== 
 
 === Properties of the SMC PlantMetadata
 
-[cols=",,,",]
+[width="100%", cols="1,2,1,1"]
 |===
-|*idShort:* a|
+
+s|{set:cellbgcolor:#0029cc} [white]#idShort#
+3+s|{set:cellbgcolor:transparent}
 PlantMetadata
 
 
-====
 Note: the above idShort shall always be as stated.
-====
 
 
-| |
 
-|*Class:* |SubmodelElementCollection (SMC) | |
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+s|{set:cellbgcolor:transparent}
+SubmodelElementCollection (SMC)
 
-|*semanticId:* |[IRI]
-https://admin-shell.io/idta/DEXPI/1/0/PlantMetadata | |
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+s|{set:cellbgcolor:transparent}
+[IRI] https://admin-shell.io/idta/DEXPI/1/0/PlantMetadata
 
-|*Parent:* |Submodel with semanticId =
-https://admin-shell.io/idta/DEXPI/1/0/Submodel | |
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+s|{set:cellbgcolor:transparent}
+Submodel with semanticId = https://admin-shell.io/idta/DEXPI/1/0/Submodel
 
-|*Explanation:* a|
-Metadata attributes of the plant or plant segment. It includes a subset
-of generic DEXPI Package Metadata (section 5 of the DEXPI specification)
-plus some additional optional elements.
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+s|{set:cellbgcolor:transparent} 
+Metadata attributes of the plant or plant segment. It includes a subset of generic DEXPI Package Metadata (section 5 of the DEXPI specification) plus some additional optional elements.
+
+Note: we keep all attributes optional due they optional definition in the DEXPI specification.
 
 
-====
-Note: we keep all attributes optional due they optional definition in
-====
 
-the DEXPI specification.
+d| [SME type]
+a| semanticId = [idType]value
+d| [valueType]
+a| card.
 
-| |
+s|{set:cellbgcolor:#0029cc}
+[white]#idShort#
+s| [white]#Description@en#
+s| [white]#example#
+s|
 
-|*[SME type]* |*semanticId = [idType]value* |*[valueType]* |*card.*
+d|{set:cellbgcolor:transparent}
+[SMC]
 
-|*idShort* |*Description@en* |*example* |
+PlantMetadata
+
+a|
+[IRI] https://admin-shell.io/idta/DEXPI/1/0/PlantMetadata
+
+Container for the metadata of the plant segment which is described by
+the supplied DEXPI file
+
+|n/a |1
 
 a|
 [Property]
@@ -326,9 +353,7 @@ Optional reference to an Entity element representing the enterprise in
 another submodel, e.g., BOM
 
 
-====
 Note: this is an attribute which is not included in DEXPI metadata and
-====
 
 is added to the Submodel
 
@@ -389,9 +414,7 @@ Optional reference to an Entity element representing the site in another
 submodel, e.g., BOM
 
 
-====
 Note: this is an attribute which is not included in DEXPI metadata and
-====
 
 is added to the Submodel
 
@@ -452,9 +475,7 @@ Optional reference to an Entity element representing the industrial
 complex in another submodel, e.g., BOM
 
 
-====
 Note: this is an attribute which is not included in DEXPI metadata and
-====
 
 is added to the Submodel
 
@@ -515,9 +536,7 @@ Optional reference to an Entity element representing the process plant
 in another submodel, e.g., BOM
 
 
-====
 Note: this is an attribute which is not included in DEXPI metadata and
-====
 
 is added to the Submodel
 
@@ -578,9 +597,7 @@ Optional reference to an Entity element representing the plant in
 section another submodel, e.g., BOM
 
 
-====
 Note: this is an attribute which is not included in DEXPI metadata and
-====
 
 is added to the Submodel
 
@@ -678,9 +695,7 @@ this plant segment vendor is producing or, at least, modifying the P&ID
 (e.g., as-built documentation).
 
 
-====
 Note: this is an attribute which is not included in DEXPI metadata and
-====
 
 is added to the Submodel
 
@@ -703,22 +718,16 @@ Date from which the production and / or development process is completed
 or from which a service is provided completely.
 
 
-====
 Note: see also [IRDI] 0112/2///61987#ABB757#007 date of manufacture in
-====
 
 CDD
 
 
-====
 Note: format by lexical representation: YYYY-MM-DD
-====
 
 
 
-====
 Note: this is an attribute which is not included in DEXPI metadata and
-====
 
 is added to the Submodel
 
@@ -740,9 +749,7 @@ a|
 End Product Name of the main product the plant segment is producing.
 
 
-====
 Note: this is an attribute which is not included in DEXPI metadata and
-====
 
 is added to the Submodel
 
@@ -764,9 +771,7 @@ a|
 End Product CAS Name of the main product
 
 
-====
 Note: this is an attribute which is not included in DEXPI metadata and
-====
 
 is added to the Submodel
 
@@ -780,24 +785,41 @@ a|
 
 === Properties of the SMC Model\{00}
 
-[cols=",,,",]
+[width="100%", cols="1,2,1,1"]
 |===
-|*idShort:* |Model\{00} | |
 
-|*Class:* |SubmodelElementCollection (SMC) | |
+s|{set:cellbgcolor:#0029cc} [white]#idShort#
+3+s|{set:cellbgcolor:transparent}
+Model\{00}
 
-|*semanticId:* |[IRI] https://admin-shell.io/idta/DEXPI/1/0/Model | |
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+s|{set:cellbgcolor:transparent}
+SubmodelElementCollection (SMC)
 
-|*Parent:* |Submodel with semanticId =
-https://admin-shell.io/idta/DEXPI/1/0/Submodel | |
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+s|{set:cellbgcolor:transparent}
+[IRI] https://admin-shell.io/idta/DEXPI/1/0/Model
 
-|*Explanation:* |Container for a single DEXPI model. | |
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+s|{set:cellbgcolor:transparent}
+Submodel with semanticId = https://admin-shell.io/idta/DEXPI/1/0/Submodel
 
-|*[SME type]* |*semanticId = [idType]value* |*[valueType]* |*card.*
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+s|{set:cellbgcolor:transparent} 
+Container for a single DEXPI model.
 
-|*idShort* |*Description@en* |*example* |
+s| [SME type]
+s| semanticId = [idType]value
+s| [valueType]
+s| card.
 
-a|
+s|{set:cellbgcolor:#0029cc}
+[white]#idShort#
+s| [white]#Description@en#
+s| [white]#example#
+s|
+
+d|{set:cellbgcolor:transparent}
 [SMC]
 
 ModelMetadata
@@ -860,36 +882,48 @@ Directory with model-specific mappings
 |n/a |0..1
 |===
 
+
+
 === Properties of the SMC ModelMetadata
 
-[cols=",,,",]
+[width="100%", cols="1,2,1,1"]
 |===
-|*idShort:* a|
+
+s|{set:cellbgcolor:#0029cc} [white]#idShort#
+3+s|{set:cellbgcolor:transparent}
 ModelMetadata
 
 
-====
 Note: the above idShort shall always be as stated.
-====
 
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+s|{set:cellbgcolor:transparent}
+SubmodelElementCollection (SMC)
 
-| |
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+s|{set:cellbgcolor:transparent}
+[IRI] https://admin-shell.io/idta/DEXPI/1/0/Model
 
-|*Class:* |SubmodelElementCollection (SMC) | |
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+s|{set:cellbgcolor:transparent}
+Submodel with idShort = Model\{00}
 
-|*semanticId:* |[IRI] https://admin-shell.io/idta/DEXPI/1/0/Model | |
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+s|{set:cellbgcolor:transparent} 
+Metadata container for a single DEXPI model. This is a subset of generic DEXPI Package Metadata (section 5 of the specification).
 
-|*Parent:* |Submodel with idShort = Model\{00} | |
+s| [SME type]
+s| semanticId = [idType]value
+s| [valueType]
+s| card.
 
-|*Explanation:* |Metadata container for a single DEXPI model. This is a
-subset of generic DEXPI Package Metadata (section 5 of the
-specification). | |
+s|{set:cellbgcolor:#0029cc}
+[white]#idShort#
+s| [white]#Description@en#
+s| [white]#example#
+s|
 
-|*[SME type]* |*semanticId = [idType]value* |*[valueType]* |*card.*
-
-|*idShort* |*Description@en* |*example* |
-
-a|
+d|{set:cellbgcolor:transparent}
 [Property]
 
 ApprovalDate
@@ -901,9 +935,7 @@ http://sandbox.dexpi.org/rdl/ApprovalDateRepresentationAssignmentClass[__http://
 Date of Approval
 
 
-====
 Note: DEXPI intentionally does not guarantee that the included string
-====
 
 can be converted into a date, use string as fallback if this is the case
 
@@ -993,9 +1025,7 @@ http://sandbox.dexpi.org/rdl/CreationDateRepresentationAssignmentClass[__http://
 Date of Creation
 
 
-====
 Note: DEXPI intentionally does not guarantee that the included string
-====
 
 can be converted into a date, use string as fallback if this is the case
 
@@ -1085,9 +1115,7 @@ http://sandbox.dexpi.org/rdl/LastModificationDateRepresentationAssignmentClass[_
 Last Modification Date
 
 
-====
 Note: DEXPI intentionally does not guarantee that the included string
-====
 
 can be converted into a date, use string as fallback if this is the case
 
@@ -1101,34 +1129,45 @@ a|
 
 ===  Properties of the SMC MappingDirectory
 
-[cols=",,,",]
+[width="100%", cols="1,2,1,1"]
 |===
-|*idShort:* a|
+
+s|{set:cellbgcolor:#0029cc} [white]#idShort#
+3+s|{set:cellbgcolor:transparent}
 MappingDirectory
 
 
-====
 Note: the above idShort shall always be as stated.
-====
 
 
-| |
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+s|{set:cellbgcolor:transparent}
+SubmodelElementCollection (SMC)
 
-|*Class:* |SubmodelElementCollection (SMC) | |
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+s|{set:cellbgcolor:transparent}
+[IRI] https://admin-shell.io/idta/DEXPI/1/0/MappingDirectory
 
-|*semanticId:* |[IRI]
-https://admin-shell.io/idta/DEXPI/1/0/MappingDirectory | |
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+s|{set:cellbgcolor:transparent}
+SMC with idShort = Model\{00}
 
-|*Parent:* |SMC with idShort = Model\{00} | |
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+s|{set:cellbgcolor:transparent} 
+Container for local-global mappings within the DEXPI model
 
-|*Explanation:* |Container for local-global mappings within the DEXPI
-model | |
+s| [SME type]
+s| semanticId = [idType]value
+s| [valueType]
+s| card.
 
-|*[SME type]* |*semanticId = [idType]value* |*[valueType]* |*card.*
+s|{set:cellbgcolor:#0029cc}
+[white]#idShort#
+s| [white]#Description@en#
+s| [white]#example#
+s|
 
-|*idShort* |*Description@en* |*example* |
-
-a|
+d|{set:cellbgcolor:transparent}
 [SMC]
 
 \{LocalId within DEXPI} e.g., PlateHeatExchanger_1
@@ -1143,9 +1182,7 @@ or
 Container for mapping information
 
 
-====
 Note: idShort should be the LocalId (i.e., “ID” field of the element
-====
 
 within ProteusXML) within DEXPI that is adapted to the naming conventions of idShort (e.g., by replacing “-“ with “_”)
 
@@ -1161,43 +1198,46 @@ Two kinds of SMC are possible within the parent SMC – one describes the Tag, a
 
 TagMapping SMC element is used to capture two concepts within DEXPI:
 
-* {blank}
-+
-____
-Tagged elements, e.g., “Equipment” elements, having a
-“TagNameAssignmentClass” DEXPI attribute, an example is
-“PlateHeatExchanger” used in the example table below. In this case the
-TagName property corresponds to the value of tag name assignment.
-____
-* {blank}
-+
-____
-“ProcessInstrumentationFunction” elements within the DEXPI model
-describing process instrumentation, in this case the TagName property
-corresponds to the DEXPI attribute values of
-"ProcessInstrumentationFunctionNumberAssignmentClass" DEXPI attributes
-of the respective element, e.g., 4712.01 for an element with local ID
-“ProcessInstrumentationFunction-1” within the example DEXPI file.
-____
+* Tagged elements, e.g., “Equipment” elements, having a “TagNameAssignmentClass” DEXPI attribute, an example is “PlateHeatExchanger” used in the example table below. In this case the TagName property corresponds to the value of tag name assignment.
 
-[cols=",,,",]
+* “ProcessInstrumentationFunction” elements within the DEXPI model describing process instrumentation, in this case the TagName property
+corresponds to the DEXPI attribute values of "ProcessInstrumentationFunctionNumberAssignmentClass" DEXPI attributes of the respective element, e.g., 4712.01 for an element with local ID “ProcessInstrumentationFunction-1” within the example DEXPI file.
+
+[width="100%", cols="1,2,1,1"]
 |===
-|*idShort:* |\{LocalId within DEXPI} | |
 
-|*Class:* |SubmodelElementCollection (SMC) | |
+s|{set:cellbgcolor:#0029cc} [white]#idShort#
+3+s|{set:cellbgcolor:transparent}
+\{LocalId within DEXPI}
 
-|*semanticId:* |[IRI] https://admin-shell.io/idta/DEXPI/1/0/TagMapping |
-|
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+s|{set:cellbgcolor:transparent}
+SubmodelElementCollection (SMC)
 
-|*Parent:* |SMC with idShort = MappingDirectory | |
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+s|{set:cellbgcolor:transparent}
+[IRI] https://admin-shell.io/idta/DEXPI/1/0/TagMapping
 
-|*Explanation:* |Collection describing tag information | |
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+s|{set:cellbgcolor:transparent}
+SMC with idShort = MappingDirectory
 
-|*[SME type]* |*semanticId = [idType]value* |*[valueType]* |*card.*
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+s|{set:cellbgcolor:transparent} 
+Collection describing tag information
 
-|*idShort* |*Description@en* |*example* |
+s| [SME type]
+s| semanticId = [idType]value
+s| [valueType]
+s| card.
 
-a|
+s|{set:cellbgcolor:#0029cc}
+[white]#idShort#
+s| [white]#Description@en#
+s| [white]#example#
+s|
+
+d|{set:cellbgcolor:transparent}
 [Property]
 
 TagName
@@ -1243,9 +1283,7 @@ Local ID of the element within the DEXPI representation, e.g., ID field
 of XML element within ProteusXML
 
 
-====
 Note: the value comes from DEXPI and may not be compatible to idShort
-====
 
 naming restrictions
 
@@ -1269,9 +1307,7 @@ a|
 Relationship to map the local element to a globally identifiable asset
 
 
-====
 Note: the following FragmentReference naming schema is proposed:
-====
 
 
 ProteusXML@ID=PlateHeatExchanger-1 where Id is the LocalId
@@ -1299,24 +1335,45 @@ Second:
 The second kind of SMC within the mapping directory describes the subtag
 capturing objects having a “SubTagNameAssignmentClass” DEXPI attribute.
 
-[cols=",,,",]
+[width="100%", cols="1,2,1,1"]
 |===
-|*idShort:* |\{LocalId within DEXPI} | |
 
-|*Class:* |SubmodelElementCollection (SMC) | |
+s|{set:cellbgcolor:#0029cc} [white]#idShort#
+3+s|{set:cellbgcolor:transparent}
+\{LocalId within DEXPI}
 
-|*semanticId:* |[IRI]
-https://admin-shell.io/idta/DEXPI/1/0/Metadata/SubTagMapping | |
 
-|*Parent:* |SMC with idShort = MappingDirectory | |
+Note: the above idShort shall always be as stated.
 
-|*Explanation:* |Collection describing subtag information | |
 
-|*[SME type]* |*semanticId = [idType]value* |*[valueType]* |*card.*
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+s|{set:cellbgcolor:transparent}
+SubmodelElementCollection (SMC)
 
-|*idShort* |*Description@en* |*example* |
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+s|{set:cellbgcolor:transparent}
+[IRI] https://admin-shell.io/idta/DEXPI/1/0/Metadata/SubTagMapping
 
-a|
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+s|{set:cellbgcolor:transparent}
+SMC with idShort = MappingDirectory
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+s|{set:cellbgcolor:transparent} 
+Collection describing subtag information
+
+s| [SME type]
+s| semanticId = [idType]value
+s| [valueType]
+s| card.
+
+s|{set:cellbgcolor:#0029cc}
+[white]#idShort#
+s| [white]#Description@en#
+s| [white]#example#
+s|
+
+d|{set:cellbgcolor:transparent}
 [Property]
 
 SubTagName
@@ -1346,9 +1403,7 @@ Local identifier of the parent element within the DEXPI representation,
 e.g., ID field of XML element within ProteusXML
 
 
-====
 Note: the value comes from DEXPI and may not be compatible to idShort
-====
 
 naming restrictions
 
@@ -1388,9 +1443,7 @@ Local identifier of the element within the DEXPI representation, e.g.,
 ID field of XML element within ProteusXML
 
 
-====
 Note: the value comes from DEXPI and may not be compatible to idShort
-====
 
 naming restrictions
 
@@ -1414,16 +1467,12 @@ a|
 Relationship to map the local element to a globally identifiable asset
 
 
-====
 Note: the value comes from DEXPI and may not be compatible to idShort
-====
 
 naming restrictions
 
 
-====
 Note: the following FragmentReference naming schema is proposed:
-====
 
 
 ProteusXML@ID=Nozzle-4 where Id is the LocalId
