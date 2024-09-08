@@ -300,48 +300,47 @@ For the Submodel instance, these attributes need to be set:
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [.white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 ModuleTypePackage
 
 Note: The above idShort shall always be as stated.
 
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 Submodel
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/vdi/2658/1/0/MTPSubmodel
 
-s|{set:cellbgcolor:#0029cc} [white]#Kind:#
-3+s|{set:cellbgcolor:transparent}
+h | Kind:
+3+d| 
 Instance
 
-s|{set:cellbgcolor:#0029cc} [white]#Version:#
-3+s|{set:cellbgcolor:transparent}
+h | Version:
+3+d| 
 1
 
-s|{set:cellbgcolor:#0029cc} [white]#Revision:#
-3+s|{set:cellbgcolor:transparent}
+h | Revision:
+3+d| 
 1
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Asset Administration Shell with module type as asset
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 The submodel defines an entrypoint to a MTP environment containing an embedded MTP file as SubmodelElement
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [File]
 
 MTPFile
@@ -384,26 +383,26 @@ The the submodel instance this attribute needs to be set
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 MTPReferences 
 
 Note, that the idShort can be chosen freely to match the needs of included MTPRefernces e.g. “DocumentationReferences” or “BOMReferenes”
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection (SMC)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/vdi/2658/1/0/MTPReferences
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Submodel with idShort = ModuleTypePackage and respective semanticId or Submodel with idShort = ModuleInstance and respective semanticId
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 This SubmodelElementCollection holds references to elements from other submodels, e.g. included into VDI 2770 documentation submodel
 
 
@@ -412,13 +411,12 @@ a| semanticId = [idType]value
 d| [valueType]
 a| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [RelationshipElement]
 
 \{arbitrary}
@@ -471,38 +469,38 @@ For the submodel instance, these attributes need to be set:
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 ProcessEquipmentAssembly
 
 Note: The above idShort shall always be as stated.
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 Submodel
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/vdi/2658/1/0/PEASubmodel
 
-s|{set:cellbgcolor:#0029cc} [white]#Kind:#
-3+s|{set:cellbgcolor:transparent}
+h | Kind:
+3+d| 
 Instance
 
-s|{set:cellbgcolor:#0029cc} [white]#Version:#
-3+s|{set:cellbgcolor:transparent}
+h | Version:
+3+d| 
 1
 
-s|{set:cellbgcolor:#0029cc} [white]#Revision:#
-3+s|{set:cellbgcolor:transparent}
+h | Revision:
+3+d| 
 1
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Asset Administration Shell with module instance as asset
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 The submodel defines a set of PEA-properties specific to module instance
 Furthermore, we assume that the AAS of the PEA is referencing the AAS of module type, s.t. the relevant MTP file can be accessed by the tools. In exception cases where no AAS of MTP is available, this submodel can also contain the MTPFile directly as defined in Section 2.2. In this case the MTPFile can be accessed two times, the MTP file of the submodel instance shadows the MTPFile contained in ModuleTypePackage submodel of referenced AAS.
 
@@ -511,13 +509,12 @@ a| semanticId = [idType]value
 d| [valueType]
 a| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [File]
 
 MTPFile
@@ -596,24 +593,24 @@ https://admin-shell.io/vdi/2658/1/0/MTPSUCLib/CommunicationSet/SourceList
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 SourceList
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection (SMC)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/vdi/2658/1/0/MTPSUCLib/CommunicationSet/SourceList
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Submodel with idShort ProcessEquipmentAssembly and respective semanticId
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 This SMC contains descriptions to OPC UA servers of process equipment assembly
 
 d| [SME type]
@@ -621,13 +618,12 @@ a| semanticId = [idType]value
 d| [valueType]
 a| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [SMC]
 
 \{arbitrary}
@@ -643,24 +639,24 @@ MTPCommunicationSUCLib/ServerAssembly/OPCUAServer |n/a |1..*
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 \{arbitrary}
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection (SMC)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/vdi/2658/1/0/MTPCommunicationSUCLib/ServerAssembly/OPCUAServer
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 SMC with SourceList idshort and respective semanticId
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 This SMC contains endpoints of OPC UA servers
 
 
@@ -669,13 +665,12 @@ a| semanticId = [idType]value
 d| [valueType]
 a| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [Property]
 
 Endpoint\{00}

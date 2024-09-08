@@ -109,26 +109,26 @@ image:img4.png[UML-Diagram of the Submodel Template “SoftwareNameplate”]
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 SoftwareNameplate
 
 Note: The above idShort shall always be as stated.
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 Submodel
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Asset Administration Shell with Asset, which is software
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 Submodel containing the nameplate information for software Asset and associated product classificatons.
 
 d| [SME type]
@@ -136,13 +136,12 @@ a| semanticId = [idType]value
 d| [valueType]
 a| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [SubmodelElementCollection] SoftwareNameplate_Type |[IRI]
 https://admin-shell.io/idta/SoftwareNameplate/1/0/ SoftwareNameplateType
 |n/a |[0..1]
@@ -172,26 +171,26 @@ xref:tab2[xrefstyle=short] describes the details of the Submodel structure combi
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 SoftwareNameplate_Type
 
 Note: The above idShort shall always be as stated.
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplateType
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 SoftwareNameplate
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 SMC containing the nameplate information for a type of a software Asset.
 
 d| [SME type]
@@ -199,13 +198,12 @@ a| semanticId = [idType]value
 d| [valueType]
 a| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [Property] URIOfTheProduct |[IRDI] 0173-1#02-AAY811#001 |string |xref:#bib1[[1\]]
 
 | |Unique global identification of the product using a universal
@@ -337,26 +335,26 @@ image:img6.png[UML-Diagram of the SMC “SoftwareNameplateInstance”.]
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 SoftwareNameplate_Instance
 
 Note: The above idShort shall always be as stated.
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplateInstance
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Asset Administration Shell with Asset, which is software
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 SMC containing the nameplate information for an instance of a software Asset.
 
 d| [SME type]
@@ -364,13 +362,12 @@ a| semanticId = [idType]value
 d| [valueType]
 a| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [Property] SerialNumber |[IRDI] 0173-1#02-AAM556#002 +
 ( [IRDI] 0112/2///61987#ABA951#007 serial number) |String |[0..1]
 
@@ -473,24 +470,24 @@ xref:fig6[xrefstyle=short] shows the UML-diagram defining the relevant propertie
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 InstalledModules
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledModules
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Submodel element collection “SoftwareNameplateInstance”
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 Contains a list of installed modules of the software instance.
 
 d| [SME type]
@@ -498,13 +495,12 @@ a| semanticId = [idType]value
 d| [valueType]
 a| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [Property] InstalledModule |[IRI]
 https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledModule
 |string |[1..*]
@@ -522,24 +518,24 @@ xref:fig6[xrefstyle=short] shows the UML-diagram defining the relevant propertie
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 ConfigurationPaths
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPaths
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Submodel element collection “SoftwareNameplateInstance”
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 Contains a list of configuration entries of the software instance.
 
 d| [SME type]
@@ -547,13 +543,12 @@ a| semanticId = [idType]value
 d| [valueType]
 a| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [SubmodelElementCollection] ConfigurationPath
 |[IRI]https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPath
 |n/a |[1..*]
@@ -571,24 +566,24 @@ xref:fig6[xrefstyle=short] shows the UML-diagram defining the relevant propertie
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 ConfigurationPath
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPath
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Submodel element collection “ConfigurationPaths”
 
-s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+h| Explanation:
+3+d|  
 Contains a single configuration entry of the software instance.
 
 
@@ -597,13 +592,12 @@ a| semanticId = [idType]value
 d| [valueType]
 a| card.
 
-s|{set:cellbgcolor:#0029cc}
-[white]#idShort#
-s| [white]#Description@en#
-s| [white]#example#
-s|
+h| idShort
+h| Description@en
+h| example
+h|
 
-d|{set:cellbgcolor:transparent}
+d|
 [Property] ConfigurationURI
 |[IRI]https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationURI
 |anyURI |xref:#bib1[[1\]]
@@ -635,7 +629,7 @@ For displaying property names in a user interface, the following precedence of d
 |===
 s|{set:cellbgcolor:#0029cc} [white]#Priority# s| [white]#Concept in AAS metamodel# s| [white]#Description#
 
-d|{set:cellbgcolor:transparent} 1 (highest) |SubmodelElement/ +
+d| 1 (highest) |SubmodelElement/ +
 description a|
 If availabe, an adequate language will be chosen from the LangStringSet
 of description. Thus, the user explanation of the property by the
@@ -736,7 +730,7 @@ For clarity and brevity, a set of rules is used for the tables for describing Su
 [cols=",",]
 |===
 s|{set:cellbgcolor:#0029cc} [white]#SME type# s| [white]#SubmodelElement type#
-d|{set:cellbgcolor:transparent} Property |Property
+d| Property |Property
 |MLP |MultiLanguageProperty
 |Range |Range
 |File |File
