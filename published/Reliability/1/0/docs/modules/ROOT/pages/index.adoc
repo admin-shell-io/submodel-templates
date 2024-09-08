@@ -104,24 +104,24 @@ image::media/image3.png[align=center]
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 Reliability
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 Submodel (SM)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRDI] 0112/2///62683#ACC008#001
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Asset Administration Shell, to which the documents shall be associated to
 
 s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+3+d|  
 The Submodel defines a reliability data model for devices to be used by engineering tools for the design of safety related control systems according to IEC 62061, IEC 61508-2 or ISO 13849-1 or for dependability analysis of electrotechnical systems. This Submodel is used to facilitate the exchange between computers of data characterizing safety relevant devices in particular. The data models described in this document is based on the definition in the IEC/CDD 62683-1 DB.
 
 d| [SME type]
@@ -135,7 +135,7 @@ s| [white]#Description@en#
 s| [white]#example#
 s|
 
-d|{set:cellbgcolor:transparent}
+d| 
 {empty}[Property]
 
 NumberOfReliabilitySets
@@ -181,24 +181,24 @@ characteristics of a subsystem or a subsystem element intended for evaluating it
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 OperatingConditionsOfReliabilityCharacteristics
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection (SMC)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRDI] 0112/2///62683#ACG071#001
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Submodel Reliability
 
 s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+3+d|  
 This SubmodelElementCollection contains information on operating condition limits for which the reliability characteristics are valid.
 
 d| [SME type]
@@ -212,7 +212,7 @@ s| [white]#Description@en#
 s| [white]#example#
 s|
 
-d|{set:cellbgcolor:transparent}
+d| 
 {empty}[Property]
 
 TypeOfVoltage
@@ -353,24 +353,24 @@ a|
 [width="100%", cols="1,2,1,1"]
 |===
 
-s|{set:cellbgcolor:#0029cc} [white]#idShort#
-3+s|{set:cellbgcolor:transparent}
+h| idShort
+3+d| 
 ReliabilityCharacteristics
 
-s|{set:cellbgcolor:#0029cc} [white]#Class:#
-3+s|{set:cellbgcolor:transparent}
+h| Class:
+3+d| 
 SubmodelElementCollection (SMC)
 
-s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
-3+s|{set:cellbgcolor:transparent}
+h| semanticId:
+3+d| 
 [IRDI] 0112/2///62683#ACG080#001
 
-s|{set:cellbgcolor:#0029cc} [white]#Parent:#
-3+s|{set:cellbgcolor:transparent}
+h| Parent:
+3+d| 
 Submodel Reliability
 
 s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
-3+s|{set:cellbgcolor:transparent} 
+3+d|  
 This SubmodelElementCollection contains information on characteristics of a subsystem or a subsystem element intended for evaluating its ability to perform as required, without failure, for a given time interval, under given conditions
 
 d| [SME type]
@@ -384,7 +384,7 @@ s| [white]#Description@en#
 s| [white]#example#
 s|
 
-d|{set:cellbgcolor:transparent}
+d| 
 {empty}[Property]
 
 MTTF
