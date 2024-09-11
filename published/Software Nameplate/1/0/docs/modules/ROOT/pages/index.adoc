@@ -209,12 +209,12 @@ h| example
 h|
 
 d|
-[Property] URIOfTheProduct |[IRDI] 0173-1#02-AAY811#001 |string |xref:#bib1[[1\]]
+[Property] URIOfTheProduct |[IRDI] 0173-1#02-AAY811#001 |string |[1]
 
 | |Unique global identification of the product using a universal
 resource identifier (URI) |ZVEI.I40.ITinAutomation.DemoSW_123456 |
 
-|[MLP] ManufacturerName |[IRDI] 0173-1#02-AAO677#002 |langString |xref:#bib1[[1\]]
+|[MLP] ManufacturerName |[IRDI] 0173-1#02-AAO677#002 |langString |[1]
 
 | |Legally valid designation of the natural or judicial person which is
 directly responsible for the design, production, packaging and labeling
@@ -222,7 +222,7 @@ of a product in respect to its being brought into circulation |ZVEI AK
 IT in Automation |
 
 |[MLP] ManufacturerProductDesignation |[IRDI] 0173-1#02-AAW338#001
-|langString |xref:#bib1[[1\]]
+|langString |[1]
 
 | |The name of the product, provided by the manufacturer |My Software
 Package for Demonstration |
@@ -256,7 +256,7 @@ Firmeware, Driver, etc.) |PLC Runtime |
 
 |[Property] Version |[IRI]
 https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/Version
-|string |xref:#bib1[[1\]]
+|string |[1]
 
 | |The complete version information consisting of Major Version, Minor
 Version, Revision and Build Number |0.9.1.0 |
@@ -277,7 +277,7 @@ environments! |
 
 |[Property] ReleaseDate |[IRI]
 https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/ReleaseDate
-|date |xref:#bib1[[1\]]
+|date |[1]
 
 | |The moment in time, when this version of the software was made
 publicly available |20220207 |
@@ -291,7 +291,7 @@ special configuration. |
 
 |[Property] BuildDate |[IRI]
 https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/BuildDate
-|date |xref:#bib1[[1\]]
+|date |[1]
 
 | |The moment in time, when this particular build of software was
 created |20201119 |
@@ -606,7 +606,7 @@ h|
 d|
 [Property] ConfigurationURI
 |[IRI]https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationURI
-|anyURI |xref:#bib1[[1\]]
+|anyURI |[1]
 
 | |Indicates the path to the configuration
 |C:\Users\mw30\Documents\ZVEI\AKITinAutomation\20210113 |
@@ -633,7 +633,9 @@ For displaying property names in a user interface, the following precedence of d
 .Display names for sections and properties with no semanticId available
 [width="100%", cols="1,1,2"]
 |===
-s|{set:cellbgcolor:#0029cc} [white]#Priority# s| [white]#Concept in AAS metamodel# s| [white]#Description#
+h| Priority
+h| Concept in AAS metamodel
+h| Description
 
 d| 1 (highest) |SubmodelElement/ +
 description a|
@@ -735,7 +737,8 @@ For clarity and brevity, a set of rules is used for the tables for describing Su
 
 [cols=",",]
 |===
-s|{set:cellbgcolor:#0029cc} [white]#SME type# s| [white]#SubmodelElement type#
+h| SME type
+h| SubmodelElement type
 d| Property |Property
 |MLP |MultiLanguageProperty
 |Range |Range

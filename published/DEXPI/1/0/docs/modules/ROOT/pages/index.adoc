@@ -44,17 +44,12 @@ EndProductName, added comment about persistent IDs of upcoming DEXPI 1.4
 === About this document
 
 This document is a part of a specification series.
-
 Each part specifies the contents of a Submodel template for the Asset Administration Shell (AAS).
-
 The AAS is described in xref:#bib1[[1\]], xref:#bib2[[2\]], xref:#bib3[[3\]] and xref:#bib6[[6\]].
-
 First exemplary Submodel contents were described in xref:#bib4[[4\]], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[[5\]].
-
 The format aims to be very concise, giving only minimal necessary information for applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents xref:#bib1[[1\]] to xref:#bib6[[6\]].
 
 The target group of the specification are developers and engineers designing processes and plants and creating manufacturer information, which are describing assets in smart manufacturing by means of the Asset Administration Shell (AAS) and therefore need to create a Submodel instance with a hierarchy of SubmodelElements.
-
 This document especially details the question, which SubmodelElements with which semantic identification shall be used for this purpose.
 
 === Scope of the Submodel
@@ -62,26 +57,19 @@ This document especially details the question, which SubmodelElements with which
 The engineering of a process plant is a complex multi-disciplinary and multi-organizational process involving exchange of a vast number of (semi-)standardized artifacts like diagrams, drawings, tables, certificates, and other documents.
 
 One core artifact which is created and extended during the engineering process is the Piping & Instrumentation Diagram (P&ID) providing among others a good balance of abstraction between the physical layout of the plant (i.e., used equipment and piping connections) and its representation within the automation domain (i.e., signal types, tag names, logical connections between sensor and actuators).
-
 Due to this fact P&IDs are long-living artifacts which are frequently used during the whole plant’s lifecycle beyond the engineering phase xref:#bib7[[7\]].
 
 Even though most engineering artifacts are created digitally, they are not necessarily exchanged in a machine-readable format.
-
 The lack of a machine-readable representation of engineering artifacts (including P&IDs) hinders the digital transformation and can be a showstopper for digital use-cases due to high costs of creation of a machine-readable P&ID representation.
 
 Efforts to create a standardized machine-readable exchange format for P&ID are made by the DEXPI working group of DECHEMA including operators from multiple verticals (e.g., Oil and Gas, and Chemistry), engineering companies, software tool vendors and research institutes.
-
 DEXPI xref:#bib8[[8\]] is an UML-Model implemented using an XML-based P&ID exchange format including multiple aspects of plant design like piping topology and its
 graphical representation, instrumentation structure, tag names.
-
 DEXPI is an open industrial standard aiming for a broad usage across industrial domains.
 
 Due to the paramount role of P&ID during the whole plant’s lifecycle, the importance of DEXPI has been identified by the Industry 4.0 community.
-
 Inclusion of DEXPI models into a standardized lifecycle information container – the Industry 4.0 Asset Administration Shell (AAS) – would facilitate links between different disciplines, organizations and industry domains.
-
 Mapping of DEXPI models to the AAS by defining an AAS Submodel template is governed by Industrial Digital Twin Association (IDTA) where a respective working group was founded in 2022.
-
 The group consists of representatives of the DEXPI working group, oil and gas industry, engineering and procurement companies, automation equipment suppliers, and research institutes.
 
 === Relevant standards for the Submodel template
@@ -99,9 +87,7 @@ ISA 106
 ==== UC1: DEXPI Handover
 
 The first use case for the Submodel is the handover of the P&ID Information Models, encoded as DEXPI.
-
 One especial gap in the existing DEXPI specification is the lack of possibility to bundle multiple DEXPI files into one package.
-
 This is explicitly made possible by the present Submodel template definition.
 
 In case of combining multiple DEXPI models within one AAS Submodel, we assume that the DEXPI models share the same plant (segment) they are describing.
@@ -109,18 +95,13 @@ In case of combining multiple DEXPI models within one AAS Submodel, we assume th
 ==== UC2: Local-Global Identifier Translation
 
 DEXPI as a P&ID specification contains valuable information, particularly the plant structure, which are relevant through the whole lifecycle of the plant especially during the operational phase.
-
 In addition, tag names for used equipment and details for its use in automation applications.
-
 In use case 2 the plant structure usually developed in basic engineering is used to systematically generate a (not yet existent) Role-AASs (cf. for more information) used to further
 specify the apparatus/machines, piping and automation equipment in detail engineering to procure and construct the plant.
 
 Like other artifacts, DEXPI files are using local, i.e., file-unique, identifiers which DEXPI inherits from its current serialization format ProteusXML.
-
 These local element identifiers tend to change over time and there is also no warranty that there is no duplication of local IDs between different DEXPI models in one AAS Submodel (note that persistent IDs are planned in the upcoming DEXPI release 1.4 and will be incorporated in a future version of this submodel template).
-
 To prevent the possible overlaps between local identifiers, a set of stable references is needed which are guaranteed not to change over time and also to be unique in a larger context (ideally, globally).
-
 These stable references pave a way to a set of use-cases which is described in NAMUR position papers on AAS usage in process footnote:[https://www.namur.net/fileadmin/media_www/Dokumente/AK_POSITION_1.4_Verwaltungsschale_Use-Cases_EN_2023-05-03.pdf].
 
 ==== Design Decisions
@@ -131,17 +112,15 @@ These stable references pave a way to a set of use-cases which is described in N
 
 image::img1.png[Alignment of hierarchical structure elements according to different standards]
 
-Re-modeling of the DEXPI standard should happen as “sparse” as possible to avoid double-modeling and allow best-possible reuse of existing tools.
+* Re-modeling of the DEXPI standard should happen as “sparse” as possible to avoid double-modeling and allow best-possible reuse of existing tools.
+In case double-modeling is required, common patterns from existing IDTA Submodel definitions should be used, i.e.
+** FragmentReference mechanisms as already used and described in the MTP Submodel template definitionfootnote:[https://github.com/admin-shell-io/submodel-templates/tree/main/published/MTP/1/0[_https://github.com/admin-shell-io/submodel-templates/tree/main/published/MTP/1/0_]].
+** Usage of existing Submodels, e.g., the “Hierarchical Structure enabling Bills of materials” Submodel template ID 02011footnote:[To be found under https://industrialdigitaltwin.org/en/content-hub/submodels[_https://industrialdigitaltwin.org/en/content-hub/submodels_] after publishing] to represent/reference a hierarchy of plant segments which are described by the DEXPI file.
 
-In case double-modeling is required, common patterns from existing IDTA Submodel definitions should be used, i.e., FragmentReference mechanisms as already used and described in the MTP Submodel template definitionfootnote:[https://github.com/admin-shell-io/submodel-templates/tree/main/published/MTP/1/0[_https://github.com/admin-shell-io/submodel-templates/tree/main/published/MTP/1/0_]].
-
-Usage of existing Submodels, e.g., the “Hierarchical Structure enabling Bills of materials” Submodel template ID 02011footnote:[To be found under https://industrialdigitaltwin.org/en/content-hub/submodels[_https://industrialdigitaltwin.org/en/content-hub/submodels_] after publishing] to represent/reference a hierarchy of plant segments which are described by the DEXPI file.
-
-Reuse semantic IDs for elements included in the DEXPI standard, for example, meta data properties.
-
+* Reuse semantic IDs for elements included in the DEXPI standard, for example, meta data properties.
 This applies for semantic IDs where IRIs starting with “http://sandbox.dexpi.org/rdl/[_http://sandbox.dexpi.org/rdl/_]” or IRDIs are reused where applicable.
 
-Slight extensions plant metadata attribute selection of the DEXPI specification to keep logical information combined, e.g., EnterpriseReference property along with EnterpriseName property.
+* Slight extensions plant metadata attribute selection of the DEXPI specification to keep logical information combined, e.g., EnterpriseReference property along with EnterpriseName property.
 
 == DEXPI Submodel
 
@@ -1499,47 +1478,47 @@ Second:
 |===
 |AAS |Asset Administration Shell
 
-|**ALCM** |**Asset Life Cycle Management**
+|ALCM |Asset Life Cycle Management
 
-|**BOM** |**Bill of Material**
+|BOM |Bill of Material
 
-|**CAS** |**Chemical Abstracts Service**
+|CAS |Chemical Abstracts Service
 
-|**DECHEMA** |**Dechema Gesellschaft für Chemische Technik und
-Biotechnologie**
+|DECHEMA |Dechema Gesellschaft für Chemische Technik und
+Biotechnologie
 
-|**DEXPI** |**Data Exchange in the Process Industry**
+|DEXPI |Data Exchange in the Process Industry
 
-|**ID** |**Identifier**
+|ID |Identifier
 
-|IDTA |**Industrial Digital Twin Association**
+|IDTA |Industrial Digital Twin Association
 
-|**IEC** |**International Electrotechnical Commission**
+|IEC |International Electrotechnical Commission
 
-|**IRI** |**Internationalized Resource Identifier**
+|IRI |Internationalized Resource Identifier
 
-|**IRDI** |**International Registration Data Identifier**
+|IRDI |International Registration Data Identifier
 
-|**ISA** |**International Society of Automation**
+|ISA |International Society of Automation
 
-|**ISO** |**International Organization for Standardization**
+|ISO |International Organization for Standardization
 
-|**MLP** |**Multi**-Language Property**
+|MLP |Multi-Language Property
 
-|**NAMUR** |**Normenarbeitsgemeinschaft für Mess- und Regeltechnik in
-der Chemischen Industrie**
+|NAMUR |Normenarbeitsgemeinschaft für Mess- und Regeltechnik in
+der Chemischen Industrie
 
 |P&ID |Piping & Instrumentation Diagram
 
-|**SM** |**Submodel**
+|SM |Submodel
 
-|**SMC** |**Submodel Element Collection**
+|SMC |Submodel Element Collection
 
-|**SVG** |**Scalable Vector Graphics**
+|SVG |Scalable Vector Graphics
 
-|**UC** |**Use Case**
+|UC |Use Case
 
-|**XML** |**Extensible Markup Language**
+|XML |Extensible Markup Language
 |===
 
 == Bibliography
