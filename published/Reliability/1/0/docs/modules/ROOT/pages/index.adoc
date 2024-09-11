@@ -124,10 +124,10 @@ h| Explanation:
 3+d|  
 The Submodel defines a reliability data model for devices to be used by engineering tools for the design of safety related control systems according to IEC 62061, IEC 61508-2 or ISO 13849-1 or for dependability analysis of electrotechnical systems. This Submodel is used to facilitate the exchange between computers of data characterizing safety relevant devices in particular. The data models described in this document is based on the definition in the IEC/CDD 62683-1 DB.
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -200,10 +200,10 @@ h| Explanation:
 3+d|  
 This SubmodelElementCollection contains information on operating condition limits for which the reliability characteristics are valid.
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -371,10 +371,10 @@ h| Explanation:
 3+d|  
 This SubmodelElementCollection contains information on characteristics of a subsystem or a subsystem element intended for evaluating its ability to perform as required, without failure, for a given time interval, under given conditions
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en

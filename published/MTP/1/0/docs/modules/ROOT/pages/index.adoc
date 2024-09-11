@@ -406,10 +406,10 @@ h| Explanation:
 This SubmodelElementCollection holds references to elements from other submodels, e.g. included into VDI 2770 documentation submodel
 
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -504,10 +504,10 @@ h| Explanation:
 The submodel defines a set of PEA-properties specific to module instance
 Furthermore, we assume that the AAS of the PEA is referencing the AAS of module type, s.t. the relevant MTP file can be accessed by the tools. In exception cases where no AAS of MTP is available, this submodel can also contain the MTPFile directly as defined in Section 2.2. In this case the MTPFile can be accessed two times, the MTP file of the submodel instance shadows the MTPFile contained in ModuleTypePackage submodel of referenced AAS.
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -613,10 +613,10 @@ h| Explanation:
 3+d|  
 This SMC contains descriptions to OPC UA servers of process equipment assembly
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -660,10 +660,10 @@ h| Explanation:
 This SMC contains endpoints of OPC UA servers
 
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en

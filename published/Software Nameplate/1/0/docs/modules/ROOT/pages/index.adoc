@@ -47,15 +47,15 @@ Use cases like updates, patch management, license management, audits, etc. rely 
 This information shall be provided in a consistent manner in form of a “nameplate for software”, derived and specialized from a common digital nameplate as defined in xref:#bib9[[9\]].
 
 [[fig1]]
-image:img1.png[Software in manufacturing and the nameplate for software]
+image::img1.png[Software in manufacturing and the nameplate for software]
 
 The nameplate for software applies to stand-alone software Assets xref:fig2[xrefstyle=short], as well as to software as integral part of a physical Asset, e.g. firmware or application software of a machine, modelled as a composite component using hierarchies according to xref:#bib11[[11\]] (xref:fig3[xrefstyle=short]).
 
-[[fig2]]
-image:img2.png[Software as an Asset]
+[fig2]
+image::img2.png[Software as an Asset]
 
 [[fig3]]
-image:img3.png[Software as integral part of a composite component (e.g. machine)]
+image::img3.png[Software as integral part of a composite component (e.g. machine)]
 
 This Submodel Template aims at interoperable provision of software nameplate data describing the asset of the respective Asset Administration Shell.
 
@@ -102,7 +102,7 @@ While SMC “SoftwareNameplateType” contains prop­erties of the type of softw
 xref:fig4[xrefstyle=short] shows the corresponding UML-diagram, xref:tab1[xrefstyle=short] defines the properties of the Submodel Template.
 
 [[fig4]]
-image:img4.png[UML-Diagram of the Submodel Template “SoftwareNameplate”]
+image::img4.png[UML-Diagram of the Submodel Template “SoftwareNameplate”]
 
 [[tab1]]
 .Properties of the Submodel Template “SoftwareNameplate”
@@ -131,10 +131,10 @@ h| Explanation:
 3+d|  
 Submodel containing the nameplate information for software Asset and associated product classificatons.
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -162,7 +162,7 @@ xref:fig5[xrefstyle=short] shows the UML-diagram of the SMC “SoftwareNameplate
 The properties in red color are re-used from the Submodel “Digital Nameplate” xref:#bib9[[9\]].
 
 [[fig5]]
-image:img5.png[UML-Diagram of the SMC “SoftwareNameplateType”]
+image::img5.png[UML-Diagram of the SMC “SoftwareNameplateType”]
 
 xref:tab2[xrefstyle=short] describes the details of the Submodel structure combined with examples.
 
@@ -193,10 +193,10 @@ h| Explanation:
 3+d|  
 SMC containing the nameplate information for a type of a software Asset.
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -328,7 +328,7 @@ xref:tab3[xrefstyle=short] shows the relevant properties which need to be set.
 The properties in red color are re-used from the Submodel “Digital Nameplate” xref:#bib9[[9\]], the SMC “Contact” (in green color) is de­fined in the Submodel “ContactInformation” xref:#bib10[[10\]].
 
 [[fig6]]
-image:img6.png[UML-Diagram of the SMC “SoftwareNameplateInstance”.]
+image::img6.png[UML-Diagram of the SMC “SoftwareNameplateInstance”.]
 
 [[tab3]]
 .Properties of the SMC “SoftwareNameplateInstance”
@@ -357,10 +357,10 @@ h| Explanation:
 3+d|  
 SMC containing the nameplate information for an instance of a software Asset.
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -490,10 +490,10 @@ h| Explanation:
 3+d|  
 Contains a list of installed modules of the software instance.
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -538,10 +538,10 @@ h| Explanation:
 3+d|  
 Contains a list of configuration entries of the software instance.
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -587,10 +587,10 @@ h| Explanation:
 Contains a single configuration entry of the software instance.
 
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en

@@ -129,7 +129,7 @@ These stable references pave a way to a set of use-cases which is described in N
 
 * Use of ISO 10209 to identify plant hierarchy levels, in case of redundant hierarchy definitions, e.g., ISO 10209 Plant Section and ISA-style Unit, within the DEXPI file, the latter should be ignored, and ISO 10209 be preferred. In case no ISO 10209 attribute is available, ISA-style attributes should be renamed and their values reused as indicated in the figure below.
 
-image:img1.png[Alignment of hierarchical structure elements according to different standards]
+image::img1.png[Alignment of hierarchical structure elements according to different standards]
 
 Re-modeling of the DEXPI standard should happen as “sparse” as possible to avoid double-modeling and allow best-possible reuse of existing tools.
 
@@ -171,7 +171,7 @@ Additionally, ReferenceElements can be included within the plant metadata to con
 
 These references can be used to resolve used plant hierarchy elements to respective Entities within Industry 4.0 domain.
 
-image:img2.png[UML class diagram of the Submodel]
+image::img2.png[UML class diagram of the Submodel]
 
 ===  Submodel
 
@@ -278,10 +278,10 @@ Note: we keep all attributes optional due they optional definition in the DEXPI 
 
 
 
-d| [SME type]
-a| semanticId = [idType]value
-d| [valueType]
-a| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
