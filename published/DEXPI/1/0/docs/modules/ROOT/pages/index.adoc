@@ -110,7 +110,9 @@ These stable references pave a way to a set of use-cases which is described in N
 
 * Use of ISO 10209 to identify plant hierarchy levels, in case of redundant hierarchy definitions, e.g., ISO 10209 Plant Section and ISA-style Unit, within the DEXPI file, the latter should be ignored, and ISO 10209 be preferred. In case no ISO 10209 attribute is available, ISA-style attributes should be renamed and their values reused as indicated in the figure below.
 
-image::img1.png[Alignment of hierarchical structure elements according to different standards]
+[[fig1]]
+.Alignment of hierarchical structure elements according to different standards
+image::img1.png[]
 
 * Re-modeling of the DEXPI standard should happen as “sparse” as possible to avoid double-modeling and allow best-possible reuse of existing tools.
 In case double-modeling is required, common patterns from existing IDTA Submodel definitions should be used, i.e.
@@ -135,21 +137,16 @@ The approach for building the Submodel is as follows: First, we partition the me
 The plant metadata is linked directly to the root of the Submodel and is hence shared between different DEXPI models representing P&IDs which are supplied using the Submodel.
 
 Each supplied model is represented via a dedicated SMC.
-
 The SMC contains a container for model metadata, the actual model file, i.e., DEXPI model in the XML serialization, an optional model representation, e.g., an SVG file, and an optional mapping directory containing mappings between local and global identifiers.
 
 Note that the Submodel can contain multiple DEXPI models sharing the same plant metadata which closes the gap of supplying a “bundle” of coherent DEXPI models in one information package (compare UC 1).
 
 The aim of the mapping directory is to create a reference between a locally identifiable element within the DEXPI model, e.g., a tagged element to an AssetId which can in a further step be resolved to one or many AASs supplying additional information on the DEXPI element, e.g., its requirements.
-
 This approach closes the gap of potentially non-unique and non-stable local Ids within the DEXPI file (originating from ProteusXML) specification (compare UC 2).
-
 The stable references are realized by common fragment reference techniques within the AAS information model.
 
 Additionally, ReferenceElements can be included within the plant metadata to contain reference elements pointing to Entity objects contained in other Submodels, e.g., in a BOM submodel.
-
 These references can be used to resolve used plant hierarchy elements to respective Entities within Industry 4.0 domain.
-
 
 [#img2]
 .UML class diagram of the Submodel
@@ -184,10 +181,10 @@ h| Explanation:
 3+d|  
 Submodel containing one or multiple DEXPI models for the asset.
 
-s| [SME type]
-s| semanticId = [idType]value
-s| [valueType]
-s| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -788,10 +785,10 @@ h| Explanation:
 3+d|  
 Container for a single DEXPI model.
 
-s| [SME type]
-s| semanticId = [idType]value
-s| [valueType]
-s| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -891,10 +888,10 @@ h| Explanation:
 3+d|  
 Metadata container for a single DEXPI model. This is a subset of generic DEXPI Package Metadata (section 5 of the specification).
 
-s| [SME type]
-s| semanticId = [idType]value
-s| [valueType]
-s| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -1134,10 +1131,10 @@ h| Explanation:
 3+d|  
 Container for local-global mappings within the DEXPI model
 
-s| [SME type]
-s| semanticId = [idType]value
-s| [valueType]
-s| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -1203,10 +1200,10 @@ h| Explanation:
 3+d|  
 Collection describing tag information
 
-s| [SME type]
-s| semanticId = [idType]value
-s| [valueType]
-s| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
@@ -1338,10 +1335,10 @@ h| Explanation:
 3+d|  
 Collection describing subtag information
 
-s| [SME type]
-s| semanticId = [idType]value
-s| [valueType]
-s| card.
+h| [SME type]
+h| semanticId = [idType]value
+h| [valueType]
+h| card.
 
 h| idShort
 h| Description@en
