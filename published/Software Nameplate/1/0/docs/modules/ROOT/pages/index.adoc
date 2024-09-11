@@ -27,23 +27,17 @@ IDTA.
 === About this document
 
 This document is a part of a specification series. Each part specifies the contents of a Submodel template for the Asset Administration Shell (AAS).
-
 The AAS is described in xref:#bib1[[1\]], xref:#bib2[[2\]], xref:#bib3[[3\]] and xref:#bib6[[6\]]. First exemplary Submodel contents were described in xref:#bib4[[4\]], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[[5\]].
-
 The format aims to be very concise, giving only minimal necessary information for applying a Submodel Template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents xref:#bib1[[1\]] to xref:#bib6[[6\]]. Common terms and abbreviations can be found in xref:#bib8[[8\]].
 
 The target group of the specification are developers and editors of technical documentation and manufacturer information, which are describing Assets in smart manufacturing by means of the Asset Administration Shell (AAS) and therefore need to create a Submodel instance with a hierarchy of SubmodelElements.
-
 This document especially details on the question, which SubmodelElements with which semantic identification shall be used for this purpose.
 
 === Scope of the Submodel
 
 Software becomes more and more an essential part in manufacturing value networks, in smart manufacturing, and in smart products.
-
 For an effective and efficient use and management of such software, it is necessary to gather relevant information in a uniform representation.
-
 Use cases like updates, patch management, license management, audits, etc. rely on information regarding identification, sources and features of software (xref:fig1[xrefstyle=short]).
-
 This information shall be provided in a consistent manner in form of a “nameplate for software”, derived and specialized from a common digital nameplate as defined in xref:#bib9[[9\]].
 
 [[fig1]]
@@ -61,12 +55,10 @@ image::img2.png[]
 image::img3.png[]
 
 This Submodel Template aims at interoperable provision of software nameplate data describing the asset of the respective Asset Administration Shell.
-
 Central element is the provision of properties xref:#bib7[[7\]], ideally interoperable by the means of dictionaries such as ECLASS and IEC CDD (Common data dictionary).
 
 The intended use-case is, that a manufacturer of industrial equipment describes Assets (type or instance), which are provided to the market, by the means of software nameplate data (properties), which are interoperable and unambiguously understood by the other market participants, such as system integrators or operators of industrial
 equipment.
-
 For providing individual industrial equipment to the market, also a supplier is covered by the use-case (for this purpose seen as functioning as manufacturer).
 
 This Submodel Template specifies two basic sets of SubmodelElements in order to describe the necessary information according to this use-case.
@@ -74,13 +66,10 @@ This Submodel Template specifies two basic sets of SubmodelElements in order to 
 === Relevant standards for the Submodel Template
 
 According to xref:#bib3[[3\]], interoperable properties might be defined by standards, consortium specifcations or manufacturer specifications.
-
 For the former two cases, so called dictionaries, repositories or classification systems exist in the market.
-
 In the further document, these entities are summarized by "property dictionaries" (see Terms and Definitions of xref:#bib6[[6\]]).
 
 Such property dictionaries include:
-
 
 * *ECLASS*, see: https://www.eclasscontent.com/[__https://www.eclasscontent.com/__]
 
@@ -91,17 +80,12 @@ Such property dictionaries include:
 === Approach
 
 A Submodel according to this Submodel Template specification consists of properties identifying both the type of software and the specific instance.
-
 The Submodel re-uses properties of the Submodel “Digital Nameplate” xref:#bib9[[9\]].
-
 Thus, the Submodel refers to corresponding concept descriptions.
-
 In addition, it uses properties defined in the Submodel “ContactInformation” xref:#bib10[[10\]].
 
 The Submodel Template contains two separate SMCs.
-
 While SMC “SoftwareNameplateType” contains prop­erties of the type of software (indicated by attribute “assetKind=type”), the SMC “Software­NameplateInstance” contains properties of the specific instance of software (“assetKind=instance”).
-
 xref:fig4[xrefstyle=short] shows the corresponding UML-diagram, xref:tab1[xrefstyle=short] defines the properties of the Submodel Template.
 
 [[fig4]]
@@ -707,20 +691,18 @@ Note: Consequently, for editors of instances of this Submodel Template,
 
 the following procedure is recommended to be applied:
 
-. Whenever possible, include a ConceptDescription within the AAS with speaking elaboration of preferredName, shortName and definition.
+* Whenever possible, include a ConceptDescription within the AAS with speaking elaboration of preferredName, shortName and definition.
 
-. If no ConceptDescription could be provided (no semanticId, that is, no formal conceptualization of the property could be given to the user), a speaking explanation shall be provided by SubmodelElement/description.
+* If no ConceptDescription could be provided (no semanticId, that is, no formal conceptualization of the property could be given to the user), a speaking explanation shall be provided by SubmodelElement/description.
 
-. In any case, a short but speaking, unique idShort for the SubmodelElement shall be chosen, respecting the allowed characters (regex definition: [a-zA-Z0-9_-]+)
+* In any case, a short but speaking, unique idShort for the SubmodelElement shall be chosen, respecting the allowed characters (regex definition: [a-zA-Z0-9_-]+)
 
 == Explanations on used table formats
 
 === General
 
 The used tables in this document try to outline information as concise as possible.
-
 They do not convey all information on Submodels and SubmodelElements.
-
 For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel Template and its elements.
 
 === Tables on Submodels and SubmodelElements
@@ -749,21 +731,18 @@ d| Property |Property
 |SMC |SubmodelElementCollection
 |===
 
-If an idShort ends with '\{00}', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique.
-
+* If an idShort ends with '\{00}', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique.
 A different idShort might be choosen, as long as it is unique in the parent’s context.
 
-The Keys of semanticId in the main section feature only idType and value, such as: [IRI]https://admin-shell.io/vdi/2770/1/0/DocumentId/Id.
-
+* The Keys of semanticId in the main section feature only idType and value, such as: [IRI]https://admin-shell.io/vdi/2770/1/0/DocumentId/Id.
 The attributes "type" and "local" (typically "ConceptDescription" and "(local)" or "GlobalReference" and (no-local)") need to be set accordingly; see xref:#bib6[[6\]].
 
-If a table does not contain a column with "parent" heading, all represented attributes share the same parent.
-
+* If a table does not contain a column with "parent" heading, all represented attributes share the same parent.
 This parent is denoted in the head of the table.
 
-Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
 
-The [valueType] is only given for Properties.
+* The [valueType] is only given for Properties.
 
 
 == Bibliography

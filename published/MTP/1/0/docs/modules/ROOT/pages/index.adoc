@@ -69,33 +69,24 @@ v1: Compared to previous whitepaper version, this document contains *breaking* c
 === About This Document
 
 This document is a part of a specification series. Each part specifies the contents of a Submodel template for the Asset Administration Shell (AAS).
-
 The AAS is described in xref:#bib1[[1\]], xref:#bib2[[2\]], xref:#bib3[[3\]] and xref:#bib6[[6\]].
-
 First exemplary Submodel contents were described in xref:#bib4[[4\]], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[[5\]]. 
-
 The format aims to be very concise, giving only minimal necessary information for applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents xref:#bib1[[1\]] to xref:#bib6[[6\]].
 
 Within the modular production, module instances are called _Process Equipment Assembly_ (PEA).
-
 _Module Type Package_ (MTP) is the integration technology for production modules within the modular production.
-
 MTP definies the communication interface towards the PEA and the representation of these interfaces within an MTP file.
-
 Per definition this file exclusively contains type-specific module information. xref:#bib7[[7\]]
 
 The aim of the document is to define an embedding of MTP in an AAS submodel and establish relations to further submodels.
 
 The target audience of the specification are developers and editors of MTP related products which are describing assets in smart manufacturing by means of the Asset Administration Shell (AAS) and therefore need to create a Submodel instance with a hierarchy of SubmodelElements.
-
 This document especially details on the question, which SubmodelElements with which semantic identification shall be used for this purpose.
 
 === Scope of the Submodels
 
 The submodels defined in this document describe the integration of PEA (instance) and MTP (type) information into an AAS.
-
 The models do not intend to cover asset aspects addressed by further submodel definitions like technical data xref:#bib8[[8\]] or digital nameplate xref:#bib8[[9\]].
-
 Therefore, introduced models should be used along with mentioned ones to complete the AAS of the respective asset.
 
 === Relevant standards for the submodel template
@@ -113,25 +104,17 @@ MD 2006/42/EC
 *As-is situation*
 
 As stated in 1.1. MTP-files include only type specific information.
-
 During the PEA integration into the Process Orchestraion Layer (POL) additional instance specific information, like the OPC UA IP-address, is required for operation.
-
 This requires separated initialization procedures for type and instance information.
-
 Furthermore, this instance information can be changed during the lifecycle of a PEA.
-
 This information cannot be retrieved in a standardized manner.
 
 *To-be situation*
 
 Classification of type and instance information as well as their referenciation during the lifecycles is one of the cornerstones of Industry 4.0 architecture. This manifests in IEC 62830 and the RAMI 4.0 model.
-
 The meta model of the AAS follows this differentiation and can be directly used to model module-specific instance and type data.
-
 The type-specific information included in the MTP file should be available as a submodel in the AAS.
-
 This submodel allows access to the MTP-file in order to associate the type specific information with other submodels of the AAS.
-
 In this way the components included in a module can be e.g. referenced with component-specific documentation.
 
 *Advantages*
@@ -165,35 +148,23 @@ Module-vendor, POL, plant owner/operator
 *As-is situation*
 
 The documentation of a module and its components is essential for the successful commissioning.
-
 Additionally, the documents have to be available during the operation of the module according to MD 2006/42/EC.
-
 The number of documents makes it challenging to find the correct component related files.
-
 The MTP concept does not provide an explicit possibility to include documentation.
-
 Documentation-related submodels are currently being developed by the Industry 4.0 community.
-
 Those models are based on VDI 2770 xref:#bib10[[10\]].
-
 Following the implementation of Use Case 1, a module provides instance- and type- information in separate AASs.
 
 *To-be situation*
 
 The MTP file and type specific AAS submodel provides visualization and operation aid of a module.
-
 The documentation of the module can be divided into type and instance specific parts.
-
 Those parts contain module descriptions as well as manuals for components.
-
 Module type specific documentation such as manuals are stored in the type specific AAS whereas instance specific document like the site map of the operation location in the instance specific AAS.
-
 The documentation aspects of the AAS should provide links towards the corresponding components included in the MTP.
 
 Additional submodels can be easily added to the PEA AAS.
-
 The relations between those aspects and the elements inside the MTP can be represented in the AAS.
-
 This use-case focuses on the relations towards the documentation submodel.
 
 *Advantages*
@@ -263,7 +234,6 @@ In the following, we assume the existence of the following two AAS:
 * “AAS Instance” uses PEA as asset. It embeds ProcessEquipmentAssembly submodel defined in Section .
 
 To create a link between PEA and its MTP file, a “derivedFrom” reference between “AAS Instance” and “AAS Type” should be used.
-
 In case when using two AAS is infeasible for any reason, ModuleTypePackage submodel can also be embedded directly in the “AAS Instance” to include MTP information (this approach is not recommended, due to limitation in distinguishing between type and instance information).
 
 Furthermore, the defined submodels included into “AAS Type” and “AAS Instance” should be used along with further submodels covering at least the aspects:
@@ -276,17 +246,17 @@ elements with equipment that is described within MTP. Possible candidate is the 
 
 === Cross-AAS Relations
 
-A “derivedFrom” reference between “AAS Instance” (embedding ProcessEquipmentAssembly submodel defined in Section) and “AAS Type” (embedding ModuleTypePackage submodel defined in Section 2.
+A “derivedFrom” reference between “AAS Instance” (embedding ProcessEquipmentAssembly submodel defined in Section) and “AAS Type” (embedding ModuleTypePackage submodel defined in xref:#sec2[xrefstyle=short].
 
 === Semantic IDs
 
 Throughout this document, http://admin-shell.io/vdi/2658/1/0[__https://admin-shell.io/vdi/2658/1/0__] is the generic prefix for semantic IDs used in this version of the submodel specification. The series of guidelines VDI 2658footnote:[https://www.vdi.de/2658] is covering all parts of MTP specification.
 
 Under this namespace, submodels and shared concepts like “documentationRelation” are defined.
-
 Furthermore, we systematically re-use parts of the AutomationML system unit class library of MTP definition “MTPSUCLib”.
 
 
+[#sec2]
 == Submodel for MTP Module Types
 
 === Approach
@@ -690,11 +660,9 @@ opc.tcp://localhost:4800/BP11
 
 === General
 
-The used tables in this document try to outline information as concise
-as possible. They do not convey all information on Submodels and
-SubmodelElements. For this purpose, the definitive definitions are given
-by the following annex in form of an XML mapping of the Submodel
-template and its elements.
+The used tables in this document try to outline information as concise as possible.
+They do not convey all information on Submodels and SubmodelElements.
+For this purpose, the definitive definitions are given by the following annex in form of an XML mapping of the Submodel template and its elements.
 
 === Tables on Submodels and SubmodelElements
 
@@ -710,7 +678,8 @@ For clarity and brevity, a set of rules is used for the tables for describing Su
 
 [cols=",",]
 |===
-|SME type |SubmodelElement type
+h| SME type
+h| SubmodelElement type
 |Property |Property
 |MLP |MultiLanguageProperty
 |Range |Range
