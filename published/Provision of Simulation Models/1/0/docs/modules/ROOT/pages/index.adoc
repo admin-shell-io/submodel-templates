@@ -256,10 +256,14 @@ For with the Submodel instance, different simulation models can be provided. The
 .Attributes of Submodel instance
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |SimulationModels 
-h| Class |Submodel 
-h| semanticId: |https://admin-shell.io/idta/SimulationModels/SimulationModels/1/0 
-h| Explanation |The Submodel may provide one or more simulation models, a service to generate a specific model, or access to an open or specific query. 
+h| idShort
+3+d|SimulationModels 
+h| Class
+3+d|Submodel 
+h| SemanticId
+3+d|https://admin-shell.io/idta/SimulationModels/SimulationModels/1/0 
+h| Explanation
+3+d|The Submodel may provide one or more simulation models, a service to generate a specific model, or access to an open or specific query. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -284,11 +288,16 @@ Basic structure to describe simulation models.
 .Submodel elements of SimulationModel
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |SimulationModel 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/SimulationModel/1/0 
-h| Parent: |SimulationModels 
-h| Explanation |Feature collection to provide or request simulation models. Models can be described by objective and content. 
+h| idShort
+3+d|SimulationModel 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/SimulationModel/1/0 
+h| Parent
+3+d|SimulationModels 
+h| Explanation
+3+d|Feature collection to provide or request simulation models. Models can be described by objective and content. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -421,11 +430,16 @@ Interfaces of the model. This includes inputs, outputs as well as acausal connec
 .Submodel elements of SimPurpose
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |SimPurpose 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/SimPurpose/1/0 
-h| Parent: |SimulationModel 
-h| Explanation |This characteristic describes the simulation purpose or suitability for different simulation goals. 
+h| idShort
+3+d|SimPurpose 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/SimPurpose/1/0 
+h| Parent
+3+d|SimulationModel 
+h| Explanation
+3+d|This characteristic describes the simulation purpose or suitability for different simulation goals. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -456,11 +470,16 @@ List of simulation purposes for which the model is explicitly not suitable.
 .Submodel elements of Environment
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |Environment 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/Environment/1/0 
-h| Parent: |SimulationModel 
-h| Explanation |Information about prerequisite environments or dependencies of underlying components on the target system. 
+h| idShort
+3+d|Environment 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/Environment/1/0 
+h| Parent
+3+d|SimulationModel 
+h| Explanation
+3+d|Information about prerequisite environments or dependencies of underlying components on the target system. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -512,11 +531,16 @@ Properties of the model with regarding to concrete simulation tools.
 .Submodel elements of SimulationTool
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |SimulationTool 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/simulationTool/1/0 
-h| Parent: |Environment 
-h| Explanation |Properties of the model with regarding to concrete simulation tools. 
+h| idShort
+3+d|SimulationTool 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/simulationTool/1/0 
+h| Parent
+3+d|Environment 
+h| Explanation
+3+d|Properties of the model with regarding to concrete simulation tools. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -561,11 +585,16 @@ Useful settings of the simulation environment. Includes e.g. solver settings.
 .Submodel elements of SolverAndTolerances
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |SolverAndTolerances 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/SolverAndTolerances/1/0 
-h| Parent: |SimulationTool 
-h| Explanation |Useful settings of the simulation environment. Includes e.g. solver settings. 
+h| idShort
+3+d|SolverAndTolerances 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/SolverAndTolerances/1/0 
+h| Parent
+3+d|SimulationTool 
+h| Explanation
+3+d|Useful settings of the simulation environment. Includes e.g. solver settings. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -617,11 +646,16 @@ List of validated tool-solver combinations.
 .Submodel elements of TestedToolSolverAlgorithm
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |TestedToolSolverAlgorithm 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/TestedToolSolverAlgorithm/1/0 
-h| Parent: |SolverAndTolerances 
-h| Explanation |List of validated tool-solver combinations. 
+h| idShort
+3+d|TestedToolSolverAlgorithm 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/TestedToolSolverAlgorithm/1/0 
+h| Parent
+3+d|SolverAndTolerances 
+h| Explanation
+3+d|List of validated tool-solver combinations. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -659,11 +693,16 @@ Tolerance a|
 .Submodel elements of ModelFile
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |ModelFile 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/ModelFile/1/0 
-h| Parent: |SimulationModel 
-h| Explanation |Providing versions of the simulation model and with characteristics to distinguish them. 
+h| idShort
+3+d|ModelFile 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/ModelFile/1/0 
+h| Parent
+3+d|SimulationModel 
+h| Explanation
+3+d|Providing versions of the simulation model and with characteristics to distinguish them. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -694,11 +733,16 @@ Provision of a version of the simulation model with information to distinguish t
 .Submodel elements of ModelFileVersion
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |ModelFileVersion 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/ModelFileVersion/1/0 
-h| Parent: |ModelFile 
-h| Explanation |Provision of a version of the simulation model with information to distinguish the versions. The versions are primarily intended for bug fixes without content changes. 
+h| idShort
+3+d|ModelFileVersion 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/ModelFileVersion/1/0 
+h| Parent
+3+d|ModelFile 
+h| Explanation
+3+d|Provision of a version of the simulation model with information to distinguish the versions. The versions are primarily intended for bug fixes without content changes. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -750,11 +794,16 @@ release notes link or file
 .Submodel elements of SimModManufacturerInformation
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |SimModManufacturerInformation 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/SimModManufacturerInformation/1/0 
-h| Parent: |SimulationModel 
-h| Explanation |Provide access to simulation support service provided by the distributor via mail or phone. 
+h| idShort
+3+d|SimModManufacturerInformation 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/SimModManufacturerInformation/1/0 
+h| Parent
+3+d|SimulationModel 
+h| Explanation
+3+d|Provide access to simulation support service provided by the distributor via mail or phone. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -805,10 +854,14 @@ Email
 Note: according to Submodel “Contact Information”
 
 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRDI] 0173-1#02-AAQ836#005 
-h| Parent: |SimModManufacturerInformation 
-h| Explanation |E-mail address and encryption method 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRDI] 0173-1#02-AAQ836#005 
+h| Parent
+3+d|SimModManufacturerInformation 
+h| Explanation
+3+d|E-mail address and encryption method 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -859,10 +912,14 @@ Phone
 Note: according to Submodel “Contact Information”
 
 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone 
-h| Parent: |SimModManufacturerInformation 
-h| Explanation |Phone number including type 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone 
+h| Parent
+3+d|SimModManufacturerInformation 
+h| Explanation
+3+d|Phone number including type 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -901,11 +958,16 @@ Specification of the available time window
 .Submodel elements of Ports
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |Ports 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/Ports/1/0 
-h| Parent: |SimulationModel 
-h| Explanation |Interfaces of the model. This includes inputs, outputs as well as acausal connections (e.g. mechanical connections). In addition, it is specified here whether the model provides binary interfaces (e.g. for visualization). 
+h| idShort
+3+d|Ports 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/Ports/1/0 
+h| Parent
+3+d|SimulationModel 
+h| Explanation
+3+d|Interfaces of the model. This includes inputs, outputs as well as acausal connections (e.g. mechanical connections). In addition, it is specified here whether the model provides binary interfaces (e.g. for visualization). 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -936,11 +998,16 @@ Binary interfaces (binaryType) based on the FMI 3.0 standard (https://fmi-standa
 .Submodel elements of PortsConnector
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |PortsConnector 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/PortsConnector/1/0 
-h| Parent: |Ports 
-h| Explanation |List of ports of the model. These include a name, a description, a list of variables, and a list of ports. 
+h| idShort
+3+d|PortsConnector 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/PortsConnector/1/0 
+h| Parent
+3+d|Ports 
+h| Explanation
+3+d|List of ports of the model. These include a name, a description, a list of variables, and a list of ports. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -978,11 +1045,16 @@ List of variables of the port.
 .Submodel elements of Vaiable
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |Variable 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/Variable/1/0 
-h| Parent: |PortsConnector 
-h| Explanation |- 
+h| idShort
+3+d|Variable 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/Variable/1/0 
+h| Parent
+3+d|PortsConnector 
+h| Explanation
+3+d|- 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
@@ -1055,11 +1127,16 @@ Prefix for acausal variable. Potential variables are set equal when connecting (
 .Submodel elements of BinaryConnector
 [width="100%", cols="1,2,1,1"]
 |===
-h| idShort: |BinaryConnector 
-h| Class |SubmodelElementCollection 
-h| semanticId: |[IRI] https://admin-shell.io/idta/SimulationModels/BinaryConnector/1/0 
-h| Parent: |Ports 
-h| Explanation |Binary interfaces (binaryType) based on the FMI 3.0 standard (https://fmi-standard.org/docs/3.0-dev/#definition-of-types). At this point the name (e.g. "Binary interface visualization") and the description (e.g. "Interface for binary transfer of visualization information") are specified. 
+h| idShort
+3+d|BinaryConnector 
+h| Class
+3+d|SubmodelElementCollection 
+h| SemanticId
+3+d|[IRI] https://admin-shell.io/idta/SimulationModels/BinaryConnector/1/0 
+h| Parent
+3+d|Ports 
+h| Explanation
+3+d|Binary interfaces (binaryType) based on the FMI 3.0 standard (https://fmi-standard.org/docs/3.0-dev/#definition-of-types). At this point the name (e.g. "Binary interface visualization") and the description (e.g. "Interface for binary transfer of visualization information") are specified. 
 h| [SME type]
 h| semanticId = [idType]value
 h| [valueType]
