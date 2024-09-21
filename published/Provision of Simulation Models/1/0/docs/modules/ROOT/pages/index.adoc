@@ -277,7 +277,7 @@ h|[SMC] SimulationModel a|
 
 Feature collection to provide or request simulation models. Models can be described by objective and content.
 
-|n/a |0..*
+|n/a |0..\*
 |===
 
 === SubmodelElements of SimulationModel
@@ -326,14 +326,14 @@ TypeOfModel a|
 
 List of modeling approaches used for the model.
 
-|[string] |0..*
+|[string] |0..\*
 |[Property] +
 ScopeOfModel a|
 [IRI] https://admin-shell.io/idta/SimulationModels/ScopeOfModel/1/0
 
 List of basic physical characteristics which are represented by the model.
 
-|[string] |1..*
+|[string] |1..\*
 |[Property] +
 LicenseModel a|
 [IRI] https://admin-shell.io/idta/SimulationModels/LicenseModel/1/0
@@ -347,7 +347,7 @@ EngineeringDomain a|
 
 List of engineering disciplines supported or mapped with the model.
 
-|[string] |0..*
+|[string] |0..\*
 |===
 
 [width="100%",cols="16%,50%,25%,9%",]
@@ -358,14 +358,14 @@ Environment a|
 
 Information about prerequisite environments or dependencies of underlying components on the target system.
 
-|n/a |0..*
+|n/a |0..\*
 |[File] +
 RefSimDocumentation a|
 [IRI] https://admin-shell.io/idta/SimulationModels/RefSimDocumentation/1/0
 
 Simulation Documentation Documentation of example simulations of the model can be supplied. This includes a solver setup and sample circuit and sample results. e.g. zip file, PDF, html, ... -
 
-|[File] |0..*
+|[File] |0..\*
 |[SMC] +
 ModelFile a|
 [IRI] https://admin-shell.io/idta/SimulationModels/ModelFile/1/0
@@ -414,7 +414,7 @@ SimModManufacturerInformation a|
 
 Provide access to simulation support service provided by the distributor via mail or phone.
 
-|n/a |0..*
+|n/a |0..\*
 |[SMC] +
 Ports a|
 [IRI] https://admin-shell.io/idta/SimulationModels/Ports/1/0
@@ -454,14 +454,14 @@ PosSimPurpose a|
 
 List of simulation purposes for which the model is intended.
 
-|[string] |1..*
+|[string] |1..\*
 |[Property] +
 NegSimPurpose a|
 [IRI] https://admin-shell.io/idta/SimulationModels/NegSimPurpose/1/0
 
 List of simulation purposes for which the model is explicitly not suitable.
 
-|[string] |0..*
+|[string] |0..\*
 |===
 
 === SubmodelElements of Environment
@@ -501,7 +501,7 @@ ToolEnvironment a|
 
 List with required simulation tools, interpreters, model libraries or runtime libraries. In each case the exact designation of the software producer is given as free text.
 
-|[string] |0..*
+|[string] |0..\*
 |[MLP] +
 DependencyEnvironment a|
 [IRI] https://admin-shell.io/idta/SimulationModels/DependencyEnvironment/1/0
@@ -522,7 +522,7 @@ SimulationTool a|
 
 Properties of the model with regarding to concrete simulation tools.
 
-|n/a |1..*
+|n/a |1..\*
 |===
 
 === SubmodelElements of SimulationTool
@@ -562,14 +562,14 @@ DependencySimTool a|
 
 Dependencies of Simulation Tools.
 
-|[string] |0..*
+|[string] |0..\*
 |[Property] +
 Compiler a|
 [IRI] https://admin-shell.io/idta/SimulationModels/compiler/1/0
 
 Name of necessary compiler including version.
 
-|[string] |0..*
+|[string] |0..\*
 |[SMC] +
 SolverAndTolerances a|
 [IRI] https://admin-shell.io/idta/SimulationModels/SolverAndTolerances/1/0
@@ -637,7 +637,7 @@ TestedToolSolverAlgorithm a|
 
 List of validated tool-solver combinations.
 
-|n/a |0..*
+|n/a |0..\*
 |===
 
 === SubmodelElements of TestedToolSolverAlgorithm
@@ -724,7 +724,7 @@ ModelFileVersion a|
 
 Provision of a version of the simulation model with information to distinguish the versions. The versions are primarily intended for bug fixes without content changes.
 
-|n/a |1..*
+|n/a |1..\*
 |===
 
 === SubmodelElements of ModelFileVersion
@@ -825,7 +825,7 @@ Language a|
 
 available language
 
-|[string] |1..*
+|[string] |1..\*
 |[SMC] +
 Email a|
 [IRDI] 0173-1#02-AAQ836#005
@@ -982,14 +982,14 @@ PortsConnector a|
 
 List of ports of the model. These include a name, a description, a list of variables, and a list of ports.
 
-|n/a |0..*
+|n/a |0..\*
 |[SMC] +
 BinaryConnector a|
 [IRI] https://admin-shell.io/idta/SimulationModels/BinaryConnector/1/0
 
 Binary interfaces (binaryType) based on the FMI 3.0 standard (https://fmi-standard.org/docs/3.0-dev/#definition-of-types). At this point the name (e.g. "Binary interface visualization") and the description (e.g. "Interface for binary transfer of visualization information") are specified.
 
-|n/a |0..*
+|n/a |0..\*
 |===
 
 === SubmodelElements of PortsConnector
@@ -1036,7 +1036,7 @@ Variable a|
 
 List of variables of the port.
 
-|n/a |0..*
+|n/a |0..\*
 |===
 
 === SubmodelElements of Variable
@@ -1402,9 +1402,9 @@ Simulation Model C should serve as an example here. Consider the situation, that
 **** ModelFileVersion „1“
 ***** ModelFileVerComment „First Version“
 ***** ModelFileVerId „V5.0“
-**** *ModelFileVersion „2“*
-***** *ModelFileVerComment „Bugfix in prefactor of equation xx“*
-***** *ModelFileVerId „V5.1“*
+**** ModelFileVersion „2“
+***** ModelFileVerComment „Bugfix in prefactor of equation xx“
+***** ModelFileVerId „V5.1“
 *** Summary „Model for simulating control behavior.“
 *** …
 *** Ports … all versions must match the descriptions
@@ -1585,7 +1585,7 @@ For clarity and brevity, a set of rules is used for the tables for describing Su
 
 [width="100%", cols="1,1"]
 |===
-|SME type |SubmodelElement type
+h|SME type h|SubmodelElement type
 |Property |Property
 |MLP |MultiLanguageProperty
 |Range |Range
