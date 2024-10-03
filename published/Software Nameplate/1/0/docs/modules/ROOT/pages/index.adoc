@@ -42,17 +42,17 @@ This information shall be provided in a consistent manner in form of a “namepl
 
 [[fig1]]
 .Software in manufacturing and the nameplate for software
-image::img1.png[role=half-view-width, pdfwidth=50vw]
+image::img1.png[width=600]
 
 The nameplate for software applies to stand-alone software Assets xref:fig2[xrefstyle=short], as well as to software as integral part of a physical Asset, e.g. firmware or application software of a machine, modelled as a composite component using hierarchies according to xref:#bib11[[11\]] (xref:fig3[xrefstyle=short]).
 
 [[fig2]]
 .Software as an Asset
-image::img2.png[role=half-view-width, pdfwidth=50vw]
+image::img2.png[width=600]
 
 [[fig3]]
 .Software as integral part of a composite component (e.g. machine)
-image::img3.png[role=half-view-width, pdfwidth=50vw]
+image::img3.png[width=600]
 
 This Submodel Template aims at interoperable provision of software nameplate data describing the asset of the respective Asset Administration Shell.
 Central element is the provision of properties xref:#bib7[[7\]], ideally interoperable by the means of dictionaries such as ECLASS and IEC CDD (Common data dictionary).
