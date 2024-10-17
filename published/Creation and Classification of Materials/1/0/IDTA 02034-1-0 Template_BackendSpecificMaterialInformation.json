@@ -1,20 +1,17 @@
 {
   "assetAdministrationShells": [
     {
-      "idShort": "CreationandClassificationofMaterialsAAS",
-      "id": "https://admin-shell.io/idta/aas/CreationandClassificationofMaterials/1/0",
+      "id": "https://example.com/ids/sm/8251_4151_4042_0268",
       "assetInformation": {
-        "assetKind": "Type",
-        "globalAssetId": "https://admin-shell.io/idta/asset/CreationandClassificationofMaterials/1/0",
-        "assetType": "Type"
+        "assetKind": "Instance"
       },
       "submodels": [
         {
-          "type": "ModelReference",
+          "type": "ExternalReference",
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://admin-shell.io/idta/SubmodelTemplate/CreationandClassificationofMaterials/1/0"
+              "value": "https://example.com/ids/sm/8251_4151_4042_6668"
             }
           ]
         }
@@ -25,13 +22,13 @@
   "submodels": [
     {
       "idShort": "BackendSpecificMaterialInformation",
-      "id": "https://admin-shell.io/idta/SubmodelTemplate/CreationandClassificationofMaterials/1/0",
+      "id": "https://example.com/ids/sm/8251_4151_4042_6668",
       "kind": "Template",
       "semanticId": {
-        "type": "ModelReference",
+        "type": "ExternalReference",
         "keys": [
           {
-            "type": "Submodel",
+            "type": "GlobalReference",
             "value": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/1/0/"
           }
         ]
@@ -48,14 +45,6 @@
               }
             ]
           },
-          "qualifiers": [
-            {
-              "kind": "TemplateQualifier",
-              "type": "SMT/Qualifier",
-              "valueType": "xs:string",
-              "value": "One"
-            }
-          ],
           "value": [
             {
               "idShort": "MaterialType",
@@ -68,14 +57,6 @@
                   }
                 ]
               },
-              "qualifiers": [
-                {
-                  "kind": "TemplateQualifier",
-                  "type": "SMT/Cardinality",
-                  "valueType": "xs:string",
-                  "value": "ZeroToOne"
-                }
-              ],
               "valueType": "xs:string",
               "modelType": "Property"
             },
@@ -86,22 +67,14 @@
                 "keys": [
                   {
                     "type": "GlobalReference",
-                    "value": "ttps://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/BaseUnitOfMeasure/1/0"
+                    "value": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/MaterialSystemProperties/BaseUnitOfMeasure/1/0"
                   }
                 ]
               },
-              "qualifiers": [
-                {
-                  "kind": "TemplateQualifier",
-                  "type": "SMT/Cardinality",
-                  "valueType": "xs:string",
-                  "value": "ZeroToOne"
-                }
-              ],
               "value": [
                 {
-                  "language": "en",
-                  "text": "MaterialType"
+                  "language": "en?",
+                  "text": ""
                 }
               ],
               "modelType": "MultiLanguageProperty"
@@ -117,14 +90,6 @@
                   }
                 ]
               },
-              "qualifiers": [
-                {
-                  "kind": "TemplateQualifier",
-                  "type": "SMT/Cardinality",
-                  "valueType": "xs:string",
-                  "value": "ZeroToOne"
-                }
-              ],
               "valueType": "xs:string",
               "modelType": "Property"
             },
@@ -139,14 +104,6 @@
                   }
                 ]
               },
-              "qualifiers": [
-                {
-                  "kind": "TemplateQualifier",
-                  "type": "SMT/Cardinality",
-                  "valueType": "xs:string",
-                  "value": "ZeroToOne"
-                }
-              ],
               "valueType": "xs:string",
               "modelType": "Property"
             },
@@ -161,18 +118,10 @@
                   }
                 ]
               },
-              "qualifiers": [
-                {
-                  "kind": "TemplateQualifier",
-                  "type": "SMT/Cardinality",
-                  "valueType": "xs:string",
-                  "value": "ZeroToOne"
-                }
-              ],
               "value": [
                 {
-                  "language": "en",
-                  "text": "ProductName"
+                  "language": "en?",
+                  "text": ""
                 }
               ],
               "modelType": "MultiLanguageProperty"
@@ -188,14 +137,6 @@
                   }
                 ]
               },
-              "qualifiers": [
-                {
-                  "kind": "TemplateQualifier",
-                  "type": "SMT/Cardinality",
-                  "valueType": "xs:string",
-                  "value": "ZeroToOne"
-                }
-              ],
               "valueType": "xs:string",
               "modelType": "Property"
             },
@@ -210,18 +151,10 @@
                   }
                 ]
               },
-              "qualifiers": [
-                {
-                  "kind": "TemplateQualifier",
-                  "type": "SMT/Cardinality",
-                  "valueType": "xs:string",
-                  "value": "ZeroToOne"
-                }
-              ],
               "value": [
                 {
-                  "language": "en",
-                  "text": "Description"
+                  "language": "en?",
+                  "text": ""
                 }
               ],
               "modelType": "MultiLanguageProperty"
@@ -237,14 +170,6 @@
                   }
                 ]
               },
-              "qualifiers": [
-                {
-                  "kind": "TemplateQualifier",
-                  "type": "SMT/Cardinality",
-                  "valueType": "xs:string",
-                  "value": "ZeroToOne"
-                }
-              ],
               "valueType": "xs:string",
               "modelType": "Property"
             }
@@ -254,5 +179,6 @@
       ],
       "modelType": "Submodel"
     }
-  ]
+  ],
+  "conceptDescriptions": []
 }
