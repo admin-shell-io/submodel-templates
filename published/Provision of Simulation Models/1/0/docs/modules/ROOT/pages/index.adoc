@@ -68,7 +68,7 @@ ECLASS defined tens of thousands product classes and unique properties to standa
 
 ==== AutomationML
 
-https://www.automationml.org/[AutomationML xref:#bib11[[11\]]] is a comprehensive XML based object-oriented data modeling language. It allows the modeling, storage and exchange of engineering models covering a multitude of relevant aspects of engineering. AML provides a comprehensive set of flexible mechanisms and innovations to model today’s engineering aspects as well as future engineering aspects to come. Its language characteristics allow to model existing or new domain models.
+https://www.automationml.org/[AutomationML] xref:#bib11[[11\]] is a comprehensive XML based object-oriented data modeling language. It allows the modeling, storage and exchange of engineering models covering a multitude of relevant aspects of engineering. AML provides a comprehensive set of flexible mechanisms and innovations to model today’s engineering aspects as well as future engineering aspects to come. Its language characteristics allow to model existing or new domain models.
 
 AutomationML has a lean and distributed file architecture. It does not define any new file format but combines existing established XML data formats which have been proven in use for their specific domain. This is why the normative part of the IEC62714-1:2018 document consists of 32 pages only. The data formats for the following modeling domains are:
 
@@ -76,7 +76,7 @@ AutomationML has a lean and distributed file architecture. It does not define an
 * geometries and kinematics of objects: COLLADA 1.4.1 and 1.5.0 (ISO/PAS 17506:2012)
 * discrete behavior of objects: PLCopen XML 2.0 and 2.0.1; in addition, IEC62714-4 will allow the usage of IEC61131-10
 
-AutomationML also provides an https://www.automationml.org/wp-content/uploads/2021/06/Asset-Administration-Shell-Representation-V1_0_0.zip[application recommendation xref:#bib12[[12\]]] which describes the serialization of the AAS Metamodel using AutomationML by defining appropriate serialization rules and role, interface and system unit classes related to them.
+AutomationML also provides an https://www.automationml.org/wp-content/uploads/2021/06/Asset-Administration-Shell-Representation-V1_0_0.zip[application recommendation] xref:#bib12[[12\]] which describes the serialization of the AAS Metamodel using AutomationML by defining appropriate serialization rules and role, interface and system unit classes related to them.
 
 === Future relevant standards
 
@@ -126,7 +126,7 @@ In future versions of the Submodel, the structure is to be adapted by the inclus
 
 ==== Quality of Simulation Model 
 
-In the working group 6.11 Virtual Commissioning of the GMA, a methodology is currently being developed which is intended to enable the quality of a simulation model to be determined in a standardized manner [(Automation) 7]. This involves evaluating a simulation model on the basis of 25 attributes, among others, and determining an overall quality for the simulation model. In the version of the Submodel described here, this quality metric is not yet applied, but this is explicitly aimed at for future versions. Possibilities for integration and collaboration are currently being discussed in talks between the working groups.
+In the working group 6.11 Virtual Commissioning of the GMA, a methodology is currently being developed which is intended to enable the quality of a simulation model to be determined in a standardized manner xref:#bib6[[7\]]. This involves evaluating a simulation model on the basis of 25 attributes, among others, and determining an overall quality for the simulation model. In the version of the Submodel described here, this quality metric is not yet applied, but this is explicitly aimed at for future versions. Possibilities for integration and collaboration are currently being discussed in talks between the working groups.
 
 === Use cases, requirements and design decisions
 
@@ -148,7 +148,7 @@ Zero to many simulation models can be provided to an asset type or instance. Mor
 
 Before describing the different use cases, the differences between a product type and a product instance should be briefly discussed here.
 
-An asset type is a representation that defines all the usual properties that are also contained in asset instances at the beginning of their life cycle [Details of the AAS Part 1]. These include, for example, the structure and components used. But also, properties resulting from the engineering are included in the type. For example, the maximum load capacity, allowed environmental conditions. In contrast to this an instance represents a concrete and clearly identifiable entity of a certain type [DotAAS 1]. This instance can contain additional properties like color, serial number, runtime information, etc. in addition to the properties contained in the type. Furthermore, properties in the instance can change over the life cycle and thus deviate from the type.
+An asset type is a representation that defines all the usual properties that are also contained in asset instances at the beginning of their life cycle xref:#bib6[[6\]]. These include, for example, the structure and components used. But also, properties resulting from the engineering are included in the type. For example, the maximum load capacity, allowed environmental conditions. In contrast to this an instance represents a concrete and clearly identifiable entity of a certain type xref:#bib6[[6\]]. This instance can contain additional properties like color, serial number, runtime information, etc. in addition to the properties contained in the type. Furthermore, properties in the instance can change over the life cycle and thus deviate from the type.
 
 ==== Use case 1: Provision of simulation models to asset types 
 
@@ -1531,9 +1531,10 @@ Sometimes you will also need to provide more information about the dependencies 
 
 [#fig10]
 .Simulation tools with compiler and solvers
+[cols="a,a", frame=none, grid=none]
 |===
-image::img12.png[align=center]
-image::img13.png[align=center]
+| image::img12.png[align=center]
+| image::img13.png[align=center]
 |===
 
 The example above can be modeled like this:
