@@ -10,7 +10,7 @@ Reading Guide](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/2022
 
 ## Submodel Templates published by IDTA
 
-The folder `published` contains Submodel templates, which are published by IDTA. These are called 'registered' Submodel templates.
+The folder `published` contains Submodel templates, which are published by IDTA. These are called 'registered' Submodel templates. Registered Submodel templates are also available through a public [Submodel Template Repository](http://smt-repo.admin-shell-io.com/).
 
 ## Collaboration Mode
 
