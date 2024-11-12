@@ -35,7 +35,4 @@ Release of the official Submodel template published by IDTA. This version is bas
 
 This version is in productive use and supported by AASX Package Explorer.
 
-## Update of AASX File for Compatibility with Version 3.0 of the "Asset Administration Shell" Metamodel Specification
-
-The AASX file has been updated for compatibility with version 3.0 of the Asset Administration Shell metamodel specification. The contents of the submodel remain unchanged.
 
