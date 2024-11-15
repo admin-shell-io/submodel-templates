@@ -25,9 +25,12 @@ IDTA.
 
 === About this document
 
-This document is a part of a specification series. Each part specifies the contents of a Submodel template for the Asset Administration Shell (AAS).
-The AAS is described in xref:#bib1[[1\]], xref:#bib2[[2\]], xref:#bib3[[3\]] and xref:#bib6[[6\]]. First exemplary Submodel contents were described in xref:#bib4[[4\]], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[[5\]].
-The format aims to be very concise, giving only minimal necessary information for applying a Submodel Template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents xref:#bib1[[1\]] to xref:#bib6[[6\]]. Common terms and abbreviations can be found in xref:#bib8[[8\]].
+This document is a part of a specification series.
+Each part specifies the contents of a Submodel template for the Asset Administration Shell (AAS).
+The AAS is described in xref:#bib1[[1\]], xref:#bib2[[2\]], xref:#bib3[[3\]] and xref:#bib6[[6\]].
+First exemplary Submodel contents were described in xref:#bib4[[4\]], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[[5\]].
+The format aims to be very concise, giving only minimal necessary information for applying a Submodel Template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents xref:#bib1[[1\]] to xref:#bib6[[6\]].
+Common terms and abbreviations can be found in xref:#bib8[[8\]].
 
 The target group of the specification are developers and editors of technical documentation and manufacturer information, which are describing Assets in smart manufacturing by means of the Asset Administration Shell (AAS) and therefore need to create a Submodel instance with a hierarchy of SubmodelElements.
 This document especially details on the question, which SubmodelElements with which semantic identification shall be used for this purpose.
@@ -56,8 +59,7 @@ image::img3.png[width=600]
 This Submodel Template aims at interoperable provision of software nameplate data describing the asset of the respective Asset Administration Shell.
 Central element is the provision of properties xref:#bib7[[7\]], ideally interoperable by the means of dictionaries such as ECLASS and IEC CDD (Common data dictionary).
 
-The intended use-case is, that a manufacturer of industrial equipment describes Assets (type or instance), which are provided to the market, by the means of software nameplate data (properties), which are interoperable and unambiguously understood by the other market participants, such as system integrators or operators of industrial
-equipment.
+The intended use-case is, that a manufacturer of industrial equipment describes Assets (type or instance), which are provided to the market, by the means of software nameplate data (properties), which are interoperable and unambiguously understood by the other market participants, such as system integrators or operators of industrial equipment.
 For providing individual industrial equipment to the market, also a supplier is covered by the use-case (for this purpose seen as functioning as manufacturer).
 
 This Submodel Template specifies two basic sets of SubmodelElements in order to describe the necessary information according to this use-case.
@@ -72,7 +74,7 @@ Such property dictionaries include:
 
 * *ECLASS*, see: https://www.eclasscontent.com/
 
-* *IEC CDD*, see: https://cdd.iec.ch/cdd/iec61987/iec61987.nsf[_https://cdd.iec.ch/cdd/iec61987/iec61987.nsf_] and https://cdd.iec.ch/cdd/iec62683/cdddev.nsf[_https://cdd.iec.ch/cdd/iec62683/cdddev.nsf_]
+* *IEC CDD*, see: https://cdd.iec.ch/cdd/iec61987/iec61987.nsf and https://cdd.iec.ch/cdd/iec62683/cdddev.nsf
 
 == Submodel for identification of Software in Industrial Applications
 
@@ -93,41 +95,19 @@ image::img4.png[]
 
 [[tab1]]
 .Properties of the Submodel Template "SoftwareNameplate"
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 
-h| idShort
-3+d| 
-SoftwareNameplate
+h| idShort 3+d| SoftwareNameplate
 
 Note: The above idShort shall always be as stated.
 
-h| Class:
-3+d| 
-Submodel
-
-h| semanticId:
-3+d| 
-[IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0
-
-h| Parent:
-3+d| 
-Asset Administration Shell with Asset, which is software
-
-h| Explanation:
-3+d|  
-Submodel containing the nameplate information for software Asset and associated product classificatons.
-
-h| [SME type]
-h| semanticId = [idType]value
-h| [valueType]
-h| card.
-
-h| idShort
-h| Description@en
-h| example
-h|
-
+h| Class: 3+d| Submodel
+h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0
+h| Parent: 3+d| Asset Administration Shell with Asset, which is software
+h| Explanation: 3+d| Submodel containing the nameplate information for software Asset and associated product classificatons.
+h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| idShort h| Description@en h| example h|
 d|
 [SubmodelElementCollection] SoftwareNameplate_Type |[IRI]
 https://admin-shell.io/idta/SoftwareNameplate/1/0/ SoftwareNameplateType
@@ -156,41 +136,19 @@ xref:tab2[xrefstyle=short] describes the details of the Submodel structure combi
 
 [[tab2]]
 .Properties of the SMC "SoftwareNameplateType"
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 
-h| idShort
-3+d| 
-SoftwareNameplate_Type
+h| idShort 3+d| SoftwareNameplate_Type
 
 Note: The above idShort shall always be as stated.
 
-h| Class:
-3+d| 
-SubmodelElementCollection
-
-h| semanticId:
-3+d| 
-[IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplateType
-
-h| Parent:
-3+d| 
-SoftwareNameplate
-
-h| Explanation:
-3+d|  
-SMC containing the nameplate information for a type of a software Asset.
-
-h| [SME type]
-h| semanticId = [idType]value
-h| [valueType]
-h| card.
-
-h| idShort
-h| Description@en
-h| example
-h|
-
+h| Class: 3+d| SubmodelElementCollection
+h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplateType
+h| Parent: 3+d| SoftwareNameplate
+h| Explanation: 3+d| SMC containing the nameplate information for a type of a software Asset.
+h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| idShort h| Description@en h| example h|
 d|
 [Property] URIOfTheProduct |[IRDI] 0173-1#02-AAY811#001 |string |[1]
 
@@ -321,41 +279,18 @@ image::img6.png[]
 
 [[tab3]]
 .Properties of the SMC "SoftwareNameplateInstance"
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
-
-h| idShort
-3+d| 
-SoftwareNameplate_Instance
+h| idShort 3+d| SoftwareNameplate_Instance
 
 Note: The above idShort shall always be as stated.
 
-h| Class:
-3+d| 
-SubmodelElementCollection
-
-h| semanticId:
-3+d| 
-[IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplateInstance
-
-h| Parent:
-3+d| 
-Asset Administration Shell with Asset, which is software
-
-h| Explanation:
-3+d|  
-SMC containing the nameplate information for an instance of a software Asset.
-
-h| [SME type]
-h| semanticId = [idType]value
-h| [valueType]
-h| card.
-
-h| idShort
-h| Description@en
-h| example
-h|
-
+h| Class: 3+d| SubmodelElementCollection
+h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplateInstance
+h| Parent: 3+d| Asset Administration Shell with Asset, which is software
+h| Explanation: 3+d| SMC containing the nameplate information for an instance of a software Asset.
+h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| idShort h| Description@en h| example h|
 d|
 [Property] SerialNumber |[IRDI] 0173-1#02-AAM556#002 +
 ( [IRDI] 0112/2///61987#ABA951#007 serial number) |String |[0..1]
@@ -456,39 +391,15 @@ xref:fig6[xrefstyle=short] shows the UML-diagram defining the relevant propertie
 
 [[tab4]]
 .Properties of the SMC "InstalledModules"
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
-
-h| idShort
-3+d| 
-InstalledModules
-
-h| Class:
-3+d| 
-SubmodelElementCollection
-
-h| semanticId:
-3+d| 
-[IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledModules
-
-h| Parent:
-3+d| 
-Submodel element collection "SoftwareNameplateInstance"
-
-h| Explanation:
-3+d|  
-Contains a list of installed modules of the software instance.
-
-h| [SME type]
-h| semanticId = [idType]value
-h| [valueType]
-h| card.
-
-h| idShort
-h| Description@en
-h| example
-h|
-
+h| idShort 3+d| InstalledModules
+h| Class: 3+d| SubmodelElementCollection
+h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledModules
+h| Parent: 3+d| Submodel element collection "SoftwareNameplateInstance"
+h| Explanation: 3+d| Contains a list of installed modules of the software instance.
+h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| idShort h| Description@en h| example h|
 d|
 [Property] InstalledModule |[IRI]
 https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/InstalledModule
@@ -497,46 +408,21 @@ https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareName
 | |The name of a particular module installed |main |
 |===
 
-
 === Properties of the SMC "ConfigurationPaths"
 
 xref:fig6[xrefstyle=short] shows the UML-diagram defining the relevant properties which need to be set. xref:tab5[xrefstyle=short] describes the details of the SMC structure combined with examples.
 
 [[tab5]]
 .Properties of the SMC "ConfigurationPaths"
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
-
-h| idShort
-3+d| 
-ConfigurationPaths
-
-h| Class:
-3+d| 
-SubmodelElementCollection
-
-h| semanticId:
-3+d| 
-[IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPaths
-
-h| Parent:
-3+d| 
-Submodel element collection "SoftwareNameplateInstance"
-
-h| Explanation:
-3+d|  
-Contains a list of configuration entries of the software instance.
-
-h| [SME type]
-h| semanticId = [idType]value
-h| [valueType]
-h| card.
-
-h| idShort
-h| Description@en
-h| example
-h|
-
+h| idShort 3+d| ConfigurationPaths
+h| Class: 3+d| SubmodelElementCollection
+h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPaths
+h| Parent: 3+d| Submodel element collection "SoftwareNameplateInstance"
+h| Explanation: 3+d| Contains a list of configuration entries of the software instance.
+h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| idShort h| Description@en h| example h|
 d|
 [SubmodelElementCollection] ConfigurationPath
 |[IRI]https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPath
@@ -545,47 +431,21 @@ d|
 | |Contains a single configuration entry | |
 |===
 
-
 === Properties of the SMC "ConfigurationPath"
 
 xref:fig6[xrefstyle=short] shows the UML-diagram defining the relevant properties which need to be set. xref:tab6[xrefstyle=short] describes the details of the SMC structure combined with examples.
 
 [[tab6]]
 .Properties of the SMC "ConfigurationPath"
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
-
-h| idShort
-3+d| 
-ConfigurationPath
-
-h| Class:
-3+d| 
-SubmodelElementCollection
-
-h| semanticId:
-3+d| 
-[IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPath
-
-h| Parent:
-3+d| 
-Submodel element collection "ConfigurationPaths"
-
-h| Explanation:
-3+d|  
-Contains a single configuration entry of the software instance.
-
-
-h| [SME type]
-h| semanticId = [idType]value
-h| [valueType]
-h| card.
-
-h| idShort
-h| Description@en
-h| example
-h|
-
+h| idShort 3+d| ConfigurationPath
+h| Class: 3+d| SubmodelElementCollection
+h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationPath
+h| Parent: 3+d| Submodel element collection "ConfigurationPaths"
+h| Explanation: 3+d| Contains a single configuration entry of the software instance.
+h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| idShort h| Description@en h| example h|
 d|
 [Property] ConfigurationURI
 |[IRI]https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateInstance/ConfigurationURI
@@ -614,7 +474,7 @@ The property "RoleOfContactPerson" shall use the IRDI 0173-1#07-AAS931#001 (tech
 For displaying property names in a user interface, the following precedence of display names shall be maintained:
 
 .Display names for sections and properties with no semanticId available
-[width="100%", cols="1,1,2"]
+[width="100%",cols="1,1,2"]
 |===
 h| Priority
 h| Concept in AAS metamodel
@@ -683,7 +543,6 @@ orientation presentation.
 
 |===
 
-
 ====
 Note: Consequently, for editors of instances of this Submodel Template,
 ====
@@ -712,9 +571,11 @@ For clarity and brevity, a set of rules is used for the tables for describing Su
 
 * The table heads abbreviate 'cardinality' with 'card'.
 
-* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+* The tables often place two informations in different rows of the same table cell.
+In this case, the first information is marked out by sharp brackets [] form the second information.
+A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
 
-* The types of SubmodelElements are abbreviated: 
+* The types of SubmodelElements are abbreviated:
 
 [cols=",",]
 |===
@@ -743,73 +604,60 @@ This parent is denoted in the head of the table.
 
 * The [valueType] is only given for Properties.
 
-
 == Bibliography
 
 [#bib1]
-[1] "Recommendations for implementing the strategic initiative
-INDUSTRIE 4.0", acatech, April 2013. [Online]. Available___
-___https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+[1] "Recommendations for implementing the strategic initiative INDUSTRIE 4.0", acatech, April 2013. [Online].
+Available:
+https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
 
 [#bib2]
-[2] "Implementation Strategy Industrie 4.0: Report on the results
-of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V.,
-April 2015. [Online]. Available:__
-__https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf[_https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf_]
+[2] "Implementation Strategy Industrie 4.0: Report on the results of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April 2015. [Online].
+Available:
+https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
 
 [#bib3]
-[3] "The Structure of the Administration Shell: TRILATERAL
-PERSPECTIVES from France, Italy and Germany", March 2018, [Online].
+[3] "The Structure of the Administration Shell: TRILATERAL PERSPECTIVES from France, Italy and Germany", March 2018, [Online].
 Available:
-https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html[_https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html_]
+https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
 
 [#bib4]
-[4] "Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente
-– Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016. [Online].
+[4] "Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente – Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016. [Online].
 Available:
 https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
 
 [#bib5]
-[5] "Verwaltungsschale in der Praxis. Wie definiere ich
-Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen
-Verwaltungsschalen (in German)", Version 1.0, April 2019, Plattform
-Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal
-Ministry for Economic Affairs and Energy (BMWi), Available:
+[5] "Verwaltungsschale in der Praxis.
+Wie definiere ich Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen (in German)", Version 1.0, April 2019, Plattform Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for Economic Affairs and Energy (BMWi), Available:
 https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
 
 [#bib6]
-[6] "Details of the Asset Administration Shell; Part 1 - The
-exchange of information between partners in the value chain of Industrie
-4.0 (Version 3.0RC01)", November 2020, [Online]. Available:
-https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html[_https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html_]
+[6] "Details of the Asset Administration Shell; Part 1 - The exchange of information between partners in the value chain of Industrie 4.0 (Version 3.0RC01)", November 2020, [Online].
+Available:
+https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html
 
 [#bib7]
-[7] Semantic interoperability: challenges in the digital
-transformation age, IEC, International Electronical Commision; 2019;
+[7] Semantic interoperability: challenges in the digital transformation age, IEC, International Electronical Commision; 2019;
 Available:
 https://basecamp.iec.ch/download/iec-white-paper-semantic-interoperability-challenges-in-the-digital-transformation-age-en/?
 
 [#bib8]
 [8] Common terms and abbreviations according to VDI FA 7.21 Wiki;
-Available:__
-__http://i40.iosb.fraunhofer.de/
+Available:
+http://i40.iosb.fraunhofer.de/
 
 [#bib9]
-[9] "Submodel Template of the Asset Administration Shell -
-Digital Nameplate for Industrial Equipment (Version 2.0)", IDTA
-02006-2-0, 2022, [Online]. Available: +
-https://github.com/admin-shell-io/submodel-templates/tree/main/published[_https://github.com/admin-shell-io/submodel-templates/tree/main/published_]
+[9] "Submodel Template of the Asset Administration Shell - Digital Nameplate for Industrial Equipment (Version 2.0)", IDTA 02006-2-0, 2022, [Online].
+Available:
+https://github.com/admin-shell-io/submodel-templates/tree/main/published
 
 [#bib10]
-[10] "Submodel Template of the Asset Administration Shell -
-Submodel for Contact Information (Version 1.0)", IDTA-02002-1-0, 2022,
-[Online]. Available: +
-https://github.com/admin-shell-io/submodel-templates/tree/main/published[_https://github.com/admin-shell-io/submodel-templates/tree/main/published_]
+[10] "Submodel Template of the Asset Administration Shell - Submodel for Contact Information (Version 1.0)", IDTA-02002-1-0, 2022,
+[Online].
+Available:
+https://github.com/admin-shell-io/submodel-templates/tree/main/published
 
 [#bib11]
-[11] "Submodel Template of the Asset Administration Shell -
-Hierarchical Structures enabling Bills of Material (Version 1.0)",
-IDTA-02011-1-0, April 2023, [Online]. Available: +
-https://github.com/admin-shell-io/submodel-templates/tree/main/published[_https://github.com/admin-shell-io/submodel-templates/tree/main/published_]
-
-www.industrialdigitaltwin.org
+[11] "Submodel Template of the Asset Administration Shell - Hierarchical Structures enabling Bills of Material (Version 1.0)", IDTA-02011-1-0, April 2023, [Online].
+Available:
+https://github.com/admin-shell-io/submodel-templates/tree/main/published
