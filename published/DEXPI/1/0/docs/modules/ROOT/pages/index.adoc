@@ -44,8 +44,7 @@ Even though most engineering artifacts are created digitally, they are not neces
 The lack of a machine-readable representation of engineering artifacts (including P&IDs) hinders the digital transformation and can be a showstopper for digital use-cases due to high costs of creation of a machine-readable P&ID representation.
 
 Efforts to create a standardized machine-readable exchange format for P&ID are made by the DEXPI working group of DECHEMA including operators from multiple verticals (e.g., Oil and Gas, and Chemistry), engineering companies, software tool vendors and research institutes.
-DEXPI xref:#bib8[[8\]] is a UML-Model implemented using an XML-based P&ID exchange format including multiple aspects of plant design like piping topology and its
-graphical representation, instrumentation structure, tag names.
+DEXPI xref:#bib8[[8\]] is a UML-Model implemented using an XML-based P&ID exchange format including multiple aspects of plant design like piping topology and its graphical representation, instrumentation structure, tag names.
 DEXPI is an open industrial standard aiming for a broad usage across industrial domains.
 
 Due to the paramount role of P&ID during the whole plant's lifecycle, the importance of DEXPI has been identified by the Industry 4.0 community.
@@ -74,8 +73,7 @@ In case of combining multiple DEXPI models within one AAS Submodel, we assume th
 
 DEXPI as a P&ID specification contains valuable information, particularly the plant structure, which are relevant through the whole lifecycle of the plant especially during the operational phase.
 In addition, tag names for used equipment and details for its use in automation applications.
-In use case 2 the plant structure usually developed in basic engineering is used to systematically generate a (not yet existent) Role-AASs (cf. for more information) used to further
-specify the apparatus/machines, piping and automation equipment in detail engineering to procure and construct the plant.
+In use case 2 the plant structure usually developed in basic engineering is used to systematically generate a (not yet existent) Role-AASs (cf. for more information) used to further specify the apparatus/machines, piping and automation equipment in detail engineering to procure and construct the plant.
 
 Like other artifacts, DEXPI files are using local, i.e., file-unique, identifiers which DEXPI inherits from its current serialization format ProteusXML.
 These local element identifiers tend to change over time and there is also no warranty that there is no duplication of local IDs between different DEXPI models in one AAS Submodel (note that persistent IDs are planned in the upcoming DEXPI release 1.4 and will be incorporated in a future version of this Submodel template).
@@ -84,9 +82,11 @@ These stable references pave a way to a set of use-cases which is described in N
 
 ==== Design Decisions
 
-* No altering of the DEXPI standard. Identified points (e.g., missing stable identifiers, or missing possibility to package multiple DEXPI models) were communicated to the DEXPI working group.
+* No altering of the DEXPI standard.
+Identified points (e.g., missing stable identifiers, or missing possibility to package multiple DEXPI models) were communicated to the DEXPI working group.
 
-* Use of ISO 10209 to identify plant hierarchy levels, in case of redundant hierarchy definitions, e.g., ISO 10209 Plant Section and ISA-style Unit, within the DEXPI file, the latter should be ignored, and ISO 10209 be preferred. In case no ISO 10209 attribute is available, ISA-style attributes should be renamed and their values reused as indicated in the figure below.
+* Use of ISO 10209 to identify plant hierarchy levels, in case of redundant hierarchy definitions, e.g., ISO 10209 Plant Section and ISA-style Unit, within the DEXPI file, the latter should be ignored, and ISO 10209 be preferred.
+In case no ISO 10209 attribute is available, ISA-style attributes should be renamed and their values reused as indicated in the figure below.
 
 [[fig1]]
 .Alignment of hierarchical structure elements according to different standards
@@ -94,11 +94,11 @@ image::img1.png[]
 
 * Re-modeling of the DEXPI standard should happen as "sparse" as possible to avoid double-modeling and allow best-possible reuse of existing tools.
 In case double-modeling is required, common patterns from existing IDTA Submodel definitions should be used, i.e.
-** FragmentReference mechanisms as already used and described in the MTP Submodel template definitionfootnote:[https://github.com/admin-shell-io/submodel-templates/tree/main/published/MTP/1/0[_https://github.com/admin-shell-io/submodel-templates/tree/main/published/MTP/1/0_]].
-** Usage of existing Submodels, e.g., the "Hierarchical Structure enabling Bills of materials" Submodel template ID 02011footnote:[To be found under https://industrialdigitaltwin.org/en/content-hub/submodels[_https://industrialdigitaltwin.org/en/content-hub/submodels_] after publishing] to represent/reference a hierarchy of plant segments which are described by the DEXPI file.
+** FragmentReference mechanisms as already used and described in the MTP Submodel template definitionfootnote:[https://github.com/admin-shell-io/submodel-templates/tree/main/published/MTP/1/0].
+** Usage of existing Submodels, e.g., the "Hierarchical Structure enabling Bills of materials" Submodel template ID 02011footnote:[To be found under https://industrialdigitaltwin.org/en/content-hub/submodels after publishing] to represent/reference a hierarchy of plant segments which are described by the DEXPI file.
 
 * Reuse semantic IDs for elements included in the DEXPI standard, for example, metadata properties.
-This applies for semantic IDs where IRIs starting with "http://sandbox.dexpi.org/rdl/[_http://sandbox.dexpi.org/rdl/_]" or IRDIs are reused where applicable.
+This applies for semantic IDs where IRIs starting with "http://sandbox.dexpi.org/rdl/" or IRDIs are reused where applicable.
 
 * Slight extensions plant metadata attribute selection of the DEXPI specification to keep logical information combined, e.g., EnterpriseReference property along with EnterpriseName property.
 
@@ -135,15 +135,15 @@ image::img2.png[align=center]
 Note that "card." denotes cardinality which should be interpreted as the "multiplicity" concept known from UML.
 
 .Submodel DEXPI
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 
-h| idShort 3+d| DEXPI 
+h| idShort 3+d| DEXPI
 
 Note: the above idShort can differ from proposed "DEXPI" idShort, in order to enable multiple Submodels for an asset, e.g., inherited DEXP files from higher-level Submodel templates or assets.
 
 h| Class: 3+d| Submodel (SM)
-h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/DEXPI/1/0/Submodel 
+h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/DEXPI/1/0/Submodel
 h| Parent: 3+d| Asset Administration Shell with asset which is a plant segment the DEXPI file belongs to.
 h| Explanation: 3+d| Submodel containing one or multiple DEXPI models for the asset.
 h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
@@ -181,11 +181,10 @@ element i.e. first DEXPI model and so on ("Model01", "Model02",
 |n/a |1..* |
 |===
 
-
 === Properties of the SMC PlantMetadata
 
 .Properties of the SMC PlantMetadata
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 
 h| idShort 3+d| PlantMetadata
@@ -693,7 +692,7 @@ d|
 === Properties of the SMC Model\{00}
 
 .Properties of the SMC Model
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 
 h| idShort 3+d| Model\{00}
@@ -771,7 +770,7 @@ Directory with model-specific mappings
 === Properties of the SMC ModelMetadata
 
 .Properties of the SMC ModelMetadata
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 
 h| idShort 3+d| ModelMetadata
@@ -993,7 +992,7 @@ d|
 ===  Properties of the SMC MappingDirectory
 
 .Properties of the SMC MappingDirectory
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 
 h| idShort 3+d| MappingDirectory
@@ -1040,13 +1039,13 @@ Two kinds of SMC are possible within the parent SMC – one describes the Tag, a
 
 TagMapping SMC element is used to capture two concepts within DEXPI:
 
-* Tagged elements, e.g., "Equipment" elements, having a "TagNameAssignmentClass" DEXPI attribute, an example is "PlateHeatExchanger" used in the example table below. In this case the TagName property corresponds to the value of tag name assignment.
+* Tagged elements, e.g., "Equipment" elements, having a "TagNameAssignmentClass" DEXPI attribute, an example is "PlateHeatExchanger" used in the example table below.
+In this case the TagName property corresponds to the value of tag name assignment.
 
-* "ProcessInstrumentationFunction" elements within the DEXPI model describing process instrumentation, in this case the TagName property
-corresponds to the DEXPI attribute values of "ProcessInstrumentationFunctionNumberAssignmentClass" DEXPI attributes of the respective element, e.g., 4712.01 for an element with local ID "ProcessInstrumentationFunction-1" within the example DEXPI file.
+* "ProcessInstrumentationFunction" elements within the DEXPI model describing process instrumentation, in this case the TagName property corresponds to the DEXPI attribute values of "ProcessInstrumentationFunctionNumberAssignmentClass" DEXPI attributes of the respective element, e.g., 4712.01 for an element with local ID "ProcessInstrumentationFunction-1" within the example DEXPI file.
 
 .Properties of the SMC LocalId within DEXPI
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 
 h| idShort 3+d| \{LocalId within DEXPI}
@@ -1153,11 +1152,10 @@ Second:
 |1
 |===
 
-The second kind of SMC within the mapping directory describes the subtag
-capturing objects having a "SubTagNameAssignmentClass" DEXPI attribute.
+The second kind of SMC within the mapping directory describes the subtag capturing objects having a "SubTagNameAssignmentClass" DEXPI attribute.
 
 .Properties of the SMC LocalId within DEXPI
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 
 h| idShort 3+d| \{LocalId within DEXPI}
@@ -1327,50 +1325,45 @@ Second:
 
 == Bibliography
 
-[#bib1] 
-[1]"Recommendations for implementing the strategic initiative
-INDUSTRIE 4.0", acatech, April 2013. [Online]. Available___
-___https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+[#bib1]
+[1]"Recommendations for implementing the strategic initiative INDUSTRIE 4.0", acatech, April 2013. [Online].
+Available:
+https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
 
 [#bib2]
-[2]"Implementation Strategy Industrie 4.0: Report on the results
-of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V.,
-April 2015. [Online]. Available:__
-__https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf[_https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf_]
+[2]"Implementation Strategy Industrie 4.0: Report on the results of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April 2015. [Online].
+Available:
+https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
 
 [#bib3]
-[3]"The Structure of the Administration Shell: TRILATERAL
-PERSPECTIVES from France, Italy and Germany", March 2018, [Online].
+[3]"The Structure of the Administration Shell: TRILATERAL PERSPECTIVES from France, Italy and Germany", March 2018, [Online].
 Available:
-https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html[_https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html_]
+https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
 
 [#bib4]
-[4]"Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente
-– Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016. [Online].
+[4]"Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente – Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016. [Online].
 Available:
 https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
 
 [#bib5]
-[5]"Verwaltungsschale in der Praxis. Wie definiere ich
-Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen
-Verwaltungsschalen (in German)", Version 1.0, April 2019, Plattform
-Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal
-Ministry for Economic Affairs and Energy (BMWi), Available:
+[5]"Verwaltungsschale in der Praxis.
+Wie definiere ich Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen (in German)", Version 1.0, April 2019, Plattform Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for Economic Affairs and Energy (BMWi), Available:
 https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
 
 [#bib6]
-[6]"Details of the Asset Administration Shell; Part 1 - The
-exchange of information between partners in the value chain of Industrie
-4.0 (Version 3.0RC01)", November 2020, [Online]. Available:
-https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html[_https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html_]
+[6]"Details of the Asset Administration Shell; Part 1 - The exchange of information between partners in the value chain of Industrie 4.0 (Version 3.0RC01)", November 2020, [Online].
+Available:
+https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html
 
 [#bib7]
-[7]Wiedau et al.: Towards a Systematic Data Harmonization to
-Enable AI Application in the Process Industry. Chemie Ingenieur Technik.
-2021. DOI: 10.1002/cite.202100203. [Online]. Available:
-https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cite.202100203[_https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cite.202100203_]
+[7]Wiedau et al.: Towards a Systematic Data Harmonization to Enable AI Application in the Process Industry.
+Chemie Ingenieur Technik.
+2021. DOI: 10.1002/cite.202100203. [Online].
+Available:
+https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cite.202100203
 
 [#bib8]
 [8]"DEXPI P&ID Specification 1.3", ProcessNet, June 2021.
-[Online]. Available___
-___https://dexpi.org/wp-content/uploads/2020/09/DEXPI-PID-Specification-1.3.pdf[_https://dexpi.org/wp-content/uploads/2020/09/DEXPI-PID-Specification-1.3.pdf_]
+[Online].
+Available:
+https://dexpi.org/wp-content/uploads/2020/09/DEXPI-PID-Specification-1.3.pdf

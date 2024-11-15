@@ -24,9 +24,10 @@ https://www.industrialdigitaltwin.org/
 
 === About This Document
 
-This document is a part of a specification series. Each part specifies the contents of a Submodel template for the Asset Administration Shell (AAS).
+This document is a part of a specification series.
+Each part specifies the contents of a Submodel template for the Asset Administration Shell (AAS).
 The AAS is described in xref:#bib1[[1\]], xref:#bib2[[2\]], xref:#bib3[[3\]] and xref:#bib6[[6\]].
-First exemplary Submodel contents were described in xref:#bib4[[4\]], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[[5\]]. 
+First exemplary Submodel contents were described in xref:#bib4[[4\]], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[[5\]].
 The format aims to be very concise, giving only minimal necessary information for applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents xref:#bib1[[1\]] to xref:#bib6[[6\]].
 
 The target audience of the specification are developers and editors of MTP related products which are describing assets in smart manufacturing by means of the Asset Administration Shell (AAS) and therefore need to create a Submodel instance with a hierarchy of SubmodelElements.
@@ -65,7 +66,8 @@ This information cannot be retrieved in a standardized manner.
 
 *To-be situation*
 
-Classification of type and instance information as well as their referenciation during the lifecycles is one of the cornerstones of Industry 4.0 architecture. This manifests in IEC 62830 and the RAMI 4.0 model.
+Classification of type and instance information as well as their referenciation during the lifecycles is one of the cornerstones of Industry 4.0 architecture.
+This manifests in IEC 62830 and the RAMI 4.0 model.
 The metamodel of the AAS follows this differentiation and can be directly used to model module-specific instance and type data.
 The type-specific information included in the MTP file should be available as a Submodel in the AAS.
 This Submodel allows access to the MTP-file in order to associate the type specific information with other Submodels of the AAS.
@@ -87,7 +89,9 @@ Module-vendor, POL, plant owner/operator
 
 *Sequence of events for a minimal use case*
 
-* Module-vendor delivers one AAS for module type and module instance information each to the plant owner. PEA-specific AAS contains constant data of the module e.g. its serial number. The type specific AAS allows access to at least the MTP file of the module.
+* Module-vendor delivers one AAS for module type and module instance information each to the plant owner.
+PEA-specific AAS contains constant data of the module e.g. its serial number.
+The type specific AAS allows access to at least the MTP file of the module.
 
 * Plant operator enters additional PEA-specific data into AAS, e.g. PEA's OPC UA endpoint.
 
@@ -137,7 +141,8 @@ PEA vendor, POL, plant owner/operator
 
 * PEA-vendor supplies the PEA-AAS to plant operator.
 
-* The PEA-AAS includes references an AAS containing MTP and documentation references. Alternatively, PEA-AAS may include PEA-specific documentation within its documentation submodel.
+* The PEA-AAS includes references an AAS containing MTP and documentation references.
+Alternatively, PEA-AAS may include PEA-specific documentation within its documentation submodel.
 
 * Operator imports AAS into POL.
 
@@ -165,7 +170,8 @@ DD1: Embedding of MTP-file content into AAS submodel.
 
 Alternatives:
 
-* Re-modeling single MTP-contents in the AAS-submodel or multiple Submodels. Therefore, the extraction of MTP-defined concepts and translation into the AAS metamodel is required.
+* Re-modeling single MTP-contents in the AAS-submodel or multiple Submodels.
+Therefore, the extraction of MTP-defined concepts and translation into the AAS metamodel is required.
 
 * Embedding the MTP-file as an "opaque" SubmodelElement of type "File" into the submodel.
 
@@ -173,7 +179,8 @@ Decision: Alternative 2.
 
 Advantages are:
 
-* Existing MTP-tools can be adopted and used to import and export AASX packages. In most simple case, an AASX package needs to be extracted and the MTP file can be imported into existing tools.
+* Existing MTP-tools can be adopted and used to import and export AASX packages.
+In most simple case, an AASX package needs to be extracted and the MTP file can be imported into existing tools.
 
 * No synchronization of redundant content between MTP and AAS is needed.
 
@@ -183,19 +190,23 @@ Advantages are:
 
 In the following, we assume the existence of the following two AAS:
 
-* "AAS Type" uses module type as asset. It embeds MTP file by providing a ModuleTypePackage Submodel defined in Section <<sec2>>
+* "AAS Type" uses module type as asset.
+It embeds MTP file by providing a ModuleTypePackage Submodel defined in Section <<sec2>>
 
-* "AAS Instance" uses PEA as asset. It embeds ProcessEquipmentAssembly Submodel defined in Section .
+* "AAS Instance" uses PEA as asset.
+It embeds ProcessEquipmentAssembly Submodel defined in Section .
 
 To create a link between PEA and its MTP file, a "derivedFrom" reference between "AAS Instance" and "AAS Type" should be used.
 In case when using two AAS is infeasible for any reason, ModuleTypePackage Submodel can also be embedded directly in the "AAS Instance" to include MTP information (this approach is not recommended, due to limitation in distinguishing between type and instance information).
 
 Furthermore, the defined Submodels included into "AAS Type" and "AAS Instance" should be used along with further Submodels covering at least the aspects:
 
-* Identification: Properties to describe the type or instance of the process module. Possible candidate for PEA can be the nameplate model.
+* Identification: Properties to describe the type or instance of the process module.
+Possible candidate for PEA can be the nameplate model.
 
-* Documentation: Use case 2 foresees a need for documentation embedding. The described Submodel needs to provide cross-link documentation
-elements with equipment that is described within MTP. Possible candidate is the documentation Submodel developed based on VDI 2770 xref:#bib10[[10\]].
+* Documentation: Use case 2 foresees a need for documentation embedding.
+The described Submodel needs to provide cross-link documentation elements with equipment that is described within MTP.
+Possible candidate is the documentation Submodel developed based on VDI 2770 xref:#bib10[[10\]].
 
 === Cross-AAS Relations
 
@@ -203,7 +214,8 @@ A "derivedFrom" reference between "AAS Instance" (embedding ProcessEquipmentAsse
 
 === Semantic IDs
 
-Throughout this document, http://admin-shell.io/vdi/2658/1/0 is the generic prefix for semantic IDs used in this version of the Submodel specification. The series of guidelines VDI 2658footnote:[https://www.vdi.de/2658] is covering all parts of MTP specification.
+Throughout this document, http://admin-shell.io/vdi/2658/1/0 is the generic prefix for semantic IDs used in this version of the Submodel specification.
+The series of guidelines VDI 2658footnote:[https://www.vdi.de/2658] is covering all parts of MTP specification.
 
 Under this namespace, Submodels and shared concepts like "documentationRelation" are defined.
 Furthermore, we systematically re-use parts of the AutomationML system unit class library of MTP definition "MTPSUCLib".
@@ -222,7 +234,7 @@ In this document, two Submodels are defined – one Submodel for module type, i.
 For the Submodel instance, these attributes need to be set:
 
 .Attributes of the Submodel instance
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 h| idShort 3+d| ModuleTypePackage
 
@@ -279,9 +291,9 @@ associated with TagNames within the MTP file
 In the Submodel instance this attribute needs to be set
 
 .SubmodelElements of MTPReferences
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
-h| idShort 3+d| MTPReferences 
+h| idShort 3+d| MTPReferences
 
 Note, that the idShort can be chosen freely to match the needs of included MTPReferences e.g. "DocumentationReferences" or "BOMReferences"
 
@@ -325,13 +337,16 @@ http://example.com/id/instance/99920200206160529000012810
 |0..*
 |===
 
-MTPReferences are used to connect elements of other Submodels with internal elements within the AML file. We propose to use four formats for the FragmentReference Key's value to reference CAEX elements:
+MTPReferences are used to connect elements of other Submodels with internal elements within the AML file.
+We propose to use four formats for the FragmentReference Key's value to reference CAEX elements:
 
-* CAEX@ID="14c32ff2-f58f-45dc-b228-66a2091393dd" – the content of the MTP file is interpreted as CAEX and the fragment path is used to locate an element with a particular ID. This will allow to connect documentation attribute to almost any elements within the MTP file.
+* CAEX@ID="14c32ff2-f58f-45dc-b228-66a2091393dd" – the content of the MTP file is interpreted as CAEX and the fragment path is used to locate an element with a particular ID.
+This will allow to connect documentation attribute to almost any elements within the MTP file.
 * CAEX@ModuleTypePackage/BPXX_Freelance/CommunicationSet/InstanceList/M0013 – the content of MTP file is interpreted as CAEX and internal AML hierarchy is used to point to an element with Name "M0013".
-* MTP@TagName="M0013" the content of the MTP file is interpreted as CAEX and a global search for an element having an attribute with name "TagName" and value "M0013". In case of usage of multi-language tag names this, tag name is valid only if a single language is used
-* MTP@TagName="M0013"@Language="EN" a variant of the above format to use in conjunction with multi-language tag names. Multiple language should be modeled using multiple references.
-
+* MTP@TagName="M0013" the content of the MTP file is interpreted as CAEX and a global search for an element having an attribute with name "TagName" and value "M0013".
+In case of usage of multi-language tag names this, tag name is valid only if a single language is used
+* MTP@TagName="M0013"@Language="EN" a variant of the above format to use in conjunction with multi-language tag names.
+Multiple language should be modeled using multiple references.
 
 == Submodel for Module Instance (Process Equipment Assembly)
 
@@ -340,7 +355,7 @@ MTPReferences are used to connect elements of other Submodels with internal elem
 For the Submodel instance, these attributes need to be set:
 
 .Attributes of the Submodel instance
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 h| idShort 3+d| ProcessEquipmentAssembly
 
@@ -352,7 +367,7 @@ h| Kind: 3+d| Instance
 h| Version: 3+d| 1
 h| Revision: 3+d| 0
 h| Parent: 3+d| Asset Administration Shell with module instance as asset
-h| Explanation: 3+d|  
+h| Explanation: 3+d|
 The Submodel defines a set of PEA-properties specific to module instance
 Furthermore, we assume that the AAS of the PEA is referencing the AAS of module type, s.t. the relevant MTP file can be accessed by the tools. In exception cases where no AAS of MTP is available, this Submodel can also contain the MTPFile directly as defined in Section 0. In this case the MTPFile can be accessed two times, the MTP file of the Submodel instance shadows the MTPFile contained in ModuleTypePackage Submodel of referenced AAS.
 
@@ -439,7 +454,7 @@ https://admin-shell.io/vdi/2658/1/0/MTPSUCLib/CommunicationSet/SourceList
 === SubmodelElements of SourceList Collection
 
 .SubmodelElements of SourceList Collection
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 h| idShort 3+d| SourceList
 h| Class: 3+d| SubmodelElementCollection (SMC)
@@ -465,7 +480,7 @@ MTPCommunicationSUCLib/ServerAssembly/OPCUAServer |n/a |1..*
 === SubmodelElements of OPCUAServer-type Collection
 
 .SubmodelElements of OPCUAServer-type Collection
-[width="100%", cols="1,2,1,1"]
+[width="100%",cols="1,2,1,1"]
 |===
 h| idShort 3+d| \{arbitrary}
 h| Class: 3+d| SubmodelElementCollection (SMC)
@@ -524,7 +539,9 @@ For clarity and brevity, a set of rules is used for the tables for describing Su
 
 * The table heads abbreviate 'cardinality' with 'card'.
 
-* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+* The tables often place two informations in different rows of the same table cell.
+In this case, the first information is marked out by sharp brackets [] form the second information.
+A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
 
 * The types of SubmodelElements are abbreviated:
 
@@ -542,81 +559,68 @@ h| SubmodelElement type
 |SMC |SubmodelElementCollection
 |===
 
-* If an idShort ends with '\{00}', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique. A different idShort might be chosen, as long as it is unique in the parent's context.
+* If an idShort ends with '\{00}', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique.
+A different idShort might be chosen, as long as it is unique in the parent's context.
 
 * The Keys of semanticId in the main section feature only idType and value, such as: [IRI]
-https://admin-shell.io/vdi/2770/1/0/DocumentId/Id. The attributes "type" and "local" (typically "ConceptDescription" and "(local)" or "GlobalReference" and (no-local)") need to be set accordingly; see xref:#bib6[[6\]].
+https://admin-shell.io/vdi/2770/1/0/DocumentId/Id.
+The attributes "type" and "local" (typically "ConceptDescription" and "(local)" or "GlobalReference" and (no-local)") need to be set accordingly; see xref:#bib6[[6\]].
 
-* If a table does not contain a column with "parent" heading, all represented attributes share the same parent. This parent is denoted in the head of the table.
+* If a table does not contain a column with "parent" heading, all represented attributes share the same parent.
+This parent is denoted in the head of the table.
 
 * Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
 
 * The [valueType] is only given for Properties.
 
 == Bibliography
+
 [#bib1]
-[1] "Recommendations for implementing the strategic initiative
-INDUSTRIE 4.0", acatech, April 2013. [Online]. Available
+[1] "Recommendations for implementing the strategic initiative INDUSTRIE 4.0", acatech, April 2013. [Online].
+Available:
 https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
 
 [#bib2]
-[2] "Implementation Strategy Industrie 4.0: Report on the results
-of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V.,
-April 2015. [Online]. Available:__
-__https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf[_https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf_]
+[2] "Implementation Strategy Industrie 4.0: Report on the results of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April 2015. [Online].
+Available:
+https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
 
 [#bib3]
-[3] "The Structure of the Administration Shell: TRILATERAL
-PERSPECTIVES from France, Italy and Germany", March 2018, [Online].
+[3] "The Structure of the Administration Shell: TRILATERAL PERSPECTIVES from France, Italy and Germany", March 2018, [Online].
 Available:
 https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
 
 [#bib4]
-[4] "Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente
-– Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016. [Online].
+[4] "Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente – Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016. [Online].
 Available:
 https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
 
 [#bib5]
-[5] "Verwaltungsschale in der Praxis. Wie definiere ich
-Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen
-Verwaltungsschalen (in German)", Version 1.0, April 2019, Plattform
-Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal
-Ministry for Economic Affairs and Energy (BMWi), Available:
+[5] "Verwaltungsschale in der Praxis.
+Wie definiere ich Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen (in German)", Version 1.0, April 2019, Plattform Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for Economic Affairs and Energy (BMWi),
+Available:
 https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
 
 [#bib6]
-[6] "Details of the Asset Administration Shell; Part 1 - The
-exchange of information between partners in the value chain of Industrie
-4.0 (Version 3.0RC01)", November 2020, [Online]. Available:
+[6] "Details of the Asset Administration Shell; Part 1 - The exchange of information between partners in the value chain of Industrie 4.0 (Version 3.0RC01)", November 2020, [Online].
+Available:
 https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html
 
 [#bib7]
-[7] VDI/VDE/NAMUR 2658 Blatt 1: Automatisierungstechnisches
-Engineering modularer Anlagen in der Prozessindustrie - Allgemeines
-Konzept und Schnittstellen, Oktober 2019, Available:
+[7] VDI/VDE/NAMUR 2658 Blatt 1: Automatisierungstechnisches Engineering modularer Anlagen in der Prozessindustrie - Allgemeines Konzept und Schnittstellen, Oktober 2019, Available:
 https://www.vdi.de/richtlinien/details/vdivdenamur-2658-blatt-1-automatisierungstechnisches-engineering-modularer-anlagen-in-der-prozessindustrie-allgemeines-konzept-und-schnittstellen
 
 [#bib8]
-[8] "Generic Frame for Technical Data for Industrial Equipment in
-Manufacturing", Version 1.1, November 2020, Plattform Industrie 4.0 in
-cooperation with ZVEI, ___Federal Ministry for Economic Affairs and
-Energy (BMWi), Available:
-https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Submodel_Templates-Asset_Administration_Shell-Technical_Data.html[_https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Submodel_Templates-Asset_Administration_Shell-Technical_Data.html_]
+[8] "Generic Frame for Technical Data for Industrial Equipment in Manufacturing", Version 1.1, November 2020, Plattform Industrie 4.0 in cooperation with ZVEI, Federal Ministry for Economic Affairs and Energy (BMWi), Available:
+https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Submodel_Templates-Asset_Administration_Shell-Technical_Data.html
 
 [#bib9]
-[9] "ZVEI Digital Nameplate for industrial equipment", Version 1.0,
-November 2020, Plattform Industrie 4.0 in cooperation with ZVEI,
-___Federal Ministry for Economic Affairs and Energy (BMWi), Available:
-https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Submodel_Templates-Asset_Administration_Shell-digital_nameplate.html[_https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Submodel_Templates-Asset_Administration_Shell-digital_nameplate.html_]
+[9] "ZVEI Digital Nameplate for industrial equipment", Version 1.0, November 2020, Plattform Industrie 4.0 in cooperation with ZVEI, Federal Ministry for Economic Affairs and Energy (BMWi), Available:
+https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Submodel_Templates-Asset_Administration_Shell-digital_nameplate.html
 
 [#bib10]
-[10] VDI 2770 Blatt 1: 2020-04 Betrieb verfahrenstechnischer
-Anlagen; Mindestanforderungen an digitale Herstellerinformationen für
-die Prozessindustrie; Grundlagen. Berlin: Beuth-Verlag. +
-"Operation of process engineering plants - Minimum requirements for
-digital manufacturer information of process industry - Fundamentals
-(EN). Available:
+[10] VDI 2770 Blatt 1: 2020-04 Betrieb verfahrenstechnischer Anlagen; Mindestanforderungen an digitale Herstellerinformationen für die Prozessindustrie; Grundlagen.
+Berlin: Beuth-Verlag.
+"Operation of process engineering plants - Minimum requirements for digital manufacturer information of process industry - Fundamentals (EN).
+Available:
 https://www.beuth.de/en/draft-technical-rule/vdi-2770-blatt-1/293855206
-
-http://www.plattform-i40.de/[__www.plattform-i40.de__]
