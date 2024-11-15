@@ -1,4 +1,4 @@
-== IDTA 02013-1-0: Reliability
+= IDTA 02013-1-0: Reliability
 
 == Imprint
 
@@ -51,15 +51,15 @@ The intended benefits of this Submodel are to:
 
 === Relevant standards for the Submodel template
 
-IEC 60947-1:2020, Low-voltage switchgear and controlgear - Part 1: General rules
+IEC 60947-1:2020, Low-voltage switchgear and controlgear - Part 1: General rules
 
-IEC 61360-1:2017, Standard data element types with associated classification scheme – Part 1: Definitions – Principles and methods
+IEC 61360-1:2017, Standard data element types with associated classification scheme – Part 1: Definitions – Principles and methods
 
-IEC 62683-1 DB, Low-voltage switchgear and controlgear - Product data and properties for information exchange - Part 1: Catalogue data
+IEC 62683-1 DB, Low-voltage switchgear and controlgear - Product data and properties for information exchange - Part 1: Catalogue data
 
 IEC 61987 DB, Industrial-process measurement and control - Data structures and elements in process equipment catalogues
 
-IEC 62061:2021, Safety of machinery - Functional safety of safety-related control systems
+IEC 62061:2021, Safety of machinery - Functional safety of safety-related control systems
 
 ISO 13849-1:2015, Safety of machinery – Safety-related parts of control systems – Part 1: General principles for design
 
@@ -69,7 +69,7 @@ VDMA 66413:2012, Functional Safety - Universal data format for safety-related va
 
 Application of the relevant standards (1.3) requires the exchange of relevant data between all concerned: machine manufacturers, device manufacturers and calculation tools.
 
-*Device manufacturers* create characteristic value libraries for their devices in “universal data format".
+*Device manufacturers* create characteristic value libraries for their devices in "universal data format".
 The device manufacturer is the person who manufactures devices and/or components and makes them available to the machine manufacturer or user in the spirit of the free movement of goods.
 As a result, the creator of a characteristic value library can and indeed may only be the device manufacturer.
 
@@ -130,34 +130,34 @@ d|
 
 NumberOfReliabilitySets
 
-a|
+d|
 [IRDI] 0112/2///62683#ACE006#001
 
 cardinality property for the number of sets of characteristics of a product for use in reliability assessment
 
-a|
+d|
 {empty}[integer]
 
 1
 
 |1
-a|
+d|
 {empty}[SMC]
 
 OperatingConditionsOfReliabilityCharacteristics
 
-a|
+d|
 [IRDI] 0112/2///62683#ACG071#001
 
 operating condition limits for which the reliability characteristics are valid
 
 |n/a |0..*
-a|
+d|
 {empty}[SMC]
 
 ReliabilityCharacteristics
 
-a|
+d|
 [IRDI] 0112/2///62683#ACG080#001
 
 characteristics of a subsystem or a subsystem element intended for evaluating its ability to perform as required, without failure, for a given time interval, under given conditions
@@ -206,7 +206,7 @@ d|
 
 TypeOfVoltage
 
-a|
+d|
 [IRDI] 0112/2///61987#ABA969#007
 
 classification of a power supply according to the time behaviour of the voltage
@@ -216,119 +216,119 @@ AC (AC, 0112/2///61987#ABL837#001), +
 DC (DC, 0112/2///61987#ABL838#001), +
 others (others, 0112/2///61987#ABI407#004)
 
-a|
+d|
 {empty}[string]
 
 DC
 
 |0..1
-a|
+d|
 {empty}[Property]
 
 RatedVoltage
 
-a|
+d|
 [IRDI] 0112/2///61987#ABA588#004
 
 operating voltage of the device as defined by the manufacturer and to which certain device properties are referenced
 
-a|
+d|
 {empty}[real]
 
 24 [V]
 
 |0..1
-a|
+d|
 {empty}[Property]
 
 MinimumRatedVoltage
 
-a|
+d|
 [IRDI] 0112/2///61987#ABD461#004
 
 lowest operating voltage of the device as defined by the manufacturer
 
-a|
+d|
 {empty}[real]
 
 15 [V]
 
 |0..1
-a|
+d|
 {empty}[Property]
 
 MaximumRatedVoltage
 
-a|
+d|
 [IRDI] 0112/2///61987#ABD462#004
 
 highest operating voltage of the device as defined by the manufacturer
 
-a|
+d|
 {empty}[real]
 
 30 [V]
 
 |0..1
-a|
+d|
 {empty}[Property]
 
 RatedOperationalCurrent
 
-a|
+d|
 [IRI] https://admin-shell.io/idta/Reliabliity/RatedOperationalCurrent/1/0
 
 current combined with a rated operational voltage intended to be switched by the device under specified conditions
 
-a|
+d|
 {empty}[real]
 
 300 [mA]
 
 |0..1
-a|
+d|
 {empty}[Property]
 
 OtherOperatingConditions
 
-a|
+d|
 [IRDI] 0112/2///62683#ACE070#001
 
 other limits of operation related to functional safety characteristics
 
-a|
+d|
 {empty}[string]
 
 Duty in number of operations per hour, 50% of normal current
 
 |0..1
-a|
+d|
 {empty}[Property]
 
 UsefulLifeInNumberOfOperations
 
-a|
+d|
 [IRDI] 0112/2///62683#ACE055#001
 
 under given conditions, the number of operations for which the failure rate becomes unacceptable
 
-a|
+d|
 {empty}[integer]
 
 50,000
 
 |0..1
-a|
+d|
 {empty}[Property]
 
 UsefulLifeInTimeInterval
 
-a|
+d|
 [IRDI] 0112/2///62683#ACE054#001
 
 under given conditions, the time interval beginning at a given instant of time, and ending when the failure rate becomes unacceptable
 
-a|
+d|
 {empty}[real]
 
 10 [y]
@@ -377,48 +377,48 @@ d|
 
 MTTF
 
-a|
+d|
 [IRDI] 0112/2///62683#ACE061#001
 
 mean operating time to failure: expectation of the operating time to failure
 
 Note: In the case of non-repairable items with an exponential distribution of operating times to failure (i.e. a constant failure rate) the MTTF is numerically equal to the reciprocal of the failure rate. This is also true for repairable items if after restoration they can be considered to be "as-good-as-new"
 
-a|
+d|
 {empty}[integer]
 
 {empty}[y]
 
 |0..1
-a|
+d|
 {empty}[Property]
 
 MTBF
 
-a|
+d|
 [IRDI] 0112/2///62683#ACE062#001
 
 mean operating time between failure: expectation of the duration of the operating time between failures
 
 Note: Mean operating time between failures should only be applied to repairable items. For non-repairable items, see mean operating time to failure.
 
-a|
+d|
 {empty}[integer]
 
 {empty}[y]
 
 |0..1
-a|
+d|
 {empty}[Property]
 
 B10
 
-a|
+d|
 [IRI] https://admin-shell.io/idta/Reliabliit/B10/1/0
 
 mean number of cycles until 10% of the components fail
 
-a|
+d|
 {empty}[integer]
 
 500000
@@ -460,7 +460,7 @@ h| SubmodelElement type
 |SMC |SubmodelElementCollection
 |===
 
-* If an idShort ends with '\{00}', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique. A different idShort might be chosen, as long as it is unique in the parent’s context.
+* If an idShort ends with '\{00}', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique. A different idShort might be chosen, as long as it is unique in the parent's context.
 
 * The Keys of semanticId in the main section feature only idType and value, such as: [IRI]https://admin-shell.io/vdi/2770/1/0/DocumentId/Id. The attributes "type" and "local" (typically "ConceptDescription" and "(local)" or "GlobalReference" and (non-local)") need to be set accordingly; see xref:#bib6[[6\]].
 
@@ -472,20 +472,20 @@ h| SubmodelElement type
 == Bibliography
 
 [#bib1]
-[1] “Recommendations for implementing the strategic initiative INDUSTRIE 4.0”, acatech, April 2013. [Online]. Available https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+[1] "Recommendations for implementing the strategic initiative INDUSTRIE 4.0", acatech, April 2013. [Online]. Available https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
 
 [#bib2]
-[2] “Implementation Strategy Industrie 4.0: Report on the results of the Industrie 4.0 Platform”; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April 2015. [Online]. Available: https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
+[2] "Implementation Strategy Industrie 4.0: Report on the results of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April 2015. [Online]. Available: https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
 
 [#bib3]
-[3] “The Structure of the Administration Shell: TRILATERAL PERSPECTIVES from France, Italy and Germany”, March 2018, [Online]. Available: https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
+[3] "The Structure of the Administration Shell: TRILATERAL PERSPECTIVES from France, Italy and Germany", March 2018, [Online]. Available: https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
 
 [#bib4]
-[4] “Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente – Basisteil (German)”; ZVEI e.V., Whitepaper, November 2016. [Online]. Available: https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
+[4] "Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente – Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016. [Online]. Available: https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
 
 [#bib5]
-[5] “Verwaltungsschale in der Praxis. Wie definiere ich Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen (in German)”, Version 1.0, April 2019, Plattform Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for Economic Affairs and Energy (BMWi), Available: https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
+[5] "Verwaltungsschale in der Praxis. Wie definiere ich Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen (in German)", Version 1.0, April 2019, Plattform Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for Economic Affairs and Energy (BMWi), Available: https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
 
 [#bib6]
-[6] “Details of the Asset Administration Shell; Part 1 - The exchange of information between partners in the value chain of Industrie 4.0 (Version 3.0RC01)”, November 2020, [Online]. Available: https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html
+[6] "Details of the Asset Administration Shell; Part 1 - The exchange of information between partners in the value chain of Industrie 4.0 (Version 3.0RC01)", November 2020, [Online]. Available: https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html
 
