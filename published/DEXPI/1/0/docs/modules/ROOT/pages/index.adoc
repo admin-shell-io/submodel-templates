@@ -1,42 +1,23 @@
-Imprint
+= IDTA 02012-1-0: Information Model for P&I Diagrams based on DEXPI Standard
 
-*Publisher*
+== Imprint
 
+=== Publisher
+
+[listing]
 Industrial Digital Twin Association
-
 Lyoner Strasse 18
-
 60528 Frankfurt am Main
-
 Germany
-
 https://www.industrialdigitaltwin.org/
 
-Version history
+=== Version history
 
 [cols=",,",]
 |===
-|Date |Version/Revision |CHANGES made
+|Date |Version |Comment
 
-|22.11.22 |V1 |Initial text
-
-|09.01.22 |V2 |Revision, adding UML picture
-
-|12.01.23 |V2.1 |Changing semantic ids to match DEXPI spec if applicable
-
-|02.02.23 |V2.1.2 |Use Case text descriptions
-
-|02.02.23 |V2.2 |Comments of MH addressed
-
-|02.02.23 |V2.3 |Adding EntityRefernces SMC
-
-|10.07.23 |V2.4 |Addressing review comments
-
-|25.07.23 |V2.4.1 |Addressing review comments
-
-|22.08.23 |V2.4.2 |Addressing review comments: changed tag structure for
-ProcessInstrumentationFunctions, 1..* for EndProductCASName and
-EndProductName, added comment about persistent IDs of upcoming DEXPI 1.4
+|01.09.2023 |1.0 |Release of the official Submodel template published by IDTA.
 |===
 
 == General

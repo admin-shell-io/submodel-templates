@@ -1,68 +1,24 @@
-Imprint
+= IDTA 02001-1-0: Inclusion of Module Type Package (MTP) Data into Asset Administration Shell
 
-*Publisher*
+== Imprint
 
-Federal Ministry for Economic Affairs
+=== Publisher
 
-and Energy (BMWi)
+[listing]
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
 
-Public Relations
-
-10119 Berlin
-
-www.bmwi.de
-
-*Text and editing*
-
-Plattform Industrie 4.0
-
-Bertolt-Brecht-Platz 3
-
-10117 Berlin
-
-*Design and production*
-
-The Plattform Industrie 4.0 secretariat, Berlin
-
-*Status*
-
-Draft
-
-*Illustrations*
-
-Plattform Industrie 4.0; Anna Salari, designed by freepik (Title)
-
-Version history
-
-Editorial note: Version history to be removed before initial publication.
+=== Version history
 
 [cols=",,",]
 |===
-|5.11.2020 |Grüner |v1 -1st draft covering v1.3 of the model
+|Date |Version |Comment
 
-|8.12.2020 |Grüner |Adjusting semantic IDs
-
-|19.03.2021 |Grüner |Joint review with festo, covering v1.3.1 of the
-model
-
-|21.03.2021 |Grüner |Adding different types of Key-Content for
-Documentation references (references to named AML-Elenents within MTP,
-references including a “search” within the MTP file)
-
-|13.04.2021 |Grüner |Changing PEA-specific property types to MLP,
-changing MTP references
-
-|27.04.2021 |Kehl |Draft version
-
-|11.05.2021 |Grüner |Release Candidate
-
-|04.01.2022 |Grüner |v1.4.1 adjustments and homogenization of semantic
-IDs
+|01.09.2023 |1.0 |Release of the official Submodel template published by IDTA.
 |===
-
-Changelog
-
-v1: Compared to previous whitepaper version, this document contains *breaking* changes of semantic IDs and also a prototype for a refernce between opaque MTP elements and documentation entries
 
 == General
 
