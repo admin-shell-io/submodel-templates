@@ -8,7 +8,7 @@ This is a Submodel template specification for the Asset Adminstration Shell.
 
 ## Scope of the Submodel 
 
-his Submodel template aims to provide asset nameplate information to the respective Asset Administration
+This Submodel template aims to provide asset nameplate information to the respective Asset Administration
 Shells in an interoperable manner. Central element is the provision of properties [7], ideally interoperable by
 the means of dictionaries such as ECLASS and IEC CDD (Common Data Dictionary). The purpose of this
 document is to make selected specifications of Submodels in such manner that information about assets and
