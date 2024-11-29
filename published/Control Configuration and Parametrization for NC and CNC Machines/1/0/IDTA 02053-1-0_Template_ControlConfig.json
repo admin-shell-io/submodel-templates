@@ -1,0 +1,3739 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "ControlConfigurationOfCNCMachines",
+      "administration": {
+        "version": "1",
+        "revision": "0",
+        "templateId": "https://admin-shell.io/IDTA 02053-1-0"
+      },
+      "id": "https://admin-shell.io/idta/aas/ControlConfigurationofCNCMachines/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/ControlConfigurationofCNCMachines/1/0",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/ControlConfigurationofCNCMachines/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "ControlConfig__00__",
+      "description": [
+        {
+          "language": "en",
+          "text": "The Submodel \u201CControlConfig\u201D is the collection for various parametrizations for the control of CNC machines "
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0",
+        "templateId": "https://admin-shell.io/idta-02053-1-0"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ControlConfigurationofCNCMachines/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/ControlConfig/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "category": "CONSTANT",
+          "idShort": "DigitalNameplate",
+          "description": [
+            {
+              "language": "en",
+              "text": "Reference to the digital nameplate of the controller."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/nameplate/3/0/Nameplate"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "DigitalNameplate"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Submodel Element reference to the digital nameplate of the control."
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "modelType": "ReferenceElement"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "ControllerType",
+          "description": [
+            {
+              "language": "en",
+              "text": "The Controller Type describes the type of controller"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/ControllerType/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "ControllerType"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "List of controller types."
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            },
+            {
+              "type": "FormChoices",
+              "valueType": "xs:string",
+              "value": "Path controlled; Point controlled, Track controlled"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "category": "VARIABLE",
+          "idShort": "TimeUnit",
+          "description": [
+            {
+              "language": "en",
+              "text": "Time unit of the control"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/TimeUnit/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "TimeUnit"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Time unit (s, ms, us)"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:float",
+          "modelType": "Property"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "LengthUnit",
+          "description": [
+            {
+              "language": "en",
+              "text": "Length Unit of the control"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/LengthUnit/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "LengthType"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Length type of the CNC"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "valueType": "xs:double",
+          "modelType": "Property"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "FieldbusType",
+          "description": [
+            {
+              "language": "en",
+              "text": "Fieldbus Type of the control"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/FieldbusType/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "FieldbusType"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Fieldbus type of the CNC"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "category": "VARIABLE",
+          "idShort": "CNCCycleTime",
+          "description": [
+            {
+              "language": "en",
+              "text": "Defines the cycle time of the CNC control"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/CNCCycleTime/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "CNCCycleTime"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Cycle time of the CNC"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "valueType": "xs:double",
+          "modelType": "Property"
+        },
+        {
+          "category": "VARIABLE",
+          "idShort": "PLCCycleTime",
+          "description": [
+            {
+              "language": "en",
+              "text": "Defines the cycle time of the PLC control"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/PLCCycleTime/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "PLCCycleTime"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Cycle time of the PLC"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "valueType": "xs:double",
+          "modelType": "Property"
+        },
+        {
+          "category": "VARIABLE",
+          "idShort": "FieldbusCycleTime",
+          "description": [
+            {
+              "language": "en",
+              "text": "Defines the cycle time of the fieldbus control"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/FieldbusCycleTime/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "FieldbusCycleTime"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Cycle time of the fieldbus"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "valueType": "xs:double",
+          "modelType": "Property"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "VelocityUnit",
+          "description": [
+            {
+              "language": "en",
+              "text": "Defines the velocity unit of the CNC control "
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/VelocityType/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "Velocity unit"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Velocity unit of the CNC"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "AccelerationUnit",
+          "description": [
+            {
+              "language": "en",
+              "text": "Defines the acceleration unit unit of the CNC control"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/ AccelerationUnit /1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "Acceleration unit"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Acceleration unit of the CNC"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "JerkUnit",
+          "description": [
+            {
+              "language": "en",
+              "text": "Defines the jerk unit of the CNC control "
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/JerkUnit/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "Jerk unit"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Jerk unit of the CNC"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "ControlConfigData__00__",
+          "description": [
+            {
+              "language": "en",
+              "text": "Control configuration data"
+            },
+            {
+              "language": "de",
+              "text": "Steuerungskonfigurationsdaten"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/ControlConfigData/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "ControlerConfigData"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Provide the configuration data for the controler."
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "ControlConfigFileName",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Name of the control configuration file"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlConfig/ControlConfigFileName /1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "ControlConfigFileName"
+                },
+                {
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "Filename of the configuration file."
+                },
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "ControlConfigFile",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "File to configure the control"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlConfig/ControlConfigFile/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "ConfigurationFile"
+                },
+                {
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "Configuration file of the controler."
+                },
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "contentType": "application/json",
+              "modelType": "File"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "Channels__00__",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of channels of the control"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/Channels/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "Channels"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Provides access to the paramtization of the channels/axes/drives"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "Channel__00__",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Configuration information of a specific channel"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlConfig/Channel/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "Channel"
+                },
+                {
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "Channel"
+                },
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "category": "VARIABLE",
+                  "idShort": "ChannelIdentification",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "This describes the unique channel identification of the specific channel"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Channels/ChannelIdentification/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "ChannelIdentification"
+                    },
+                    {
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Identification number of the channel"
+                    },
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "AxesReference__00__",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "The SMC \u201CAxesReference\u201D is a collection of referenced axes for the specific channel."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Channels/AxesReference/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "AxesReference"
+                    },
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Collection of referenced axes for the specific channel"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "AxisName",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Unique axis name"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/ControlConfig/Channels/AxesReference/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "FormTitle",
+                          "valueType": "xs:string",
+                          "value": "AxisName"
+                        },
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "FormInfo",
+                          "valueType": "xs:string",
+                          "value": "Unique axis name"
+                        },
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "ReferenceToAxis",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Reference to the axis"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/ControlConfig/Channels/ReferenceToAxis/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "FormTitle",
+                          "valueType": "xs:string",
+                          "value": "ReferenceToAxis"
+                        },
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "FormInfo",
+                          "valueType": "xs:string",
+                          "value": "Reference to the axis"
+                        },
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "modelType": "ReferenceElement"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "Axes__00__",
+          "description": [
+            {
+              "language": "en",
+              "text": "The SMC \u201CAxes\u201D is a collection of axes of the CNC controller."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/Axes/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "Axes"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "List of axes of the specific channel"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "OneToMany"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "Axis__00__",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The SMC \u201CAxis\u201D is a collection of axis configuration information."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlConfig/Channel/Axis/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "Axis"
+                },
+                {
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "List of axis specific configuration data"
+                },
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "CONSTANT",
+                  "idShort": "AxisName",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Name of the axis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Axes/AxisName/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "AxisName"
+                    },
+                    {
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Name of the specific axis"
+                    },
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "AxisType",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Type of the axis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Axes/AxisType/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "AxisType"
+                    },
+                    {
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Type of the specific axis"
+                    },
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "SimulationAxis",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Axis is a simulated or real one"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchPos/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "SimulationAxis"
+                    },
+                    {
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Axis is a simulated or real one"
+                    },
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "SwLimitSwitchNeg",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Positive software limit switch"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchNeg/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "SwLimitSwitchNeg"
+                    },
+                    {
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Software limit switch negative"
+                    },
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "SwLimitSwitchPos",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Negative software limit switch"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchPos/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "SwLimitSwitchPos"
+                    },
+                    {
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Software limit switch positive"
+                    },
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "VelocityLimit",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Velocity limit of the axis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Axes/VelocityLimit/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "VelocityLimit"
+                    },
+                    {
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Velocity limit of the axis"
+                    },
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:long",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "AccelerationLimit",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Accelerationlimit of the axis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Axes/AccelerationLimit /1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "AccelerationLimit"
+                    },
+                    {
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Acceleration limit of the axis"
+                    },
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:long",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "JerkLimit",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Jerk limit of the axis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Axes/JerkLimit/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "JerkLimit"
+                    },
+                    {
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Jerk limit of the axis"
+                    },
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:long",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "AxisConfigData__00__",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "The SMC \u201CAxisConfigData\u201D is a collection of axis configuration data."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigData/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "AxisConfigData"
+                    },
+                    {
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Collection of axis configuration data"
+                    },
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "category": "PARAMETER",
+                      "idShort": "AxisConfigFileName",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Axis configuration file name"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigFileName/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "FormTitle",
+                          "valueType": "xs:string",
+                          "value": "AxisConfigFilename"
+                        },
+                        {
+                          "type": "FormInfo",
+                          "valueType": "xs:string",
+                          "value": "Configuration filename of the axis"
+                        },
+                        {
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "AxisConfigFile",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Configuration file of the axis"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigFile/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "FormTitle",
+                          "valueType": "xs:string",
+                          "value": "AxisConfigFile"
+                        },
+                        {
+                          "type": "FormInfo",
+                          "valueType": "xs:string",
+                          "value": "Axis configuration file"
+                        },
+                        {
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "contentType": "application/json",
+                      "modelType": "File"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Drive__00__",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "The SMC \u201CDrive\u201D is a collection of drive configuration information."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "Drive"
+                    },
+                    {
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "To be filled; longer explanation"
+                    },
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "Manual",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "The manual file of the drive "
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/ControlConfig/Axes/Axis/Manual/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "FormTitle",
+                          "valueType": "xs:string",
+                          "value": "DriveManual"
+                        },
+                        {
+                          "type": "FormInfo",
+                          "valueType": "xs:string",
+                          "value": "Manual file of the drive"
+                        },
+                        {
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "contentType": "application/json",
+                      "modelType": "File"
+                    },
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "TechnicalData",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Reference to the Submodel Technical Specification of the axis to gather more information"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/IDTA/TechnicalData/Submodel/2/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "FormTitle",
+                          "valueType": "xs:string",
+                          "value": "TechnicalData"
+                        },
+                        {
+                          "type": "FormInfo",
+                          "valueType": "xs:string",
+                          "value": "Reference to the technical Data of the drive"
+                        },
+                        {
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "modelType": "ReferenceElement"
+                    },
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "DriveConfigData__00__",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "The SMC \u201CDriveConfigData\u201D is a collection of drive configuration data."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/ControlConfig/Axes/Axis/DriveConfigData/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "FormTitle",
+                          "valueType": "xs:string",
+                          "value": "DriveConfigData"
+                        },
+                        {
+                          "type": "FormInfo",
+                          "valueType": "xs:string",
+                          "value": "Drive configuration data"
+                        },
+                        {
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "category": "CONSTANT",
+                          "idShort": "DriveConfigFileName",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Name of the configuration file of the drive "
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/DriveConfigFileName/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "FormTitle",
+                              "valueType": "xs:string",
+                              "value": "DriveConfigFileName"
+                            },
+                            {
+                              "type": "FormInfo",
+                              "valueType": "xs:string",
+                              "value": "Filename of of the configuration file"
+                            },
+                            {
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "DriveConfigFile",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Configuration File of the drive"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/DriveConfigFile/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "FormTitle",
+                              "valueType": "xs:string",
+                              "value": "DriveConfigFile"
+                            },
+                            {
+                              "type": "FormInfo",
+                              "valueType": "xs:string",
+                              "value": "Drive configuration file"
+                            },
+                            {
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "contentType": "application/json",
+                          "modelType": "File"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "NCProgramConfig__00__",
+          "description": [
+            {
+              "language": "en",
+              "text": "The SMC \u201CNCProgramConfig\u201D is a collection of NC program configuration information."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/NCProgramConfig/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "NCProgramConfig"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Provides NC program informations"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "NCProgramFileType",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "NC program file type, which the CNC control can work with"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlConfig/NCProgramFileType/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "NCProgramFileType"
+                },
+                {
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "File type (extension) of the NC program file"
+                },
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "NCProgramSyntaxType",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "NC program syntax type"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlConfig/NCProgramSyntaxType/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "NCProgramSyntax"
+                },
+                {
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "Syntax of the NC program"
+                },
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "NCProgramSyntaxManual",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Manual file of the syntax of the NC program"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlConfig/NCProgramSyntaxManual/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "Machine code syntax manual file"
+                },
+                {
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "The description of the synatx of the machine code implementation of the cnc machine"
+                },
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "contentType": "application/json",
+              "modelType": "File"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "CommunicationConfig__00__",
+          "description": [
+            {
+              "language": "en",
+              "text": "The SMC \u201CCommunicationConfig\u201D is a collection of communication configuration information."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/CommunicationConfig/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "CommunicationConfig"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "Provides the communication information to access the CNC."
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "CommunicationType",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Type of communication to the control"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlConfig/CommunicationType/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "CommunicationType"
+                },
+                {
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "Type of the communication access to the CNC."
+                },
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "CommunicationAdress",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Communication address into the control"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlConfig/CommunicationAdress/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "CommunicationAdress"
+                },
+                {
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "Type of the communication access to the CNC."
+                },
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "CommunicationInformationModel",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Communication information model if ones exist like OPCUA"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlConfig/CommunicationInformationModel/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "CommunicationInformationModel"
+                },
+                {
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "Information model of the communication configuration"
+                },
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "OPCUAServerDataSheet",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Reference to the OPCUA server datasheet Submodel"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/opcua-server-datasheet/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "OPCUAServerDataSheet"
+                },
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "Reference to the OPCUA server datasheet Submodel"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "modelType": "ReferenceElement"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "Tools__00__",
+          "description": [
+            {
+              "language": "en",
+              "text": "Explanation: The SMC \u201CTools\u201D is a collection of tools of the CNC controller."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ControlConfig/Tools/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "FormTitle",
+              "valueType": "xs:string",
+              "value": "Tools"
+            },
+            {
+              "type": "FormInfo",
+              "valueType": "xs:string",
+              "value": "List of tools"
+            },
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "OneToMany"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "Tool__00__",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The SMC \u201CTool\u201D is a collection of tool configuration information."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ControlConfig/Tool/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "FormTitle",
+                  "valueType": "xs:string",
+                  "value": "Tool"
+                },
+                {
+                  "type": "FormInfo",
+                  "valueType": "xs:string",
+                  "value": "One tool of the CNC"
+                },
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "category": "CONSTANT",
+                  "idShort": "ToolDescription",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Reference to the tool description Submodel of the specific tool."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ToolDescription/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "FormTitle",
+                      "valueType": "xs:string",
+                      "value": "ToolDescription"
+                    },
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "FormInfo",
+                      "valueType": "xs:string",
+                      "value": "Reference to the tool description Submodel of the specific tool."
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "ReferenceElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "DigitalNameplate",
+      "description": [
+        {
+          "language": "en",
+          "text": "Reference to the digital nameplate of the controller."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/nameplate/3/0/Nameplate",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DigitalNameplate"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ControllerType",
+      "description": [
+        {
+          "language": "en",
+          "text": "The Controller Type describes the type of controller"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/ControllerType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ControllerType"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TimeUnit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Time unit of the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/TimeUnit/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TimeUnit"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LengthUnit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Length Unit of the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/LengthUnit/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LengthUnit"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FieldbusType",
+      "description": [
+        {
+          "language": "en",
+          "text": "Fieldbus Type of the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/FieldbusType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FieldbusType"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CNCCycleTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the cycle time of the CNC control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/CNCCycleTime/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CNCCycleTime"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PLCCycleTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the cycle time of the PLC control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/PLCCycleTime/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PLCCycleTime"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FieldbusCycleTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the cycle time of the fieldbus control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/FieldbusCycleTime/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FieldbusCycleTime"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "VelocityUnit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the velocity unit of the CNC control "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/VelocityType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "VelocityUnit"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AccelerationUnit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the acceleration unit unit of the CNC control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/ AccelerationUnit /1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AccelerationUnit"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "JerkUnit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the jerk unit of the CNC control "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/JerkUnit/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "JerkUnit"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ControlConfigData",
+      "description": [
+        {
+          "language": "en",
+          "text": "Control configuration data"
+        },
+        {
+          "language": "de",
+          "text": "Steuerungskonfigurationsdaten"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/ControlConfigData/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ControlConfigData"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Control configuration data"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ControlConfigFileName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Name of the control configuration file"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/ControlConfigFileName /1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ControlConfigFileName"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ControlConfigFile",
+      "description": [
+        {
+          "language": "en",
+          "text": "File to configure the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/ControlConfigFile/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ControlConfigFile"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Channels",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of channels of the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Channels/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Channels"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Channel",
+      "description": [
+        {
+          "language": "en",
+          "text": "Configuration information of a specific channel"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Channel/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Channel"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ChannelIdentification",
+      "description": [
+        {
+          "language": "en",
+          "text": "This describes the unique channel identification of the specific channel"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Channels/ChannelIdentification/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ChannelIdentification"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AxesReference",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of referenced axes for the specific channel"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Channels/AxesReference/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AxesReference"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AxisName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Unique axis name"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Channels/ AxesReference/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AxisName"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReferenceToAxis",
+      "description": [
+        {
+          "language": "en",
+          "text": "Reference to the axis"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Channels/ReferenceToAxis/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReferenceToAxis"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Axes",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of axes for the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Axes"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Axis",
+      "description": [
+        {
+          "language": "en",
+          "text": "Specific Axis description"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Channel/Axis/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Axis"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AxisName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Name of the axis"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/AxisName/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AxisName"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AxisType",
+      "description": [
+        {
+          "language": "en",
+          "text": "Type of the axis"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/AxisType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AxisType"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SwLimitSwitchPos",
+      "description": [
+        {
+          "language": "en",
+          "text": "Positive software limit switch"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchPos/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SimulationAxis"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SwLimitSwitchNeg",
+      "description": [
+        {
+          "language": "en",
+          "text": "Negative software limit switch"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchNeg/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SwLimitSwitchNeg"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "VelocityLimit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Velocity limit of the axis"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/VelocityLimit/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "VelocityLimit"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AccelerationLimit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Acceleration limit of the axis"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/AccelerationLimit /1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AccelerationLimit"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "JerkLimit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Jerk limit of the axis"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/JerkLimit/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "JerkLimit"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AxisConfigData",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of axis configuration data"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigData/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AxisConfigData"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AxisConfigFileName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Axis configuration file name"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigFileName/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AxisConfigFileName"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AxisConfigFile",
+      "description": [
+        {
+          "language": "en",
+          "text": "Configuration file of the axis"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigFile/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AxisConfigFile"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Drive",
+      "description": [
+        {
+          "language": "en",
+          "text": "The SMC \u201CDrive\u201D is a collection of drive configuration information."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Drive"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Manual",
+      "description": [
+        {
+          "language": "en",
+          "text": "The manual file of the drive "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/Axis/Manual/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DriveManual"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TechnicalData",
+      "description": [
+        {
+          "language": "en",
+          "text": "Reference to the Submodel Technical Data of the axis to gather more informations "
+        }
+      ],
+      "id": "https://admin-shell.io/IDTA/TechnicalData/Submodel/2/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TechnicalData"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DriveConfigData",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of configuration data of the drive"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/Axis/DriveConfigData/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DriveConfigData"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DriveConfigFileName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Name of the configuration file of the drive "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/DriveConfigFileName/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DriveConfigFileName"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DriveConfigFile",
+      "description": [
+        {
+          "language": "en",
+          "text": "Configuration File of the drive"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/DriveConfigFile/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DriveConfigFile"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NCProgramConfig",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of Nc Program configuration information of the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/NCProgramConfig/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "NCProgramConfig"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NCProgramFileType",
+      "description": [
+        {
+          "language": "en",
+          "text": "NC program file type, which the CNC control can work with"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/NCProgramFileType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "NCProgramFileType"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NCProgramSyntaxType",
+      "description": [
+        {
+          "language": "en",
+          "text": "NC program syntax type"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/NCProgramSyntaxType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "NCProgramSyntaxType"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NCProgramSyntaxManual",
+      "description": [
+        {
+          "language": "en",
+          "text": "Manual file of the syntax of the NC program"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/NCProgramSyntaxManual/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "NCProgramSyntaxManual"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CommunicationConfig",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of Communication configuration of the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/CommunicationConfig/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CommunicationConfig"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CommunicationType",
+      "description": [
+        {
+          "language": "en",
+          "text": "Type of communication to the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/CommunicationType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CommunicationType"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CommunicationAdress",
+      "description": [
+        {
+          "language": "en",
+          "text": "Communication address into the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/CommunicationAdress/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CommunicationAdress"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CommunicationInformationModel",
+      "description": [
+        {
+          "language": "en",
+          "text": "Communication information model if ones exist like OPCUA"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/CommunicationInformationModel/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CommunicationInformationModel"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "OPCUAServerDataSheet",
+      "description": [
+        {
+          "language": "en",
+          "text": "Reference to the OPCUA server datasheet Submodel"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/opcua-server-datasheet/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "OPCUAServerDataSheet"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Tools",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of tools for the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Tools/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Tools"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Tools"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Tool",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of Tools which are used by the control"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ControlConfig/Tool/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Tool"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ToolDescription",
+      "description": [
+        {
+          "language": "en",
+          "text": "Reference to the tool description Submodel of the specific tool."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ToolDescription/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ToolDescription"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
