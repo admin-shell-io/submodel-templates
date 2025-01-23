@@ -1,0 +1,275 @@
+= Documentation as Code: Submodel-Template
+
+== Imprint
+
+=== Publisher
+
+[listing]
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+
+=== Version history
+
+[cols=",,",]
+|===
+|*Date* |*Version* |*Comment*
+
+|23.01.2025 |1.0 |Release of the official documentation template published by IDTA.
+|===
+
+== General
+
+=== About this document
+
+This document is a description of the Documentation as Code Standard for IDTA Submodel Templates and simultaniously a template for the documentation of submodels.
+It is intended to be used by developers and editors of IDTA Submodel-Templates to document their submodels with Asciidoc.
+The template provides examples of using Asciidoc to document submodels (including the Usage of Chapters, Images, Tables, UML-Diagramms, References, etc.) and is intended to be used as a reference for the documentation of submodels.
+
+In the following chapters we will provide a brief introduction to the Asciidoc syntax and the structure of the template.
+For more information on AsciiDoc, see the https://docs.asciidoctor.org/asciidoc/latest/[AsciiDoc website].
+
+== How to use this template
+
+This Template follows the Asciidoc syntax and provides a structure for the documentation of Submodel-Templates, so it can be automatically generated and published as part of the build process.
+You can create your own documentation by copying the folder of this template and replacing the content with your own.
+
+In the following chapters we will provide a list of AsciiDoc Editors you can use and a brief introduction to the Asciidoc syntax and the structure of the template.
+
+For more information on AsciiDoc, see the https://docs.asciidoctor.org/asciidoc/latest/[AsciiDoc website].
+
+[[asciidoc-editor]]
+=== AsciiDoc Editor
+
+To edit and view the documentation, you can use any text editor and a viewer that supports Asciidoc.
+Here are some examples of text editors and IDEs that support Asciidoc:
+
+- IntelliJ IDEA with the https://plugins.jetbrains.com/plugin/7391-asciidoc[Asciidoctor plugin]
+- Visual Studio Code with the https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode[Asciidoctor plugin]
+- GitHub renders AsciiDoc files right in the browser
+- Browser Extensions for rendering AsciiDoc files
+- https://gitlab.eclipse.org/eclipse-wg/asciidoc-wg/asciidoc.org/-/blob/main/awesome-asciidoc.adoc#user-content-explore[More]
+
+=== Folder Structure
+The IDTA uses https://docs.antora.org/antora/latest/[Antora] to generate the documentation.
+The Antora requires a specific folder structure to work properly.
+<<dirs-structure>> shows the hierarchy Antora expects for the documentation of Submodel-Templates.
+
+.Submodel Template Folder Structure
+[[dirs-structure]]
+----
+📒 Submodel Template <.>
+  📒 1 <.>
+    📒 0 <.>
+      📄 submodel_template.json <.>
+      📄 ... <.>
+      📒 docs <.>
+        📄 antora.yml <.>
+        📂 modules <.>
+          📂 ROOT <.>
+            📄 nav.adoc <.>
+            📁 images <.>
+              some_image.png
+            📁 pages <.>
+              📄 index.adoc <.>
+            📁 partials <.>
+              📄 some_code.py
+              📄 some_json.json
+              📁 diagrams
+                📄 some_class_diagram.puml
+                📄 some_sequence_diagram.puml
+----
+
+<.> The Submodel-Template directory in the https://github.com/admin-shell-io/submodel-templates[submodel-templates] repository.
+<.> Version number of the Submodel-Template.
+<.> Revision number of the Submodel-Template.
+<.> The Submodel-Template JSON file.
+<.> Other Submodel-Template artefacts.
+<.> _docs_ contains all AsciiDoc and Antora-related documents.
+<.> A component version descriptor file, named [.path]_antora.yml_ (reserved file name). See <<antora-yml>>.
+<.> Required directory named [.path]_modules_ (reserved directory name).
+<.> [.path]_ROOT_ is a reserved directory name and must be in all uppercase letters.
+<.> Navigation file named [.path]_nav.adoc_. Please keep it as is.
+<.> Optional _images_ family directory (reserved directory name).
+Here you can save your images, which you can include in your documentation. See <<image-usage>>.
+<.> Optional _pages_ family directory (reserved directory name).
+<.> _index.adoc_ AsciiDoc file, where all the documentation of Submodel-Template in plain text format is contained.
+<.> Optional _partials_ family directory (reserved directory name). Here you can save you code examples and diagrams, which you can include in the Documentation. See <<code-usage>> and <<uml-usage>>.
+
+[[antora-yml]]
+=== Configuration of _antora.yml_
+[.path]_antora.yml_ is a configuration file which includes metadata that Antora assigns to the source files it collects from the standard directories located in the [.path]_modules_ folder.
+
+To configure the _antora.yml_ file, you can use the following template:
+
+[source,yaml,linenums]
+----
+name: name-of-submodel-template
+title: Human readable title of the Submodel-Template
+version: '1.0'
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc
+----
+
+- _name_: The name of the Submodel-Template, which will be used in the URL of the generated documentation.
+- _title_: The human-readable title of the Submodel-Template, which will be displayed in the navigation.
+- _version_: The version of the Submodel-Template.
+- _start_page_: The path to the main documentation file. You may keep it as is.
+- _nav_: The path to the navigation file. You may keep it as is.
+
+== Asciidoc Syntax
+
+In the following chapters, we will provide examples of how to use the different elements of Asciidoc to document Submodel-Templates.
+
+[[text-formatting]]
+==== Text Formatting
+
+The following examples show how to format text in Asciidoc:
+
+- *Bold*
+- _Italic_
+- `Monospace`
+- `__Underlined Monospace__`
+
+More info: https://docs.antora.org/antora/latest/asciidoc/text-and-punctuation
+
+[[ref-and-url-usage]]
+==== Reference and URL Usage
+
+The following examples show how to use references and URLs in Asciidoc:
+
+- URL Example 1: https://www.industrialdigitaltwin.org/
+- URL Example 2: https://www.industrialdigitaltwin.org/[IDTA]
+- Reference Example: <<ref-and-url-usage>>.
+To reference a chapter, first add a label to the chapter with `\[[ref-and-url-usage]]` and use the `\<<ref-and-url-usage>>` syntax to reference it.
+- Reference example with custom text: <<ref-and-url-usage,Custom Text>>.
+- Image Reference Example: <<some-image>>.
+- Table Reference Example: <<some-table>>.
+- Bibliography Reference Example: xref:#bib1[[1\]]
+
+More info:
+
+- https://docs.antora.org/antora/latest/asciidoc/text-and-punctuation
+- https://docs.antora.org/antora/latest/asciidoc/external-urls/
+
+[[image-usage]]
+==== Image Usage
+
+The following examples show how to include images in Asciidoc:
+
+.Some Image Description
+[[some-image]]
+image::some-image.png[]
+
+More info: https://docs.antora.org/antora/latest/page/images/
+
+==== Table Usage
+
+The following examples show how to include tables in Asciidoc:
+
+[[some-table]]
+.Table Title
+[cols=2]
+|===
+h| Header Cell 1 h| Header Cell 2
+|a |A
+|b |B
+|multiline |
+A
+
+B
+
+C
+2+|cell over two columns
+|===
+
+<<properties-table>> shows an example of a table that can be used to document the properties of a Submodel.
+
+[[uml-usage]]
+
+[[properties-table]]
+.Properties of the Submodel Template "Some Submodel"
+[cols=4]
+|===
+h| idShort 3+d| SomeSubmodel
+h| Class: 3+d| Submodel
+h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/SomeSubmodel/1/0
+h| Parent: 3+d| Asset Administration Shell with Asset, which is software
+h| Explanation: 3+d| Submodel containing the nameplate information for software Asset and associated product classificatons.
+
+h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| idShort h| Description@en h| example h|
+| [SubmodelElementCollection] SomeCollection |[IRI] https://admin-shell.io/idta/SomeSubmodel/1/0/SomeCollection |n/a |[0..1]
+| [Property] SomeProperty |[IRI] https://admin-shell.io/idta/SomeSubmodel/1/0/SomeProperty |n/a |[0..1]
+
+|===
+
+
+[[source-blocks-usage]]
+==== Source Blocks Usage
+
+The following examples show how to include source code blocks in Asciidoc:
+
+.Some Python Code
+[[some-code]]
+[,python]
+----
+print("Hello, World!")
+----
+
+.Some Included Python Code
+[[some-code]]
+[,python]
+----
+include::partial$some_code.py[]
+----
+
+.Some JSON
+[[some-json]]
+[,json]
+----
+{
+  "key": "value"
+}
+----
+
+.Some Included JSON
+[[some-json]]
+[,json]
+----
+include::partial$some_json.json[]
+----
+
+[[uml-usage]]
+==== UML-Diagramm Usage
+
+To describe and generate UML-Diagrams, you can use the https://plantuml.com/[PlantUML].
+
+The following examples show how to include PUML-Diagrams in Asciidoc:
+
+.Some Class UML Diagram Title
+[[class-diagram-label]]
+[plantuml]
+....
+include::partial$diagrams/some_class_diagram.puml[]
+....
+
+.Some Sequence UML Diagram Title
+[[seq-diagram-label]]
+[plantuml]
+....
+include::partial$diagrams/some_class_diagram.puml[]
+....
+
+[bibliography]
+== Bibliography
+
+[[bib1]]
+[1] IDTA 01001 Specification of the Asset Administration Shell.
+Part 1: Metamodel, Version 3.1. Industrial Digital Twin Association (IDTA), January 2025. Online.
+Available: https://admin-shell-io.github.io/aas-specs-antora/IDTA-01001/v3.1/index.html
+
+
