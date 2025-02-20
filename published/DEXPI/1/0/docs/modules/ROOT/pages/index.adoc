@@ -26,9 +26,9 @@ https://www.industrialdigitaltwin.org/
 
 This document is a part of a specification series.
 Each part specifies the contents of a Submodel template for the Asset Administration Shell (AAS).
-The AAS is described in xref:#bib1[[1\]], xref:#bib2[[2\]], xref:#bib3[[3\]] and xref:#bib6[[6\]].
-First exemplary Submodel contents were described in xref:#bib4[[4\]], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[[5\]].
-The format aims to be very concise, giving only minimal necessary information for applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents xref:#bib1[[1\]] to xref:#bib6[[6\]].
+The AAS is described in xref:#bib1[+[1]+], xref:#bib2[+[2]+], xref:#bib3[+[3]+] and xref:#bib6[+[6]+].
+First exemplary Submodel contents were described in xref:#bib4[+[4]+], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[+[5]+].
+The format aims to be very concise, giving only minimal necessary information for applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents xref:#bib1[+[1]+] to xref:#bib6[+[6]+].
 
 The target group of the specification are developers and engineers designing processes and plants and creating manufacturer information, which are describing assets in smart manufacturing by means of the Asset Administration Shell (AAS) and therefore need to create a Submodel instance with a hierarchy of SubmodelElements.
 This document especially details the question, which SubmodelElements with which semantic identification shall be used for this purpose.
@@ -38,13 +38,13 @@ This document especially details the question, which SubmodelElements with which
 The engineering of a process plant is a complex multi-disciplinary and multi-organizational process involving exchange of a vast number of (semi-)standardized artifacts like diagrams, drawings, tables, certificates, and other documents.
 
 One core artifact which is created and extended during the engineering process is the Piping & Instrumentation Diagram (P&ID) providing among others a good balance of abstraction between the physical layout of the plant (i.e., used equipment and piping connections) and its representation within the automation domain (i.e., signal types, tag names, logical connections between sensor and actuators).
-Due to this fact P&IDs are long-living artifacts which are frequently used during the whole plant's lifecycle beyond the engineering phase xref:#bib7[[7\]].
+Due to this fact P&IDs are long-living artifacts which are frequently used during the whole plant's lifecycle beyond the engineering phase xref:#bib7[+[7]+].
 
 Even though most engineering artifacts are created digitally, they are not necessarily exchanged in a machine-readable format.
 The lack of a machine-readable representation of engineering artifacts (including P&IDs) hinders the digital transformation and can be a showstopper for digital use-cases due to high costs of creation of a machine-readable P&ID representation.
 
 Efforts to create a standardized machine-readable exchange format for P&ID are made by the DEXPI working group of DECHEMA including operators from multiple verticals (e.g., Oil and Gas, and Chemistry), engineering companies, software tool vendors and research institutes.
-DEXPI xref:#bib8[[8\]] is a UML-Model implemented using an XML-based P&ID exchange format including multiple aspects of plant design like piping topology and its graphical representation, instrumentation structure, tag names.
+DEXPI xref:#bib8[+[8]+] is a UML-Model implemented using an XML-based P&ID exchange format including multiple aspects of plant design like piping topology and its graphical representation, instrumentation structure, tag names.
 DEXPI is an open industrial standard aiming for a broad usage across industrial domains.
 
 Due to the paramount role of P&ID during the whole plant's lifecycle, the importance of DEXPI has been identified by the Industry 4.0 community.
@@ -54,7 +54,7 @@ The group consists of representatives of the DEXPI working group, oil and gas in
 
 === Relevant standards for the Submodel template
 
-- DEXPI specification version 1.3 xref:#bib8[[8\]]
+- DEXPI specification version 1.3 xref:#bib8[+[8]+]
 - ISO 10209
 - IEC 62264
 - ISA 106
@@ -138,23 +138,25 @@ Note that "card." denotes cardinality which should be interpreted as the "multip
 [width="100%",cols="1,2,1,1"]
 |===
 
-h| idShort 3+d| DEXPI
+h| idShort 3+a| DEXPI
 
+====
 Note: the above idShort can differ from proposed "DEXPI" idShort, in order to enable multiple Submodels for an asset, e.g., inherited DEXP files from higher-level Submodel templates or assets.
+====
 
 h| Class: 3+d| Submodel (SM)
-h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/DEXPI/1/0/Submodel
+h| semanticId: 3+d| +[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/Submodel
 h| Parent: 3+d| Asset Administration Shell with asset which is a plant segment the DEXPI file belongs to.
 h| Explanation: 3+d| Submodel containing one or multiple DEXPI models for the asset.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 h| idShort h| Description@en h| example h|
 d|
-[SMC]
++[SMC]+
 
 PlantMetadata
 
 d|
-[IRI]
++[IRI]+
 https://admin-shell.io/idta/DEXPI/1/0/PlantMetadata
 
 Container for the metadata of the plant segment which is described by
@@ -163,12 +165,12 @@ the supplied DEXPI file
 |n/a |1
 
 d|
-[SMC]
++[SMC]+
 
 Model\{00}
 
 d|
-[IRI]
++[IRI]+
 https://admin-shell.io/idta/DEXPI/1/0/Model
 
 Container for the actual DEXPI file, its metadata and its mapping
@@ -178,7 +180,7 @@ Note that \{00} a running counter suffix, e.g., "Model01" for the first
 element i.e. first DEXPI model and so on ("Model01", "Model02",
 "Model03", …) in the case of multiple models included in the submodel.
 
-|n/a |1..* |
+|n/a |1..*
 |===
 
 === Properties of the SMC PlantMetadata
@@ -187,26 +189,30 @@ element i.e. first DEXPI model and so on ("Model01", "Model02",
 [width="100%",cols="1,2,1,1"]
 |===
 
-h| idShort 3+d| PlantMetadata
+h| idShort 3+a| PlantMetadata
 
+====
 Note: the above idShort shall always be as stated.
+====
 
 h| Class: 3+d| SubmodelElementCollection (SMC)
-h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/DEXPI/1/0/PlantMetadata
+h| semanticId: 3+d| +[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/PlantMetadata
 h| Parent: 3+d| Submodel with semanticId = https://admin-shell.io/idta/DEXPI/1/0/Submodel
-h| Explanation: 3+d|  Metadata attributes of the plant or plant segment. It includes a subset of generic DEXPI Package Metadata (section 5 of the DEXPI specification) plus some additional optional elements.
+h| Explanation: 3+a|  Metadata attributes of the plant or plant segment. It includes a subset of generic DEXPI Package Metadata (section 5 of the DEXPI specification) plus some additional optional elements.
 
+====
 Note: we keep all attributes optional due they optional definition in the DEXPI specification.
+====
 
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 h| idShort h| Description@en h| example h|
 d|
-[SMC]
++[SMC]+
 
 PlantMetadata
 
 d|
-[IRI]
++[IRI]+
 https://admin-shell.io/idta/DEXPI/1/0/PlantMetadata
 
 Container for the metadata of the plant segment which is described by
@@ -215,384 +221,376 @@ the supplied DEXPI file
 |n/a |1
 
 d|
-[Property]
++[Property]+
 
 EnterpriseIdentificationCode
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/EnterpriseIdentificationCodeAssignmentClass
 
 Enterprise Identification Code
 
 d|
-[string]
++[string]+
 
 oil-gas-inc
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 EnterpriseName
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/EnterpriseNameAssignmentClass
 
 Enterprise Name
 
 d|
-[string]
++[string]+
 
 Oil & Gas, Inc.
 
 |0..1
 
 d|
-[ReferenceElement]
++[ReferenceElement]+
 
 EnterpriseReference
 
-d|
-[IRI]
+a|
++[IRI]+
 https://admin-shell.io/idta/DEXPI/1/0/EnterpriseReference
 
 Optional reference to an Entity element representing the enterprise in
 another Submodel, e.g., BOM
 
-
-Note: this is an attribute which is not included in DEXPI metadata and
-
-is added to the Submodel
+====
+Note: this is an attribute which is not included in DEXPI metadata and is added to the Submodel
+====
 
 d|
-(Entity)(non-local)[IRI]
+(Entity)(non-local)+[IRI]+
 
 http://example.com/id/9992020020616052921
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 SiteIdentificationCode
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/SiteIdentificationCodeAssignmentClass
 
 Site Identification Code
 
 d|
-[string]
++[string]+
 
 DC
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 SiteName
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/SiteNameAssignmentClass
 
 Site Name
 
 d|
-[string]
++[string]+
 
 Dexpi City
 
 |0..1
 
 d|
-[ReferenceElement]
++[ReferenceElement]+
 
 SiteReference
 
-d|
-[IRI]
+a|
++[IRI]+
 https://admin-shell.io/idta/DEXPI/1/0/SiteReference
 
 Optional reference to an Entity element representing the site in another
 Submodel, e.g., BOM
 
-
-Note: this is an attribute which is not included in DEXPI metadata and
-
-is added to the Submodel
+====
+Note: this is an attribute which is not included in DEXPI metadata and is added to the Submodel
+====
 
 d|
-(Entity)(non-local)[IRI]
+(Entity)(non-local)+[IRI]+
 
 http://example.com/id/9992020020616052922
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 IndustrialComplexIdentificationCode
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/IndustrialComplexIdentificationCodeAssignmentClass
 
 Industrial Complex Identification Code
 
 d|
-[string]
++[string]+
 
 I-Chain
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 IndustrialComplexName
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/IndustrialComplexNameAssignmentClass
 
 Industrial Complex Name
 
 d|
-[string]
++[string]+
 
 Isophorone Chain
 
 |0..1
 
 d|
-[ReferenceElement]
++[ReferenceElement]+
 
 IndustrialComplexReference
 
-d|
-[IRI]
+a|
++[IRI]+
 https://admin-shell.io/idta/DEXPI/1/0/IndustrialComplexReference
 
 Optional reference to an Entity element representing the industrial
 complex in another Submodel, e.g., BOM
 
-
-Note: this is an attribute which is not included in DEXPI metadata and
-
-is added to the Submodel
-
+====
+Note: this is an attribute which is not included in DEXPI metadata and is added to the Submodel
+====
 d|
-(Entity)(non-local)[IRI]
+(Entity)(non-local)+[IRI]+
 
 http://example.com/id/9992020020616052923
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 ProcessPlantIdentificationCode
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/ProcessPlantIdentificationCodeAssignmentClass
 
 Process Plant Identification Code
 
 d|
-[string]
++[string]+
 
 ABC
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 ProcessPlantName
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/ProcessPlantNameAssignmentClass
 
 Process Plant Name
 
 d|
-[string]
++[string]+
 
 ABC Plant
 
 |0..1
 
 d|
-[ReferenceElement]
++[ReferenceElement]+
 
 ProcessPlantReference
 
-d|
-[IRI]
+a|
++[IRI]+
 https://admin-shell.io/idta/DEXPI/1/0/ProcessPlantReference
 
 Optional reference to an Entity element representing the process plant
 in another Submodel, e.g., BOM
 
-
-Note: this is an attribute which is not included in DEXPI metadata and
-
-is added to the Submodel
-
+====
+Note: this is an attribute which is not included in DEXPI metadata and is added to the Submodel
+====
 d|
-(Entity)(non-local)[IRI]
+(Entity)(non-local)+[IRI]+
 
 http://example.com/id/9992020020616052924
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 PlantSectionIdentificationCode
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/PlantSectionIdentificationCodeAssignmentClass
 
 Plant Section Identification Code
 
 d|
-[string]
++[string]+
 
 10
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 PlantSectionName
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/PlantSectionNameAssignmentClass
 
 Plant Section Name
 
 d|
-[string]
++[string]+
 
 PlantSectionName
 
 |0..1
 
 d|
-[ReferenceElement]
++[ReferenceElement]+
 
 PlantSectionReference
 
-d|
-[IRI]
+a|
++[IRI]+
 https://admin-shell.io/idta/DEXPI/1/0/PlantSectionReference
 
 Optional reference to an Entity element representing the plant in
 section another Submodel, e.g., BOM
 
-
-Note: this is an attribute which is not included in DEXPI metadata and
-
-is added to the Submodel
-
+====
+Note: this is an attribute which is not included in DEXPI metadata and is added to the Submodel
+====
 d|
-(Entity)(non-local)[IRI]
+(Entity)(non-local)+[IRI]+
 
 http://example.com/id/9992020020616052925
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 ProjectNumber
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/ProjectNumberAssignmentClass
 
 Project Number
 
 d|
-[string]
++[string]+
 
 P3.1415
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 ProjectName
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/ProjectNameAssignmentClass
 
 Project Name
 
 d|
-[string]
++[string]+
 
 a project
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 SubProjectNumber
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/SubProjectNumberAssignmentClass
 
 Sub Project Number
 
 d|
-[string]
++[string]+
 
 P3.1415-SP2
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 SubProjectName
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/SubProjectNameAssignmentClass
 
 Sub Project Name
 
 d|
-[string]
++[string]+
 
 a sub-project
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 ManufacturerName
 
-d|
-[IRDI] 0173-1#02-AAO677#002
+a|
++[IRDI]+ 0173-1#02-AAO677#002
 
 Legal designation of the natural or judicial body which is directly
 responsible for the design, production, packaging and labeling of a
@@ -600,89 +598,80 @@ product in respect to its being brought into the market. We assume that
 this plant segment vendor is producing or, at least, modifying the P&ID
 (e.g., as-built documentation).
 
-
-Note: this is an attribute which is not included in DEXPI metadata and
-
-is added to the Submodel
-
+====
+Note: this is an attribute which is not included in DEXPI metadata and is added to the Submodel
+====
 d|
-[string]
++[string]+
 
 Plant Segment Vendor or EPC company name
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 DateOfManufacture
 
-d|
-[IRDI] 0173-1#02-AAR972#002
+a|
++[IRDI]+ 0173-1#02-AAR972#002
 
 Date from which the production and / or development process is completed
 or from which a service is provided completely.
 
+====
+Note: see also +[IRDI]+ 0112/2///61987#ABB757#007 date of manufacture in CDD
+====
 
-Note: see also [IRDI] 0112/2///61987#ABB757#007 date of manufacture in
-
-CDD
-
-
+====
 Note: format by lexical representation: YYYY-MM-DD
+====
 
-
-
-Note: this is an attribute which is not included in DEXPI metadata and
-
-is added to the Submodel
-
+====
+Note: this is an attribute which is not included in DEXPI metadata and is added to the Submodel
+====
 d|
-[Date]
++[Date]+
 
 2021-01-01
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 EndProductName
 
-d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/EndProductName
+a|
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/EndProductName
 
 End Product Name of the main product the plant segment is producing.
 
-
-Note: this is an attribute which is not included in DEXPI metadata and
-
-is added to the Submodel
-
+====
+Note: this is an attribute which is not included in DEXPI metadata and is added to the Submodel
+====
 d|
-[string]
++[string]+
 
 water
 
 |0..*
 
 d|
-[Property]
++[Property]+
 
 EndProductCASName
 
-d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/EndProductCASName
+a|
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/EndProductCASName
 
 End Product CAS Name of the main product
 
-
-Note: this is an attribute which is not included in DEXPI metadata and
-
-is added to the Submodel
-
+====
+Note: this is an attribute which is not included in DEXPI metadata and is added to the Submodel
+====
 d|
-[string]
++[string]+
 
 7732-18-5
 
@@ -698,36 +687,36 @@ d|
 h| idShort 3+d| Model\{00}
 
 h| Class: 3+d| SubmodelElementCollection (SMC)
-h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/DEXPI/1/0/Model
+h| semanticId: 3+d| +[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/Model
 h| Parent: 3+d| Submodel with semanticId = https://admin-shell.io/idta/DEXPI/1/0/Submodel
 h| Explanation: 3+d|  Container for a single DEXPI model.
 
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 h| idShort h| Description@en h| example h|
 d|
-[SMC]
++[SMC]+
 
 ModelMetadata
 
 d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/ModelMetadata
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/ModelMetadata
 
 Metadata of the model
 
 |n/a |0..1
 
 d|
-[File]
++[File]+
 
 ModelFile
 
 d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/ModelFile
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/ModelFile
 
 Actual DEXPI model, e.g., in ProteusXML serialization
 
 d|
-[file]
++[File]+
 
 mimeType=application/xml
 
@@ -736,17 +725,17 @@ C01V04-VER.EX01.xml
 |1
 
 d|
-[Property]
++[Property]+
 
 ModelRepresentation
 
 d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/ModelRepresentation
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/ModelRepresentation
 
 Rendered DEXPI model, e.g., as an SVG file
 
 d|
-[file]
++[File]+
 
 mimeType=application/svg
 
@@ -755,12 +744,12 @@ C01V04-VER.EX01.svg
 |0..1
 
 d|
-[SMC]
++[SMC]+
 
 MappingDirectory
 
 d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/MappingDirectory
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/MappingDirectory
 
 Directory with model-specific mappings
 
@@ -773,48 +762,46 @@ Directory with model-specific mappings
 [width="100%",cols="1,2,1,1"]
 |===
 
-h| idShort 3+d| ModelMetadata
+h| idShort 3+a| ModelMetadata
 
-
-Note: the above idShort shall always be as stated.
-
+====
+Note: The above idShort shall always be as stated.
+====
 h| Class: 3+d| SubmodelElementCollection (SMC)
-h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/DEXPI/1/0/Model
+h| semanticId: 3+d| +[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/Model
 h| Parent: 3+d| Submodel with idShort = Model\{00}
 h| Explanation: 3+d|  Metadata container for a single DEXPI model. This is a subset of generic DEXPI Package Metadata (section 5 of the specification).
 
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 h| idShort h| Description@en h| example h|
 d|
-[Property]
++[Property]+
 
 ApprovalDate
 
-d|
-[IRI]
+a|
++[IRI]+
 http://sandbox.dexpi.org/rdl/ApprovalDateRepresentationAssignmentClass
 
 Date of Approval
 
-
-Note: DEXPI intentionally does not guarantee that the included string
-
-can be converted into a date, use string as fallback if this is the case
-
+====
+Note: DEXPI intentionally does not guarantee that the included string can be converted into a date, use string as fallback if this is the case
+====
 d|
-[Date] or [string]
++[Date]+ or +[string]+
 
 2021-01-01
 
 |0..1
 
 d|
-[MLP]
++[MLP]+
 
 ApprovalDescription
 
 d|
-[IRI]
++[IRI]+
 https://sandbox.dexpi.org/rdl/ApprovalDescriptionAssignmentClass
 
 Approval Decision Description
@@ -822,143 +809,141 @@ Approval Decision Description
 |en, approved |0..1
 
 d|
-[Property]
++[Property]+
 
 ApproverName
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/ApproverNameAssignmentClass
 
 Approver Name
 
 d|
-[string]
++[string]+
 
 A. P. Prover
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 ArchiveNumber
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/ArchiveNumberAssignmentClass
 
 Archive Number
 
 d|
-[string]
++[string]+
 
 XY923-463
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 CheckerName
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/CheckerNameAssignmentClass
 
 Checker Name
 
 d|
-[string]
++[string]+
 
 C. Hecker
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 CreationDate
 
-d|
-[IRI]
+a|
++[IRI]+
 http://sandbox.dexpi.org/rdl/CreationDateRepresentationAssignmentClass
 
 Date of Creation
 
-
-Note: DEXPI intentionally does not guarantee that the included string
-
-can be converted into a date, use string as fallback if this is the case
-
+====
+Note: DEXPI intentionally does not guarantee that the included string can be converted into a date, use string as fallback if this is the case
+====
 d|
-[Date] or [string]
++[Date]+ or +[string]+
 
 2021-01-01
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 CreatorName
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/CreatorNameAssignmentClass
 
 Creator Name
 
 d|
-[string]
++[string]+
 
 A. Creator
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 DesignerName
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/DesignerNameAssignmentClass
 
 Designer Name
 
 d|
-[string]
++[string]+
 
 D. E. Signer
 
 |0..1
 
 d|
-[Property]
++[Property]+
 
 DrawingNumber
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/DrawingNumberAssignmentClass
 
 Number of the drawing
 
 d|
-[string]
++[string]+
 
 123/A93
 
 |0..1
 
 d|
-[MLP]
++[MLP]+
 
 DrawingSubTitle
 
 d|
-[IRI]
++[IRI]+
 http://sandbox.dexpi.org/rdl/DrawingSubTitleAssignmentClass
 
 Drawing subtitle
@@ -966,23 +951,21 @@ Drawing subtitle
 |en, DEXPI Example PID |0..1
 
 d|
-[Property]
++[Property]+
 
 LastModificationDate
 
-d|
-[IRI]
+a|
++[IRI]+
 http://sandbox.dexpi.org/rdl/LastModificationDateRepresentationAssignmentClass
 
 Last Modification Date
 
-
-Note: DEXPI intentionally does not guarantee that the included string
-
-can be converted into a date, use string as fallback if this is the case
-
+====
+Note: DEXPI intentionally does not guarantee that the included string can be converted into a date, use string as fallback if this is the case
+====
 d|
-[Date] or [string]
++[Date]+ or +[string]+
 
 2026-04-02
 
@@ -995,38 +978,36 @@ d|
 [width="100%",cols="1,2,1,1"]
 |===
 
-h| idShort 3+d| MappingDirectory
+h| idShort 3+a| MappingDirectory
 
-
-Note: the above idShort shall always be as stated.
-
+====
+Note: The above idShort shall always be as stated.
+====
 
 h| Class: 3+d| SubmodelElementCollection (SMC)
-h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/DEXPI/1/0/MappingDirectory
+h| semanticId: 3+d| +[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/MappingDirectory
 h| Parent: 3+d| SMC with idShort = Model\{00}
 h| Explanation: 3+d|  Container for local-global mappings within the DEXPI model
 
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 h| idShort h| Description@en h| example h|
 d|
-[SMC]
++[SMC]+
 
 \{LocalId within DEXPI} e.g., PlateHeatExchanger_1
 
-d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/Metadata/TagMapping
+a|
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/Metadata/TagMapping
 
 or
 
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/Metadata/SubTagMapping
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/Metadata/SubTagMapping
 
 Container for mapping information
 
-
-Note: idShort should be the LocalId (i.e., "ID" field of the element
-
-within ProteusXML) within DEXPI that is adapted to the naming conventions of idShort (e.g., by replacing "-" with "_")
-
+====
+Note: idShort should be the LocalId (i.e., "ID" field of the element within ProteusXML) within DEXPI that is adapted to the naming conventions of idShort (e.g., by replacing "-" with "_")
+====
 d|
 n/a
 
@@ -1051,89 +1032,86 @@ In this case the TagName property corresponds to the value of tag name assignmen
 h| idShort 3+d| \{LocalId within DEXPI}
 
 h| Class: 3+d| SubmodelElementCollection (SMC)
-h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/DEXPI/1/0/TagMapping
+h| semanticId: 3+d| +[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/TagMapping
 h| Parent: 3+d| SMC with idShort = MappingDirectory
 h| Explanation: 3+d|  Collection describing tag information
 
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 h| idShort h| Description@en h| example h|
 d|
-[Property]
++[Property]+
 
 TagName
 
 d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/TagName
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/TagName
 
 Tag Name, for exact formulation rules see the description above.
 
 d|
-[String]
++[string]+
 
 H1007
 
 |1
 
 d|
-[Property]
++[Property]+
 
 Class
 
 d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/Class
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/Class
 
 Class of the Equipment according to DEXPI
 
 d|
-[String]
++[string]+
 
 PlateHeatExchanger
 
 |1
 
 d|
-[Property]
++[Property]+
 
 LocalId
 
-d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/LocalId
+a|
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/LocalId
 
 Local ID of the element within the DEXPI representation, e.g., ID field
 of XML element within ProteusXML
 
-
-Note: the value comes from DEXPI and may not be compatible to idShort
-
-naming restrictions
-
+====
+Note: the value comes from DEXPI and may not be compatible to idShort naming restrictions
+====
 d|
-[String]
++[string]+
 
 PlateHeatExchanger-1
 
 |1
 
 d|
-[RelationshipElement]
++[RelationshipElement]+
 
 \{LocalId within DEXPI}_rel
 
 e.g., PlateHeatExchanger_1_rel
 
-d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/MappingRelationship
+a|
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/MappingRelationship
 
 Relationship to map the local element to a globally identifiable asset
 
-
+====
 Note: the following FragmentReference naming schema is proposed:
 
-
 ProteusXML@ID=PlateHeatExchanger-1 where Id is the LocalId
-
+====
 d|
-[RelationshipElement]
++[RelationshipElement]+
 
 First:
 
@@ -1158,125 +1136,119 @@ The second kind of SMC within the mapping directory describes the subtag capturi
 [width="100%",cols="1,2,1,1"]
 |===
 
-h| idShort 3+d| \{LocalId within DEXPI}
+h| idShort 3+a| +{LocalId within DEXPI}+
 
-
-Note: the above idShort shall always be as stated.
-
+====
+Note: The above idShort shall always be as stated.
+====
 
 h| Class: 3+d| SubmodelElementCollection (SMC)
-h| semanticId: 3+d| [IRI] https://admin-shell.io/idta/DEXPI/1/0/Metadata/SubTagMapping
+h| semanticId: 3+d| +[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/Metadata/SubTagMapping
 h| Parent: 3+d| SMC with idShort = MappingDirectory
 h| Explanation: 3+d|  Collection describing subtag information
 
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 h| idShort h| Description@en h| example h|
 d|
-[Property]
++[Property]+
 
 SubTagName
 
 d|
-[IRI]
++[IRI]+
 https://admin-shell.io/idta/DEXPI/1/0/SubTaghttps://admin-shell.io/idta/DEXPI/1/0/SubTagName
 
 Sub tag name
 
 d|
-[String]
++[string]+
 
 N04
 
 |1
 
 d|
-[Property]
++[Property]+
 
 ParentLocalId
 
-d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/ParentLocalId
+a|
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/ParentLocalId
 
 Local identifier of the parent element within the DEXPI representation,
 e.g., ID field of XML element within ProteusXML
 
-
-Note: the value comes from DEXPI and may not be compatible to idShort
-
-naming restrictions
-
+====
+Note: the value comes from DEXPI and may not be compatible to idShort naming restrictions
+====
 d|
-[String]
++[string]+
 
 PlateHeatExchanger-1
 
 |1
 
 d|
-[Property]
++[Property]+
 
 Class
 
 d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/Class
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/Class
 
 Class of the equipment according to DEXPI
 
 d|
-[String]
++[string]+
 
 Nozzle
 
 |1
 
 d|
-[Property]
++[Property]+
 
 LocalId
 
-d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/LocalId
+a|
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/LocalId
 
 Local identifier of the element within the DEXPI representation, e.g.,
 ID field of XML element within ProteusXML
 
-
-Note: the value comes from DEXPI and may not be compatible to idShort
-
-naming restrictions
-
+====
+Note: the value comes from DEXPI and may not be compatible to idShort naming restrictions
+====
 d|
-[String]
++[string]+
 
 Nozzle-4
 
 |1
 
 d|
-[RelationshipElement]
++[RelationshipElement]+
 
 \{LocalId within DEXPI}_rel
 
 e.g., Nozzle_4_rel
 
-d|
-[IRI] https://admin-shell.io/idta/DEXPI/1/0/MappingRelationship
+a|
++[IRI]+ https://admin-shell.io/idta/DEXPI/1/0/MappingRelationship
 
 Relationship to map the local element to a globally identifiable asset
 
+====
+Note: the value comes from DEXPI and may not be compatible to idShort naming restrictions
+====
 
-Note: the value comes from DEXPI and may not be compatible to idShort
-
-naming restrictions
-
-
+====
 Note: the following FragmentReference naming schema is proposed:
 
-
 ProteusXML@ID=Nozzle-4 where Id is the LocalId
-
+====
 d|
-[RelationshipElement]
++[RelationshipElement]+
 
 First:
 
@@ -1326,44 +1298,44 @@ Second:
 == Bibliography
 
 [#bib1]
-[1]"Recommendations for implementing the strategic initiative INDUSTRIE 4.0", acatech, April 2013. [Online].
++[1]+ "Recommendations for implementing the strategic initiative INDUSTRIE 4.0", acatech, April 2013.  +[Online]+ .
 Available:
 https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
 
 [#bib2]
-[2]"Implementation Strategy Industrie 4.0: Report on the results of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April 2015. [Online].
++[2]+ "Implementation Strategy Industrie 4.0: Report on the results of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April 2015.  +[Online]+ .
 Available:
 https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
 
 [#bib3]
-[3]"The Structure of the Administration Shell: TRILATERAL PERSPECTIVES from France, Italy and Germany", March 2018, [Online].
++[3]+ "The Structure of the Administration Shell: TRILATERAL PERSPECTIVES from France, Italy and Germany", March 2018,  +[Online]+ .
 Available:
 https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
 
 [#bib4]
-[4]"Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente – Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016. [Online].
++[4]+ "Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente – Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016.  +[Online]+ .
 Available:
 https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
 
 [#bib5]
-[5]"Verwaltungsschale in der Praxis.
++[5]+ "Verwaltungsschale in der Praxis.
 Wie definiere ich Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen (in German)", Version 1.0, April 2019, Plattform Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for Economic Affairs and Energy (BMWi), Available:
 https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
 
 [#bib6]
-[6]"Details of the Asset Administration Shell; Part 1 - The exchange of information between partners in the value chain of Industrie 4.0 (Version 3.0RC01)", November 2020, [Online].
++[6]+ "Details of the Asset Administration Shell; Part 1 - The exchange of information between partners in the value chain of Industrie 4.0 (Version 3.0RC01)", November 2020,  +[Online]+ .
 Available:
 https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html
 
 [#bib7]
-[7]Wiedau et al.: Towards a Systematic Data Harmonization to Enable AI Application in the Process Industry.
++[7]+ Wiedau et al.: Towards a Systematic Data Harmonization to Enable AI Application in the Process Industry.
 Chemie Ingenieur Technik.
-2021. DOI: 10.1002/cite.202100203. [Online].
+2021. DOI: 10.1002/cite.202100203.  +[Online]+ .
 Available:
 https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cite.202100203
 
 [#bib8]
-[8]"DEXPI P&ID Specification 1.3", ProcessNet, June 2021.
-[Online].
++[8]+ "DEXPI P&ID Specification 1.3", ProcessNet, June 2021.
+ +[Online]+ .
 Available:
 https://dexpi.org/wp-content/uploads/2020/09/DEXPI-PID-Specification-1.3.pdf

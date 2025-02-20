@@ -25,9 +25,9 @@ https://www.industrialdigitaltwin.org/
 
 This document is a part of a specification series.
 Each part specifies the contents of a Submodel for the Asset Administration Shell (AAS).
-The AAS is described in xref:#bib1[[1\]], xref:#bib2[[2\]], xref:#bib3[[3\]] and xref:#bib6[[6\]].
-First exemplary Submodel contents were described in xref:#bib4[[4\]], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[[5\]].
-The format aims to be very concise, giving only minimal necessary information for applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents xref:#bib1[[1\]] to xref:#bib6[[6\]].
+The AAS is described in xref:#bib1[+[1]+], xref:#bib2[+[2]+], xref:#bib3[+[3]+] and xref:#bib6[+[6]+].
+First exemplary Submodel contents were described in xref:#bib4[+[4]+], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[+[5]+].
+The format aims to be very concise, giving only minimal necessary information for applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents xref:#bib1[+[1]+] to xref:#bib6[+[6]+].
 
 The target group of the specification are developers and editors of technical documentation and manufacturer information, which are describing assets in smart manufacturing by means of the Asset Administration Shell (AAS) and therefore need to create a Submodel instance out of a Submodel template with a hierarchy of SubmodelElements.
 This document especially details on the question, which SubmodelElements with which semantic identification shall be used in the Submodel template.
@@ -69,7 +69,7 @@ The name of the provider of the simulation model, the available communication la
 
 ==== MIC (Model identity Card)
 
-The Model Identity Card (MIC) contains information to characterize simulation models based on a set of core information xref:#bib10[[10\]].
+The Model Identity Card (MIC) contains information to characterize simulation models based on a set of core information xref:#bib10[+[10]+].
 It consists of definitions for general information, integration, content and computation, ports, internal variables and parameters, verification and validation.
 Information about the port definition were used as inspiration for the Submodel template.
 
@@ -78,7 +78,7 @@ Information about the port definition were used as inspiration for the Submodel 
 The Functional Mock-up Interface (FMI) is a free standard for exchange and co-simulation of dynamic models.
 It defines a model container and a model interface using a combination of XML files, binaries and / or C code zipped into a single file.
 An integration algorithm may be included for co-simulation of models.
-It is supported by http://fmi-standard.org/tools[170+] tools and maintained as a https://modelica.org/projects[Modelica Association Project] xref:#bib8[[8\]] on https://github.com/modelica/fmi-standard[GitHub] xref:#bib9[[9\]].
+It is supported by http://fmi-standard.org/tools[170+] tools and maintained as a https://modelica.org/projects[Modelica Association Project] xref:#bib8[+[8]+] on https://github.com/modelica/fmi-standard[GitHub] xref:#bib9[+[9]+].
 Since a large number of simulation models are already provided as FMUs and will continue to be so in the future, the Submodel "Provision of Simulation Models" attempts to represent this type of model as accurately as possible.
 
 ==== ECLASS
@@ -89,7 +89,7 @@ These unique identifiers called IRDIs (International Registration Data Identifie
 
 ==== AutomationML
 
-https://www.automationml.org/[AutomationML] xref:#bib11[[11\]] is a comprehensive XML based object-oriented data modeling language.
+https://www.automationml.org/[AutomationML] xref:#bib11[+[11]+] is a comprehensive XML based object-oriented data modeling language.
 It allows the modeling, storage and exchange of engineering models covering a multitude of relevant aspects of engineering.
 AML provides a comprehensive set of flexible mechanisms and innovations to model today's engineering aspects as well as future engineering aspects to come.
 Its language characteristics allow to model existing or new domain models.
@@ -103,7 +103,7 @@ The data formats for the following modeling domains are:
 * geometries and kinematics of objects: COLLADA 1.4.1 and 1.5.0 (ISO/PAS 17506:2012)
 * discrete behavior of objects: PLCopen XML 2.0 and 2.0.1; in addition, IEC62714-4 will allow the usage of IEC61131-10
 
-AutomationML also provides an https://www.automationml.org/wp-content/uploads/2021/06/Asset-Administration-Shell-Representation-V1_0_0.zip[application recommendation] xref:#bib12[[12\]] which describes the serialization of the AAS Metamodel using AutomationML by defining appropriate serialization rules and role, interface and system unit classes related to them.
+AutomationML also provides an https://www.automationml.org/wp-content/uploads/2021/06/Asset-Administration-Shell-Representation-V1_0_0.zip[application recommendation] xref:#bib12[+[12]+] which describes the serialization of the AAS Metamodel using AutomationML by defining appropriate serialization rules and role, interface and system unit classes related to them.
 
 === Future relevant standards
 
@@ -113,7 +113,7 @@ Examples include current releases of the VDI GMA FA 6.XX about quality metrics b
 
 ==== SSP (System Structure and Parameterization)
 
-https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf[SSP] is a tool-independent format developed by the https://modelica.org/projects[Modelica Association Project] xref:#bib8[[8\]] to exchange simulation-capable system structures consisting of individual simulation components, preferably FMUs (Functional Mockup Units).
+https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf[SSP] is a tool-independent format developed by the https://modelica.org/projects[Modelica Association Project] xref:#bib8[+[8]+] to exchange simulation-capable system structures consisting of individual simulation components, preferably FMUs (Functional Mockup Units).
 With SSP such a system of interlinked components can be described by a well-structured bundle of subformats, packed into a zip-container.
 The package comprises the specification of the hierarchical and functional structure of the component network (including all signal flows), the parameters, parameter sets and parameter mappings as well as dictionaries of signals.
 The first version of SSP is already supported by some system simulation tools (https://ssp-standard.org/tools/).
@@ -173,7 +173,7 @@ Therefore, cross-company use of such simulation models is considered less likely
 
 ==== Quality of Simulation Model 
 
-In the working group 6.11 Virtual Commissioning of the GMA, a methodology is currently being developed which is intended to enable the quality of a simulation model to be determined in a standardized manner xref:#bib6[[7\]].
+In the working group 6.11 Virtual Commissioning of the GMA, a methodology is currently being developed which is intended to enable the quality of a simulation model to be determined in a standardized manner xref:#bib6[+[7]+].
 This involves evaluating a simulation model on the basis of 25 attributes, among others, and determining an overall quality for the simulation model.
 In the version of the Submodel described here, this quality metric is not yet applied, but this is explicitly aimed at for future versions.
 Possibilities for integration and collaboration are currently being discussed in talks between the working groups.
@@ -186,7 +186,7 @@ Three basic ones are shown in the following subchapters.
 All of them have in common that one is in a value network with many partners, as it was shown in xref:#fig1[xrefstyle=short].
 
 [#fig1]
-.Value network adaptable factory xref:#bib1[[1\]]
+.Value network adaptable factory xref:#bib1[+[1]+]
 image::img3.png[align=center]
 
 To provide an overview of the scenarios were targeted with the first version of the Submodel, the use cases are located in xref:#fig2[xrefstyle=short] of the generic value network published via Plattform Industrie 4.0.
@@ -202,11 +202,11 @@ More than one model is needed for different simulation methods (see picture left
 
 Before describing the different use cases, the differences between a product type and a product instance should be briefly discussed here.
 
-An asset type is a representation that defines all the usual properties that are also contained in asset instances at the beginning of their life cycle xref:#bib6[[6\]].
+An asset type is a representation that defines all the usual properties that are also contained in asset instances at the beginning of their life cycle xref:#bib6[+[6]+].
 These include, for example, the structure and components used.
 But also, properties resulting from the engineering are included in the type.
 For example, the maximum load capacity, allowed environmental conditions.
-In contrast to this an instance represents a concrete and clearly identifiable entity of a certain type xref:#bib6[[6\]].
+In contrast to this an instance represents a concrete and clearly identifiable entity of a certain type xref:#bib6[+[6]+].
 This instance can contain additional properties like color, serial number, runtime information, etc. in addition to the properties contained in the type.
 Furthermore, properties in the instance can change over the life cycle and thus deviate from the type.
 
@@ -233,7 +233,7 @@ If necessary, the user can send specific requests to the manufacturers/supplier 
 It also supports automated updating of models.
 Notifications can be generated for new simulation models for the component or new versions of a used model.
 
-More use cases are under discussion, but current work focus on the above three use cases xref:#bib13[[13\]].
+More use cases are under discussion, but current work focus on the above three use cases xref:#bib13[+[13]+].
 
 ==== Requirements
 
@@ -336,13 +336,13 @@ h| SemanticId
 3+d|https://admin-shell.io/idta/SimulationModels/SimulationModels/1/0
 h| Explanation
 3+d|The Submodel may provide one or more simulation models, a service to generate a specific model, or access to an open or specific query.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[SMC] SimulationModel d|
-[IRI] https://admin-shell.io/idta/SimulationModels/SimulationModel/1/0
+h| example |
+h|+[SMC]+ SimulationModel d|
++[IRI]+ https://admin-shell.io/idta/SimulationModels/SimulationModel/1/0
 
 Feature collection to provide or request simulation models. Models can be described by objective and content.
 
@@ -362,128 +362,128 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/SimulationModel/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/SimulationModel/1/0
 h| Parent
 3+d|SimulationModels
 h| Explanation
 3+d|Feature collection to provide or request simulation models. Models can be described by objective and content.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[MLP] +
+h| example |
+h|+[MLP]+ +
 Summary d|
-[IRI] https://admin-shell.io/idta/SimulationModels/Summary/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/Summary/1/0
 
 Summary of the contents of the simulation model in text form.
 
-|[langString] |0..1
-|[SMC] +
+|+[langString]+ |0..1
+|+[SMC]+ +
 SimPurpose d|
-[IRI] https://admin-shell.io/idta/SimulationModels/SimPurpose/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/SimPurpose/1/0
 
 This characteristic describes the simulation purpose or suitability for different simulation goals.
 
 |n/a |1
-|[Property] +
+|+[Property]+ +
 TypeOfModel d|
-[IRI] https://admin-shell.io/idta/SimulationModels/TypeOfModel/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/TypeOfModel/1/0
 
 List of modeling approaches used for the model.
 
-|[string] |0..\*
-|[Property] +
+|+[string]+ |0..\*
+|+[Property]+ +
 ScopeOfModel d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ScopeOfModel/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ScopeOfModel/1/0
 
 List of basic physical characteristics which are represented by the model.
 
-|[string] |1..\*
-|[Property] +
+|+[string]+ |1..\*
+|+[Property]+ +
 LicenseModel d|
-[IRI] https://admin-shell.io/idta/SimulationModels/LicenseModel/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/LicenseModel/1/0
 
 If a simulation model usage will be charged and how it will be charged.
 
-|[string] |0..1
-|[Property] +
+|+[string]+ |0..1
+|+[Property]+ +
 EngineeringDomain d|
-[IRI] https://admin-shell.io/idta/SimulationModels/EngineeringDomain/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/EngineeringDomain/1/0
 
 List of engineering disciplines supported or mapped with the model.
 
-|[string] |0..\*
+|+[string]+ |0..\*
 |===
 
 [width="100%",cols="16%,50%,25%,9%",]
 |===
-|[SMC] +
+|+[SMC]+ +
 Environment d|
-[IRI] https://admin-shell.io/idta/SimulationModels/Environment/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/Environment/1/0
 
 Information about prerequisite environments or dependencies of underlying components on the target system.
 
 |n/a |0..\*
-|[File] +
+|+[File]+ +
 RefSimDocumentation d|
-[IRI] https://admin-shell.io/idta/SimulationModels/RefSimDocumentation/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/RefSimDocumentation/1/0
 
 Simulation Documentation Documentation of example simulations of the model can be supplied. This includes a solver setup and sample circuit and sample results. e.g. zip file, PDF, html, ... -
 
-|[File] |0..\*
-|[SMC] +
+|+[File]+ |0..\*
+|+[SMC]+ +
 ModelFile d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ModelFile/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ModelFile/1/0
 
 Providing versions of the simulation model and with characteristics to distinguish them.
 
 |n/a |1
-|[Property] +
+|+[Property]+ +
 ParamMethod d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ParamMethod/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ParamMethod/1/0
 
 Indicates whether the model must be parameterized and if so, which method is required.
 
-|[string] |1
-|[File] +
+|+[string]+ |1
+|+[File]+ +
 ParamFile d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ParamFile/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ParamFile/1/0
 
 File for parameterization of the model. As parameter file or parameter documentation (e.g. pdf).
 
-|[File] |0..1
-|[Property] +
+|+[File]+ |0..1
+|+[Property]+ +
 InitStateMethod d|
-[IRI] https://admin-shell.io/idta/SimulationModels/InitStateMethod/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/InitStateMethod/1/0
 
 Describes the state variables of the simulation model that must be initialized to start the simulation. For initial value problems, these quantities describe the system state at the start of the simulation. In this case, the system is in a state of equilibrium. Alternatively, a simulation model may include a method to determine consistent initial values at this step, e.g., at an operating point.
 
-|[string] |1
-|[File] +
+|+[string]+ |1
+|+[File]+ +
 InitStateFile d|
-[IRI] https://admin-shell.io/idta/SimulationModels/InitStateFile/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/InitStateFile/1/0
 
 File for parameterizing the initial states of the model. As parameter file or parameter documentation (e.g. pdf).
 
-|[File] |0..1
-|[Property] +
+|+[File]+ |0..1
+|+[Property]+ +
 DefaultSimTime d|
-[IRI] https://admin-shell.io/idta/SimulationModels/DefaultSimTime/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/DefaultSimTime/1/0
 
 Predefined simulation period in seconds.
 
-|[float] |0..1
-|[SMC] +
+|+[float]+ |0..1
+|+[SMC]+ +
 SimModManufacturerInformation d|
-[IRI] https://admin-shell.io/idta/SimulationModels/SimModManufacturerInformation/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/SimModManufacturerInformation/1/0
 
 Provide access to simulation support service provided by the distributor via mail or phone.
 
 |n/a |0..\*
-|[SMC] +
+|+[SMC]+ +
 Ports d|
-[IRI] https://admin-shell.io/idta/SimulationModels/Ports/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/Ports/1/0
 
 Interfaces of the model. This includes inputs, outputs as well as acausal connections (e.g. mechanical connections). In addition, it is specified here whether the model provides binary interfaces (e.g. for visualization).
 
@@ -501,30 +501,30 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/SimPurpose/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/SimPurpose/1/0
 h| Parent
 3+d|SimulationModel
 h| Explanation
 3+d|This characteristic describes the simulation purpose or suitability for different simulation goals.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 PosSimPurpose d|
-[IRI] https://admin-shell.io/idta/SimulationModels/PosSimPurpose/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/PosSimPurpose/1/0
 
 List of simulation purposes for which the model is intended.
 
-|[string] |1..\*
-|[Property] +
+|+[string]+ |1..\*
+|+[Property]+ +
 NegSimPurpose d|
-[IRI] https://admin-shell.io/idta/SimulationModels/NegSimPurpose/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/NegSimPurpose/1/0
 
 List of simulation purposes for which the model is explicitly not suitable.
 
-|[string] |0..\*
+|+[string]+ |0..\*
 |===
 
 === SubmodelElements of Environment
@@ -538,47 +538,47 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/Environment/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/Environment/1/0
 h| Parent
 3+d|SimulationModel
 h| Explanation
 3+d|Information about prerequisite environments or dependencies of underlying components on the target system.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 OperatingSystem d|
-[IRI] https://admin-shell.io/idta/SimulationModels/OperatingSystem/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/OperatingSystem/1/0
 
 Name of the operating system including version and architecture (e.g. Windows 10 64bit).
 
-|[string] |1
-|[Property] +
+|+[string]+ |1
+|+[Property]+ +
 ToolEnvironment d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ToolEnvironment/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ToolEnvironment/1/0
 
 List with required simulation tools, interpreters, model libraries or runtime libraries. In each case the exact designation of the software producer is given as free text.
 
-|[string] |0..\*
-|[MLP] +
+|+[string]+ |0..\*
+|+[MLP]+ +
 DependencyEnvironment d|
-[IRI] https://admin-shell.io/idta/SimulationModels/DependencyEnvironment/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/DependencyEnvironment/1/0
 
 Description of dependencies to associated hardware and software.
 
-|[langString] |0..1
-|[Property] +
+|+[langString]+ |0..1
+|+[Property]+ +
 VisualizationInformation d|
-[IRI] https://admin-shell.io/idta/SimulationModels/VisualizationInformation/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/VisualizationInformation/1/0
 
 Ability to use a visualization. This can be integrated in a model or the model offers capabilities for connection. The connection can be described in more detail under Ports.
 
-|[string] |0..1
-|[SMC] +
+|+[string]+ |0..1
+|+[SMC]+ +
 SimulationTool d|
-[IRI] https://admin-shell.io/idta/SimulationModels/SimulationTool/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/SimulationTool/1/0
 
 Properties of the model with regard to concrete simulation tools.
 
@@ -596,40 +596,40 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/simulationTool/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/simulationTool/1/0
 h| Parent
 3+d|Environment
 h| Explanation
 3+d|Properties of the model with regard to concrete simulation tools.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 SimToolName d|
-[IRI] https://admin-shell.io/idta/SimulationModels/SimToolName/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/SimToolName/1/0
 
 Name of the simulation tool including version.
 
-|[string] |1
-|[Property] +
+|+[string]+ |1
+|+[Property]+ +
 DependencySimTool d|
-[IRI] https://admin-shell.io/idta/SimulationModels/DependencySimTool/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/DependencySimTool/1/0
 
 Dependencies of Simulation Tools.
 
-|[string] |0..\*
-|[Property] +
+|+[string]+ |0..\*
+|+[Property]+ +
 Compiler d|
-[IRI] https://admin-shell.io/idta/SimulationModels/compiler/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/compiler/1/0
 
 Name of necessary compiler including version.
 
-|[string] |0..\*
-|[SMC] +
+|+[string]+ |0..\*
+|+[SMC]+ +
 SolverAndTolerances d|
-[IRI] https://admin-shell.io/idta/SimulationModels/SolverAndTolerances/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/SolverAndTolerances/1/0
 
 Useful settings of the simulation environment. Includes e.g. solver settings.
 
@@ -647,47 +647,47 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/SolverAndTolerances/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/SolverAndTolerances/1/0
 h| Parent
 3+d|SimulationTool
 h| Explanation
 3+d|Useful settings of the simulation environment. Includes e.g. solver settings.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 StepSizeControlNeeded d|
-[IRI] https://admin-shell.io/idta/SimulationModels/StepSizeControlNeeded/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/StepSizeControlNeeded/1/0
 
 Solver with step size control recommended.
 
-|[boolean] |1
-|[Property] +
+|+[boolean]+ |1
+|+[Property]+ +
 FixedStepSize d|
-[IRI] https://admin-shell.io/idta/SimulationModels/FixedStepSize/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/FixedStepSize/1/0
 
 Fixed integration step size, if there is no adaptive step size.
 
-|[float] |0..1
-|[Property] +
+|+[float]+ |0..1
+|+[Property]+ +
 StiffSolverNeeded d|
-[IRI] https://admin-shell.io/idta/SimulationModels/StiffSolverNeeded/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/StiffSolverNeeded/1/0
 
 Stiff solver needed.
 
-|[boolean] |1
-|[Property] +
+|+[boolean]+ |1
+|+[Property]+ +
 SolverIncluded d|
-[IRI] https://admin-shell.io/idta/SimulationModels/SolverIncluded/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/SolverIncluded/1/0
 
 Solver is integrated in the model (e.g. FMU for co-simulation).
 
-|[boolean] |1
-|[SMC] +
+|+[boolean]+ |1
+|+[SMC]+ +
 TestedToolSolverAlgorithm d|
-[IRI] https://admin-shell.io/idta/SimulationModels/TestedToolSolverAlgorithm/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/TestedToolSolverAlgorithm/1/0
 
 List of validated tool-solver combinations.
 
@@ -705,37 +705,37 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/TestedToolSolverAlgorithm/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/TestedToolSolverAlgorithm/1/0
 h| Parent
 3+d|SolverAndTolerances
 h| Explanation
 3+d|List of validated tool-solver combinations.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 SolverAlgorithm d|
-[IRI] https://admin-shell.io/idta/SimulationModels/SolverAlgorithm/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/SolverAlgorithm/1/0
 
 validated solver.
 
-|[string] |1
-|[Property] +
+|+[string]+ |1
+|+[Property]+ +
 ToolSolverFurtherDescription d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ToolSolverFurtherDescription/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ToolSolverFurtherDescription/1/0
 
 Further tool- and solver-specific information.
 
-|[string] |0..1
-|[Property] +
+|+[string]+ |0..1
+|+[Property]+ +
 Tolerance d|
-[IRI] https://admin-shell.io/idta/SimulationModels/tolerance/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/tolerance/1/0
 
 (relative) tolerance for the adaptive step size.
 
-|[float] |0..1
+|+[float]+ |0..1
 |===
 
 === SubmodelElements of ModelFile
@@ -749,26 +749,26 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/ModelFile/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/ModelFile/1/0
 h| Parent
 3+d|SimulationModel
 h| Explanation
 3+d|Providing versions of the simulation model and with characteristics to distinguish them.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 ModelFileType d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ModelFileType/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ModelFileType/1/0
 
 Designation of the exchange format of the model. E.G.: FMI 1.0, Co-Simulation, Platform / Source - Code. FMI 2.0.2, Model Exchange, Source - Code, S-function, Version 2, 64bit, mex - Format / or C-Code, Modelica 3, encoded, VHDL
 
-|[string] |0..1
-|[SMC] +
+|+[string]+ |0..1
+|+[SMC]+ +
 ModelFileVersion d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ModelFileVersion/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ModelFileVersion/1/0
 
 Provision of a version of the simulation model with information to distinguish the versions. The versions are primarily intended for bug fixes without content changes.
 
@@ -786,51 +786,51 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/ModelFileVersion/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/ModelFileVersion/1/0
 h| Parent
 3+d|ModelFile
 h| Explanation
 3+d|Provision of a version of the simulation model with information to distinguish the versions. The versions are primarily intended for bug fixes without content changes.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 ModelVersionId d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ModelVersionId/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ModelVersionId/1/0
 
 Version number of the model from the vendor.
 
-|[string] |1
-|[File] +
+|+[string]+ |1
+|+[File]+ +
 ModelPreviewImage d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ModelPreviewImage/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ModelPreviewImage/1/0
 
 Image file to represent the model in user interfaces, e.g. in a search.
 
-|[File] |0..1
-|[File] +
+|+[File]+ |0..1
+|+[File]+ +
 DigitalFile d|
-[IRI] https://admin-shell.io/idta/SimulationModels/DigitalFile/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/DigitalFile/1/0
 
 Deployment of the model file.
 
-|[File] |1
-|[MLP] +
+|+[File]+ |1
+|+[MLP]+ +
 ModelFileReleaseNotesTxt d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ModelFileReleaseNotesTxt/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ModelFileReleaseNotesTxt/1/0
 
 contains information about this release
 
-|[langString] |0..1
-|[File] +
+|+[langString]+ |0..1
+|+[File]+ +
 ModelFileReleaseNotesFile d|
-[IRI] https://admin-shell.io/idta/SimulationModels/ModelFileReleaseNotesFile/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/ModelFileReleaseNotesFile/1/0
 
 release notes link or file
 
-|[File] |0..1
+|+[File]+ |0..1
 |===
 
 === SubmodelElements of SimModManufacturerInformation
@@ -844,40 +844,40 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/SimModManufacturerInformation/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/SimModManufacturerInformation/1/0
 h| Parent
 3+d|SimulationModel
 h| Explanation
 3+d|Provide access to simulation support service provided by the distributor via mail or phone.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 Company d|
-[IRDI] 0173-1#02-AAW001#001
++[IRDI]+ 0173-1#02-AAW001#001
 
 name of the company
 
-|[string] |1
-|[Property] +
+|+[string]+ |1
+|+[Property]+ +
 Language d|
-[IRDI] 0173-1#02-AAO895#003
++[IRDI]+ 0173-1#02-AAO895#003
 
 available language
 
-|[string] |1..\*
-|[SMC] +
+|+[string]+ |1..\*
+|+[SMC]+ +
 Email d|
-[IRDI] 0173-1#02-AAQ836#005
++[IRDI]+ 0173-1#02-AAQ836#005
 
 E-mail address and encryption method
 
 |n/a |0..1
-|[SMC] +
+|+[SMC]+ +
 Phone d|
-[IRI] https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone
++[IRI]+ https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone
 
 Phone number including type
 
@@ -890,53 +890,53 @@ Phone number including type
 .Submodel elements of Email
 [width="100%",cols="1,2,1,1"]
 |===
-h| idShort: 3+d|
+h| idShort: 3+a|
 Email
 
+====
 Note: according to Submodel "Contact Information"
-
-
+====
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRDI] 0173-1#02-AAQ836#005
+3+d|+[IRDI]+ 0173-1#02-AAQ836#005
 h| Parent
 3+d|SimModManufacturerInformation
 h| Explanation
 3+d|E-mail address and encryption method
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 TypeOfEmailAddress d|
-[IRDI] 0173-1#02-AAO199#003
++[IRDI]+ 0173-1#02-AAO199#003
 
 characterization of an e-mail address according to its location or usage
 
-|[string] |0..1
-|[Property] +
+|+[string]+ |0..1
+|+[Property]+ +
 EmailAddress d|
-[IRDI] 0173-1#02-AAO198#002
++[IRDI]+ 0173-1#02-AAO198#002
 
 electronic mail address of a business partner
 
-|[string] |1
-|[Property] +
+|+[string]+ |1
+|+[Property]+ +
 TypeOfPublicKey d|
-[IRDI] 0173-1#02-AAO201#002
++[IRDI]+ 0173-1#02-AAO201#002
 
 characterization of a public key according to its encryption process
 
-|[string] |0..1
-|[Property] +
+|+[string]+ |0..1
+|+[Property]+ +
 PublicKey d|
-[IRDI] 0173-1#02-AAO200#002
++[IRDI]+ 0173-1#02-AAO200#002
 
 public part of an unsymmetrical key pair to sign or encrypt text or messages
 
-|[string] |0..1
+|+[string]+ |0..1
 |===
 
 === SubmodelElements of Phone
@@ -945,47 +945,47 @@ public part of an unsymmetrical key pair to sign or encrypt text or messages
 .Submodel elements of Phone
 [width="100%",cols="1,2,1,1"]
 |===
-h| idShort: 3+d|
+h| idShort: 3+a|
 Phone
 
+====
 Note: according to Submodel "Contact Information"
-
-
+====
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone
+3+d|+[IRI]+ https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone
 h| Parent
 3+d|SimModManufacturerInformation
 h| Explanation
 3+d|Phone number including type
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 TypeOfTelephone d|
-[IRDI] 0173-1#02-AAO137#003
++[IRDI]+ 0173-1#02-AAO137#003
 
 characterization of a telephone according to its location or usage
 
-|[string] |0..1
-|[Property] +
+|+[string]+ |0..1
+|+[Property]+ +
 TelephoneNumber d|
-[IRDI] 0173-1#02-AAO136#002
++[IRDI]+ 0173-1#02-AAO136#002
 
 complete telephone number to be called to reach a business partner
 
-|[string] |1
-|[MLP] +
+|+[string]+ |1
+|+[MLP]+ +
 AvailableTime d|
-[IRI] https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ +
++[IRI]+ https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ +
 ContactInformation/AvailableTime
 
 Specification of the available time window
 
-|[langString] |0..1
+|+[langString]+ |0..1
 |===
 
 === SubmodelElements of Ports
@@ -999,26 +999,26 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/Ports/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/Ports/1/0
 h| Parent
 3+d|SimulationModel
 h| Explanation
 3+d|Interfaces of the model. This includes inputs, outputs as well as acausal connections (e.g. mechanical connections). In addition, it is specified here whether the model provides binary interfaces (e.g. for visualization).
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[SMC] +
+h| example |
+h|+[SMC]+ +
 PortsConnector d|
-[IRI] https://admin-shell.io/idta/SimulationModels/PortsConnector/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/PortsConnector/1/0
 
 List of ports of the model. These include a name, a description, a list of variables, and a list of ports.
 
 |n/a |0..\*
-|[SMC] +
+|+[SMC]+ +
 BinaryConnector d|
-[IRI] https://admin-shell.io/idta/SimulationModels/BinaryConnector/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/BinaryConnector/1/0
 
 Binary interfaces (binaryType) based on the FMI 3.0 standard (https://fmi-standard.org/docs/3.0-dev/#definition-of-types). At this point the name (e.g. "Binary interface visualization") and the description (e.g. "Interface for binary transfer of visualization information") are specified.
 
@@ -1036,33 +1036,33 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/PortsConnector/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/PortsConnector/1/0
 h| Parent
 3+d|Ports
 h| Explanation
 3+d|List of ports of the model. These include a name, a description, a list of variables, and a list of ports.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 PortConnectorName d|
-[IRI] https://admin-shell.io/idta/SimulationModels/PortConnectorName/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/PortConnectorName/1/0
 
 Name of the Connector Port.
 
-|[string] |1
-|[MLP] +
+|+[string]+ |1
+|+[MLP]+ +
 PortConDescription d|
-[IRI] https://admin-shell.io/idta/SimulationModels/PortConDescription/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/PortConDescription/1/0
 
 Description of the Connector Port.
 
-|[langString] |0..1
-|[SMC] +
+|+[langString]+ |0..1
+|+[SMC]+ +
 Variable d|
-[IRI] https://admin-shell.io/idta/SimulationModels/Variable/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/Variable/1/0
 
 List of variables of the port.
 
@@ -1080,73 +1080,73 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/Variable/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/Variable/1/0
 h| Parent
 3+d|PortsConnector
 h| Explanation
 3+d|-
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 VariableName d|
-[IRI] https://admin-shell.io/idta/SimulationModels/VariableName/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/VariableName/1/0
 
 Name of the variable.
 
-|[string] |1
-|[Property] +
+|+[string]+ |1
+|+[Property]+ +
 Range d|
-[IRI] https://admin-shell.io/idta/SimulationModels/Range/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/Range/1/0
 
 Range of values for the variable (e.g. [min, max], [min, max[, ]min, max], ]min, max[, \{val1, val2, ...}). -
 
-|[string] |0..1
-|[Property] +
+|+[string]+ |0..1
+|+[Property]+ +
 VariableType d|
-[IRI] https://admin-shell.io/idta/SimulationModels/VariableType/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/VariableType/1/0
 
 Type of the variable (e.g. Real, Integer, Boolean, String or Enum).
 
-|[string] |1
-|[MLP] +
+|+[string]+ |1
+|+[MLP]+ +
 VariableDescription d|
-[IRI] https://admin-shell.io/idta/SimulationModels/VariableDescription/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/VariableDescription/1/0
 
 Description of the variable.
 
-|[langString] |0..1
-|[Property] +
+|+[langString]+ |0..1
+|+[Property]+ +
 UnitList d|
-[IRI] https://admin-shell.io/idta/SimulationModels/UnitList/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/UnitList/1/0
 
 The most common units can be selected here.
 If "others" is selected, a free text can be entered.
 
-|[string] |1
-|[MLP] +
+|+[string]+ |1
+|+[MLP]+ +
 UnitDescription d|
-[IRI] https://admin-shell.io/idta/SimulationModels/UnitDescription/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/UnitDescription/1/0
 
 Text field for missing units of the list
 
-|[langString] |0..1
-|[Property] +
+|+[langString]+ |0..1
+|+[Property]+ +
 VariableCausality d|
-[IRI] https://admin-shell.io/idta/SimulationModels/VariableCausality/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/VariableCausality/1/0
 
 The causality of the variable: input to inputs, output to outputs, acausal connections (e.g. mechanical connection) do not have causality.
 
-|[string] |1
-|[Property] +
+|+[string]+ |1
+|+[Property]+ +
 VariablePrefix d|
-[IRI] https://admin-shell.io/idta/SimulationModels/VariablePrefix/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/VariablePrefix/1/0
 
 Prefix for acausal variable. Potential variables are set equal when connecting (no prefix). "flow" variables are connected according to Kirchhoff's law, i.e. the sum of the variables equals zero. The bi-directional flow of matter is described by the prefix "stream" (e.g. for enthalpy).
 
-|[string] |0..1
+|+[string]+ |0..1
 |===
 
 === SubmodelElements of BinaryConnector
@@ -1160,30 +1160,30 @@ h| idShort
 h| Class
 3+d|SubmodelElementCollection
 h| SemanticId
-3+d|[IRI] https://admin-shell.io/idta/SimulationModels/BinaryConnector/1/0
+3+d|+[IRI]+ https://admin-shell.io/idta/SimulationModels/BinaryConnector/1/0
 h| Parent
 3+d|Ports
 h| Explanation
 3+d|Binary interfaces (binaryType) based on the FMI 3.0 standard (https://fmi-standard.org/docs/3.0-dev/#definition-of-types). At this point the name (e.g. "Binary interface visualization") and the description (e.g. "Interface for binary transfer of visualization information") are specified.
-h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| +[SME type]+ h| semanticId = +[idType]+ value h| +[valueType]+ h| card.
 
 h| idShort
 h| Description@en
-h| example
-h|[Property] +
+h| example |
+h|+[Property]+ +
 BinaryConName d|
-[IRI] https://admin-shell.io/idta/SimulationModels/BinaryConnectorName/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/BinaryConnectorName/1/0
 
 Binary interface name.
 
-|[string] |1
-|[Property] +
+|+[string]+ |1
+|+[Property]+ +
 BinaryConDescription d|
-[IRI] https://admin-shell.io/idta/SimulationModels/BinaryConDescription/1/0
++[IRI]+ https://admin-shell.io/idta/SimulationModels/BinaryConDescription/1/0
 
 Binary interface description.
 
-|[string] |0..1
+|+[string]+ |0..1
 |===
 
 === Predefined values for properties
@@ -1657,11 +1657,11 @@ For this purpose, the definitive definitions are given by a separate file in for
 
 For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
 
-* The tables follow in principle the same conventions as in xref:#bib5[[5\]].
+* The tables follow in principle the same conventions as in xref:#bib5[+[5]+].
 * The table heads abbreviate 'cardinality' with 'card'.
 * The tables often place two informations in different rows of the same table cell.
 In this case, the first information is marked out by sharp brackets [] form the second information.
-A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+A special case are the semanticIds, which are marked out by the format: (type)(local)+[idType]+ value.
 * The types of SubmodelElements are abbreviated:
 
 [width="100%",cols="1,1"]
@@ -1680,60 +1680,60 @@ h|SME type h|SubmodelElement type
 * If an idShort ends with '\{00}', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique.
 A different idShort might be chosen, as long as it is unique in the parent's context.
 * The Keys of semanticId in the main section feature only idType and value, such as: +
-[IRI] https://admin-shell.io/vdi/2770/1/0/DocumentId/Id.
-The attributes "type" and "local" (typically "ConceptDescription" and "(local)" or "GlobalReference" and (no-local)") need to be set accordingly; see xref:#bib6[[6\]].
++[IRI]+ https://admin-shell.io/vdi/2770/1/0/DocumentId/Id.
+The attributes "type" and "local" (typically "ConceptDescription" and "(local)" or "GlobalReference" and (no-local)") need to be set accordingly; see xref:#bib6[+[6]+].
 * If a table does not contain a column with "parent" heading, all represented attributes share the same parent.
 This parent is denoted in the head of the table.
 * Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
-* The [valueType] is only given for Properties.
+* The +[valueType]+ is only given for Properties.
 
 == Bibliography
 
 [#bib1]
-[1] "Recommendations for implementing the strategic initiative INDUSTRIE 4.0", acatech, April 2013.[Online].
++[1]+ "Recommendations for implementing the strategic initiative INDUSTRIE 4.0", acatech, April 2013. +[Online]+ .
 Available: https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
 
 [#bib2]
-[2] "Implementation Strategy Industrie 4.0: Report on the results of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April 2015. [Online].
++[2]+ "Implementation Strategy Industrie 4.0: Report on the results of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April 2015.  +[Online]+ .
 Available: https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
 
 [#bib3]
-[3] "The Structure of the Administration Shell: TRILATERAL PERSPECTIVES from France, Italy and Germany", March 2018, [Online].
++[3]+ "The Structure of the Administration Shell: TRILATERAL PERSPECTIVES from France, Italy and Germany", March 2018,  +[Online]+ .
 Available: https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
 
 [#bib4]
-[4] "Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente – Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016. [Online].
++[4]+ "Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente – Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016.  +[Online]+ .
 Available: https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
 
 [#bib5]
-[5] "Verwaltungsschale in der Praxis.
++[5]+ "Verwaltungsschale in der Praxis.
 Wie definiere ich Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen (in German)", Version 1.0, April 2019, Plattform Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for Economic Affairs and Energy (BMWi), Available: https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
 
 [#bib6]
-[6] "Details of the Asset Administration Shell; Part 1 - The exchange of information between partners in the value chain of Industrie 4.0 (Version 3.0RC01)", November 2020, [Online].
++[6]+ "Details of the Asset Administration Shell; Part 1 - The exchange of information between partners in the value chain of Industrie 4.0 (Version 3.0RC01)", November 2020,  +[Online]+ .
 Available: https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part1_V3.html
 
 [#bib7]
-[7] "Eine systematische Bewertung der Qualität von Simulationsmodellen für die Automatisierungstechnik – Identifikation und Clustering von Qualitätskriterien".
++[7]+ "Eine systematische Bewertung der Qualität von Simulationsmodellen für die Automatisierungstechnik – Identifikation und Clustering von Qualitätskriterien".
 Barth, M.; Kübler, K.; Heinzerling, T.; Rosen, R.; Jäkel, J. : In: Automation 2020: VDI Verlag, S. 499–516.
 
 [#bib8]
-[8] "https://modelica.org/projects[Modelica Association Project]" ; Available: https://modelica.org/projects
++[8]+ Modelica Association Project; Available: https://modelica.org/projects
 
 [#bib9]
-[9] "Specification of the Functional Mock-Up Interface (FMI)", [Online] Available: https://github.com/modelica/fmi-standard[modelica/fmi-standard: Speci]fication of the Functional Mock-Up Interface (FMI) (GitHub.com)
++[9]+ "Specification of the Functional Mock-Up Interface (FMI)",  +[Online]+  Available: https://github.com/modelica/fmi-standard[modelica/fmi-standard: Specification of the Functional Mock-Up Interface (FMI)] (GitHub.com)
 
 [#bib10]
-[10] "MIC: Model Identity Card" ; [Online] Available: https://mic.irt-systemx.fr/mic
++[10]+ "MIC: Model Identity Card" ;  +[Online]+  Available: https://mic.irt-systemx.fr/mic
 
 [#bib11]
-[11] "AutomationML" ; [Online] Available: https://www.automationml.org/
++[11]+ "AutomationML" ;  +[Online]+  Available: https://www.automationml.org
 
 [#bib12]
-[12] "AutomationML Application Recommendation Asset Administration Shell Representation" ; November 2019, [Online] Available: https://www.automationml.org/wp-content/uploads/2021/06/Asset-Administration-Shell-Representation-V1_0_0.zip[https://www.automationml.org/wp-content/uploads/2021/06/Asset-Administration-Shell-Representation-V1_0_0.zip]
++[12]+ "AutomationML Application Recommendation Asset Administration Shell Representation", November 2019,  +[Online]+  Available: https://www.automationml.org/wp-content/uploads/2021/06/Asset-Administration-Shell-Representation-V1_0_0.zip[https://www.automationml.org/wp-content/uploads/2021/06/Asset-Administration-Shell-Representation-V1_0_0.zip]
 
 [#bib13]
-[13] "Interoperabilität hoch zwei für Simulationsmodelle"; November 2020, [Online] Available: https://www.plattform-i40.de/IP/Redaktion/DE/Downloads/Publikation/Interoperabilit%C3%A4t-hoch-zwei.html[https://www.plattform-i40.de/IP/Redaktion/DE/Downloads/Publikation/Interoperabilit%C3%A4t-hoch-zwei.html]
++[13]+ "Interoperabilität hoch zwei für Simulationsmodelle"; November 2020,  +[Online]+  Available: https://www.plattform-i40.de/IP/Redaktion/DE/Downloads/Publikation/Interoperabilit%C3%A4t-hoch-zwei.html[https://www.plattform-i40.de/IP/Redaktion/DE/Downloads/Publikation/Interoperabilit%C3%A4t-hoch-zwei.html]
 
 [#bib14]
-[14] "Fortschreibung der Anwendungsszenarien der Plattform Industrie 4.0", Plattform Industrie 4.0, July 2016. [Online]. Available:https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/aspects-of-the-research-roadmap.html[Plattform Industrie 4.0 - Aspects of the Research Roadmap in Application Scenarios (plattform-i40.de)]
++[14]+ "Fortschreibung der Anwendungsszenarien der Plattform Industrie 4.0", Plattform Industrie 4.0, July 2016.  +[Online]+ . Available:https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/aspects-of-the-research-roadmap.html[Plattform Industrie 4.0 - Aspects of the Research Roadmap in Application Scenarios (plattform-i40.de)]
