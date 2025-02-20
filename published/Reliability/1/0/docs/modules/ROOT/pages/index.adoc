@@ -1,0 +1,434 @@
+= IDTA 02013-1-0: Reliability
+
+== Imprint
+
+=== Publisher
+
+[listing]
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+
+=== Version history
+
+[width="100%",cols="14%,14%,72%",options="header",]
+
+|===
+|*Date* |*Version* |*Comment*
+|18.11.2022 |1.0 |Release of the official Submodel template published by IDTA.
+|===
+
+== General
+
+=== About this document
+
+This document is a part of a specification series.
+Each part specifies the contents of a Submodel template for the Asset Administration Shell (AAS).
+The AAS is described in xref:#bib1[[1\]] xref:#bib2[[2\]], xref:#bib3[[3\]] and xref:#bib6[[6\]].
+First exemplary Submodel contents were described in xref:#bib4[[4\]], while the actual format of this document was derived by the "Administration Shell in Practice" xref:#bib5[[5\]].
+The format aims to be very concise, giving only minimal necessary information for applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents xref:#bib1[[1\]] to xref:#bib6[[6\]].
+
+The target group of the specification are developers and editors of technical documentation and manufacturer information, which are describing assets in smart manufacturing by means of the Asset Administration Shell (AAS) and therefore need to create a Submodel instance with a hierarchy of SubmodelElements.
+This document especially details on the question, which Submodel Elements with which semantic identification shall be used for this purpose.
+
+=== Scope of the Submodels
+
+Engineering tools used for the design of safety control system of machinery and similar control systems need functional safety and reliability data.
+
+The purpose of this Submodel is to define the structure and relevant reliability properties for devices suitable for customer demands.
+
+The intended benefits of this Submodel are to:
+
+* reduce the costs, time and efforts of mapping data for each customer request;
+
+* optimize the workflow of information exchange with engineering tools;
+
+* facilitate the selection of a product, especially regarding reliability;
+
+* give access to product data everywhere regardless of country, language and culture;
+
+=== Relevant standards for the Submodel template
+
+IEC 60947-1:2020, Low-voltage switchgear and controlgear - Part 1: General rules
+
+IEC 61360-1:2017, Standard data element types with associated classification scheme – Part 1: Definitions – Principles and methods
+
+IEC 62683-1 DB, Low-voltage switchgear and controlgear - Product data and properties for information exchange - Part 1: Catalogue data
+
+IEC 61987 DB, Industrial-process measurement and control - Data structures and elements in process equipment catalogues
+
+IEC 62061:2021, Safety of machinery - Functional safety of safety-related control systems
+
+ISO 13849-1:2015, Safety of machinery – Safety-related parts of control systems – Part 1: General principles for design
+
+VDMA 66413:2012, Functional Safety - Universal data format for safety-related values of components or parts of control system
+
+=== Use cases, requirements, and design decisions
+
+Application of the relevant standards (1.3) requires the exchange of relevant data between all concerned: machine manufacturers, device manufacturers and calculation tools.
+
+*Device manufacturers* create characteristic value libraries for their devices in "universal data format".
+The device manufacturer is the person who manufactures devices and/or components and makes them available to the machine manufacturer or user in the spirit of the free movement of goods.
+As a result, the creator of a characteristic value library can and indeed may only be the device manufacturer.
+
+*Calculation tool (suppliers)* provide a mechanism for importing characteristic value libraries in database format.
+The characteristic values are prepared for display and selection within the tool.
+
+*Machine manufacturers* use the characteristic values library (file) provided by the device manufacturer to read and update the characteristic values (device data) within the calculation tool.
+
+== Submodel Reliability
+
+=== Approach
+
+xref:#uml-diagram-for-submodel-reliability[xrefstyle=short] shows the UML-diagram defining the relevant properties which need to be set.
+
+[#uml-diagram-for-submodel-reliability]
+.uml-diagram-for-submodel-reliability
+image::image1.png[align=center]
+
+=== Attributes of the Submodel Reliability
+
+.Attributes of the Submodel Reliability
+[width="100%",cols="1,2,1,1"]
+|===
+
+h| idShort 3+d| Reliability
+h| Class: 3+d| Submodel (SM)
+h| semanticId: 3+d| [IRDI] 0112/2///62683#ACC008#001
+h| Parent: 3+d| Asset Administration Shell, to which the documents shall be associated to
+h| Explanation: 3+d| The Submodel defines a reliability data model for devices to be used by engineering tools for the design of safety related control systems according to IEC 62061, IEC 61508-2 or ISO 13849-1 or for dependability analysis of electrotechnical systems. This Submodel is used to facilitate the exchange between computers of data characterizing safety relevant devices in particular. The data models described in this document is based on the definition in the IEC/CDD 62683-1 DB.
+h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| idShort h| Description@en h| example h|
+d|
+{empty}[Property]
+
+NumberOfReliabilitySets
+
+d|
+[IRDI] 0112/2///62683#ACE006#001
+
+cardinality property for the number of sets of characteristics of a product for use in reliability assessment
+
+d|
+{empty}[integer]
+
+1
+
+|1
+d|
+{empty}[SMC]
+
+OperatingConditionsOfReliabilityCharacteristics
+
+d|
+[IRDI] 0112/2///62683#ACG071#001
+
+operating condition limits for which the reliability characteristics are valid
+
+|n/a |0..*
+d|
+{empty}[SMC]
+
+ReliabilityCharacteristics
+
+d|
+[IRDI] 0112/2///62683#ACG080#001
+
+characteristics of a subsystem or a subsystem element intended for evaluating its ability to perform as required, without failure, for a given time interval, under given conditions
+
+|n/a |0..*
+|===
+
+=== SubmodelElements of OperatingConditionsOfReliabilityCharacteristics
+
+.SubmodelElements of Operating ConditionsOfReliabilityCharacteristics
+[width="100%",cols="1,2,1,1"]
+|===
+
+h| idShort 3+d| OperatingConditionsOfReliabilityCharacteristics
+h| Class: 3+d| SubmodelElementCollection (SMC)
+h| semanticId: 3+d| [IRDI] 0112/2///62683#ACG071#001
+h| Parent: 3+d| Submodel Reliability
+h| Explanation: 3+d| This SubmodelElementCollection contains information on operating condition limits for which the reliability characteristics are valid.
+
+h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| idShort h| Description@en h| example h|
+d|
+{empty}[Property]
+
+TypeOfVoltage
+
+d|
+[IRDI] 0112/2///61987#ABA969#007
+
+classification of a power supply according to the time behaviour of the voltage
+
+enumeration: +
+AC (AC, 0112/2///61987#ABL837#001), +
+DC (DC, 0112/2///61987#ABL838#001), +
+others (others, 0112/2///61987#ABI407#004)
+
+d|
+{empty}[string]
+
+DC
+
+|0..1
+d|
+{empty}[Property]
+
+RatedVoltage
+
+d|
+[IRDI] 0112/2///61987#ABA588#004
+
+operating voltage of the device as defined by the manufacturer and to which certain device properties are referenced
+
+d|
+{empty}[real]
+
+24 [V]
+
+|0..1
+d|
+{empty}[Property]
+
+MinimumRatedVoltage
+
+d|
+[IRDI] 0112/2///61987#ABD461#004
+
+lowest operating voltage of the device as defined by the manufacturer
+
+d|
+{empty}[real]
+
+15 [V]
+
+|0..1
+d|
+{empty}[Property]
+
+MaximumRatedVoltage
+
+d|
+[IRDI] 0112/2///61987#ABD462#004
+
+highest operating voltage of the device as defined by the manufacturer
+
+d|
+{empty}[real]
+
+30 [V]
+
+|0..1
+d|
+{empty}[Property]
+
+RatedOperationalCurrent
+
+d|
+[IRI] https://admin-shell.io/idta/Reliabliity/RatedOperationalCurrent/1/0
+
+current combined with a rated operational voltage intended to be switched by the device under specified conditions
+
+d|
+{empty}[real]
+
+300 [mA]
+
+|0..1
+d|
+{empty}[Property]
+
+OtherOperatingConditions
+
+d|
+[IRDI] 0112/2///62683#ACE070#001
+
+other limits of operation related to functional safety characteristics
+
+d|
+{empty}[string]
+
+Duty in number of operations per hour, 50% of normal current
+
+|0..1
+d|
+{empty}[Property]
+
+UsefulLifeInNumberOfOperations
+
+d|
+[IRDI] 0112/2///62683#ACE055#001
+
+under given conditions, the number of operations for which the failure rate becomes unacceptable
+
+d|
+{empty}[integer]
+
+50,000
+
+|0..1
+d|
+{empty}[Property]
+
+UsefulLifeInTimeInterval
+
+d|
+[IRDI] 0112/2///62683#ACE054#001
+
+under given conditions, the time interval beginning at a given instant of time, and ending when the failure rate becomes unacceptable
+
+d|
+{empty}[real]
+
+10 [y]
+
+|0..1
+|===
+
+=== SubmodelElements of ReliabilityCharacteristics
+
+.SubmodelElements of ReliabilityCharacteristics
+[width="100%",cols="1,2,1,1"]
+|===
+
+h| idShort 3+d| ReliabilityCharacteristics
+h| Class: 3+d| SubmodelElementCollection (SMC)
+h| semanticId: 3+d| [IRDI] 0112/2///62683#ACG080#001
+h| Parent: 3+d| Submodel Reliability
+h| Explanation: 3+d| This SubmodelElementCollection contains information on characteristics of a subsystem or a subsystem element intended for evaluating its ability to perform as required, without failure, for a given time interval, under given conditions
+
+h| [SME type] h| semanticId = [idType]value h| [valueType] h| card.
+h| idShort h| Description@en h| example h|
+d|
+{empty}[Property]
+
+MTTF
+
+d|
+[IRDI] 0112/2///62683#ACE061#001
+
+mean operating time to failure: expectation of the operating time to failure
+
+Note: In the case of non-repairable items with an exponential distribution of operating times to failure (i.e. a constant failure rate) the MTTF is numerically equal to the reciprocal of the failure rate. This is also true for repairable items if after restoration they can be considered to be "as-good-as-new"
+
+d|
+{empty}[integer]
+
+{empty}[y]
+
+|0..1
+d|
+{empty}[Property]
+
+MTBF
+
+d|
+[IRDI] 0112/2///62683#ACE062#001
+
+mean operating time between failure: expectation of the duration of the operating time between failures
+
+Note: Mean operating time between failures should only be applied to repairable items. For non-repairable items, see mean operating time to failure.
+
+d|
+{empty}[integer]
+
+{empty}[y]
+
+|0..1
+d|
+{empty}[Property]
+
+B10
+
+d|
+[IRI] https://admin-shell.io/idta/Reliabliit/B10/1/0
+
+mean number of cycles until 10% of the components fail
+
+d|
+{empty}[integer]
+
+500000
+
+|0..1
+|===
+
+== Explanations on used table formats
+
+=== General
+
+The used tables in this document try to outline information as concise as possible.
+They do not convey all information on Submodels and SubmodelElements.
+For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The tables follow in principle the same conventions as in xref:#bib5[[5\]].
+
+* The table heads abbreviate 'cardinality' with 'card'.
+
+* The tables often place two information in different rows of the same table cell.
+In this case, the first information is marked out by sharp brackets [] form the second information.
+A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+
+* The types of SubmodelElements are abbreviated:
+
+[width="100%",cols="41%,59%",options="header",]
+|===
+h| SME type
+h| SubmodelElement type
+|Property |Property
+|MLP |MultiLanguageProperty
+|Range |Range
+|File |File
+|Blob |Blob
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|SMC |SubmodelElementCollection
+|===
+
+* If an idShort ends with '\{00}', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique.
+A different idShort might be chosen, as long as it is unique in the parent's context.
+
+* The Keys of semanticId in the main section feature only idType and value, such as: [IRI]https://admin-shell.io/vdi/2770/1/0/DocumentId/Id.
+The attributes "type" and "local" (typically "ConceptDescription" and "(local)" or "GlobalReference" and (non-local)") need to be set accordingly; see xref:#bib6[[6\]].
+
+* If a table does not contain a column with "parent" heading, all represented attributes share the same parent.
+This parent is denoted in the head of the table.
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+
+* The [valueType] is only given for Properties.
+
+== Bibliography
+
+[#bib1]
+[1] "Recommendations for implementing the strategic initiative INDUSTRIE 4.0", acatech, April 2013. [Online].
+Available https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+
+[#bib2]
+[2] "Implementation Strategy Industrie 4.0: Report on the results of the Industrie 4.0 Platform"; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April 2015. [Online].
+Available: https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
+
+[#bib3]
+[3] "The Structure of the Administration Shell: TRILATERAL PERSPECTIVES from France, Italy and Germany", March 2018, [Online].
+Available: https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
+
+[#bib4]
+[4] "Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente – Basisteil (German)"; ZVEI e.V., Whitepaper, November 2016. [Online].
+Available: https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
+
+[#bib5]
+[5] "Verwaltungsschale in der Praxis.
+Wie definiere ich Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen (in German)", Version 1.0, April 2019, Plattform Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for Economic Affairs and Energy (BMWi), Available: https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
+
+[#bib6]
+[6] "Details of the Asset Administration Shell; Part 1 - The exchange of information between partners in the value chain of Industrie 4.0 (Version 3.0RC01)", November 2020, [Online].
+Available: https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html
+
