@@ -493,18 +493,13 @@ by the semanticId.
 
 
 ====
-Note: In a future version of the AAS metamodel, a distinctive
+Note: In a future version of the AAS metamodel, a distinctive "DisplayName" will be available and will substitute the use of description.
 ====
 
-
-"DisplayName" will be available and will substitute the use of description.
-
-
 ====
-Note: If a user or application requests a preferred language, then this
+Note: If a user or application requests a preferred language, then this language shall be used; default is English (en).
 ====
 
-language shall be used; default is English (en).
 
 |2 |ConceptDescription/ +
 preferredName a|
@@ -512,17 +507,13 @@ If available, an adequate language will be chosen from preferrred name.
 
 
 ====
-Note: The user interface is recommended to be capable of handling
+Note: The user interface is recommended to be capable of handling presentation of at least 50 characters.
 ====
-
-presentation of at least 50 characters.
 
 
 ====
-Note: If a user or application requests a preferred language, then this
+Note: If a user or application requests a preferred language, then this language shall be used; default is English (en).
 ====
-
-language shall be used; default is English (en).
 
 |3 |ConceptDescription/ +
 shortName a|
@@ -530,10 +521,9 @@ As above, but shorter definition.
 
 
 ====
-Note: If a user or application requests a preferred language, then this
+Note: If a user or application requests a preferred language, then this language shall be used; default is English (en).
 ====
 
-language shall be used; default is English (en).
 
 |4 (lowest) |SubmodelElement/ +
 idShort a|
@@ -541,24 +531,22 @@ If only available, the idShort shall be presented.
 
 
 ====
-Note: This is usually not language adequate and the least user
+Note: This is usually not language adequate and the least user orientation presentation.
 ====
 
-orientation presentation.
 
 |===
 
 ====
-Note: Consequently, for editors of instances of this Submodel Template,
-====
-
-the following procedure is recommended to be applied:
+Note: Consequently, for editors of instances of this Submodel Template, the following procedure is recommended to be applied:
 
 * Whenever possible, include a ConceptDescription within the AAS with speaking elaboration of preferredName, shortName and definition.
 
 * If no ConceptDescription could be provided (no semanticId, that is, no formal conceptualization of the property could be given to the user), a speaking explanation shall be provided by SubmodelElement/description.
 
 * In any case, a short but speaking, unique idShort for the SubmodelElement shall be chosen, respecting the allowed characters (regex definition: [a-zA-Z0-9_-]+)
+====
+
 
 == Explanations on used table formats
 
