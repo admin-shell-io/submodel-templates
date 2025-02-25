@@ -1,0 +1,3263 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "AIModelNameplateAAS",
+      "id": "https://admin-shell.io/idta/aas/AIModelNameplate/1/0",
+      "assetInformation": {
+        "assetKind": "Instance",
+        "globalAssetId": "https://admin-shell.io/idta/asset/AIModelNameplate/1/0"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/AIModelNameplate/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "AIModelNameplate",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/AIModelNameplate/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/AIModelNameplate/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "category": "PARAMETER",
+          "idShort": "URIOfTheProduct",
+          "description": [
+            {
+              "language": "de",
+              "text": "eindeutige globale Identifizierung der Produktinstanz unter Verwendung eines universellen Ressourcenbezeichners (URI)"
+            },
+            {
+              "language": "en",
+              "text": "unique global identification of the product instance using an universal resource identifier (URI)"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABN590#002 "
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "Version",
+          "description": [
+            {
+              "language": "de",
+              "text": "Version des Nameplates"
+            },
+            {
+              "language": "en",
+              "text": "Version of the nameplate"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0173-1#02-AAS354#002"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "ContactInformation",
+          "description": [
+            {
+              "language": "en",
+              "text": "Reference to the Contact Information IDTA Submodel to describe the responsible person for the Submodel"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIModelNameplate/Contactinformation/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "modelType": "ReferenceElement"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "Storage",
+          "description": [
+            {
+              "language": "en",
+              "text": "Path to the model (e.g. local path, serverpath,...)"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIModelNameplate/Storage/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "KindOfLearning",
+          "description": [
+            {
+              "language": "en",
+              "text": "This property describes the learningmethod of the model (supervised, unsupervised, reinforcement, ....)"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIModelNameplate/KindOfLearning/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "language": "en",
+              "text": "Learning method of the model (supervised, unsupervised, reinforcement, ....)"
+            }
+          ],
+          "modelType": "MultiLanguageProperty"
+        },
+        {
+          "idShort": "Inputs",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of necessary information about the model input"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIModelNameplate/Inputs/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "KindOfInput",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Type of data (e.g. Images, Audio)"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/Inputs/KindOfInput/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "DimensionN",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of information about a single input dimension"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/Inputs/DimensionN/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Size",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Size of the output dimension"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/Inputs/DimensionN/Size/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Information",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Information about the usage of this dimension"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/Inputs/DimensionN/Information/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Preprocessing",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Preprocessing pipeline as a file"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/Inputs/Preprocessing/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "contentType": "text/plain",
+              "modelType": "File"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "Outputs",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of necessary information about the model output"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIModelNameplate/Outputs/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "DimensionN",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of information about a single output dimension"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/Outputs/DimensionN/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Size",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Size of the output dimension"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/Outputs/DimensionN/Size/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Result",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Meaning of the output dimension (e.g. class)"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/Outputs/DimensionN/Result/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "This property describes the meaning of this outputdimension (e.g. class)."
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "TrainingResults",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of different training results of the model"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIModelNameplate/TrainingResults/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "ExampleResult",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Result of the trained AI"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/TrainingResults/Result/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "Plots",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of different plots "
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIModelNameplate/Plots/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "TrainingTesting",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of plots about training results and test results"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/Plots/TrainingTesting/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ExamplePlot",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Training or test result plot"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/Plots/TrainingTesting/Plot/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "contentType": "image/jpeg",
+                  "modelType": "File"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "Structure",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection describing the model architecture (e.g. of a neural net)"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/Plots/Structure/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ExampleStructurePlot",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Image of a model architecture"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/Plots/Structure/StructurePlot/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "contentType": "image/jpeg",
+                  "modelType": "File"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "GeneralPlots",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of plots not fitting in existing collections"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/Plots/GeneralPlots/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ExamplePlot",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Image of an model related plot"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/Plots/GeneralPlots/Plot/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "contentType": "image/jpeg",
+                  "modelType": "File"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "Details",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of additional details about the model"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIModelNameplate/Details/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "FileExtension",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "File extension of the model (e.g. .pth)"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/Details/DataEnding/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "AIFramework",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "AI framework and its version (e.g. pytorch 11.3)"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/Details/AIFramework/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ProgramLanguage",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Programming language and version (e.g. python 3.9)"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/Details/ProgramLanguage/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Requirements",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Requirements file containing the required software dependencies (e.g. Python Requirements.txt file)"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/Details/Requirements/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "contentType": "text/plain",
+              "modelType": "File"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "AIDataset",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of additional details about the model"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIModelNameplate/AIDataset/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "AIDatasetReference",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Reference to the used AIDataset-Submodel"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/AIDataset/DatasetReference/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "modelType": "ReferenceElement"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "TimeStamp",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Determining the used data, when dataset differs over time"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/AIDataset/TimeStamp/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "modelType": "Range"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "AITypeSpecificInformation",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection containing different kinds of AI method specific parameters"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "TransferLearning",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection containing information of the origin model, if the model is a result of transfer learning"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/TransferLearning/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Name",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Name of the origin neural network (e.g. resnet18)"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/NeuralNetwork/TransferLearning/Name/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "TimeStamp",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Date of access of the origin neural network"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/NeuralNetwork/TransferLearning/TimeStamp/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "Weights",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "File containing the weights of the origin model (e.g. .txt)"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/NeuralNetwork/TransferLearning/Weights/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "contentType": "text/plain",
+                  "modelType": "File"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "AIModelNameplate",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Reference to the AI Modelnameplate submodel of the origin neural network"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/NeuralNetwork/TransferLearning/ModelnameplateRef/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "ReferenceElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "Hyperparameter",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection containing relevant hyperparamter"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/Hyperparameter/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Example",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Example hyperparameter (e.g. learning rate of the model)"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/Hyperparameter/LearningRate/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "Type",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Type of  the AI(e.g. CNN, RNN, LSTM, ...)"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/Type/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/SMT/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Type of  the AI(e.g. CNN, RNN, LSTM, ...)"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "AIModelNameplate",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/AIModelNameplate/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AIModelNameplate"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "AIModelNameplate"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "URIOfTheProduct",
+      "description": [
+        {
+          "language": "de",
+          "text": "eindeutige globale Identifizierung der Produktinstanz unter Verwendung eines universellen Ressourcenbezeichners (URI)"
+        },
+        {
+          "language": "en",
+          "text": "unique global identification of the product instance using an universal resource identifier (URI)"
+        }
+      ],
+      "id": "0112/2///61987#ABN590#002 ",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "URIOfTheProduct"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "URI of the product"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Version",
+      "description": [
+        {
+          "language": "de",
+          "text": "Version"
+        },
+        {
+          "language": "en",
+          "text": "Version"
+        }
+      ],
+      "id": "0173-1#02-AAS354#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Version"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Version"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ContactInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "Reference to the Contact Information IDTA Submodel to describe the responsible person for the Submodel"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/Contactinformation/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ContactInformation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Reference to the Contact Information IDTA Submodel to describe the responsible person for the Submodel"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Storage",
+      "description": [
+        {
+          "language": "en",
+          "text": "path to the model(e.g. local path, serverpath,...)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Storage/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Storage"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "path to the model(e.g. local path, serverpath,...)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "KindOfLearning",
+      "description": [
+        {
+          "language": "en",
+          "text": "Learning method of the model (supervised, unsupervised, reinforcement, ....)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/KindOfLearning/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "KindOfLearning"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This property describes the learningmethod of the model (supervised, unsupervised, reinforcement, ....)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Inputs",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC collects necessary information about the Modelinput"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Inputs/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Inputs"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC collects necessary information about the Modelinput"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "KindOfInput",
+      "description": [
+        {
+          "language": "en",
+          "text": "Kind of data used for input (e.g. Images, Audio)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Inputs/KindOfInput/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "KindOfInput"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Kind of data used for input (e.g. Images, Audio)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DimensionN",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC contains Information about every inputdimension. It exists one collection for every inputdimension."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Inputs/DimensionN/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DimensionN"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC contains Information about every inputdimension. It exists one collection for every inputdimension."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Size",
+      "description": [
+        {
+          "language": "en",
+          "text": "This property holds the size of this dimension."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Inputs/DimensionN/Size/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Size"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This property holds the size of this dimension."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Information",
+      "description": [
+        {
+          "language": "en",
+          "text": "This property holds information about the usage of this dimension."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Inputs/DimensionN/Information/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Information"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This property holds information about the usage of this dimension."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Preprocessing",
+      "description": [
+        {
+          "language": "en",
+          "text": "This property can be used to submit your prepocessing pipeline as a file (e.g directly as code or just the used transforms and parameters)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Inputs/Preprocessing/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Preprocessing"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This property can be used to submit your prepocessing pipeline as a file (e.g directly as code or just the used transforms and parameters)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Outputs",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC collects necassary information about the Modeloutput."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Outputs/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Outputs"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC collects necassary information about the Modeloutput."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DimensionN",
+      "description": [
+        {
+          "language": "en",
+          "text": "This is a example SMC. It holds information about every outputdimension. replace the \u0022N\u0022 with the dimension this SMC is for."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Outputs/DimensionN/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DimensionN"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This is a example SMC. It holds information about every outputdimension. replace the \u0022N\u0022 with the dimension this SMC is for."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Size",
+      "description": [
+        {
+          "language": "en",
+          "text": "This property holds the size of this dimension."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Outputs/DimensionN/Size/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Size"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This property holds the size of this dimension."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Result",
+      "description": [
+        {
+          "language": "en",
+          "text": "This property describes the meaning of this outputdimension (e.g. class)."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Outputs/DimensionN/Result/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Result"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This property describes the meaning of this outputdimension (e.g. class)."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TrainingResults",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC holds different trainingresults of the model."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/TrainingResults/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TrainingResults"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC holds different trainingresults of the model."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExampleResult",
+      "description": [
+        {
+          "language": "en",
+          "text": "This property is a placeholder example for a result for the trained ai."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/TrainingResults/Result/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExampleResult"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This property is a placeholder example for a result for the trained ai."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Plots",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC is used to save and manage images of different plots e.g. about the training or the model itself."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Plots/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Plots"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC is used to save and manage images of different plots e.g. about the training or the model itself."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TrainingTesting",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC contains plots about the training and testing of the model."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Plots/TrainingTesting/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TrainingTesting"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC contains plots about the training and testing of the model."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExamplePlot",
+      "description": [
+        {
+          "language": "en",
+          "text": "This is a simple file example for a plotimage."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Plots/TrainingTesting/Plot/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExamplePlot"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This is a simple file example for a plotimage."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Structure",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC contains images about the structure (e.g. of a neural net)."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Plots/Structure/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Structure"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC contains images about the structure (e.g. of a neural net)."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExampleStructurePlot",
+      "description": [
+        {
+          "language": "en",
+          "text": "This is a placeholder example for a structure image."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Plots/Structure/StructurePlot/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExampleStructurePlot"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This is a placeholder example for a structure image."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "GeneralPlots",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC can be used to save plots about other things not fitting in the other two SMCs."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Plots/GeneralPlots/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "GeneralPlots"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC can be used to save plots about other things not fitting in the other two SMCs."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExamplePlot1",
+      "description": [
+        {
+          "language": "en",
+          "text": "Placerholder for other plots."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Plots/GeneralPlots/Plot/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExamplePlot1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Placerholder for other plots."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Details",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC is used to document additional details about the model."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Details/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Details"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC is used to document additional details about the model."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FileExtension",
+      "description": [
+        {
+          "language": "en",
+          "text": "This property tells the dataending it got saved with (e.g. .pth)."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Details/DataEnding/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FileExtension"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This property tells the dataending it got saved with (e.g. .pth)."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AIFramework",
+      "description": [
+        {
+          "language": "en",
+          "text": "This property describes the AI framework and its version (e.g. pytorch 11.3)."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Details/AIFramework/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AIFramework"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This property describes the AI framework and its version (e.g. pytorch 11.3)."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ProgramLanguage",
+      "description": [
+        {
+          "language": "en",
+          "text": "The used programming language and version (e.g. python 3.9)."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Details/ProgramLanguage/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ProgramLanguage"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The used programming language and version (e.g. python 3.9)."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Requirements",
+      "description": [
+        {
+          "language": "en",
+          "text": "This component is used to save the requirements.txt of the enviroment."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Details/Requirements/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Requirements"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This component is used to save the requirements.txt of the enviroment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Dataset",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC contains rudimentary information and a link about the used dataset and its submodel."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Dataset/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Dataset"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC contains rudimentary information and a link about the used dataset and its submodel."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DatasetReference",
+      "description": [
+        {
+          "language": "en",
+          "text": "Reference to the used datasetsubmodel."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Dataset/DatasetReference/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DatasetReference"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Reference to the used datasetsubmodel."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TimeStamp",
+      "description": [
+        {
+          "language": "en",
+          "text": "The time the dataset was used. This property can be used if the dataset is changing over time."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/Dataset/TimeStamp/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TimeStamp"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The time the dataset was used. This property can be used if the dataset is changing over time."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AITypeSpecificInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "This collection contains different kinds of AI-typespecific parameters."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AITypeSpecificInformation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This collection contains different kinds of AI-typespecific parameters."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Type",
+      "description": [
+        {
+          "language": "en",
+          "text": "Type of  the AI(e.g. CNN, RNN, LSTM, ...)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/Type/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Type"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Type of  the AI(e.g. CNN, RNN, LSTM, ...)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Hyperparameter",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC contains the relevant hyperparamter used for train the NN."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/Hyperparameter/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Hyperparameter"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC contains the relevant hyperparamter used for train the NN."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Example",
+      "description": [
+        {
+          "language": "en",
+          "text": "Example hyperparameter (e.g. learning rate of the model)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/Hyperparameter/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Example"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Example hyperparameter (e.g. learning rate of the model)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TransferLearning",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC is used to describe informations, if the model is a result of transfer learning, of the origin model"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/TransferLearning/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TransferLearning"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC is used to describe informations, if the model is a result of transfer learning, of the origin model"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Name",
+      "description": [
+        {
+          "language": "en",
+          "text": "Holds the name of the origin NN-Model (e.g. resnet18)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/NeuralNetwork/TransferLearning/Name/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Name"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Holds the name of the origin NN-Model (e.g. resnet18)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TimeStamp",
+      "description": [
+        {
+          "language": "en",
+          "text": "Because there is a possibility, that the origin model has changed its weights or structure over time, it is necessary to date the time this model was used for transfer learning"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/NeuralNetwork/TransferLearning/TimeStamp/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TimeStamp"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Because there is a possibility, that the origin model has changed its weights or structure over time, it is necessary to date the time this model was used for transfer learning"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Weights",
+      "description": [
+        {
+          "language": "en",
+          "text": "Possibility to save the weights of the origin model as a file (e.g. .txt)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/NeuralNetwork/TransferLearning/Weights/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Weights"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Possibility to save the weights of the origin model as a file (e.g. .txt)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AIModelNameplate",
+      "description": [
+        {
+          "language": "en",
+          "text": "This is a reference to the model used for transfer learning if there exists a submodel to it."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIModelNameplate/AITypeSpecificInformation/NeuralNetwork/TransferLearning/ModelnameplateRef/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ModelNameplate"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This is a reference to the model used for transfer learning if there exists a submodel to it."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
