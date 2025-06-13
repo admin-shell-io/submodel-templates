@@ -1,0 +1,3242 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "PredictiveMaintenanceAAS",
+      "id": "https://admin-shell.io/idta/aas/PredictiveMaintenance/1/0",
+      "assetInformation": {
+        "assetKind": "NotApplicable",
+        "globalAssetId": "https://admin-shell.io/idta/asset/PredictiveMaintenance/1/0",
+        "defaultThumbnail": {
+          "path": "/aasx/files/IDTA-02048_Submodel_PredictiveMaintenance_Title.jpg",
+          "contentType": "image/jpeg"
+        }
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/PredictiveMaintenance/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "PredictiveMaintenance",
+      "description": [
+        {
+          "language": "en",
+          "text": "The Submodel Predictive Maintenance is a collection of properties to provide information for predictive maintenance use cases. It is intended to use this submodel in sub-systems of production lines to describe predictive maintenance relevant topics for the sub-system, as well as to use this submodel in predictive maintenance software applications"
+        },
+        {
+          "language": "de",
+          "text": "Das Teilmodell Predictive Maintenance stellt Informationen f\u00FCr Anwendungsf\u00E4lle von Predictive Maintenance bereit. Dieses Teilmodell ist f\u00FCr Sub-Systeme von Produktionslinien vorgesehen, um Predictive Maintenance relevante Informationen f\u00FCr das Sub-System zu beschreiben sowie f\u00FCr Software-Anwendungen f\u00FCr vorausschauende Wartung"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/PredictiveMaintenance/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/PredictiveMaintenance/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "RemainingUsefulLifePrediction",
+          "description": [
+            {
+              "language": "en",
+              "text": "Information about remaining useful life (RUL) prediction in the context of predictive maintenance"
+            },
+            {
+              "language": "de",
+              "text": "Informationen \u00FCber die Prognose der nutzbaren Restlebensdauer (RUL) im Kontext der vorausschauenden Wartung"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/PredictiveMaintenance/RemainingUsefulLifePrediction/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "RemainingUsefulLifetime",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Remaining useful life time, bades on Lifetime model of OPC Foundation (https://reference.opcfoundation.org/DI/v104/docs/10)"
+                },
+                {
+                  "language": "de",
+                  "text": "Verbleibende Betriebszeit in Anlehnung an Lifetime model der OPC Foundation (https://reference.opcfoundation.org/DI/v104/docs/10)"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/PredictiveMaintenance/RemainingUsefulLifetime/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "statements": [
+                {
+                  "idShort": "IndicationType",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Type of wear-relevant duration, e.g. time, cycles, distance, etc."
+                    },
+                    {
+                      "language": "de",
+                      "text": "Art der verschlei\u00DFrelevanten Dauer, z.B. Zeit, Zyklen, Wegstrecke, etc."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/IndicationType/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "DurationValue",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Value of duration in the wear relevant unit, e.g. time, operation cycles, distance, etc."
+                    },
+                    {
+                      "language": "de",
+                      "text": "Zahlenwert der Dauer in der verschlei\u00DFrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/DurationValue/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "EngineeringUnit",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Wear relevant physical unit, e.g. time, operation cycles, distance, etc."
+                    },
+                    {
+                      "language": "de",
+                      "text": "Verschlei\u00DFrelevante physikalische Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/EngineeringUnit/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "StartValue",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Starting value from which the duration is measured in the wear-relevant unit, e.g. time, cycles, distance, etc."
+                    },
+                    {
+                      "language": "de",
+                      "text": "Startwert, von dem ab die Dauer gemessen wird in der verschlei\u00DFrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/StartValue/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "StartDateTime",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Start date and time from which the duration is measured"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Startdatum und -zeit, von der ab die Dauer gemessen wird"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/StartDateTime/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Description",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Description of the wear duration information"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Beschreibung der Angabe zur verschlei\u00DFrelevanten Dauer"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/Description/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "entityType": "CoManagedEntity",
+              "modelType": "Entity"
+            },
+            {
+              "idShort": "RemainingUsfulLifeDateTime",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "mark attributed to an instant by means of a specified timescale, expressed as a date and a time"
+                },
+                {
+                  "language": "de",
+                  "text": "Markierung, zugeordnet zu einem Moment mittles einer spezifischen Zeitskala, ausgedr\u00FCckt als Datum und Uhrzeit"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/PredictiveMaintenance/RemainingUsfulLifeDateTime/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "ConfidenceInterval",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "confidence interval, measured in the unit of the predicted value"
+                },
+                {
+                  "language": "de",
+                  "text": "Konfidenzintervall in der Einheit des prognositizierten Wertes"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/PredictiveMaintenance/ConfidenceInterval/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:double",
+              "modelType": "Range"
+            },
+            {
+              "idShort": "ListRULBoundaryConditions",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "List of boundary conditions for which remaining useful life has been predicted"
+                },
+                {
+                  "language": "de",
+                  "text": "Liste der Randbedingungen unter denen die nutzbare Restlebensdauer prognostiziert wurde"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/PredictiveMaintenance/ListRULBoundaryConditions/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "typeValueListElement": "SubmodelElementCollection",
+              "value": [
+                {
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Boundary condition for which remaining useful life has been predicted"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Randbedingung unter der die nutzbare Restlebensdauer prognositiziert wurde"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/RULCondition/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "ConditionName",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Name of the indicator (process value, KPI, material property, asset property) describing a boundary condition for which RUL prediction is valid."
+                        },
+                        {
+                          "language": "de",
+                          "text": "Bezeichnung des Indikators (Prozesswert, KPI, Materialeigenschaft, Anlageneigenschaft), der eine Randbedingung beschreibt, f\u00FCr die die RUL-Vorhersage g\u00FCltig ist."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/PredictiveMaintenance/ConditionName/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "IsBoundaryConditionUsedInModel",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "If this boundary condition is used in the model for RUL prediction true, else false"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Wenn diese Randbedingung im Modell f\u00FCr die RUL Prognose verwendet true sonst false"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/PredictiveMaintenance/IsBoundaryConditionUsedInModel/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:boolean",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "BoundaryValueRange",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Value range of the indicator (process value, KPI, material property, asset property) describing a boundary condition for which RUL prediction is valid."
+                        },
+                        {
+                          "language": "de",
+                          "text": "Wertebereich des Indikators (Prozesswert, KPI, Materialeigenschaft, Anlageneigenschaft), der eine Randbedingung beschreibt, f\u00FCr die die RUL-Vorhersage g\u00FCltig ist."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/PredictiveMaintenance/BoundaryValueRange/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:double",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "BoundaryEngineeringUnit",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Engineering Unit of the boundary condition indicator"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Physikalische Einheit des Indikators, der die Randbedingung beschreibt"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/PredictiveMaintenance/BoundaryEngineeringUnit/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "DriftInfoAIModel",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Drift information of AI model"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Drift Information of AI Model"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/PredictiveMaintenance/DriftInfoAIModel/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:double",
+                      "modelType": "Range"
+                    },
+                    {
+                      "idShort": "MeanValue",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Mean value of the distribution of indicator values"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Mttelwert der Verteilung des Indikators"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/PredictiveMaintenance/MeanValue/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:double",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "Standarddeviation",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Standard deviation of the distribution of indicator values"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Standardabweichung der Verteilung des Indikators"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/PredictiveMaintenance/Standarddeviation/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:double",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "Skewness",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Skewness of the distribution of indicator values"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Schiefe der Verteilung des Indikators"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/PredictiveMaintenance/Skewness/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:double",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "BoundaryDescription",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Description of the boundary of a RUL prediction condition"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Beschreibung einer RUL Vorhersage-Randbedingung"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/PredictiveMaintenance/BoundaryDescription/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementList"
+            },
+            {
+              "idShort": "PredictionModelInformation",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Information about the model for RUL prediction relevant in the context of predictive maintenance"
+                },
+                {
+                  "language": "de",
+                  "text": "Informationen \u00FCber das Modell zur Prognose der RUL im Kontext der vorausschauenden Wartung"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/PredictiveMaintenance/PredictionModelInformation/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "ModelType",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Model type as an enumerated value: physical based methods, data-driven methods, hybrid methods"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Modeltyp als enumerierter Wert: physical based methods, data-driven methods, hybrid methods"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/ModelType/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "ModelDescription",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "More detailed description of the model type used for RUL prediction (optional)"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Detailliertere Beschreibung des Modelltyps, der f\u00FCr die RUL Prognose verwendet wird (optional)"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/ModelDescription/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "SMAIModelNamePlate",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Reference to AIModelNameplate"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Referenz auf AIModelNameplate"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/SMAIModelNamePlate/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "ReferenceElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "ListPreAlerts",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "List for defining pre-alerts which should be raised before remaining useful life is exceeded"
+                },
+                {
+                  "language": "de",
+                  "text": "Liste, um Voralarme zu definieren, die vor Erreichen der Restlebensdauer ausgel\u00F6st werden sollen"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/PredictiveMaintenance/ListPreAlerts/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "typeValueListElement": "SubmodelElementCollection",
+              "value": [
+                {
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Definition of a pre-alert which should be raised before remaining useful life is exceeded"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Definition eiens Voralarms, der vor Erreichen der Restlebensdauer ausgel\u00F6st werden sollen"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/PreAlerts/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "PreAlertMessage",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Message to be displayed when alarm regarding predicted remaining useful life is raised"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Nachricht, die bei Ausl\u00F6sen eines Alarms bez\u00FCglich der vorhergesagten verbleibenden Restnutzungsdauer angezeigt wird"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/PredictiveMaintenance/PreAlertMessage/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "PreAlertValue",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Pre-warning duration in wear relevant unit before remaining useful life is exceeded"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Vorwarndauer in verschlei\u00DFrelevanter Einheit vor Eintritt der \u00DCberschreitung verbleibenden Restnutzungsdauer"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/PredictiveMaintenance/PreAlertValue/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:double",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementList"
+            },
+            {
+              "idShort": "AlertAfterExceedingRemainingUsableLife",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Alert information which should be triggered or displayed after exceeding remaining useful life"
+                },
+                {
+                  "language": "de",
+                  "text": "Alarminformationen die ausgel\u00F6st oder angezeigt werden sollen, wenn die Restlebensdauer \u00FCberschritten wird"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/PredictiveMaintenance/AlertAfterExceedingRemainingUsableLife/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "AlertMessage",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Message to be displayed when alarm regarding predicted remaining useful life is raised"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Nachricht, die bei Ausl\u00F6sen eines Alarms bez\u00FCglich der vorhergesagten verbleibenden Restnutzungsdauer angezeigt wird"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/AlertMessage/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "MaintenanceRequired",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Maintenance required"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Wartung erforderlich"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/MaintenanceRequired/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:boolean",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "RemainingUsefulLifePrediction",
+      "description": [
+        {
+          "language": "en",
+          "text": "Information about remaining useful life (RUL) prediction in the context of predictive maintenance"
+        },
+        {
+          "language": "de",
+          "text": "Informationen \u00FCber die Prognose der nutzbaren Restlebensdauer (RUL) im Kontext der vorausschauenden Wartung"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/RemainingUsefulLifePrediction/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Remaining useful life prediction"
+              },
+              {
+                "language": "de",
+                "text": "Prognose der Restlebensdauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Information about remaining useful life (RUL) prediction in the context of predictive maintenance"
+              },
+              {
+                "language": "de",
+                "text": "Informationen \u00FCber die Prognose der nutzbaren Restlebensdauer (RUL) im Kontext der vorausschauenden Wartung"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RemainingUsefulLifetime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Remaining useful life time, bades on Lifetime model of OPC Foundation (https://reference.opcfoundation.org/DI/v104/docs/10)"
+        },
+        {
+          "language": "de",
+          "text": "Verbleibende Betriebszeit in Anlehnung an Lifetime model der OPC Foundation (https://reference.opcfoundation.org/DI/v104/docs/10)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenanceRemainingUsefulLifetime/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Remaining useful lifetime"
+              },
+              {
+                "language": "de",
+                "text": "Vergleibende Lebensdauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Remaining useful life time, bades on Lifetime model of OPC Foundation (https://reference.opcfoundation.org/DI/v104/docs/10)"
+              },
+              {
+                "language": "de",
+                "text": "Verbleibende Betriebszeit in Anlehnung an Lifetime model der OPC Foundation (https://reference.opcfoundation.org/DI/v104/docs/10)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IndicationType",
+      "description": [
+        {
+          "language": "en",
+          "text": "Type of wear-relevant duration, e.g. time, cycles, distance, etc."
+        },
+        {
+          "language": "de",
+          "text": "Art der verschlei\u00DFrelevanten Dauer, z.B. Zeit, Zyklen, Wegstrecke, etc."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/IndicationType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Type of duration"
+              },
+              {
+                "language": "de",
+                "text": "Art der Dauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Type of wear-relevant duration, e.g. time, cycles, distance, etc."
+              },
+              {
+                "language": "de",
+                "text": "Art der verschlei\u00DFrelevanten Dauer, z.B. Zeit, Zyklen, Wegstrecke, etc."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DurationValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "Value of duration in the wear relevant unit, e.g. time, operation cycles, distance, etc."
+        },
+        {
+          "language": "de",
+          "text": "Zahlenwert der Dauer in der verschlei\u00DFrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/DurationValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Duration value"
+              },
+              {
+                "language": "de",
+                "text": "Zahlenwert Dauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Value of duration in the wear relevant unit, e.g. time, operation cycles, distance, etc."
+              },
+              {
+                "language": "de",
+                "text": "Zahlenwert der Dauer in der verschlei\u00DFrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "EngineeringUnit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Wear relevant physical unit, e.g. time, operation cycles, distance, etc."
+        },
+        {
+          "language": "de",
+          "text": "Verschlei\u00DFrelevante physikalische Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/EngineeringUnit/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Unit of the duration"
+              },
+              {
+                "language": "de",
+                "text": "Einheit der Dauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Wear relevant physical unit, e.g. time, operation cycles, distance, etc."
+              },
+              {
+                "language": "de",
+                "text": "Verschlei\u00DFrelevante physikalische Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "StartValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "Starting value from which the duration is measured in the wear-relevant unit, e.g. time, cycles, distance, etc."
+        },
+        {
+          "language": "de",
+          "text": "Startwert, von dem ab die Dauer gemessen wird in der verschlei\u00DFrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/StartValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Start value of duration"
+              },
+              {
+                "language": "de",
+                "text": "Startwert der Dauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Starting value from which the duration is measured in the wear-relevant unit, e.g. time, cycles, distance, etc."
+              },
+              {
+                "language": "de",
+                "text": "Startwert, von dem ab die Dauer gemessen wird in der verschlei\u00DFrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "StartDateTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Start date and time from which the duration is measured"
+        },
+        {
+          "language": "de",
+          "text": "Startdatum und -zeit, von der ab die Dauer gemessen wird"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/StartDateTime/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Start datetime of the duration"
+              },
+              {
+                "language": "de",
+                "text": "Startzeitpunkt der Dauer"
+              }
+            ],
+            "dataType": "TIMESTAMP",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Start date and time from which the duration is measured"
+              },
+              {
+                "language": "de",
+                "text": "Startdatum und -zeit, von der ab die Dauer gemessen wird"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Description",
+      "description": [
+        {
+          "language": "en",
+          "text": "Description of the wear duration information"
+        },
+        {
+          "language": "de",
+          "text": "Beschreibung der Angabe zur verschlei\u00DFrelevanten Dauer"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/Description/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Description of the duration"
+              },
+              {
+                "language": "de",
+                "text": "Beschreibung der Dauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Description of the wear duration information"
+              },
+              {
+                "language": "de",
+                "text": "Beschreibung der Angabe zur verschlei\u00DFrelevanten Dauer"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RemainingUsfulLifeDateTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "mark attributed to an instant by means of a specified timescale, expressed as a date and a time"
+        },
+        {
+          "language": "de",
+          "text": "Markierung, zugeordnet zu einem Moment mittles einer spezifischen Zeitskala, ausgedr\u00FCckt als Datum und Uhrzeit"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/RemainingUsfulLifeDateTime/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "time stamp (date and time)"
+              },
+              {
+                "language": "de",
+                "text": "Zeitstempel (Datum und Uhrzeit)"
+              }
+            ],
+            "dataType": "TIMESTAMP",
+            "definition": [
+              {
+                "language": "en",
+                "text": "mark attributed to an instant by means of a specified timescale, expressed as a date and a time"
+              },
+              {
+                "language": "de",
+                "text": "Markierung, zugeordnet zu einem Moment mittles einer spezifischen Zeitskala, ausgedr\u00FCckt als Datum und Uhrzeit"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConfidenceInterval",
+      "description": [
+        {
+          "language": "en",
+          "text": "confidence interval, measured in the unit of the predicted value"
+        },
+        {
+          "language": "de",
+          "text": "Konfidenzintervall in der Einheit des prognositizierten Wertes"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/ConfidenceInterval/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Confidence interval"
+              },
+              {
+                "language": "de",
+                "text": "Konfidenzintervall"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "confidence interval, measured in the unit of the predicted value"
+              },
+              {
+                "language": "de",
+                "text": "Konfidenzintervall in der Einheit des prognositizierten Wertes"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ListRULBoundaryConditions",
+      "description": [
+        {
+          "language": "en",
+          "text": "List of boundary conditions for which remaining useful life has been predicted"
+        },
+        {
+          "language": "de",
+          "text": "Liste der Randbedingungen unter denen die nutzbare Restlebensdauer prognostiziert wurde"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/ListRULBoundaryConditions/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "List of boundary conditions of remaining useful life prediction"
+              },
+              {
+                "language": "de",
+                "text": "Liste der Randbedingungen f\u00FCr die Prognose der nutzbaren Restlebensdauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "List of boundary conditions for which remaining useful life has been predicted"
+              },
+              {
+                "language": "de",
+                "text": "Liste der Randbedingungen unter denen die nutzbare Restlebensdauer prognostiziert wurde"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RULCondition",
+      "description": [
+        {
+          "language": "en",
+          "text": "Boundary condition for which remaining useful life has been predicted"
+        },
+        {
+          "language": "de",
+          "text": "Randbedingung unter der die nutzbare Restlebensdauer prognositiziert wurde"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/RULCondition/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Boundary condition for remaining useful life prediction"
+              },
+              {
+                "language": "de",
+                "text": "Randbedingung f\u00FCr die Prognose der nutzbaren Restlebensdauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Boundary condition for which remaining useful life has been predicted"
+              },
+              {
+                "language": "de",
+                "text": "Randbedingung unter der die nutzbare Restlebensdauer prognositiziert wurde"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConditionName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Name of the indicator (process value, KPI, material property, asset property) describing a boundary condition for which RUL prediction is valid."
+        },
+        {
+          "language": "de",
+          "text": "Bezeichnung des Indikators (Prozesswert, KPI, Materialeigenschaft, Anlageneigenschaft), der eine Randbedingung beschreibt, f\u00FCr die die RUL-Vorhersage g\u00FCltig ist."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/RULCondition/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Indicator name"
+              },
+              {
+                "language": "de",
+                "text": "Bezeichnung des Indikators"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Name of the indicator (process value, KPI, material property, asset property) describing a boundary condition for which RUL prediction is valid."
+              },
+              {
+                "language": "de",
+                "text": "Bezeichnung des Indikators (Prozesswert, KPI, Materialeigenschaft, Anlageneigenschaft), der eine Randbedingung beschreibt, f\u00FCr die die RUL-Vorhersage g\u00FCltig ist."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IsBoundaryConditionUsedInModel",
+      "description": [
+        {
+          "language": "en",
+          "text": "If this boundary condition is used in the model for RUL prediction true, else false"
+        },
+        {
+          "language": "de",
+          "text": "Wenn diese Randbedingung im Modell f\u00FCr die RUL Prognose verwendet true sonst false"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/IsBoundaryConditionUsedInModel/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Condition is used in RUL model"
+              },
+              {
+                "language": "de",
+                "text": "Bedingung wird im RUL Modell verwendet"
+              }
+            ],
+            "dataType": "BOOLEAN",
+            "definition": [
+              {
+                "language": "en",
+                "text": "If this boundary condition is used in the model for RUL prediction true, else false"
+              },
+              {
+                "language": "de",
+                "text": "Wenn diese Randbedingung im Modell f\u00FCr die RUL Prognose verwendet true sonst false"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "BoundaryValueRange",
+      "description": [
+        {
+          "language": "en",
+          "text": "Value range of the indicator (process value, KPI, material property, asset property) describing a boundary condition for which RUL prediction is valid."
+        },
+        {
+          "language": "de",
+          "text": "Wertebereich des Indikators (Prozesswert, KPI, Materialeigenschaft, Anlageneigenschaft), der eine Randbedingung beschreibt, f\u00FCr die die RUL-Vorhersage g\u00FCltig ist."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/BoundaryValueRange/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Indicator value range"
+              },
+              {
+                "language": "de",
+                "text": "Wertebereich des Indikators"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Value range of the indicator (process value, KPI, material property, asset property) describing a boundary condition for which RUL prediction is valid."
+              },
+              {
+                "language": "de",
+                "text": "Wertebereich des Indikators (Prozesswert, KPI, Materialeigenschaft, Anlageneigenschaft), der eine Randbedingung beschreibt, f\u00FCr die die RUL-Vorhersage g\u00FCltig ist."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "BoundaryEngineeringUnit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Engineering Unit of the boundary condition indicator"
+        },
+        {
+          "language": "de",
+          "text": "Physikalische Einheit des Indikators, der die Randbedingung beschreibt"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/BoundaryEngineeringUnit/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Unit of the indicator"
+              },
+              {
+                "language": "de",
+                "text": "Einheit des Indikators"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Engineering Unit of the boundary condition indicator"
+              },
+              {
+                "language": "de",
+                "text": "Physikalische Einheit des Indikators, der die Randbedingung beschreibt"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DriftInfoAIModel",
+      "description": [
+        {
+          "language": "en",
+          "text": "Drift information of AI model"
+        },
+        {
+          "language": "de",
+          "text": "Drift Information of AI Model"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/DriftInfoAIModel/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Drift information"
+              },
+              {
+                "language": "de",
+                "text": "Drift Information"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Drift information of AI model"
+              },
+              {
+                "language": "de",
+                "text": "Drift Information of AI Model"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MeanValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "Mean value of the distribution of indicator values"
+        },
+        {
+          "language": "de",
+          "text": "Mttelwert der Verteilung des Indikators"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/MeanValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Mean value"
+              },
+              {
+                "language": "de",
+                "text": "Mittelwert"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Mean value of the distribution of indicator values"
+              },
+              {
+                "language": "de",
+                "text": "Mttelwert der Verteilung des Indikators"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Standarddeviation",
+      "description": [
+        {
+          "language": "en",
+          "text": "Standard deviation of the distribution of indicator values"
+        },
+        {
+          "language": "de",
+          "text": "Standardabweichung der Verteilung des Indikators"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/Standarddeviation/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Standard deviation"
+              },
+              {
+                "language": "de",
+                "text": "Standardabweichung"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Standard deviation of the distribution of indicator values"
+              },
+              {
+                "language": "de",
+                "text": "Standardabweichung der Verteilung des Indikators"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "physical",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/ids/cd/0808-6473-3703-2442"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "data-driven",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/ids/cd/5835-9278-4211-4979"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "hybrid",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/PredictiveMaintenance/ids/cd/1360-6718-1254-6889"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Skewness",
+      "description": [
+        {
+          "language": "en",
+          "text": "Skewness of the distribution of indicator values"
+        },
+        {
+          "language": "de",
+          "text": "Schiefe der Verteilung des Indikators"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/Skewness/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Skewness"
+              },
+              {
+                "language": "de",
+                "text": "Schiefe"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Skewness of the distribution of indicator values"
+              },
+              {
+                "language": "de",
+                "text": "Schiefe der Verteilung des Indikators"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "BoundaryDescription",
+      "description": [
+        {
+          "language": "en",
+          "text": "Description of the boundary of a RUL prediction condition"
+        },
+        {
+          "language": "de",
+          "text": "Beschreibung einer RUL Vorhersage-Randbedingung"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/BoundaryDescription/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Description of the boundary of a RUL prediction condition"
+              },
+              {
+                "language": "de",
+                "text": "Beschreibung einer RUL Vorhersage-Randbedingung"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Description of the boundary of a RUL prediction condition"
+              },
+              {
+                "language": "de",
+                "text": "Beschreibung einer RUL Vorhersage-Randbedingung"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PredictionModelInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "Information about the model for RUL prediction relevant in the context of predictive maintenance"
+        },
+        {
+          "language": "de",
+          "text": "Informationen \u00FCber das Modell zur Prognose der RUL im Kontext der vorausschauenden Wartung"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/PredictionModelInformation/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Prediction model information"
+              },
+              {
+                "language": "de",
+                "text": "Informationen zum Prognosemodell"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Information about the model for RUL prediction relevant in the context of predictive maintenance"
+              },
+              {
+                "language": "de",
+                "text": "Informationen \u00FCber das Modell zur Prognose der RUL im Kontext der vorausschauenden Wartung"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ModelType",
+      "description": [
+        {
+          "language": "en",
+          "text": "Model type as an enumerated value: physical based methods, data-driven methods, hybrid methods"
+        },
+        {
+          "language": "de",
+          "text": "Modeltyp als enumerierter Wert: physical based methods, data-driven methods, hybrid methods"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/ModelType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Model type"
+              },
+              {
+                "language": "de",
+                "text": "Modelltyp"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Model type as an enumerated value: physical based methods, data-driven methods, hybrid methods"
+              },
+              {
+                "language": "de",
+                "text": "Modeltyp als enumerierter Wert: physical based methods, data-driven methods, hybrid methods"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ModelDescription",
+      "description": [
+        {
+          "language": "en",
+          "text": "More detailed description of the model type used for RUL prediction (optional)"
+        },
+        {
+          "language": "de",
+          "text": "Detailliertere Beschreibung des Modelltyps, der f\u00FCr die RUL Prognose verwendet wird (optional)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/ModelDescription/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Model description"
+              },
+              {
+                "language": "de",
+                "text": "Modellbeschreibung"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "More detailed description of the model type used for RUL prediction (optional)"
+              },
+              {
+                "language": "de",
+                "text": "Detailliertere Beschreibung des Modelltyps, der f\u00FCr die RUL Prognose verwendet wird (optional)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "smAIModelNamePlate",
+      "description": [
+        {
+          "language": "en",
+          "text": "Reference to AIModelNameplate"
+        },
+        {
+          "language": "de",
+          "text": "Referenz auf AIModelNameplate"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/SMAIModelNamePlate/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Reference to AIModelNameplate"
+              },
+              {
+                "language": "de",
+                "text": "Referenz auf AIModelNameplate"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Reference to AIModelNameplate"
+              },
+              {
+                "language": "de",
+                "text": "Referenz auf AIModelNameplate"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ListPreAlerts",
+      "description": [
+        {
+          "language": "en",
+          "text": "List for defining pre-alerts which should be raised before remaining useful life is exceeded"
+        },
+        {
+          "language": "de",
+          "text": "Liste, um Voralarme zu definieren, die vor Erreichen der Restlebensdauer ausgel\u00F6st werden sollen"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/PreAlerts/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Pre-alert list"
+              },
+              {
+                "language": "de",
+                "text": "Voralarmliste"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "List for defining pre-alerts which should be raised before remaining useful life is exceeded"
+              },
+              {
+                "language": "de",
+                "text": "Liste, um Voralarme zu definieren, die vor Erreichen der Restlebensdauer ausgel\u00F6st werden sollen"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PreAlert",
+      "description": [
+        {
+          "language": "en",
+          "text": "Definition of a pre-alert which should be raised before remaining useful life is exceeded"
+        },
+        {
+          "language": "de",
+          "text": "Definition eiens Voralarms, der vor Erreichen der Restlebensdauer ausgel\u00F6st werden sollen"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/PreAlert/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Pre-alert"
+              },
+              {
+                "language": "de",
+                "text": "Voralarm"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Definition of a pre-alert which should be raised before remaining useful life is exceeded"
+              },
+              {
+                "language": "de",
+                "text": "Definition eiens Voralarms, der vor Erreichen der Restlebensdauer ausgel\u00F6st werden sollen"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PreAlertMessage",
+      "description": [
+        {
+          "language": "en",
+          "text": "Message to be displayed when alarm regarding predicted remaining useful life is raised"
+        },
+        {
+          "language": "de",
+          "text": "Nachricht, die bei Ausl\u00F6sen eines Alarms bez\u00FCglich der vorhergesagten verbleibenden Restnutzungsdauer angezeigt wird"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/PreAlertMessage/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Remaining usable life alert message"
+              },
+              {
+                "language": "de",
+                "text": "Alarmnachricht f\u00FCr verbleibende Restnutzungsdauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Message to be displayed when alarm regarding predicted remaining useful life is raised"
+              },
+              {
+                "language": "de",
+                "text": "Nachricht, die bei Ausl\u00F6sen eines Alarms bez\u00FCglich der vorhergesagten verbleibenden Restnutzungsdauer angezeigt wird"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PreAlertValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "Pre-warning duration in wear relevant unit before remaining useful life is exceeded"
+        },
+        {
+          "language": "de",
+          "text": "Vorwarndauer in verschlei\u00DFrelevanter Einheit vor Eintritt der \u00DCberschreitung verbleibenden Restnutzungsdauer"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/PreAlertValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Pre-alert value"
+              },
+              {
+                "language": "de",
+                "text": "Voralarmwert"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Pre-warning duration in wear relevant unit before remaining useful life is exceeded"
+              },
+              {
+                "language": "de",
+                "text": "Vorwarndauer in verschlei\u00DFrelevanter Einheit vor Eintritt der \u00DCberschreitung verbleibenden Restnutzungsdauer"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AlertAfterExceedingRemainingUsableLife",
+      "description": [
+        {
+          "language": "en",
+          "text": "Alert information which should be triggered or displayed after exceeding remaining useful life"
+        },
+        {
+          "language": "de",
+          "text": "Alarminformationen die ausgel\u00F6st oder angezeigt werden sollen, wenn die Restlebensdauer \u00FCberschritten wird"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/AlertAfterExceedingRemainingUsableLife/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Alert after exceeding remaining useful life"
+              },
+              {
+                "language": "de",
+                "text": "Alarm bei \u00FCberschreiten der Restlebensdauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Alert information which should be triggered or displayed after exceeding remaining useful life"
+              },
+              {
+                "language": "de",
+                "text": "Alarminformationen die ausgel\u00F6st oder angezeigt werden sollen, wenn die Restlebensdauer \u00FCberschritten wird"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AlertMessage",
+      "description": [
+        {
+          "language": "en",
+          "text": "Message to be displayed when alarm regarding predicted remaining useful life is raised"
+        },
+        {
+          "language": "de",
+          "text": "Nachricht, die bei Ausl\u00F6sen eines Alarms bez\u00FCglich der vorhergesagten verbleibenden Restnutzungsdauer angezeigt wird"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/AlertMessage/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Remaining usable life alert message"
+              },
+              {
+                "language": "de",
+                "text": "Alarmnachricht f\u00FCr verbleibende Restnutzungsdauer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Message to be displayed when alarm regarding predicted remaining useful life is raised"
+              },
+              {
+                "language": "de",
+                "text": "Nachricht, die bei Ausl\u00F6sen eines Alarms bez\u00FCglich der vorhergesagten verbleibenden Restnutzungsdauer angezeigt wird"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MaintenanceRequired",
+      "description": [
+        {
+          "language": "en",
+          "text": "Maintenance required"
+        },
+        {
+          "language": "de",
+          "text": "Wartung erforderlich"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/MaintenanceRequired/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Maintenance required"
+              },
+              {
+                "language": "de",
+                "text": "Wartung erforderlich"
+              }
+            ],
+            "dataType": "BOOLEAN",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Maintenance required"
+              },
+              {
+                "language": "de",
+                "text": "Wartung erforderlich"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ModelTypePhysical",
+      "description": [
+        {
+          "language": "en",
+          "text": "model based on a physical formulas, according to DIN IEC 63270"
+        },
+        {
+          "language": "de",
+          "text": "Modell, das auf physikalischen Formeln basiert, entsprechend to DIN IEC 63270"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/ModelTypePhysical/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Physikalisch basierte Methoden"
+              },
+              {
+                "language": "de",
+                "text": "physical based methods"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "model based on a physical formulas, according to DIN IEC 63270"
+              },
+              {
+                "language": "de",
+                "text": "Modell, das auf physikalischen Formeln basiert, entsprechend to DIN IEC 63270"
+              }
+            ],
+            "value": "physical",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ModelTypeDataDriven",
+      "description": [
+        {
+          "language": "en",
+          "text": "model based on data, e.g. machine learning models,  according to DIN IEC 63270"
+        },
+        {
+          "language": "de",
+          "text": "Modell, das auf datengetriebenen Prinzipien basiert, z.B. Modelle des maschinellen Lernens, entsprechend to DIN IEC 63270"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/ModelTypeDataDriven/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Datengetriebene Methoden"
+              },
+              {
+                "language": "de",
+                "text": "data-driven methods"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "model based on data, e.g. machine learning models,  according to DIN IEC 63270"
+              },
+              {
+                "language": "de",
+                "text": "Modell, das auf datengetriebenen Prinzipien basiert, z.B. Modelle des maschinellen Lernens, entsprechend to DIN IEC 63270"
+              }
+            ],
+            "value": "data-driven",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ModelTypeHybrid",
+      "description": [
+        {
+          "language": "en",
+          "text": "model based on hybrid methods, i.e. physical methods comined with data driven methods, according to DIN IEC 63270"
+        },
+        {
+          "language": "de",
+          "text": "Modell, das auf Hybrid-Methoden basiert, d.h. physikalische kombiniert mit datengetriebenen Methoden, entsprechend to DIN IEC 63270"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/PredictiveMaintenance/ModelTypeHybrid/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Hybidmethoden"
+              },
+              {
+                "language": "de",
+                "text": "hybrid methods"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "model based on hybrid methods, i.e. physical methods comined with data driven methods, according to DIN IEC 63270"
+              },
+              {
+                "language": "de",
+                "text": "Modell, das auf Hybrid-Methoden basiert, d.h. physikalische kombiniert mit datengetriebenen Methoden, entsprechend to DIN IEC 63270"
+              }
+            ],
+            "value": "hybrid",
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
