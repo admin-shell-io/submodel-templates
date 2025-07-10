@@ -1,0 +1,17 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  FurtherInformation
+
+class "FurtherInformation" as ID00000001 <<SMC>> {
+  +TextStatement : MLP [0..*]
+  +ValidDate : xs:date
+}
+
+@enduml

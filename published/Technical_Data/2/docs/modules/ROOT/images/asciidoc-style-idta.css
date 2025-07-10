@@ -1,0 +1,104 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
+@import "https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css";
+
+h1, h2, h3, h4, h5, h6, #toctitle,
+.sidebarblock > .content > .title {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+#toc {
+  background:-color #ffffff;
+}
+
+#toctitle {
+  color: #0028cd;
+}
+	
+a {
+  color: #17418a;
+}
+
+a:hover, a:focus {
+  color: rgb(8, 24, 117);
+}
+
+h1, h2, h3, .sidebarblock > .content > .title, h4, h5, h6 {
+  color: #3149cc;
+}
+
+.subheader, .admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title {
+  color: #303030;
+}
+
+:not(pre):not([class^=L])>code {
+    background-color: #e0e0e0;
+}
+
+table thead, table tfoot {
+  background: #f7f8f7;
+    background-color: rgb(247, 248, 247);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: none;
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
+}
+
+/* Problem handling with long strings in the tables */
+/* This seems no appropriate or last resort (sliders)
+  table {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+*/
+
+/* This seems to work: */
+table {
+  word-wrap: anywhere;
+}
+
+th.tableblock, td.tableblock {
+  border-top-color: #707070;
+  border-left-color: #707070;
+  border-right-color: #707070;
+  border-bottom-color: #707070;
+}
+
+.huge {
+  font-family: 'Open Sans';
+  font-size: 3em;
+  line-height: 1.1em;
+}
+
+.large {
+  font-family: 'Open Sans';
+  font-size: 1.8em;
+  line-height: 1.1em;
+}
+
+.normal {
+  font-family: 'Open Sans';
+  font-size: 1em;
+  line-height: 1.1em;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.redboxoneround {
+  padding: 0.3em 1em 0.3em 1em;
+  margin: 0.5em 0 0.5em 0;
+  font-family: 'Open Sans';
+  font-size: 2em;
+  color: #ffffff;
+  line-height: 1.1em;
+  letter-spacing: 0.1em;
+  background-color: #fe4f0e;
+  border-radius: 0 0.35em 0 0;
+}

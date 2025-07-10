@@ -1,0 +1,74 @@
+@startuml
+!theme plain
+top to bottom direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  SpecificDescriptions
+
+class "SpecificDescriptions" as ID00000001 <<SML>> {
+  +[00]  : SMC
+}
+
+class "[00] " as ID00000002 <<SMC>> {
+  +Section : SMC [0..*]
+  +ArbitrarySMC : SMC [0..*]
+  +ArbitrarySML : SML [0..*]
+  +ArbitraryProperty : xs:string [0..*]
+  +ArbitraryMLP : MLP [0..*]
+  +ArbitraryRange : Range [0..*]
+}
+
+class "Section" as ID00000003 <<SMC>> {
+  +Section : SMC [0..*]
+  +ArbitrarySMC : SMC [0..*]
+  +ArbitrarySML : SML [0..*]
+  +ArbitraryProperty : xs:string [0..*]
+  +ArbitraryMLP : MLP [0..*]
+  +ArbitraryRange : Range [0..*]
+}
+
+class "Section" as ID00000004 <<SMC>> {
+}
+
+class "ArbitrarySMC" as ID00000005 <<SMC>> {
+}
+
+class "ArbitrarySML" as ID00000006 <<SML>> {
+}
+
+class "ArbitrarySMC" as ID00000007 <<SMC>> {
+  +Section : SMC [0..*]
+  +ArbitrarySMC : SMC [0..*]
+  +ArbitrarySML : SML [0..*]
+  +ArbitraryProperty : xs:string [0..*]
+  +ArbitraryMLP : MLP [0..*]
+  +ArbitraryRange : Range [0..*]
+}
+
+class "Section" as ID00000008 <<SMC>> {
+}
+
+class "ArbitrarySMC" as ID00000009 <<SMC>> {
+}
+
+class "ArbitrarySML" as ID0000000A <<SML>> {
+}
+
+class "ArbitrarySML" as ID0000000B <<SML>> {
+}
+
+ID00000003 *--  ID00000004 : ""
+ID00000003 *--  ID00000005 : ""
+ID00000003 *--  ID00000006 : ""
+ID00000002 *--  ID00000003 : ""
+ID00000007 *--  ID00000008 : ""
+ID00000007 *--  ID00000009 : ""
+ID00000007 *--  ID0000000A : ""
+ID00000002 *--  ID00000007 : ""
+ID00000002 *--  ID0000000B : ""
+ID00000001 *--  ID00000002 : ""
+@enduml

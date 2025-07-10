@@ -1,0 +1,27 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  ProductClassifications
+
+class "ProductClassifications" as ID00000001 <<SML>> {
+  +[00]  : SMC
+}
+
+class "[00] " as ID00000002 <<SMC>> {
+  +ClassificationSystem : xs:string
+  +ClassificationSystemVersion : xs:string [0..1]
+  +ClassificationSystemUrl : xs:string [0..1]
+  +ProductClassId : xs:string
+  +ProductClassCodedName : xs:string
+  +ProductClassName : MLP [0..1]
+  +ReferenceToTechnicalPropertyArea : Ref [0..1]
+}
+
+ID00000001 *--  ID00000002 : ""
+@enduml
