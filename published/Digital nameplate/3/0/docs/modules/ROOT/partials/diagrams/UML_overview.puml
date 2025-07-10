@@ -1,0 +1,39 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT Nameplate
+
+class "Nameplate" as ID00000001 <<SM>> {
+}
+
+class "AddressInformation" as ID00000002 <<SMC>> <<smt-dropin-use>> {
+}
+
+class "Markings" as ID00000003 <<SML>> {
+}
+
+class "[00] " as ID00000004 <<SMC>> {
+}
+
+class "AssetSpecificProperties" as ID00000005 <<SMC>> {
+}
+
+class "GuidelineSpecificProperties" as ID00000006 <<SML>> {
+}
+
+class "[00] " as ID00000007 <<SMC>> {
+}
+
+ID00000001 *--  ID00000002 : ""
+ID00000003 *--  ID00000004 : ""
+ID00000001 *--  ID00000003 : ""
+ID00000006 *--  ID00000007 : ""
+ID00000005 *--  ID00000006 : ""
+ID00000001 *--  ID00000005 : ""
+@enduml
