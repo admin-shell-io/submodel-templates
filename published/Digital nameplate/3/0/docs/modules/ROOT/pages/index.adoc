@@ -1,0 +1,1063 @@
+ifdef::env-pdf[]
+
+:doctype: book
+
+= IDTA 02006-3-0 : Digital Nameplate for Industrial Equipment
+November 2024
+
+:title-page:
+
+endif::[]
+
+ifndef::env-pdf[]
+
+[width="100%", cols="1,1", frame=none, grid=none]
+|===
+
+|{set:cellbgcolor:#0029cc} image:idta-cover-logo-small.png[]
+|
+
+2+|
+2+|
+2+|
+2+|
+
+2+|[.huge.white]*IDTA 02006-3-0* 
+
+[.huge.white]*Digital Nameplate* 
+
+[.large.white]*for Industrial Equipment*
+
+2+|[.normal.white]#Date: November 2024#
+
+2+|
+2+|
+2+|
+|image:idta-spec-badge.png[width="80%"]
+|
+2+|
+2+|
+2+|
+
+|[.normal.white]#{nbsp}# +
+[.large.white]#Submodel Template specification for the Asset Administration Shell#
+|
+|image:idta-smt-badge.png[]
+
+|{set:cellbgcolor:#ffffff}
+|
+
+|===
+
+<<<
+
+endif::[]
+
+== IDTA 02006-3-0
+
+=== Imprint 
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+[cols="1,1,4"]
+|===
+
+|Date
+|Version
+|Comment
+
+|2020-11-24
+|1.0
+|This version is the first version officially published by ZVEI and Plattform Industrie 4.0.
+
+|2022-10-20
+|2.0
+|Release of the official Submodel template published by IDTA. This version is based on V1.0.
+
+|2024-10-04
+|3.0
+|Adaptation to Asset Administration Shell Metamodel Version 3. Contains changes not only corresponding to the Metamodel. See <<_annex_b_changes_to_the_submodel_template,Annex B>> for a list of changes.
+
+|2024-11-08
+|3.0
+|Release of the official Submodel template published by IDTA.
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+
+=== About this document
+This document is a part of a specification series. Each part specifies the contents of a 
+Submodel template for the Asset Administration Shell (AAS). The AAS is described 
+in [1], [2], [3] and [6]. First exemplary Submodel contents were described in [4], 
+while the actual format of this document was derived by the 
+"Administration Shell in Practice" [5]. The format aims to be very concise, 
+giving only minimal necessary information for applying a Submodel template, 
+while leaving deeper descriptions and specification of concepts, structures and 
+mapping to the respective documents [1] to [6].
+Common terms and abbreviations can be found in [7]. 
+
+The target audience of the specification are developers and editors of technical 
+documentation and manufacturer information, which are describing assets in 
+smart manufacturing by means of the Asset Administration Shell (AAS) and 
+therefore need to create a Submodel instance with a hierarchy of 
+SubmodelElements. This document especially details on the question, 
+which SubmodelElements with which semantic identification shall be 
+used for this purpose.
+
+This SMT will only be fully supported as of metamodel V3.0.
+
+
+
+=== Scope of the Submodel
+This Submodel template aims to provide asset nameplate information to the respective Asset Administration Shells in an interoperable manner. Central element is the provision of properties [7], ideally interoperable by the means of dictionaries such as ECLASS and IEC CDD (Common Data Dictionary). The purpose of this document is to make selected specifications of Submodels in such manner that information about assets and their nameplate can be exchanged in a meaningful way between partners in a value creation network. It targets equipment for process industry and factory automation by defining standardized meta data. 
+
+The intended use case is the provision of a standardized property structure within a digital nameplate, which enables the interoperability of digital nameplates from different manufacturers.
+
+This concept can serve as a basis for standardizing the respective Submodel. The conception is based on existing norms, directives and standards so that a far-reaching acceptance can be achieved. 
+
+Beside standardized Submodel this template also introduces standardized SubmodelElementCollections (SMC) in order to improve the interoperability while modelling partial aspects within Submodels. The standardized SMCs include address and asset product marking.
+
+In addition to the general information for Industrial Equipment listed in this document, it may be necessary to supplement the digital nameplate with additional information for specific areas of application, e.g. for explosion safety or radio. Information for the digital nameplate for additional areas of application are defined in supplementary submodel templates (e.g. [12])
+
+
+=== Relevant standards for the Submodel template
+The current version of the submodel template fulfills the international minimum requirements for information on nameplates, and therefore takes into account, for example, the minimum requirements specified in EU regulations and directives (e.g. (EU) 2023/1230) in accordance with the Blue Guide [13] published in the Official Journal of the European Commission. 
+
+According to [3], interoperable properties might be defined by standards, consortium specifcations or manufacturer specifications. 
+
+So called property dictionaries are used to identify information elements (see Terms and Definitions of [6]). Such property dictionaries include:
+
+•	ECLASS, see: https://eclass.eu
+•	IEC CDD, see: https://cdd.iec.ch/cdd/common/iec61360-7.nsf
+
+In this document, properties are aimed to be described by IEC CDD (Semantic IDs). Corresponding references to ECLASS are provided as Supplemental Semantic IDs.
+
+Further relevant basic requirements for nameplates are described in [8] and [9].
+
+Requirements specified by further regulations and directives will be taken into account in subsequent versions.
+
+
+
+=== Explanations on used UML diagrams
+For clarity and an improved legibility readers suggested to go through this section at first before reading the following chapters.
+
+UML diagrams feature box-like elements, called "classes". These classes, typically Submodels, SubmodelElementCollections or SubmodelElementLists, typically feature a set of Properties or further SubmodelElements. These elements can have specific cardinalities.
+
+The single classes are hierarchally organized by aggregation relations, these can be seen as "contains" relation.
+
+For a further overview on UML diagrams please refer to [6] and [10]. 
+
+Further details about used table formats please refer to Annex A.
+
+== Information set for Submodel “Nameplate”
+
+
+=== General
+The Submodel template was motivated by the prior ZVEI project “Digital Nameplate”. While defining Submodels the following three aspects must be considered as suggested in [5]:
+
+*Use and economic relevance*
+
+A nameplate contains identifying, descriptive and indicating information about an asset. Given the variety of requirements from national and global institutions, conventional nameplate have reached their limits of presenting mandatory content. The Submodel “Nameplate” helps to standardize the information structure for modelling a nameplate in compliance with such regulations. As a result, a breakthrough of restrictions due to limited labeling field can be achieved. At the same time the availability of asset information is widened from local to global level enabling further partners along the value chain to have access to nameplate information. The machine readability can be realized without ambiguity with the help of semantic information.
+
+*Possible functions and interactions*
+
+The Submodel “Nameplate” provides information from a nameplate. Customers or potential customers can use this Submodel to acquire identifying, classifying information about an asset, such as the manufacturer name, model type or serial number and the provided product markings. Customers can also use this Submodel to verify the asset with their order. Beside the customers public authorities and inter-trade organizations may also share interest in this Submodel in order to examine the information integrity stipulated for a nameplate. Manufacturers use this Submodel to fulfill the legal commitment on the one hand, on the other hand this Submodel helps them to identify the right asset in case maintenance services or spare parts are needed.
+
+By using the SMC “Marking”, mandatory nameplate content can be modelled sufficiently. The modelling method was concepted in such manner that a wide range of national and international regulations and standards were taken into account.
+
+In order to take regulations for nameplate from further standards or directives into account additional properties can be modelled with SMC “AssetSpecificProperties” and its child element SMC “GuidelineSpecificProperties” while reference to the additional standard document should be stored in the property “GuidelineForConformityDeclaration”. A separate SMC “GuidelineSpecificProperties” needs to be created for each additional standard and all SMC “GuidelineSpecificProperties” should be placed under the parent node “AssetSpecificProperties”.
+
+*Property specification*
+
+See <<_information_structures_and_attributes,clause 3 "Information structures and attributes">>.
+
+
+=== Overview UML model
+The SubmodelElements described in section 3 are structured in the following way (see <<UML_overview>>):
+
+[plantuml, UML_overview, svg, id="UML_overview", title="UML overview"]
+----
+include::partial$diagrams/UML_overview.puml[]
+----
+
+For the overall Submodel template and its instances, some notes can be given:
+
+* The submodel instance `Nameplate` comprises a set of elementary data elements of a nameplate. 
+* Address information of the asset's manufacturer or of an authorised service provider is provided by a harmonized *SMT drop-in* `Address Information`.
+* Multiple `Markings` information are provided analogue to marking on the physical nameplate.
+* As physical nameplates hold also asset specific information, these can be freely added to `AssetSpecificProperties`.
+* One special case is `GuidelineSpecificProperties`, which might by required by different standard documents.
+
+
+== Information structures and attributes
+
+=== Properties of the Submodel “Nameplate”
+<<UML_Submodel>> shows the UML-diagram defining the relevant properties which need to be set. 
+
+[plantuml, UML_Submodel, svg, id="UML_Submodel", title="UML-Diagram for Submodel \"Nameplate\""]
+----
+include::partial$diagrams/UML_Submodel.puml[]
+----
+
+*Recommendation*: For multiple elements, declaration as MLP is required by its semantic definition (based on IEC CDD and ECLASS). As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice.
+
+The SubmodelElements for this first level are described as follows. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalNameplate/3/0],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_1_Submodel],[ReferenceElement, Table_Submodel]
+
+
+
+[width="100%", id="Table_Submodel", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Nameplate 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/nameplate/3/0/Nameplate 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Contains the nameplate information attached to the product 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+URIOfTheProduct
+|0112/2///61987#ABN590#002  +
+ +
+supplementalSemanticId: 0173-1#02-ABH173#003 +
+ +
+unique global identification of the product instance using an universal resource identifier (URI) 
+|[AnyUri]  +
+ +
+https://www.domain-abc.com/Model-Nr-1234/Serial-Nr-5678
+|1
+
+
+
+|[MLP]  +
+ +
+ManufacturerName
+|0112/2///61987#ABA565#009  +
+ +
+supplementalSemanticId: 0173-1#02-AAO677#004 +
+ +
+legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation 
+|[]  +
+ +
+"Muster AG"@de
+|1
+
+
+
+|[MLP]  +
+ +
+ManufacturerProductDesignation
+|0112/2///61987#ABA567#009  +
+ +
+supplementalSemanticId: 0173-1#02-AAW338#003 +
+ +
+short description of the product (short text), third or lowest level of a 3 level manufacturer specific product hierarchy 
+|[]  +
+ +
+"ABC-123"@en
+|1
+
+
+
+|[SMC]  +
+ +
+AddressInformation
+|https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation  +
+ +
+supplementalSemanticId: https://admin-shell.io/smt-dropin/smt-dropin-use/1/0, 0112/2///61360_7#AAS002#001, 0173-1#02-AAQ837#008/0173-1#01-ADR448#008 +
+ +
+  +
+Note: this set of information is defined by SMT drop-in "Address Information"
+|[]  +
+ +
+0 elements
+|1
+
+
+
+|[MLP]  +
+ +
+ManufacturerProductRoot
+|0112/2///61360_7#AAS011#001  +
+ +
+supplementalSemanticId: 0173-1#02-AAU732#003 +
+ +
+top level of a 3 level manufacturer specific product hierarchy 
+|[]  +
+ +
+"flow meter"@en
+|0..1
+
+
+
+|[MLP]  +
+ +
+ManufacturerProductFamily
+|0112/2///61987#ABP464#002  +
+ +
+supplementalSemanticId: 0173-1#02-AAU731#003 +
+ +
+second level of a 3 level manufacturer specific product hierarchy 
+|[]  +
+ +
+"Type ABC"@en
+|0..1
+
+
+
+|[Prop]  +
+ +
+ManufacturerProductType
+|0112/2///61987#ABA300#008  +
+ +
+supplementalSemanticId: 0173-1#02-AAO057#004 +
+ +
+characteristic to differentiate between different products of a product family or special variants 
+|[String]  +
+ +
+FM-ABC-1234
+|0..1
+
+
+
+|[Prop]  +
+ +
+OrderCodeOfManufacturer
+|0112/2///61987#ABA950#008  +
+ +
+supplementalSemanticId: 0173-1#02-AAO227#004 +
+ +
+unique combination of numbers and letters issued by the manufacturer that is used to identify the device for ordering 
+|[String]  +
+ +
+FMABC1234
+|1
+
+
+
+|[Prop]  +
+ +
+ProductArticleNumberOfManufacturer
+|0112/2///61987#ABA581#007  +
+ +
+supplementalSemanticId: 0173-1#02-AAO676#005 +
+ +
+unique product identifier of the manufacturer 
+|[String]  +
+ +
+FM11-ABC22-123456
+|0..1
+
+
+
+|[Prop]  +
+ +
+SerialNumber
+|0112/2///61987#ABA951#009  +
+ +
+supplementalSemanticId: 0173-1#02-AAM556#004 +
+ +
+unique combination of numbers and letters used to identify the device once it has been manufactured 
+|[String]  +
+ +
+12345678
+|0..1
+
+
+
+|[Prop]  +
+ +
+YearOfConstruction
+|0112/2///61987#ABP000#002  +
+ +
+supplementalSemanticId: 0173-1#02-AAP906#003 +
+ +
+year in which the manufacturing process is completed 
+|[String]  +
+ +
+2022
+|0..1
+
+
+
+|[Prop]  +
+ +
+DateOfManufacture
+|0112/2///61987#ABB757#007  +
+ +
+supplementalSemanticId: 0173-1#02-AAR972#004 +
+ +
+date when an item was manufactured 
+|[Date]  +
+ +
+2022-01-01
+|0..1
+
+
+
+|[Prop]  +
+ +
+HardwareVersion
+|0112/2///61987#ABA926#008  +
+ +
+supplementalSemanticId: 0173-1#02-AAN270#004 +
+ +
+version of the hardware supplied with the device 
+|[String]  +
+ +
+1.0.0
+|0..1
+
+
+
+|[Prop]  +
+ +
+FirmwareVersion
+|0112/2///61987#ABA302#006  +
+ +
+supplementalSemanticId: 0173-1#02-AAN270#004 +
+ +
+version of the firmware supplied with the device 
+|[String]  +
+ +
+1.0.0
+|0..1
+
+
+
+|[Prop]  +
+ +
+SoftwareVersion
+|0112/2///61987#ABA601#008  +
+ +
+supplementalSemanticId: 0173-1#02-AAM737#004 +
+ +
+version of the software used by the device 
+|[String]  +
+ +
+1.0.0
+|0..1
+
+
+
+|[Prop]  +
+ +
+CountryOfOrigin
+|0112/2///61987#ABP462#001  +
+ +
+supplementalSemanticId: 0173-1#02-AAO259#007 +
+ +
+country where the product was manufactured  +
+Note: Country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes
+|[String]  +
+ +
+DE
+|0..1
+
+
+
+|[Prop]  +
+ +
+UniqueFacilityIdentifier
+|https://admin-shell.io/idta/nameplate/3/0/UniqueFacilityIdentifier  +
+ +
+unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s value chain 
+|[String]  +
+ +
+987654321
+|0..1
+
+
+
+|[File]  +
+ +
+CompanyLogo
+|0112/2///61987#ABP463#001  +
+ +
+supplementalSemanticId: 0173-1#02-ABI776#002 +
+ +
+a graphic mark used to represent a company, an organisation or a product 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[SML]  +
+ +
+Markings
+|0112/2///61360_7#AAS006#001  +
+ +
+supplementalSemanticId: 0173-1#02-ABI563#003/0173-1#01-AHF849#003 +
+ +
+  +
+Note: CE marking is declared as mandatory according to EU Blue Guide
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+AssetSpecificProperties
+|0173-1#02-ABI218#003/0173-1#01-AGZ672#004  +
+ +
+ 
+|[]  +
+ +
+4 elements
+|0..1
+
+
+
+|===
+
+
+
+
+=== Mandatory information for address information
+In order to provide information about a physical address, the SMT drop-in `Address Information` defined by [11] is to be re-used in the context of digital nameplate.
+
+Note: SMC `AddressInformation` is part of SMC `ContactInformation` of SMT `ContactInformations` [11].
+
+As the SMC `AddressInformation` provides interoperable address information about asset’s manufacturer, all properties within this SMC are defined as optional. This section defines *properties that are mandatorily required* to ensure the provision of physical address of the corresponding asset.
+
+The following SubmodelElements shall be specified within SMC `AddressInformation`:
+
+* MLP `Street`
+* MLP `Zipcode`
+* MLP `CityTown`
+* MLP `NationalCode`
+
+<<UML_AddressInformation_modelling_example>> shows an example UML-diagram defining the relevant properties which need to be set mandatory. 
+[plantuml, UML_Example_Contact_Information, id="UML_AddressInformation_modelling_example", svg, title="Example modelling of SMC 'AddressInformation'"]
+----
+@startuml
+!theme plain
+top to bottom direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  AssetSpecificProperties
+
+class Nameplate <<Submodel>> 
+{
+  semanticId = https://admin-shell.io/zvei/nameplate/3/0/Nameplate
+}
+
+class AddressInformation <<SMC>> <<SMT-dropin-use>>
+{
+  semanticId = https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation
+}
+
+class Street <<MLP>> 
+{
+  semanticId = 0173-1#02-AAO128#002
+  Value = Musterstraße 1@de
+}
+
+class Zipcode <<MLP>> 
+{
+  semanticId = 0173-1#02-AAO129#002
+  value = 12345@de
+}
+
+class CityTown <<MLP>> 
+{
+  semanticId = 0173-1#02-AAO132#002
+  value = Musterstadt@de
+}
+
+class NationalCode <<MLP>> 
+{
+  semanticId = 0173-1#02-AAO134#002
+  value = DE@de
+}
+
+Nameplate *-- AddressInformation : ""
+
+AddressInformation *-- Street: ""
+AddressInformation *-- Zipcode: ""
+AddressInformation *-- CityTown: ""
+AddressInformation *-- NationalCode : ""
+
+@enduml
+----
+
+=== Properties of the SML “Markings”
+<<UML_for_SMC_Markings_and_a_single_Marking>> shows the UML-diagram for SML `Markings`.
+
+[plantuml, UML_for_SMC_Markings_and_a_single_Marking, svg, id="UML_for_SMC_Markings_and_a_single_Marking", title="UML-Diagram for SML \"Markings\" and SMC \"Markings++__00__++\""]
+----
+include::partial$diagrams/UML_for_SMC_Markings_and_a_single_Marking.puml[]
+----
+
+For the SML `Markings`, the list elements are described as follows. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalNameplate/3/0],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_3_Properties_of_the_SMC_Markings],[ReferenceElement, Table_Markings]
+
+
+
+[width="100%", id="Table_Markings", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Markings 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0112/2///61360_7#AAS006#001 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Nameplate 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Note: CE marking is declared as mandatory according to EU Blue Guide 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+
+|0112/2///61360_7#AAS009#001  +
+ +
+supplementalSemanticId: 0173-1#02-ABI564#003/0173-1#01-AHF850#003 +
+ +
+Single marking information  +
+Note: CE marking is declared as mandatory according to the Blue Guide of the EU-Commission
+|[]  +
+ +
+6 elements
+|1..*
+
+
+
+|===
+
+
+
+For a single SMC `Markings++__00__++`, the SubmodelElements are defined as follows. The table convention is explained in Annex A.2.
+Regarding property `MarkingName`, the preferable solution is to provide a valueId in IRDI originating from IEC CDD or ECLASS enumeration value list, e.g. "CE" (IRDI: 0112/2///61987#ABO409#003 or 0173-1#07-DAA603#004). In case none of the existing ECLASS enumeration values matches, filling plain string text into the “value” field of the property `MarkingName` can be accepted alternatively. It needs to be pointed out that ECLASS also provides marking definitions in terms of boolean property, e.g. “CE- qualification present” (IRDI: 0173-1#02-BAF053#008). In this case users should instead use a matching ECLASS enumeration value or, if not provided as enumeration, fill in plain string text.
+
+The following example (see <<Figure_5>>) illustrates how to model product marking in an AAS. On the left side there is a sample nameplate which contains two markings to be modelled: the CE marking and the WEEE marking with a crossed-out wheeled bin. Next to the nameplate a table lists all properties and their attributes. 
+
+
+image::Figure_5.png[id="Figure_5", width="80.0%",title="Example modelling of SMC 'Marking'"]
+
+
+=== Properties of the SMC “AssetSpecificProperties”
+<<UML_AsssetSpecProps>> shows the UML-diagram defining the relevant properties which need to be set for asset specific properties. 
+
+[plantuml, UML_AsssetSpecProps, svg, id="UML_AsssetSpecProps", title="UML for asset specific properties and sub-structures"]
+----
+include::partial$diagrams/UML_AsssetSpecProps.puml[]
+----
+
+For the asset specific properties, the SubmodelElements are described as follows. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalNameplate/3/0],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_4_Properties_of_the_SMC_AssetSpecificProperties],[ReferenceElement, Table_AsssetSpecProps]
+
+
+
+[width="100%", id="Table_AsssetSpecProps", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}AssetSpecificProperties 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABI218#003/0173-1#01-AGZ672#004 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Nameplate 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ArbitraryProperty
+|https://admin-shell.io/SMT/General/ArbitraryProp  +
+ +
+  +
+Note: Every property can be used. +
+Note: The idShort is arbitrary +
+Note: The use of a displayName is recommended.
+|[String]  +
+ +
+
+|0..*
+
+
+
+|[MLP]  +
+ +
+ArbitraryMLP
+|https://admin-shell.io/SMT/General/ArbitraryMLP  +
+ +
+  +
+Note: Every multilanguage property can be used. +
+Note: The idShort is arbitrary +
+Note: The use of a displayName is recommended.
+|[]  +
+ +
+"sample"@en
+|0..*
+
+
+
+|[File]  +
+ +
+ArbitraryFile
+|https://admin-shell.io/SMT/General/ArbitraryFile  +
+ +
+  +
+Note: Every file can be used. +
+The idShort is arbitrary +
+Note: The use of a displayName is recommended.
+|[]  +
+ +
+
+|0..*
+
+
+
+|[SML]  +
+ +
+GuidelineSpecificProperties
+|0173-1#02-ABI219#003/0173-1#01-AHD205#004  +
+ +
+ 
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|===
+
+
+
+
+=== Properties of the SMC “GuidelineSpecificProperties” 
+<<UML_GuidelineSpecificProperties>> shows the UML-diagram defining the relevant properties which need to be set.
+
+[plantuml, UML_GuidelineSpecificProperties, svg, id="UML_GuidelineSpecificProperties", title="UML for guideline specific properties"]
+----
+include::partial$diagrams/UML_GuidelineSpecificProperties.puml[]
+----
+
+For a single set of guideline specific properties, the SubmodelElements are described as follows. The table convention is explained in Annex A.2.
+Beside the mentioned EU Machine Regulation (EU) 2023/1230 which this Submodel template is compliant with, there might be further information required by further stipulations and regulations depending on different asset. The SMC “AssetSpecificProperties” and its child SMC “GuidelineSpecificProperties” are therefore used to cover additional mandatory nameplate information while referencing the related stipulation or regulation. 
+
+In the following example (see <<PlantUML_manual_asset_spec_prop>>) a pressure equipment is addressed. Due to EU Directive 2014/68/EU the essential maximum/minimum allowable limits shall be provided for all pressure equipment. The example in  <<PlantUML_manual_asset_spec_prop>> shows a possible modelling of SMC “GuidelineSpecificProperties” in order to specify the minimum and maximum allowable pressure.
+
+[plantuml, UML_Example_ASP, svg, id="PlantUML_manual_asset_spec_prop", title="Example modelling of SMC “AssetSpecificProperties”"]
+----
+@startuml
+!theme plain
+top to bottom direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  AssetSpecificProperties
+
+class "Nameplate" as SM_NP <<Submodel>> 
+{
+  semanticId = https://admin-shell.io/zvei/nameplate/3/0/Nameplate
+}
+
+class "AssetSpecificProperties" as SMC_ASP <<SMC>> 
+{
+  semanticId = 0173-1#02-ABI218#003/0173-1#01-AGZ672#004
+}
+
+class "GuidelineSpecificProperties" as SML_GSP <<SML>> 
+{
+  semanticId = 0173-1#02-ABI219#003/0173-1#01-AHD205#004
+}
+
+class "GuidelineSpecificProperties00" as SMC_GSP00 <<SMC>> 
+{
+  semanticId = 0173-1#01-AHD205#004
+}
+
+class "GuidelineForConformityDeclaration" as P_GLCD <<Property>> 
+{
+  semanticId = 0173-1#02-AAO856#006
+  valueType = xs:string
+  value = EU Directive 2014/68/EU
+}
+
+class "minPermissiblePressure" as P_MPP <<Property>> 
+{
+  semanticId = 0173-1#02-BAI489#009
+  valueType = xs:decimal
+  value = 0.3
+}
+
+class "maxPressure" as P_MPR <<Property>> 
+{
+  semanticId = 0173-1#02-BAA447#008
+  valueType = xs:decimal
+  value = 2.0
+}
+
+class "{arbitrary}" as P_ARB <<Property>> 
+{
+  semanticId = {arbitrary}
+}
+
+SM_NP *-- SMC_ASP : ""
+
+SMC_ASP *-- SML_GSP : ""
+
+SML_GSP *-- SMC_GSP00 : ""
+
+SMC_GSP00 *-- P_GLCD : ""
+SMC_GSP00 *-- P_MPP : ""
+SMC_GSP00 *-- P_MPR : ""
+SMC_GSP00 *-- P_ARB : ""
+
+@enduml
+----
+
+<<<
+:sectnums!:
+
+== Annex A.	Explanations on used table formats
+
+=== 1. General
+
+The used tables in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The tables follow in principle the same conventions as in [5].
+* The table heads abbreviate 'cardinality' with 'card'.
+* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+* The types of SubmodelElements are abbreviated (see <<Table_SME_abbrev>>):
+
+[width="100%",cols="40%,60%", id="Table_SME_abbrev", title="Abbreviations for SubmodelElements", options="header"]
+|===
+|SME type |SubmodelElement type
+|Blob |Blob
+|Cap |Capability
+|Ent |Entity
+|Evt |Event
+|File |File
+|MLP |MultiLanguageProperty
+|Opr |Operation
+|Prop |Property
+|Range |Range
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|RelA |AnnotatedRelationshipElement
+|SMC |SubmodelElementCollection
+|SME |SubmodelElement type
+|SML |SubmodelElementList
+|===
+
+* If an idShort ends with '++__00__++', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique. A different idShort might be choosen, as long as it is unique in the parent’s context.
+* The Keys of semanticId in the main section feature only idType and value, such as: https://admin-shell.io/vdi/2770/1/0/DocumentId/Id. The attribute "type" (typically "ConceptDescription" and "(local)" or "GlobalReference") need to be set accordingly; see [6].
+* If a table does not contain a column with "parent" heading, all represented attributes share the same parent. This parent is denoted in the head of the table.
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* The [valueType] is only given for Properties.
+
+
+
+
+== Annex B.	Changes to the submodel template
+
+=== General
+
+This annex lists the changes from version to version of the Submodel, together with major changes in the overall document. 
+
+=== Changes Version 2.0 to 3.0
+
+Major changes:
+
+* Update to metamodel IDTA-01001-3-0-1
+* Markings changed from SMC (Submodel Element Collection) to SML (Submodel Element List)
+* SMC "ExplosionSafeties" removed; additional nameplate information for specific areas of application to be defined in other / supplementary submodel templates
+* SMC "ContactInformation" was renamed to "AddressInformation" and is now defined by a drop-in from SMT drop-in "Address Information"; four mandatory properties are only listed in the document, not in the AASX file
+* Property "UniqueFacilityIdentifier" was added to the structure of the Submodel Nameplate (in anticipation of the requirements of the European ESPR Regulation)
+* Property "YearOfConstruction": changed cardinality from [1] (mandatory) to [0..1] (optional)
+* Property "OrderCodeOfManufacturer": changed cardinality from [0..1] (optional) to [1] (mandatory)
+* Description of "arbitrary" properties has been adapted to the latest IDTA recommendation: a seperate property is now listed for each of the different property and value types (Prop, MLP, File); adaption of semanticIds
+* Further harmonization with dictionaries IEC CDD and ECLASS
+** Semantic IDs of SMC, SML and properties now refer to IEC CDD
+** Supplemental Semantic IDs added, referring to ECLASS
+** Semantic and Supplemental Semantic IDs refer to the latest versions in the dictionaries (e.g., ECLASS 15.0)
+** Data type of some properties changed:
+
+[width="100%",cols="50%,25%,25%",options="header"]
+|===
+|Property / IdShort |DataType V 2.0  |DataType V 3.0
+|URIOfTheProduct |String |AnyUri
+|OrderCodeOfManufacturer |langString |String
+|ManufacturerProductType |langString |String
+|ProductArticleNumberOfManufacturer |langString |String
+|HardwareVersion |langString |String
+|FirmwareVersion |langString |String
+|SoftwareVersion |langString |String
+|===
+
+=== Known issues
+
+Aasx file will be valid as of metamodel V3.1. V3.1 will allow to add idShort for SME within a SML, which is used in this file for better readability.
+
+<<<
+
+
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] |“Recommendations for implementing the strategic initiative
+INDUSTRIE 4.0”, acatech, April 2013. [Online]. Available:
+https://en.acatech.de/publication/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+
+|[2] |“Implementation Strategy Industrie 4.0: Report on the results of
+the Industrie 4.0 Platform”; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April
+2015. [Online]. Available:
+https://www.bitkom.org/sites/main/files/file/import/2016-01-Implementation-Strategy-Industrie40.pdf
+
+|[3] |“The Structure of the Administration Shell: TRILATERAL
+PERSPECTIVES from France, Italy and Germany”, March 2018, [Online].
+Available:
+https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
+
+|[4] |“Examples of the Asset Administration Shell for Industrie 4.0 Components – Basic Part”; ZVEI e.V., Whitepaper, April 2017. [Online].
+Available:
+https://www.zvei.org/en/press-media/publications/examples-of-the-asset-administration-shell-for-industrie-40-components-basic-part
+
+|[5] |“Verwaltungsschale in der Praxis. Wie definiere ich Teilmodelle,
+beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen
+(in German)”, Version 1.0, April 2019, Plattform Industrie 4.0 in
+Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for
+Economic Affairs and Energy (BMWi), Available:
+https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
+
+|[6] |“Details of the Asset Administration Shell; Part 1 - The exchange
+of information between partners in the value chain of Industrie 4.0
+(Version 3.0RC01)”, November 2020, [Online]. Available:
+https://industrialdigitaltwin.org/wp-content/uploads/2021/09/07_details_of_the_asset_administration_shell_part1_v3_en_2020.pdf
+
+|[7] |“Semantic interoperability: challenges in the digital
+transformation age”; IEC, International Electronical Commission; 2019.
+[Online]. Available:
+https://www.iec.ch/system/files/2020-03/content/media/files/iec_wp_semantic_interoperability.pdf
+
+|[8] |“E DIN VDE V 0170-100 VDE V 0170-100:2019-10 Digitales Typenschild - Teil 100: Digitale Produktkennzeichnung”, October 2019, VDE VERLAG.
+
+|[9] |“IEC 61406-1:2022-09 Identification link - Part 1: General requirements”, September 2022.
+
+|[10] |“OMG Unified Modeling Language (OMG UML)”, Formal/2017-12-05, Version 2.5.1. December 2018. [Online] Available: https://www.omg.org/spec/UML/
+
+|[11] |“IDTA 02002-1-0 Submodel for Contact Information”, 24 May 2022, Industrial Digital Twin Association, [Online]. Available: 
+https://github.com/admin-shell-io/submodel-templates/blob/main/published/Contact%20Information/1/IDTA%2002002-1-0_Submodel_ContactInformation.pdf
+
+|[12] |“IDTA 02057-1-0 Submodel for Explosion Safety”, _in development_
+
+|[13] |“The 'Blue Guide' on the implementation of EU product rules 2022”, June 2022. [Online]. Available:
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C_.2022.247.01.0001.01.ENG
+
+
+|===

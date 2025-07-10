@@ -1,0 +1,26 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  Markings
+
+class "Markings" as ID00000001 <<SML>> {
+  +[00]  : SMC [1..*]
+}
+
+class "[00] " as ID00000002 <<SMC>> {
+  +MarkingName : xs:string
+  +DesignationOfCertificateOrApproval : xs:string [0..1]
+  +IssueDate : xs:date [0..1]
+  +ExpiryDate : xs:date [0..1]
+  +MarkingFile : File
+  +MarkingAdditionalText : xs:string [0..*]
+}
+
+ID00000001 *--  ID00000002 : ""
+@enduml

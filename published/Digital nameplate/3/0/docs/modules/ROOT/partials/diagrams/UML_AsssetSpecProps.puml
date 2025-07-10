@@ -1,0 +1,32 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  AssetSpecificProperties
+
+class "AssetSpecificProperties" as ID00000001 <<SMC>> {
+  +ArbitraryProperty : xs:string [0..*]
+  +ArbitraryMLP : MLP [0..*]
+  +ArbitraryFile : File [0..*]
+  +GuidelineSpecificProperties : SML [0..1]
+}
+
+class "GuidelineSpecificProperties" as ID00000002 <<SML>> {
+  +[00]  : SMC [1..*]
+}
+
+class "[00] " as ID00000003 <<SMC>> {
+  +GuidelineForConformityDeclaration : xs:string
+  +ArbitraryProperty : xs:string [0..*]
+  +ArbitraryFile : File [0..*]
+  +ArbitraryMLP : MLP [0..*]
+}
+
+ID00000002 *--  ID00000003 : ""
+ID00000001 *--  ID00000002 : ""
+@enduml
