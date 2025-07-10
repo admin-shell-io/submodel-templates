@@ -1,0 +1,1563 @@
+
+
+== IDTA 02003-2-0 : Generic Frame for Technical Data for Industrial Equipment in Manufacturing
+
+=== Imprint
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+[cols="1,1,4"]
+|===
+
+|Date
+|Version
+|Comment
+
+|2020-11-24
+|1.0
+|Used for development only. No official version published.
+
+|2020-11-24
+|1.1
+|This version is the first version officially published by ZVEI and Plattform Industrie 4.0. It is succeeding the version 1.0.
+
+|2022-08-04
+|1.2
+|Release of the official Submodel template published by IDTA.
+
+|2024-08-19
+|2.0
+|Current draft of the upcoming release of the official Submodel template published by IDTA. It updates the V1.2 Submodel, e.g. for provisions for
+properties from multiple repositories.
+
+|2024-03-10
+|2.0
+|Addition and correction of SML/SMC elements as well as harmonization with Workstream ECLASS Semantics. Start of IDTA Review.
+
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+
+=== About this document
+This document is a part of a specification series. Each part specifies the contents of a 
+Submodel template for the Asset Administration Shell (AAS). The AAS is described 
+in [1], [2], [3] and [6]. First exemplary Submodel contents were described in [4], 
+while the actual format of this document was derived by the 
+"Administration Shell in Practice" [5]. The format aims to be very concise, 
+giving only minimal necessary information for applying a Submodel template, 
+while leaving deeper descriptions and specification of concepts, structures and 
+mapping to the respective documents [1] to [6].
+
+Common terms and abbreviations can be found in [7].
+
+The target audience of the specification are developers and editors of technical 
+documentation and manufacturer information, which are describing assets in 
+smart manufacturing by means of the Asset Administration Shell (AAS) and 
+therefore need to create a Submodel instance with a hierarchy of 
+SubmodelElements. This document especially details on the question, 
+which SubmodelElements with which semantic identification shall be 
+used for this purpose.
+
+=== Scope of the Submodel
+This Submodel template aims at interoperable provision of technical data describing the asset of the respective Asset Administration Shell. Central element is the provision of properties [7], ideally interoperable by the means of dictionaries such as ECLASS and IEC CDD (Common data dictionary).
+
+The intended use-case is, that a manufacturer of industrial products to equipment describes technical data of assets (type or instance), which are provided to the market. This description is achieved by the means of technical data (properties), which are interoperable and unambiguously understood by the other market participants, such as system integrators or operators of industrial products to equipment. These properties are selected for human comprehension and are not necessarily representing a full class definition within a classification system. For providing individual industrial products to equipments to the market, also a supplier is covered by the use-case (for this purpose seen as functioning as manufacturer). 
+
+This Submodel template specifies a basic set of SubmodelElements to provide the necessary information for this use case.
+
+
+=== Relevant standards for the Submodel template
+
+==== Meta model
+This document currently targets meta model version V3.0 and the currently upcoming revision V3.1. SubmodelElementLists are being incorporated.
+
+==== Concept repositories
+So called property dictionaries are used to identify information elements (see Terms and Definitions of [6]). Such property dictionaries include:
+
+* ECLASS, see: https://www.eclasscontent.com/ (here ECLASS version 14.0 is used)
+* IEC CDD, see: https://cdd.iec.ch/cdd/iec61987/iec61987.nsf and https://cdd.iec.ch/cdd/iec62683/cdddev.nsf
+
+
+=== Explanations on used UML diagrams
+For clarity and an improved legibility readers are suggested to go through this section at first before reading the following chapters.
+
+The UML diagrams (see <<Example_on_UML>>) feature box-like elements, called "classes". These classes, typically Submodels, SubmodelElementCollections or SubmodelElementLists feature a set of Properties or further SubmodelElements. These elements can have specific cardinalities, e.g. mandatory [1], optionally [0..1], or zero to many [0..\*] or one to many [1..*].
+
+The single classes are hierarchally organized by aggregation relations, these can be seen as "contains" relation.
+
+For a further overview on UML diagrams please refer to [6] and [11]. 
+
+Further details about used table formats please refer to Annex A.
+[plantuml, UML_Explanation, svg, id="Example_on_UML", title="Reading aid and example: UML notation used in this document"]
+----
+@startuml
+!theme plain
+top to bottom direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe Example on UML
+
+class "Name of the AAS element" as CL_NOE <<Type of the AAS element>> 
+{
+  "Name of Property 1" : "Data type" [Cardinality]
+  "Name of Property 2" : ..
+}
+
+class "Car" as CL_CAR <<TransportationMeans>> 
+{
+  SteeringWheel : CarbonFibre [1]
+  AirCondition : Plastic [0..1]
+  Wheel : Rubber [1..*]
+  SeatHeating : Metal [0..*]
+}
+
+class "Cardinality" as CL_CARD <<Explanation>> 
+{
+  Mandatory : Cardinality = [1]
+  Optional, max. 1 : Cardinality = [0..1]
+  Mandatory, may be several : Cardinality = [1..*]
+  Optional, may be several : Cardinality = [0..*]
+}
+
+CL_NOE  *-- CL_CARD : "aggregates"
+
+@enduml
+----
+
+== Approaches
+
+=== Overview UML model
+The SubmodelElements described in section 3 are structured in the following way (see <<UML_overview>>):
+
+[plantuml, UML_overview, svg, id="UML_overview", title="UML overview"]
+----
+include::partial$diagrams/UML_overview.puml[]
+----
+
+A Submodel according to this Submodel template specification consists of four areas (see Figure 1), represented by four SubmodelElementCollections:
+
+* The `GeneralInformation` section contains information which gives minimal information about the provider of the industrial product / equipment and the product / equipment itself. The aim of the provided information is to allow recognizing, if the provided technical data fits to the particular asset. A minimal set of information is given to allow a value chain partner to order or re-order the industrial equipment from the manufacturer or a supplier. Also multiple pictures can be integrated.
+For further identification or managing ordering processes, suitable Submodels for Identification, Nameplate and business contact points shall be consulted.
+
+* The `ProductClassifications` sections treats the described asset (industrial equipment) as commercial product, which is brought into the market by the manufacturer. For the asset, a product classification is given. Multiple product classifications can be stated.
+The hereby provided information targets the product classification only, the provided information does not automatically imply, that certain sets of properties need to be given, that a completeness or coherency of these sets of properties exists, or that these are to be arranged in a specific structure.
+
+* The `TechnicalPropertyAreas` section contains individual SubmodelElements detailing on technical data. Technical data may be comprised of information expressed via properties or by providing additional files containing information about the asset or any other kind of provision of information about technical data of the asset.
+For the structuring of these SubmodelElements, main and subsections can be defined. However, these sections serve mainly the purpose to structure the information for human readability. Ideally, the information provided by the SubmodelElements shall stand for itself and shall be unambiguously identified by the semanticIds of the SubmodelElements. 
+In any case, the SubmodelElements can be structured according to domains, aspects, groups or blocks described by the used property dictionary, such as ECLASS or IEC CDD. Also company specific classification-based descriptions are possible. This structure is therefore domain specific and shall be defined by domain specific specifications, but will serve as sections for the technical properties, as well.
+
+* The section for `FurtherInformation` holds additional information, such as textual statements by the manufacturer and date of validity.
+
+* The section for `SpecificDescriptions` hold additional use-case-specific descriptions in the submodel.
+
+If possible, the Submodel utilizes the AAS provisions for multiple-language support. Specifically, the AAS LangStringSet data structure is used for accessing the description of SubmodelElements, the preferred names of ConceptDescriptions and the values of MultiLanguageProperties. By such provisions, the same technical data entities can be provided for multiple language domains required by multiple target markets of the industrial equipments and therefore fosters cross-relationships between these language domains for engineering and analytics.
+
+
+=== Presentation in AAS user applications
+<<Figure_Presentation_in_AAS_user_application>> shows, how such information might be rendered in a user application. The figure shows a screen shot of the AASX Package Explorer with Submodel "TechnicalData" of an example asset, featuring multiple technical properties and visualization of the Submodel information via a specific plug-in "Technical Data Viewer".
+
+
+image::Figure_Presentation_in_AAS_user_application.jpg[id="Figure_Presentation_in_AAS_user_application", width="100.0%",title="Exemplary presentation in an AAS user application"]
+
+
+[NOTE]
+The classification of this example asset does not exist by intention.
+
+== Information structures and attributes
+
+=== Root information of Submodel
+<<UML_Submodel>> shows the UML-diagram defining the relevant properties which need to be set. 
+
+[plantuml, UML_Submodel, svg, id="UML_Submodel", title="UML diagram for the overall Submodel"]
+----
+include::partial$diagrams/UML_Submodel.puml[]
+----
+
+The SubmodelElements for this first level are described as follows (see <<Table_Submodel>>). The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_1_Root_info_of_Submodel],[ReferenceElement, Table_Submodel]
+
+
+
+[width="100%", id="Table_Submodel", title="Table for the overall Submodel", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}TechnicalData 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#01-AHX837#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Submodel containing technical data of the asset and associated product classificatons 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+GeneralInformation
+|0173-1#02-ABK161#002/0173-1#01-AHX838#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/ 0173-1-02-ABK161-002/0173-1-01-AHX838-002 +
+ +
+General information, for example ordering and manufacturer information 
+|[]  +
+ +
+6 elements
+|1
+
+
+
+|[SML]  +
+ +
+ProductClassifications
+|0173-1#02-ABK162#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABK162-002 +
+ +
+Product classifications by association of product classes with common classification systems 
+|[]  +
+ +
+1 elements
+|0..*
+
+
+
+|[SML]  +
+ +
+TechnicalPropertyAreas
+|0173-1#02-ABK163#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/ 0173-1-02-ABK163-002 +
+ +
+List of all technical property areas 
+|[]  +
+ +
+1 elements
+|0..*
+
+
+
+|[SMC]  +
+ +
+FurtherInformation
+|0173-1#02-ABK164#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABK164-002 +
+ +
+Further information on the product, the validity of the information provided and this data record 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|[SML]  +
+ +
+SpecificDescriptions
+|0173-1#02-ABM221#001  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABM221-001 +
+ +
+Specific description areas for multiple use cases or areas of ​​application 
+|[]  +
+ +
+1 elements
+|0..*
+
+
+
+|===
+
+
+
+
+=== General Information
+<<UML_General_Information>> shows the UML-diagram defining the relevant properties for general information according to the approaches in section 2.
+
+[plantuml, UML_General_Information, svg, id="UML_General_Information", title="UML diagram for general information"]
+----
+include::partial$diagrams/UML_General_Information.puml[]
+----
+
+The SubmodelElementCollection (SMC) described as follows (see <<Table_General_Information>>) contains the general information according to the approaches in section 2. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_2_General_Information],[ReferenceElement, Table_General_Information]
+
+
+
+[width="100%", id="Table_General_Information", title="Table SMC for general information", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}GeneralInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABK161#002/0173-1#01-AHX838#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalData 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ManufacturerName
+|0173-1#02-AAO677#004  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-AAO677-004 +
+ +
+Legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation 
+|[String]  +
+ +
+
+|1
+
+
+
+|[File]  +
+ +
+CompanyLogo
+|0173-1#02-ABI776#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABI776-002 +
+ +
+Imagefile for logo of the company provided in common format (.png, .jpg) 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[MLP]  +
+ +
+ManufacturerProductDesignation
+|0173-1#02-AAW338#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-AAW338-003 +
+ +
+Short description of the product (short text) 
+|[]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+ManufacturerArticleNumber
+|0173-1#02-AAO676#005  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-AAO676-005 +
+ +
+unique product identifier of the manufacturer 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+ManufacturerOrderCode
+|0173-1#02-AAO227#004  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-AAO227-004 +
+ +
+by manufactures issued unique combination of numbers and letters used to identify the device for ordering 
+|[String]  +
+ +
+
+|1
+
+
+
+|[SML]  +
+ +
+ProductImages
+|0173-1#02-ABM220#001  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABM220-001 +
+ +
+Pictorial representations of the product also related to different applications 
+|[]  +
+ +
+1 elements
+|0..*
+
+
+
+|===
+
+
+
+
+=== Product images
+<<UML_Product_images>> shows the UML-diagram defining the relevant properties for the list of product images and a single product image according to the approaches in section 2.
+
+[plantuml, UML_Product_images, svg, id="UML_Product_images", title="UML diagram for lists of and single product image"]
+----
+include::partial$diagrams/UML_Product_images.puml[]
+----
+
+The SubmodelElementList (SML) described as follows (see <<Table_Product_images>>) hold a list of product images. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_3_Product_images],[ReferenceElement, Table_Product_images]
+
+
+
+[width="100%", id="Table_Product_images", title="Table SMC for list of product images", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}ProductImages 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABM220#001 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}GeneralInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, 0173-1#02-ABM220#001/0173-1#01-AHY911#001], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+
+|0173-1#02-ABM220#001/0173-1#01-AHY911#001  +
+ +
+supplementalSemanticId: 0173-1#02-ABM220#001~0/0173-1#01-AHY911#001,https://api.eclass-cdp.com/0173-1-02-ABM220-001/0173-1-01-AHY911-001 +
+ +
+Pictorial representation of the product related to an application 
+|[]  +
+ +
+2 elements
+|
+
+
+
+|===
+
+
+
+For providing product images, a SubmodelElementList (SML) named `ProductImages` contains single descriptions of product images. The SubmodelElementCollection (SMC) of these are described as follows (see <<Table_Product_image>>) contains the general information according to the approaches in section 2. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_3_Product_images],[ReferenceElement, Table_Product_image]
+
+
+
+[width="100%", id="Table_Product_image", title="Table SMC for single product image description", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABM220#001/0173-1#01-AHY911#001 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductImages 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[File]  +
+ +
+ImageFile
+|0173-1#02-ABK291#002  +
+ +
+Picture of the product (low resolution) 72 dpi / rgb (GIF or JPG) 
+|[]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+ImageNote
+|0173-1#02-ABL423#001  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABL423-001 +
+ +
+Notes or explanations about the image provided 
+|[]  +
+ +
+Notes or explanations about the image provided@en
+|0..1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of product classifications
+<<UML_Product_classifications>> shows the UML-diagram defining the relevant properties for product classifications of the associated asset.
+
+[plantuml, UML_Product_classifications, svg, id="UML_Product_classifications", title="UML diagram for the list of product classifications and a single product classification"]
+----
+include::partial$diagrams/UML_Product_classifications.puml[]
+----
+
+The SubmodelElementList (SML) for the product classification is described as follows (see <<Table_Product_classifications>>). The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_4_Product_Classifications],[ReferenceElement, Table_Product_classifications]
+
+
+
+[width="100%", id="Table_Product_classifications", title="Table SML for list of product classifications", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}ProductClassifications 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABK162#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalData 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, 0173-1#02-ABK162#002/0173-1#01-AHX839#002], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+
+|0173-1#02-ABK162#002/0173-1#01-AHX839#002  +
+ +
+supplementalSemanticId: 0173-1#02-ABK162#002~0/0173-1#01-AHX839#002,https://api.eclass-cdp.com/0173-1-02-ABK162-002/0173-1-01-AHX839-002 +
+ +
+Single product classification item by association with product class in a particular classification system or property dictionary 
+|[]  +
+ +
+7 elements
+|
+
+
+
+|===
+
+
+
+The SubmodelElementCollection (SMC) for a single product classification is described as follows (see <<Table_Product_classification>>). The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_4_Product_Classifications],[ReferenceElement, Table_Product_classification]
+
+
+
+[width="100%", id="Table_Product_classification", title="Table SMC for a single product classification", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABK162#002/0173-1#01-AHX839#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductClassifications 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ClassificationSystem
+|0173-1#02-ABL424#001  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABL424-001 +
+ +
+Reference to the scheduled collection of abstract concepts that are used to distinguish and order objects 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+ClassificationSystemVersion
+|0173-1#02-AAR710#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-AAR710-003 +
+ +
+Referenced state of the published classification system 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+ClassificationSystemUrl
+|https://admin-shell.io/IDTA/TechnicalData/ProductClassifications/ProduktClassification/ClassificationSystemUrl/2/0  +
+ +
+ 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+ProductClassId
+|0173-1#02-ABG776#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABG776-003 +
+ +
+Class of the associated product or industrial equipment in the classification system. According to the notation of the system (IRDI) 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+ProductClassCodedName
+|0173-1#02-ABK128#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABK128-002 +
+ +
+Unique class code in a classification hierarchy 
+|[String]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+ProductClassName
+|0173-1#02-ABK273#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABK273-002 +
+ +
+Name of product class in the used classification system 
+|[]  +
+ +
+Name of product class in the used classification system@en
+|0..1
+
+
+
+|[Ref]  +
+ +
+ReferenceToTechnicalPropertyArea
+|0173-1#02-ABL358#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABL358-002 +
+ +
+Reference to technical property area 
+|[]  +
+ +
+[Submodel, https://admin-shell.io/idta/SubmodelTemplate/TechnicalData/2/0],[SubmodelElementList, TechnicalPropertyAreas],[SubmodelElementCollection, 0]
+|0..1
+
+
+
+|===
+
+
+
+
+=== Areas of technical properties
+The SubmodelElementCollection (SMC) described as follows contains the actual technical properties according to the approach in 2.1.1. The property instances are given by individual SubmodelElements (see [6][7]). There is no structural distinction between properties of different classification systems, as they can easily be identified by checking the heading part of the IRI or IRDI identifier of the semanticId. 
+Note: The property dictionary is not separated per property but can be identified by inspection the property identification.
+Properties, which are part of manufacturer specifications and consortium specifications (see [3]) are supported as well, as the set of suitable semanticIds is not restricted. Even SubmodelElements without distinctive semanticId are supported by providing a reserved ConceptDescription named "SemanticIdNotAvailable".
+
+For structuring the information elements for human readability, main sections and sub sections are supported by a distinguished ConceptDescriptions. These sections can be introduced by the provider of the information (manufacturer) to group elements into easy perceivable parts (see screenshot in clause 2.1.1). These sections do not imply consequences for the machine understanding of the information. If, however, aspects, groups or blocks are required by the particular property dictionary, such as ECLASS or IEC CDD, these elements can be introduced by SubmodelElementCollection with semanticId to that block or other respective entity, as well.
+The table convention is explained in Annex A.2.
+
+
+[plantuml, UML_Areas, svg, id="UML_Areas", title="UML diagram of the list of areas of technical properties"]
+----
+include::partial$diagrams/UML_Areas.puml[]
+----
+
+The SubmodelElementList (SML) for the product classification is described as follows (see <<Table_Product_classifications>>). The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_5_Areas_of_technical_properties],[ReferenceElement, Table_Technical_property_areas]
+
+
+
+[width="100%", id="Table_Technical_property_areas", title="Table SMC for list of product classifications", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}TechnicalPropertyAreas 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABK163#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalData 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, 0173-1#02-ABL358#002/0173-1#01-AHX773#002], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+
+|0173-1#02-ABL358#002/0173-1#01-AHX773#002  +
+ +
+supplementalSemanticId: 0173-1#02-ABL358#002~0/0173-1#01-AHX773#002,https://api.eclass-cdp.com/0173-1-02-ABL358-002/0173-1-01-AHX773-002 +
+ +
+Specific property area referenced by a product classification 
+|[]  +
+ +
+6 elements
+|
+
+
+
+|===
+
+
+
+The SubmodelElementCollection (SMC) for a single section within the technical properties is defined as follows (see <<Table_Single_section>>). The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_5_Areas_of_technical_properties],[ReferenceElement, Table_Single_section]
+
+
+
+[width="100%", id="Table_Single_section", title="Table SMC for a single section", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Section 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/SMT/General/Arbitrary 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Note: The idShort is arbitrary.
+
+Note: Using displayName is recommended. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+Section
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+ 
+|[]  +
+ +
+0 elements
+|0..*
+
+
+
+|[SMC]  +
+ +
+ArbitrarySMC
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+  +
+Note: Every SMC with a specific semanticId can serve as a section. +
+Note: The idShort is arbitrary. +
+Note: The use of a displayName is recommended.
+|[]  +
+ +
+0 elements
+|0..*
+
+
+
+|[SML]  +
+ +
+ArbitrarySML
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+  +
+Note: Every SMC with a specific semanticId can serve as a section. +
+Note: The idShort is arbitrary. +
+Note: The use of a displayName is recommended.
+|[]  +
+ +
+0 elements
+|0..*
+
+
+
+|[Prop]  +
+ +
+ArbitraryProperty
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+ 
+|[String]  +
+ +
+
+|0..*
+
+
+
+|[MLP]  +
+ +
+ArbitraryMLP
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+ 
+|[]  +
+ +
+
+|0..*
+
+
+
+|[Range]  +
+ +
+ArbitraryRange
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+ 
+|[]  +
+ +
+ .. 
+|0..*
+
+
+
+|===
+
+
+
+
+=== Display names for sections and properties with no semanticId available
+For displaying property names in a user interface, the following precedence of display names shall be maintained (see <<Table_display_name_handling>>):
+
+[width="100%",cols="20%,30%,50%",options="header", id="Table_display_name_handling", title="Handling of display names"]
+|===
+|Priority
+|Concept in AAS metamodel
+|Description
+
+|*1 (highest)*
+|SubmodelElement/displayName
+|Dedicated display name in several languages.
+
+Note: If a user or application requests a preferred language, then this language shall be used; default is English (en).
+
+|*2*	
+|ConceptDescription/preferredName
+|If available, the preferred name in the requested language of the concept description defining the semantics of the element.
+
+Else, if there is a default language list defined in the application, then the corresponding preferred name in the language is chosen according to this order.
+
+Else, if available, the English preferred name of the concept description defining the semantics of the element
+
+Note: The user interface is recommended to be capable of handling presentation of at least 50 characters.
+
+Note: If a user or application requests a preferred language, then this language shall be used; default is English (en).
+
+|*3*
+|ConceptDescription/preferredName
+|As above, but shorter definition.
+
+Note: If a user or application requests a preferred language, then this language shall be used; default is English (en).
+
+|*4 (lowest)*
+|SubmodelElement/idShort
+|If only available, the idShort shall be presented.
+
+Note: This is usually not language adequate and the least user orientation presentation.
+
+|===
+
+
+[Note]
+Consequently, for editors of instances of this Submodel Template, the *following procedure is recommended* to be applied:
+
+
+1. Whenever possible, include a ConceptDescription within the AAS with speaking elaboration of preferredName, shortName and definition.
+2. If no ConceptDescription could be provided (no semanticId, that is, no formal conceptualization of the property could be given to the user), a speaking explanation shall be provided by SubmodelElement/displayName.
+3. In any case, a short but speaking, unique idShort for the SubmodelElement shall be chosen, respecting the allowed characters (regex definition: [a-zA-Z0-9_-]+)
+
+
+=== Further information
+<<UML_Further_information>> shows the UML-diagram defining the further information according to the approaches in section 2.
+
+[plantuml, UML_Further_information, svg, id="UML_Further_information", title="UML diagram for further information"]
+----
+include::partial$diagrams/UML_Further_information.puml[]
+----
+
+The SubmodelElementCollection (SMC) described as follows (see <<Table_Further_information>>) contains the further information according to the approaches in section 2. The table convention is explained in Annex_A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_7_Further_information],[ReferenceElement, Table_Further_information]
+
+
+
+[width="100%", id="Table_Further_information", title="Table SMC for further information", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}FurtherInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABK164#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalData 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[MLP]  +
+ +
+TextStatement
+|0173-1#02-ABK134#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABK134-002 +
+ +
+Statement by the manufacturer in text form, e.g. scope of validity of the statements, scopes of application, conditions of operation. 
+|[]  +
+ +
+Statement by the manufacturer in text form, e.g. scope of validity of the statements, scopes of application, conditions of operation.@en
+|0..*
+
+
+
+|[Prop]  +
+ +
+ValidDate
+|0173-1#02-ABL775#001  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1#02-ABL775#001 +
+ +
+Date at which a product, process, norm or similar becomes invalid 
+|[Date]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+
+=== Specific Descriptions
+<<UML_Specific_Descriptions>> shows the UML-diagram defining the relevant information according to the approaches in section 2.
+
+[plantuml, UML_Specific_Descriptions, svg, id="UML_Specific_Descriptions", title="UML diagram for lists of and single product image"]
+----
+include::partial$diagrams/UML_Specific_Descriptions.puml[]
+----
+
+The SubmodelElementList (SML) described as follows (see <<Table_Specific_descriptions>>) hold specific descriptions. The table convention is explained in Annex A.2.
+
+
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_8_Specific_Descriptions],[ReferenceElement, Table_Specific_descriptions]
+
+
+
+[width="100%", id="Table_Specific_descriptions", title="Table SML for specific descriptions", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}SpecificDescriptions 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABM221#001 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalData 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, 0173-1#02-ABM221#001/0173-1#01-AHY912#001], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+
+|0173-1#02-ABM221#001/0173-1#01-AHY912#001  +
+ +
+supplementalSemanticId: 0173-1#02-ABM221#001~0/0173-1#01-AHY912#001,https://api.eclass-cdp.com/0173-1-02-ABM221-001/0173-1-01-AHY912-001 +
+ +
+Specific description for a use case or area of ​​application 
+|[]  +
+ +
+6 elements
+|
+
+
+
+|===
+
+
+
+Specific descriptions are used when, in addition to standard product classifications such as ECLASS or IEC CDD, further use-case-specific descriptions are to be passed on. In this area, additional data structures can be defined that are relevant for a specific use case or area of ​​application. This makes it possible to use this submodel as a framework for other submodels in the context of technical data. Several SMCs are possible, each of which is identified by name.
+
+The specific description can also be setup by using elements of ECLASS, IEC CDD or other classification standards.
+
+Examples are specific dimensions, environements, performance classes, etc..
+
+
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_8_Specific_Descriptions],[ReferenceElement, Table_Specific_description]
+
+
+
+[width="100%", id="Table_Specific_description", title="Table SMC for a specific description", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABM221#001/0173-1#01-AHY912#001 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}SpecificDescriptions 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+Section
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+  +
+Note: The idShort is arbitrary. +
+Note: Using displayName is recommended.
+|[]  +
+ +
+6 elements
+|0..*
+
+
+
+|[SMC]  +
+ +
+ArbitrarySMC
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+  +
+Note: Every SMC with a specific semanticId can serve as a section. +
+Note: The idShort is arbitrary. +
+Note: The use of a displayName is recommended.
+|[]  +
+ +
+6 elements
+|0..*
+
+
+
+|[SML]  +
+ +
+ArbitrarySML
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+  +
+Note: Every SML with a specific semanticId can serve as a section. +
+Note: The idShort is arbitrary. +
+Note: The use of a displayName is recommended.
+|[]  +
+ +
+0 elements
+|0..*
+
+
+
+|[Prop]  +
+ +
+ArbitraryProperty
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+  +
+Note: Every property can be used. +
+Note: The idShort is arbitrary. +
+Note: The use of a displayName is recommended.
+|[String]  +
+ +
+
+|0..*
+
+
+
+|[MLP]  +
+ +
+ArbitraryMLP
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+  +
+Note: Every multilanguage property can be used. +
+Note: The idShort is arbitrary. +
+Note: The use of a displayName is recommended.
+|[]  +
+ +
+Note: Every multilanguage property can be used.@en
+|0..*
+
+
+
+|[Range]  +
+ +
+ArbitraryRange
+|https://admin-shell.io/SMT/General/Arbitrary  +
+ +
+  +
+Note: Every range property can be used. +
+Note: The idShort is arbitrary. +
+Note: The use of a displayName is recommended.
+|[]  +
+ +
+ .. 
+|0..*
+
+
+
+|===
+
+
+
+All elements are defined in context of Technical Property Area.
+
+
+
+:sectnums!:
+
+== Annex A.	Explanations on used table formats
+
+=== 1. General
+
+The used tables in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The tables follow in principle the same conventions as in [5].
+* The table heads abbreviate 'cardinality' with 'card'.
+* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+* The types of SubmodelElements are abbreviated:
+
+[width="100%",cols="40%,60%",options="header"]
+|===
+|SME type |SubmodelElement type
+|Property |Property
+|MLP |MultiLanguageProperty
+|Range |Range
+|File |File
+|Blob |Blob
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|SMC |SubmodelElementCollection
+|SML |SubmodelElementList
+|===
+
+* If an idShort ends with '{00}', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique. A different idShort might be choosen, as long as it is unique in the parent’s context.
+* The Keys of semanticId in the main section feature only idType and value, such as: https://admin-shell.io/vdi/2770/1/0/DocumentId/Id. The attribute "type" (typically "ConceptDescription" and "(local)" or "GlobalReference") need to be set accordingly; see [6].
+* If a table does not contain a column with "parent" heading, all represented attributes share the same parent. This parent is denoted in the head of the table.
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* The [valueType] is only given for Properties.
+
+
+
+
+== Annex B.	Changes to the submodel template
+
+=== General
+
+This annex lists the changes from version to version of the Submodel, together with major changes in the overall document. Non-backward compatible changes (nc) are marked as such.
+
+=== Changes Version 1.2 to 2.0
+
+General changes:
+
+* Update to schema version 3.0
+* Update of ECLASS IRDIs (where available) to ECLASS version 15.0
+* Also ass URI path IRDI information for all ECLASS elements
+
+
+Content changes (all (nc)):
+
+* GeneralInformation / ProductImage: cardinality with SML for multiple images
+* GeneralInformation / ProductImage: Additional image note for each image (optional)
+* ProductClassifications: cardinality with SML for multiple product classifications
+* ProductClassifications / new property: ReferenceToTechnicalPropertiesCollection (reference from classification to properties)
+* TechnicalProperties: name change to TechnicalPropertyAreas in combination with cardinality with SML for multiple property areas 
+* Addition of new SML Specific Description for specific use cases or areas of ​​application
+
+Smaller changes:
+
+* ProductClassifications / ProductClassificationSystem: name change in ClassificationSystem
+* ProductClassifications / ClassificationSystemVersion: name change in VersionOfClassificationSystem
+* ProductClassifications / new property: ClassificationSystem Url
+* ProductClassifications / new property: ProductClassCodedName
+* ProductClassifications / new property: ProductClassName
+* TechnicalPropertyAreas: optimization of the arbitray elements
+
+Bugfixes:
+
+* TechnicalPropertyAreas: optimization and correction of the arbitray elements (nc)
+* Optimization of ConceptDescriptions in accordance to the used ECLASS elements
+
+== Annex C.	Use of the term "Technical Data"
+
+Use of the Submodel “Generic Frame for Technical Data for Industrial Equipment in Manufacturing” for Submodels that do not refer to classifications (standard, company-specific) but define their own content
+
+This Submodel described here was created from the approach of transferring standardized contents of classifications (ECLASS, IEC CDD, ...) as well as property-based descriptions. It is also possible to transfer company-specific product data, which usually also follows a classification. With the update of this Submodel to major release 2.0, the clear referencing between classifications and property areas is also specified. 
+
+The Submodel was/is used by several other Submodels, which then also have “Technical Data” in their name. Individual elements of standard classifications are used here, for example properties from ECLASS or IEC CDD. However, the structure defined in the Submodel is determined by the Submodel itself. This topic was discussed intensively in the working group on this Submodel and it was decided to curb the “uncontrolled growth” and provide an optimized solution approach. 
+
+=== Decided procedure
+
+If the title of a Submodel contains the text “Technical Data”, then the Submodel must follow the specifications of this Submodel described here. Otherwise, the term may no longer be used in the title of the Submodel. 
+
+=== Specification for modeling Submodel-specific content
+
+If content is defined that is not completely defined via classification standards, but can use elements of these standards, these must be specified under the SubmodelElementList (SML) “Specific Descriptions”. The SMLs “ProductClassifications” and “TechnicalPropertyAreas” are therefore not to be used in this case. The structure of the SubmodelElementCollections (SMC) under the SML are free in structure and elements of classification standards can be used here. Due to the possibility of cardinalities in SML, several collections are also possible. The qualifiers of the relevant SMLs are designed accordingly. 
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] |“Recommendations for implementing the strategic initiative
+INDUSTRIE 4.0”, acatech, April 2013. [Online]. Available
+https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+
+|[2] |“Implementation Strategy Industrie 4.0: Report on the results of
+the Industrie 4.0 Platform”; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April
+2015. [Online]. Available:
+https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
+
+|[3] |“The Structure of the Administration Shell: TRILATERAL
+PERSPECTIVES from France, Italy and Germany”, March 2018, [Online].
+Available:
+https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
+
+|[4] |“Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente –
+Basisteil (German)”; ZVEI e.V., Whitepaper, November 2016. [Online].
+Available:
+https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
+
+|[5] |“Verwaltungsschale in der Praxis. Wie definiere ich Teilmodelle,
+beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen
+(in German)”, Version 1.0, April 2019, Plattform Industrie 4.0 in
+Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for
+Economic Affairs and Energy (BMWi), Available:
+https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
+
+|[6] |“Details of the Asset Administration Shell; Part 1 - The exchange
+of information between partners in the value chain of Industrie 4.0
+(Version 3.0RC01)”, November 2020, [Online]. Available:
+https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html
+
+|[7] |“Semantic interoperability: challenges in the digital
+transformation age”; IEC, International Electronical Commission; 2019.
+[Online]. Available:
+https://basecamp.iec.ch/download/iec-white-paper-semantic-interoperability-challenges-in-the-digital-transformation-age-en/
+
+|[8] |Common terms and abbreviations according to VDI FA 7.21 Wiki; Available: http://i40.iosb.fraunhofer.de/
+
+|[9] |“E DIN VDE V 0170-100 VDE V 0170-100:2019-10 Digitales Typenschild - Teil 100: Digitale Produktkennzeichnung”, October 2019, VDE VERLAG.
+
+|[10] |“IEC 61406-1:2022-09 Identification link - Part 1: General requirements”, September 2022.
+
+|[11] |“OMG Unified Modeling Language (OMG UML)”, Formal/2017-12-05, Version 2.5.1. December 2018. [Online] Available: https/www.omg.org/spec/UML/
+|[12] |“IDTA 2002-1-0 Submodel for Contact Information”, 24 May 2022, Industrial Digital Twin Association, [Online]. Available: https://github.com/admin-shell-io/Submodel-templates/blob/main/published/Contact%20Information/1/IDTA%202002-1-0_Submodel_ContactInformation.pdf 
+
+
+
+|===
+ifndef::env-pdf[]
+
+[%always]
+<<<
+
+[width="100%", cols="1,1", frame=none, grid=none]
+|===
+
+|{set:cellbgcolor:#0029cc} image:idta-cover-logo-small.png[]
+|
+
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|[.large.white]#www.industrialdigitaltwin.org#
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+2+|
+
+
+|===
+
+endif::[]
+

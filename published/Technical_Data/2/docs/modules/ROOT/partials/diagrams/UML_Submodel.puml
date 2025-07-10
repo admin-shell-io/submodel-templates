@@ -1,0 +1,141 @@
+@startuml
+!theme plain
+top to bottom direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT TechnicalData
+
+class "TechnicalData" as ID00000001 <<SM>> {
+  +GeneralInformation : SMC
+  +ProductClassifications : SML [0..*]
+  +TechnicalPropertyAreas : SML [0..*]
+  +FurtherInformation : SMC [0..1]
+  +SpecificDescriptions : SML [0..*]
+}
+
+class "GeneralInformation" as ID00000002 <<SMC>> {
+  +ManufacturerName : xs:string
+  +CompanyLogo : File [0..1]
+  +ManufacturerProductDesignation : MLP
+  +ManufacturerArticleNumber : xs:string
+  +ManufacturerOrderCode : xs:string
+  +ProductImages : SML [0..*]
+}
+
+class "ProductImages" as ID00000003 <<SML>> {
+  +[00]  : SMC
+}
+
+class "[00] " as ID00000004 <<SMC>> {
+  +ImageFile : File
+  +ImageNote : MLP [0..1]
+}
+
+class "ProductClassifications" as ID00000005 <<SML>> {
+  +[00]  : SMC
+}
+
+class "[00] " as ID00000006 <<SMC>> {
+  +ClassificationSystem : xs:string
+  +ClassificationSystemVersion : xs:string [0..1]
+  +ClassificationSystemUrl : xs:string [0..1]
+  +ProductClassId : xs:string
+  +ProductClassCodedName : xs:string
+  +ProductClassName : MLP [0..1]
+  +ReferenceToTechnicalPropertyArea : Ref [0..1]
+}
+
+class "TechnicalPropertyAreas" as ID00000007 <<SML>> {
+  +[00]  : SMC
+}
+
+class "[00] " as ID00000008 <<SMC>> {
+  +Section : SMC [0..*]
+  +ArbitrarySMC : SMC [0..*]
+  +ArbitrarySML : SML [0..*]
+  +ArbitraryProperty : xs:string [0..*]
+  +ArbitraryMLP : MLP [0..*]
+  +ArbitraryRange : Range [0..*]
+}
+
+class "Section" as ID00000009 <<SMC>> {
+  +Section : SMC [0..*]
+  +ArbitrarySMC : SMC [0..*]
+  +ArbitrarySML : SML [0..*]
+  +ArbitraryProperty : xs:string [0..*]
+  +ArbitraryMLP : MLP [0..*]
+  +ArbitraryRange : Range [0..*]
+}
+
+class "ArbitrarySMC" as ID0000000A <<SMC>> {
+  +Section : SMC [0..*]
+  +ArbitrarySMC : SMC [0..*]
+  +ArbitrarySML : SML [0..*]
+  +ArbitraryProperty : xs:string [0..*]
+  +ArbitraryMLP : MLP [0..*]
+  +ArbitraryRange : Range [0..*]
+}
+
+class "ArbitrarySML" as ID0000000B <<SML>> {
+}
+
+class "FurtherInformation" as ID0000000C <<SMC>> {
+  +TextStatement : MLP [0..*]
+  +ValidDate : xs:date
+}
+
+class "SpecificDescriptions" as ID0000000D <<SML>> {
+  +[00]  : SMC
+}
+
+class "[00] " as ID0000000E <<SMC>> {
+  +Section : SMC [0..*]
+  +ArbitrarySMC : SMC [0..*]
+  +ArbitrarySML : SML [0..*]
+  +ArbitraryProperty : xs:string [0..*]
+  +ArbitraryMLP : MLP [0..*]
+  +ArbitraryRange : Range [0..*]
+}
+
+class "Section" as ID0000000F <<SMC>> {
+  +Section : SMC [0..*]
+  +ArbitrarySMC : SMC [0..*]
+  +ArbitrarySML : SML [0..*]
+  +ArbitraryProperty : xs:string [0..*]
+  +ArbitraryMLP : MLP [0..*]
+  +ArbitraryRange : Range [0..*]
+}
+
+class "ArbitrarySMC" as ID00000010 <<SMC>> {
+  +Section : SMC [0..*]
+  +ArbitrarySMC : SMC [0..*]
+  +ArbitrarySML : SML [0..*]
+  +ArbitraryProperty : xs:string [0..*]
+  +ArbitraryMLP : MLP [0..*]
+  +ArbitraryRange : Range [0..*]
+}
+
+class "ArbitrarySML" as ID00000011 <<SML>> {
+}
+
+ID00000003 *--  ID00000004 : ""
+ID00000002 *--  ID00000003 : ""
+ID00000001 *--  ID00000002 : ""
+ID00000005 *--  ID00000006 : ""
+ID00000001 *--  ID00000005 : ""
+ID00000008 *--  ID00000009 : ""
+ID00000008 *--  ID0000000A : ""
+ID00000008 *--  ID0000000B : ""
+ID00000007 *--  ID00000008 : ""
+ID00000001 *--  ID00000007 : ""
+ID00000001 *--  ID0000000C : ""
+ID0000000E *--  ID0000000F : ""
+ID0000000E *--  ID00000010 : ""
+ID0000000E *--  ID00000011 : ""
+ID0000000D *--  ID0000000E : ""
+ID00000001 *--  ID0000000D : ""
+@enduml

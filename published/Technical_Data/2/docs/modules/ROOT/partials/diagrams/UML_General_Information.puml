@@ -1,0 +1,32 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  GeneralInformation
+
+class "GeneralInformation" as ID00000001 <<SMC>> {
+  +ManufacturerName : xs:string
+  +CompanyLogo : File [0..1]
+  +ManufacturerProductDesignation : MLP
+  +ManufacturerArticleNumber : xs:string
+  +ManufacturerOrderCode : xs:string
+  +ProductImages : SML [0..*]
+}
+
+class "ProductImages" as ID00000002 <<SML>> {
+  +[00]  : SMC
+}
+
+class "[00] " as ID00000003 <<SMC>> {
+  +ImageFile : File
+  +ImageNote : MLP [0..1]
+}
+
+ID00000002 *--  ID00000003 : ""
+ID00000001 *--  ID00000002 : ""
+@enduml

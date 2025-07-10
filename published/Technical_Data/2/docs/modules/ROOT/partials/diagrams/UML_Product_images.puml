@@ -1,0 +1,22 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  ProductImages
+
+class "ProductImages" as ID00000001 <<SML>> {
+  +[00]  : SMC
+}
+
+class "[00] " as ID00000002 <<SMC>> {
+  +ImageFile : File
+  +ImageNote : MLP [0..1]
+}
+
+ID00000001 *--  ID00000002 : ""
+@enduml

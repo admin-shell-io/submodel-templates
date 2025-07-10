@@ -1,0 +1,79 @@
+@startuml
+!theme plain
+top to bottom direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT TechnicalData
+
+class "TechnicalData" as ID00000001 <<SM>> {
+}
+
+class "GeneralInformation" as ID00000002 <<SMC>> {
+}
+
+class "ProductImages" as ID00000003 <<SML>> {
+}
+
+class "[00] " as ID00000004 <<SMC>> {
+}
+
+class "ProductClassifications" as ID00000005 <<SML>> {
+}
+
+class "[00] " as ID00000006 <<SMC>> {
+}
+
+class "TechnicalPropertyAreas" as ID00000007 <<SML>> {
+}
+
+class "[00] " as ID00000008 <<SMC>> {
+}
+
+class "Section" as ID00000009 <<SMC>> {
+}
+
+class "ArbitrarySMC" as ID0000000A <<SMC>> {
+}
+
+class "ArbitrarySML" as ID0000000B <<SML>> {
+}
+
+class "FurtherInformation" as ID0000000C <<SMC>> {
+}
+
+class "SpecificDescriptions" as ID0000000D <<SML>> {
+}
+
+class "[00] " as ID0000000E <<SMC>> {
+}
+
+class "Section" as ID0000000F <<SMC>> {
+}
+
+class "ArbitrarySMC" as ID00000010 <<SMC>> {
+}
+
+class "ArbitrarySML" as ID00000011 <<SML>> {
+}
+
+ID00000003 *--  ID00000004 : ""
+ID00000002 *--  ID00000003 : ""
+ID00000001 *--  ID00000002 : ""
+ID00000005 *--  ID00000006 : ""
+ID00000001 *--  ID00000005 : ""
+ID00000008 *--  ID00000009 : ""
+ID00000008 *--  ID0000000A : ""
+ID00000008 *--  ID0000000B : ""
+ID00000007 *--  ID00000008 : ""
+ID00000001 *--  ID00000007 : ""
+ID00000001 *--  ID0000000C : ""
+ID0000000E *--  ID0000000F : ""
+ID0000000E *--  ID00000010 : ""
+ID0000000E *--  ID00000011 : ""
+ID0000000D *--  ID0000000E : ""
+ID00000001 *--  ID0000000D : ""
+@enduml
