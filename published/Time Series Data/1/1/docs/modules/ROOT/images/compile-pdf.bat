@@ -1,0 +1,1 @@
+docker run -it -v .:/documents/ asciidoctor/docker-asciidoctor asciidoctor-pdf -r asciidoctor-diagram -a toc=macro -a pdf-theme=my-theme.yml -a env-pdf *.adoc
