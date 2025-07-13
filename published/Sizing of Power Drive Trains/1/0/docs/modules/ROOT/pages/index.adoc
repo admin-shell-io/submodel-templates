@@ -1,0 +1,4486 @@
+
+
+= IDTA 02021-1-0 Sizing of Power Drive Trains
+
+=== Imprint 
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+[cols="1,1,4"]
+|===
+
+|Date
+|Version
+|Comment
+
+|19.01.2024 
+|1.0 
+|Release of the official Submodel template published by IDTA.
+
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+=== About this document
+This document is a part of a specification series. Each part specifies the contents of a Submodel template for
+the Asset Administration Shell (AAS). The AAS is described in [1], [2], [3] and [6]. First exemplary Submodel
+contents were described in [4], while the actual format of this document was derived by the "Administration
+Shell in Practice" [5]. The format aims to be very concise, giving only minimal necessary information for
+applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures
+and mapping to the respective documents [1] to [6].
+
+The target group of the specification are developers and editors of technical documentation and
+manufacturer information, which are describing assets in smart manufacturing by means of the Asset
+Administration Shell (AAS) and therefore need to create a Submodel instance with a hierarchy of
+SubmodelElements. This document especially details on the question, which SubmodelElements with which
+semantic identification shall be used for this purpose.
+
+
+=== Scope of the Submodel
+The Submodel template aims at interoperable provision of information, especially information for sizing
+electrical drive systems in industrial automation. For this purpose, the essential components drive, motor,
+gearbox, transformation as well as their additional components are described and the parameters necessary
+for the calculation are considered. Mechanical and electrical aspects are considered in the drive design. The
+Submodel specification addresses machine and plant manufacturers, manufacturers of drive compontents
+and developers of sizing tools that exchange information for the use case of drive design. The objective of
+the drive design is to select suitable components based on movement patterns and system requirements.
+
+=== Relevant standards for the Submodel template
+- link:https://www.automationml.org/wp-content/uploads/2021/06/AR-Drive-Configurations-v1_0_0.zip[AutomationML, “Application Recommendation – Drive Configurations (M-CAD aspects)”]
+- Work In Progress: v2_0_0 “Application Recommendation – Drive Configurations (M-CAD aspects)”
+- VDI 2143-1 „Bewegungsgesetze für Kurvengetriebe; Theoretische Grundlagen“
+- link:https://www.zvei.org/fileadmin/user_upload/Presse_und_Medien/Publikationen/2022/Mai/Diskussionspapier_Digital_Engineering/Diskussionspapier_Digital_Engineering_final.pdf[ZVEI, Discussion Paper – Electrical Drive Design with the Digital Twin]
+
+
+
+==== AutomationML integration
+The data exchange format AutomationML which is standardising in the IEC 62714 standard is a neutral, free,and XML-based data format. It has been developed in order to support the data exchange betweenengineering tools in a heterogeneous engineering tool landscape. As AutomationML is the leading format fordata exchange in the engineering phase and AAS to be seen as the medium to transport data acrossdifferent phases of the lifecycle, the existing AutomationML model shall be used and integrated into the AAS.With this only data required in other phases than engineering shall be “published” in the AAS. All other datashall remain in the AutomationML file. There are options to integrate the AutomationML model in the AAS,which are not yet published. These options will be part of specification in further versions.
+
+=== Use cases, requirements and design decisions
+The Submodel template specification addresses machine and plant manufacturers, manufacturers of drive
+compontents and developer of sizing tools that exchange information for the use case of drive design. The
+objective of the drive design is to select suitable components based on movement patterns and system
+requirements. The Submodel itself can be assigned to a design project, a drive axis or even individual
+components of a drive system. The Leading Picture (Figure 1) defines the scope within which the use cases
+of the Submodel can be classified.
+
+image::Figure_1.png[id="Figure_1", width="100.0%",title="Leading Picture for Use Cases"]
+
+Figure 2 and Table 1 shows the target picture of how, with the help of digital twins, the information, e.g. in the
+development of a machine, is created step by step in the value network around the drive sizing and which
+other AAS Submodels should play a role.
+
+image::Figure_2.png[id="Figure_2", width="100.0%",title="Scenario of a sizing process with AAS"]
+
+Due to the large number of use cases an their scope, the use cases were prioritized according Table 1.
+
+[width="100%", title="List of Use Cases", cols="5%,20%,60%,10%"]
+|===
+s|No. s|Title s|Description s|Spec Version
+|UC1 
+|Sharing of Application requirements along the toolchain
+|Customers can define system requirements, operating conditions, and planned motion sequences, which allows sizing tools to calculate and filter components.
+|1.0
+|UC2 
+|Retrieving the sizing file/project" in any life cycle phase of the asset
+|Embedding of the sizing file / project: Contact information, the sizing file and versions of the sizing tool are referenced in order to be able to retrieve the design of an asset in the engineering and later use phases.
+|1.0
+|UC3 
+|Sharing of Transformation mechanism descriptions in the life cycle phase of the asset
+|Applications and transformation mechanisms are described in order to be able to document the sizing relevant parameters.
+|1.0
+|UC4 
+|Sharing Sizing results in the life cycle phase of the asset
+|Sizing results are described in a uniform manner so that they can be reused in engineering and in the further use of assets.
+|1.0
+|UC5 
+|Exchange Bill of material for further ordering processes and toolchain
+|The parts list of all drive components is created and linked to their respective sizing results
+|1.0
+|UC6 
+|Component data can be shared
+|Sizing tools can retrieve standardized component data that is used to calculate. Dataflow fom component supplier to sizing tool.
+|Later versions
+|UC7 
+|Comparison of different Variants
+|Collection of variants in environmental conditions, axis configurations, …
+|Later Versions
+|UC8 
+|Modeling of multi-axis systems
+|Handover and integration of the main properties from the modeling of multi-axis systems possible in AutomationML.
+|Later Versions
+|===
+
+== Sizing of Power Drive Trains
+
+=== Approach
+The Submodel template specification was created by the ZVEI e. V. working group "Industrie 4.0 Drive
+Technology", AutomationML e.V and the Industrial Digital Twin Association e.V. For this Submodel template
+specification, the sizing tools of different providers and their data formats were compared. From this, crossvendor characteristics were derived. In addition, the existing Automation ML and AAS Submodels were
+examined and evaluated for use in the context of data exchange in the sizing process.
+
+=== Explanations and definitions
+The PowerDriveTrainSizing Submodel consists of four structuring sections that are used within the sizing
+process. The Submodel itself can be assigned to a sizing project, a drive axis, or even individual components
+of a drive system. In future versions of the specification, further sections are planned in which more in-depth
+connections and relationships can be modeled.
+Major components that are described:
+
+- Sizing Project: Identifying characteristics of the sizing project with reference to the sizing project file.
+- Application Requirements:
+* Motion and load profile: The specified motion sequence and the calculated motion, taking into account the workload and customer specifications.
+* Environmental: Environmental conditions in which the drive train is to be operated.
+* System Requirements: The features required by the customer in the selection of individual components and in the consideration of the overall system.
+* UsageProfile: Usage profiles to make the TCO life cycle assessment
+- Transformation mechanisms: Mechanisms for transmitting the force in the drive task, such as belt or rack and pinion applications.
+- SizingResult:
+* Bill of Material: Simple list for ordering the individual components.
+* Utilization Rates: Technical data of the drive components and their utilization rates in relation to the requirements in the motion profile.
+* Messages and Text statements: Interpretative notes and general texts
+
+image::Figure_3.png[id="Figure_3", width="100.0%",title="UML Diagram of SMT PowerDriveTrainSizing"]
+
+
+==== Sizing Project Information
+For Use Case 1, the sizing project file is to be integrated including the metadata that must be attached to a
+sizing documentation. This includes the project name, contact details and the name of the sizing tool and the
+versions used.
+
+The sizing project file with the reference to the sizing tool and the creation and modification timestamps can
+also be included in the asset administration shell.
+
+Notice - the sizing project may be in a proprietary data format. Preferred standard for the engineering phase
+is the Automation ML File Format.
+
+Notice - Further information, such as the contact details of the persons involved in the design or approval
+workflows are feasible.
+
+image::Figure_4.png[id="Figure_4", width="100.0%",title="UML Diagram of SizingProjectInformation"]
+
+
+==== Application Requirements and Motion patterns
+The application requirements section contains the customer's specifications for the drive task. Customer
+requirements are divided into the sections motion pattern, environmental conditions, overall system
+requirements and operation patterns.
+
+image::Figure_5.png[id="Figure_5", width="100.0%",title="UML Diagram of ApplicationRequirements"]
+
+The basis for selecting the optimal drive system is the motion and load patterns that needs to be met. The
+motion pattern consists of individual motion sections that specify the travel distance, the travel time and the
+forces. Motion patterns are differentiated by linear and rotative motion.
+
+Table 2: Linear and Rotative Motion Parameters
+[width="100%", title="Linear and Rotative Motion Parameters", cols="50%,50%"]
+|===
+s|Linear Motion (Translation) 
+s|Rotative Motion (Rotation)
+|Time [s] 
+|Time [s]
+|Position [m] 
+|AngularPosition [rad]
+|LinearVelocity [m/s] 
+|AngularVelocity [rad/s]
+|LinearAcceleration [m/s²] 
+|AngularAcceleration [rad/s²]
+|LinearJerk [m/𝑠𝑠³
+|] AngularJerk [rad/𝑠𝑠³]
+|LoadSideForce [N]
+
+(can be static or variable)
+|LeverArmRadialForce [m]
+
+(static)
+|LoadMass [kg]
+
+(can be static or variable)
+|MomentOfInertiaOfLoad [kg m2]
+
+(static)
+|CompensationForce [N]
+
+(can be static or variable)
+|AxialForce [N]
+
+(can be static or variable)
+|FrictionCoefficient [unitless]
+
+(static)
+|RadialForce [N]
+
+(can be static or variable)
+|FrictionForce [N]
+
+(can be static or variable)
+|Friction Torque [N]
+
+(can be static or variable)
+|CounterMass [kg]
+
+(static)
+|LoadTorque [N]
+
+(can be static or variable)
+|===
+A motion pattern consists of one or more sections within which motion sequences can be defined and
+passed as time series.
+
+To be compatible with existing systems, the motion profile is to be imported as CSV. The comma-separated
+column headings and order are based on the characteristics and units specified in the MetadataRecord. Line
+1 is therefore skipped during import.
+
+Definitions for the CSV files:
+
+- Line 1 as heading consisting of "idShort + [Unit]", from line 2 the values start
+- As separator between the columns ";"
+- Float numbers
+- Decimal separator "."
+
+The section of the *environmental conditions* contains all requirements for the drive system, which are
+based on the operating conditions. In addition to the properties defined in this specification, further properties
+can be added by the User.
+
+The *overall system requirements* refer to the characteristics of the drive system, in particular its interfaces
+to the power supply, mechanical integration or cooling. In addition to the properties defined in this
+specification, further properties can be added by the User.
+
+Notice - The current specification assumes a single axis. for multiple axes, the system requirements, if
+different, would also need to be described multiple times.
+
+==== Transformation mechanisms
+A transformation mechanism (application) is used, for example, to generate linear output motions through
+rotational drive motions. For the optimum sizing of the drive system, data of the application must be
+determined. The working group compared some common mechanisms from different sizing tools. More
+mechanisms will follow. The descriptive characteristics also represent the common denominator for a basic
+interpretation. Vendor specific extensions through additional properties are given. All applications are listed
+in the submodel template - note that only one application mechanism can be selected in the sizing project
+instance.
+
+image::Figure_6.png[id="Figure_6", width="100.0%",title="UML Diagram of TransformationMechanism"]
+
+
+==== Sizing Results
+The sizing results section contains the result data related to the overall system and the individual
+components. In particular, the specification shows the sizing results of the overall system and the relevant
+individual components (such as drive, motor, gearbox). Further components, such as add-on parts and
+accessories, can be inserted in the "SizingResultOther" section.
+
+
+image::Figure_7.png[id="Figure_7", width="100.0%",title="UML Diagram of SizingResult"]
+
+Notice - The AutomationML file for the sizing project contains a complete list of relationships. In the AAS
+Submodel, only the mechanical attachment is to be represented. 
+
+=== Submodel Specification PowerDriveTrainSizing
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[ReferenceElement, Table_Submodel_Specification_PowerDriveTrainSizing]
+
+
+
+[width="100%", id="Table_Submodel_Specification_PowerDriveTrainSizing", title="Submodel Specification PowerDriveTrainSizing", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}PowerDriveTrainSizing 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Submodel containing customer specifications for motion and load profile, limitations and requirements of an industrial motion application. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+SizingProjectInformation
+|https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectInformation1/0  +
+ +
+Descriptive information that characterizes and contextualizes the project itself 
+|[]  +
+ +
+10 elements
+|1
+
+
+
+|[SMC]  +
+ +
+ApplicationRequirements
+|https://admin-shell.io/idta/PowerDriveTrainSizing/ApplicationRequirements/1/0  +
+ +
+Technical and environmental requirements from the customer which have to be fulfilled by the entire power drive train and its components. 
+|[]  +
+ +
+4 elements
+|1
+
+
+
+|[SMC]  +
+ +
+TransformationMechanism
+|https://admin-shell.io/idta/PowerDriveTrainSizing/TransformationMechanism/1/0  +
+ +
+Devices used to convert one form of input energy or motion into another form. This can include the conversion of rotary motion to linear motion, the amplification of torque, or other mechanical conversions  +
+All application mechanisms are listed in the submodel template - note that only one application mechanism can be selected in the design project instance.
+|[]  +
+ +
+10 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+SizingResult
+|https://admin-shell.io/idta/PowerDriveTrainSizing/SizingResult/1/0  +
+ +
+Insights resulting from the process of designing a drive system. This can include selecting the right components, calculating torques, speeds, power requirements, sizing motors, gearboxes and other elements 
+|[]  +
+ +
+5 elements
+|0..1
+
+
+
+|===
+
+
+
+
+==== Submodel Elements of SizingProjectInformation
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_1_Submodel_Elements_of_SizingProjectInformation],[ReferenceElement, Table_SizingProjectInformation]
+
+
+
+[width="100%", id="Table_SizingProjectInformation", title="Submodel Elements of SizingProjectInformation", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}SizingProjectInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectInformation1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}PowerDriveTrainSizing 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ClientName
+|https://admin-shell.io/idta/PowerDriveTrainSizing/ClientName/1/0  +
+ +
+Designation for a person or organization for which the design project was created 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+SizingProjectName
+|https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectName/1/0  +
+ +
+Meaningful name for labeling of the sizing project 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+SizingProjectAxisReference
+|https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectAxisReference/1/0  +
+ +
+Unique identification number or identifier assigned to a specific axis within the sizing project 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[MLP]  +
+ +
+SizingProjectDescription
+|https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectDescription/1/0  +
+ +
+Short description of the project, power drive train or application (short text) in common language 
+|[]  +
+ +
+Short description of the project, power drive train or application (short text) in common language@en
+|0..1
+
+
+
+|[File]  +
+ +
+SizingProjectLink
+|https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectLink/1/0  +
+ +
+Resource for storing data of a sizing application, identified primarily by its file name. 
+|[]  +
+ +
+
+|1..*
+
+
+
+|[Prop]  +
+ +
+SizingToolName
+|https://admin-shell.io/idta/PowerDriveTrainSizing/SizingToolName/1/0  +
+ +
+Name or title of a computer program or application software. This name identifies the specific software with the help of which the sizing was performed 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+DateCreated
+|https://admin-shell.io/idta/PowerDriveTrainSizing/DateCreated/1/0  +
+ +
+The exact date and time that this file was created or generated on a computer system. This date indicates when the file was first created or captured on the system 
+|[DateTime]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+DateChanged
+|https://admin-shell.io/idta/PowerDriveTrainSizing/DateChanged/1/0  +
+ +
+Exact date and time when the file was last edited, modified, or updated. This date indicates when the last modifications were made to the file 
+|[DateTime]  +
+ +
+
+|1
+
+
+
+|[SMC]  +
+ +
+ContactInformation
+|https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation  +
+ +
+ 
+|[]  +
+ +
+0 elements
+|1..*
+
+
+
+|[Prop]  +
+ +
+AmlDriveConfigVersion
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AmlDriveConfigVersion/1/0  +
+ +
+Used version of AML Application Reccomendation Drive Configurations with the help of which the sizing was performed. 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+==== Submodel Elements of ApplicationRequirements
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_2_Submodel_Elements_of_ApplicationRequirements],[ReferenceElement, Table_ApplicationRequirements]
+
+
+
+[width="100%", id="Table_ApplicationRequirements", title="Submodel Elements of ApplicationRequirements", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}ApplicationRequirements 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/ApplicationRequirements/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}PowerDriveTrainSizing 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+MotionPattern
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPattern/1/0  +
+ +
+The motion profile represents trajectories moving along different points. 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+Environmental
+|https://admin-shell.io/idta/PowerDriveTrainSizing/EnvironmentalRequirements/1/0  +
+ +
+Conditions and prerequisites necessary for the proper functioning, installation or use of the system 
+|[]  +
+ +
+5 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+OverallSystemRequirements
+|https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystemRequirements/1/0  +
+ +
+basic criteria and specifications that apply to the installation, configuration, and operation of the system. These requirements typically include minimum specifications for hardware, software, security requirements, and other basic aspects necessary for the application to function smoothly 
+|[]  +
+ +
+9 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+UsageProfile
+|https://admin-shell.io/idta/PowerDriveTrainSizing/UsageProfile/1/0  +
+ +
+Characteristic behavior patterns with which the system or facility is used over the course of a day, week, or year 
+|[]  +
+ +
+3 elements
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of MotionPattern
+===== 2.3.2.1 Submodel Elements of MotionPattern
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_2_Submodel_Elements_of_ApplicationRequirements],[SubmodelElementCollection, Section_2_3_2_1_Submodel_Elements_of_MotionPattern],[ReferenceElement, Table_Submodel_Elements_of_MotionPattern]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_MotionPattern", title="Submodel Elements of MotionPattern", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}MotionPattern 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPattern/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ApplicationRequirements 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+MotionPatternName
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPatternName/1/0  +
+ +
+Designation that is assigned to a specific movement pattern or movement sequence 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[SMC]  +
+ +
+MotionPatternSections
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPatternSections/1/0  +
+ +
+Part of a motion profile, each of which represents a specific motion characteristic 
+|[]  +
+ +
+2 elements
+|1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of MotionPatternSections
+===== 2.3.2.2 Submodel Elements of MotionPatternSections
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_2_Submodel_Elements_of_ApplicationRequirements],[SubmodelElementCollection, Section_2_3_2_2_Submodel_Elements_of_MotionPatternSections],[ReferenceElement, Table_Submodel_Elements_of_MotionPatternSections]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_MotionPatternSections", title="Submodel Elements of MotionPatternSections", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}MotionPatternSections 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPatternSections/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}MotionPattern 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+RotativeSection
+|https://admin-shell.io/idta/PowerDriveTrainSizing/RotativeMotionPatternSection/1/0  +
+ +
+Part of a motion profile that concerns a rotating motion 
+|[]  +
+ +
+9 elements
+|0..*
+
+
+
+|[SMC]  +
+ +
+LinearSection
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LinearMotionPatternSection/1/0  +
+ +
+Part of a motion profile that concerns a linear motion 
+|[]  +
+ +
+8 elements
+|0..*
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of RotativeSection
+===== 2.3.2.3 Submodel Elements of RotativeSection
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_2_Submodel_Elements_of_ApplicationRequirements],[SubmodelElementCollection, Section_2_3_2_3_Submodel_Elements_of_RotativeSection],[ReferenceElement, Table_Submodel_Elements_of_RotativeSection]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_RotativeSection", title="Submodel Elements of RotativeSection", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RotativeSection 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/RotativeMotionPatternSection/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}MotionPatternSections 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+FrictionTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionTorque/1/0  +
+ +
+the restraining torque that acts between two objects in contact with each other 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmAxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0  +
+ +
+distance between the point of axial force application and the axis of rotation 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AxialForce/1/0  +
+ +
+outer force on the rotating object parallel to the rotation axis 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmRadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0  +
+ +
+Abstand zwischen Angriffspunkt der Radialkraft und Flansch, bezogen auf das Flanschkoordinatensystem 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+RadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/RadialForce/1/0  +
+ +
+outer force on the rotating object orthogonal to the rotation axis 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MomentOfInertiaOfLoad
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MomentOfInertiaOfLoad/1/0  +
+ +
+Attempt of the object to be moved to maintain its state of motion 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LoadTorque/1/0  +
+ +
+torque acting on the rotating mass from the outside. Positive values act in the direction of increasing angular positions in the angular position system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[SMC]  +
+ +
+MetadataRotativeMotionFile
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataRotativeMotionFile/1/0  +
+ +
+descriptive attributes that are included in a CSV file in addition to the actual time series data. This metadata forms the columns of the CSV and provides information about the content of the time series data, the units of the measured quantities and other relevant details 
+|[]  +
+ +
+9 elements
+|1
+
+
+
+|[File]  +
+ +
+MotionSectionFile
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MotionSectionFile/1/0  +
+ +
+Sequence of data points in sequential order over a period of time within a paged data file 
+|[]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of MetadataRotativeMotionFile
+===== 2.3.2.4 Submodel Elements of MetadataRotativeMotionFile
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_2_Submodel_Elements_of_ApplicationRequirements],[SubmodelElementCollection, Section_2_3_2_4_Submodel_Elements_of_MetadataRotativeMotionFile],[ReferenceElement, Table_Submodel_Elements_of_MetadataRotativeMotionFile]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_MetadataRotativeMotionFile", title="Submodel Elements of MetadataRotativeMotionFile", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}MetadataRotativeMotionFile 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataRotativeMotionFile/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}RotativeSection 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Time
+|https://admin-shell.io/idta/TimeSeries/RelativePointInTime/1/1  +
+ +
+Definierter Zeitpunkt innerhalb eines Zeitbereichs, gemessen vom Startzeitpunkt des Zeitbereichs 
+|[Long]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+AngularPosition
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AngularPosition/1/0  +
+ +
+Verdrehung gegenüber dem Ursprung des Winkellagesystems 
+|[Long]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+AngularVelocity
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AngularVelocity/1/0  +
+ +
+temporal rate of change of the angular position in the angular position system. Positive values describe an angular change with increasing angular position 
+|[Long]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+AngularAcceleration
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AngularAcceleration/1/0  +
+ +
+temporal rate of change in the angular velocity in the angular position system. Positive values describe a change in angular velocity with increasing angular position 
+|[Long]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+AngularJerk
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AngularJerk/1/0  +
+ +
+instantaneous time rate of change of angular acceleration of a object 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FrictionTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionTorque/1/0  +
+ +
+the restraining torque that acts between two objects in contact with each other 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AxialForce/1/0  +
+ +
+outer force on the rotating object parallel to the rotation axis 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+RadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/RadialForce/1/0  +
+ +
+outer force on the rotating object orthogonal to the rotation axis 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LoadTorque/1/0  +
+ +
+torque acting on the rotating mass from the outside. Positive values act in the direction of increasing angular positions in the angular position system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of LinearSection
+===== 2.3.2.5 Submodel Elements of LinearSection
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_2_Submodel_Elements_of_ApplicationRequirements],[SubmodelElementCollection, Section_2_3_2_5_Submodel_Elements_of_LinearSection],[ReferenceElement, Table_Submodel_Elements_of_LinearSection]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_LinearSection", title="Submodel Elements of LinearSection", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}LinearSection 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/LinearMotionPatternSection/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}MotionPatternSections 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+FrictionCoefficient
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0  +
+ +
+Ratio between the frictional force and the contact force between two objects 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FrictionForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionForce/1/0  +
+ +
+The restraining force that acts between two objects in contact 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+CompensationForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/CompensationForce/1/0  +
+ +
+Force to compensate permanently acting forces 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LoadMass
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LoadMass/1/0  +
+ +
+mass of the object to be moved 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LoadSideForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LoadSideForce/1/0  +
+ +
+force acting on the moving mass from the outside 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+CounterMass
+|https://admin-shell.io/idta/PowerDriveTrainSizing/CounterMass/1/0  +
+ +
+mass whose weight force compensates permanently acting forces 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[SMC]  +
+ +
+MetadataLinearMotionFile
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataLinearMotionFile/1/0  +
+ +
+descriptive attributes that are included in a CSV file in addition to the actual time series data. This metadata forms the columns of the CSV and provides information about the content of the time series data, the units of the measured quantities and other relevant details 
+|[]  +
+ +
+7 elements
+|1
+
+
+
+|[File]  +
+ +
+MotionSectionFile
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MotionSectionFile/1/0  +
+ +
+Sequence of data points in sequential order over a period of time within a paged data file 
+|[]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of MetadataLinearMotionFile
+===== 2.3.2.6 Submodel Elements of MetadataLinearMotionFile
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_2_Submodel_Elements_of_ApplicationRequirements],[SubmodelElementCollection, Section_2_3_2_6_Submodel_Elements_of_MetadataLinearMotionFile],[ReferenceElement, Table_Submodel_Elements_of_MetadataLinearMotionFile]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_MetadataLinearMotionFile", title="Submodel Elements of MetadataLinearMotionFile", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}MetadataLinearMotionFile 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataLinearMotionFile/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}LinearSection 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Time
+|https://admin-shell.io/idta/TimeSeries/RelativePointInTime/1/1  +
+ +
+Definierter Zeitpunkt innerhalb eines Zeitbereichs, gemessen vom Startzeitpunkt des Zeitbereichs 
+|[Long]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+Position
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Position/1/0  +
+ +
+defined value of the location related to the zero point of the coordinate system 
+|[Long]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+LinearVelocity
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LinearVelocity/1/0  +
+ +
+temporal rate of change of position in the position coordinate system. Positive values describe a change in position with increasing position values 
+|[Long]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+LinearAcceleration
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LinearAcceleration/1/0  +
+ +
+temporal rate of change of velocity in the position coordinate system. Positive values describe a change in velocity with increasing velocity values 
+|[Long]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+LinearJerk
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LinearJerk/1/0  +
+ +
+largest temporal rate of change of the acceleration 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FrictionForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionForce/1/0  +
+ +
+The restraining force that acts between two objects in contact 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LoadSideForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LoadSideForce/1/0  +
+ +
+force acting on the moving mass from the outside 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of Environmental
+===== 2.3.2.7 Submodel Elements of Environmental
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_2_Submodel_Elements_of_ApplicationRequirements],[SubmodelElementCollection, Section_2_3_2_7_Submodel_Elements_of_Environmental],[ReferenceElement, Table_Submodel_Elements_of_Environmental]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_Environmental", title="Submodel Elements of Environmental", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Environmental 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/EnvironmentalRequirements/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ApplicationRequirements 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+InstallationAltitude
+|0173-1#02-AAZ614#003  +
+ +
+Altitude above sea level on which a device or installation is installed 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Atex2Gas
+|0173-1#02-AAR865#004  +
+ +
+Information whether device is tested and approved according to ATEX II / Gas 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Atex2Dust
+|0173-1#02-AAR866#004  +
+ +
+Information whether device is tested and approved according to ATEX II / dust 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Range]  +
+ +
+AmbientTemperatureController
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AmbientTemperatureController/1/0  +
+ +
+Temperature in the outer area of the motor and gear during operation. 
+|[]  +
+ +
+min .. max
+|0..1
+
+
+
+|[Range]  +
+ +
+AmbientTemperatureMotor
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AmbientTemperatureMotor/1/0  +
+ +
+Temperature in the outer area of the motor and gear during operation. 
+|[]  +
+ +
+min .. max
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of OverallSystemRequirements
+===== 2.3.2.8 Submodel Elements of OverallSystemRequirements
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_2_Submodel_Elements_of_ApplicationRequirements],[SubmodelElementCollection, Section_2_3_2_8_Submodel_Elements_of_OverallSystemRequirements],[ReferenceElement, Table_Submodel_Elements_of_OverallSystemRequirements]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_OverallSystemRequirements", title="Submodel Elements of OverallSystemRequirements", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}OverallSystemRequirements 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystemRequirements/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ApplicationRequirements 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+DcLinkCoupling
+|https://admin-shell.io/idta/PowerDriveTrainSizing/DcLinkCoupling/1/0  +
+ +
+Statement whether there is a connection between the DC links or not 
+|[String]  +
+ +
+false
+|0..1
+
+
+
+|[Prop]  +
+ +
+BrakePresent
+|0173-1#02-BAE085#007  +
+ +
+ 
+|[String]  +
+ +
+true
+|0..1
+
+
+
+|[Prop]  +
+ +
+MainsConnection
+|0173-1#02-ABF822#003  +
+ +
+ 
+|[String]  +
+ +
+230 VAC
+|0..1
+
+
+
+|[Prop]  +
+ +
+MountingType
+|0173-1#02-AAH167#006  +
+ +
+information on the type of fixation of an object 
+|[String]  +
+ +
+Flansch
+|0..1
+
+
+
+|[Prop]  +
+ +
+MinSwitchingFrequency
+|0173-1#02-AAN329#003  +
+ +
+lowest switching frequency for which the device is designed to operate 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+CoolingType
+|0173-1#02-BAE122#007  +
+ +
+ 
+|[String]  +
+ +
+Air-air heat exchanger
+|0..1
+
+
+
+|[Prop]  +
+ +
+ProtectionType
+|0173-1#02-BAG342#007  +
+ +
+Summary of the various IP protection degrees to achieve a limited selected for search features 
+|[String]  +
+ +
+IP67
+|0..1
+
+
+
+|[Prop]  +
+ +
+CertificateApproval
+|0173-1#02-BAB392#018  +
+ +
+ 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+SafetyIntegrityLevel
+|0173-1#02-ABH715#002  +
+ +
+  +
+safety integrity level (SIL) according to IEC 61508
+|[String]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of UsageProfile
+===== 2.3.2.9 Submodel Elements of UsageProfile
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_2_Submodel_Elements_of_ApplicationRequirements],[SubmodelElementCollection, Section_2_3_2_9_Submodel_Elements_of_UsageProfile],[ReferenceElement, Table_Submodel_Elements_of_UsageProfile]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_UsageProfile", title="Submodel Elements of UsageProfile", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}UsageProfile 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/UsageProfile/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ApplicationRequirements 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+CyclesPerMinute
+|https://admin-shell.io/idta/PowerDriveTrainSizing/CyclesPerMinute/1/0  +
+ +
+Number of complete repetitions of the motion profile in one minute 
+|[Integer]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+OperatingHoursPerDay
+|https://admin-shell.io/idta/PowerDriveTrainSizing/OperatingHoursPerDay/1/0  +
+ +
+Hours during which the plant, in particular the drive system, is in operation during a single day 
+|[Long]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+OperatingDaysPerYear
+|https://admin-shell.io/idta/PowerDriveTrainSizing/OperatingDaysPerYear/1/0  +
+ +
+Days during which the plant, in particular the drive system, is in operation during a year 
+|[Long]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+
+==== Submodel Elements of TransformationMechanism
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_3_Submodel_Elements_of_TransformationMechanism],[ReferenceElement, Table_Submodel_Elements_of_TransformationMechanism]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_TransformationMechanism", title="Submodel Elements of TransformationMechanism", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}TransformationMechanism 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/TransformationMechanism/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}PowerDriveTrainSizing 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}All application mechanisms are listed in the submodel template - note that only one application mechanism can be selected in the design project instance. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Ent]  +
+ +
+Fan
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Fan/1/0  +
+ +
+ 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Ent]  +
+ +
+Pump
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Pump/1/0  +
+ +
+ 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Ent]  +
+ +
+RotraryTable
+|https://admin-shell.io/idta/PowerDriveTrainSizing/RotraryTable/1/0  +
+ +
+ 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Ent]  +
+ +
+ChainConveyor
+|https://admin-shell.io/idta/PowerDriveTrainSizing/ChainConveyor/1/0  +
+ +
+ 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Ent]  +
+ +
+BeltConveyor
+|https://admin-shell.io/idta/PowerDriveTrainSizing/BeltConveyor/1/0  +
+ +
+ 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Ent]  +
+ +
+RollerConveyor
+|https://admin-shell.io/idta/PowerDriveTrainSizing/RollerConveyor/1/0  +
+ +
+ 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Ent]  +
+ +
+BeltDrive
+|https://admin-shell.io/idta/PowerDriveTrainSizing/BeltDrive/1/0  +
+ +
+ 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Ent]  +
+ +
+TravelingDrive
+|https://admin-shell.io/idta/PowerDriveTrainSizing/TravelingDrive/1/0  +
+ +
+ 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Ent]  +
+ +
+RackDrive
+|https://admin-shell.io/idta/PowerDriveTrainSizing/RackDrive/1/0  +
+ +
+ 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Ent]  +
+ +
+SpindleDrive
+|https://admin-shell.io/idta/PowerDriveTrainSizing/SpindleDrive/1/0  +
+ +
+ 
+|[]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of Fan
+===== 2.3.3.1 Submodel Elements of Fan
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_3_Submodel_Elements_of_TransformationMechanism],[SubmodelElementCollection, Section_2_3_3_1_Submodel_Elements_of_Fan],[ReferenceElement, Table_Submodel_Elements_of_Fan]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_Fan", title="Submodel Elements of Fan", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Fan 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/Fan/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TransformationMechanism 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Efficiency
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0  +
+ +
+Ratio between the actual useful power or work performed by the device and the energy or power supplied. It expresses how efficiently the device converts the energy into the desired work, taking into account losses and friction 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InertiaMotorSide
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0  +
+ +
+additional mass or inertia added on the side of a drive system or motor. This additional mass can be caused by various factors, such as the own rotor inertia (including pinion), heavier gears or mechanical loads added to the drive system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmAxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0  +
+ +
+distance between the point of axial force application and the axis of rotation 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmRadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0  +
+ +
+Abstand zwischen Angriffspunkt der Radialkraft und Flansch, bezogen auf das Flanschkoordinatensystem 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+NoLoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0  +
+ +
+The minimum torque required to set the application in motion without overcoming an external load 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InclinationAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0  +
+ +
+Angle at which a linear application is inclined with respect to the horizontal 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of Pump
+===== 2.3.3.2 Submodel Elements of Pump
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_3_Submodel_Elements_of_TransformationMechanism],[SubmodelElementCollection, Section_2_3_3_2_Submodel_Elements_of_Pump],[ReferenceElement, Table_Submodel_Elements_of_Pump]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_Pump", title="Submodel Elements of Pump", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Pump 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/Pump/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TransformationMechanism 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Efficiency
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0  +
+ +
+Ratio between the actual useful power or work performed by the device and the energy or power supplied. It expresses how efficiently the device converts the energy into the desired work, taking into account losses and friction 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InertiaMotorSide
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0  +
+ +
+additional mass or inertia added on the side of a drive system or motor. This additional mass can be caused by various factors, such as the own rotor inertia (including pinion), heavier gears or mechanical loads added to the drive system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmAxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0  +
+ +
+distance between the point of axial force application and the axis of rotation 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmRadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0  +
+ +
+Abstand zwischen Angriffspunkt der Radialkraft und Flansch, bezogen auf das Flanschkoordinatensystem 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+NoLoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0  +
+ +
+The minimum torque required to set the application in motion without overcoming an external load 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InclinationAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0  +
+ +
+Angle at which a linear application is inclined with respect to the horizontal 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of RotraryTable
+===== 2.3.3.3 Submodel Elements of RotraryTable
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_3_Submodel_Elements_of_TransformationMechanism],[SubmodelElementCollection, Section_2_3_3_3_Submodel_Elements_of_RotraryTable],[ReferenceElement, Table_Submodel_Elements_of_RotraryTable]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_RotraryTable", title="Submodel Elements of RotraryTable", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RotraryTable 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/RotraryTable/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TransformationMechanism 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Efficiency
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0  +
+ +
+Ratio between the actual useful power or work performed by the device and the energy or power supplied. It expresses how efficiently the device converts the energy into the desired work, taking into account losses and friction 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InertiaMotorSide
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0  +
+ +
+additional mass or inertia added on the side of a drive system or motor. This additional mass can be caused by various factors, such as the own rotor inertia (including pinion), heavier gears or mechanical loads added to the drive system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmAxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0  +
+ +
+distance between the point of axial force application and the axis of rotation 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmRadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0  +
+ +
+Abstand zwischen Angriffspunkt der Radialkraft und Flansch, bezogen auf das Flanschkoordinatensystem 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+NoLoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0  +
+ +
+The minimum torque required to set the application in motion without overcoming an external load 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InclinationAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0  +
+ +
+Angle at which a linear application is inclined with respect to the horizontal 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+StaticEccentricity
+|https://admin-shell.io/idta/PowerDriveTrainSizing/StaticEccentricity/1/0  +
+ +
+Distance between the table's center of rotation and the point bearing the payload. Static, not variable via the motion profile. 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+CentroidAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/CentroidAngle/1/0  +
+ +
+The center angle refers to the angle describing the center of a circle. In the context of a rotary table, the center angle refers to the angle by which a rotary table has been rotated relative to a reference position. It is used to determine the exact position of the table. (Positive angle to start movement) 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Elements of ChainConveyor
+===== 2.3.3.4 Submodel Elements of ChainConveyor
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_3_Submodel_Elements_of_TransformationMechanism],[SubmodelElementCollection, Section_2_3_3_4_Submodel_Elements_of_ChainConveyor],[ReferenceElement, Table_Submodel_Elements_of_ChainConveyor]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_ChainConveyor", title="Submodel Elements of ChainConveyor", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}ChainConveyor 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/ChainConveyor/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TransformationMechanism 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Efficiency
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0  +
+ +
+Ratio between the actual useful power or work performed by the device and the energy or power supplied. It expresses how efficiently the device converts the energy into the desired work, taking into account losses and friction 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InertiaMotorSide
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0  +
+ +
+additional mass or inertia added on the side of a drive system or motor. This additional mass can be caused by various factors, such as the own rotor inertia (including pinion), heavier gears or mechanical loads added to the drive system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmAxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0  +
+ +
+distance between the point of axial force application and the axis of rotation 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmRadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0  +
+ +
+Abstand zwischen Angriffspunkt der Radialkraft und Flansch, bezogen auf das Flanschkoordinatensystem 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+NoLoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0  +
+ +
+The minimum torque required to set the application in motion without overcoming an external load 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InclinationAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0  +
+ +
+Angle at which a linear application is inclined with respect to the horizontal 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FrictionCoefficient
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0  +
+ +
+Ratio between the frictional force and the contact force between two objects 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FeedConstant
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0  +
+ +
+Parameter in technical systems that describes the relationship between a single rotary motion and the resulting linear motion or feed motion 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of BeltConveyor
+===== 2.3.3.5 Submodel Elements of BeltConveyor
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_3_Submodel_Elements_of_TransformationMechanism],[SubmodelElementCollection, Section_2_3_3_5_Submodel_Elements_of_BeltConveyor],[ReferenceElement, Table_Submodel_Elements_of_BeltConveyor]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_BeltConveyor", title="Submodel Elements of BeltConveyor", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}BeltConveyor 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/BeltConveyor/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TransformationMechanism 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Efficiency
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0  +
+ +
+Ratio between the actual useful power or work performed by the device and the energy or power supplied. It expresses how efficiently the device converts the energy into the desired work, taking into account losses and friction 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InertiaMotorSide
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0  +
+ +
+additional mass or inertia added on the side of a drive system or motor. This additional mass can be caused by various factors, such as the own rotor inertia (including pinion), heavier gears or mechanical loads added to the drive system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmAxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0  +
+ +
+distance between the point of axial force application and the axis of rotation 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmRadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0  +
+ +
+Abstand zwischen Angriffspunkt der Radialkraft und Flansch, bezogen auf das Flanschkoordinatensystem 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+NoLoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0  +
+ +
+The minimum torque required to set the application in motion without overcoming an external load 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InclinationAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0  +
+ +
+Angle at which a linear application is inclined with respect to the horizontal 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FrictionCoefficient
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0  +
+ +
+Ratio between the frictional force and the contact force between two objects 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FeedConstant
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0  +
+ +
+Parameter in technical systems that describes the relationship between a single rotary motion and the resulting linear motion or feed motion 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of RollerConveyor
+===== 2.3.3.6 Submodel Elements of RollerConveyor
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_3_Submodel_Elements_of_TransformationMechanism],[SubmodelElementCollection, Section_2_3_3_6_Submodel_Elements_of_RollerConveyor],[ReferenceElement, Table_Submodel_Elements_of_RollerConveyor]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_RollerConveyor", title="Submodel Elements of RollerConveyor", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RollerConveyor 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/RollerConveyor/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TransformationMechanism 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Efficiency
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0  +
+ +
+Ratio between the actual useful power or work performed by the device and the energy or power supplied. It expresses how efficiently the device converts the energy into the desired work, taking into account losses and friction 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InertiaMotorSide
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0  +
+ +
+additional mass or inertia added on the side of a drive system or motor. This additional mass can be caused by various factors, such as the own rotor inertia (including pinion), heavier gears or mechanical loads added to the drive system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmAxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0  +
+ +
+distance between the point of axial force application and the axis of rotation 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmRadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0  +
+ +
+Abstand zwischen Angriffspunkt der Radialkraft und Flansch, bezogen auf das Flanschkoordinatensystem 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+NoLoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0  +
+ +
+The minimum torque required to set the application in motion without overcoming an external load 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InclinationAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0  +
+ +
+Angle at which a linear application is inclined with respect to the horizontal 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FrictionCoefficient
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0  +
+ +
+Ratio between the frictional force and the contact force between two objects 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FeedConstant
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0  +
+ +
+Parameter in technical systems that describes the relationship between a single rotary motion and the resulting linear motion or feed motion 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of BeltDrive
+===== 2.3.3.7 Submodel Elements of BeltDrive
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_3_Submodel_Elements_of_TransformationMechanism],[SubmodelElementCollection, Section_2_3_3_7_Submodel_Elements_of_BeltDrive],[ReferenceElement, Table_Submodel_Elements_of_BeltDrive]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_BeltDrive", title="Submodel Elements of BeltDrive", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}BeltDrive 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/BeltDrive/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TransformationMechanism 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Efficiency
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0  +
+ +
+Ratio between the actual useful power or work performed by the device and the energy or power supplied. It expresses how efficiently the device converts the energy into the desired work, taking into account losses and friction 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InertiaMotorSide
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0  +
+ +
+additional mass or inertia added on the side of a drive system or motor. This additional mass can be caused by various factors, such as the own rotor inertia (including pinion), heavier gears or mechanical loads added to the drive system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmAxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0  +
+ +
+distance between the point of axial force application and the axis of rotation 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmRadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0  +
+ +
+Abstand zwischen Angriffspunkt der Radialkraft und Flansch, bezogen auf das Flanschkoordinatensystem 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+NoLoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0  +
+ +
+The minimum torque required to set the application in motion without overcoming an external load 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InclinationAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0  +
+ +
+Angle at which a linear application is inclined with respect to the horizontal 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FrictionCoefficient
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0  +
+ +
+Ratio between the frictional force and the contact force between two objects 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FeedConstant
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0  +
+ +
+Parameter in technical systems that describes the relationship between a single rotary motion and the resulting linear motion or feed motion 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of TravelingDrive
+===== 2.3.3.8 Submodel Elements of TravelingDrive
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_3_Submodel_Elements_of_TransformationMechanism],[SubmodelElementCollection, Section_2_3_3_8_Submodel_Elements_of_TravelingDrive],[ReferenceElement, Table_Submodel_Elements_of_TravelingDrive]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_TravelingDrive", title="Submodel Elements of TravelingDrive", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}TravelingDrive 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/TravelingDrive/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TransformationMechanism 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Efficiency
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0  +
+ +
+Ratio between the actual useful power or work performed by the device and the energy or power supplied. It expresses how efficiently the device converts the energy into the desired work, taking into account losses and friction 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InertiaMotorSide
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0  +
+ +
+additional mass or inertia added on the side of a drive system or motor. This additional mass can be caused by various factors, such as the own rotor inertia (including pinion), heavier gears or mechanical loads added to the drive system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmAxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0  +
+ +
+distance between the point of axial force application and the axis of rotation 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmRadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0  +
+ +
+Abstand zwischen Angriffspunkt der Radialkraft und Flansch, bezogen auf das Flanschkoordinatensystem 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+NoLoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0  +
+ +
+The minimum torque required to set the application in motion without overcoming an external load 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InclinationAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0  +
+ +
+Angle at which a linear application is inclined with respect to the horizontal 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FrictionCoefficient
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0  +
+ +
+Ratio between the frictional force and the contact force between two objects 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FeedConstant
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0  +
+ +
+Parameter in technical systems that describes the relationship between a single rotary motion and the resulting linear motion or feed motion 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of RackDrive
+===== 2.3.3.9 Submodel Elements of RackDrive
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_3_Submodel_Elements_of_TransformationMechanism],[SubmodelElementCollection, Section_2_3_3_9_Submodel_Elements_of_RackDrive],[ReferenceElement, Table_Submodel_Elements_of_RackDrive]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_RackDrive", title="Submodel Elements of RackDrive", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RackDrive 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/RackDrive/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TransformationMechanism 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Efficiency
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0  +
+ +
+Ratio between the actual useful power or work performed by the device and the energy or power supplied. It expresses how efficiently the device converts the energy into the desired work, taking into account losses and friction 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InertiaMotorSide
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0  +
+ +
+additional mass or inertia added on the side of a drive system or motor. This additional mass can be caused by various factors, such as the own rotor inertia (including pinion), heavier gears or mechanical loads added to the drive system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmAxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0  +
+ +
+distance between the point of axial force application and the axis of rotation 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmRadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0  +
+ +
+Abstand zwischen Angriffspunkt der Radialkraft und Flansch, bezogen auf das Flanschkoordinatensystem 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+NoLoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0  +
+ +
+The minimum torque required to set the application in motion without overcoming an external load 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InclinationAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0  +
+ +
+Angle at which a linear application is inclined with respect to the horizontal 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FrictionCoefficient
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0  +
+ +
+Ratio between the frictional force and the contact force between two objects 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FeedConstant
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0  +
+ +
+Parameter in technical systems that describes the relationship between a single rotary motion and the resulting linear motion or feed motion 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+DiameterPinion
+|https://admin-shell.io/idta/PowerDriveTrainSizing/DiameterPinion/1/0  +
+ +
+Distance from one edge to the opposite edge of the tooth wheel, measured through the center 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+HelixAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/HelixAngle/1/0  +
+ +
+The helix angle determines the direction of the teeth. The helix angle is measured between the axis and the tooth. If the helix angle = 0°, the teeth are straight. If the helix angle > 0°, the teeth are helical 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MovingPart
+|https://admin-shell.io/idta/PowerDriveTrainSizing/RackMovingPart/1/0  +
+ +
+The part that acts in a linear motion along the teeth 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of SpindleDrive
+===== 2.3.3.10 Submodel Elements of SpindleDrive
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_3_Submodel_Elements_of_TransformationMechanism],[SubmodelElementCollection, Section_2_3_3_10_Submodel_Elements_of_SpindleDrive],[ReferenceElement, Table_Submodel_Elements_of_SpindleDrive]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_SpindleDrive", title="Submodel Elements of SpindleDrive", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}SpindleDrive 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/SpindleDrive/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TransformationMechanism 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Efficiency
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0  +
+ +
+Ratio between the actual useful power or work performed by the device and the energy or power supplied. It expresses how efficiently the device converts the energy into the desired work, taking into account losses and friction 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InertiaMotorSide
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0  +
+ +
+additional mass or inertia added on the side of a drive system or motor. This additional mass can be caused by various factors, such as the own rotor inertia (including pinion), heavier gears or mechanical loads added to the drive system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmAxialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0  +
+ +
+distance between the point of axial force application and the axis of rotation 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LeverArmRadialForce
+|https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0  +
+ +
+Abstand zwischen Angriffspunkt der Radialkraft und Flansch, bezogen auf das Flanschkoordinatensystem 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+NoLoadTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0  +
+ +
+The minimum torque required to set the application in motion without overcoming an external load 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InclinationAngle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0  +
+ +
+Angle at which a linear application is inclined with respect to the horizontal 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FrictionCoefficient
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0  +
+ +
+Ratio between the frictional force and the contact force between two objects 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FeedConstant
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0  +
+ +
+Parameter in technical systems that describes the relationship between a single rotary motion and the resulting linear motion or feed motion 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+==== Submodel Elements of SizingResult
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_4_Submodel_Elements_of_SizingResult],[ReferenceElement, Table_Submodel_Elements_of_SizingResult]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_SizingResult", title="Submodel Elements of SizingResult", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}SizingResult 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/SizingResult/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}PowerDriveTrainSizing 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Ent]  +
+ +
+OverallSystem
+|https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystem/1/0  +
+ +
+Drive unit created in the design that consists of all components or parts that work together in the drive design to perform the drive task 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Ent]  +
+ +
+MainComponent
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MainComponent/1/0  +
+ +
+Device determined in the design that is used to control the actuator. The drive controller monitors and regulates the flow of energy to a drive system to control speed, torque, position, or other performance parameters according to requirements 
+|[]  +
+ +
+
+|0..*
+
+
+
+|[Ent]  +
+ +
+OtherComponent
+|https://admin-shell.io/idta/PowerDriveTrainSizing/OtherComponent/1/0  +
+ +
+Additional parts or elements identified in the design that are present in a system, device or installation in addition to the main components 
+|[]  +
+ +
+
+|0..*
+
+
+
+|[SMC]  +
+ +
+Messages
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Messages/1/0  +
+ +
+Messages and notes on the sizing and its results 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[MLP]  +
+ +
+TextStatement
+|https://admin-shell.io/idta/PowerDriveTrainSizing/TextStatement/1/0  +
+ +
+Declaration of the design service provider in text form, e.g. scope of validity of the statements, areas of application, conditions of use of the sizing result 
+|[]  +
+ +
+Declaration of the design service provider in text form, e.g. scope of validity of the statements, areas of application, conditions of use of the sizing result@en
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of OverallSystem
+===== 2.3.4.1 Submodel Elements of OverallSystem
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_4_Submodel_Elements_of_SizingResult],[SubmodelElementCollection, Section_2_3_4_1_Submodel_Elements_of_OverallSystem],[ReferenceElement, Table_Submodel_Elements_of_OverallSystem]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_OverallSystem", title="Submodel Elements of OverallSystem", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}OverallSystem 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystem/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}SizingResult 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ManufacturerName
+|0173-1#02-AAO677#002  +
+ +
+ 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+ManufacturerArticleNumber
+|0173-1#02-AAO676#003  +
+ +
+ 
+|[String]  +
+ +
+-
+|0..1
+
+
+
+|[MLP]  +
+ +
+ManufacturerProductDesignation
+|0173-1#02-AAW338#001  +
+ +
+ 
+|[]  +
+ +
+ManufacturerProductDesignation@en
+|0..1
+
+
+
+|[Prop]  +
+ +
+ManufacturerOrderCode
+| 0173-1#02-AAO227#002  +
+ +
+ 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+ExternalMomentOfInertia
+|https://admin-shell.io/idta/PowerDriveTrainSizing/ExternalMomentOfInertia/1/0  +
+ +
+Moment of inertia of the parts outside the drive. It describes the resistance of these parts to changes in their rotational speed and influences the energy required to accelerate or decelerate the system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+InternalMomentOfIntertia
+|https://admin-shell.io/idta/PowerDriveTrainSizing/InternalMomentOfInertia/1/0  +
+ +
+Moment of inertia of the moving parts within the drive, such as a motor or gearbox. It describes the resistance of these parts to changes in their rotational speed and affects the energy required to accelerate or decelerate the system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MassInertiaRatio
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0  +
+ +
+The mass inertia ratio λ is the ratio of external mass inertia (application side) to internal mass inertia (motor and gearbox side). It is an important parameter for the controllability of an application. The more different the mass moments of inertia are and the larger λ becomes, the less precisely dynamic processes can be controlled. 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+DecelerationForEmergencyStop
+|https://admin-shell.io/idta/PowerDriveTrainSizing/DecelerationForEmergencyStop/1/0  +
+ +
+Rate (in revolutions per minute per second) at which the speed of a rotating system is reduced when an emergency stop is activated. This parameter is important to describe the rate at which the system is brought to a stop after an emergency stop is triggered to ensure the safety of people and equipment 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+CurrentForEmergencyStop
+|https://admin-shell.io/idta/PowerDriveTrainSizing/CurrentForEmergencyStop/1/0  +
+ +
+electrical current required for the operation of an emergency stop system 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+DisplacementDuringEmergencyStop
+|https://admin-shell.io/idta/PowerDriveTrainSizing/DisplacementDuringEmergencyStop/1/0  +
+ +
+Displacement of mechanical components or parts in a machine or plant caused by the triggering of an emergency stop signal 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+EnergyConsumtionPerCycle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0  +
+ +
+Energy consumed during a single operating cycle of a system, machine or device. 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of MainComponent
+===== 2.3.4.2 Submodel Elements of MainComponent
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_4_Submodel_Elements_of_SizingResult],[SubmodelElementCollection, Section_2_3_4_2_Submodel_Elements_of_MainComponent],[ReferenceElement, Table_Submodel_Elements_of_MainComponent]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_MainComponent", title="Submodel Elements of MainComponent", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}MainComponent 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/MainComponent/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}SizingResult 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+MainComponentType
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MainComponentType/1/0  +
+ +
+The kind of main component in the drive train, such as a motor, gearbox or drive controller 
+|[String]  +
+ +
+
+|1..*
+
+
+
+|[Prop]  +
+ +
+ManufacturerName
+|0173-1#02-AAO677#002  +
+ +
+ 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+ManufacturerArticleNumber
+|0173-1#02-AAO676#003  +
+ +
+ 
+|[String]  +
+ +
+5001xxxx-xx-x
+|1
+
+
+
+|[MLP]  +
+ +
+ManufacturerProductDesignation
+|0173-1#02-AAW338#001  +
+ +
+ 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+ManufacturerOrderCode
+| 0173-1#02-AAO227#002  +
+ +
+ 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+MaxCurrentUtilizationPercentage
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilizationPercentage/1/0  +
+ +
+The maximum calculated effective peak current within the motion profile based on the technical specification of the component 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MaxCurrentUtilization
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilization/1/0  +
+ +
+The maximum calculated effective peak current within the motion profile 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MaxThermalUtilizationPercentage
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilizationPercentage/1/0  +
+ +
+The calculated maximum thermal utilization of the component based on its specification 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MaxThermalUtilization
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilization/1/0  +
+ +
+The calculated maximum thermal utilization of the component 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AveragePowerLosses
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AveragePowerLosses/1/0  +
+ +
+The average electrical power loss in watts for the component within the motion profile 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AverageRegenerativePowerDcLink
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AverageRegenerativePowerDcLink/1/0  +
+ +
+The power averaged over the motion profile that flows back to the system DC link 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MaxRegenerativePowerDcLink
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRegenerativePowerDcLink/1/0  +
+ +
+The power maximum over the motion profile that flows back to the system DC link 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AverageFeedInPowerDcLink
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerDcLink/1/0  +
+ +
+ 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AverageFeedInPowerMains
+|https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerMains/1/0  +
+ +
+The average power fed into the power grid over the motion profile 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MaxFeedInPowerMains
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MaxFeedInPowerMains/1/0  +
+ +
+The maximum power fed into the power grid within the motion profile 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+ContinuousCurrent
+|https://admin-shell.io/idta/PowerDriveTrainSizing/ContinuousCurrent/1/0  +
+ +
+Maximum permissible continuous current that the drive controller can supply to the connected electric motor without causing overload or damage 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+RmsOfPower
+|https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfPower/1/0  +
+ +
+Average of the power over the motion profile, taking into account the fluctuations 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MaxTorqueUtilizationPercentage
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilizationPercentage/1/0  +
+ +
+The maximum torque utilization of the component calculated during the motion profile based on its permissible specification 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MaxTorqueUtilization
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilization/1/0  +
+ +
+The maximum torque utilization of the component calculated during the motion profile 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MaxRotationSpeedUtilizationPercentage
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilizationPercentage/1/0  +
+ +
+The maximum speed utilization of the component calculated during the motion profile based on its permissible specification 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MaxRotationSpeedUtilization
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilization/1/0  +
+ +
+The maximum speed utilization of the component calculated during the motion profile 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+EffectiveUtilization
+|https://admin-shell.io/idta/PowerDriveTrainSizing/EffectiveUtilization/1/0  +
+ +
+Degree to which the motor is actually used to perform mechanical work compared to its maximum capacity. It is the ratio between the power actually produced and the maximum possible power of the engine 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+CalculatedServiceLife
+|https://admin-shell.io/idta/PowerDriveTrainSizing/CalculatedServiceLife/1/0  +
+ +
+Time in which a technical system, device or object can be used without the replacement of core components or complete failure under the operating conditions which were calculated in the engineering 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MassInertiaRatio
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0  +
+ +
+The mass inertia ratio λ is the ratio of external mass inertia (application side) to internal mass inertia (motor and gearbox side). It is an important parameter for the controllability of an application. The more different the mass moments of inertia are and the larger λ becomes, the less precisely dynamic processes can be controlled. 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+FrequencyAtMaxSpeed
+|https://admin-shell.io/idta/PowerDriveTrainSizing/FrequencyAtMaxSpeed/1/0  +
+ +
+Specifies how many times the shaft of the motor rotates completely per second when the motor is operated at its maximum output 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+PowerInRegenerativeOperation
+|https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInRegenerativeOperation/1/0  +
+ +
+electrical energy generated by a motor over the motion profile when it operates as a generator and converts mechanical energy into electrical energy 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+PowerInMotorOperation
+|https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInMotorOperation/1/0  +
+ +
+electrical energy used by a motor over the motion profile when it converts electrical energy into mechanical energy 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+RmsOfMotorTorque
+|https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfMotorTorque/1/0  +
+ +
+average value of the torque of a motor over the motion profile. This value takes into account both positive and negative fluctuations of the torque during a complete cycle and thus gives a more stable idea of the average torque output of the motor 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+EnergyConsumtionPerCycle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0  +
+ +
+Energy consumed during a single operating cycle of a system, machine or device. 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of OtherComponent
+===== 2.3.4.3 Submodel Elements of OtherComponent
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_4_Submodel_Elements_of_SizingResult],[SubmodelElementCollection, Section_2_3_4_3_Submodel_Elements_of_OtherComponent],[ReferenceElement, Table_Submodel_Elements_of_OtherComponent]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_OtherComponent", title="Submodel Elements of OtherComponent", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}OtherComponent 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/OtherComponent/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}SizingResult 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ManufacturerName
+|0173-1#02-AAO677#002  +
+ +
+ 
+|[String]  +
+ +
+Machine Builder GmbH
+|0..1
+
+
+
+|[Prop]  +
+ +
+ManufacturerArticleNumber
+|0173-1#02-AAO676#003  +
+ +
+ 
+|[String]  +
+ +
+-
+|0..1
+
+
+
+|[MLP]  +
+ +
+ManufacturerProductDesignation
+|0173-1#02-AAW338#001  +
+ +
+ 
+|[]  +
+ +
+ManufacturerProductDesignation@en
+|0..1
+
+
+
+|[Prop]  +
+ +
+ManufacturerOrderCode
+| 0173-1#02-AAO227#002  +
+ +
+ 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+QuantityOfParts
+|https://admin-shell.io/idta/PowerDriveTrainSizing/QuantityOfParts/1/0  +
+ +
+Total number of separate components or parts that make up a particular item, product, or system 
+|[Integer]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+BulkCount
+|https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0  +
+ +
+ 
+|[UnsignedLong]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+EnergyConsumtionPerCycle
+|https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0  +
+ +
+Energy consumed during a single operating cycle of a system, machine or device. 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of Messages
+===== 2.3.4.4 Submodel Elements of Messages
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_4_Submodel_Elements_of_SizingResult],[SubmodelElementCollection, Section_2_3_4_4_Submodel_Elements_of_Messages],[ReferenceElement, Table_Submodel_Elements_of_Messages]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_Messages", title="Submodel Elements of Messages", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Messages 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/Messages/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}SizingResult 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+Message
+|https://admin-shell.io/idta/PowerDriveTrainSizing/Message/1/0  +
+ +
+Message or information transmitted by the sizing tool 
+|[]  +
+ +
+2 elements
+|0..*
+
+
+
+|===
+
+
+
+
+===== Submodel Elements of Message
+===== 2.3.4.5 Submodel Elements of Message
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_specifics],[SubmodelElementCollection, Section_2_3_4_Submodel_Elements_of_SizingResult],[SubmodelElementCollection, Section_2_3_4_5_Submodel_Elements_of_Message],[ReferenceElement, Table_Submodel_Elements_of_Message]
+
+
+
+[width="100%", id="Table_Submodel_Elements_of_Message", title="Submodel Elements of Message", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Message 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/PowerDriveTrainSizing/Message/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Messages 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+CriticalityOfMessage
+|https://admin-shell.io/idta/PowerDriveTrainSizing/CriticalityOfMessage/1/0  +
+ +
+marker for the criticality of the message with respect to the sizing result. E. g. trough symbol, color or code 
+|[String]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+MessageText
+|https://admin-shell.io/idta/PowerDriveTrainSizing/MessageText/1/0  +
+ +
+Content of a message transmitted in written form. The content is specific to the sizing tool and manufacturer 
+|[]  +
+ +
+Content of a message transmitted in written form. The content is specific to the sizing tool and manufacturer@en
+|1
+
+
+
+|===
+
+
+
+:sectnums!:
+
+== Annex A.	Explanations on used table formats
+
+=== 1. General
+
+The used tables in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The tables follow in principle the same conventions as in [5].
+* The table heads abbreviate 'cardinality' with 'card'.
+* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+* The types of SubmodelElements are abbreviated:
+
+[width="100%",cols="40%,60%",options="header"]
+|===
+|SME type |SubmodelElement type
+|Property |Property
+|MLP |MultiLanguageProperty
+|Range |Range
+|File |File
+|Blob |Blob
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|SMC |SubmodelElementCollection
+|===
+
+* If an idShort ends with '\__00__', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique. A different idShort might be choosen, as long as it is unique in the parent’s context.
+* The Keys of semanticId in the main section feature only idType and value, such as: https://admin-shell.io/vdi/2770/1/0/DocumentId/Id. The attribute "type" (typically "ConceptDescription" and "(local)" or "GlobalReference") need to be set accordingly; see [6].
+* If a table does not contain a column with "parent" heading, all represented attributes share the same parent. This parent is denoted in the head of the table.
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* The [valueType] is only given for Properties.
+
+
+
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] |“Recommendations for implementing the strategic initiative
+INDUSTRIE 4.0”, acatech, April 2013. [Online]. Available
+https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+
+|[2] |“Implementation Strategy Industrie 4.0: Report on the results of
+the Industrie 4.0 Platform”; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April
+2015. [Online]. Available:
+https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
+
+|[3] |“The Structure of the Administration Shell: TRILATERAL
+PERSPECTIVES from France, Italy and Germany”, March 2018, [Online].
+Available:
+https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
+
+|[4] |“Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente –
+Basisteil (German)”; ZVEI e.V., Whitepaper, November 2016. [Online].
+Available:
+https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
+
+|[5] |“Verwaltungsschale in der Praxis. Wie definiere ich Teilmodelle,
+beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen
+(in German)”, Version 1.0, April 2019, Plattform Industrie 4.0 in
+Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for
+Economic Affairs and Energy (BMWi), Available:
+https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
+
+|[6] |IDTA 01001-3-0: “Specification of the Asset Administration Shell; Part 1 (Version 3.0)”, March 2023, [Online]. Available:
+https://industrialdigitaltwin.org/wp-content/uploads/2023/06/IDTA-01001-3-0_SpecificationAssetAdministrationShell_Part1_Metamodel.pdf
+
+|[7] |“Semantic interoperability: challenges in the digital
+transformation age”; IEC, International Electronical Commission; 2019.
+[Online]. Available:
+https://basecamp.iec.ch/download/iec-white-paper-semantic-interoperability-challenges-in-the-digital-transformation-age-en/
+
+|[8] |Common terms and abbreviations according to VDI FA 7.21 Wiki; Available: http://i40.iosb.fraunhofer.de/
+
+|[9] |United States: US Code of Federal regulations, see https://www.ecfr.gov/current/title-22/chapter-I/subchapter-M/part-120/subpart-C/section-120.42
+
+|===
