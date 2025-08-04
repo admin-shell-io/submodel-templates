@@ -1,0 +1,1617 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "IEC81346StructureAAS",
+      "administration": {
+        "version": "1",
+        "revision": "0",
+        "templateId": "https://admin-shell-io/idta/IDTA 02011-1"
+      },
+      "id": "https://admin-shell.io/idta/aas/HierarchicalStructures/ExtensionIEC81346/1/0",
+      "assetInformation": {
+        "assetKind": "Instance",
+        "globalAssetId": "https://admin-shell.io/idta/asset/HierarchicalStructures/ExtensionIEC81346/1/0",
+        "defaultThumbnail": {
+          "path": "/aasx/files/cover_page.png",
+          "contentType": "image/png"
+        }
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/HierarchicalStructures/ExtensionIEC81346/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "IEC81346Structure",
+      "description": [
+        {
+          "language": "en",
+          "text": "Definition of the Submodel Extension IEC 81346 of HierarchicalStructures identified by its semanticId. The Submodel idShort can be picked freely."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/HierarchicalStructures/ExtensionIEC81346/1/0",
+      "kind": "Template",
+      "supplementalSemanticIds": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/HierarchicalStructures/ExtensionIEC81346/1/0"
+            }
+          ]
+        }
+      ],
+      "qualifiers": [
+        {
+          "kind": "TemplateQualifier",
+          "type": "EditIdShort",
+          "valueType": "xs:string",
+          "value": "True"
+        }
+      ],
+      "submodelElements": [
+        {
+          "idShort": "IEC81346EntryNode",
+          "description": [
+            {
+              "language": "en",
+              "text": "Base entry point for the Entity tree in this Submodel, this must be a Self-managed Entity reflecting the Assets administrated in the AAS this Submodel is part of. Inherits from EntryNode"
+            }
+          ],
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/IEC81346EntryNode/1/0"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            },
+            {
+              "kind": "TemplateQualifier",
+              "type": "EditIdShort",
+              "valueType": "xs:string",
+              "value": "True"
+            }
+          ],
+          "statements": [
+            {
+              "idShort": "IEC81346EntryNode",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Base entry point for the Entity tree in this Submodel, this must be a Self-managed Entity reflecting the Assets administrated in the Asset Administration Shell this Submodel is part of. The idShort of the EntryNode can be picked freely and may reflect a name of the asset."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/IEC81346EntryNode/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                },
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "EditIdShort",
+                  "valueType": "xs:string",
+                  "value": "True"
+                }
+              ],
+              "statements": [
+                {
+                  "idShort": "AspectNode",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "The Entity AspectNode can be a co-managed or self-managed entity representing an Aspect."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/AspectNode/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    },
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "EditIdShort",
+                      "valueType": "xs:string",
+                      "value": "True"
+                    }
+                  ],
+                  "statements": [
+                    {
+                      "idShort": "LetterCodeLevel_1",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Used to classify objects based on code letters across three levels. The first letter represents the class (example: B), the two letters represent the sub-class (example: BA), the three letters represent the sub-sub-class (example: BAB) based on the applicable standard."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAC314#005"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "LetterCodeLevel_2",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Used to classify objects based on code letters across three levels. The two letters represent the sub-class (example: BA) based on the applicable standard."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAC341#005"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "LetterCodeLevel_3",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Used to classify objects based on code letters across three levels. The third level represents the sub-sub-class (example: BAB) based on the applicable standard."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-ABC244#002"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "AspectNumber",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Serves to further refine the classes, if the same letter codes are assigned in a system, the number is incremented in each case. (e.g.: BAB1, BAB2, ...). This achieves uniqueness in a system. "
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/AspectNumber/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:unsignedShort",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "AspectDescription",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Brief description of the aspect in question. The description should be self-explanatory, as it also serves to define the \u2018OtherAspect\u2019."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "] https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/AspectDescription/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "modelType": "MultiLanguageProperty"
+                    }
+                  ],
+                  "entityType": "SelfManagedEntity",
+                  "modelType": "Entity"
+                },
+                {
+                  "idShort": "PrefixLevel",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "PrefixLevel for the precise differentiation of an aspect and its characteristics. The appropriate AspectNode must be selected based on this prefix."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/PrefixLevel/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "HierarchyPrefix",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "HierarchyPrefix to define the representation of the reference designator."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/HierarchyPrefix/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "HasStructure",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Modeling of logical connections between components and sub-components. Either this or \u0022IsPartOf\u0022 must be used, not both."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/hasStructure/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    },
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "EditIdShort",
+                      "valueType": "xs:string",
+                      "value": "True"
+                    }
+                  ],
+                  "first": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                },
+                {
+                  "idShort": "FunctionAspectNode",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/FunctionAspectNode/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "statements": [
+                    {
+                      "idShort": "FullFilledBy",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Constraint SM_IEC81346_001: Only allowed to point to a ProductAspectNode."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/FullFilledBy/1/0 "
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "ConceptQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToMany"
+                        }
+                      ],
+                      "first": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": ""
+                          }
+                        ]
+                      },
+                      "second": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": ""
+                          }
+                        ]
+                      },
+                      "modelType": "RelationshipElement"
+                    }
+                  ],
+                  "entityType": "SelfManagedEntity",
+                  "modelType": "Entity"
+                },
+                {
+                  "idShort": "ProductAspectNode",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/ProductAspectNode/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "statements": [
+                    {
+                      "idShort": "LocatedAt",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Constraint SM_IEC81346_002: Only allowed to point to a LocationAspectNode. "
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/LocatedAt/1/0 "
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "ConceptQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToMany"
+                        }
+                      ],
+                      "first": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": ""
+                          }
+                        ]
+                      },
+                      "second": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": ""
+                          }
+                        ]
+                      },
+                      "modelType": "RelationshipElement"
+                    },
+                    {
+                      "idShort": "FullFills",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Constraint SM_IEC81346_003: Only allowed to point to a FunctionAspectNode."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/FullFills/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "ConceptQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToMany"
+                        }
+                      ],
+                      "first": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": ""
+                          }
+                        ]
+                      },
+                      "second": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": ""
+                          }
+                        ]
+                      },
+                      "modelType": "RelationshipElement"
+                    }
+                  ],
+                  "entityType": "SelfManagedEntity",
+                  "modelType": "Entity"
+                },
+                {
+                  "idShort": "LocationAspectNode",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/LocationAspectNode/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "entityType": "SelfManagedEntity",
+                  "modelType": "Entity"
+                },
+                {
+                  "idShort": "TypeAspectNode",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/TypeAspectNode/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "entityType": "SelfManagedEntity",
+                  "modelType": "Entity"
+                },
+                {
+                  "idShort": "OtherAspectNode",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/OtherAspectNode/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "entityType": "SelfManagedEntity",
+                  "modelType": "Entity"
+                }
+              ],
+              "entityType": "SelfManagedEntity",
+              "modelType": "Entity"
+            }
+          ],
+          "entityType": "SelfManagedEntity",
+          "modelType": "Entity"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "IEC81346Structure",
+      "description": [
+        {
+          "language": "en",
+          "text": "Definition of the Submodel Extension IEC 81346 of HierarchicalStructures identified by its semanticId. The Submodel idShort can be picked freely."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/HierarchicalStructures/ExtensionIEC81346/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "IEC81346Structure"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Definition of the Submodel Extension IEC 81346 of HierarchicalStructures identified by its semanticId. The Submodel idShort can be picked freely."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IEC81346EntryNode",
+      "description": [
+        {
+          "language": "en",
+          "text": "Base entry point for the Entity tree in this Submodel, this must be a Self-managed Entity reflecting the Assets administrated in the AAS this Submodel is part of. Inherits from EntryNode"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/IEC81346EntryNode/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "IEC81346EntryNode"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Base entry point for the Entity tree in this Submodel, this must be a Self-managed Entity reflecting the Assets administrated in the AAS this Submodel is part of. Inherits from EntryNode"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AspectNode",
+      "description": [
+        {
+          "language": "en",
+          "text": "The Entity AspectNode can be a co-managed or self-managed entity representing an Aspect."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/AspectNode/1/0 ",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AspectNode"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The Entity AspectNode can be a co-managed or self-managed entity representing an Aspect."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LetterCodeLevel_1",
+      "description": [
+        {
+          "language": "en",
+          "text": "Used to classify objects based on code letters across three levels. The first letter represents the class (example: B), the two letters represent the sub-class (example: BA), the three letters represent the sub-sub-class (example: BAB) based on the applicable standard."
+        }
+      ],
+      "id": "0173-1#02-AAC314#005",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LetterCodeLevel_1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Used to classify objects based on code letters across three levels. The first letter represents the class (example: B), the two letters represent the sub-class (example: BA), the three letters represent the sub-sub-class (example: BAB) based on the applicable standard."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LetterCodeLevel_2",
+      "description": [
+        {
+          "language": "en",
+          "text": "Used to classify objects based on code letters across three levels. The two letters represent the sub-class (example: BA) based on the applicable standard."
+        }
+      ],
+      "id": "0173-1#02-AAC341#005",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LetterCodeLevel_2"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Used to classify objects based on code letters across three levels. The two letters represent the sub-class (example: BA) based on the applicable standard."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LetterCodeLevel_3",
+      "description": [
+        {
+          "language": "en",
+          "text": "Used to classify objects based on code letters across three levels. The third level represents the sub-sub-class (example: BAB) based on the applicable standard."
+        }
+      ],
+      "id": "0173-1#02-ABC244#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LetterCodeLevel_3"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Used to classify objects based on code letters across three levels. The third level represents the sub-sub-class (example: BAB) based on the applicable standard."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AspectNumber",
+      "description": [
+        {
+          "language": "en",
+          "text": "Serves to further refine the classes, if the same letter codes are assigned in a system, the number is incremented in each case. (e.g.: BAB1, BAB2, ...). This achieves uniqueness in a system. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/AspectNumber/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AspectNumber"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Serves to further refine the classes, if the same letter codes are assigned in a system, the number is incremented in each case. (e.g.: BAB1, BAB2, ...). This achieves uniqueness in a system. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AspectDescription",
+      "description": [
+        {
+          "language": "en",
+          "text": "Brief description of the aspect in question. The description should be self-explanatory, as it also serves to define the \u2018OtherAspect\u2019."
+        }
+      ],
+      "id": "] https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/AspectDescription/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AspectDescription"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Brief description of the aspect in question. The description should be self-explanatory, as it also serves to define the \u2018OtherAspect\u2019."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PrefixLevel",
+      "description": [
+        {
+          "language": "en",
+          "text": "PrefixLevel for the precise differentiation of an aspect and its characteristics. The appropriate AspectNode must be selected based on this prefix."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/PrefixLevel/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PrefixLevel"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "PrefixLevel for the precise differentiation of an aspect and its characteristics. The appropriate AspectNode must be selected based on this prefix."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "HierarchyPrefix",
+      "description": [
+        {
+          "language": "en",
+          "text": "HierarchyPrefix to define the representation of the reference designator."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/HierarchyPrefix/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "HierarchyPrefix"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "HierarchyPrefix to define the representation of the reference designator."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "HasStructure",
+      "description": [
+        {
+          "language": "en",
+          "text": "Modeling of logical connections between components and sub-components. Either this or \u0022IsPartOf\u0022 must be used, not both."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/hasStructure/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "HasStructure"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Modeling of logical connections between components and sub-components. Either this or \u0022IsPartOf\u0022 must be used, not both."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FunctionAspectNode",
+      "description": [
+        {
+          "language": "en",
+          "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/FunctionAspectNode/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FunctionAspectNode"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FullFilledBy",
+      "description": [
+        {
+          "language": "en",
+          "text": "Constraint SM_IEC81346_001: Only allowed to point to a ProductAspectNode."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/FullFilledBy/1/0 ",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FullFilledBy"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Constraint SM_IEC81346_001: Only allowed to point to a ProductAspectNode."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ProductAspectNode",
+      "description": [
+        {
+          "language": "en",
+          "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/ProductAspectNode/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ProductAspectNode"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LocatedAt",
+      "description": [
+        {
+          "language": "en",
+          "text": "Constraint SM_IEC81346_002: Only allowed to point to a LocationAspectNode. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/LocatedAt/1/0 ",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LocatedAt"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Constraint SM_IEC81346_002: Only allowed to point to a LocationAspectNode. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FullFills",
+      "description": [
+        {
+          "language": "en",
+          "text": "Constraint SM_IEC81346_003: Only allowed to point to a FunctionAspectNode."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ ExtensionIEC81346/FullFills/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FullFills"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Constraint SM_IEC81346_003: Only allowed to point to a FunctionAspectNode."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LocationAspectNode",
+      "description": [
+        {
+          "language": "en",
+          "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/LocationAspectNode/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LocationAspectNode"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TypeAspectNode",
+      "description": [
+        {
+          "language": "en",
+          "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/TypeAspectNode/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TypeAspectNode"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "OtherAspectNode",
+      "description": [
+        {
+          "language": "en",
+          "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/HierarchicalStructures/ExtensionIEC81346/OtherAspectNode/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "OtherAspectNode"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Can be a Co-managed or Self-managed entity. A Node reflects an element in the hierarchical model is set into relation with one or more defined relations. The name of a node can be picked freely but it must be unique in its hierarchical (sub-)level."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
