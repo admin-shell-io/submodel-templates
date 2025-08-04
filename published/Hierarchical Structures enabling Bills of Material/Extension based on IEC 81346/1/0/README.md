@@ -10,8 +10,9 @@ The structuring of machines, plants or systems is an essential task in engineeri
 •	Planned or actual location of the object – Location aspect (+)
 •	Group of objects that have the same properties – Type aspect (%)
 •	A freely definable aspect that must be specified by the creator – Other aspect (#)
- 
-Figure 1 Different aspect views of a system, based on IEC 81346 [8]
+
+ <img width="583" height="527" alt="image" src="https://github.com/user-attachments/assets/7847c192-8cdc-48ce-8c20-11ab6feb5bcb" />
+
  Copyright © 2022 IEC Geneva, Switzerland. www.iec.ch
 Hierarchies are created by structuring the various aspects, which is why the Hierarchical Structures enabling Bills of Material Submodel is extended in accordance with the IEC standard. Each aspect can in turn have its own hierarchy. 
 This Submodel is based on IEC 81346 Part 1 2021, further details can be found in the IEC; this version is also based on the Hierarchical Structures enabling Bills of Material Submodel in version 1.1.
