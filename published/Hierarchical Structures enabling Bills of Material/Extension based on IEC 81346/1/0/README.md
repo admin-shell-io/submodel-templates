@@ -19,7 +19,11 @@ This Submodel is based on IEC 81346 Part 1 2021, further details can be found in
 
 ## About this version
 
-This version is the first version officially published by IDTA
+This version is the first version officially published by IDTA.
+This Submodel is based on IEC 81346 Part 1 2021, further details can be found in the IEC; this version is 
+also based on the Hierarchical Structures enabling Bills of Material Submodel in version 1.1. The numbering 
+scheme used follows the structure: original Submodel number (IDTA 02011) - extension code (1). Hence the 
+number IDTA 02011-1 for this Submodel extension
 
 
 ## Difference to prior versions
