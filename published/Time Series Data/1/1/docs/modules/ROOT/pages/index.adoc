@@ -1,0 +1,1527 @@
+
+
+= IDTA 02008-2-0 : Time Series Data
+
+=== Imprint 
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+[cols="1,1,4"]
+|===
+
+|Date
+|Version
+|Comment
+
+|2021-11-01
+|1.0
+|Used for development only. No official version published.
+
+|2023-03-01
+|1.1
+|Release of the official Submodel template published by IDTA.
+
+|2024-04-06
+|2.0
+|Changes in:
+
+- Timestamp: Only One Timestamp is Mandatory
+
+- Merge of LinkedSegment to ExternalSegment
+
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+
+=== About this document
+This document is a part of a specification series. Each part specifies the contents of a Submodel template for the Asset Administration Shell (AAS). 
+The AAS is described in [1], [2], [3] and [6]. First exemplary Submodel contents were described in [4], while the actual format of this document was derived by the "Administration Shell in Practice" [5]. 
+The format aims to be very concise, giving only minimal necessary information for applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents [1] to [6].
+
+=== Scope of the Submodel
+In Industrie 4.0, the ubiquity of data sources and sensors and low costs of storage has resulted in increasing amounts of time series data being captured – not only during the operational phase of an asset. A time series is a series of data points in time order over a period of time. Time Series can represent raw data, but can also represent main characteristics, textual descriptions or events in a concise way. This Submodel template aims at an interoperable description of time series data in industrial automation for the complete asset lifecycle. The focus of this Submodel template is on the semantic information of time series data. The Submodel claims to integrate time series data within the AAS itself, but also from external data sources. Figure 1 shows the use cases, such as sensor data from real and virtual sensors, and their technical storage options inside or outside the AAS that were taken into account in the creation of this specification. 
+
+image::Figure_1.png[id="Figure_1", width="80.0%",title="Scope and use cases for time series data"]
+
+
+=== Relevant standards for the Submodel template
+- ISO 8601 “Data elements and interchange formats – Information interchange – Representation of dates and times” was integrated for definition of time scales and time stamps
+- JSON Time Series Format [7] was considered to add structure and metadata.
+- ECLASS & IEC CDD was included to use semantic IDs for properties and qualifiers.
+- ISO/IEC 18014-1:2008 Information technology -- Security techniques -- Time-stamping services is referenced to make a boundary with this specification regarding the time synchronization of various data sources.
+- IEEE/IEC 61588-2021“Precision Clock Synchronization Protocol for Networked Measurement and Control Systems” [8] is referenced to make a boundary with this specification regarding the time synchronization of various data sources.
+- OPC Foundation: OPC Unified Architecture Part 11“Historical Access” has been considered to provide the outlook on the methods for querying time series.
+
+
+=== Use cases and requirements
+In creating this specification, the following use cases were contributed by participants. 
+General requirements were derived from the use cases and design decisions were made.
+
+
+==== Time series data with passive AAS and passive Assets
+The cold chain of an adhesive must be maintained from production to consumption. For this purpose, multiple distributed sensors monitor the ambient temperature and store this data in the AAS of the adhesive. 
+Regardless of whether the data is synchronized continuously or at specific time intervals, a consistent time series for the asset is available throughout the entire lifecycle and across different stakeholders. For this use case a passive AAS whithout computing capacity is sufficient.
+
+
+image::Figure_2.png[id="Figure_2", width="80.0%",title="Use case of time series data along the value chain of an adhesive"]
+
+
+==== Time Series Data within the engineering phase of an Asset
+In the design of power drive systems, information on the motion sequence is exchanged between different partners. User defined timestamps (for instance acceleration time in seconds) are usually used to describe motion sequences. The following example shows a motion sequence of a rotary table in a sizing tool during the engineering phase of a machine.
+
+image::Figure_3.png[id="Figure_3", width="80.0%",title="Use case of time series data in engineering – Motion Profiles"]
+
+
+==== Time Series Data during usage phase – smart Sensor
+This example gives an overview of how sensor telemetry data is stored in a file (e. g.CSV or BLOB in JSON Encoding). In this example a temperature Sensor and a 3-axis acceleration sensor was used to record a period of 5 seconds.
+
+Note - In the example data set, an ISO 8601-compliant timestamp ending with "Z" was selected to indicate that the time is given in Coordinated Universal Time (UTC). Without "Z", this normally means that the time is given in a specific time zone, e.g. "2024-04-09T12:30:00+02:00" (for the time zone UTC+02:00).
+
+.Use case of time series data during usage - smart Sensor
+[cols="1,2,2,3,3,3"]
+|===
+|Index 
+|timestamp 
+|Temperature (°C) 
+|RMS of Acceleration x-axis (m/s2) 
+|RMS of Acceleration y-axis (m/s2) 
+|RMS of Acceleration z-axis (m/s2)
+|0 |2020-01-22T16:38:09Z |23.400 |0.60 |0.65 |0.90
+|1
+|2020-01-22T16:38:10Z
+|23.415
+|0.61
+|0.80
+|1.00
+|2
+|2020-01-22T16:38:11Z
+|23.420
+|0.62
+|0.85
+|0.90
+|3
+|2020-01-22T16:38:12Z
+|23.405
+|1.60
+|5.00
+|1.25
+|4
+|2020-01-22T16:38:13Z
+|23.405
+|5.65
+|6.15
+|1.20
+|5
+|2020-01-22T16:38:14Z
+|23.390
+|6.00
+|6.50
+|2.05
+|===
+
+== Submodel Template Time Series Data
+
+=== Approach
+
+This Submodel represents an approach for the semantic description of time series along the entire asset life cycle in the AAS. Since there are many optimized database systems for time series data, this specification defines the integration of external data sources, as well as the storage of time series in the AAS itself. Furthermore, operations are specified with which time series data can be queried and inserted.
+
+*Time Series Data throughout the asset lifecycle*
+
+The Time Series Data Submodel can cover different phases of a product life cycle. As shown in Figure 4, the usage of Time Series Data Submodel starts during the Engineering Phases (Development of a type). During this phase, the Template of Time Series Data Submodel is created based on the Metadata of the corresponding product “type”. The focus of the Time Series Data Submodel, however, is after the product is instantiated and starts to store the record data that the product is generating. 
+Note – an asset type can also have a Submodel-instance with type-related time series data containing segments and records, e. g. time series from simulations or calculations during the design phases.
+
+
+image::Figure_4.png[id="Figure_4", width="100.0%",title="AAS Time Series Data Submodel within the product life cycle"]
+
+==== Generic Structure of Time Series
+A time series consists of data points in time order. Timestamped data is the most basic type of time series that associates values with points in time. An example of time series is shown in Table 2.
+
+
+image::Figure_5.png[id="Figure_5", width="100.0%",title="Time series structure designations"]
+
+A *timestamp* is used to assign a time to a data point or event. *Data points* (variables) can be measurement data, events, or even textual descriptions. *Segments* (subsequences) of a time series divide a time series into logical sections, which can be labelled and be described by further semantics. 
+For an interoperable exchange of time series data *structure*, *timestamps*, *data points* and *operations* are defined in more detail in chapter 2.2. This specification focuses on these core elements of a time series. Depending on the application and technology used, the times series model should be extended by further properties and qualifier.
+
+
+=== Definitions within the Submodel template specification
+
+==== Notions of Time
+A timestamp is used to assign various events and data to a unique point in time. The ISO 8601 standard can be used for an unambiguous and well-defined method of presenting date, time of day, date and time, time intervals and recurring time intervals. For a common interpretation of the timestamp, it is also indicated with its time scale. In contrast to these international specified time scales are relative time measurements - e.g., with a stopwatch - where the zero point can be arbitrary because of the mere measurement of a time difference. For these time series the ISO 8601 timestamp is not appropriate and user-defined time formats and values are used (see Figure 5).
+
+
+image::Figure_6.png[id="Figure_6", width="100.0%",title=" Classification of time specifications"]
+
+To describe the timeline of a custom time scale, the time unit such as hours, minutes, seconds, milliseconds, or microseconds must be determined. Due to the SI (Système International) base unit, seconds are the preferred time unit in this specification. In addition, it must be determined whether these are time points or durations. A time point is one point on the time axis, whereas duration describe the length of a time interval. Time intervals are limited by two points in time.
+Usually and if not explicitly stated, time points refer to the starting point of the time scale, whereas time durations build on each other (see Figure 6). To clearly identify the measurement model (absolute or incremental), this can be done via a qualifier.
+Note – data points (variables) of a measurement series can also be absolute or incremental.
+
+image::Figure_7.png[id="Figure_7", width="100.0%",title=" Classification of time specifications"]
+
+Based on these explanations, the requirement for the following AAS Submodel Elements were determined:
+
+- *Time* <<Property>> with its corresponding semantic ID for eg. TAI, UTC or custom time scales:
+* *UtcTime* <<ConceptDescription>>
+* *Time* << ConceptDescription >> in seconds, due to the SI base unit
+* *MeasurementModelQualifier* <<Qualifier>> with value list [absolute, incremental]
+
+Note – Other timestamp formats and scales, such as Unix Time, Ephemeris Time (ET) or Barycentric Dynamical Time (TBD) can be defined as Concept Description with corresponding semantic IDs.
+
+Note – A time series can contain several timestamps, for example a timestamp from the sensor and a timestamp from superior instances or in different timescales. Within the time series, there is only one primary timestamp with idShort "time".
+
+*Data points and Segments*
+
+*Data points* (variables) can be measurement data, events, or even textual descriptions. A data point has several values X~1~, X~2~, X~3~, X~n~ with correspondending units (e. g. °C, m/s2, rpm, V, A, …). Depending on the number of data points, a time series can have simple or complex structures (e. g. X~1~, Y~1~, Z~1~, X~2~, Y~2~, Z~2~, X~3~, Y~3~, Z~3~, X~n~, Y~n~, Z~n~,).
+
+This specification does not define semantic IDs of time series variables. The semantic IDs of the data points depend on the measured variables and their applications and should be chosen accordingly. 
+
+*Record IDs* - Within a time series timestamps and associated values are linked in a record via by an Identifier (ID). The record ID must be unique within a time series. For simple time series, the record ID could be handled like an index of integers and start with 0. For mass data and harmonizations from distributed data sources, the ID in the form of a GUID is more appropriate.
+
+A time series *segment* is a subsequence of values from the variables within a time series. Different techniques for segmentation during data processing and analysis can be used. A segment has a name, a description, the number of records, a start time, and an end time. Other information such as the sampling rate, the sampling interval or additional user-defined properties may be contained. In addition, the status of a time series segment can be important for users, in the meaning that the segment is completed (status = completed) or is still subject to ongoing changes (status = in progress). For this requirement, a last updated property can also be set.
+
+Note - Sampling rate refers to the number of samples per second. It is usually measured in hertz (Hz) and is often expressed as a frequency. For example, a sampling rate of 44.1 kHz means that 44,100 samples are taken per second. The sampling interval refers to the time between successive records. It is usually measured in seconds and is the inverse of the sampling rate. For example, if the sampling rate is 44.1 kHz, the sampling interval is approximately 22.68 microseconds (1/44100 seconds).
+
+In practice, not every time series can be seamlessly integrated into the internal schema of the AAS time series SMT. This may be due to different data formats, storage requirements or the dynamics of the data source. To meet this challenge, the SMT offers the option of using an "external segment". These flexible structures make it possible to access data stored outside the primary data model, whether in external files or via third-party APIs.
+
+External segments therefore act as bridges or references to external data sources that are not stored directly in the internal data model. They can be implemented in different ways, such as
+
+- References to external files (e.g. CSV, JSON, XML),
+- URLs to APIs that provide access to dynamic data sources,
+
+This specification defines three types of time series segments (Internal, Linked and External), which can be used according to the requirements of the use cases. Table 1 provides an overview of these.
+
+[title=" Types of time series segments",cols="1,2,2,2"]
+|===
+|
+a| image::Figure_8_1.png[]
+a| image::Figure_8_2.png[]
+a| image::Figure_8_3.png[]
+| |InternalSegment 
+2+| ExternalSegment
+|Description
+|InternalSegments allow an I4.0 application (defined in [7]) to manage the Time Series Data structure and content directly in the AAS.
+|API Endpoint allow an I4.0 application to read out the endpoint and query to an external system to manage time series without the AAS.
+|File allow an I4.0 application to find a data or BLOB file within which time series data is stored.
+|Suitable for 
+a|
+- Few data points
+- handover of data points
+- Permissions managed within the AAS
+a|
+* Brownfield integration
+* Mass data
+* Permissions managed in external system
+* dynamic time series without continuous update of AAS
+a|
+* Brownfield integration
+* Static time Series
+* Handover of time Series
+* Few accesses
+|Implications
+|dynamic time series require continuous updating of the AAS
+
+
+|I4.0 application must be able to work with endpoint and query
+Data semantics and payload separated from each other
+|I4.0 application must be able to handle different file formats
+Data semantics and payload separated from each other
+
+|===
+The metadata record contains all datapoint-properties of the time series in addition to the timestamp and is identical to the internal record. However, it does not contain any property values. To ensure the integrity and usability of time series data in external segments and their formats such as external data files (e.g. CSV, Excelö) or structured data formats from APIs (e.g. JSON, XML), it is crucial that the records and properties defined in the metadata match the column headings in data files or the key values in JSON objects exactly.
+
+*Qualifier* (e. g. from ECLASS, IEC CDD or OPC UA) can be used to express further semantics in conjunction with a defined data element type or a defined data value. Therefore, Qualifier can be used in all those cases where existing definitions of data element types are not sufficiently specified.
+
+Possible relevant qualifiers for time series data are:
+
+- ValueQualityQualifier (IEC CDD 0112/2///61360_4#ADA350) [good, bad, uncertain]: The quality of the data values can be of value in a time series analysis. This allows bad data values to be omitted from aggregations or calculations.	
+- ValueOriginQualifier (IEC CDD 0112/2///61360_4#AAF582) [calculated, estimated, measured, set]: Information about the type of data collection or generation for the value provided. 
+- ValueProcessingQualifier (IEC CDD 0112/2///61360_4#AAF583#002) [arithmetic mean, median, root mean square, …]: Information about the method of preprocessing the value provided.
+- MeasurementModelQualifier (defined in this Submodel specification) [absolute, incremental]: Information about whether there is an absolute measurement, or whether the value is to be seen as additive to the previous measurement.
+
+Note - The scope of a qualifier depends on its application. For example, the ValueOriginQualifier can be applied to a single data element, to an entire record, or to the data element in the metadata collection.
+
+
+==== AAS Modelling of Time Series
+The preceding considerations and definitions are applied to the Time Series Submodel in Figure 8.
+
+image::Figure_8.jpg[id="Figure_8", width="100.0%",title="Time Series Data UML Diagram"]
+
+
+image::Figure_9.png[id="Figure_9", width="100.0%",title="Time Series Data UML Diagram"]
+
+*The metadata record* contains all datapoint-properties of the time series in addition to
+the timestamp and is identical to the internal record. However, it does not contain any property values. To
+ensure the integrity and usability of time series data in external segments and their formats such as external
+data files (e.g. CSV, Excel) or structured data formats from APIs (e.g. JSON, XML), it is crucial that the
+records and properties defined in the metadata match the column headings in data files or the key values in
+JSON objects exactly.
+
+*Qualifiers* (e.g. from ECLASS, IEC CDD or OPC UA) can be used to express further semantics in
+conjunction With a defined data element type or a defined data value. Therefore, Qualifier can be used in all
+those cases where existing definitions of data element types are not sufficiently specified.
+
+Possible relevant qualifiers for time series data are:
+
+- ValueQualityQualifier (IEC CDD 0112/2///61360_4#ADA350) [good, Bad, uncertain]: The quality of the data values can be of value in a time series analysis. This allows bad data values to be omitted from aggregations or calculations.
+- ValueOriginQualifier (IEC CDD 0112/2///61360_4#AAF582) [calculated, estimated, measured, set]: Information about the type of data collection or generation for the value provided.
+- ValueProcessingQualifier (IEC CDD 0112/2///61360_4#AAF583#002) [arithmetic mean, median, root mean square, ...l: Information about the method of preprocessing the value provided.
+- MeasurementModelQualifier (defined in this Submodel specification) [absolute, incremental]: Information
+
+=== Relevant information
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_Template_of_Time_Series_Data],[ReferenceElement, Table_Submodel]
+
+
+
+[width="100%", id="Table_Submodel", title="Table for elements of Submodel itself", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}TimeSeries 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/TimeSeries/2/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Contains time series data and references to time series data to discover and semantically describe them along the asset lifecycle. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+Metadata
+|https://admin-shell.io/idta/TimeSeries/Metadata/2/0  +
+ +
+A set of data describing and providing information about the time series 
+|[]  +
+ +
+3 elements
+|1
+
+
+
+|[SMC]  +
+ +
+Segments
+|https://admin-shell.io/idta/TimeSeries/Segments/2/0  +
+ +
+Contains segments of a time series 
+|[]  +
+ +
+2 elements
+|1
+
+
+
+|===
+
+
+
+Note – see 2.6 “Outlook on Time Series Operations – not normative yet” for further SMEs in TimeSeries Submodel
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_Template_of_Time_Series_Data],[ReferenceElement, Table_Specification_of_SMC_Metadata]
+
+
+
+[width="100%", id="Table_Specification_of_SMC_Metadata", title="Specification of SMC Metadata", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Metadata 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/TimeSeries/Metadata/2/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TimeSeries 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[MLP]  +
+ +
+Name
+|https://admin-shell.io/idta/TimeSeries/Metadata/Name/2/0  +
+ +
+Meaningful name for labeling 
+|[]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+Description
+|https://admin-shell.io/idta/TimeSeries/Metadata/Description/2/0  +
+ +
+Short description of the time series 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[SMC]  +
+ +
+Record
+|https://admin-shell.io/idta/TimeSeries/Record/2/0  +
+ +
+A time series record is unique by its ID within the time series and contains the timestamps and variable values referenced to the ID. Similar to a row in a table 
+|[]  +
+ +
+5 elements
+|1
+
+
+
+|===
+
+
+
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_Template_of_Time_Series_Data],[ReferenceElement, Table_Specification_of_SMC_Record]
+
+
+
+[width="100%", id="Table_Specification_of_SMC_Record", title="Specification of SMC Record", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Record 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/TimeSeries/Record/2/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Metadata 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Time
+|https://admin-shell.io/idta/TimeSeries/RelativePointInTime/2/0  +
+ +
+Point of Time in seconds. Time points refer to the start time of the time series segment. 
+|[Long]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+AnyFurtherTimeStamp
+|  +
+ +
+ 
+|[String]  +
+ +
+
+|
+
+
+
+|[Prop]  +
+ +
+sampleAccelerationX
+|https://sample.com/AccelerationX/2/0  +
+ +
+ 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+sampleAccelerationY
+|https://sample.com/AccelerationY/2/0  +
+ +
+ 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+sampleAccelerationZ
+|https://sample.com/AccelerationZ/2/0  +
+ +
+ 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_Template_of_Time_Series_Data],[ReferenceElement, Table_Specification_of_SMC_Segments]
+
+
+
+[width="100%", id="Table_Specification_of_SMC_Segments", title="Specification of SMC Segments", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Segments 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/TimeSeries/Segments/2/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TimeSeries 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+ExternalSegment
+|https://admin-shell.io/idta/TimeSeries/Segments/ExternalSegment/2/0  +
+ +
+Reference to a file of data points in sequential order over a period of time 
+|[]  +
+ +
+14 elements
+|0..*
+
+
+
+|[SMC]  +
+ +
+InternalSegment
+|https://admin-shell.io/idta/TimeSeries/Segments/InternalSegment/2/0  +
+ +
+Grouped sequence of data points in successive order over a specified period of time 
+|[]  +
+ +
+11 elements
+|0..*
+
+
+
+|===
+
+
+
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_Template_of_Time_Series_Data],[ReferenceElement, Table_Specification_of_SMC_Internal_Segment]
+
+
+
+[width="100%", id="Table_Specification_of_SMC_Internal_Segment", title="Specification of SMC InternalSegment", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}InternalSegment 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/TimeSeries/Segments/InternalSegment/2/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Segments 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[MLP]  +
+ +
+Name
+|https://admin-shell.io/idta/TimeSeries/Segment/Name/2/0  +
+ +
+Meaningful name for labeling. 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[MLP]  +
+ +
+Description
+|https://admin-shell.io/idta/TimeSeries/Segment/Description/2/0  +
+ +
+Short description of the time series segment. 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+RecordCount
+|https://admin-shell.io/idta/TimeSeries/Segment/RecordCount/2/0  +
+ +
+Indicates how many records are present in a segment. 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+StartTime
+|https://admin-shell.io/idta/TimeSeries/Segment/StartTime/2/0  +
+ +
+Contains the first recorded timestamp of the time series segment and thus represents the beginning of a time series. Time format and scale corresponds to that of the time series. 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+EndTime
+|https://admin-shell.io/idta/TimeSeries/Segment/EndTime/2/0  +
+ +
+Contains the last recorded timestamp of the time series segment and thus represents the end of a time series. Time format and scale corresponds to that of the time series. 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Duration
+|https://admin-shell.io/idta/TimeSeries/Segment/Duration/2/0  +
+ +
+Period covered by the segment, represented according to ISO 8601 by the format P[n]Y[n]M[n]DT[n]H[n]M[n]S 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+SamplingInterval
+|https://admin-shell.io/idta/TimeSeries/Segment/SamplingInterval/2/0  +
+ +
+The time period between two time series records (Length of cycle). 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+SamplingRate
+|https://admin-shell.io/idta/TimeSeries/Segment/SamplingRate/2/0  +
+ +
+Defines the number of samples per second for a regular time series in Hz. 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+State
+|https://admin-shell.io/idta/TimeSeries/Segment/State/2/0  +
+ +
+State of the time series related to its progress 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|https://admin-shell.io/idta/TimeSeries/Segment/LastUpdate/2/0  +
+ +
+Time of the last chance 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[SML]  +
+ +
+Records
+|https://admin-shell.io/idta/TimeSeries/Records/2/0  +
+ +
+Group of data points in successive order over a specified period of time 
+|[]  +
+ +
+0 elements
+|
+
+
+
+|===
+
+
+
+
+// Table generated from [Submodel, www.example.com/ids/sm/7485_0121_2042_6700],[SubmodelElementCollection, Section_2_Approaches],[SubmodelElementCollection, Section_2_3_Submodel_Template_of_Time_Series_Data],[ReferenceElement, Table_Specification_of_SMC_External_Segment]
+
+
+
+[width="100%", id="Table_Specification_of_SMC_External_Segment", title="Specification of SMC ExternalSegment", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}ExternalSegment 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/TimeSeries/Segments/ExternalSegment/2/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Segments 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[MLP]  +
+ +
+Name
+|https://admin-shell.io/idta/TimeSeries/Segment/Name/2/0  +
+ +
+Meaningful name for labeling. 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[MLP]  +
+ +
+Description
+|https://admin-shell.io/idta/TimeSeries/Segment/Description/2/0  +
+ +
+Short description of the time series segment. 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+RecordCount
+|https://admin-shell.io/idta/TimeSeries/Segment/RecordCount/2/0  +
+ +
+Indicates how many records are present in a segment. 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+StartTime
+|https://admin-shell.io/idta/TimeSeries/Segment/StartTime/2/0  +
+ +
+Contains the first recorded timestamp of the time series segment and thus represents the beginning of a time series. Time format and scale corresponds to that of the time series. 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+EndTime
+|https://admin-shell.io/idta/TimeSeries/Segment/EndTime/2/0   +
+ +
+ 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Duration
+|https://admin-shell.io/idta/TimeSeries/Segment/Duration/2/0  +
+ +
+Period covered by the segment, represented according to ISO 8601 by the format P[n]Y[n]M[n]DT[n]H[n]M[n]S 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+SamplingInterval
+|https://admin-shell.io/idta/TimeSeries/Segment/SamplingInterval/2/0  +
+ +
+The time period between two time series records (Length of cycle). 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+SamplingRate
+|https://admin-shell.io/idta/TimeSeries/Segment/SamplingRate/2/0  +
+ +
+Defines the number of samples per second for a regular time series in Hz. 
+|[Long]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+State
+|https://admin-shell.io/idta/TimeSeries/Segment/State/2/0  +
+ +
+State of the time series related to its progress 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|https://admin-shell.io/idta/TimeSeries/Segment/LastUpdate/2/0  +
+ +
+Time of the last chance 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[File]  +
+ +
+File
+|https://admin-shell.io/idta/TimeSeries/File/2/0  +
+ +
+Sequence of data points in sequential order over a period of time within a paged data file 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Endpoint
+|https://admin-shell.io/idta/TimeSeries/Endpoint/2/0  +
+ +
+Specifies a location of a resource on an API server through which time series can be requested 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Query
+|https://admin-shell.io/idta/TimeSeries/Query/2/0  +
+ +
+generic query component to read time series data from an API 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Blob]  +
+ +
+Blob
+|  +
+ +
+ 
+|[]  +
+ +
+0 bytes
+|0..1
+
+
+
+|===
+
+
+
+
+=== Example Timestamp definitions
+[width="100%", title="Example Timestamp definitions", cols="15%,55%,30%"]
+|===
+s|{set:cellbgcolor:#eeeeee} [SME type] 001
+s|semanticId = [idType]value
+s|[valueType]
+s|{set:cellbgcolor:#0029cc}idShort
+s|Description@en
+s|example
+|
+[{set:cellbgcolor:#ffffff}[Property]
+UtcTime
+|
+[IRI] https://admin-shell.io/idta/TimeSeries/UtcTime/1/1
+or [IRDI] 0112/2///61360_4#ADA387#001
+preferredName @de: Zeitstempel UTC
+preferredName @en: Timestamp UTC
+definition @de: Zeitstempel nach ISO 8601 auf der Zeitskala der koordinierten Weltzeit (UTC).
+definition@en: Timestamp according to ISO 8601 on the timescale ccordinated universal time (UTC).
+|
+[xs:dateTimeTIMESTSAMP]
+
+2020-09-19T14:40:38.318
+|
+[Property]
+TaiTime
+|
+[IRI] https://admin-shell.io/idta/TimeSeries/TaiTime/1/1
+or [IRDI] 0112/2///61360_4#ADA386#001
+preferredName @de: Zeitstempel TAI
+preferredName @en: Timestamp TAI
+definition @de: Zeitstempel nach ISO 8601 auf der Zeitskala internationale Atomzeit (TAI).
+definition@en: Timestamp according to ISO 8601 on the timescale international atomic time (TAI).
+|
+[xs:dateTimeTIMESTSAMP]
+
+2020-09-19T14:40:38.318
+|
+[Property]
+RelativeTimePoint
+|
+[IRI] https://admin-shell.io/idta/TimeSeries/RelativeTimePoint/1/1
+preferredName @de: Zeitstempel
+preferredName @en: Timestamp
+definition @de: Zeitpunktangabe in Sekunden. Zeitpunkte referenzieren auf die Startzeit des Zeitreihensegments.
+definition@en: Point of Time in seconds. Time points refer to the start time of the time series segment.
+|
+[REAL_MEASURE]
+
+5 s
+| 
+[Property]
+RelativeTimeDuration
+|
+[IRI] [IRI] https://admin-shell.io/idta/TimeSeries/RelativeTimeDuration/1/1
+or [IRDI] 0112/2///61360_4#AAE028#001
+preferredName @de: Zeitdauer
+preferredName @en: Timeduration
+definition @de: Angabe der zeitlichen Dauer in Sekunden (Anzahl der Sekunden). Zeitdauern referenzieren auf den jeweils vorangegangenen Eintrag im Zeitreihensegment.
+definition@en: Time duration specification in seconds (number of seconds). Time durations refer to the previous entry in the time series segment.
+|
+[REAL_MEASURE]
+
+5 s
+|===
+
+
+
+
+=== Example qualifiers
+[width="100%", title="Example Qualifiers", cols="15%,55%,30%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#Qualifier/type#
+s| [white]#Qualifier/semanticId#
+s| [white]#Qualifier/value#
+|
+[{set:cellbgcolor:#ffffff}[Property]
+ValueQualityQualifier
+|
+[IRDI] 0112/2///61360_4#ADA350
+qualifier that specifies the quality of the value of a data element type
+Notice - The quality of the data values can be of value in a time series analysis. This allows bad data values to be omitted from aggregations or calculations.
+|
+0112/2///61360_7#CTA052 - good 
+0112/2///61360_7#CTA053 - bad 
+0112/2///61360_7#CTA054 - uncertain 
+0112/2///61360_7#CTA000 - others
+|
+ValueOriginQualifier
+|
+[IRDI] 0112/2///61360_4#AAF582
+qualifier that specifies the type of data capturing or generation for the provided value
+Notice - Information about the type of data collection or generation for the value provided.
+|
+0112/2///61360_7#CTA004 - calculated 
+0112/2///61360_7#CTA005 - estimated 
+0112/2///61360_7#CTA006 - measured 
+0112/2///61360_7#CTA007 - set 
+0112/2///61360_7#CTA000 - others
+|
+ValueProcessingQualifier
+|
+[IRDI] 0112/2///61360_4#AAF583#002qualifier that specifies a method of selecting or computing a representative value from more than one valueNotice - Information about the method of preprocessing the value provided.
+|
+0112/2///61360_7#CTA008 - arithmetic mean 
+0112/2///61360_7#CTA009 - geometric mean 
+0112/2///61360_7#CTA010 - harmonic mean 
+0112/2///61360_7#CTA011 - median 
+0112/2///61360_7#CTA012 - mode 
+0112/2///61360_7#CTA013 - root mean square 
+0112/2///61360_7#CTA014 - weighted arithmetic mean 
+0112/2///61360_7#CTA015 - weighted geometric mean 
+0112/2///61360_7#CTA000 - others
+|
+[Qualifier]
+MeasurementModelQualifier
+|
+[IRI] https://admin-shell.io/idta/TimeSeries/Qualifier/MeasurementModel/1/1
+qualifier that specifies whether there is an absolute measurement, or whether the value is to be seen as additive to the previous measurement
+Notice - Information about whether there is an absolute measurement, or it must be considered additive.
+|
+https://admin-shell.io/idta/TimeSeries/Qualifier/MeasurementModel/Absolute/1/1 - absolute
+https://admin-shell.io/idta/TimeSeries/Qualifier/MeasurementModel/Incremental/1/1 - incremental
+|===
+
+=== Outlook on Time Series Operations – not normative yet
+The defined Submodel offers more flexibility due to the different modeling approaches for time series segments, but this can lead to limitations in interoperability. I4.0 applications (defined in [7]) that access time series data may have to deal with proprietary systems and data formats (Figure 9).
+
+image::Figure_10.png[id="Figure_10", width="100.0%",title="Data access without operations"]
+
+Asset Administration Shells and Submodels offer Operations to specify a generic way to describe functional interfaces. This allows implementations of the AAS/SM to provide, as in this case, convenience operations or additional business functionality. 
+
+In our case we would like to simplify the identification of the data of interest:
+
+* ReadSegments, ReadRecords provide access to physically existing data by filtering Segments / Records by time range. 
+* DeriveSegment perform additional computation by rearranging / aggregating existing data to meet the use case needs.
+
+Since Operations may operate in many Segments, we decided to model them directly on the entry point of the time series Submodel. This additionally simplifies access since no navigation to child elements is required. Implementations should hide the complexity of combining data from different source aka. Segment types (Internal, Linked, External).
+
+This approach enables I4.0 applications to access Time Series Data interoperably, regardless of storage location and format. However, the mapping and access must be programmed in the AAS for this (see Figure 10).
+
+
+image::Figure_11.png[id="Figure_11", width="100.0%",title="Data access with operations"]
+
+[width="100%", id="Table_Submodel", title="Outlook on Submodel Template TimeSeries with Operations", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+|{set:cellbgcolor:#eeeeee}TimeSeries 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee} Submodel
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee} [IRI] https://admin-shell.io/idta/TimeSeries/1/1
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}@de: Enthält Zeitreihendaten und Referenzen auf Zeitreihendaten, um diese entlang des Asset Lebenszyklus aufzufinden und semantisch zu beschreiben.
+
+@en: Contains time series data and references to time series data to discover and semantically describe them along the asset lifecycle.
+s|{set:cellbgcolor:#bfbfbf} [blue]#[SME type]#
+s|{set:cellbgcolor:#bfbfbf} [blue]#semanticId = [idType]value#
+s|{set:cellbgcolor:#bfbfbf} [blue]#[valueType]#
+s|{set:cellbgcolor:#bfbfbf} [blue]#card.#
+
+s|{set:cellbgcolor:#0029cc} [white]#idShort#
+s|{set:cellbgcolor:#0029cc} [white]#Description@en#
+s|{set:cellbgcolor:#0029cc} [white]#example#
+s|{set:cellbgcolor:#0029cc} 
+s|[white]#[SMC]
+Metadata#
+|{set:cellbgcolor:#eeeeee}[IRI] https://admin-shell.io/idta/TimeSeries/Metadata/1/1
+preferredName @de: Zeitreihen Metadaten
+
+preferredName @en: time series metadata
+
+definition @de: Eine Reihe von Daten, welche die Zeitreihe beschreiben und über sie Auskunft geben
+
+definition @en: A set of data describing and providing information about the time series
+|n/a
+|1
+s|{set:cellbgcolor:#0029cc} [white]#[SMC]
+Segments#
+|{set:cellbgcolor:#eeeeee}[IRI] https://admin-shell.io/idta/TimeSeries/Segments/1/1
+preferredName @de: Zeitreihensegmente
+
+preferredName @en: time series segments
+
+definition @de: Enthält Segmente einer Zeitreihe
+
+definition @en: Contains segments of a time series
+|n/a
+|1
+s|{set:cellbgcolor:#0029cc} [white]#[Opr]
+DeriveSegments#
+|{set:cellbgcolor:#eeeeee}[IRI] https://admin-shell.io/idta/TimeSeries/DeriveSegments/1/1
+
+Computes a Segment containig all the Records from all Segments of the given timespan. Optionally, the Records can be aggregated in different ways to reduce the amount of data.
+|n/a
+|0..1
+s|{set:cellbgcolor:#0029cc} [white]#[Opr]
+ReadRecords#
+|{set:cellbgcolor:#eeeeee}[IRI] https://admin-shell.io/idta/TimeSeries/ReadRecords/1/1
+|n/a
+|0..1
+s|{set:cellbgcolor:#0029cc} [white]#[Opr]
+ReadSegments#
+|{set:cellbgcolor:#eeeeee}[IRI] https://admin-shell.io/idta/TimeSeries/ReadSegments/1/1
+|n/a
+|0..1
+|===
+[width="100%", id="Table_Submodel", title="Outlook on Submodel Template TimeSeries with Operations", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+|{set:cellbgcolor:#eeeeee}DeriveSegment 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee} Operation
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee} [IRI] https://admin-shell.io/idta/TimeSeries/DeriveSegment/1/1
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee} Submodel TimeSeries
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}@de: Berechnet ein Segment, das alle Datensätze aus allen Segmenten der angegebenen Zeitspanne enthält. Optional können die Datensätze auf verschiedene Arten aggregiert werden, um die Datenmenge zu reduzieren.
+
+@en: Computes a Segment containig all the Records from all Segments of the given timespan. Optionally, the Records can be aggregated in different ways to reduce the amount of data.
+
+s|{set:cellbgcolor:#bfbfbf} [blue]#[Variable kind / Variable value type]#
+s|{set:cellbgcolor:#bfbfbf} [blue]#semanticId = [idType]value#
+s|{set:cellbgcolor:#bfbfbf} [blue]#[valueType]#
+s|{set:cellbgcolor:#bfbfbf} [blue]#card.#
+
+s|{set:cellbgcolor:#0029cc} [white]#idShort#
+s|{set:cellbgcolor:#0029cc} [white]#Description@en#
+s|{set:cellbgcolor:#0029cc} [white]#example#
+s|{set:cellbgcolor:#0029cc} 
+s|[white]#[IN / Range]
+Timespan#
+|{set:cellbgcolor:#eeeeee}
+[IRI] https://admin-shell.io/idta/TimeSeries/Timespan/1/1
+
+preferredName @de: Zeitspanne
+
+preferredName @en: Timespan
+
+@de: Der valueType der übergebenen Zeitspanne muss mit dem valueType der Time Properties der Segemente übereinstimmen.
+
+@en: The valueType of the given timespan must match the valueType of the time properties of the segments.
+
+|n/a
+|1
+s|{set:cellbgcolor:#0029cc} [white]#[IN / Property]
+SamplingInterval#
+|{set:cellbgcolor:#eeeeee}
+[IRI] https://admin-shell.io/idta/TimeSeries/Segment/SamplingInterval/1/1
+
+Note: A different semantic ID is to be used to select the appropriate scale and format (eg. min, s, ms, Hz, …). 
+
+preferredName @de: Abtastintervall
+
+preferredName @en: Sampling Interval
+
+definition @de: Der zeitliche Abstand zwischen zwei Datenpunkten (Länge eines Zyklus).
+
+definition @en: The time period between two time series records (Length of cycle).
+
+|long
+
+5 Hz
+|0..1
+s|{set:cellbgcolor:#0029cc} [white]#[IN / Property]
+AggregationMethod#
+
+|{set:cellbgcolor:#eeeeee}
+[IRI] https://admin-shell.io/idta/TimeSeries/AggregationMethod/1/1
+
+@de: Methode zur Aggregation der Daten. Muss zusammen mit SampleInterval übergeben werden. 
+
+@en: Method to aggregate data. Only valid in combination with SamplingInterval.
+
+Value List:
+
+- Max (Selects the largest data points)
+- Min (Selects the smallest data points)
+- Avg (Averages the data points)
+- Sum (Adds the data points together)
+- Count (The number of raw data points in the set)
+
+Note – for documentation and further value lists see http://opentsdb.net/docs/build/html/user_guide/query/aggregators.html
+
+
+|n/a
+|0..1
+s|{set:cellbgcolor:#0029cc} [white]#[OUT / SMC]
+Segment#
+|{set:cellbgcolor:#eeeeee}
+[IRI] https://admin-shell.io/idta/TimeSeries/Segments/InternalSegment/1/1
+
+Note – Record IDs must be unique across segments.
+|n/a
+|1
+s|{set:cellbgcolor:#0029cc} [white]#[Opr]
+|===
+[width="100%", id="Table_Submodel", title="Outlook on Submodel Template TimeSeries with Operations", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+|{set:cellbgcolor:#eeeeee}ReadRecords 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee} Operation
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee} [IRI] https://admin-shell.io/idta/TimeSeries/ReadRecords/1/1
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}
+Submodel TimeSeries
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}
+@de: Liefert alle Records über alle Segmente, die innerhalb der übergebenen Zeitspanne liegen. Etwaige Unterschiede bzgl. Abtastrate, Zeitintervallen, etc. werden nicht berücksichtigt.
+
+@en: Returns all records of all segments that are within the given time span. Any differences in sampling rate, time intervals, etc. are not considered.
+
+s|{set:cellbgcolor:#bfbfbf} [blue]#[Variable kind / Variable value type]#
+s|{set:cellbgcolor:#bfbfbf} [blue]#semanticId = [idType]value#
+s|{set:cellbgcolor:#bfbfbf} [blue]#[valueType]#
+s|{set:cellbgcolor:#bfbfbf} [blue]#card.#
+
+s|{set:cellbgcolor:#0029cc} [white]#idShort#
+s|{set:cellbgcolor:#0029cc} [white]#Description@en#
+s|{set:cellbgcolor:#0029cc} [white]#example#
+s|{set:cellbgcolor:#0029cc} 
+s|[white]#[IN / Range]
+Timespan#
+|{set:cellbgcolor:#eeeeee}
+[IRI]
+https://admin-shell.io/idta/TimeSeries/Timespan/1/1
+
+preferredName @de: Zeitspanne
+
+preferredName @en: Timespan
+
+@de: Der valueType der übergebenen Zeitspanne muss mit dem valueType der Time Properties der Records übereinstimmen.
+
+@en: The valueType of the given timespan must match the valueType of the time properties of the Records.
+
+|n/a
+|1
+s|{set:cellbgcolor:#0029cc} [white]#[OUT]
+Records#
+|{set:cellbgcolor:#eeeeee}
+[IRI] https://admin-shell.io/idta/TimeSeries/Records/1/1
+
+@de: Records, die innerhalb der übergebenen Zeitspanne liegen.
+
+@en: Segments that overlap with the passed period.
+
+|n/a
+|0..*
+|===
+[width="100%", id="Table_Submodel", title="Outlook on Submodel Template TimeSeries with Operations", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+|{set:cellbgcolor:#eeeeee}ReadSegments 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee} Operation
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee} [IRI] https://admin-shell.io/idta/TimeSeries/ReadSegments/1/1
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}
+Submodel TimeSeries
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}
+@de: Liefert alle Segmente, deren Zeitspanne sich mit der übergebenen Periode überschneiden, ohne die enthaltenen Records zu filtern. Getroffene Segmente werden komplett zurückgegeben.
+
+@en: Returns all segments whose timespan overlaps the given period without filtering the records contained. Hit segments are returned in full.
+
+s|{set:cellbgcolor:#bfbfbf} [blue]#[Variable kind / Variable value type]#
+s|{set:cellbgcolor:#bfbfbf} [blue]#semanticId = [idType]value#
+s|{set:cellbgcolor:#bfbfbf} [blue]#[valueType]#
+s|{set:cellbgcolor:#bfbfbf} [blue]#card.#
+
+s|{set:cellbgcolor:#0029cc} [white]#idShort#
+s|{set:cellbgcolor:#0029cc} [white]#Description@en#
+s|{set:cellbgcolor:#0029cc} [white]#example#
+s|{set:cellbgcolor:#0029cc} 
+s|[white]#[IN / Range]
+Timespan#
+|{set:cellbgcolor:#eeeeee}
+[IRI] https://admin-shell.io/idta/TimeSeries/Timespan/1/1
+
+preferredName @de: Zeitspanne
+
+preferredName @en: Timespan
+
+@de: Der valueType der übergebenen Zeitspanne muss mit dem valueType der Time Properties der Segemente übereinstimmen.
+
+@en: The valueType of the given timespan must match the valueType of the time properties of the Segments.
+
+|n/a
+|1
+s|{set:cellbgcolor:#0029cc} [white]#[OUT / SMC]
+Segments#
+|{set:cellbgcolor:#eeeeee}
+[IRI] https://admin-shell.io/idta/TimeSeries/Segments/1/1
+
+preferredName @de: Segments
+
+preferredName @en: Segments
+
+@de: Enthält Segmente, die sich zumindest teilweise mit der übergebenen Periode überschneiden.
+
+@en: Contains segments that at least partially overlap with the passed period.
+|n/a
+|0..*
+|===
+:sectnums!:
+
+== Annex A.	Explanations on used table formats
+
+=== 1. General
+
+The used tables in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The tables follow in principle the same conventions as in [5].
+* The table heads abbreviate 'cardinality' with 'card'.
+* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+* The types of SubmodelElements are abbreviated:
+
+[width="100%",cols="40%,60%",options="header"]
+|===
+|SME type |SubmodelElement type
+|Property |Property
+|MLP |MultiLanguageProperty
+|Range |Range
+|File |File
+|Blob |Blob
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|SMC |SubmodelElementCollection
+|===
+
+* If an idShort ends with '\__00__', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique. A different idShort might be choosen, as long as it is unique in the parent’s context.
+* The Keys of semanticId in the main section feature only idType and value, such as: https://admin-shell.io/vdi/2770/1/0/DocumentId/Id. The attribute "type" (typically "ConceptDescription" and "(local)" or "GlobalReference") need to be set accordingly; see [6].
+* If a table does not contain a column with "parent" heading, all represented attributes share the same parent. This parent is denoted in the head of the table.
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* The [valueType] is only given for Properties.
+
+
+
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] |“Recommendations for implementing the strategic initiative
+INDUSTRIE 4.0”, acatech, April 2013. [Online]. Available
+https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+
+|[2] |“Implementation Strategy Industrie 4.0: Report on the results of
+the Industrie 4.0 Platform”; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April
+2015. [Online]. Available:
+https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
+
+|[3] |“The Structure of the Administration Shell: TRILATERAL
+PERSPECTIVES from France, Italy and Germany”, March 2018, [Online].
+Available:
+https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
+
+|[4] |“Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente –
+Basisteil (German)”; ZVEI e.V., Whitepaper, November 2016. [Online].
+Available:
+https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
+
+|[5] |“Verwaltungsschale in der Praxis. Wie definiere ich Teilmodelle,
+beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen
+(in German)”, Version 1.0, April 2019, Plattform Industrie 4.0 in
+Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for
+Economic Affairs and Energy (BMWi), Available:
+https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
+
+|[6] |IDTA 01001-3-0: “Specification of the Asset Administration Shell; Part 1 (Version 3.0)”, March 2023, [Online]. Available:
+https://industrialdigitaltwin.org/wp-content/uploads/2023/06/IDTA-01001-3-0_SpecificationAssetAdministrationShell_Part1_Metamodel.pdf
+
+|[7] |“Semantic interoperability: challenges in the digital
+transformation age”; IEC, International Electronical Commission; 2019.
+[Online]. Available:
+https://basecamp.iec.ch/download/iec-white-paper-semantic-interoperability-challenges-in-the-digital-transformation-age-en/
+
+|[8] |Common terms and abbreviations according to VDI FA 7.21 Wiki; Available: http://i40.iosb.fraunhofer.de/
+
+|[9] |United States: US Code of Federal regulations, see https://www.ecfr.gov/current/title-22/chapter-I/subchapter-M/part-120/subpart-C/section-120.42
+
+|===
+

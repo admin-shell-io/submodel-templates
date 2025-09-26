@@ -1,0 +1,2123 @@
+
+= IDTA 02045-1-0 Data Model for Asset Location
+
+=== Imprint 
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+[cols="1,1,4"]
+|===
+
+|Date
+|Version
+|Comment
+
+|2024-07-01
+|1.0
+|Release of the official Submodel template published by IDTA.
+
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+=== About this document
+This document is a part of a specification series. Each part specifies the contents of a Submodel template for the Asset Administration Shell (AAS). The AAS is described in [1], [2], [3] and [6]. First exemplary Submodel contents were described in [4], while the actual format of this document was derived by the "Administration Shell in Practice" [5]. The format aims to be very concise, giving only minimal necessary information for applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures and mapping to the respective documents [1] to [6].
+
+The target group of the specification are developers and editors of technical documentation and manufacturer information, which are describing assets in smart manufacturing by means of the Asset Administration Shell (AAS) and therefore need to create a Submodel instance with a hierarchy of SubmodelElements. This document especially details on the question, which SubmodelElements with which semantic identification shall be used for this purpose.
+
+=== Scope of the Submodel
+The location of static or mobile objects (assets / goods / trackables) and, if applicable, the origin and destination of transport processes are naturally the most important information in transport and internal logistics. In the past, the postal address or a simple location description (e.g., hall B, aisle 3) or a GNSS coordinate (Global Navigation Satellite System, like GPS) was sufficient as location information for controlling logistics processes.
+
+With the increasing propagation of localization technologies such as Ultra-Wideband (UWB), BLE (Bluetooth Low Energy), RFID (Radio-Frequency Identification) and others, the continuous and precise tracking of objects becomes possible at reasonable costs. This opens up new possibilities for the automation, monitoring and analysis of goods flows and internal transportation tasks. It is also possible to measure masses of localization data for short distances within buildings, which is why the integration of a localization solution into warehouse systems or production lines is becoming increasingly popular. The systems for localization are usually referred to as real-time location systems (RTLS).
+
+Automated guided vehicles (AGVs) and autonomous transport robots with free navigation (AGVs) are also increasingly being used for internal transportation tasks. These are another driver for the use of localization technologies in companies.
+
+*Further applications that require localization information are augmented reality or robotics applications in which in addition to the position the orientation of an object, the pose (6DoF), is of interest. This Submodel is not supporting 6DoF orientation information for now.*
+
+Location data for assets are determined by different localization systems during the life cycle and even at the same point in time more than one system can deliver a location information. Today location data originate from a variety of non-interoperable systems, for which the data model for the localization information is not standardized.
+
+Since asset location data are generated and used by different systems, for different use cases, in different life cycle phases and by different organizations it makes particular sense to manage the location data in the AAS of an asset in the form of a standardized Submodel.
+
+=== Relevant standards for the Submodel template
+One important standard that aims the interoperability in the field of localization is the open locating standard omlox. Omlox is hosted under the umbrella of the PROFIBUS & PROFINET International (PI) organization. Omlox includes also a specification for omlox compliant locating systems and corresponding APIs. 
+
+More information can be found here:
+
+• https://omlox.com/
+• https://www.profibus.com/technology/industrie-40/omlox-the-open-locating-standard
+
+In the attachment of this Submodel specification a mapping between the Submodel template and the omlox specification has been included.
+
+Further standards that have been considered regarding data for asset locations were:
+
+• link:https://www.geopose.org/[Open Geospatial Consortium (OGC) GeoPose 1.0 Data Exchange Standard]
+• ISO 19116:2019(en): Geographic information – positioning services
+• World Geodetic System - 1984 (WGS-84)
+
+There is as well an initiative announced for an OPC UA Companion Specification “Global Positioning”.
+
+== Approach of the Submodel
+
+=== Use cases and requirements
+The use cases for localization of mobile objects can be, for example, divided into use cases for track & trace, location-based automation, production execution and maintenance as well as material flow. With track & trace, for example, manual search efforts can be reduced, or transportation resource utilization can be determined based on movement analyses. Track means the determination of the current location and trace means the traceability of the shipment's progress. This also includes applications for the traceability of the transport chain.
+
+Location-based automation means that events such as transport orders are triggered depending on the position of an object.
+
+When carrying out production or maintenance, location data helps to quickly reach the required components or machines to be serviced.
+
+The control and optimization of the material flow along the entire logistics chain using various transport and control systems is another field of application for localization technologies.
+
+In addition, also static objects have a permanent location that needs to be modeled. This can be used for example for use cases like navigation or as input for transportation orders where the origin and the destination can be linked to the Submodel instance.
+
+*In many applications the origin and destination of an asset will play a role, e.g., for navigation or transport orders. Origin and destination can again be, in this case stationary, assets with this location data Submodel.*
+
+The requirement was to reflect the wide rage of track & trace and localization use cases, the different needs on the quality of location data as well the different localization technologies with the Submodel template.
+
+Three structure elements ensure that the multitude of use cases can be supported. First the semantic structure of a geographically referenced region which is site, area (or building) and fence (see Figure 1) where a site can have one or more areas and/or fences assigned, and an area can have fences assigned. The second structure element are coordinate reference systems (CRS) which have so called “ground control points” for a mapping between a global geographic CRS and the local CRS which enables the coordinate transformation between all local coordinate reference systems. Site, area and fence can share the same coordinate reference system or just have their own.
+
+There is no need to model a site, area or fence in the AAS. At the minimum a position with an assigned CRS is sufficient. 
+
+image::Figure_1.png[id="Figure_1", width="100.0%",title="Structure elements of a geographically outlined region."]
+
+A position (x,y,z-coordinate) is referenced to a CRS which will make it possible that an application based on
+the data of an AAS is able to determine the semantic relationships for a position, namely the assignment to
+one or more areas which the asset overlaps.
+
+An area can be of kind SITE, BUILDING or AREA_NOT_SPECIFIED. An area of kind
+AREA_NOT_SPECIFIED can be a virtual boundary (fence) that unlike a SITE or BUILDING is not
+representing a physical defined region. The main point of an area is to enable capturing entry and exit events
+of assets entering or leaving an area. An area is therefore an essential concept for location-automation
+
+image::Figure_2.png[id="Figure_2", width="100.0%",title="Modelling of the height"]
+
+The modelling of the height is illustrated in Figure 2. For every CRS an ElevationReference has to be set
+which is defining the reference for the height (z-value of a position).
+
+=== Structure and design decisions
+The structure of the Submodel template is shown in Figure 3. The SubmodelElementLists “Adresses” and
+“VisitedAreas” contain geographically referenced locations that an asset has visited during its lifecycle
+phases. Areas can be referenced to their address(es).
+VisitedAreas are regions that are defined wherein events are generated when an asset enters or leaves that
+area. The SubmodelCollection AssetTraces contains the records of events, namely the entry and exit of
+assets for VisitedAreas and with the SubmodelElementList LocationRecords the records of locations.
+
+The regions of VisitedAreas can be nested or overlap in arbitrary ways. In general, if the location of an asset
+lies within multiple overlapping regions, individual events for each of the regions are generated. The events
+are generated solely based of geographic relationship, e.g VisitedAreas have no direct relationship to
+another but may spatially overlap.
+
+*For the SubmodelElementLists of the SubmodelElementCollection AssetTraces the order is relevant. The last entry
+is the latest event or location that has been recorded.*
+
+image::Figure_3.png[id="Figure_3", width="100.0%",title="Information structuring of the Submodel template “Data Model for Asset Location”"]
+
+
+== Approach of the Submodel
+
+=== SubmodelElements of the Submodel template “Data Model for Asset Location”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_1_SubmodelElements_of_the_Submodel_template_Data_Model_for_Asset_Location],[ReferenceElement, Table_SubmodelElements_of_the_Submodel_template_Data_Model_for_Asset_Location]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_the_Submodel_template_Data_Model_for_Asset_Location", title="SubmodelElements of the Submodel template “Data Model for Asset Location”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}AssetLocation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/smt/assetlocation/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Submodel for tracking & tracing of the location of an assets 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SML]  +
+ +
+Addresses
+|https://admin-shell.io/idta/sml/addresses/1/0  +
+ +
+  +
+List with postal addresses where an object has been located
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SML]  +
+ +
+CoordinateSystems
+|https://admin-shell.io/idta/sml/coordinatesystems/1/0  +
+ +
+  +
+List with information about different coordinate systems that have been used to determine the location of an asset
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SML]  +
+ +
+VisitedAreas
+|https://admin-shell.io/idta/sml/visitedareas/1/0  +
+ +
+  +
+List with areas (e.g., sites, buildings, field warehouses) where an asset has been located or is located
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+AssetTraces
+|https://admin-shell.io/idta/smc/assettraces/1/0  +
+ +
+  +
+Collection of localization event records for sites, areas, fences and locations
+|[]  +
+ +
+4 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+AssetLocatingInformation
+|https://admin-shell.io/idta/sml/assetlocatinginformation/1/0  +
+ +
+  +
+Collection with additional information concerning the localization of an asset
+|[]  +
+ +
+4 elements
+|0..1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SML “Addresses”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_2_SubmodelElements_of_SML_Addresses],[ReferenceElement, Table_SubmodelElements_of_SML_Addresses]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SML_Addresses", title="SubmodelElements of SML “Addresses”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Addresses 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/sml/addresses/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}AssetLocation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}List with postal addresses where an object has been located 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, 0173-1#01-ADR442#007], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+Address00
+|0173-1#01-ADR442#007  +
+ +
+  +
+Postal addresses where an object has been located
+|[]  +
+ +
+10 elements
+|
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC “Address”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_3_SubmodelElements_of_SMC_Address],[ReferenceElement, Table_SubmodelElements_of_SMC_Address]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_Address", title="SubmodelElements of SMC “Address”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Address00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#01-ADR442#007 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Addresses 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Postal addresses where an object has been located 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+AddressLine1
+|0173-1#02-AAO124#004  +
+ +
+  +
+address line 1
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AddressLine2
+|0173-1#02-AAO125#004  +
+ +
+  +
+address line 2
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AddressLine3
+|0173-1#02-AAO126#004  +
+ +
+  +
+address line 3
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AddressOfAdditionalLink
+|0173-1#02-AAQ326#003  +
+ +
+  +
+address of additional link
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AddressRemarks
+|0173-1#02-AAO202#004  +
+ +
+  +
+address remarks
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+NationalCode
+|0173-1#02-AAO134#003  +
+ +
+  +
+national code
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Statecounty
+|0173-1#02-AAO133#003  +
+ +
+  +
+state/county
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Citytown
+|0173-1#02-AAO132#003  +
+ +
+  +
+city/town
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Street
+|0173-1#02-AAO128#003  +
+ +
+  +
+street
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+ZipCode
+|0173-1#02-AAO129#003  +
+ +
+  +
+zip code
+|[String]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SML “CoordinateSystems”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_4_SubmodelElements_of_SML_CoordinateSystems],[ReferenceElement, Table_SubmodelElements_of_SML_CoordinateSystems]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SML_CoordinateSystems", title="SubmodelElements of SML “CoordinateSystems”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}CoordinateSystems 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/sml/coordinatesystems/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}AssetLocation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}List with information about different coordinate systems that have been used to determine the location of an asset 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=Yes, semanticIdListElement=[GlobalReference, https://admin-shell.io/idta/smc/coordinatesystemsrecord/1/0], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+CoordinateSystem00
+|https://admin-shell.io/idta/smc/coordinatesystemsrecord/1/0  +
+ +
+  +
+Coordinate reference system (CRS) record
+|[]  +
+ +
+6 elements
+|
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC “CoordinateSystemsRecord”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_5_SubmodelElements_of_SMC_CoordinateSystemsRecord],[ReferenceElement, Table_SubmodelElements_of_SMC_CoordinateSystemsRecord]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_CoordinateSystemsRecord", title="SubmodelElements of SMC “CoordinateSystemsRecord”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}CoordinateSystem00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/smc/coordinatesystemsrecord/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}CoordinateSystems 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Coordinate reference system (CRS) record 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+CoordinateSystemName
+|https://admin-shell.io/idta/prop/coordinatesystemname/1/0  +
+ +
+coordinate system name 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+CoordinateSystemId
+|https://admin-shell.io/idta/prop/coordinatesystemid/1/0  +
+ +
+Identification of a coordinate system 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+CoordinateSystemType
+|https://admin-shell.io/idta/prop/coordinatesystemtype/1/0  +
+ +
+Type of a coordinate system with the allowed enumeration values "EPSG:4326" or "LOCAL" 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+ElevationReference
+|https://admin-shell.io/idta/prop/elevationreference/1/0  +
+ +
+Reference of the elevation information in a coordinate system; with the allowed enumeration values "SEALEVEL" or "LOCAL" 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+SeaLevelOfBaseHeight
+|https://admin-shell.io/idta/prop/sealevelofbaseheight/1/0  +
+ +
+Sea level of the base height of a coordinate system; normally the base height is at the origin of the coordinate system with Z=0,00 m  
+|[Float]  +
+ +
+
+|0..1
+
+
+
+|[SML]  +
+ +
+GroundControlPoints
+|https://admin-shell.io/idta/sml/groundcontrolpoints/1/0  +
+ +
+  +
+Arrays containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SML “GroundControlPoints”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_6_SubmodelElements_of_SML_GroundControlPoints],[ReferenceElement, Table_SubmodelElements_of_SML_GroundControlPoints]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SML_GroundControlPoints", title="SubmodelElements of SML “GroundControlPoints”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}GroundControlPoints 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/sml/groundcontrolpoints/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}CoordinateSystem00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Arrays containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y) 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=Yes, semanticIdListElement=[GlobalReference, https://admin-shell.io/idta/smc/groundcontrolpointsentry/1/0], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+GroundControlPoint00
+|https://admin-shell.io/idta/smc/groundcontrolpointsentry/1/0  +
+ +
+  +
+An array containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)
+|[]  +
+ +
+2 elements
+|
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC “GroundControlPointsEntry
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_7_SubmodelElements_of_SMC_GroundControlPointsEntry],[ReferenceElement, Table_SubmodelElements_of_SMC_GroundControlPointsEntry]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_GroundControlPointsEntry", title="SubmodelElements of SMC “GroundControlPointsEntry", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}GroundControlPoint00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/smc/groundcontrolpointsentry/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}GroundControlPoints 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}An array containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y) 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+GeographicCoordinates
+| 0173-1#02-ABH934#002  +
+ +
+ 
+|[]  +
+ +
+2 elements
+|1
+
+
+
+|[SMC]  +
+ +
+RelativeCoordinates
+|0173-1#02-ABG741#001  +
+ +
+  +
+Coordinates within a cartisian coordinate system
+|[]  +
+ +
+2 elements
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC “GeographicCoordinates”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_8_SubmodelElements_of_SMC_GeographicCoordinates],[ReferenceElement, Table_SubmodelElements_of_SMC_GeographicCoordinates]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_GeographicCoordinates", title="SubmodelElements of SMC “GeographicCoordinates”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}GeographicCoordinates 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee} 0173-1#02-ABH934#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}GroundControlPoint00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Longitude
+| 0173-1#02-ABH961#002  +
+ +
+ 
+|[Double]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+Latitude
+| 0173-1#02-ABH960#002  +
+ +
+ 
+|[Double]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC “RelativeCoordinates”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_9_SubmodelElements_of_SMC_RelativeCoordinates],[ReferenceElement, Table_SubmodelElements_of_SMC_RelativeCoordinates]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_RelativeCoordinates", title="SubmodelElements of SMC “RelativeCoordinates”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RelativeCoordinates 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABG741#001 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}GroundControlPoint00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Coordinates within a cartisian coordinate system 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+X
+|https://admin-shell.io/idta/prop/x/1/0  +
+ +
+X-coordinate value within a coordinate system 
+|[Float]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+Y
+|https://admin-shell.io/idta/prop/y/1/0  +
+ +
+Y-coordinate value within a coordinate system 
+|[Float]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SML “VisitedAreas”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_10_SubmodelElements_of_SML_VisitedAreas],[ReferenceElement, Table_SubmodelElements_of_SML_VisitedAreas]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SML_VisitedAreas", title="SubmodelElements of SML “VisitedAreas”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}VisitedAreas 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/sml/visitedareas/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}AssetLocation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}List with areas (e.g., sites, buildings, field warehouses) where an asset has been located or is located 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, https://admin-shell.io/idta/smc/visitedareasrecord/1/0], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+VisitedArea00
+|https://admin-shell.io/idta/smc/visitedareasrecord/1/0  +
+ +
+  +
+Areas (e.g., site, building, field warehouse) where an asset has been located or is located
+|[]  +
+ +
+9 elements
+|
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC “VisitedAreasRecord”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_11_SubmodelElements_of_SMC_VisitedAreasRecord],[ReferenceElement, Table_SubmodelElements_of_SMC_VisitedAreasRecord]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_VisitedAreasRecord", title="SubmodelElements of SMC “VisitedAreasRecord”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}VisitedArea00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/smc/visitedareasrecord/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}VisitedAreas 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Areas (e.g., site, building, field warehouse) where an asset has been located or is located 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Ref]  +
+ +
+CoordinateSystemOfArea
+|https://admin-shell.io/idta/ref/coordinatesystemreference/1/0  +
+ +
+  +
+Reference to a local coordinate reference system for an area
+|[]  +
+ +
+[Submodel, https://admin-shell.io/idta/smt/assetlocation]
+|0..1
+
+
+
+|[SML]  +
+ +
+AddressReferences
+|https://admin-shell.io/idta/sml/addressreferences/1/0  +
+ +
+  +
+List with references to addresses for the area (area addresses)
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SML]  +
+ +
+AreaRegionCoordinates
+|https://admin-shell.io/idta/sml/regioncoordinates/1/0  +
+ +
+  +
+Coordinates forming a polygon that describes the area within the coordinate reference system of the area
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[Prop]  +
+ +
+KindOfArea
+|https://admin-shell.io/idta/prop/kindofarea/1/0  +
+ +
+Arealart 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AreaName
+|https://admin-shell.io/idta/prop/areaname/1/0  +
+ +
+  +
+Name of the area or building
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+AreaId
+|https://admin-shell.io/idta/prop/areaid/1/0  +
+ +
+  +
+Identification of an area 
+|[String]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+AreaDesciption
+|https://admin-shell.io/idta/mlp/areadescription/1/0  +
+ +
+  +
+Description of an area
+|[]  +
+ +
+Description of an area@en
+|0..1
+
+
+
+|[File]  +
+ +
+AreaLayout
+|https://admin-shell.io/idta/file/arealayout/1/0  +
+ +
+  +
+File with a layout (map) of the area (e.g., hall plan)
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+BuildingLevel
+|0173-1#02-ABJ094#001  +
+ +
+ 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SML ”AreaRegionCoordinates”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_12_SubmodelElements_of_SML_AreaRegionCoordinates],[ReferenceElement, Table_SubmodelElements_of_SML_AreaRegionCoordinates]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SML_AreaRegionCoordinates", title="SubmodelElements of SML ”AreaRegionCoordinates”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}AreaRegionCoordinates 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/sml/regioncoordinates/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}VisitedArea00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Coordinates forming a polygon that describes the area within the coordinate reference system of the area 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=Yes, semanticIdListElement=[GlobalReference, https://admin-shell.io/idta/smc/regioncoordinateentry/1/0], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+AreaRegionCoordinate00
+|https://admin-shell.io/idta/smc/regioncoordinateentry/1/0  +
+ +
+  +
+One coordinate of coordinates forming a polygon that describes the region of the area within the coordinate reference system of the area
+|[]  +
+ +
+2 elements
+|
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC ”RegionCoordinateEntry”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_13_SubmodelElements_of_SMC_RegionCoordinateEntry],[ReferenceElement, Table_SubmodelElements_of_SMC_RegionCoordinateEntry]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_RegionCoordinateEntry", title="SubmodelElements of SMC ”RegionCoordinateEntry”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}AreaRegionCoordinate00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/smc/regioncoordinateentry/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}AreaRegionCoordinates 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}One coordinate of coordinates forming a polygon that describes the region of the area within the coordinate reference system of the area 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+X
+|https://admin-shell.io/idta/prop/x/1/0  +
+ +
+X-coordinate value within a coordinate system 
+|[Float]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+Y
+|https://admin-shell.io/idta/prop/y/1/0  +
+ +
+Y-coordinate value within a coordinate system 
+|[Float]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC “AssetTraces”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_14_SubmodelElements_of_SMC_AssetTraces],[ReferenceElement, Table_SubmodelElements_of_SMC_AssetTraces]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_AssetTraces", title="SubmodelElements of SMC “AssetTraces”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}AssetTraces 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/smc/assettraces/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}AssetLocation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Collection of localization event records for sites, areas, fences and locations 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Ref]  +
+ +
+AreaEventTimeSeriesData
+|https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0  +
+ +
+  +
+Reference to an AAS time series data Submodel instance of the same AAS with AreaRecords
+|[]  +
+ +
+[Submodel, https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0]
+|0..1
+
+
+
+|[Ref]  +
+ +
+LocationEventTimeSeriesData
+|https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0  +
+ +
+  +
+Reference to an AAS time series data Submodel instance of the same AAS with LocationRecords
+|[]  +
+ +
+[Submodel, https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0]
+|0..1
+
+
+
+|[SML]  +
+ +
+AreaRecords
+|https://admin-shell.io/idta/sml/arearecords/1/0  +
+ +
+  +
+List with records for area localization events
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SML]  +
+ +
+LocationRecords
+|https://admin-shell.io/idta/sml/locationrecords/1/0  +
+ +
+  +
+List with records for location (position) localization events
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SML “AreaRecords”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_15_SubmodelElements_of_SML_AreaRecords],[ReferenceElement, Table_SubmodelElements_of_SML_AreaRecords]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SML_AreaRecords", title="SubmodelElements of SML “AreaRecords”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}AreaRecords 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/sml/arearecords/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}AssetTraces 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}List with records for area localization events 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=Yes, semanticIdListElement=[GlobalReference, https://admin-shell.io/idta/smc/arearecordsrecord/1/0], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+AreaRecord00
+|https://admin-shell.io/idta/smc/arearecordsrecord/1/0  +
+ +
+  +
+Record of an area localization event
+|[]  +
+ +
+5 elements
+|
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC “AreaRecordsRecord”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_16_SubmodelElements_of_SMC_AreaRecordsRecord],[ReferenceElement, Table_SubmodelElements_of_SMC_AreaRecordsRecord]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_AreaRecordsRecord", title="SubmodelElements of SMC “AreaRecordsRecord”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}AreaRecord00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/smc/arearecordsrecord/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}AreaRecords 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Record of an area localization event 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Ref]  +
+ +
+AreaRef
+|https://admin-shell.io/idta/ref/areareference/1/0  +
+ +
+  +
+Reference to the area where the event has been recorded for
+|[]  +
+ +
+[Submodel, https://admin-shell.io/idta/smt/assetlocation]
+|1
+
+
+
+|[Prop]  +
+ +
+Time
+| 0173-1#02-ABF198#002  +
+ +
+  +
+Time when the event occurred
+|[DateTime]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+EventId
+|https://admin-shell.io/idta/prop/eventid/1/0  +
+ +
+  +
+Identification of an event
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+ProviderId
+|https://admin-shell.io/idta/prop/providerid/1/0  +
+ +
+  +
+Identifikation of the location provider which triggered the event 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+EventType
+|https://admin-shell.io/idta/prop/eventtype/1/0  +
+ +
+Type of an event that is triggered when an asset is located at a localization fence 
+|[String]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SML “LocationRecords”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_17 SubmodelElements of SML “LocationRecords”],[ReferenceElement, Table_SubmodelElements_of_SML_LocationRecords]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SML_LocationRecords", title="SubmodelElements of SML “LocationRecords”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}LocationRecords 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/sml/locationrecords/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}AssetTraces 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}List with records for location (position) localization events 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=Yes, semanticIdListElement=[GlobalReference, https://admin-shell.io/idta/smc/locationrecordsrecord/1/0], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+LocationRecord00
+|https://admin-shell.io/idta/smc/locationrecordsrecord/1/0  +
+ +
+  +
+Record of a location (position) localization event
+|[]  +
+ +
+14 elements
+|
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC “LocationRecordsRecord”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_18_SubmodelElements_of_SMC_LocationRecordsRecord],[ReferenceElement, Table_SubmodelElements_of_SMC_LocationRecordsRecord]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_LocationRecordsRecord", title="SubmodelElements of SMC “LocationRecordsRecord”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}LocationRecord00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/smc/locationrecordsrecord/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}LocationRecords 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Record of a location (position) localization event 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Ref]  +
+ +
+CoordinateSystemReference
+|https://admin-shell.io/idta/ref/coordinatesystemreference/1/0  +
+ +
+  +
+Reference to a coordinate reference system for the position 
+|[]  +
+ +
+[Submodel, https://aas-connect.com/smt/data_model_for_asset_location]
+|1
+
+
+
+|[SMC]  +
+ +
+Position
+|0173-1#02-ABI783#001  +
+ +
+  +
+Position of the asset
+|[]  +
+ +
+3 elements
+|1
+
+
+
+|[Prop]  +
+ +
+ProviderId
+|https://admin-shell.io/idta/prop/providerid/1/0  +
+ +
+  +
+Identifikation of the location provider which triggered the event 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+ProviderType
+|https://admin-shell.io/idta/prop/providertype/1/0  +
+ +
+Type of the location information provider, e.g. "UWB tag" 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Accuracy
+|https://admin-shell.io/idta/prop/accuracy/1/0  +
+ +
+The horizontal accuracy of the position data 
+|[Double]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MagneticHeading
+|https://admin-shell.io/idta/prop/magneticheading/1/0  +
+ +
+The magnetic heading direction of the Asset 
+|[Integer]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+TrueHeading
+|https://admin-shell.io/idta/prop/trueheading/1/0  +
+ +
+The corrected magnetic heading direction of the Asset 
+|[Integer]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+HeadingAccuracy
+|https://admin-shell.io/idta/prop/headingaccuracy/1/0  +
+ +
+The maximum deviation between the reported magnetic heading and the true heading 
+|[Integer]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Time
+|0173-1#02-ABF198#002  +
+ +
+  +
+The time (timestamp) when the location data was generated (e.g., by a RTLS) 
+|[DateTime]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+TransmissionTime
+|https://admin-shell.io/idta/prop/transmissiontime/1/0  +
+ +
+Time (timestamp) when the location information has been updated  +
+Time (timestemp) when the location information has been updated
+|[DateTime]  +
+ +
+
+|0..1
+
+
+
+|[MLP]  +
+ +
+LocationDescription
+|https://admin-shell.io/idta/mlp/locationdescription/1/0  +
+ +
+  +
+Location description (meta information for the position) , it is recommended to refer to the origin of the CRS
+|[]  +
+ +
+Location description (meta information for the position) , it is recommended to refer to the origin of the CRS@en
+|0..1
+
+
+
+|[Prop]  +
+ +
+Speed
+| 0173-1#02-AAV544#004  +
+ +
+  +
+Speed of the asset at the time where the position was determined
+|[Float]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+Course
+|https://admin-shell.io/idta/prop/course/1/0  +
+ +
+The current course ("compass direction") where the asset is heading to 
+|[Integer]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+ReferencePointId
+|https://admin-shell.io/idta/prop/referencepointid/1/0  +
+ +
+Identificator of a reference point at the Asset for which the position has been submitted 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC “Position”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_19_SubmodelElements_of_SMC_Position],[ReferenceElement, Table_SubmodelElements_of_SMC_Position]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_Position", title="SubmodelElements of SMC “Position”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Position 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABI783#001 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}LocationRecord00 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Position of the asset 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+X
+|https://admin-shell.io/idta/prop/x/1/0  +
+ +
+X-coordinate value within a coordinate system 
+|[Float]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+Y
+|https://admin-shell.io/idta/prop/y/1/0  +
+ +
+Y-coordinate value within a coordinate system 
+|[Float]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+Z
+|https://admin-shell.io/idta/prop/z/1/0  +
+ +
+Z-coordinate (height) value within a coordinate system 
+|[Float]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of SMC “AssetLocatingInformation”
+
+// Table generated from [Submodel, www.example.com/ids/sm/2131_9040_9042_1482],[SubmodelElementCollection, Section_3_Submodel_and_SubmodelElements],[SubmodelElementCollection, Section_3_20_SubmodelElements_of_SMC_AssetLocatingInformation],[ReferenceElement, Table_SubmodelElements_of_SMC_AssetLocatingInformation]
+
+
+
+[width="100%", id="Table_SubmodelElements_of_SMC_AssetLocatingInformation", title="SubmodelElements of SMC “AssetLocatingInformation”", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}AssetLocatingInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/sml/assetlocatinginformation/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}AssetLocation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Collection with additional information concerning the localization of an asset 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Localizable
+|https://admin-shell.io/idta/prop/localizable/1/0  +
+ +
+Information wether the position can be currently updated with the correct position 
+|[Boolean]  +
+ +
+
+|0..1
+
+
+
+|[MLP]  +
+ +
+AssetLocationServiceRealTimeCapability
+|https://admin-shell.io/idta/mlp/realtimecapabilityofaas/1/0  +
+ +
+Description of the extend and conditions for real time applications of the AAS  +
+Description of the extend and conditions for real time applications of the AAS
+|[]  +
+ +
+Description of the extend and conditions for real time applications of the AAS@en
+|0..1
+
+
+
+|[Prop]  +
+ +
+RealtimeLocationSourceType
+|https://admin-shell.io/idta/prop/realtimelocationsourcetype/1/0  +
+ +
+Type or name of the source that delivers real time information for the asset's location, e.g., OMLOX 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[MLP]  +
+ +
+RealtimeLocationSource
+|https://admin-shell.io/idta/mlp/realtimelocationsource/1/0  +
+ +
+Information regarding a source for real time location data, e.g., URL and API documentation for DeepHub 
+|[]  +
+ +
+Information regarding a source for real time location data, e.g., URL and API documentation for DeepHub@en
+|0..1
+
+
+
+|===
+
+
+
+:sectnums!:
+
+== Annex A.	Explanations on used table formats
+
+=== 1. General
+
+The used tables in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The tables follow in principle the same conventions as in [5].
+* The table heads abbreviate 'cardinality' with 'card'.
+* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+* The types of SubmodelElements are abbreviated:
+
+[width="100%",cols="40%,60%",options="header"]
+|===
+|SME type |SubmodelElement type
+|Property |Property
+|MLP |MultiLanguageProperty
+|Range |Range
+|File |File
+|Blob |Blob
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|SMC |SubmodelElementCollection
+|===
+
+* If an idShort ends with '\__00__', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique. A different idShort might be choosen, as long as it is unique in the parent’s context.
+* The Keys of semanticId in the main section feature only idType and value, such as: https://admin-shell.io/vdi/2770/1/0/DocumentId/Id. The attribute "type" (typically "ConceptDescription" and "(local)" or "GlobalReference") need to be set accordingly; see [6].
+* If a table does not contain a column with "parent" heading, all represented attributes share the same parent. This parent is denoted in the head of the table.
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* The [valueType] is only given for Properties.
+
+
+
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] |“Recommendations for implementing the strategic initiative
+INDUSTRIE 4.0”, acatech, April 2013. [Online]. Available
+https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+
+|[2] |“Implementation Strategy Industrie 4.0: Report on the results of
+the Industrie 4.0 Platform”; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April
+2015. [Online]. Available:
+https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
+
+|[3] |“The Structure of the Administration Shell: TRILATERAL
+PERSPECTIVES from France, Italy and Germany”, March 2018, [Online].
+Available:
+https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
+
+|[4] |“Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente –
+Basisteil (German)”; ZVEI e.V., Whitepaper, November 2016. [Online].
+Available:
+https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
+
+|[5] |“Verwaltungsschale in der Praxis. Wie definiere ich Teilmodelle,
+beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen
+(in German)”, Version 1.0, April 2019, Plattform Industrie 4.0 in
+Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for
+Economic Affairs and Energy (BMWi), Available:
+https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
+
+|[6] |IDTA 01001-3-0: “Specification of the Asset Administration Shell; Part 1 (Version 3.0)”, March 2023, [Online]. Available:
+https://industrialdigitaltwin.org/wp-content/uploads/2023/06/IDTA-01001-3-0_SpecificationAssetAdministrationShell_Part1_Metamodel.pdf
+
+|[7] |“Semantic interoperability: challenges in the digital
+transformation age”; IEC, International Electronical Commission; 2019.
+[Online]. Available:
+https://basecamp.iec.ch/download/iec-white-paper-semantic-interoperability-challenges-in-the-digital-transformation-age-en/
+
+|[8] |Common terms and abbreviations according to VDI FA 7.21 Wiki; Available: http://i40.iosb.fraunhofer.de/
+
+|[9] |United States: US Code of Federal regulations, see https://www.ecfr.gov/current/title-22/chapter-I/subchapter-M/part-120/subpart-C/section-120.42
+
+|===
+
