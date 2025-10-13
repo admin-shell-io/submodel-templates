@@ -10,7 +10,8 @@ The purpose of this document is to specify submodels that allow for the meaningf
 
 The intended use case is the provision of a standardized data structure for purchase orders. This structure enables the interoperable and unambiguous exchange of essential information, starting from a purchase request, progressing through a quotation, and culminating in the issuance of a formal purchase order.
  
- 
+ <img width="982" height="565" alt="image" src="https://github.com/user-attachments/assets/144643ad-83a8-42d0-86bd-47089f6596e8" />
+
 Figure 1. Overview of the purchase order process and fulfillment. The scope of the Submodel Purchase Order is highlighted in blue.
 
 Figure 1 provides an overview of the entire purchase order and fulfillment process. The scope of the Purchase Order Submodel is highlighted in blue and includes the request for quotation (also referred to as a purchase request), the quotation, and the purchase order itself. Activities not within the scope of this submodel include shipment and delivery, receipt confirmation, damage and loss reports, and invoicing. However, any relevant information pertaining to these downstream processes—if required during the ordering phase—is considered within the submodel’s structure.
