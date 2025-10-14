@@ -29,8 +29,4 @@ This version is the first version officially published by IDTA.
 
 No prior versions were officially published.
 
-## Status
-
-This version is in productive use and supported by AASX Package Explorer (out of the box).
-
 
