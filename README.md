@@ -12,6 +12,10 @@ Reading Guide](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/2022
 
 The folder `published` contains Submodel templates, which are published by IDTA. These are called 'registered' Submodel templates.
 
+## Submodel Templates Deprecated by IDTA
+
+The folder `Deprecated` contains Submodel templates, which are Deprectad by IDTA. Which will no longer be supported for bug fixes and updates.
+
 ## Collaboration Mode
 
 For the time being this repository is maintained by the IDTA office. In the future it is planned to allow pull request via CLA (contributor license agreement). 
