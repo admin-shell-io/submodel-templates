@@ -8,13 +8,16 @@ This internet repository provides Submodel Templates (SMT) for Asset Administrat
 Reading Guide](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/2022-12-07_IDTA_AAS-Reading-Guide.pdf). For details of the meta model for AAS see [Specification of the Asset Administration Shell Part 1: Metamodel](https://industrialdigitaltwin.org/en/content-hub/aasspecifications).
 
 
-## Submodel Templates published by IDTA
+## Submodel Templates Published by IDTA
 
-The folder `published` contains Submodel templates, which are published by IDTA. These are called 'registered' Submodel templates.
+The published folder contains Submodel Templates that are officially released and registered by IDTA.
 
 ## Submodel Templates Deprecated by IDTA
 
-The folder `Deprecated` contains Submodel templates, which are Deprectad by IDTA. Which will no longer be supported for bug fixes and updates.
+The deprecated folder contains Submodel Templates that have been deprecated by IDTA.
+These templates remain valid for use but are no longer maintained, meaning that no further bug fixes, enhancements, or updates will be provided.
+
+After six months from the publication of a new version of a Submodel Template (SMT), the previous version will be moved to the deprecated folder.
 
 ## Collaboration Mode
 
