@@ -1,0 +1,4703 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "WorkstationMatchingAAS",
+      "id": "https://admin-shell.io/idta/aas/workstationMatching/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/workstationMatching/1/0",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/workstationMatching/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "WorkstationWorkerMatchingData",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Workstation Worker Matching Data"
+        },
+        {
+          "language": "de",
+          "text": "Daten f\u00FCr die Mitarbeitereinsatzplanung"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Submodel containing workstation data in order to match and deploy workers to workstations"
+        },
+        {
+          "language": "de",
+          "text": "Teilmodell mit Arbeitsstationsdaten f\u00FCr die Mitarbeitereinsatzplanung"
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/workstationMatching/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/sm/workstationworkermatchingdata"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "GeneralWorkstationData",
+          "description": [
+            {
+              "language": "en",
+              "text": "General workstation data, which are relevant for worker deployment control and deployment planning"
+            },
+            {
+              "language": "de",
+              "text": "Allgemeine Arbeitsstationsdaten, die f\u00FCr die Mitarbeitereinsatzsteuerung und -planung relevant sind"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/smc/generalworkstationdata/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "WorkstationInformation",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "General workstation information"
+                },
+                {
+                  "language": "de",
+                  "text": "Allgemeine Arbeitsstationsinformationen"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "General information about the workstation in respect of worker deployment"
+                },
+                {
+                  "language": "de",
+                  "text": "Allgemeine Informationen zur Arbeitsstation mit Relevanz f\u00FCr die Mitarbeitereinsatzplanung"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/smc/workstationinformation/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "WorkstationName",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Workstation name"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Name der Arbeitsstation"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Workstation name"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/workstationname/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "WorkstationId",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Workstation ID"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Arbeitsstation ID"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/prop/workstationid/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "OrgName",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Organizational name"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Organisationsname"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/mlp/orgname/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Organizational name"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "TypeOfWorkstation",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Workstation type"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Arbeitsstationsart"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/mlp/typeofworkstation/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "TypeOfWorkstation"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "WorkerAssistanceInformation",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Worker assistance information"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Informationen zur Werkerassistenz"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Worker assistance information"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/mlp/workerassistanceeinformation/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Worker assistance information"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "RequiredPersonalSafetyEquipment",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Required personal safety equipment"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Erforderliche pers\u00F6nliche Schutzausr\u00FCstung"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Required personal safety equipment"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/mlp/requiredpersonalsafetyequipment/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Required personal safety equipment"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "NecessaryPersonalTools",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Necessary personal tools"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Notwendige pers\u00F6nliche Werkzeuge"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/mlp/necessarypersonaltools/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Necessary personal tools"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "PersonalDataProcessing",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Personal data processing "
+                    },
+                    {
+                      "language": "de",
+                      "text": "Verarbeitung pers\u00F6nlicher Daten"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/mlp/personaldataprocessing/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Personal data processing "
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "LocationDescription",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Location description"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Ortsbeschreibung"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/mlp/locationdescription/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Location description"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "Directions",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Directions"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Wegbeschreibung"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/mlp/directions/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Directions"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "GeneralQualificationDemand",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "General qualification demand"
+                },
+                {
+                  "language": "de",
+                  "text": "Allgemeine Qualifikationsanforderungen"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Worker qualifications that are required in order to work at the workstation"
+                },
+                {
+                  "language": "de",
+                  "text": "Mitarbeiterqualifikationen die vorhanden sein m\u00FCssen, um an der Arbeitsstation eingesetzt werden zu k\u00F6nnen"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/sml/generalqualificationdemand/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "orderRelevant": true,
+              "typeValueListElement": "SubmodelElementCollection",
+              "value": [
+                {
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Worker qualification that is required to work at the workstation"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Worker qualification that is required to work at the workstation"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/smc/generalqualificationdemandrecord/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "QualificationClassificationId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Qualification classification (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Qualifikationsklassifizierung (ID)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "value": "https://admin-shell.io/idta/prop/qualificationclassificationid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "QualificationId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Qualification (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Qualifikation (ID)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "value": "https://admin-shell.io/idta/prop/qualificationid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "ExceptionRules",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Exception rules"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Ausnahmeregelungen"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "value": "https://admin-shell.io/idta/mlp/exceptionrules/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "Exception rules"
+                        }
+                      ],
+                      "modelType": "MultiLanguageProperty"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementList"
+            },
+            {
+              "idShort": "GeneralSkillDemand",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "General skill demand"
+                },
+                {
+                  "language": "de",
+                  "text": "Allgemeine F\u00E4higkeitsanforderungen"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Worker skills that are required in order to work at the workstation"
+                },
+                {
+                  "language": "de",
+                  "text": "Mitarbeiterf\u00E4higkeiten die vorhanden sein m\u00FCssen, um an der Arbeitsstation eingesetzt werden zu k\u00F6nnen"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/sml/generalskilldemand/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "orderRelevant": true,
+              "typeValueListElement": "SubmodelElementCollection",
+              "value": [
+                {
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Worker skill that is required in order to work at the workstation"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/smc/generalskilldemandrecord/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "SkillClassificationId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Skill classification (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "F\u00E4higkeitenklassifizierung (ID)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "value": "https://admin-shell.io/idta/prop/skillclassificationid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "SkillLevelClassificationId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Skill level classification (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "F\u00E4higkeitenklassifizierung (ID)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "value": "https://admin-shell.io/idta/prop/skilllevelclassificationid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "SkillLevelId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Skill level (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "F\u00E4higkeitenstufe (ID)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "value": "https://admin-shell.io/idta/prop/skilllevelid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "SkillId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Skill (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "F\u00E4higkeit (ID)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "value": "https://admin-shell.io/idta/prop/skillid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "ExceptionRules",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Exception rules"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Ausnahmeregelungen"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/mlp/exceptionrules/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "Exception rules"
+                        }
+                      ],
+                      "modelType": "MultiLanguageProperty"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementList"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ErgonomicWorkstationProfile",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Ergonomic workstation profile"
+            },
+            {
+              "language": "de",
+              "text": "Ergonomisches Arbeitsplatzprofil"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Ergonomic characteristics of the workstation which might influence the worker deployment"
+            },
+            {
+              "language": "de",
+              "text": "Ergonomische Arbeitsplatzeigenschaften, die einen Einfluss auf den Mitarbeitereinsatz haben"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/smc/ergonomicworkstationprofile/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "MaxLiftingWeight",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Max. lifting weight"
+                },
+                {
+                  "language": "de",
+                  "text": "Max. Hebegewicht"
+                }
+              ],
+              "semanticId": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "value": "https://admin-shell.io/idta/prop/maxliftingweight/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:integer",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "MinWorkerHeight",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Minimum worker height "
+                },
+                {
+                  "language": "de",
+                  "text": "Minimale Mitarbeitergr\u00F6\u00DFe "
+                }
+              ],
+              "semanticId": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "ConceptDescription",
+                    "value": "https://admin-shell.io/idta/prop/minworkerheight/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:integer",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "AllowedPersonalLimitations",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Allowed personal limitations"
+                },
+                {
+                  "language": "de",
+                  "text": "Akzeptierte Mitarbeitereinschr\u00E4nkungen"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "List of all personal limitations that are accepted for working at the workstation, e.g., special measures have been implemented"
+                },
+                {
+                  "language": "de",
+                  "text": "Liste von pers\u00F6nlichen Einschr\u00E4nkungen, die an der Arbeitsstation zugelassen sind. Zum Beispiel weil bestimmte Arbeitsgestaltungsma\u00DFnahmen getroffen wurden."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/sml/allowedpersonallimitations/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "orderRelevant": true,
+              "typeValueListElement": "SubmodelElementCollection",
+              "value": [
+                {
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Personal limitation that is accepted for working at the workstation, e.g., special measures have been implemented"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/smc/allowedpersonallimitationsrecord/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "LimitationClassificationId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Limitation classification (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Einschr\u00E4nkungsklassifizierung (ID)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/prop/limitationclassificationid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "PersonalLimitationId",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Personal limitation (ID)"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Pers\u00F6nliche Einschr\u00E4nkung (ID)"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "value": "https://admin-shell.io/idta/prop/personallimitationid/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementList"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "WorkstationConfigurationRecords",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Workstation configuration records "
+            },
+            {
+              "language": "de",
+              "text": "Arbeitsstationskonfigurationseintr\u00E4ge"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Worker specific configuration options of a workstation"
+            },
+            {
+              "language": "de",
+              "text": "Arbeitsstationskonfigurationsoptionen f\u00FCr einen Mitarbeiter"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/sml/workstationconfigurationrecords/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "orderRelevant": true,
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Worker specific configuration options of a workstation"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/smc/workstationconfigurationrecord/1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "WorkerId",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Worker (ID)"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Werker (ID)"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/prop/workerid/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AccessStart",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Access start "
+                    },
+                    {
+                      "language": "de",
+                      "text": "Zugriffsstart"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/accessstart/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AccessEnd",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Access end"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Zugriffsende"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/prop/accessend/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "PreferredHeight",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Preferred height"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Bevorzugte H\u00F6he"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/prop/preferredheight/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:integer",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "ProprietaryConfigurations",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Proprietary configurations"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Propriet\u00E4re Konfigurationen"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Proprietary worker-depending configurations "
+                    },
+                    {
+                      "language": "de",
+                      "text": "Propriet\u00E4re werkerindividuelle Konfigurationsmerkmale"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/sml/proprietaryconfigurations/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "orderRelevant": true,
+                  "typeValueListElement": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Proprietary worker-depending configuration"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/smc/proprietaryconfigurationsrecord/1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "ConfigurationName",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Configuation name"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Konfigurationsname"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "value": "https://admin-shell.io/idta/prop/configurationname/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "ConfigurationValue",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Configuration value"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Konfigurationswert"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "value": "https://admin-shell.io/idta/prop/configurationvalue/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        },
+        {
+          "idShort": "PlannedQualificationDemand",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Planned qualification demand"
+            },
+            {
+              "language": "de",
+              "text": "Geplanter Qualifikationsbedarf"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Production plan depending planned qualification demand at a workstation"
+            },
+            {
+              "language": "de",
+              "text": "Vom Produktionsplan abh\u00E4ngiger und geplanter Qualifikationsbedarf an einer Arbeitsstation"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/sml/plannedqualificationdemand/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "orderRelevant": true,
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Production plan depending planned qualification demand at a workstation"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/smc/plannedqualificationdemandrecord/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "IntervalDescription",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Interval description"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Intervallbeschreibung"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/mlp/intervaldescription/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Interval description"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "IntervalStart",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Interval start"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Intervallstart"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/prop/intervalstart/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "IntervalEnd",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Interval end"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Intervallende"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/prop/intervalend/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "QualificationDemandRecords",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Worker qualifications that are required in order to work at the workstation"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Mitarbeiterqualifikationen die vorhanden sein m\u00FCssen, um an der Arbeitsstation eingesetzt werden zu k\u00F6nnen"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/sml/qualificationdemandrecords/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "orderRelevant": true,
+                  "typeValueListElement": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Worker qualification that is required to work at the workstation"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/smc/qualificationdemandrecord/1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "QualificationClassificationId",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Qualification classification (ID)"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Qualifikationsklassifizierung (ID)"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/qualificationclassificationid/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "QualificationId",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Qualification (ID)"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Qualifikation (ID)"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/qualificationid/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "ExceptionRules",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Exception rules"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Ausnahmeregelungen"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/mlp/exceptionrules/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "language": "en",
+                              "text": "Exception rules"
+                            }
+                          ],
+                          "modelType": "MultiLanguageProperty"
+                        },
+                        {
+                          "idShort": "DemandKind",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Demand kind"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Bedarfsquelle"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/demandkind/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "valueId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/enum/adhocdemand"
+                              },
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/enum/generaldemand"
+                              },
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/enum/orderdependingdemand"
+                              }
+                            ]
+                          },
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "StartTime",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Start time"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Startzeit"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "value": "https://admin-shell.io/idta/prop/starttime/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:dateTime",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "EndTime",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "End time"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Endzeit"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "value": "https://admin-shell.io/idta/prop/endtime/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:dateTime",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "ProcessTime",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Process time"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Prozesszeit"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "value": "https://admin-shell.io/idta/prop/processtime/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:integer",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        },
+        {
+          "idShort": "PlannedSkillDemand",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Planned skill demand"
+            },
+            {
+              "language": "de",
+              "text": "Geplanter F\u00E4higkeitenbedarf"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Production plan depending planned skill demand at a workstation"
+            },
+            {
+              "language": "de",
+              "text": "Vom Produktionsplan abh\u00E4ngiger und geplanter Qualifikationsbedarf an einer Arbeitsstation"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/sml/plannedskilldemand/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "orderRelevant": true,
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Production plan depending planned skill demand at a workstation"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/smc/plannedskilldemandrecord/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "IntervalDescription",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Interval description"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Intervallbeschreibung"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/mlp/intervaldescription/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Exception rules"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "IntervalStart",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Interval start"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Intervallstart"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/prop/intervalstart/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "IntervalEnd",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Interval end"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Intervallende"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/idta/prop/intervalend/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "SkillDemandRecords",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Worker skills that are required in order to work at the workstation"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Mitarbeiterf\u00E4higkeiten die vorhanden sein m\u00FCssen, um an der Arbeitsstation eingesetzt werden zu k\u00F6nnen"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/sml/skilldemandrecords/1/0"
+                      }
+                    ]
+                  },
+                  "orderRelevant": true,
+                  "typeValueListElement": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Worker skill that is required in order to work at the workstation"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/smc/skilldemandrecord/1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "SkillClassificationId",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Skill classification (ID)"
+                            },
+                            {
+                              "language": "de",
+                              "text": "F\u00E4higkeitenklassifizierung (ID)"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/skillclassificationid/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "SkillLevelClassificationId",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Skill level classification (ID)"
+                            },
+                            {
+                              "language": "de",
+                              "text": "F\u00E4higkeitenklassifizierung (ID)"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/skilllevelclassificationid/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "SkillLevelId",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Skill level (ID)"
+                            },
+                            {
+                              "language": "de",
+                              "text": "F\u00E4higkeitenstufe (ID)"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/skilllevelid/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "SkillId",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Skill (ID)"
+                            },
+                            {
+                              "language": "de",
+                              "text": "F\u00E4higkeit (ID)"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/skillid/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "ExceptionRules",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Exception rules"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Ausnahmeregelungen"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/mlp/exceptionrules/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "language": "en",
+                              "text": "Exception rules"
+                            }
+                          ],
+                          "modelType": "MultiLanguageProperty"
+                        },
+                        {
+                          "idShort": "DemandKind",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Demand kind"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Bedarfsquelle"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/prop/demandkind/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "valueId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/enum/adhocdemand"
+                              },
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/enum/generaldemand"
+                              },
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/enum/orderdependingdemand"
+                              }
+                            ]
+                          },
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "StartTime",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Start time"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Startzeit"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "value": "https://admin-shell.io/idta/prop/starttime/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:dateTime",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "EndTime",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "End time"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Endzeit"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "value": "https://admin-shell.io/idta/prop/endtime/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:dateTime",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "ProcessTime",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Process time"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Prozesszeit"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "ConceptDescription",
+                                "value": "https://admin-shell.io/idta/prop/processtime/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:integer",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "AdHocDemand",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Ad hoc demand"
+        },
+        {
+          "language": "de",
+          "text": "Adhoc-Bedarf"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/enum/adhocdemand",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Ad hoc demand"
+              },
+              {
+                "language": "de",
+                "text": "Adhoc-Bedarf"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Demand that arises adhoc and sporadically"
+              },
+              {
+                "language": "de",
+                "text": "Nachfrage die adhoc und sporadisch entsteht"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "GeneralDemand",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "General demand"
+        },
+        {
+          "language": "de",
+          "text": "Grunds\u00E4tzlicher Bedarf"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/enum/generaldemand",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "GeneralDemand"
+              },
+              {
+                "language": "de",
+                "text": "Grunds\u00E4tzlicher Bedarf"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Demand that is generally existing when producing at a work station"
+              },
+              {
+                "language": "de",
+                "text": "Bedarf der grunds\u00E4tzlich besteht, wenn an einer Arbeitsstation gearbeitet wird"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "OrderDependingDemand",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Order depending demand"
+        },
+        {
+          "language": "de",
+          "text": "Auftragsabh\u00E4ngiger Bedarf"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/enum/orderdependingdemand",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Order depending demand"
+              },
+              {
+                "language": "de",
+                "text": "Auftragsabh\u00E4ngiger Bedarf"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Demand, that depends on the specific production order/product/workplan"
+              },
+              {
+                "language": "de",
+                "text": "Bedarf der durch einen spezifischen Produktionsauftrag/Produkt/Arbeitsplan entsteht"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "WorkstationName",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "WorkstationName"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "WorkstationName"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/prop/workstationname",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Workstation name"
+              },
+              {
+                "language": "de",
+                "text": "Name der Arbeitsstation"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Name of a workstation according to IEC 62264 defined \u0022work unit\u0022"
+              },
+              {
+                "language": "de",
+                "text": "Arbeitsplatzbezeichnung einer Arbeitsstation entsprechend in der in IEC 62264 definierten \u0022work unit\u0022"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "OrgName",
+      "id": "https://admin-shell.io/idta/mlp/orgname",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Organizational name"
+              },
+              {
+                "language": "de",
+                "text": "Organisationsname"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Internal organizational entity the workstation is assigned to"
+              },
+              {
+                "language": "de",
+                "text": "Interner Name der Organisationseinheit, der die Arbeitsstation zugeordnet ist"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TypeOfWorkstation",
+      "id": "https://admin-shell.io/idta/mlp/typeofworkstation",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Workstation type"
+              },
+              {
+                "language": "de",
+                "text": "Arbeitsstationsart"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Type of the workstation, e.g., cable assembly station"
+              },
+              {
+                "language": "de",
+                "text": "Typ der Arbeitsstation, z.B. Verdrahtungsstation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "WorkerAssistanceInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "WorkerAssistanceInformation"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/mlp/workerassistanceeinformation",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Worker assistance information"
+              },
+              {
+                "language": "de",
+                "text": "Informationen zur Werkerassistenz"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Information about the kind and degree of implemented worker assistance at the workstation"
+              },
+              {
+                "language": "de",
+                "text": "Informationen zur Art und dem Umfang von Werkerassistenz / Werkerf\u00FChrung an der Arbeitsstation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NecessaryPersonalTools",
+      "id": "https://admin-shell.io/idta/mlp/necessarypersonaltools",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Necessary personal tools"
+              },
+              {
+                "language": "de",
+                "text": "Notwendige pers\u00F6nliche Werkzeuge"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Necessary personal tools to be brought with by the worker to the workstation"
+              },
+              {
+                "language": "de",
+                "text": "Notwendige pers\u00F6nliche Werkzeuge, welche durch den Werker mit zur Arbeitsstation zu bringen sind"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LocationDescription",
+      "id": "https://admin-shell.io/idta/mlp/locationdescription",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Location description"
+              },
+              {
+                "language": "de",
+                "text": "Ortsbeschreibung"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Description of the location of the workstation"
+              },
+              {
+                "language": "de",
+                "text": "Beschreibung der Lage der Arbeitsstation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Directions",
+      "id": "https://admin-shell.io/idta/mlp/directions",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Directions"
+              },
+              {
+                "language": "de",
+                "text": "Wegbeschreibung"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Descriptions how to get from certain locations to a workstation"
+              },
+              {
+                "language": "de",
+                "text": "Beschreibung wie von bestimmten Ausgangspunkten zu einer Arbeitsstation gelangt werden kann"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "QualificationClassificationId",
+      "id": "https://admin-shell.io/idta/prop/qualificationclassificationid",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Qualification classification (ID)"
+              },
+              {
+                "language": "de",
+                "text": "Qualifikationsklassifizierung (ID)"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indentification of the classification system where the qualification is classified"
+              },
+              {
+                "language": "de",
+                "text": "Ident des Klassifizierungssystems in dem die Qualifizierung klassifiziert ist"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "QualificationId",
+      "id": "https://admin-shell.io/idta/prop/qualificationid",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Qualification (ID)"
+              },
+              {
+                "language": "de",
+                "text": "Qualifikation (ID)"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indentification of the qualification"
+              },
+              {
+                "language": "de",
+                "text": "Ident der Qualifikation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExceptionRules",
+      "id": "https://admin-shell.io/idta/mlp/exceptionrules",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Exception rules"
+              },
+              {
+                "language": "de",
+                "text": "Ausnahmeregelungen"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Exceptions rules that define possible deviations when the required qualification or skill is not available"
+              },
+              {
+                "language": "de",
+                "text": "Ausnahmeregelungen, die m\u00F6gliche Abweichungen von der geforderten Qualifikation oder Kompetenz beschreiben, sollte diese nicht vorhanden sein"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SkillClassificationId",
+      "id": "https://admin-shell.io/idta/prop/skillclassificationid",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Skill classification (ID)"
+              },
+              {
+                "language": "de",
+                "text": "F\u00E4higkeitenklassifizierung (ID)"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identification of the classification system where the skill is classified"
+              },
+              {
+                "language": "de",
+                "text": "Ident des Klassifizierungssystems in dem die F\u00E4higkeit klassifiziert ist"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SkillLevelClassificationId",
+      "id": "https://admin-shell.io/idta/prop/skilllevelclassificationid",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Skill level classification (ID)"
+              },
+              {
+                "language": "de",
+                "text": "F\u00E4higkeitenklassifizierung (ID)"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identification of the classification system where the skill level is classified, e.g., EQR level 1-8"
+              },
+              {
+                "language": "de",
+                "text": "Ident des Klassifizierungssystems in dem die F\u00E4higkeit klassifiziert ist, z.B. EQR level 1-8"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SkillLevelId",
+      "id": "https://admin-shell.io/idta/prop/skilllevelid",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Skill level (ID)"
+              },
+              {
+                "language": "de",
+                "text": "F\u00E4higkeitenstufe (ID)"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identification of the skill level for a worker"
+              },
+              {
+                "language": "de",
+                "text": "Ident einer F\u00E4higkeitenstufe f\u00FCr einen Werker"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SkillId",
+      "id": "https://admin-shell.io/idta/prop/skillid",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Skill (ID)"
+              },
+              {
+                "language": "de",
+                "text": "F\u00E4higkeit (ID)"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identification of the skill for a worker"
+              },
+              {
+                "language": "de",
+                "text": "Ident einer F\u00E4higkeit f\u00FCr einen Werker"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RequiredPersonalSafetyEquipment",
+      "description": [
+        {
+          "language": "en",
+          "text": "RequiredPersonalSafetyEquipment"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/mlp/requiredpersonalsafetyequipment",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Required personal safety equipment"
+              },
+              {
+                "language": "de",
+                "text": "Erforderliche pers\u00F6nliche Schutzausr\u00FCstung"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Required or recommended personal safety equipment and gear at a workstation, e.g., noise protection"
+              },
+              {
+                "language": "de",
+                "text": "Erforderliche oder empfohlende pers\u00F6nliche Schutzausr\u00FCstung und Schutzkleidung an der Arbeitsstation, z.B. L\u00E4rmschutz"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MaxLiftingWeight",
+      "id": "https://admin-shell.io/idta/prop/maxliftingweight",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Max. lifting weight"
+              },
+              {
+                "language": "de",
+                "text": "Max. Hebegewicht"
+              }
+            ],
+            "unit": "kg",
+            "dataType": "INTEGER_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Maximum weight the worker has to lift at the workstation"
+              },
+              {
+                "language": "de",
+                "text": "Maximal zu hebenes Gewicht durch den Werker an der Arbeitsstation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MinWorkerHeight",
+      "id": "https://admin-shell.io/idta/prop/minworkerheight",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Minimum worker height "
+              },
+              {
+                "language": "de",
+                "text": "Minimale Mitarbeitergr\u00F6\u00DFe "
+              }
+            ],
+            "unit": "cm",
+            "dataType": "INTEGER_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Minimal height of the worker to perform all operations at the workstation"
+              },
+              {
+                "language": "de",
+                "text": "Minimale Mitarbeitergr\u00F6\u00DFe, um alle T\u00E4tigkeiten an der Arbeitsstation durchf\u00FChren zu k\u00F6nnen"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LimitationClassificationId",
+      "id": "https://admin-shell.io/idta/prop/limitationclassificationid",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Limitation classification (ID)"
+              },
+              {
+                "language": "de",
+                "text": "Einschr\u00E4nkungsklassifizierung (ID)"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identification of a classification system for worker limitations"
+              },
+              {
+                "language": "de",
+                "text": "Ident eines Klassifizierungssystems f\u00FCr Mitarbeitereinschr\u00E4nkungen"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PersonalLimitationId",
+      "id": "https://admin-shell.io/idta/prop/personallimitationid",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Personal limitation (ID)"
+              },
+              {
+                "language": "de",
+                "text": "Pers\u00F6nliche Einschr\u00E4nkung (ID)"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identification of a personal limitation an employee has"
+              },
+              {
+                "language": "de",
+                "text": "Ident einer pers\u00F6nlichen Einschr\u00E4nkung, die ein Mitarbeiter hat"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "WorkerId",
+      "id": "https://admin-shell.io/idta/prop/workerid",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Worker (ID)"
+              },
+              {
+                "language": "de",
+                "text": "Werker (ID)"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identification of a worker (employee)"
+              },
+              {
+                "language": "de",
+                "text": "Ident einer Werkers (Mitarbeiter)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AccessStart",
+      "id": "https://admin-shell.io/idta/prop/accessstart",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Access start "
+              },
+              {
+                "language": "de",
+                "text": "Zugriffsstart"
+              }
+            ],
+            "dataType": "TIMESTAMP",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Start (date and time) from when a worker is allowed to be deployed at a workstation"
+              },
+              {
+                "language": "de",
+                "text": "Startdatum und -zeit ab der ein Werker auf einen Arbeitsplatz eingesetzt werden darf"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AccessEnd",
+      "id": "https://admin-shell.io/idta/prop/accessend",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Access end"
+              },
+              {
+                "language": "de",
+                "text": "Zugriffsende"
+              }
+            ],
+            "dataType": "TIMESTAMP",
+            "definition": [
+              {
+                "language": "en",
+                "text": "End (date and time) until when a worker is allowed to be deployed at a workstation"
+              },
+              {
+                "language": "de",
+                "text": "Enddatum und -zeit bis der ein Werker auf einen Arbeitsplatz eingesetzt werden darf"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PreferredHeight",
+      "id": "https://admin-shell.io/idta/prop/preferredheight",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Preferred height"
+              },
+              {
+                "language": "de",
+                "text": "Bevorzugte H\u00F6he"
+              }
+            ],
+            "unit": "mm",
+            "dataType": "INTEGER_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Preferred height of the working table of a workstation measured from floor level, where the worker stands"
+              },
+              {
+                "language": "de",
+                "text": "Pr\u00E4ferierte Arbeitsplattenh\u00F6he einer Arbeitsstation vom Boden (Standfl\u00E4che des Mitarbeiters) aus gemessen"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConfigurationName",
+      "id": "https://admin-shell.io/idta/prop/configurationname",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Configuation name"
+              },
+              {
+                "language": "de",
+                "text": "Konfigurationsname"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Name of a worker-dependend configuration of a workstation"
+              },
+              {
+                "language": "de",
+                "text": "Name einer werkerabh\u00E4ngigen Konfiguration f\u00FCr eine Arbeitsstation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConfigurationValue",
+      "id": "https://admin-shell.io/idta/prop/configurationvalue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Configuration value"
+              },
+              {
+                "language": "de",
+                "text": "Konfigurationswert"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Configuration value for a worker-depending workstation configuration"
+              },
+              {
+                "language": "de",
+                "text": "Konfigurationswert f\u00FCr eine werkerabh\u00E4ngige Konfiguration einer Arbeitsstation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IntervalDescription",
+      "id": "https://admin-shell.io/idta/mlp/intervaldescription",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Interval description"
+              },
+              {
+                "language": "de",
+                "text": "Intervallbeschreibung"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Description of a production planning interval and planning granularity (hour, day, ...), e.g., defined in an APS software"
+              },
+              {
+                "language": "de",
+                "text": "Beschreibung eines Planungsintervalls und der vorliegenden Planungsgranularit\u00E4t (Stunde, Tag, ...), z.B. wie es in einer APS-Software definiert ist"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IntervalStart",
+      "id": "https://admin-shell.io/idta/prop/intervalstart",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Interval start"
+              },
+              {
+                "language": "de",
+                "text": "Intervalstartt"
+              }
+            ],
+            "dataType": "TIMESTAMP",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Begin (timestamp) of a planning interval for qualification demand depending on the planning horizon"
+              },
+              {
+                "language": "de",
+                "text": "Start (Zeitstempel) eines Planungsintervalls f\u00FCr Qualifikationsbedarf abh\u00E4ngig vom Planungshorizont"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IntervalEnd",
+      "id": "https://admin-shell.io/idta/prop/intervalend",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Interval end"
+              },
+              {
+                "language": "de",
+                "text": "Intervallende"
+              }
+            ],
+            "dataType": "TIMESTAMP",
+            "definition": [
+              {
+                "language": "en",
+                "text": "End (timestamp) of a planning interval for qualification demand depending on the planning horizon"
+              },
+              {
+                "language": "de",
+                "text": "Ende (Zeitstempel) eines Planungsintervalls f\u00FCr Qualifikationsbedarf abh\u00E4ngig vom Planungshorizont"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DemandKind",
+      "id": "https://admin-shell.io/idta/prop/demandkind",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Demand kind"
+              },
+              {
+                "language": "de",
+                "text": "Bedarfsquelle"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Kind of the demand, defined by the enumeration: ad-hoc, general, orderDepending"
+              },
+              {
+                "language": "de",
+                "text": "Art der Nachfrage, durch eine Enumeration beschrieben: ad-hoc, general, orderDepending"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "StartTime",
+      "id": "https://admin-shell.io/idta/prop/starttime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Start time"
+              },
+              {
+                "language": "de",
+                "text": "Startzeit"
+              }
+            ],
+            "dataType": "TIMESTAMP",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Point in time where a process with a certain resource demand starts"
+              },
+              {
+                "language": "de",
+                "text": "Zeitpunkt an dem ein Prozess mit einem bestimmtem Ressourcenbedarf startet"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "EndTime",
+      "id": "https://admin-shell.io/idta/prop/endtime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "End time"
+              },
+              {
+                "language": "de",
+                "text": "Endzeit"
+              }
+            ],
+            "dataType": "TIMESTAMP",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Point in time where a process with a certain resource demand ends"
+              },
+              {
+                "language": "de",
+                "text": "Zeitpunkt an dem ein Prozess mit einem bestimmtem Ressourcenbedarf endet"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ProcessTime",
+      "id": "https://admin-shell.io/idta/prop/processtime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Process time"
+              },
+              {
+                "language": "de",
+                "text": "Prozesszeit"
+              }
+            ],
+            "unit": "min",
+            "dataType": "INTEGER_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Manual work time that is planned for a production process"
+              },
+              {
+                "language": "de",
+                "text": "Manuelle Arbeitszeit, die f\u00FCr einen Produktionsprozess geplant ist"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "WorkstationId",
+      "id": "https://admin-shell.io/idta/prop/workstationid",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Workstation ID"
+              },
+              {
+                "language": "de",
+                "text": "Arbeitsstation ID"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identification of the workstation"
+              },
+              {
+                "language": "de",
+                "text": "Indent der Arbeitsstation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PersonalDataProcessing",
+      "id": "https://admin-shell.io/idta/mlp/personaldataprocessing",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Personal data processing"
+              },
+              {
+                "language": "de",
+                "text": "Verarbeitung pers\u00F6nlicher Daten"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Description how personal data are captured and processed at the workstation"
+              },
+              {
+                "language": "de",
+                "text": "Beschreibung in welcher Form an der Arbeitsstation pers\u00F6nliche Daten erfasst und verarbeitet werden"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
