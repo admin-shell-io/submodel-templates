@@ -1,0 +1,1 @@
+docker run -it -v .:/documents/ asciidoctor/docker-asciidoctor asciidoctor -r asciidoctor-diagram -a toc=left -a stylesheet=asciidoc-style-idta.css *.adoc
