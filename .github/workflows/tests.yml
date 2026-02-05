@@ -1,0 +1,29 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: 'true'
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install private aas test engine
+      env:
+        TOKEN: ${{ secrets.AAS_ENGINES_PAT }}
+      run: |
+        python -m pip install --upgrade pip
+        pip install "git+https://x-access-token:${TOKEN}@github.com/admin-shell-io/aas-test-engines-exclusive.git@v0.1.0#egg=aas_test_engines_exclusive"
+
+    - name: Run template checks
+      run: python ./_help_and_materials/check_templates.py
