@@ -17,6 +17,7 @@ EXCLUDED_JSON = frozenset({
     "IDTA 02068_Template_Provision Of Company Data.json",
     "IDTA 02068_Template_Provision Of Company Data_forAASMetamodelV3.1.json",
     "IDTA_02018_Template_MaintenanceInstructions.json",
+    "IDTA_02049_Template_QualityControlForMachining.json",
 })
 
 
