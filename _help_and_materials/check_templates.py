@@ -14,6 +14,9 @@ except ImportError:
 EXCLUDED_JSON = frozenset({
     "IDTA 02011-1-1-1 _Template_BoM_ExtensionbasedonIEC81346.json",
     "IDTA 02011-1-1-1 _Template_BoM_ExtensionbasedonIEC81346_forAASMetamodelV3.1.json",
+    "IDTA 02068_Template_Provision Of Company Data.json",
+    "IDTA 02068_Template_Provision Of Company Data_forAASMetamodelV3.1.json",
+    "IDTA_02018_Template_MaintenanceInstructions.json",
 })
 
 
@@ -92,7 +95,7 @@ def main() -> int:
     for path in folders:
         if not check_template(path, root_dir):
             ok = False
-    print(f"\nChecked latest version of {len(folders)} submodel(s). Result: {'PASS' if ok else 'FAIL'}")
+    print(f"\nChecked latest version of {len(folders)} submodel(s) (all published submodels). Result: {'PASS' if ok else 'FAIL'}")
     return 0 if ok else 1
 
 
