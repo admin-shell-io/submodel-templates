@@ -1,0 +1,1916 @@
+
+
+= IDTA 02004 : Handover Documentation
+
+=== Imprint 
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+[cols="1,1,4"]
+|===
+
+|Date
+|Version
+|Comment
+
+| 
+|1.0 
+|Used for development only. No official version published.
+
+|
+|1.1
+|Used for development only. No official version published.
+
+|2023-03-01
+|1.2
+|Release of the official Submodel template published by IDTA.
+
+|2024-08-13
+|2.0
+|Start of IDTA review
+
+|2025-06-11
+|2.0
+|Release of the official Submodel template published by IDTA.
+
+
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+=== About this document
+This document is a part of a specification series. Each part specifies the contents of a Submodel template for
+the Asset Administration Shell (AAS). The AAS is described in <<Link1, [1]>>, <<Link2, [2]>>, <<Link3, [3]>> and <<Link6, [6]>>. First exemplary Submodel
+contents were described in <<Link4, [4]>>, while the actual format of this document was derived by the "Administration
+Shell in Practice" <<Link5, [5]>>. The format aims to be very concise, giving only minimal necessary information for
+applying a Submodel template, while leaving deeper descriptions and specification of concepts, structures
+and mapping to the respective documents <<Link1, [1]>> to <<Link6, [6]>>.
+
+The target group of the specification are developers and editors of technical documentation and manufacturer information, which describe assets in smart manufacturing by means of the Asset Administration Shell (AAS) and therefore need to create a Submodel instance with a hierarchy of SubmodelElements. This document focuses on the question which SubmodelElements shall be used for this purpuse with which semantic identification.
+
+
+=== Scope of the Submodel
+The Submodel Handover Documentation defines a standardized exchange format for information or documentation for a specific asset. This can be both type and instance information. The scope of this Submodel is to increase the interoperability between the parties that are exchanging asset documentation. These parties can be manufacturers of components or complete machines, or operators using these components or machines. In case a machine manufacturer sells a machine to a customer (operator), the manufacturer hands over the machine and its documentation in form of an AAS with the Submodel “Handover Documentation”. The documents provided can contain information required for e.g. correct design, installation, commissioning, spare parts stocking, operation, cleaning, inspection, maintenance, and repair. In addition, there are legal regulations that stipulate the existence of certain manufacturer documents, such as Communauté Européenne (CE) declarations of conformity, Atmosphères Explosives (ATEX) certificates, or material certificates.
+  
+Besides the structure of a Submodel and the exchange format of an AAS, this Submodel standardizes the meta data that comes with the asset documentation and the classes that classify the type of the document. With these standardized meta data and classes, the asset documentation can be automatically integrated in the customer’s document management system, backend system, or any other system.
+  
+The meta data as well as the classification classes of this Submodel are based on the VDI Guideline VDI 2770 Blatt 1 “Operation of process engineering plants – Minimum requirements for digital manufacturer information for the process industry” <<Link7, [7]>>. While the classification of documents according to VDI 2770 is mandatory, additional classification classes can be added.
+
+
+=== Relevant standards for the Submodel template
+*VDI 2770 Blatt 1*
+  
+VDI 2770 Blatt 1 <<Link7, [7]>> standardizes the documentation regarding their meta data, classification, and format. The idea is that manufacturers hand over their documentation in a standardized manner, making it easier for operators to load the documentation for a component or a complete machine (both referred to in the following as asset) into their IT infrastructure and to find relevant documents during the operation phase of an asset. The central concepts of the specification are the entities “Document” and “DocumentVersion”, which are described in the Unified Modeling Language (UML) below.
+  
+The entity "Document" describes the understanding of a document in total as a specific concept of product-related information. The entity “DocumentVersion” represents a specific instance of the “Document” within its lifecycle, e.g. a released version of the Document.
+  
+The following diagram gives an overview on the concepts of VDI 2770.
+
+image::Figure_1.png[id="Figure_1", width="100.0%",title="Overview of concepts Documents and DocumentVersion of the VDI 2770 according to [7], by courtesy of VDI"]
+
+Taking advantage of the already formalized structures of the Asset Administration Shell and its SubmodelElements, the following concepts based on VDI 2770 Blatt 1 are relevant for the Submodel template specification.
+
+image::Figure_2.png[id="Figure_2", width="100.0%",title="Submodel Handover Documentation based on basic concepts of the VDI 2770 Blatt 1"]
+
+The Submodel “Handover Documentation” specifies a document in more detail via the DocumentID, the DocumentClassification, and the DocumentVersion with its respective characteristics.
+Note: In the IDTA, there is a Submodel available for similar use case “Intelligent Information for Use”. More information can find in the *Appendix B* of this document.
+
+
+== Submodel for Handover Documentation based on VDI 2770 Blatt 1
+
+=== Approach
+This Submodel template specification models the two main VDI 2770 Blatt1 concepts “Document” and “DocumentVersion” with their mandatory information elements. Multiple DocumentVersions can be assigned to each Document. The specifications for an instance of the overall Submodel, the Document, and the DocumentVersion are provided in clauses 2.4, 2.5, and 2.8.
+  
+If a document exists in multiple languages, it shall be represented by different “Documents”. If a document features multiple languages within itself, it shall be represented by a single “DocumentVersion” with multiple associated languages. If an AAS contains more than one version of one and the same document, they can be represented by different instances of “DocumentVersion”.
+  
+A SubmodelElementCollection (SMC) “DocumentVersion” shall contain at least one file element “DigitalFile”. According to VDI 2770, PDF/A files are required including ISO 19005-1, ISO 19005-2 and ISO 19005-3 meaning PDF/A-1, PDF/A-2 and PDF/A-3. The “DigitalFile” described above can also be provided in the Submodel via a link, which is technically supported by the file element of an AAS. Nevertheless, the legal requirements (e.g. Machinenrichlinie)footnote:[Directive 2006/42/EC of the European Parliament and of the Council of 17 May 2006 on machinery, and amending Directive 95/16/EC (recast)] 
+for the “DigitalFile” according to ISO 19005 and the document/information provided by a link should be identical. If multiple “DigitalFiles” with different MIME-Typesfootnote:[Multipurpose Internet Mail Extensions, see: https://www.iana.org/assignments/media-types/media-types.xhtml] are used, each of them is assumed to represent the “DocumentVersion” in total and must contain equal content.
+
+image::Figure_3.png[id="Figure_3", width="100.0%",title="AASX Package Explorer with Submodel “Documentation” of an example asset, featuring multiple documents, each with at least one ”DocumentVersion”"]
+
+For further information on the approaches of VDI 2770 Blatt 1, see <<Anker_D, Annex D>>.
+
+=== Association of documents to Assets and Entities
+VDI 2770 Blatt 1 uses so called ObjectIds to express the association of documents with different objects. In an Asset Administration Shell (AAS), the association with the object is already given implicitly by the basic relation of the AAS to the respective asset <<Link3, [3]>>.
+  
+However, the documentation of a complex piece of equipment may include further supplier parts. These parts can be marked as separate entities within the AAS of the equipment by introducing Entity Submodel elements within the Submodel for Documentation.
+  
+If these Entities are categorized as ‘self-managed’, they might refer to self-standing AAS for the supplier parts via the Entity attribute global AssetId. In this case, the provider of the equipment will provide two AAS, one for the equipment, and one for the supplier part. The recommendation for simple casesfootnote:[Please note: Entity elements may contain SubmodelElements such as Properties or SubmodelElemementCollection, but no self-standing Submodels. Therefore, self-managed entities shall be used for complex cases (e.g., a Submodel for Technical Data shall be provided).]  is to mark included supplier parts as included ‘co-managed’ Entities. In any case, the creation of an Entity element is required.
+
+
+image::Figure_4.png[id="Figure_4", width="90.0%",title="Association of documents to Assets and Entities"]
+
+ReferenceElements called “RefersTo” link the main document of an Asset, e.g., a piece of equipment, to its subordinate documents“”. These references can span multiple AAS. In this case, the AssetId shall be used as first key. For further details on ReferenceElement, see <<Link6, [6]>>.
+  
+If a “Document” relates to a dependent (self-managed or co-managed) Entity and not to the Asset of the AAS itself, a ReferenceElement called “DocumentedEntity” shall be used.
+
+
+=== Enumeration: document classification according to VDI 2770 Blatt 1:2020
+VDI 2770 Blatt 1 defines a basic set of different classes for documents, which allows the operator of the industrial equipment to manage and retrieve information efficiently. This classification is understood as ClassificationSystem identified by the value “VDI 2770 Blatt 1:2020” within this Submodel template. For each class of documents (“DocumentClassification”), a “ClassId” and “ClassName” is given. While the latter can be given in multiple languages, EN is mandatory. The existing Document Classes according to VDI 2770 Blatt 1:2020 are listed in the table below.
+[width="100%", title="DocumentClassification according to VDI 2770 Blatt 1: 2020", cols="12%,22%,24%,42%"]
+|===
+s|{set:cellbgcolor:#eeeeee}ClassID
+s|ClassName (EN)
+s|ClassName (DE)
+s|Semantic ID
+
+|{set:cellbgcolor:#ffffff}
+01-01
+|Identification
+|Identifikation
+|0173-1#07-ABU484#003
+
+|02-01
+|Technical specification
+|Technische Spezifikation
+|0173-1#07-ABU485#003
+
+
+|02-02
+|Drawings, plans
+|Zeichnungen, Pläne
+|0173-1#07-ABU486#003
+
+|02-03
+|Assemblies
+|Bauteile
+|0173-1#07-ABU487#003
+
+
+|02-04 
+|Certificates, declarations
+|Zeugnisse, Zertifikate, Bescheinigungen
+|0173-1#07-ABU488#003
+
+|03-01 
+|Commissioning, de-commissioning
+|Montage, Demontage
+|0173-1#07-ABU489#003
+
+
+|03-02
+|Operation
+|Bedienung
+|0173-1#07-ABU490#003
+
+|03-03
+|General safety
+|Allgemeine Sicherheit
+|0173-1#07-ABU491#003
+
+|03-04
+|Inspection, maintenance, testing
+|Inspektion, Wartung, Prüfung
+|0173-1#07-ABU492#003
+
+|03-05
+|Repair
+|Instandsetzung
+|0173-1#07-ABU493#003
+
+|03-06
+|Spare parts
+|Ersatzteile
+|0173-1#07-ABU494#003
+
+|04-01
+|Contract documents
+|Vertragsunterlagen
+|0173-1#07-ABU495#003
+|===
+A “Document” can be assigned to multiple “DocumentClassifications” of one single classification system, as well as to different “DocumentClassifications” of different classification systems. The classification according to VDI 2770 Blatt 1:2020 is mandatory in the Submodel Handover Documentation.
+  
+Further document classification systems such as IEC 61355-1:2008 are mentioned and described in <<Anker_E, Annex E>>. 
+
+
+=== Attributes of the Submodel instance
+The following attributes need to be set for the Submodel instance. The table convention is explained in Annex A.2.
+  
+The ECLASS IRDIs referenced in this Submodel are based on ECLASS Release 15. This version of the Submodel with these ECLASS IRDIs is also available in the download area of the ECLASS website: www.eclass.eu in form of the Asset.xml. The Asset.xml (Release 15) is the ECLASS file that contains Submodels. The use of these Submodels is free of charge.
+
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Submodel_for_Handover_Documentation_based_on_VDI_2770_Blatt_1],[SubmodelElementCollection, Section_2_4_Attributes_of_the_Submodel_instance],[ReferenceElement, Table_2]
+
+
+
+[width="100%", id="Table_2", title="Attributes of the Submodel instance", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}HandoverDocumentation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#01-AHF578#003 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}The Submodel defines a set meta data for the handover of documentation from the manufacturer to the operator for industrial equipment 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SML]  +
+ +
+Documents
+|0173-1#02-ABI500#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABI500-003 +
+ +
+  +
+Information for a document identity
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+Entities
+|https://admin-shell.io/vdi/2770/1/0/EntitiesForDocumentation  +
+ +
+  +
+List of Entities
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|===
+
+
+
+[width="100%", id="Table_2", title="Attributes of the Submodel instance", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Documents 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABI500#003 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}HandoverDocumentation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Information for a document identity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, 0173-1#02-ABI500#003/0173-1#01-AHF579#003], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+Document
+|0173-1#02-ABI500#003/0173-1#01-AHF579#003  +
+ +
+supplementalSemanticId: 0173-1#02-ABI500#003~0/0173-1#01-AHF579#003,https://api.eclass-cdp.com/0173-1-02-ABI500-003/0173-1-01-AHF579-003 +
+ +
+  +
+Each SubmodelElementCollection describes a document by standard, which is associated to the particular Asset Administration Shell
+|[]  +
+ +
+4 elements
+|1..*
+
+
+
+|===
+
+
+
+[width="100%", id="Table_2", title="Attributes of the Submodel instance", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Entities 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/vdi/2770/1/0/EntitiesForDocumentation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}HandoverDocumentation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}List of Entities 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=Entity 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Ent]  +
+ +
+Entity
+|https://admin-shell.io/vdi/2770/1/0/EntityForDocumentation  +
+ +
+States, that the described Entity is an important entity for documentation of the superordinate Asset of the Asset Administration Shell. Note: typically, such Entities are well-identified sub-parts of the Asset, such as supplier parts delivered to the manufacturer of the Asset. 
+|[]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of Document
+The SubmodelElementCollection (SMC) Document contains the information for a VDI 2770 “Document”. Such a “Document” can refer to multiple “DocumentVersions”, which are individual SubmodelElementCollections contained within the superordinate “Document” SMC. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Submodel_for_Handover_Documentation_based_on_VDI_2770_Blatt_1],[SubmodelElementCollection, Section_2_5_SubmodelElements_of_Document],[ReferenceElement, Table_3]
+
+
+
+[width="100%", id="Table_3", title="SubmodelElements of Document", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Document 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABI500#003/0173-1#01-AHF579#003 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Documents 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Each SubmodelElementCollection describes a document by standard, which is associated to the particular Asset Administration Shell 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SML]  +
+ +
+DocumentIds
+|0173-1#02-ABI501#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABI501-003 +
+ +
+  +
+Set of document identifiers for the document. One ID in this collection should be used as a preferred ID
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+DocumentClassifications
+|0173-1#02-ABI502#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABI502-003 +
+ +
+Set of information for describing the classification of the Document according to ClassificationSystems 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+DocumentVersions
+|0173-1#02-ABI503#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABI503-003 +
+ +
+Information elements of individual Document Version entities 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+DocumentedEntities
+|https://admin-shell.io/vdi/2770/1/0/Document/DocumentedEntities  +
+ +
+  +
+Documented Entities
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of DocumentID
+The SubmodelElementCollection (SMC) DocumentId identifies the Document in a given Domain. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Submodel_for_Handover_Documentation_based_on_VDI_2770_Blatt_1],[SubmodelElementCollection, Section_2_6_SubmodelElements_of_DocumentID],[ReferenceElement, Table_4]
+
+
+
+[width="100%", id="Table_4", title="SubmodelElements of DocumentID", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}DocumentId 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABI501#003/0173-1#01-AHF580#003 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}DocumentIds 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Information about a document identification entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+DocumentDomainId
+|0173-1#02-ABH994#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABH994-003 +
+ +
+Identification of the domain in which the given DocumentId is unique. The domain ID can e.g., be the name or acronym of the providing organisation 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+DocumentIdentifier
+|0173-1#02-AAO099#004  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-AAO099-004 +
+ +
+alphanumeric character sequence uniquely identifying a document 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+DocumentIsPrimary
+|0173-1#02-ABH995#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABH995-003 +
+ +
+Flag indicating that a DocumentId within a collection of at least two DocumentId`s is the ‘primary’ identifier for the document. This is the preferred ID of the document (commonly from the point of view of the owner of the asset) 
+|[Boolean]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of DocumentClassification
+The SubmodelElementCollection (SMC) “DocumentClassification” contains the information for a classification of a document according to a classification system. A Document might have multiple classifications in multiple systems. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Submodel_for_Handover_Documentation_based_on_VDI_2770_Blatt_1],[SubmodelElementCollection, Section_2_7_SubmodelElements_of_DocumentClassification],[ReferenceElement, Table_5]
+
+
+
+[width="100%", id="Table_5", title="SubmodelElements of DocumentClassification", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}DocumentClassification 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABI502#003/0173-1#01-AHF581#003 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}DocumentClassifications 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Set of information for describing the classification of the Document according to a ClassificationSystem 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ClassId
+|0173-1#02-ABH996#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABH996-003 +
+ +
+Unique ID of the document class within a classficationsystem 
+|[String]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+ClassName
+|0173-1#02-ABJ219#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABJ219-002 +
+ +
+Name of the class in the classification system 
+|[]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+ClassificationSystem
+|0173-1#02-ABH997#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABH997-003 +
+ +
+Identification of the classification system 
+|[String]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of DocumentVersion
+The SubmodelElementCollection (SMC) DocumentVersion contains the information for a VDI 2770 DocumentVersion. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Submodel_for_Handover_Documentation_based_on_VDI_2770_Blatt_1],[SubmodelElementCollection, Section_2_8_SubmodelElements_of_DocumentVersion],[ReferenceElement, Table_6]
+
+
+
+[width="100%", id="Table_6", title="SubmodelElements of DocumentVersion", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}DocumentVersion 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABI503#003/0173-1#01-AHF582#003 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}DocumentVersions 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Information about a document version entity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SML]  +
+ +
+Language
+|0173-1#02-AAN468#008  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-AAN468-008 +
+ +
+  +
+Language style of the document
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[Prop]  +
+ +
+Version
+|0173-1#02-AAP003#005  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-AAP003-005 +
+ +
+Design that partly deviates from the previous 
+|[String]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+Title
+|0173-1#02-ABG940#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABG940-003 +
+ +
+Name of the document 
+|[]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+Subtitle
+|0173-1#02-ABH998#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABH998-003 +
+ +
+List of language-dependent subtitles of the document 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[MLP]  +
+ +
+Description
+|0173-1#02-AAN466#004  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-AAN466-004 +
+ +
+Plain text characterizing the content of the document 
+|[]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+KeyWords
+|0173-1#02-ABH999#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABH999-003 +
+ +
+List of language-dependent keywords of the document 
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+StatusSetDate
+|0173-1#02-ABI000#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABI000-003 +
+ +
+Date when the document status was set 
+|[Date]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+StatusValue
+|0173-1#02-ABI001#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABI001-003 +
+ +
+Each document version represents a point in time in the document life cycle. This status value refers to the milestones in the document life cycle. The following two values should be used for the application of this guideline: InReview (under review), Released (released) 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+OrganizationShortName
+|https://api.eclass-cdp.com/0173-1-02-ABI002-003  +
+ +
+Short name of the organization 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+OrganizationOfficialName
+|0173-1#02-ABI004#003  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABI004-003 +
+ +
+Official name of the organization of the author of the document 
+|[String]  +
+ +
+
+|1
+
+
+
+|[SML]  +
+ +
+RefersToEntities
+|0173-1#02-ABK288#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABK288-002 +
+ +
+  +
+Forms a generic refers to-relationship to another document or document version. They have a loose relationship
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SML]  +
+ +
+BasedOnReferences
+|0173-1#02-ABK289#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABK289-002 +
+ +
+  +
+Forms a based on-relationship to another document or document version. Typically states, that the content of the document bases on another document (e.g. specification requirements). Both have a strong relationship
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SML]  +
+ +
+TranslationOfEntities
+|0173-1#02-ABK290#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABK290-002 +
+ +
+  +
+Forms a translation of-relationship to another document or document version. Both have a strong relationship
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SML]  +
+ +
+DigitalFiles
+|0173-1#02-ABK126#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABK126-002 +
+ +
+  +
+MIME-Type, file name and file contents given by the file SubmodelElement
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[File]  +
+ +
+PreviewFile
+|0173-1#02-ABK127#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABK127-002 +
+ +
+Provides a preview image of the Document Version, e.g. first page, in a commonly used image format and low resolution 
+|[]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+[width="100%", id="Table_6", title="SubmodelElements of DocumentVersion", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Language 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-AAN468#008 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}DocumentVersion 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Language style of the document 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=Property 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+
+|0173-1#02-AAN468#008  +
+ +
+  +
+Language of document
+|[String]  +
+ +
+en
+|1..*
+
+
+
+|===
+
+
+
+[width="100%", id="Table_6", title="SubmodelElements of DocumentVersion", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RefersToEntities 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABK288#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}DocumentVersion 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Forms a generic refers to-relationship to another document or document version. They have a loose relationship 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=ReferenceElement 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Ref]  +
+ +
+RefersToEntity
+|0173-1#02-ABK288#002  +
+ +
+  +
+Forms a generic refers to-relationship to another document or document version. They have a loose relationship
+|[]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+[width="100%", id="Table_6", title="SubmodelElements of DocumentVersion", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}BasedOnReferences 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABK289#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}DocumentVersion 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Forms a based on-relationship to another document or document version. Typically states, that the content of the document bases on another document (e.g. specification requirements). Both have a strong relationship 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=ReferenceElement 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Ref]  +
+ +
+BasedOnReference
+|0173-1#02-ABK289#002  +
+ +
+  +
+Forms a based on-relationship to another document or document version. Typically states, that the content of the document bases on another document (e.g. specification requirements). Both have a strong relationship
+|[]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+[width="100%", id="Table_6", title="SubmodelElements of DocumentVersion", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}TranslationOfEntities 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABK290#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}DocumentVersion 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Forms a translation of-relationship to another document or document version. Both have a strong relationship 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=ReferenceElement 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Ref]  +
+ +
+TranslationOfEntity
+|0173-1#02-ABK290#002  +
+ +
+  +
+Forms a translation of-relationship to another document or document version. Both have a strong relationship
+|[]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+[width="100%", id="Table_6", title="SubmodelElements of DocumentVersion", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}DigitalFiles 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABK126#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}DocumentVersion 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}MIME-Type, file name and file contents given by the file SubmodelElement 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=File 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[File]  +
+ +
+DigitalFile
+|0173-1#02-ABK126#002  +
+ +
+  +
+MIME-Type, file name and file contents given by the file SubmodelElement
+|[]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of DocumentEntities
+
+// Table generated from [Submodel, www.example.com/ids/sm/5311_7020_9042_2173],[SubmodelElementCollection, Section_2_Submodel_for_Handover_Documentation_based_on_VDI_2770_Blatt_1],[SubmodelElementCollection, Section_2_9_SubmodelElements_of_DocumentEntities],[ReferenceElement, Table_6]
+
+
+
+[width="100%", id="Table_6", title="SubmodelElements of DocumentVersion", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}DocumentedEntities 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/vdi/2770/1/0/Document/DocumentedEntities 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Document 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Documented Entities 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=ReferenceElement 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Ref]  +
+ +
+DocumentedEntity
+|https://admin-shell.io/vdi/2770/1/0/Document/DocumentedEntity  +
+ +
+Reference for the documented entities 
+|[]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+:sectnums!:
+
+== Annex A.	Explanations of used table formats
+
+=== 1. General
+
+The tables used in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. The definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables describing Submodels and SubmodelElements.
+
+ * In principle, the tables follow the same conventions as in <<Link5, [5]>>. 
+ * The table heads abbreviate 'cardinality' with 'card'.
+ * The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+ * The types of SubmodelElements are abbreviated:
+
+[width="100%",cols="40%,60%",options="header"]
+|===
+|{set:cellbgcolor:#eeeeee}SME type |SubmodelElement type
+|{set:cellbgcolor:#ffffff}Property |Property
+|MLP |MultiLanguageProperty
+|Range |Range
+|File |File
+|Blob |Blob
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|SMC |SubmodelElementCollection
+|SML |SubmodelElementList
+ 
+|===
+
+ * If an idShort ends with '++__00__++', this indicates a suffix of the respective length (here: 2) of decimal digits to make the idShort unique. A different idShort might be chosen, as long as it is unique in the parent’s context.
+ * The Keys of semanticId in the main section feature only idType and value, such as [IRI]https://admin-shell.io/vdi/2770/1/0/DocumentId/Id. The attributes “type” and “local” (typically “ConceptDescription” and “(local)” or “GlobalReference” and (no-local)”) need to be set accordingly; see <<Link6, [6]>>.
+ * If a table does not contain a column with "parent" heading, all represented attributes share the same parent. This parent is denoted in the head of the table.
+ * Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+ * The [valueType] is only given for Properties.
+
+
+
+
+:sectnums!:
+
+== Annex B.	How does the Submodel "Handover Documentation" relates to the Submodel "Intelligent Information for use
+
+The Submodel „Handover Documentation“ is specified on document level. It contains all documents which are existing and meant for exchange with other parties:
+
+
+_Table 1: DocumentClassification according to VDI 2770 Blatt 1: 2020_
+  
+[width="100%",cols="12%,22%,24%,42%"]
+|===
+s|{set:cellbgcolor:#eeeeee}ClassID
+s|ClassName (EN)
+s|ClassName (DE)
+s|Semantic ID
+
+|{set:cellbgcolor:#ffffff}
+01-01
+|Identification
+|Identifikation
+|0173-1#07-ABU484#003
+
+|02-01
+|Technical specification
+|Technische Spezifikation
+|0173-1#07-ABU485#003
+
+
+|02-02
+|Drawings, plans
+|Zeichnungen, Pläne
+|0173-1#07-ABU486#003
+
+|02-03
+|Assemblies
+|Bauteile
+|0173-1#07-ABU487#003
+
+
+|02-04 
+|Certificates, declarations
+|Zeugnisse, Zertifikate, Bescheinigungen
+|0173-1#07-ABU488#003
+
+|03-01 
+|Commissioning, de-commissioning
+|Montage, Demontage
+|0173-1#07-ABU489#003
+
+
+|03-02
+|Operation
+|Bedienung
+|0173-1#07-ABU490#003
+
+|03-03
+|General safety
+|Allgemeine Sicherheit
+|0173-1#07-ABU491#003
+
+|03-04
+|Inspection, maintenance, testing
+|Inspektion, Wartung, Prüfung
+|0173-1#07-ABU492#003
+
+|03-05
+|Repair
+|Instandsetzung
+|0173-1#07-ABU493#003
+
+|03-06
+|Spare parts
+|Ersatzteile
+|0173-1#07-ABU494#003
+
+|04-01
+|Contract documents
+|Vertragsunterlagen
+|0173-1#07-ABU495#003
+|===
+
+:sectnums!:
+
+The VDI 2770 is followed as an integrative part of the Submodel „Handover Documentation“.
+  
+Now, the Submodel „Intelligent Information for Use“ addresses the documents 03, i.e. 03-01, 03-02, 03-03, 03-04, 03-05 and 03-06, but is a specialization of the Handover Documentation in that respect that detailed topics and information units are tagged and can be integrated in knowledge graphs for intelligent retrieval. It does not deal with all the other documents of the Submodel „Handover Documentation”.
+  
+The Submodel „Intelligent Information for Use“ is relying on the „Handover Documentation, detailing that in Topics using the iiRDS Metadata Schema, allowing detailed content retrieval out of the parts 03-xx of the Handover Documentation. iiRDS itself maintains joint working groups with VDI 2770 to guarantee smooth transfer. The same is done between Submodel „Handover Documentation“ and Submodel „Intelligent Information for Use“, though.
+
+
+
+
+
+
+
+:sectnums!:
+
+== Annex C. Changes to the Submodel template 
+
+This annex lists the changes from version to version of the Submodel, together with major changes in the overall document. Non-backward compatible changes (Nc) are marked as such.
+  
+Nc="x" means non-backward compatible; if no value is added in the table, then the change is backward compatible. 
+  
+Nc="(x)" means that the change made was implicitly contained or stated in the document before and is now being formalized. Therefore, the change is considered to be backward compatible.
+  
+Three tables are introduced to explain the changes: 
+
+ 1. changes with respect to previous version, 
+ 2. new elements in metamodel w.r.t previous version, 
+ 3. new, changed, or removed constraints w.r.t previous version. 
+
+If there are no changes the corresponding tables are omitted. 
+
+
+=== Changes Version 1.2 to Version 2.0
+
+Changes in the ducument structure:
+
+ * NEW: Appended Annex B
+ * NEW: Appended Annex C
+
+[width="100%",title="List of changes",cols="15%,15%,70%",options="header"]
+|===
+s|{set:cellbgcolor:#eeeeee}Nr.
+s|Nc.
+s|Version 2.0 changes w.r.t Version 1.2 
+|{set:cellbgcolor:#ffffff}1
+|(x)
+|Minor text changes in chapter 1.2 & Table 2
+
+|2
+|x
+|ALL ECLASS IRDIs are updated with ECLASS 15 IRDIs.
+
+|3
+|(x)
+|UML is updated
+
+|4
+|x
+|AASX file is migrated to V 3.01
+
+|5
+|x
+|Addition and correction of SML/SMC elements
+
+|6
+|x
+|Property DocumentVersionId changed to Version with new SemanticId
+
+|7
+|x
+|Property Summary changed to Description with new SemanticId.
+
+|8
+|x
+|Semantic definitions in ECLASS for Preview and Digital File are adapted to this specification of the IDTA. Details see table 6.
+
+|9
+|x
+|ValueID was changed to DocumetIdentifier.
+
+
+|===
+
+
+
+
+
+:sectnums!:
+[[Anker_D]]
+== Annex D. VDI 2770 Blatt 1 Metamodel
+
+=== 3. General
+
+This chapter provides further information on approach and realization of Submodel information according to VDI 2770 Blatt 1.
+
+=== 4. Tables on Submodels and SubmodelElements
+
+VDI 2770 Blatt 1 was developed to simplify documentation handover in the process industry according to the specific requirements and general conditions of this industry. The assets addressed are complex, often expensive, and have a long lifespan. The documentation of these assets may be complex and may include legal and technical requirements. 
+  
+The VDI 2770 working group focused on two main aspects: the structure of the handover documentation, and specifications for digital files and their meta data. The most import normative specifications are:
+
+ * Documents shall be classified at least according to the classification system provided by VDI 2770.
+ * To ensure long-term access, the file format PDF/A is a key demand. 
+ * Meta data shall conform to a VDI 2770 information model.
+ * XML and ZIP are used for data exchange. Meta data and documents are disclosed as so-called containers. 
+
+The overall documentation of an asset may be the sum of multiple handover tasks. VDI 2770 only represents documentations for an object at a single point in time. The defined containers are not indented to be updated. Instead, the container formats provide complete meta data for documents that can be processed in business information systems. Each consumer may process this data in a different manner.
+  
+The information model of VDI 2770 Blatt 1 is based on IEC 82045-2. It distinguishes between documents and document versions. Hence, associations between objects and documents are quite stable, regardless of the current document version.
+  
+A documentation is summarized by a main document according to IEC 62023.
+  
+VDI 2770 does not address technical properties or details of the object. Identification numbers and identifiers are used to refer to objects.
+A container format is specified for data exchange. This format is, however, not relevant for the Submodel template defined.
+  
+VDI 2770 contains normative definitions regarding object identification. The guideline demands that object identifiers that are used for the nameplate of an object shall be included in the meta data of the documentation. Especially, a serial ID and/or a product ID is required. To address this requirement, we refer to the AAS Submodel template “ZVEI Digital Nameplate for industrial equipment” <<Link8, [8]>>. 
+  
+Furthermore, VDI 2770 demands fundamental information about the manufacturer or supplier of an object. To address this requirement, we refer to the AAS Submodel template “Generic Frame for Technical Data for Industrial Equipment in Manufacturing” <<Link9, [9]>>.
+
+=== 5.	Information model of VDI 2770 Blatt 1
+
+The information model of VDI 2770 Blatt 1 consists of 13 entities. The following diagram of the metamodel is published with permission of the editor.
+
+
+
+image::Figure_5.png[id="Figure_5", width="100.0%",title="UML information model of documentation meta data according to VDI 2770 [7]"]
+
+:sectnums!:
+
+=== 6. Mappings
+
+The structure of a SMC Document is almost identical to the VDI 2770 guideline, but
+
+ * uses a simplified document ID,
+ * uses Entity and ReferenceElement for asset associations,
+ * uses MultiLanguageProperty type instead of VDI 2770 TranslateableString type,
+ * asset / object identification properties may be provided by other AAS submodels.
+
+The following mapping figure depicts the differences between the AAS and VDI 2770 Document entity. Dropped properties are shown in grey.
+
+
+
+
+image::Figure_6.png[id="Figure_6", width="100.0%",title="Mapping between AAS and VDI 2770 Document entity, 1: document ID with simplified document domain, 2: using Entity and ReferenceElement for asset / object associations."]
+
+Document IDs are not globally unique by default. A document ID may be unique within a document domain. This domain is described by a domain ID as well as a responsible party. In the Submodel template, the document ID is a simplified tuple of document domain ID and document ID.
+  
+The following mapping diagram depicts the differences between the AAS DocumentID and the VDI 2770 entities. Dropped properties are shown in grey.
+
+
+
+
+
+image::Figure_7.png[id="Figure_7", width="100.0%",title="Mapping between AAS and VDI 2770 Blatt 1 DocumentId"]
+
+Compared to VDI 2770, the DocumentVersion of this Submodel template has some structural differences:
+
+ * document relationship types are modelled as references,
+ * describing information for documents (like title or keywords) are properties of the DocumentVersion,
+ * lifecycle status information has been simplified including information on the author. 
+
+Furthermore, file management approaches differ between VDI 2770 and the AAS metamodel.
+  
+The following mapping diagram depicts the differences. Dropped properties are shown in grey.
+
+
+
+
+
+image::Figure_8.png[id="Figure_8", width="100.0%",title="Mapping between AAS und VDI 2270 DocumentVersion, 1: three relation properties instead of generic relation model element, 2: describing information contained in document version, 3: different file handling approach, 4: simplified document status (only status and date), 5: simplified roles (only author)"]
+
+VDI 2770 defines an entity called DocumentDescription to aggregate describing document meta data for a document version in one language. This kind of information grouping is modelled in this Submodel using constraints. The following mapping diagram depicts the differences. Dropped properties are shown in grey.
+
+
+
+
+image::Figure_9.png[id="Figure_9", width="100.0%",title="Mapping between AAS and VDI 2770 document descriptions"]
+
+This Submodel template uses simplified document lifecycle meta data. The parties involved in the document lifecycle are simplified. The following mapping diagram depicts the differences. Dropped properties are shown in grey.
+
+image::Figure_10.png[id="Figure_10", width="100.0%",title="Mapping between AAS and VDI 2770 document lifecycle"]
+
+To document object identification meta data, the additional application of the AAS Submodel “ZVEI Digital Nameplate for industrial equipment” [8] is recommended. In VDI 2770, an object may have a list of identification numbers, like a reference designation code, a serial-ID, a product ID. Different types of IDs are supported, e.g. a numeric value or a URL according to IEC 61406 (Identification Link). The most important IDs can be documented using the ZVEI Digital Nameplate Submodel (see the following figure). 
+
+image::Figure_11.png[id="Figure_11", width="100.0%",title="Mapping between AAS and VDI 2770 object identifiers"]
+
+:sectnums!:
+[[Anker_E]]
+== Annex E.	Further classifications
+
+=== 7. Document classification according to IEC 61355
+
+The following table shows a selection of document classes according to "IEC 61355-1 Classification and designation of documents for plants, systems and equipment". <<Link10, [10]>>
+  
+The value of "DocumentClassificationSystem" shall be set to "IEC 61355-1:2008" to describe the classification (see section 2.7). The value of "DocumentClassId" shall be set to a two-letter, upper-case code. The full range of two-letter codes of IEC 61355-1:2008 may be used.
+
+[width="100%", title="Document classification according to IEC 61355", cols="16%,40%,44%"]
+|===
+s|{set:cellbgcolor:#eeeeee}Doc.Class.ID
+s|DocumentClassName (DE)
+s|DokumentClassName (En)
+
+|{set:cellbgcolor:#eeeeee}A
+|Dokumentationsbeschreibende Dokumente
+|Documentation describing documents
+
+|{set:cellbgcolor:#ffffff}AA
+|Verwaltungstechnische Dokumente
+|Administrative documents
+
+|AB
+|Listen (Dokumente betreffend)
+|Lists (regarding documents)
+
+|AC
+|Erläuternde Dokumente (Dokument betreffend)
+|Explanatory documents (regarding documents)
+
+|{set:cellbgcolor:#eeeeee}B
+|Managementdokumente
+|Management documents
+
+|{set:cellbgcolor:#ffffff}BB
+|Berichte
+|Reports
+
+|BC
+|Schriftwechsel
+|Correspondence
+
+|BD
+|Projektleitungsdokumente
+|Project control documents
+
+|BE
+|Ressourcenplanungsdokumente
+|Resource planning documents
+
+|BF
+|Versand-, Lager- und Transportdokumente
+|Dispatch, storage and transport documents
+
+|BG
+|Standortplanungs- und Standortorganisationsdokumente
+|Site planning and site organization documents
+
+|BH
+|Dokumente zum Änderungswesen
+|Documents regarding changes
+
+|BS
+|Objektschutzdokumente
+|Security documents
+
+|BT
+|Schulungsdokumente
+|Training specific documents
+
+|{set:cellbgcolor:#eeeeee}C
+|Vertragliche und nicht-technische Dokumente
+|Contractual and non-technical documents
+
+|{set:cellbgcolor:#ffffff}CA
+|Anfrage-, Kalkulations- und Angebotsdokumente
+|Inquiry, calculation and offer documents
+
+|CB
+|Genehmigungsdokumente
+|Approval documents
+
+|CC
+|Vertragliche Dokumente
+|Contractual documents
+
+|CD
+|Bestell- und Lieferdokumente
+|Order and delivery documents
+
+|CE
+|Rechnungsdokumente
+|Invoice documents
+
+|CF
+|Versicherungsdokumente
+|Insurance documents
+
+|CG
+|Gewährleistungsdokumente
+|Warranty documents
+
+|CH
+|Gutachten
+|Expertises
+
+|{set:cellbgcolor:#eeeeee}D
+|Dokumente mit allgemeiner technischer Information
+|General technical information documents
+
+|{set:cellbgcolor:#ffffff}DA
+|Datenblätter
+|Data sheets
+
+|DB
+|Erläuternde Dokumente
+|Explanatory documents
+
+|DC
+|Anleitungen und Handbücher
+|Instructions and manuals
+
+|DD
+|Technische Berichte
+|Technical reports
+
+|DE
+|Kataloge, Werbeschriften
+|Catalogues Advertising documents
+
+|DF
+|Technische Veröffentlichungen
+|Technical publications
+
+|{set:cellbgcolor:#eeeeee}E
+|Dokumente für technische Anforderungen und Auslegung
+|Technical requirement and dimensioning documents
+
+|{set:cellbgcolor:#ffffff}EA
+|Dokumente über gesetzliche Anforderungen
+|Legal requirement documents
+
+|EB
+|Normen und Richtlinien
+|Standards and regulations
+
+|EC
+|Technische Spezifikations- / Anforderungsdokumente
+|Technical specification / requirement documents
+
+|ED
+|Dimensionierungsdokumente
+|Dimensioning documents
+
+|{set:cellbgcolor:#eeeeee}F
+|Funktionsbeschreibende Dokumente
+|Function describing documents
+
+|{set:cellbgcolor:#ffffff}FA
+|Funktionsübersichtsdokumente
+|Functional overview documents
+
+|FB
+|Fließschemata
+|Flow diagrams
+
+|FC
+|Dokumente der MMS-Gestaltung (Mensch-Machine-Schnittstelle)
+|MMI layout documents (MMI = man-machine interface)
+
+|FE
+|Funktionsbeschreibungen
+|Function descriptions
+
+|FF
+|Funktionsschaltpläne
+|Function diagrams
+
+|FP
+|Signalbeschreibungen
+|Signal descriptions
+
+|FQ
+|Einstellwertdokumente
+|Setting value documents
+
+|FS
+|Schaltkreisdokumente
+|Circuitry documents
+
+|FT
+|Softwarespezifische Dokumente
+|Software specific documents
+
+|{set:cellbgcolor:#eeeeee}L
+|Ortsbeschreibende Dokumente
+|Location documents
+
+|{set:cellbgcolor:#ffffff}LA
+|Erschließungs- und Vermessungsdokumente
+|Exploitation and survey documents
+
+|LB
+|Erdbau- und Fundamentbaudokumente
+|Earthwork and foundation work documents
+
+|LC
+|Rohbaudokumente
+|Building carcass documents
+
+|LD
+|Dokumente, die Orte an Standorten beschreiben
+|On-site location documents
+
+|LH
+|Orte in Gebäuden (Schiffen, Flugzeugen, etc.) beschreibende Dokumente
+|In-building location documents (also applied for ships, aircraft, etc.)
+
+|LU
+|Orte in/auf Einrichtungen beschreibende Dokumente
+|In/on-equipment location documents
+
+|{set:cellbgcolor:#eeeeee}M
+|Verbindungsbeschreibende Dokumente
+|Connection describing documents
+
+|{set:cellbgcolor:#ffffff}MA
+|Verbindungsbezogene Dokumente
+|Connection documents
+
+|MB
+|Verkabelungs- und Rohrleitungsdokumente
+|Cabling or piping documents
+
+|{set:cellbgcolor:#eeeeee}P
+|Objektlisten
+|Object listings
+
+|{set:cellbgcolor:#ffffff}PA
+|Materiallisten
+|Material lists
+
+|PB
+|Teilelisten
+|Parts lists
+
+|PC
+|Stücklisten
+|Item lists
+
+|PD
+|Produktlisten und Produkttypenlisten
+|Product lists and product type lists
+
+|PF
+|Funktionslisten
+|Function lists
+
+|PL
+|Ortslisten
+|Location lists
+
+|{set:cellbgcolor:#eeeeee}Q
+|Qualitätsmanagementdokumente und sicherheitsbeschreibende Dokumente
+|Quality management documents; safety-describing documents
+
+|{set:cellbgcolor:#ffffff}QA
+|Qualitätsmanagementdokumente
+|Quality management documents
+
+|QB
+|Sicherheitsbeschreibende Dokumente
+|Safety-describing documents
+
+|QC
+|Qualitätsnachweisdokumente
+|Quality verifying documents
+
+|{set:cellbgcolor:#eeeeee}T
+|Dokumente zur Beschreibung geometrischer Formen
+|Geometry-related documents
+
+|{set:cellbgcolor:#ffffff}TA
+|Entwurfszeichnung
+|Planning drawings
+
+|TB
+|Konstruktionszeichnungen
+|Construction drawings
+
+|TC
+|Fertigungs- und Errichtungszeichnungen
+|Manufacturing and erection drawings
+
+|TL
+|Anordnungszeichnung
+|Arrangement documents
+
+|{set:cellbgcolor:#eeeeee}W
+|Betriebliche Protokolle und Aufzeichnungen
+|Operation records
+
+|{set:cellbgcolor:#ffffff}WA
+|Einstellwertdokumente
+|Set point documents
+
+|WT
+|Logbücher
+|Logbooks
+
+|===
+
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] [[Link1]] 	 |“Recommendations for implementing the strategic initiative INDUSTRIE 4.0”, acatech, April 2013. [Online]. Available https://www.acatech.de/Publikation/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+
+|[2] [[Link2]] 	 |“Implementation Strategy Industrie 4.0: Report on the results of the Industrie 4.0 Platform”; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April 2015. [Online]. Available: https://www.bitkom.org/noindex/Publikationen/2016/Sonstiges/Implementation-Strategy-Industrie-40/2016-01-Implementation-Strategy-Industrie40.pdf
+
+|[3] [[Link3]]  |“The Structure of the Administration Shell: TRILATERAL PERSPECTIVES from France, Italy and Germany”, March 2018. [Online]. Available: https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
+
+|[4] [[Link4]] 	 |“Beispiele zur Verwaltungsschale der Industrie 4.0-Komponente – Basisteil (German)”; ZVEI e.V., Whitepaper, November 2016. [Online]. Available: https://www.zvei.org/presse-medien/publikationen/beispiele-zur-verwaltungsschale-der-industrie-40-komponente-basisteil/
+
+|[5] [[Link5]] 	 |“Verwaltungsschale in der Praxis. Wie definiere ich Teilmodelle, beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen (in German)”, Version 1.0, April 2019, Plattform Industrie 4.0 in Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for Economic Affairs and Energy (BMWi). Available: https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
+
+|[6] [[Link6]] 	 |“Details of the Asset Administration Shell; Part 1 - The exchange of information between partners in the value chain of Industrie 4.0 (Version 3.0RC01)”, November 2020 [Online]. Available: https://industrialdigitaltwin.org/wp-content/uploads/2024/06/IDTA-01001-3-0-1_SpecificationAssetAdministrationShell_Part1_Metamodel.pdf[Asset Administration Shell Specification - Part 1: Metamodel (industrialdigitaltwin.org)]
+
+|[7] [[Link7]] 	 |VDI 2770 Blatt 1: 2020-04 Betrieb verfahrenstechnischer Anlagen; Mindestanforderungen an digitale Herstellerinformationen für die Prozessindustrie; Grundlagen. Berlin: Beuth-Verlag.
+“Operation of process engineering plants - Minimum requirements for digital manufacturer information of process industry - Fundamentals” (EN). Available: https://www.beuth.de/en/technical-rule/vdi-2770-blatt-1/319538792
+
+
+|[8] [[Link8]] 	 |"Submodel Templates of the Asset Administration Shell - ZVEI Digital Nameplate for industrial equipment (Version 1.0)"; Plattform Industrie 4.0 with ZVEI; November 2020. [Online]. Available: https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Submodel_Templates-Asset_Administration_Shell-digital_nameplate.html
+
+|[9] [[Link9]] 	 |"Submodel Templates of the Asset Administration Shell - Generic Frame for Technical Data for Industrial Equipment in Manufacturing (Version 1.1)"; Plattform Industrie 4.0 with ZVEI; November 2020. [Online]. Available: https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Submodel_Templates-Asset_Administration_Shell-Technical_Data.html 
+
+|[10] [[Link10]] |"IEC 61355 - Collection of standardized and established document kinds“. Available: https://std.iec.ch/iec61355/iec61355.nsf/$enhome?OpenForm
+
+
+
+
+
+
+
+|===
+
