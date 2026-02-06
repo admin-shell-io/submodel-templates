@@ -18,7 +18,7 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install private aas test engine
+    - name: Install aas test engine
       env:
         TOKEN: ${{ secrets.AAS_ENGINES_PAT }}
       run: |
