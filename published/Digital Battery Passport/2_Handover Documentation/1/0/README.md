@@ -20,7 +20,7 @@ This specification is Part 2: Handover Documentation 1.0 (IDTA-02035-2).
 
 ## About this version
 
-This version is the first version officially published by IDTA – a joint result of the Model Expert Group comprising IDTA, Catena-X, and the Battery Pass Consortium.
+This version is the first version officially published by IDTA – a joint result of the Model Expert Group comprising IDTA and Catena-X.
 
 ## Difference to prior versions
 

@@ -2,10 +2,20 @@
   "assetAdministrationShells": [
     {
       "idShort": "TechnicalDataForBatteryDataAAS",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "technical data for battery data aas"
+        }
+      ],
       "id": "https://admin-shell.io/idta/aas/digitalbatterypassport/TechnicalData/1/0",
       "assetInformation": {
         "assetKind": "Type",
-        "globalAssetId": "https://admin-shell.io/idta/asset/digitalbatterypassport/TechnicalData/1/0"
+        "globalAssetId": "https://admin-shell.io/idta/asset/digitalbatterypassport/TechnicalData/1/0",
+        "defaultThumbnail": {
+          "path": "/aasx/files/SMT_Vorlage_Deckblatt_CatenaX1_Part4_TechnicalData_page1.png",
+          "contentType": "image/png"
+        }
       },
       "submodels": [
         {
@@ -18,18 +28,18 @@
           ]
         }
       ],
-      "modelType": "AssetAdministrationShell",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "technical data for battery data aas"
-        }
-      ]
+      "modelType": "AssetAdministrationShell"
     }
   ],
   "submodels": [
     {
       "idShort": "TechnicalData",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "technical data"
+        }
+      ],
       "description": [
         {
           "language": "en",
@@ -39,7 +49,7 @@
       "administration": {
         "version": "1",
         "revision": "0",
-        "templateId": "https://admin-shell.io/idta-02003-2-0"
+        "templateId": "IDTA-02003-2-0"
       },
       "id": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/TechnicalData/1/0",
       "kind": "Template",
@@ -75,6 +85,12 @@
       "submodelElements": [
         {
           "idShort": "GeneralInformation",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "general information"
+            }
+          ],
           "semanticId": {
             "type": "ExternalReference",
             "keys": [
@@ -115,6 +131,12 @@
             {
               "category": "PARAMETER",
               "idShort": "ManufacturerName",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "manufacturer name"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -182,16 +204,16 @@
               ],
               "valueType": "xs:string",
               "value": "Example Company",
-              "modelType": "Property",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "manufacturer name"
-                }
-              ]
+              "modelType": "Property"
             },
             {
               "idShort": "CompanyLogo",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "company logo"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -244,17 +266,17 @@
                 }
               ],
               "contentType": "image/png",
-              "modelType": "File",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "company logo"
-                }
-              ]
+              "modelType": "File"
             },
             {
               "category": "PARAMETER",
               "idShort": "ManufacturerProductDesignation",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "manufacturer product designation"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -326,17 +348,17 @@
                   "text": "Electrical energy accelerator"
                 }
               ],
-              "modelType": "MultiLanguageProperty",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "manufacturer product designation"
-                }
-              ]
+              "modelType": "MultiLanguageProperty"
             },
             {
               "category": "PARAMETER",
               "idShort": "ManufacturerArticleNumber",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "manufacturer article number"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -404,17 +426,17 @@
               ],
               "valueType": "xs:string",
               "value": "A123-456",
-              "modelType": "Property",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "manufacturer article number"
-                }
-              ]
+              "modelType": "Property"
             },
             {
               "category": "PARAMETER",
               "idShort": "ManufacturerOrderCode",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "manufacturer order code"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -482,16 +504,16 @@
               ],
               "valueType": "xs:string",
               "value": "EEA-EX-200-S/47-Q3",
-              "modelType": "Property",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "manufacturer order code"
-                }
-              ]
+              "modelType": "Property"
             },
             {
               "idShort": "ManufacturerIdentifier",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "manufacturer identifier"
+                }
+              ],
               "semanticId": {
                 "type": "ExternalReference",
                 "keys": [
@@ -518,16 +540,16 @@
                 }
               ],
               "valueType": "xs:string",
-              "modelType": "Property",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "manufacturer identifier"
-                }
-              ]
+              "modelType": "Property"
             },
             {
               "idShort": "WarrantyPeriod",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "warranty period"
+                }
+              ],
               "semanticId": {
                 "type": "ExternalReference",
                 "keys": [
@@ -555,20 +577,20 @@
               ],
               "valueType": "xs:gYearMonth",
               "value": "2031-10",
-              "modelType": "Property",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "warranty period"
-                }
-              ]
+              "modelType": "Property"
             },
             {
               "idShort": "BatteryCategory",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "battery category"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
-                  "text": "A battery passport must include the battery category.\n\nThe battery category must be provided on the battery label.\n\nThe battery must be categorised by its intended use in (string values):\n- \"lmt\"\n- \"ev\" \n- \"industrial\", or\n- \"stationary\"\n\nDIN DKE Spec 99100 chapter reference: 6.1.3.5\n\n"
+                  "text": "A battery passport must include the battery category.\n\nThe battery category must be provided on the battery label.\n\nThe battery must be categorised by its intended use in (string values):\n- \u0022lmt\u0022\n- \u0022ev\u0022 \n- \u0022industrial\u0022, or\n- \u0022stationary\u0022\n\nDIN DKE Spec 99100 chapter reference: 6.1.3.5\n\n"
                 }
               ],
               "semanticId": {
@@ -609,17 +631,17 @@
               ],
               "valueType": "xs:string",
               "value": "ev",
-              "modelType": "Property",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "battery category"
-                }
-              ]
+              "modelType": "Property"
             },
             {
               "category": "PARAMETER",
               "idShort": "BatteryMass",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "battery mass"
+                }
+              ],
               "semanticId": {
                 "type": "ModelReference",
                 "keys": [
@@ -658,16 +680,16 @@
               ],
               "valueType": "xs:float",
               "value": "1007",
-              "modelType": "Property",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "battery mass"
-                }
-              ]
+              "modelType": "Property"
             },
             {
               "idShort": "ProductImages",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "product images"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -732,6 +754,12 @@
               "value": [
                 {
                   "idShort": "ProductImage",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "product image"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -776,34 +804,22 @@
                     }
                   ],
                   "contentType": "image/png",
-                  "modelType": "File",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "product image"
-                    }
-                  ]
+                  "modelType": "File"
                 }
               ],
-              "modelType": "SubmodelElementList",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "product images"
-                }
-              ]
+              "modelType": "SubmodelElementList"
             }
           ],
-          "modelType": "SubmodelElementCollection",
-          "displayName": [
-            {
-              "language": "en",
-              "text": "general information"
-            }
-          ]
+          "modelType": "SubmodelElementCollection"
         },
         {
           "idShort": "TechnicalPropertyAreas",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "technical property areas"
+            }
+          ],
           "semanticId": {
             "type": "ExternalReference",
             "keys": [
@@ -852,6 +868,12 @@
           "value": [
             {
               "idShort": "CapacityEnergyVoltage",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "capacity energy voltage"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -887,6 +909,12 @@
                 {
                   "category": "PARAMETER",
                   "idShort": "NominalVoltage",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "nominal voltage"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -931,17 +959,17 @@
                   ],
                   "valueType": "xs:float",
                   "value": "4.3",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "nominal voltage"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
                   "idShort": "MinVoltage",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "min voltage"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -986,17 +1014,17 @@
                   ],
                   "valueType": "xs:float",
                   "value": "2.04",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "min voltage"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
                   "idShort": "MaxVoltage",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "max voltage"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -1041,17 +1069,17 @@
                   ],
                   "valueType": "xs:float",
                   "value": "6",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "max voltage"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
                   "idShort": "RatedCapacity",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "rated capacity"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -1096,17 +1124,17 @@
                   ],
                   "valueType": "xs:float",
                   "value": "210",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "rated capacity"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
                   "idShort": "CapacityFade",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "capacity fade"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -1151,17 +1179,17 @@
                   ],
                   "valueType": "xs:float",
                   "value": "10",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "capacity fade"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
                   "idShort": "CertifiedUsableBatteryEnergy",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "certified usable battery energy"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -1206,25 +1234,19 @@
                   ],
                   "valueType": "xs:float",
                   "value": "100",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "certified usable battery energy"
-                    }
-                  ]
+                  "modelType": "Property"
                 }
               ],
-              "modelType": "SubmodelElementCollection",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "capacity energy voltage"
-                }
-              ]
+              "modelType": "SubmodelElementCollection"
             },
             {
               "idShort": "RoundTripEnergyEfficiency",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "round trip energy efficiency"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -1260,6 +1282,12 @@
                 {
                   "category": "PARAMETER",
                   "idShort": "InitialRoundTripEnergyEfficiency",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "initial round trip energy efficiency"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -1304,17 +1332,17 @@
                   ],
                   "valueType": "xs:integer",
                   "value": "100",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "initial round trip energy efficiency"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
                   "idShort": "RoundTripEnergyEfficiencyAt50PercentOfCycleLife",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "round trip energy efficiency at 50 percent of cycle life"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -1359,17 +1387,17 @@
                   ],
                   "valueType": "xs:integer",
                   "value": "100",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "round trip energy efficiency at 50 percent of cycle life"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
                   "idShort": "EnergyRoundTripEfficiencyFade",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "energy round trip efficiency fade"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -1414,17 +1442,17 @@
                   ],
                   "valueType": "xs:float",
                   "value": "10",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "energy round trip efficiency fade"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
                   "idShort": "InitialSelfDischargingRate",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "initial self discharging rate"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -1469,25 +1497,19 @@
                   ],
                   "valueType": "xs:integer",
                   "value": "2",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "initial self discharging rate"
-                    }
-                  ]
+                  "modelType": "Property"
                 }
               ],
-              "modelType": "SubmodelElementCollection",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "round trip energy efficiency"
-                }
-              ]
+              "modelType": "SubmodelElementCollection"
             },
             {
               "idShort": "Resistance",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "resistance"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -1845,16 +1867,16 @@
                   "modelType": "Property"
                 }
               ],
-              "modelType": "SubmodelElementCollection",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "resistance"
-                }
-              ]
+              "modelType": "SubmodelElementCollection"
             },
             {
               "idShort": "PowerCapability",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "power capability"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -1890,6 +1912,12 @@
                 {
                   "category": "PARAMETER",
                   "idShort": "MaximumPermittedBatteryPower",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "maximum permitted battery power"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -1934,17 +1962,17 @@
                   ],
                   "valueType": "xs:float",
                   "value": "100.0",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "maximum permitted battery power"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
                   "idShort": "PowerFade",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "power fade"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -1989,17 +2017,17 @@
                   ],
                   "valueType": "xs:float",
                   "value": "23",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "power fade"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
                   "idShort": "RatioNorminalBatteryPowerAndBatteryEnergy",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "ratio norminal battery power and battery energy"
+                    }
+                  ],
                   "semanticId": {
                     "type": "ExternalReference",
                     "keys": [
@@ -2027,16 +2055,16 @@
                   ],
                   "valueType": "xs:float",
                   "value": "0.611",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "ratio norminal battery power and battery energy"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "idShort": "OriginalPowerCapability",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "original power capability"
+                    }
+                  ],
                   "semanticId": {
                     "type": "ExternalReference",
                     "keys": [
@@ -2086,6 +2114,12 @@
                   "value": [
                     {
                       "idShort": "PowerCapabilityAt",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "power capability at"
+                        }
+                      ],
                       "description": [
                         {
                           "language": "en",
@@ -2121,6 +2155,12 @@
                       "value": [
                         {
                           "idShort": "atSoc",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "at SoC"
+                            }
+                          ],
                           "semanticId": {
                             "type": "ExternalReference",
                             "keys": [
@@ -2160,16 +2200,16 @@
                           ],
                           "valueType": "xs:unsignedInt",
                           "value": "80",
-                          "modelType": "Property",
-                          "displayName": [
-                            {
-                              "language": "en",
-                              "text": "at SoC"
-                            }
-                          ]
+                          "modelType": "Property"
                         },
                         {
                           "idShort": "powerCapabilityAt",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "power capability at"
+                            }
+                          ],
                           "semanticId": {
                             "type": "ExternalReference",
                             "keys": [
@@ -2209,43 +2249,25 @@
                           ],
                           "valueType": "xs:float",
                           "value": "500",
-                          "modelType": "Property",
-                          "displayName": [
-                            {
-                              "language": "en",
-                              "text": "power capability at"
-                            }
-                          ]
+                          "modelType": "Property"
                         }
                       ],
-                      "modelType": "SubmodelElementCollection",
-                      "displayName": [
-                        {
-                          "language": "en",
-                          "text": "power capability at"
-                        }
-                      ]
+                      "modelType": "SubmodelElementCollection"
                     }
                   ],
-                  "modelType": "SubmodelElementList",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "original power capability"
-                    }
-                  ]
+                  "modelType": "SubmodelElementList"
                 }
               ],
-              "modelType": "SubmodelElementCollection",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "power capability"
-                }
-              ]
+              "modelType": "SubmodelElementCollection"
             },
             {
               "idShort": "Temperature",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "temperature"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -2281,6 +2303,12 @@
                 {
                   "category": "PARAMETER",
                   "idShort": "TemperatureRangeIdleState_LowerBoundary",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "temperature range idle state lower boundary"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -2325,17 +2353,17 @@
                   ],
                   "valueType": "xs:float",
                   "value": "-19",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "temperature range idle state lower boundary"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
                   "idShort": "TemperatureRangeIdleState_UpperBoundary",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "temperature range idle state upper boundary"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
@@ -2380,25 +2408,19 @@
                   ],
                   "valueType": "xs:float",
                   "value": "49",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "temperature range idle state upper boundary"
-                    }
-                  ]
+                  "modelType": "Property"
                 }
               ],
-              "modelType": "SubmodelElementCollection",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "temperature"
-                }
-              ]
+              "modelType": "SubmodelElementCollection"
             },
             {
               "idShort": "Lifetime",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "lifetime"
+                }
+              ],
               "description": [
                 {
                   "language": "en",
@@ -2433,6 +2455,12 @@
               "value": [
                 {
                   "idShort": "ExpectedLifetimeInCalendarYears",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "expected lifetime in calendar years"
+                    }
+                  ],
                   "semanticId": {
                     "type": "ExternalReference",
                     "keys": [
@@ -2460,16 +2488,16 @@
                   ],
                   "valueType": "xs:unsignedInt",
                   "value": "15",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "expected lifetime in calendar years"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "idShort": "ExpectedNumberOfCycles",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "expected number of cycles"
+                    }
+                  ],
                   "semanticId": {
                     "type": "ExternalReference",
                     "keys": [
@@ -2507,13 +2535,7 @@
                     }
                   ],
                   "valueType": "xs:unsignedInt",
-                  "modelType": "Property",
-                  "displayName": [
-                    {
-                      "language": "en",
-                      "text": "expected number of cycles"
-                    }
-                  ]
+                  "modelType": "Property"
                 },
                 {
                   "category": "PARAMETER",
@@ -2572,10 +2594,16 @@
                 },
                 {
                   "idShort": "CRateOfRelevantCycleLifeTest",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "c rate of relevant cycle life test"
+                    }
+                  ],
                   "description": [
                     {
                       "language": "en",
-                      "text": "This data attribute is a measurement parameter for “Expected lifetime: Number of charge-discharge cycles”: Applied charge and discharge rate in terms of rated capacity (C-rate) of relevant cycle-life reference test.\n\nDIN DKE Spec 99100 chapter reference:  6.7.6.6"
+                      "text": "This data attribute is a measurement parameter for \u201CExpected lifetime: Number of charge-discharge cycles\u201D: Applied charge and discharge rate in terms of rated capacity (C-rate) of relevant cycle-life reference test.\n\nDIN DKE Spec 99100 chapter reference:  6.7.6.6"
                     }
                   ],
                   "semanticId": {
@@ -2604,45 +2632,130 @@
                     }
                   ],
                   "valueType": "xs:decimal",
-                  "modelType": "Property",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "cycleLifeReferenceTest",
                   "displayName": [
                     {
                       "language": "en",
-                      "text": "c rate of relevant cycle life test"
+                      "text": "reference test for \u0027Expected lifetime: Number of charge-discharge cycles\u0027"
                     }
-                  ]
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "The battery passport must include information about the expected battery lifetime expressed in cycles, and reference test used. \n\nDIN DKE Spec 99100 chapter reference: 6.7.6.5"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#cycleLifeReferenceTest"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "orderRelevant": false,
+                  "typeValueListElement": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "DocumentIdentifier",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "reference test for \u0027Expected lifetime: Number of charge-discharge cycles\u0027"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-ABI501#003/0173-1#01-AHF580#003"
+                          }
+                        ]
+                      },
+                      "supplementalSemanticIds": [
+                        {
+                          "type": "ExternalReference",
+                          "keys": [
+                            {
+                              "type": "GlobalReference",
+                              "value": "https://api.eclass-cdp.com/0173-1-02-ABI501-003/0173-1-01-AHF580-003"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "ExternalReference",
+                          "keys": [
+                            {
+                              "type": "GlobalReference",
+                              "value": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentId"
+                            }
+                          ]
+                        }
+                      ],
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "OneToMany"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
                 }
               ],
-              "modelType": "SubmodelElementCollection",
-              "displayName": [
-                {
-                  "language": "en",
-                  "text": "lifetime"
-                }
-              ]
+              "modelType": "SubmodelElementCollection"
             }
           ],
-          "modelType": "SubmodelElementCollection",
-          "displayName": [
-            {
-              "language": "en",
-              "text": "technical property areas"
-            }
-          ]
+          "modelType": "SubmodelElementCollection"
         }
       ],
-      "modelType": "Submodel",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "technical data"
-        }
-      ]
+      "modelType": "Submodel"
     }
   ],
   "conceptDescriptions": [
     {
       "idShort": "Voltage_NOM",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "voltage nom"
+        }
+      ],
       "id": "0173-1#02-ABL588#001",
       "embeddedDataSpecifications": [
         {
@@ -2689,16 +2802,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "voltage nom"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "Voltage_MAX",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "voltage max"
+        }
+      ],
       "id": "0173-1#02-ABL589#001",
       "embeddedDataSpecifications": [
         {
@@ -2745,16 +2858,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "voltage max"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "Voltage_MIN",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "voltage min"
+        }
+      ],
       "id": "0173-1#02-ABL587#001",
       "embeddedDataSpecifications": [
         {
@@ -2801,16 +2914,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "voltage min"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "RatedCapacity",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "rated capacity"
+        }
+      ],
       "id": "0173-1#02-ABL869#002",
       "embeddedDataSpecifications": [
         {
@@ -2857,16 +2970,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "rated capacity"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "CapacityFade",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "capacity fade"
+        }
+      ],
       "id": "0173-1#02-ABL828#002",
       "embeddedDataSpecifications": [
         {
@@ -2913,13 +3026,7 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "capacity fade"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "CertifiedUsableBatteryEnergy",
@@ -2979,6 +3086,12 @@
     },
     {
       "idShort": "InitialRoundTripEnergyEfficiency",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "initial round trip energy efficiency"
+        }
+      ],
       "id": "0173-1#02-ABL833#002",
       "embeddedDataSpecifications": [
         {
@@ -3025,16 +3138,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "initial round trip energy efficiency"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "RoundTripEnergyEfficiencyAt50PercentOfCycleLife",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "round trip energy efficiency at 50 percent of cycle life"
+        }
+      ],
       "id": "0173-1#02-ABL866#002",
       "embeddedDataSpecifications": [
         {
@@ -3075,16 +3188,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "round trip energy efficiency at 50 percent of cycle life"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "EnergyRoundTripEfficiencyFade",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "energy round trip efficiency fade"
+        }
+      ],
       "id": "0173-1#02-ABL827#002",
       "embeddedDataSpecifications": [
         {
@@ -3131,16 +3244,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "energy round trip efficiency fade"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "InitialSelfDischargingRate",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "initial self discharging rate"
+        }
+      ],
       "id": "0173-1#02-ABL834#002",
       "embeddedDataSpecifications": [
         {
@@ -3187,16 +3300,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "initial self discharging rate"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "InitialInternalResistanceAtBatteryCellLevel",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "initial internal resistance at battery cell level"
+        }
+      ],
       "id": "0173-1#02-ABL844#002",
       "embeddedDataSpecifications": [
         {
@@ -3219,7 +3332,7 @@
             "definition": [
               {
                 "language": "en",
-                "text": "measure of a battery cell's opposition to current flow at the beginning of its operational life, affecting its performance, efficiency, and heat generation (internal resistance means the absolute value of the quotient of the voltage drop between the terminals by the electric current increase in the battery circuit during a current pulse)"
+                "text": "measure of a battery cell\u0027s opposition to current flow at the beginning of its operational life, affecting its performance, efficiency, and heat generation (internal resistance means the absolute value of the quotient of the voltage drop between the terminals by the electric current increase in the battery circuit during a current pulse)"
               }
             ],
             "modelType": "DataSpecificationIec61360"
@@ -3237,16 +3350,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "initial internal resistance at battery cell level"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "InitialInternalResistanceAtBatteryPackLevel",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "initial internal resistance at battery pack level"
+        }
+      ],
       "id": "0173-1#02-ABL846#002",
       "embeddedDataSpecifications": [
         {
@@ -3287,16 +3400,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "initial internal resistance at battery pack level"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "InitialInternalResistanceAtBatteryModuleLevel",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "initial internal resistance at battery module level"
+        }
+      ],
       "id": "0173-1#02-ABL832#002",
       "embeddedDataSpecifications": [
         {
@@ -3337,16 +3450,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "initial internal resistance at battery module level"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "internalResistanceIncreaseAtBatteryPackLevel",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "internal resistance increase at battery pack level"
+        }
+      ],
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#internalResistanceIncreaseAtBatteryPackLevel",
       "embeddedDataSpecifications": [
         {
@@ -3376,16 +3489,16 @@
           }
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "internal resistance increase at battery pack level"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "MaximumPermittedBatteryPower",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "maximum permitted battery power"
+        }
+      ],
       "id": "0173-1#02-ABL843#002",
       "embeddedDataSpecifications": [
         {
@@ -3432,16 +3545,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "maximum permitted battery power"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "PowerCapabilityFade",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "power capability fade"
+        }
+      ],
       "id": "0173-1#02-ABL852#002",
       "embeddedDataSpecifications": [
         {
@@ -3488,16 +3601,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "power capability fade"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "OriginalPowerCapability",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "original power capability"
+        }
+      ],
       "id": "0173-1#02-ABL853#002",
       "embeddedDataSpecifications": [
         {
@@ -3533,16 +3646,16 @@
           }
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "original power capability"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "TemperatureRangeIdleState_LowerBoundary",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "temperature range idle state lower boundary"
+        }
+      ],
       "id": "0173-1#02-ABL842#002",
       "embeddedDataSpecifications": [
         {
@@ -3589,16 +3702,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "temperature range idle state lower boundary"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "TemperatureRangeIdleState_UpperBoundary",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "temperature range idle state upper boundary"
+        }
+      ],
       "id": "0173-1#02-ABL871#002",
       "embeddedDataSpecifications": [
         {
@@ -3645,16 +3758,16 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "temperature range idle state upper boundary"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "CapacityThresholdForExhaustion",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "capacity threshold for exhaustion"
+        }
+      ],
       "id": "0173-1#02-ABL838#002",
       "embeddedDataSpecifications": [
         {
@@ -3701,13 +3814,7 @@
           ]
         }
       ],
-      "modelType": "ConceptDescription",
-      "displayName": [
-        {
-          "language": "en",
-          "text": "capacity threshold for exhaustion"
-        }
-      ]
+      "modelType": "ConceptDescription"
     },
     {
       "idShort": "warrantyPeriod",
@@ -3842,7 +3949,7 @@
             "definition": [
               {
                 "language": "en",
-                "text": "Categories relevant for the battery passport: LMT battery, electric vehicle battery, stationary or other industrial battery >2kWh.\n\nDIN DKE Spec chapter reference: 6.1.3.5"
+                "text": "Categories relevant for the battery passport: LMT battery, electric vehicle battery, stationary or other industrial battery \u003E2kWh.\n\nDIN DKE Spec chapter reference: 6.1.3.5"
               }
             ],
             "valueList": {
@@ -4462,7 +4569,111 @@
             "definition": [
               {
                 "language": "en",
-                "text": "The C-rate should be provided separately for both the charge and discharge of the battery, if applicable.\n\nThe exception for non-cycle applications as mentioned in \"Expected lifetime: Number of charge-discharge cycles\" should apply to this data attribute as well.\n\nDIN DKE Spec 99100 chapter reference: 6.7.6.6"
+                "text": "The C-rate should be provided separately for both the charge and discharge of the battery, if applicable.\n\nThe exception for non-cycle applications as mentioned in \u0022Expected lifetime: Number of charge-discharge cycles\u0022 should apply to this data attribute as well.\n\nDIN DKE Spec 99100 chapter reference: 6.7.6.6"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "cycleLifeReferenceTest",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "reference test for \u0027Expected lifetime: Number of charge-discharge cycles\u0027"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#cycleLifeReferenceTest",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "reference test for \u0027Expected lifetime: Number of charge-discharge cycles\u0027"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "cycleLifeReferenceTest"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The battery passport must include information about the expected battery lifetime expressed in cycles, and reference test used. \n\nDIN DKE Spec 99100 chapter reference: 6.7.6.5"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DocumentIdentifier",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Document identifyer"
+        }
+      ],
+      "id": "0173-1#02-AAO099#004",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DocumentIdentifier"
+              },
+              {
+                "language": "be",
+                "text": "Dokumentennummer"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "DocNumber"
+              },
+              {
+                "language": "de",
+                "text": "DokNummer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "alphanumeric character sequence uniquely identifying a document"
+              },
+              {
+                "language": "de",
+                "text": "alphanumerische Zeichenfolge, die ein Dokument eindeutig identifiziert "
               }
             ],
             "modelType": "DataSpecificationIec61360"
