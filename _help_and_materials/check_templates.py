@@ -16,6 +16,7 @@ _SKIP = frozenset({
     "IDTA 02002-1-0-1_Template_ContactInformation.json",
     "IDTA 02002-1-0-1_Template_ContactInformation_forAASMetamodelV3.1.json",
     "IDTA_02018_Template_MaintenanceInstructions.json",
+    "IDTA 02011-1-1-1 _Template_BoM_ExtensionbasedonIEC81346.json"
 })
 
 
