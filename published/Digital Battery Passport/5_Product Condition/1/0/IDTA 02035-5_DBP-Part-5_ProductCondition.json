@@ -1,0 +1,4025 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "ProductionConditionForDBPAAS",
+      "description": [
+        {
+          "language": "en",
+          "text": "defaultAdminShell"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/aas/ProductionConditionForDBP/1/0",
+      "assetInformation": {
+        "assetKind": "Instance",
+        "globalAssetId": "https://admin-shell.io/idta/asset/ProductionConditionForDBP/1/0",
+        "specificAssetIds": [
+          {
+            "name": "publisher",
+            "value": "IDTA"
+          }
+        ]
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#ProductCondition/submodel"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "production condition for dbpaas"
+        }
+      ]
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "ProductCondition",
+      "description": [
+        {
+          "language": "en",
+          "text": "Covers all battery lifetime relevant properties."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0",
+        "templateId": "https://admin-shell.io/idta-02035-5"
+      },
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#ProductCondition/submodel",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#ProductCondition"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "EnergyThroughput",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#energyThroughput"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:irdi:0173-1#02-ABL850#001"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "EnergyThroughputValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "energy throughput value"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#energyThroughputValue"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL850#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "100000",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "energy throughput"
+            }
+          ]
+        },
+        {
+          "idShort": "CapacityThroughput",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#capacityThroughput"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:irdi:0173-1#02-ABL849#001"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "CapacityThroughputValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "capacity throughput value"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#capacityThroughputValue"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL849#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "214",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "capacity throughput"
+            }
+          ]
+        },
+        {
+          "idShort": "NumberOfFullCycles",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#numberOfFullCycles"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:irdi:0173-1#02-ABL868#001"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "NumberOfFullCyclesValue",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#numberOfFullCyclesValue"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL868#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:unsignedInt",
+              "value": "600",
+              "modelType": "Property",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "number of full cycles value"
+                }
+              ]
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "number of full cycles"
+            }
+          ]
+        },
+        {
+          "idShort": "StateOfCertifiedEnergy",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "state of certified energy"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCertifiedEnergy"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:irdi:0173-1#02-ABL847#001"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "StateOfCertifiedEnergyValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "state of certified energy value"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCertifiedEnergyValue"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL847#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "70",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "RemainingEnergy",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "remaining energy"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingEnergy"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:irdi:0173-1#02-ABL870#001"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "RemainingEnergyValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "remaining energy value"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingEnergyValue"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL870#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "30",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "RemainingCapacity",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "remaining capacity"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingCapacity"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:irdi:0173-1#02-ABL840#001"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "RemainingCapacityValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "remaining capacity value"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingCapacityValue"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL840#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "56",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "NegativeEvents",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "negative events"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#negativeEvents"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "orderRelevant": false,
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "NegativeEvent",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "negative event"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NegativeEvent"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "NegativeEventValue",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "negative event value"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#negativeEventValue"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "overcharged",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "LastUpdate",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "last update"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:irdi:0173-1#02-ABG740#003"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "value": "2000-01-01T14:23:00",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        },
+        {
+          "idShort": "InformationOnAccidents",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "information on accidents"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#informationOnAccidents"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:io.admin-shell.idta.shared:3.1.0#DocumentIdentifierSet"
+                }
+              ]
+            },
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:irdi:0173-1#02-ABL848#001"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "orderRelevant": false,
+          "typeValueListElement": "Property",
+          "valueTypeListElement": "xs:string",
+          "value": [
+            {
+              "idShort": "DocumentIdentifier",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "document identifier"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "XF90-884",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        },
+        {
+          "idShort": "TemperatureInformation",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "temperature information"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#temperatureInformation"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "TimeExtremeHighTemp",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "time extreme high temp"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeHighTemp"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL816#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "0",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "TimeExtremeLowTemp",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "time extreme low temp"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeLowTemp"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL817#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "0",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "TimeExtremeHighTempCharging",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "time extreme high temp charging"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeHighTempCharging"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL818#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "0",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "TimeExtremeLowTempCharging",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "time extreme low temp charging"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeLowTempCharging"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL819#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "0",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "RemainingPowerCapability",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "remaining power capability"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingPowerCapability"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:irdi:0173-1#02-ABL820#001"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "RemainingPowerCapabilityDynamicAt",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "remaining power capability dynamic at"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingPowerCapabilityDynamicAt"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL853#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "RPCLastUpdated",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "RPC last updated"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#rPCLastUpdated"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "value": "2000-01-01T14:23:00",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "AtSoC",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "at so c"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#atSoC"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:irdi:0173-1#02-ABL821#001"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "value": "80",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "PowerCapabilityAt",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "power capability at"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#powerCapabilityAt"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "value": "95",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "EvolutionOfSelfDischarge",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "evolution of self discharge"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#evolutionOfSelfDischarge"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "EvolutionOfSelfDischargeValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "evolution of self discharge value"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#evolutionOfSelfDischargeValue"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL834#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "1",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "CurrentSelfDischargingRate",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "current self discharging rate"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#currentSelfDischargingRate"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "CurrentSelfDischargingRateValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "current self discharging rate value"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#currentSelfDischargingRateValue"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL825#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "2",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "RemainingRoundTripEnergyEfficiency",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingRoundTripEnergyEfficiency"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "RemainingRoundTripEnergyEfficiencyValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "remaining round trip energy efficiency value"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingRoundTripEnergyEfficiencyValue"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:iridi:0173-1#02-ABL851#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "80",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "remaining round trip energy efficiency"
+            }
+          ]
+        },
+        {
+          "idShort": "StateOfCharge",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "state of charge"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCharge"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "StateOfChargeValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "state of charge value"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfChargeValue"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABL821#001"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "70",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "LastUpdate",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "last update"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:irdi:0173-1#02-ABG740#003"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "value": "2000-01-01T14:23:00",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "product condition"
+        }
+      ]
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "category": "APPLICATION_CLASS",
+      "idShort": "ProductCondition",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "product condition"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Covers all battery lifetime relevant properties."
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#ProductCondition",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "product condition"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Covers all battery lifetime relevant properties."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "energyThroughputValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "energy throughput value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#energyThroughputValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "energy throughput"
+              }
+            ],
+            "unit": "kilowattHour",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Overall sum of the energy throughput over the battery lifetime (data attribute should be reported as measured for further potential processing. In addition, the normalisation by usable battery energy could add a further useful value that ensures comparability among battery sizes)."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "lastUpdate",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "last update"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "last update"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Timestamp for dynamic data attributes show the last update time.\n\nDefined time within a time range, measured from the start time of the time range."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-ABG740#003"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "energyThroughput",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "energy throughput"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#energyThroughput",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "energy throughput"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity may add a further useful value that ensures comparability among battery sizes.\n\nDIN DKE Spec 99100 chapter reference: 6.7.6.7"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "capacityThroughputValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "capacity throughput value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#capacityThroughputValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "capacity throughput"
+              }
+            ],
+            "unit": "ampereHour",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Overall sum of the capacity throughput over the battery lifetime (data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity could add a further useful value that ensures comparability among battery sizes)."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-ABL849#001"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "capacityThroughput",
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#capacityThroughput",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "capacityThroughput"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity may add a further useful value that ensures comparability among battery sizes.\n\nDIN DKE Spec 99100 chapter reference: 6.7.6.8"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "capacity throughput"
+        }
+      ]
+    },
+    {
+      "idShort": "numberOfFullCyclesValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "number of full cycles value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#numberOfFullCyclesValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "number of full cycles"
+              }
+            ],
+            "unit": "cycle",
+            "dataType": "INTEGER_COUNT",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Total count of times a battery has been fully charged from empty to full capacity and then fully discharged, used as an indicator of the battery's usage and lifespan."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-ABL868#001"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "numberOfFullCycles",
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#numberOfFullCycles",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "numberOfFullCycles"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Number of (full) charging and discharging cycles.\n\nDIN DKE Spec 99100 chapter reference: 6.7.6.4"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "number of full cycles"
+        }
+      ]
+    },
+    {
+      "idShort": "stateOfCertifiedEnergyValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "state of certified energy value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCertifiedEnergyValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "state of certified energy"
+              }
+            ],
+            "unit": "%",
+            "unitId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:org.eclipse.esmf.samm:unit:2.1.0#percent"
+                }
+              ]
+            },
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Measured or on-board UBE performance at a specific point in its lifetime, expressed as a percentage of the certified usable battery energy."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "stateOfCertifiedEnergy",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "state of certified energy"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCertifiedEnergy",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SOCE"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Definition based on UNECE GTR 22: The measured or on-board UBE performance at a specific point in its lifetime, expressed as a percentage of the certified usable battery energy.\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.7"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "remainingEnergyValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "remaining energy value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingEnergyValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "remaining energy"
+              }
+            ],
+            "unit": "kilowattHour",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "UBE determined at the present point in the lifetime of the vehicle by the test procedure used for certification."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "remainingEnergy",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "remaining energy"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingEnergy",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "remaining energy"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Definition from UNECE GTR 22, applicable only to EVs.\nThe energy supplied by the battery from the beginning of the test procedure used for certification until the applicable break-off criterion of the test procedure used for certification is reached.\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.6"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "remainingCapacityValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "remaining capacity value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingCapacityValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "remaining capacility"
+              }
+            ],
+            "unit": "kilowattHour",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "In-use data attribute on capacity, corresponding with the definition of rated capacity."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-ABL840#001"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "remainingCapacity",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "remaining capacity"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingCapacity",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "remaining capacity"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The in-use data attribute on capacity, corresponding with the definition of rated capacity.\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.3"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "negativeEventValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "negative event value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#negativeEventValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "negative event"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Negative event, such as an accident. No further definition provided by regulation."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "negativeEvents",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "negative events"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#negativeEvents",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "negative events"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "informationOnAccidents",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "information on accidents"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#informationOnAccidents",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "information on accidents"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "rPCLastUpdated",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "r pc last updated"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#rPCLastUpdated",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "RPC last updated"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "RPC last updated."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "atSoC",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "at so c"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#atSoC",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "at SoC"
+              }
+            ],
+            "unit": "urn:samm:org.eclipse.esmf.samm:unit:2.1.0#percent",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Available capacity in a battery expressed as a percentage of remaining capacity."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-ABL821#001"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "powerCapabilityAt",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "power capability at"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#powerCapabilityAt",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "power capability at"
+              }
+            ],
+            "unit": "%",
+            "unitId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:org.eclipse.esmf.samm:unit:2.1.0#percent"
+                }
+              ]
+            },
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Power capability at."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "remainingPowerCapabilityValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "remaining power capability value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingPowerCapabilityValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "remaining power capability value"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Remaining power capability value."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "remainingPowerCapability",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "remaining power capability"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingPowerCapability",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "remaining power capability"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Original power capability (in Watts) and limits, with temperature range when relevant.\n- The amount of energy that a battery is capable to provide over a given period of time under reference conditions.\n- Power capability at 80% and 20% state of charge.\n\nDIN DKE Spec 99100 chapter reference: 6.7.3.3"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "evolutionOfSelfDischargeValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "evolution of self discharge value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#evolutionOfSelfDischargeValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "evolution of self discharge value"
+              }
+            ],
+            "unit": "%",
+            "unitId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:org.eclipse.esmf.samm:unit:2.1.0#percent"
+                }
+              ]
+            },
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Total count of times a battery has been fully charged from empty to full capacity and then fully discharged, used as an indicator of the battery's usage and lifespan."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-ABL834#001"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "evolutionOfSelfDischarge",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "evolution of self discharge"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#evolutionOfSelfDischarge",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "evolution of self discharge"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Evolution of self-discharge rates is the change of self-discharge over time and usage, as percentage calculated from the initial and current self-discharge rate.\n\nDIN DKE Spec 99100 chapter reference: 6.7.4.8"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "currentSelfDischargingRateValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "current self discharging rate value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#currentSelfDischargingRateValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "current self discharge rate value"
+              }
+            ],
+            "unit": "%",
+            "unitId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:org.eclipse.esmf.samm:unit:2.1.0#percent"
+                }
+              ]
+            },
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Current self-discharge in % of capacity per unit of time in defined conditions (temperature range) during the use phase."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-ABL825#001"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "currentSelfDischargingRate",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "current self discharging rate"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#currentSelfDischargingRate",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "current self discharge rate"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The current self-discharge rate is the change of the self-discharge rate in an idle state of the battery in reference conditions (temperature etc.) at aging parameter x, e.g. after a certain amount of storage time or, number of cycles.\n\nDIN DKE Spec 99100 chapter reference: 6.7.4.7"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "remainingRoundTripEnergyEfficiencyValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "remaining round trip energy efficiency value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingRoundTripEnergyEfficiencyValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "remaining round trip energy efficiency value"
+              }
+            ],
+            "unit": "%",
+            "unitId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:org.eclipse.esmf.samm:unit:2.1.0#percent"
+                }
+              ]
+            },
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Percentage of energy that can be recovered and used after a full charge and discharge cycle, reflecting the battery's ability to retain and return energy efficiently over time."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-ABL851#001"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "remainingRoundTripEnergyEfficiency",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "remaining round trip energy efficiency"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingRoundTripEnergyEfficiency",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "remaining round trip energy efficiency"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The battery passport shall include information, where possible, about the remaining round trip energy efficiency as information on the state of health of the battery \n\nThe update frequency of remaining round trip energy efficiency should be aligned with the update frequency of round trip energy efficiency fade and should be provided upon change of the battery status.\n\nDIN DKE Spec 99100 chapter reference: 6.7.4.4"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "stateOfChargeValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "state of charge value"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfChargeValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "state of charge value"
+              }
+            ],
+            "unit": "%",
+            "unitId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:org.eclipse.esmf.samm:unit:2.1.0#percent"
+                }
+              ]
+            },
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": " Available capacity in a battery expressed as a percentage of remaining capacity."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-ABL821#002"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DocumentIdentifier",
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "document identifier (ID)"
+              },
+              {
+                "language": "de",
+                "text": "Dokumentennummer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Alphanumeric character sequence uniquely identifying a document."
+              },
+              {
+                "language": "de",
+                "text": "Alphanumerische Zeichenfolge, die ein Dokument eindeutig identifiziert."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "document identifier"
+        }
+      ]
+    },
+    {
+      "idShort": "remainingPowerCapabilityDynamicAt",
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingPowerCapabilityDynamicAt",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "remaining power capability dynamic at"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defined by 'pre-use power capability (definition of power capability as given in Battery Regulation."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-ABL853#001"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "remaining power capability dynamic at"
+        }
+      ]
+    },
+    {
+      "idShort": "temperatureInformation",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "temperature information"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#temperatureInformation",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "temperature information"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The battery passport must include periodically recorded information on the operating environmental conditions, including temperature.\n\nDIN DKE Spec 99100 chapter reference: 6.7.7.5 - 8"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "timeExtremeLowTempCharging",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "time extreme low temp charging"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeLowTempCharging",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "time extreme low temperature charging"
+              }
+            ],
+            "unit": "minuteUnitOfTime",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Cumulated time spent below the given lower boundary of temperature during charging."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "timeExtremeHighTemp",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "time extreme high temp"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeHighTemp",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "time extreme high temperature"
+              }
+            ],
+            "unit": "minuteUnitOfTime",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Cumulated time spent above the given upper boundary of temperature."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "timeExtremeHighTempCharging",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "time extreme high temp charging"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeHighTempCharging",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "time extreme high temperature charging"
+              }
+            ],
+            "unit": "minuteUnitOfTime",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Cumulated time spent above the given upper boundary of temperature during Charging."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "timeExtremeLowTemp",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "time extreme low temp"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeLowTemp",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "time extreme low temperature"
+              }
+            ],
+            "unit": "minuteUnitOfTime",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Cumulated time spent below the given lower boundary of temperature."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "stateOfCharge",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "state of charge"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCharge",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "state of charge (SoC)"
+              }
+            ],
+            "unit": "%",
+            "unitId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": " 0173-1#05-AAA129#006"
+                }
+              ]
+            },
+            "dataType": "INTEGER_MEASURE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Available capacity in a battery expressed as a percentage of remaining capacity."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "urn:irdi:0173-1#02-ABL821#002"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}

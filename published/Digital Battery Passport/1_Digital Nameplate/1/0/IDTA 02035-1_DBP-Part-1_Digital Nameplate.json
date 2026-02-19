@@ -1,0 +1,2276 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "DigitalNameplateAAS",
+      "id": "https://admin-shell.io/idta/aas/DigitalNameplate/3/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/DigitalNameplate/3/0",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/DigitalNameplate/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "digital nameplate aas"
+        }
+      ]
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "BatteryNameplate",
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains the static nameplate attributes attached to the battery."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0",
+        "templateId": "https://admin-shell.io/idta-02035-1"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/DigitalNameplate/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/digitalbatterypassport/nameplate/1/0/Nameplate"
+          }
+        ]
+      },
+      "supplementalSemanticIds": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0"
+            }
+          ]
+        },
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0"
+            }
+          ]
+        },
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/nameplate/3/0/Nameplate"
+            }
+          ]
+        }
+      ],
+      "submodelElements": [
+        {
+          "idShort": "URIOfTheProduct",
+          "description": [
+            {
+              "language": "en",
+              "text": "The battery passport identifier is the unique identifier of a battery passport. \n\nDIN DKE Spec 99100 chapter reference: 6.1.2.1"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABN590#002"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABH173#003"
+                }
+              ]
+            },
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#uriOfTheProduct"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:anyURI",
+          "value": "https://dc-qr.com/?m=R123456789",
+          "modelType": "Property",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "URI of the product"
+            }
+          ]
+        },
+        {
+          "idShort": "ManufacturerName",
+          "description": [
+            {
+              "language": "en",
+              "text": "Information identifying the manufacturer with a name.\n\n\nDIN DKE Spec 99100 chapter reference: 6.1.2.4"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA565#009"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO677#004"
+                }
+              ]
+            },
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#manufacturerName"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "language": "de",
+              "text": "Muster AG"
+            }
+          ],
+          "modelType": "MultiLanguageProperty",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "manufacturer name"
+            }
+          ]
+        },
+        {
+          "idShort": "AddressInformation",
+          "description": [
+            {
+              "language": "en",
+              "text": "The manufacturer information postal address, indicating a single contact point. Web address, if available; and web address, if available. \n\n\nDIN DKE Spec 99100 chapter reference: 6.1.2.3\n\n\nNote: This is drop-in of the ContactInformation Submodel"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/smt-dropin/smt-dropin-use/1/0"
+                }
+              ]
+            },
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0112/2///61360_7#AAS002#001"
+                }
+              ]
+            },
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAQ837#008/0173-1#01-ADR448#008"
+                }
+              ]
+            },
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#addressInformation"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "modelType": "SubmodelElementCollection",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "address information"
+            }
+          ]
+        },
+        {
+          "idShort": "SerialNumber",
+          "description": [
+            {
+              "language": "en",
+              "text": "The battery identifier should be serialised, i.e., identifying each battery via a serial number.\n\n\nDIN DKE Spec 99100 chapter reference: 6.1.2.2"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA951#009"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAM556#004"
+                }
+              ]
+            },
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#serialNumber"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:string",
+          "value": "A12345-X75EN",
+          "modelType": "Property",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "serial number"
+            }
+          ]
+        },
+        {
+          "idShort": "DateOfManufacture",
+          "description": [
+            {
+              "language": "en",
+              "text": "The manufacturing date should not only relate to the battery model, but to the battery item.\nThe date code should comply with DINISO8601-1:2020-12 and ISO8601-2:2019.\n\n\nDIN DKE Spec 99100 chapter reference: 6.1.3.2"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABB757#007"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAR972#004"
+                }
+              ]
+            },
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#dateOfManufacture"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:date",
+          "value": "2022-01-01",
+          "modelType": "Property",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "date of manufacture"
+            }
+          ]
+        },
+        {
+          "idShort": "DateOfPuttingIntoService",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "date of putting into service"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#dateOfPuttingIntoService"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "valueType": "xs:date",
+          "value": "2022-06-01",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "UniqueFacilityIdentifier",
+          "description": [
+            {
+              "language": "en",
+              "text": "The manufacturing place should be uniquely identifiable.\n\n\nDIN DKE Spec 99100 chapter reference: 6.1.3.1"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/nameplate/3/0/UniqueFacilityIdentifier"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#uniqueFacilityIdentifier"
+                }
+              ]
+            },
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAV646#003"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:string",
+          "value": "987654321",
+          "modelType": "Property",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "unique facility identifier"
+            }
+          ]
+        },
+        {
+          "idShort": "LifeCycleStage",
+          "description": [
+            {
+              "language": "en",
+              "text": "A battery passport must include information on the life cycle status of the battery.\n\nThe status of the battery must be defined as 'original' (0173-1#07-ACC020#001), 'repurposed'(0173-1#07-ACC021#001), 're-used'(0173-1#07-ACC022#001), 'remanufactured' (0173-1#07-ACC023#001) or 'waste' (0173-1#07-ACC024#001).\n\nA new battery passport must be issued when a battery was subject to remanufacturing, repurpose or one of the treatment operations preparing for re-use and preparing for repurpose and is placed on the market again.\n\n\nDIN DKE Spec 99100 chapter reference: 6.1.3.7"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0173-1#02-ABL841#001"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#batteryStatus"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:string",
+          "value": "Original",
+          "modelType": "Property",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "life cycle stage"
+            }
+          ]
+        },
+        {
+          "idShort": "OperatorIdentifier",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#operatorIdentifier"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "valueType": "xs:string",
+          "value": "123456789",
+          "modelType": "Property",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "operator identifier"
+            }
+          ]
+        },
+        {
+          "idShort": "ManufacturerIdentifier",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#manufacturerIdentifier"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:string",
+          "value": "XYZ-123456",
+          "modelType": "Property",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "manufacturer identifier"
+            }
+          ]
+        },
+        {
+          "idShort": "Markings",
+          "description": [
+            {
+              "language": "en",
+              "text": "Should be used to provide all relevant marking information of the battery passport based on DIN DKE SPEC 99100 such as:\n\n* Separate collection symbol (6.2.2)\n\n* Symbols for cadmium and lead (6.2.3)\n\n* Carbon footprint label (6.2.4)\n\n* Extinguishing agent (6.2.5)\n\n* Meaning of labels and symbols (6.2.6)\n\nNote: CE marking is declared as mandatory according to EU Blue Guide\n\n\n\n"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61360_7#AAS006"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABI563#003/0173-1#01-AHF849#003"
+                }
+              ]
+            },
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#markings"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "Markings__00__",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Used to provide all relevant marking information of the battery passport based on DIN SPEC 99100."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0112/2///61360_7#AAS009#001"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "0173-1#02-ABI564#003/0173-1#01-AHF850#003"
+                    }
+                  ]
+                },
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:samm:io.admin-shell.idta.shared:3.1.0#Marking"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "MarkingName",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Context name of the symbols, labels and documentation of conformity based on DIN DKE SPEC 99100:\n\n* \"Separate collection symbol\" (6.2.2)\n\n* \"Symbols for cadmium and lead\" (6.2.3)\n\n* \"Carbon footprint label\" (6.2.4)\n\n* \"Extinguishing agent\" (6.2.5)\n"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0112/2///61987#ABA231#009"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "0173-1#02-ABI190#003"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:samm:io.admin-shell.idta.shared:3.1.0#markingName"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "0173-1#07-DAA603#004",
+                  "modelType": "Property",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "marking name"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "DesignationOfCertificateOrApproval",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Note: Approval identifier, reference to the certificate number, to be entered without spaces "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0112/2///61987#ABH783#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "0173-1#02-ABI975#002"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:samm:io.admin-shell.idta.shared:3.1.0#designationOfCertificateOrApproval"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "KEMA99IECEX1105/128",
+                  "modelType": "Property",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "designation of certificate or approval"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "IssueDate",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0112/2///61987#ABO097#001"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "0173-1#02-ABL774#001"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:samm:io.admin-shell.idta.shared:3.1.0#issueDate"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:date",
+                  "value": "2022-01-01",
+                  "modelType": "Property",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "issue date"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "ExpiryDate",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0112/2///61987#ABH830#002"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "0173-1#02-ABL775#001"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:samm:io.admin-shell.idta.shared:3.1.0#expiryDate"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:date",
+                  "value": "2028-01-01",
+                  "modelType": "Property",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "expiry date"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "MarkingFile",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0112/2///61987#ABO100#002"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "0173-1#02-ABI191#003"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:samm:io.admin-shell.idta.shared:3.1.0#markingFile"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "contentType": "image/png",
+                  "modelType": "File",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "marking file"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "MarkingAdditionalText",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Text should be used to provide the meaning of labels and symbols.\n\nDIN DKE Spec 99100 chapter reference: 6.2.5, 6.2.6 "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0112/2///61987#ABB146#007"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "0173-1#02-ABI192#003"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:samm:io.admin-shell.idta.shared:3.1.0#markingAdditionalText"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "0044",
+                  "modelType": "Property",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "marking additional text"
+                    }
+                  ]
+                }
+              ],
+              "modelType": "SubmodelElementCollection",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "markings 00"
+                }
+              ]
+            }
+          ],
+          "modelType": "SubmodelElementList",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "markings"
+            }
+          ]
+        },
+        {
+          "idShort": "EUDeclarationOfConformity",
+          "description": [
+            {
+              "language": "en",
+              "text": "EU declaration of conformity\n\nDIN DKE Spec 99100 chapter reference: 6.2.7"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#euDeclarationOfConformity"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABA889#003"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "typeValueListElement": "Property",
+          "valueTypeListElement": "xs:string",
+          "value": [
+            {
+              "idShort": "DocumentIdentifier",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Document identifier of the document (e.g., PDF) that can be found in the HandoverDocumentation Submodel.\n\nDIN DKE Spec 99100 chapter reference: 6.2.7"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "document identifier"
+                }
+              ]
+            }
+          ],
+          "modelType": "SubmodelElementList",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "EU declaration of conformity"
+            }
+          ]
+        },
+        {
+          "idShort": "ResultsOfTestReportsProvingCompliance",
+          "description": [
+            {
+              "language": "en",
+              "text": "Results of test reports proving compliance\nDIN DKE Spec 99100 chapter reference: 6.2.8"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#resultsOfTestReportsProvingCompliance"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABA705#003"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "typeValueListElement": "Property",
+          "valueTypeListElement": "xs:string",
+          "value": [
+            {
+              "idShort": "DocumentIdentifier",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Document identifier of the document (e.g., PDF) that can be found in the HandoverDocumentation Submodel.\n\nDIN DKE Spec 99100 chapter reference: 6.2.8 "
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "document identifier"
+                }
+              ]
+            }
+          ],
+          "modelType": "SubmodelElementList",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "results of test reports proving compliance"
+            }
+          ]
+        }
+      ],
+      "modelType": "Submodel",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "battery nameplate"
+        }
+      ]
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "URIOfTheProduct",
+      "description": [
+        {
+          "language": "en",
+          "text": "The battery passport identifier is the unique identifier of a battery passport. \n\nDIN DKE Spec 99100 chapter reference: 6.1.2.1"
+        }
+      ],
+      "id": "0112/2///61987#ABN590#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "URIOfTheProduct"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "URIOfTheProduct"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "unique global identification of the product instance using an universal resource identifier (URI)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "URI of the product"
+        }
+      ]
+    },
+    {
+      "idShort": "ManufacturerName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Information identifying the manufacturer with a name\n\nDIN DKE Spec 99100 chapter reference: 6.1.2.4"
+        }
+      ],
+      "id": "0112/2///61987#ABA565#009",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerName"
+              }
+            ],
+            "dataType": "STRING_TRANSLATABLE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "manufacturer name"
+        }
+      ]
+    },
+    {
+      "idShort": "DateOfManufacture",
+      "description": [
+        {
+          "language": "en",
+          "text": "The manufacturing date should not only relate to the battery model, but to the battery item.\nThe date code should comply with DINISO8601-1:2020-12 and ISO8601-2:2019.\n\nDIN DKE Spec 99100 chapter reference: 6.1.3.2"
+        }
+      ],
+      "id": "0112/2///61987#ABB757#007",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DateOfManufacture"
+              }
+            ],
+            "dataType": "DATE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "date when an item was manufactured"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "date of manufacture"
+        }
+      ]
+    },
+    {
+      "idShort": "MarkingName",
+      "description": [
+        {
+          "language": "en",
+          "text": "DIN DKE Spec 99100 chapter reference: 6.2.2, 6.2.3, 6.2.4"
+        }
+      ],
+      "id": "0112/2///61987#ABA231#009",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MarkingName"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "common name of the marking"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "marking name"
+        }
+      ]
+    },
+    {
+      "idShort": "DesignationOfCertificateOrApproval",
+      "id": "0112/2///61987#ABH783#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DesignationOfCertificateOrApproval"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "alphanumeric character sequence identifying a certificate or approval"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "designation of certificate or approval"
+        }
+      ]
+    },
+    {
+      "idShort": "IssueDate",
+      "id": "0112/2///61987#ABO097#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "IssueDate"
+              }
+            ],
+            "dataType": "DATE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "date, at which the specified certificate is issued "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "issue date"
+        }
+      ]
+    },
+    {
+      "idShort": "ExpiryDate",
+      "id": "0112/2///61987#ABH830#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExpiryDate"
+              }
+            ],
+            "dataType": "DATE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "date, at which the specified certificate expires "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "expiry date"
+        }
+      ]
+    },
+    {
+      "idShort": "MarkingFile",
+      "description": [
+        {
+          "language": "en",
+          "text": "File to the graphic.\n\nDIN DKE Spec 99100 chapter reference: 6.2.2, 6.2.3, 6.2.4"
+        }
+      ],
+      "id": "0112/2///61987#ABO100#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MarkingFile"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "conformity symbol of the marking "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "marking file"
+        }
+      ]
+    },
+    {
+      "idShort": "MarkingAdditionalText__00__",
+      "description": [
+        {
+          "language": "en",
+          "text": "Text should be used to provide the meaning of labels and symbols.\n\nDIN DKE Spec 99100 chapter reference: 6.2.6"
+        }
+      ],
+      "id": "0112/2///61987#ABB146#007",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MarkingAdditionalText__00__"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "where applicable, additional information on the marking in plain text, e.g. the ID-number of the notified body involved in the conformity process"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "marking additional text 00"
+        }
+      ]
+    },
+    {
+      "idShort": "Marking",
+      "description": [
+        {
+          "language": "en",
+          "text": "Should be used to provide all relevant marking information of the battery passport based on DIN DKE SPEC 99100 such as:\n\n* separate collection symbol (6.2.2)\n\n* symbols for cadmium and lead (6.2.3)\n\n* Carbon footprint labela (6.2.4)\n\n* extinguishing agent\n\n* meaning of labels and symbols (6.2.6)\n\n* EU declaration of conformity\n\n* results of test reports proving compliance\n\n* Date of putting the battery into service\n\nNote: CE marking is declared as mandatory according to EU Blue Guide\n\n"
+        }
+      ],
+      "id": "0112/2///61360_7#AAS009#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Marking"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Single marking information"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Marking"
+        }
+      ]
+    },
+    {
+      "idShort": "UniqueFacilityIdentifier",
+      "description": [
+        {
+          "language": "en",
+          "text": "The manufacturing place should be uniquely identifiable.\n\nDIN DKE Spec 99100 chapter reference: 6.1.3.1"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/nameplate/3/0/UniqueFacilityIdentifier",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "UniqueFacilityIdentifier"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s value chain"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "unique facility identifier"
+        }
+      ]
+    },
+    {
+      "idShort": "SerialNumber",
+      "id": "0112/2///61987#ABA951#009",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SerialNumber"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "unique combination of numbers and letters used to identify the device once it has been manufactured"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "serial number"
+        }
+      ]
+    },
+    {
+      "idShort": "euDeclarationOfConformity",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "EU declaration of conformity"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#euDeclarationOfConformity",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "EU declaration of conformity"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "A battery passport must include the EU declaration of conformity.\n\n  DIN DKE Spec 99100 chapter reference: 6.2.7 \n\n Document identifiers (e.g., depending of different languages) of a document (e.g., PDF) that can be found in the Handover Documentation model."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "resultsOfTestReportsProvingCompliance",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "results of test reports proving compliance"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#resultsOfTestReportsProvingCompliance",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "result of test reports proving compliance"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "A battery passport must include the test report results that can prove the compliance with the requirements stated in the battery regulation.\n\n  DIN DKE Spec 99100 chapter reference: 6.2.8\n\n Document identifiers (e.g., depending of different languages) of a document (e.g., PDF) that can be found in the Handover Documentation model.\n\n "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "batteryStatus",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "battery status"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#batteryStatus",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "BatteryStatus"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "batteryStatus"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "A battery passport must include information on the life cycle status of the battery.\n   \n   The status of the battery must be defined as 'original' (0173-1#07-ACC020#001), 'repurposed'(0173-1#07-ACC021#001), 're-used'(0173-1#07-ACC022#001), 'remanufactured' (0173-1#07-ACC023#001) or 'waste' (0173-1#07-ACC024#001).\n   \n   A new battery passport must be issued when a battery was subject to remanufacturing, repurpose or one of the treatment operations preparing for re-use and preparing for repurpose and is placed on the market again.\n   \n   DIN DKE Spec 99100 chapter reference: 6.1.3.7"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "original",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#BatteryStatusEnumeration:_original0682c5f2"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "repurposed",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#BatteryStatusEnumeration:_repurposedcf78af81"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "re-used",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#BatteryStatusEnumeration:_re-used9bed5d4d"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "remanufactured",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#BatteryStatusEnumeration:_remanufactured83fbdb6f"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "waste",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#BatteryStatusEnumeration:_waste0bb5e932"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-ABL841#001"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "operatorIdentifier",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "operator identifier"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#operatorIdentifier",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "identifier of the operator"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "operatorIdentifier"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The unique operator identifier should comply with ISO/IEC 15459 1:2014, ISO/IEC 15459 2:2015, ISO/IEC 15459 3:2014, ISO/IEC 15459 4:2014, ISO/IEC 15459 5:2014, ISO/IEC 15459 6:2014, or their equivalent until referenced harmonised standards are listed in the OJEU.\n\nDIN DKE Spec 99100 chapter reference: 6.1.2.3\n\n"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "manufacturerIdentifier",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "manufacturer identifier"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#manufacturerIdentifier",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "identifier of the manufacturer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "A battery passport must include information identifying the manufacturer.\n\n\nDIN DKE Spec 99100 chapter reference: 6.1.2"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Markings",
+      "displayName": [
+        {
+          "language": "de",
+          "text": "Kennzeichnungen"
+        },
+        {
+          "language": "en",
+          "text": "markings"
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "2"
+      },
+      "id": "0112/2///61360_7#AAS006",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Kennzeichnungen"
+              },
+              {
+                "language": "en",
+                "text": "Markings"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Sammlung von verschiedenen Kennzeichnungen, die sich auf das Produkt beziehen"
+              },
+              {
+                "language": "en",
+                "text": "collection of several markings relevant to the product"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "dateOfPuttingIntoService",
+      "id": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#dateOfPuttingIntoService",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "date of putting into service"
+              }
+            ],
+            "dataType": "DATE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Where appropriate, the battery passport must include information on the date of putting the battery into service. BR Annex VI Part A (1); Art. 3(33); Art. 38(7); ESPR Art. 2(32)\\n\\nDIN DKE Spec chapter reference: 6.1.3.3"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "date of putting into service"
+        }
+      ]
+    }
+  ]
+}
