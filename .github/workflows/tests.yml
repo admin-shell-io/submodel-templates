@@ -9,21 +9,28 @@ jobs:
       contents: read
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: 'true'
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-    - name: Install aas test engine
-      env:
-        TOKEN: ${{ secrets.AAS_ENGINES_PAT }}
-      run: |
-        python -m pip install --upgrade pip
-        pip install "git+https://x-access-token:${TOKEN}@github.com/admin-shell-io/aas-test-engines-exclusive.git@v1.0.0#egg=aas_test_engines_exclusive"
+      - name: Install aas test engine
+        env:
+          TOKEN: ${{ secrets.AAS_ENGINES_PAT }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install "git+https://x-access-token:${TOKEN}@github.com/admin-shell-io/aas-test-engines-exclusive.git@v1.0.0#egg=aas_test_engines_exclusive"
 
-    - name: Run template checks
-      run: python ./_help_and_materials/check_templates.py
+      - name: Validate AAS v3.1 JSON files
+        run: |
+          find published -name '*.json' -type f | while read -r f; do
+            echo "Checking $f (AAS 3.1)..."
+            aas_test_engines_exclusive check_file "$f" --format json --aas-version 3.1
+          done
+
+      - name: Run template checks
+        run: python ./_help_and_materials/check_templates.py

@@ -71,7 +71,7 @@ def check_template(path: pathlib.Path, root: pathlib.Path) -> bool:
             continue
         try:
             with open(i, "rb") as f:
-                result = aas_file.check_json_file(f)
+                result = aas_file.check_json_file(f, version="3.1")
             if result.ok():
                 print_green(f"- {i.relative_to(root)} is ok")
             else:
