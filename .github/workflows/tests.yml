@@ -27,10 +27,17 @@ jobs:
 
       - name: Validate AAS v3.1 JSON files
         run: |
-          find published -name '*.json' -type f | while read -r f; do
+          failed=0
+          while IFS= read -r f; do
             echo "Checking $f (AAS 3.1)..."
-            aas_test_engines_exclusive check_file "$f" --format json --aas-version 3.1
-          done
+            if ! aas_test_engines_exclusive check_file "$f" --format json --aas-version 3.1; then
+              failed=$((failed + 1))
+            fi
+          done < <(find published -name '*.json' -type f)
+          if [ "$failed" -gt 0 ]; then
+            echo "::error::$failed file(s) failed AAS 3.1 validation"
+            exit 1
+          fi
 
       - name: Run template checks
         run: python ./_help_and_materials/check_templates.py
