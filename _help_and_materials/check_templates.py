@@ -10,6 +10,7 @@ try:
 except ImportError:
     from aas_test_engines import file as aas_file
 
+AAS_VERSION = "3.1"
 
 EXCLUDED_JSON = frozenset({
     "IDTA 02011-1-1-1 _Template_BoM_ExtensionbasedonIEC81346.json",
@@ -71,7 +72,7 @@ def check_template(path: pathlib.Path, root: pathlib.Path) -> bool:
             continue
         try:
             with open(i, "rb") as f:
-                result = aas_file.check_json_file(f, version="3.1")
+                result = aas_file.check_json_file(f, version=AAS_VERSION)
             if result.ok():
                 print_green(f"- {i.relative_to(root)} is ok")
             else:
@@ -91,7 +92,7 @@ def main() -> int:
         return 1
     folders = find_latest_per_submodel(root_dir, root_dir)
     folders.sort(key=lambda p: str(p.relative_to(root_dir)))
-    print(f"Checking latest version of {len(folders)} submodel(s) under published/\n")
+    print(f"Checking latest version of {len(folders)} submodel(s) under published/ (AAS metamodel {AAS_VERSION}, excluding {len(EXCLUDED_JSON)} file(s) in EXCLUDED_JSON)\n")
     ok = True
     for path in folders:
         if not check_template(path, root_dir):

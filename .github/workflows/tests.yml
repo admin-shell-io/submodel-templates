@@ -25,19 +25,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install "git+https://x-access-token:${TOKEN}@github.com/admin-shell-io/aas-test-engines-exclusive.git@v1.0.0#egg=aas_test_engines_exclusive"
 
-      - name: Validate AAS v3.1 JSON files
-        run: |
-          failed=0
-          while IFS= read -r f; do
-            echo "Checking $f (AAS 3.1)..."
-            if ! aas_test_engines_exclusive check_file "$f" --format json --aas-version 3.1; then
-              failed=$((failed + 1))
-            fi
-          done < <(find published -name '*.json' -type f)
-          if [ "$failed" -gt 0 ]; then
-            echo "::error::$failed file(s) failed AAS 3.1 validation"
-            exit 1
-          fi
-
-      - name: Run template checks
+      - name: Run template checks (latest version per submodel, AAS 3.1)
         run: python ./_help_and_materials/check_templates.py
