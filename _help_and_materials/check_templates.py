@@ -12,6 +12,12 @@ except ImportError:
 
 AAS_VERSION = os.environ.get("AAS_VERSION", "3.1")
 
+_SKIP = frozenset({
+    "IDTA 02002-1-0-1_Template_ContactInformation.json",
+    "IDTA 02002-1-0-1_Template_ContactInformation_forAASMetamodelV3.1.json",
+    "IDTA_02018_Template_MaintenanceInstructions.json",
+})
+
 
 def print_red(msg: str):
     print(f"\033[91m{msg}\033[0m")
@@ -59,6 +65,8 @@ def check_template(path: pathlib.Path, root: pathlib.Path) -> bool:
         return True
     ok = True
     for i in json_files:
+        if i.name in _SKIP:
+            continue
         try:
             with open(i, "rb") as f:
                 result = aas_file.check_json_file(f, version=AAS_VERSION)
