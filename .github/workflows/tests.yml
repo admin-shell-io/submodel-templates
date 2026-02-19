@@ -25,5 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install "git+https://x-access-token:${TOKEN}@github.com/admin-shell-io/aas-test-engines-exclusive.git@v1.0.0#egg=aas_test_engines_exclusive"
 
-      - name: Run template checks (latest version per submodel, AAS 3.1)
+      - name: Run template checks (AAS metamodel 3.1)
+        env:
+          AAS_VERSION: "3.1"
         run: python ./_help_and_materials/check_templates.py

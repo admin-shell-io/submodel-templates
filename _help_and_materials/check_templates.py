@@ -6,20 +6,11 @@ import sys
 from typing import Iterator, Tuple
 
 try:
-    from aas_test_engines_exclusive import file as aas_file
+    from aas_test_engines_exclusive.v3_1 import file as aas_file
 except ImportError:
     from aas_test_engines import file as aas_file
 
-AAS_VERSION = "3.1"
-
-EXCLUDED_JSON = frozenset({
-    "IDTA 02011-1-1-1 _Template_BoM_ExtensionbasedonIEC81346.json",
-    "IDTA 02011-1-1-1 _Template_BoM_ExtensionbasedonIEC81346_forAASMetamodelV3.1.json",
-    "IDTA 02068_Template_Provision Of Company Data.json",
-    "IDTA 02068_Template_Provision Of Company Data_forAASMetamodelV3.1.json",
-    "IDTA_02018_Template_MaintenanceInstructions.json",
-    "IDTA_02049_Template_QualityControlForMachining.json",
-})
+AAS_VERSION = os.environ.get("AAS_VERSION", "3.1")
 
 
 def print_red(msg: str):
@@ -68,8 +59,6 @@ def check_template(path: pathlib.Path, root: pathlib.Path) -> bool:
         return True
     ok = True
     for i in json_files:
-        if i.name in EXCLUDED_JSON:
-            continue
         try:
             with open(i, "rb") as f:
                 result = aas_file.check_json_file(f, version=AAS_VERSION)
@@ -77,6 +66,10 @@ def check_template(path: pathlib.Path, root: pathlib.Path) -> bool:
                 print_green(f"- {i.relative_to(root)} is ok")
             else:
                 print_red(f"- {i.relative_to(root)} is invalid")
+                for line in result.to_lines():
+                    s = line.strip()
+                    if s and "Check meta model" not in s and "Check constraints" not in s and s != "Check":
+                        print_red(f"    {s}")
                 ok = False
         except Exception as e:
             print_red(f"- {i.relative_to(root)} check failed: {e}")
@@ -92,7 +85,7 @@ def main() -> int:
         return 1
     folders = find_latest_per_submodel(root_dir, root_dir)
     folders.sort(key=lambda p: str(p.relative_to(root_dir)))
-    print(f"Checking latest version of {len(folders)} submodel(s) under published/ (AAS metamodel {AAS_VERSION}, excluding {len(EXCLUDED_JSON)} file(s) in EXCLUDED_JSON)\n")
+    print(f"Checking latest version of {len(folders)} submodel(s) under published/ (AAS metamodel {AAS_VERSION})\n")
     ok = True
     for path in folders:
         if not check_template(path, root_dir):
