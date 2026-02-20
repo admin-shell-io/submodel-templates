@@ -1709,7 +1709,7 @@
                   "description": [
                     {
                       "language": "en",
-                      "text": "enum: generalTechnicalPotential, operationalPotential, applicationTailoredPotential. The modelling scope places individual EFDM instances and their key figures into context. generalTechnicalPotential: The modelling of flexibility includes universally valid technical characteristics and restrictions. The model does not contain information on operational strategies, production plans, or other limitations arising from the specific use of the plant or system. In this case, the energy flexibility potential is not directly implementable. operationalPotential: Flexibility is fully considered within the context of the production environment and includes all necessary information required to make use of the flexibility. The model describes the maximum feasible potential—independent of the specific use case. applicationTailoredPotential: The model describes a potential tailored to a specific application. For example, an energy market may only allow the use of the Flexible Load class with holding durations in 15-minute intervals. In such a case, the potential of storage units and dependencies would need to be transformed so that they can be represented as Flexible Load."
+                      "text": "enum: generalTechnicalPotential, operationalPotential, applicationTailoredPotential. The modelling scope places individual EFDM instances and their key figures into context. generalTechnicalPotential: The modelling of flexibility includes universally valid technical characteristics and restrictions; the model does not contain operational strategies, production plans, or other plant-specific limitations. The energy flexibility potential is not directly implementable. operationalPotential: Flexibility is fully considered within the production environment; the model describes the maximum feasible potential, independent of the specific use case. applicationTailoredPotential: The model describes a potential tailored to a specific application (e.g. energy market may allow only Flexible Load with 15-min holding durations); storage and dependencies may need to be transformed to be represented as Flexible Load."
                     }
                   ],
                   "semanticId": {
@@ -2521,7 +2521,7 @@
                         }
                       ],
                       "valueType": "xs:positiveInteger",
-                      "min": "0",
+                      "min": "1",
                       "modelType": "Range"
                     },
                     {
@@ -5644,7 +5644,7 @@
                   "description": [
                     {
                       "language": "en",
-                      "text": "enum: generalTechnicalPotential, operationalPotential, applicationTailoredPotential. The modelling scope places individual EFDM instances and their key figures into context. generalTechnicalPotential: The modelling of flexibility includes universally valid technical characteristics and restrictions. The model does not contain information on operational strategies, production plans, or other limitations arising from the specific use of the plant or system. In this case, the energy flexibility potential is not directly implementable. operationalPotential: Flexibility is fully considered within the context of the production environment and includes all necessary information required to make use of the flexibility. The model describes the maximum feasible potential—independent of the specific use case. applicationTailoredPotential: The model describes a potential tailored to a specific application. For example, an energy market may only allow the use of the Flexible Load class with holding durations in 15-minute intervals. In such a case, the potential of storage units and dependencies would need to be transformed so that they can be represented as Flexible Load."
+                      "text": "enum: generalTechnicalPotential, operationalPotential, applicationTailoredPotential. The modelling scope places individual EFDM instances and their key figures into context. generalTechnicalPotential: The modelling of flexibility includes universally valid technical characteristics and restrictions; the model does not contain operational strategies, production plans, or other plant-specific limitations. The energy flexibility potential is not directly implementable. operationalPotential: Flexibility is fully considered within the production environment; the model describes the maximum feasible potential, independent of the specific use case. applicationTailoredPotential: The model describes a potential tailored to a specific application (e.g. energy market may allow only Flexible Load with 15-min holding durations); storage and dependencies may need to be transformed to be represented as Flexible Load."
                     }
                   ],
                   "semanticId": {
@@ -6456,7 +6456,7 @@
                         }
                       ],
                       "valueType": "xs:positiveInteger",
-                      "min": "0",
+                      "min": "1",
                       "modelType": "Range"
                     },
                     {
