@@ -1,0 +1,3853 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "DigitalQualityDocumentAAS",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Digital Quality Document AAS"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Asset Administration Shell for the Digital Quality Document."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/aas/DigitalQualityDocument/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/DigitalQualityDocument/1/0",
+        "defaultThumbnail": {
+          "path": "/aasx/files/title-page.png",
+          "contentType": "image/png"
+        }
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "DigitalQualityDocuments",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Digital Quality Documents"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Template submodel for Digital Quality Documents."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "DocumentIds",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Document Ids"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Set of document identifiers for the document. One ID in this collection should be used as a preferred ID"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0173-1#02-ABI501#003"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://api.eclass-cdp.com/0173-1-02-ABI501-003"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "DocumentId",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Document Id"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Information about a document identification entity"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI501#003/0173-1#01-AHF580#003"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://api.eclass-cdp.com/0173-1-02-ABI501-003"
+                    }
+                  ]
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "DocumentDomainId",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Document Domain Id"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Identification of the domain in which the given DocumentId is unique. The domain ID can, e.g., be the name or acronym of the providing organisation"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH994#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABH994-003"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "DocumentIdentifier",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Document Identifier"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Alphanumeric character sequence uniquely identifying a document"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO099#004"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-AAO099-004"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "DocumentIsPrimary",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Document Is Primary"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Flag indicating whether a DocumentId within a collection of at least two DocumentIds is the \u2018primary\u2019 identifier for the document. This is the preferred ID of the document (commonly from the point of view of the owner of the asset)"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH995#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABH995-003"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:boolean",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        },
+        {
+          "idShort": "DocumentClassifications",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Document Classifications"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Set of information for describing the classification of the Document according to ClassificationSystems"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0173-1#02-ABI502#003"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://api.eclass-cdp.com/0173-1-02-ABI502-003"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "DocumentClassification",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Document Classification"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set of information for describing the classification of the Document according to a ClassificationSystem"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI502#003/0173-1#01-AHF581#003"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "ClassId",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Class Id"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Unique ID of the document class within a classficationsystem"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH996#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABH996-003"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "ClassName",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Class Name"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Name of the class in the classification system"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABJ219#002"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABJ219-002"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "ClassificationSystem",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Classification System"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Identification of the classification system "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABH997#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABH997-003"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        },
+        {
+          "idShort": "DocumentInstances",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Document Instances"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Information elements of individual document instances, which can be different versions of each other"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0173-1#02-ABI503#003"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://api.eclass-cdp.com/0173-1-02-ABI503-003"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "DocumentInstance",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Document Instance"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Information about a document instance. This SMC inherits from \u201CDocumentVersion\u201D of IDTA 02004-2-0 \u201CHandover Documentation\u201D"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-ABI503#003/0173-1#01-AHF582#003"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "Language",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Language"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Language of the document instance."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": " 0173-1#02-AAN468#008"
+                      }
+                    ]
+                  },
+                  "typeValueListElement": "Property",
+                  "valueTypeListElement": "xs:string",
+                  "value": [
+                    {
+                      "idShort": "Language",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Language"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Language of the document"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAN468#008"
+                          }
+                        ]
+                      },
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                },
+                {
+                  "idShort": "Version",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Version"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Version of the document"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAP003#005"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-AAP003-005"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Title",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Title"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Name of the document"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABG940#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABG940-003"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "Description",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Description"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Plain text characterizing the content of the document, e.g., the context of the quality document and its conformity statement."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAN466#004"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-AAN466-004"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "StatusSetDate",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Status Set Date"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Date when the document status was set. Usually, the date when the quality document was issued"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABI000#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABI000-003"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:dateTime",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "StatusValue",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Status Value"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Each document instance represents a point in time in the asset life cycle. This status value refers to the milestones in the asset life cycle. "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABI001#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABI001-003"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "OrganizationShortName",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Organization Short Name"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Short name of the organization that issued the quality document instance"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://api.eclass-cdp.com/0173-1-02-ABI002-003"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "OrganizationOfficialName",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Organization Official Name"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Official name of the organization that issued the document"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABI004#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABI004-003"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RefersToEntities",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Refers To Entities"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Forms a generic refers to-relationship to another document or document instance. "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABK288#002"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABK288-002"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "typeValueListElement": "ReferenceElement",
+                  "value": [
+                    {
+                      "idShort": "RefersToEntity",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Refers To Entity"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Forms a generic refers to-relationship to another document or document instance"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-ABK288#002"
+                          }
+                        ]
+                      },
+                      "modelType": "ReferenceElement"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                },
+                {
+                  "idShort": "BasedOnReferences",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Based On References"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Forms a based on-relationship to another document or document instance"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABK289#002"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABK289-002"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "typeValueListElement": "ReferenceElement",
+                  "value": [
+                    {
+                      "idShort": "BasedOnReference",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Based On Reference"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "BasedOnReference"
+                        }
+                      ],
+                      "modelType": "ReferenceElement"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                },
+                {
+                  "idShort": "DigitalFiles",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Digital Files"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "MIME-Type, file name and file contents given by the file SubmodelElement. This holds the actual quality document, e.g., the DCC XML file."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABK126#002"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABK126-002"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "typeValueListElement": "File",
+                  "value": [
+                    {
+                      "idShort": "DigitalFile",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Digital File"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "MIME-Type, file name and file contents given by the file"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-ABK126#002"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "OneToMany"
+                        }
+                      ],
+                      "contentType": "text/xml",
+                      "modelType": "File"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                },
+                {
+                  "idShort": "PreviewFile",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Preview File"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Provides a preview of the Document Instance, e.g., the human-readable PDF version of the XML file"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABK127#002"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://api.eclass-cdp.com/0173-1-02-ABK127-002"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "contentType": "application/pdf",
+                  "modelType": "File"
+                },
+                {
+                  "idShort": "AdministrativeData",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Administrative Data"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "This submodel element collection contains essential administrative information about the document."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/AdministrativeData"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "CoreData",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Core Data"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Contains essential administrative information for the quality document"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "UniqueIdentifier",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Unique Identifier"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "A worldwide unique identifier for the DQD (e.g., calibration certificate number) "
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABI501#001/0173-1#01-AHF580#001*01"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "Identifications",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Identifications"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Identifications contains identifiers which exactly describe the content of the parent element"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "typeValueListElement": "SubmodelElementCollection",
+                          "value": [
+                            {
+                              "idShort": "Identification",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Identification"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Identification"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identification"
+                                  }
+                                ]
+                              },
+                              "value": [
+                                {
+                                  "idShort": "IdentificationName",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Identification Name"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Name of the identification"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationName"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToOne"
+                                    }
+                                  ],
+                                  "modelType": "MultiLanguageProperty"
+                                },
+                                {
+                                  "idShort": "IdentificationIssuer",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Identification Issuer"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Issuer of the identification to distinguish various categories of quality document"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationIssuer"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToOne"
+                                    }
+                                  ],
+                                  "valueType": "xs:string",
+                                  "modelType": "Property"
+                                },
+                                {
+                                  "idShort": "IdentificationValue",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Identification Value"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Placeholder for the actual identification (e.g., serial number)"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationValue"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToOne"
+                                    }
+                                  ],
+                                  "valueType": "xs:string",
+                                  "modelType": "Property"
+                                },
+                                {
+                                  "idShort": "ID",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "ID"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Attribute for which the value is unique within the quality document"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/ID"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToOne"
+                                    }
+                                  ],
+                                  "valueType": "xs:string",
+                                  "modelType": "Property"
+                                },
+                                {
+                                  "idShort": "RefID",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Ref ID"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Reference to an existing ID within the quality document"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/refID"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToMany"
+                                    }
+                                  ],
+                                  "valueType": "xs:string",
+                                  "modelType": "Property"
+                                },
+                                {
+                                  "idShort": "RefType",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Ref Type"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Specification of a context defining identification. For instance, the temperature measurement can have as context \u0022ambientTemperature\u0022"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identificationshttps://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/refType"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToOne"
+                                    }
+                                  ],
+                                  "valueType": "xs:string",
+                                  "modelType": "Property"
+                                }
+                              ],
+                              "modelType": "SubmodelElementCollection"
+                            }
+                          ],
+                          "modelType": "SubmodelElementList"
+                        },
+                        {
+                          "idShort": "IssueDate",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Issue Date"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Date when the document has been officially issued"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "0173-1#02-ABI000#001"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:dateTime",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    },
+                    {
+                      "idShort": "Items",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Items"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Contains unique identification, description and if applicable, conditions of the item"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/items"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "Identifications",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Identifications"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Identifications contains identifiers which exactly describe the content of the parent element."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identification"
+                              }
+                            ]
+                          },
+                          "typeValueListElement": "SubmodelElementCollection",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "idShort": "Identification",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Identification"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Identification"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identification"
+                                  }
+                                ]
+                              },
+                              "value": [
+                                {
+                                  "idShort": "IdentificationName",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Identification Name"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Name of the identification"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationName"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToOne"
+                                    }
+                                  ],
+                                  "modelType": "MultiLanguageProperty"
+                                },
+                                {
+                                  "idShort": "IdentificationIssuer",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Identification Issuer"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Issuer of the identification to distinguish various categories of quality document"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationIssuer"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToOne"
+                                    }
+                                  ],
+                                  "valueType": "xs:string",
+                                  "modelType": "Property"
+                                },
+                                {
+                                  "idShort": "IdentificationValue",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Identification Value"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Placeholder for the actual identification (e.g., serial number)"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationValue"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToOne"
+                                    }
+                                  ],
+                                  "valueType": "xs:string",
+                                  "modelType": "Property"
+                                },
+                                {
+                                  "idShort": "ID",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "ID"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Attribute for which the value is unique within the quality document"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/ID"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToOne"
+                                    }
+                                  ],
+                                  "valueType": "xs:string",
+                                  "modelType": "Property"
+                                },
+                                {
+                                  "idShort": "RefID",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Ref ID"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Reference to an existing ID within the quality document"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/refID"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToMany"
+                                    }
+                                  ],
+                                  "valueType": "xs:string",
+                                  "modelType": "Property"
+                                },
+                                {
+                                  "idShort": "RefType",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Ref Type"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Specification of a context defining identification. For instance, the temperature measurement can have as context \u0022ambientTemperature\u0022"
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identificationshttps://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/refType"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "ZeroToOne"
+                                    }
+                                  ],
+                                  "valueType": "xs:string",
+                                  "modelType": "Property"
+                                }
+                              ],
+                              "modelType": "SubmodelElementCollection"
+                            }
+                          ],
+                          "modelType": "SubmodelElementList"
+                        },
+                        {
+                          "idShort": "Item",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Item"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Item of calibration, conformity assessment or other"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Items"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "OneToMany"
+                            }
+                          ],
+                          "typeValueListElement": "SubmodelElementCollection",
+                          "value": [
+                            {
+                              "idShort": "Item",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Item"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Item"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://dccwiki.ptb.de/en/dccitems"
+                                  }
+                                ]
+                              },
+                              "value": [
+                                {
+                                  "idShort": "Identifications",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Identifications"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Identifications contains identifiers which exactly describe the content of the parent element."
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identification"
+                                      }
+                                    ]
+                                  },
+                                  "typeValueListElement": "SubmodelElementCollection",
+                                  "value": [
+                                    {
+                                      "idShort": "Identification",
+                                      "displayName": [
+                                        {
+                                          "language": "en",
+                                          "text": "Identification"
+                                        }
+                                      ],
+                                      "description": [
+                                        {
+                                          "language": "en",
+                                          "text": "Identification"
+                                        }
+                                      ],
+                                      "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                          {
+                                            "type": "GlobalReference",
+                                            "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identification"
+                                          }
+                                        ]
+                                      },
+                                      "value": [
+                                        {
+                                          "idShort": "IdentificationName",
+                                          "displayName": [
+                                            {
+                                              "language": "en",
+                                              "text": "Identification Name"
+                                            }
+                                          ],
+                                          "description": [
+                                            {
+                                              "language": "en",
+                                              "text": "Name of the identification"
+                                            }
+                                          ],
+                                          "semanticId": {
+                                            "type": "ExternalReference",
+                                            "keys": [
+                                              {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationName"
+                                              }
+                                            ]
+                                          },
+                                          "qualifiers": [
+                                            {
+                                              "kind": "TemplateQualifier",
+                                              "type": "SMT/Cardinality",
+                                              "valueType": "xs:string",
+                                              "value": "ZeroToOne"
+                                            }
+                                          ],
+                                          "modelType": "MultiLanguageProperty"
+                                        },
+                                        {
+                                          "idShort": "IdentificationIssuer",
+                                          "displayName": [
+                                            {
+                                              "language": "en",
+                                              "text": "Identification Issuer"
+                                            }
+                                          ],
+                                          "description": [
+                                            {
+                                              "language": "en",
+                                              "text": "Issuer of the identification to distinguish various categories of quality document"
+                                            }
+                                          ],
+                                          "semanticId": {
+                                            "type": "ExternalReference",
+                                            "keys": [
+                                              {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationIssuer"
+                                              }
+                                            ]
+                                          },
+                                          "qualifiers": [
+                                            {
+                                              "kind": "TemplateQualifier",
+                                              "type": "SMT/Cardinality",
+                                              "valueType": "xs:string",
+                                              "value": "ZeroToOne"
+                                            }
+                                          ],
+                                          "valueType": "xs:string",
+                                          "modelType": "Property"
+                                        },
+                                        {
+                                          "idShort": "IdentificationValue",
+                                          "displayName": [
+                                            {
+                                              "language": "en",
+                                              "text": "Identification Value"
+                                            }
+                                          ],
+                                          "description": [
+                                            {
+                                              "language": "en",
+                                              "text": "Placeholder for the actual identification (e.g., serial number)"
+                                            }
+                                          ],
+                                          "semanticId": {
+                                            "type": "ExternalReference",
+                                            "keys": [
+                                              {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationValue"
+                                              }
+                                            ]
+                                          },
+                                          "qualifiers": [
+                                            {
+                                              "kind": "TemplateQualifier",
+                                              "type": "SMT/Cardinality",
+                                              "valueType": "xs:string",
+                                              "value": "ZeroToOne"
+                                            }
+                                          ],
+                                          "valueType": "xs:string",
+                                          "modelType": "Property"
+                                        },
+                                        {
+                                          "idShort": "ID",
+                                          "displayName": [
+                                            {
+                                              "language": "en",
+                                              "text": "ID"
+                                            }
+                                          ],
+                                          "description": [
+                                            {
+                                              "language": "en",
+                                              "text": "Attribute for which the value is unique within the quality document"
+                                            }
+                                          ],
+                                          "semanticId": {
+                                            "type": "ExternalReference",
+                                            "keys": [
+                                              {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/ID"
+                                              }
+                                            ]
+                                          },
+                                          "qualifiers": [
+                                            {
+                                              "kind": "TemplateQualifier",
+                                              "type": "SMT/Cardinality",
+                                              "valueType": "xs:string",
+                                              "value": "ZeroToOne"
+                                            }
+                                          ],
+                                          "valueType": "xs:string",
+                                          "modelType": "Property"
+                                        },
+                                        {
+                                          "idShort": "RefID",
+                                          "displayName": [
+                                            {
+                                              "language": "en",
+                                              "text": "Ref ID"
+                                            }
+                                          ],
+                                          "description": [
+                                            {
+                                              "language": "en",
+                                              "text": "Reference to an existing ID within the quality document"
+                                            }
+                                          ],
+                                          "semanticId": {
+                                            "type": "ExternalReference",
+                                            "keys": [
+                                              {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/refID"
+                                              }
+                                            ]
+                                          },
+                                          "qualifiers": [
+                                            {
+                                              "kind": "TemplateQualifier",
+                                              "type": "SMT/Cardinality",
+                                              "valueType": "xs:string",
+                                              "value": "ZeroToMany"
+                                            }
+                                          ],
+                                          "valueType": "xs:string",
+                                          "modelType": "Property"
+                                        },
+                                        {
+                                          "idShort": "RefType",
+                                          "displayName": [
+                                            {
+                                              "language": "en",
+                                              "text": "Ref Type"
+                                            }
+                                          ],
+                                          "description": [
+                                            {
+                                              "language": "en",
+                                              "text": "Specification of a context defining identification. For instance, the temperature measurement can have as context \u0022ambientTemperature\u0022"
+                                            }
+                                          ],
+                                          "semanticId": {
+                                            "type": "ExternalReference",
+                                            "keys": [
+                                              {
+                                                "type": "GlobalReference",
+                                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identificationshttps://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/refType"
+                                              }
+                                            ]
+                                          },
+                                          "qualifiers": [
+                                            {
+                                              "kind": "TemplateQualifier",
+                                              "type": "SMT/Cardinality",
+                                              "valueType": "xs:string",
+                                              "value": "ZeroToOne"
+                                            }
+                                          ],
+                                          "valueType": "xs:string",
+                                          "modelType": "Property"
+                                        }
+                                      ],
+                                      "modelType": "SubmodelElementCollection"
+                                    }
+                                  ],
+                                  "modelType": "SubmodelElementList"
+                                }
+                              ],
+                              "modelType": "SubmodelElementCollection"
+                            }
+                          ],
+                          "modelType": "SubmodelElementList"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    },
+                    {
+                      "idShort": "Statements",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Statements"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Contains list of statement records regarding the quality assessment"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/statements"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "typeValueListElement": "SubmodelElementCollection",
+                      "value": [
+                        {
+                          "idShort": "Statement",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Statement"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "statement records regarding the quality assessment"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "idShort": "DateOfStatement",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Date Of Statement"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Date of statement"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/AdministrativeData/Statements/Date"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "valueType": "xs:dateTime",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "StatementReference",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Statement Reference"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Normative or other reference in accordance which the statement is made"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/AdministrativeData/Statement/StatementReference"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "Declaration",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Declaration"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Additional information providing context for the statement"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/AdministrativeData/Statement/Declaration"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "modelType": "MultiLanguageProperty"
+                            },
+                            {
+                              "idShort": "Conformity",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Conformity"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Statement of whether the asset is conform with requirements according to the quality document"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/Statements/Conformity"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                },
+                                {
+                                  "kind": "ValueQualifier",
+                                  "type": "SMT/Value",
+                                  "valueType": "xs:string",
+                                  "value": "pass"
+                                },
+                                {
+                                  "kind": "ValueQualifier",
+                                  "type": "SMT/Value",
+                                  "valueType": "xs:string",
+                                  "value": "fail"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        }
+                      ],
+                      "modelType": "SubmodelElementList"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "DocumentSignature",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Document Signature"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Information about the electronic signature of the quality document. The semantic structure is based on the W3C schema xmldsig"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/DocumentSignature"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "http://www.w3.org/TR/xmldsig-core1/"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "SignedInfo",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Signed Info"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Information about the signature and the algorithms used"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/DocumentSignature/SignedInfo"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "CanonicalizationMethod",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Canonicalization Method"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Information about the signature and the algorithms used"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/DocumentSignature/SignedInfo/CanonicalizationMethod"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "SignatureMethod",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Signature Method"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Information about the method used for creating the signature"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/DocumentSignature/SignedInfo/SignatureMethod"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "SignatureReference",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Signature Reference"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Additional information for processing the signature"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/DocumentSignature/SignedInfo/SignatureReference"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "OneToMany"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "idShort": "Transforms",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Transforms"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Contains the transformations applied to the resource prior to signing"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/DocumentSignature/SignedInfo/SignatureReference/Transforms"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "DigestMethod",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Digest Method"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Specifies the hash algorithm before applying the hash"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/DocumentSignature/SignedInfo/SignatureReference/DigestMethod"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "DigestValue",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Digest Value"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Contains the Base64 encoded result of applying the hash algorithm to the transformed resource"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/DocumentSignature/SignedInfo/SignatureReference/DigestValue"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    },
+                    {
+                      "idShort": "SignatureValue",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Signature Value"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Contains the Base64 encoded result of the hash algorithm, i.e., the signature generated with the parameters specified in the SignatureMethod defined in SignedInfo after applying the algorithm specified by the CanonicalizationMethod"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/DocumentSignature/SignatureValue"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "KeyInfo",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Key Info"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Information to allow the signer to provide recipients with the key that validates the signature, usually in the form of one or more X.509 digital certificates"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/DocumentSignature/KeyInfo"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "DigitalFile",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Digital File"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Digital file associated with the document."
+        }
+      ],
+      "id": "0173-1#02-ABI504#001/0173-1#01-AHF583#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Digital file"
+              },
+              {
+                "language": "de",
+                "text": "Digitale Datei"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Digital file"
+              },
+              {
+                "language": "de",
+                "text": "Digitale Datei"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "MIME-Type, file name and file contents given by the file SubmodelElement"
+              },
+              {
+                "language": "de",
+                "text": "MIME-Typ, Dateiname und Dateiinhalt, die von der Datei SubmodelElement vorgegeben werden\t"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "ConceptDescription",
+              "value": "0173-1#02-ABI504#001/0173-1#01-AHF583#001"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerName",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Manufacturer Name"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Name of the manufacturer."
+        }
+      ],
+      "id": "0173-1#02-AAO677#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerName"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ManufacturerName"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Description",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Description"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains descriptive information about the content of the parent element. This SMC is used in various instances \u2013 software, file, previousReport. Note: In future revisions this SMC will be replaced by a proper integration of the information into the respective SMCs using properties from respective Submodel Templates (e.g., Software Nameplate, Handover Documentation)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/Description/",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Description"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Description"
+              },
+              {
+                "language": "de",
+                "text": "Beschreibung"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Contains descriptive information about the content of the parent element. This SMC is used in various instances \u2013 software, file, previousReport. Note: In future revisions this SMC will be replaced by a proper integration of the information into the respective SMCs using properties from respective Submodel Templates (e.g., Software Nameplate, Handover Documentation)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Name",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Name"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "It is used to indicate the name of the parent object (e.g name of software). "
+        }
+      ],
+      "id": "http://admin-shell.io/aasx-package-explorer/functions/asciidoc/textblock/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Name"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Name"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "It is used to indicate the name of the parent object (e.g name of software). "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ItemQuantities",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Item Quantities"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Measured or specified quantities of the item."
+        }
+      ],
+      "id": "https://dccwiki.ptb.de/en/dccitemQuantities",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ItemQuantities"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Quantity"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Qauntites of the item"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ItemQuantityName",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Item Quantity Name"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Name of the quantity related to the item."
+        }
+      ],
+      "id": "https://gitlab1.ptb.de/d-ptb/d-si/xsd-d-si/-/blob/master/SI_Format.xsd",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ItemQuantityName"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "QuantityName"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the item quantity"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "UniqueIdentifier",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Unique Identifier"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "A worldwide unique identifier for the DQD (e.g., calibration certificate number) "
+        }
+      ],
+      "id": "0173-1#02-ABI501#001/0173-1#01-AHF580#001*01",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Unique Identifier"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "unique identifier"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AdministrativeData",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Administrative Data"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "This submodel element collection contains essential administrative information about the document."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/AdministrativeData",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AdministrativeData"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This submodel element collection contains essential administrative information about the document."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CoreData",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Core Data"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains essential administrative information for the quality document"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CoreData"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Core data"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Contains essential administrative information for the quality document"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Identifications",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Identifications"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Identifications contains identifiers which exactly describe the content of the parent element"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Identifications"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identifications contains identifiers which exactly describe the content of the parent element"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IdentificationIssuer",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Identification Issuer"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Issuer of the Identification"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationIssuer",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "IdentificationIssuer"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Issuer"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Issuer of the identification"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IdentificationValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Identification Value"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Identification value"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationValue",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "IdentificationValue"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Value"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identification value"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IdentificationName",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Identification Name"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Name of the identification"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/Identifications/IdentificationName",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "IdentificationName"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Name"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Name of the identification"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ItemReceiptDate",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Item Receipt Date"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Date of receipt of the items of relevance for the quality document"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/coreData/DateTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ItemReceiptDate"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ItemReceiptData"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Date of receipt of the items of relevance for the quality document"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PerformanceLocation",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Performance Location"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "This element specifies the location, for instance, where the calibration took place."
+        }
+      ],
+      "id": "https://dccwiki.ptb.de/en/dccperformanceLocationType",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PerformanceLocation"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Location"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This element specifies the location, for instance, where the calibration took place."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IssueDate",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Issue Date"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Date when the document has been officially issued"
+        }
+      ],
+      "id": "0173-1#02-ABI000#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "IssueDate"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "IssueDate"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Date when the document has been officially issued"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Items",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Items"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains unique identification, description and if applicable, conditions of the calibrated item"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/items",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Items"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "items"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Contains unique identification, description and if applicable, conditions of the calibrated item"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Item",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Item"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Item of calibration, conformity assessment or other"
+        }
+      ],
+      "id": "https://wiki.dcc.ptb.de/en/dccitem",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Item"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Item"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Item of calibration, conformity assessment or other"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Statements",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Statements"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains list of statement records regarding to the calibration"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/statements",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Statements"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Statements"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Contains list of statement records regarding to the calibration"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DateOfStatement",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Date Of Statement"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Date of statement"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/AdministrativeData/Statements/Date",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DateOfStatement"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Date"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Date of statement"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Conformity",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Conformity"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Conformity statement"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/DigitalQualityDocument/1/0/administrativeData/Statements/Conformity",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Conformity"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "Conformity"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Conformity statements"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
