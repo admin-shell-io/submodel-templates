@@ -23,11 +23,3 @@ This version is the minor release 1.1 of the Submodel template published by IDTA
 ## Difference to prior versions
 
 Version 1.0 is available under `../0`. Refer to IDTA release documentation for the detailed change record between 1.0 and 1.1.
-
-## Status
-
-This version is in productive use and supported by AASX Package Explorer (out of the box)
-
-## Update of AASX File for Compatibility with Version 3.0 of the "Asset Administration Shell" Metamodel Specification
-
-The AASX file has been updated for compatibility with version 3.0 of the Asset Administration Shell metamodel specification. The contents of the submodel remain unchanged.
