@@ -1,0 +1,4535 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "AAS_Container",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "AAS Container"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the Asset Administration Shell container for this template package."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/aas/ProcessVariablesForManufacturingKPICalculation/1/0",
+      "assetInformation": {
+        "assetKind": "NotApplicable",
+        "globalAssetId": "https://admin-shell.io/idta/asset/ProcessVariablesForManufacturingKPICalculation/1/0",
+        "defaultThumbnail": {
+          "path": "/aasx/files/title-page.png",
+          "contentType": "image/png"
+        }
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/ProcessVariablesForManufacturingKPICalculation/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "ProcessVariablesForManufacturingKPICalculation",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Process Variables For Manufacturing KPI Calculation"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the template submodel for process variables used in manufacturing KPI calculation."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ProcessVariablesForManufacturingKPICalculation/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/ProcessVariablesForManufacturingKPICalculation/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "ActualPersonnelWorkTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Actual Personnel Work Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for actual personnel work time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualPersonnelWorkTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "APWT",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for actual personnel work time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The actual personnel work time shall be the time that a worker needs for the execution of a production order."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ActualUnitProcessingTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Actual Unit Processing Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for actual unit processing time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualUnitProcessingTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "AUPT",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for actual unit processing time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The actual unit processing time shall be the actual production time plus the actual unit setup time."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ActualUnitBusyTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Actual Unit Busy Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for actual unit busy time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualUnitBusyTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "AUBT",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for actual unit busy time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The actual unit busy time shall be the actual time that a work unit is used for the execution of a production order."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ActualOrderExecutionTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Actual Order Execution Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for actual order execution time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualOrderExecutionTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "AOET",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for actual order execution time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The actual order execution time shall be the time difference between start time and end time of a production order. It includes the actual busy time, the actual transport time and the actual queuing time."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ActualPersonnelAttendanceTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Actual Personnel Attendance Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for actual personnel attendance time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualPersonnelAttendanceTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "APAT",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for actual personnel attendance time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The actual personnel attendance time shall be the actual time that a worker is available to work on production orders. It does not include actual time for company authorized break periods (e.g. lunch). It shall be the difference between login and logout excluding breaks."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ActualProductionTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Actual Production Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for actual production time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualProductionTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "APT",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for actual production time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The actual production time shall be the actual time during which a work unit is producing. It includes only the value-adding functions."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ActualQueuingTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Actual Queuing Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for actual queuing time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualQueuingTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "AQT",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for actual queuing time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The actual queuing time shall be the actual time when the work unit is not executing order production although its available."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ActualUnitDownTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Actual Unit Down Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for actual unit down time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualUnitDownTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "ADOT",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for actual unit down time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The actual unit down time shall be the actual time when the work unit is not execution order production although it is available."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ActualUnitDelayTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Actual Unit Delay Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for actual unit delay time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualUnitDelayTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "ADET",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for actual unit delay time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The actual unit delay time shall be the actual time associated with malfunction-caused interruptions, minor stoppages, and other unplanned time intervals that occur while tasks are being completed that lead to unwanted extension of the order processing time."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ActualUnitSetupTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Actual Unit Setup Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for actual unit setup time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualSetupTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "AUST",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for actual unit setup time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The actual unit setup time shall be the time consumed for the preparation of an order at a work unit."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ActualTransportTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Actual Transport Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for actual transport time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualTransportTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "ATT",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for actual transport time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The actual transport time shall be the actual time required for transport between work units."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "GoodPart",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Good Part"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for good part, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#GoodPart"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "GP",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:decimal",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for good part."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "A good part shall be the count of individual identifiable parts, e.g. by serialization, which meets the quality requirements."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "InspectedPart",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Inspected Part"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for inspected part, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#InspectedPart"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "IP",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:decimal",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for inspected part."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "An inspected part shall be the count of individual identifiable parts, e.g., by serialization, which was tested against the quality requirements."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ScrapQuantity",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Scrap Quantity"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for scrap quantity, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ScrapQuantity"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "SQ",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:decimal",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for scrap quantity."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The scrap quantity shall be the planned quantity of products for a production order (lot size, production order quantity)."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "GoodQuantity",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Good Quantity"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for good quantity, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#GoodQuantity"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "GQ",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:decimal",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for good quantity."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The good quantity shall be the produced quantity that meets quality requirements."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ReworkQuantity",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Rework Quantity"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for rework quantity, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ReworkQuantity"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "RQ",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:decimal",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for rework quantity."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The rework quantity shall be the quantity that fails to meet the quantity requirements, but where these requirements can be met by subsequent work."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "ProducedQuantity",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Produced Quantity"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for produced quantity, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#ProducedQuantity"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "PQ",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:decimal",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for produced quantity."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The produced quantity shall be the quantity that a work unit has produced in relation to a production order."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "PlannedBusyTime",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Planned Busy Time"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for planned busy time, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#PlannedBusyTime"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "PBT",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for planned busy time."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The planned busy time shall be the planned operation time minus the planned downtime."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "PlannedRuntimePerItem",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Planned Runtime Per Item"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Groups the data points for planned runtime per item, including key, current value, and comment."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://www.w3id.org/hsu-aut/ISO22400-2#PlannedRuntimePerUnit"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "key",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Key"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Bezeichner aus ISO 22400-2:2014."
+                },
+                {
+                  "language": "en",
+                  "text": "Identifier from ISO 22400-2:2014."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "PRI",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "currentValue",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Current Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Aktueller Wert der Prozessvariable."
+                },
+                {
+                  "language": "en",
+                  "text": "Current value of process variable."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:duration",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides optional comments for planned runtime per item."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "The planned run time per item shall be the planned time for producing one quantity unit."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "ProcessVariablesForManufacturingKPICalculation",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the template submodel for process variables used in manufacturing KPI calculation."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ProcessVariablesForManufacturingKPICalculation/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ProcessVariablesForManufacturingKPICalculation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines the template submodel for process variables used in manufacturing KPI calculation."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ActualPersonnelWorkTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for actual personnel work time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualPersonnelWorkTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ActualPersonnelWorkTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for actual personnel work time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "key",
+      "description": [
+        {
+          "language": "de",
+          "text": "Bezeichner aus ISO 22400-2:2014."
+        },
+        {
+          "language": "en",
+          "text": "Identifier from ISO 22400-2:2014."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/key/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "key"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identifier from ISO 22400-2:2014."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "currentValue",
+      "description": [
+        {
+          "language": "de",
+          "text": "Aktueller Wert der Prozessvariable."
+        },
+        {
+          "language": "en",
+          "text": "Current value of process variable."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/currentValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "currentValue"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Current value of process variable."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "comment",
+      "description": [
+        {
+          "language": "en",
+          "text": "Provides optional comments for actual personnel work time."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ProcessVariablesForManufacturingKPICalculation/comment/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "comment"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Provides optional comments for actual personnel work time."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ActualUnitProcessingTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for actual unit processing time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualUnitProcessingTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ActualUnitProcessingTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for actual unit processing time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ActualUnitBusyTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for actual unit busy time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualUnitBusyTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ActualUnitBusyTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for actual unit busy time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ActualOrderExecutionTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for actual order execution time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualOrderExecutionTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ActualOrderExecutionTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for actual order execution time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ActualPersonnelAttendanceTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for actual personnel attendance time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualPersonnelAttendanceTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ActualPersonnelAttendanceTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for actual personnel attendance time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ActualProductionTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for actual production time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualProductionTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ActualProductionTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for actual production time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ActualQueuingTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for actual queuing time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualQueuingTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ActualQueuingTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for actual queuing time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ActualUnitDownTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for actual unit down time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualUnitDownTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ActualUnitDownTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for actual unit down time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ActualUnitDelayTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for actual unit delay time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualUnitDelayTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ActualUnitDelayTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for actual unit delay time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ActualUnitSetupTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for actual unit setup time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualSetupTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ActualUnitSetupTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for actual unit setup time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ActualTransportTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for actual transport time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ActualTransportTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ActualTransportTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for actual transport time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "GoodPart",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for good part, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#GoodPart",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "GoodPart"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for good part, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InspectedPart",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for inspected part, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#InspectedPart",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "InspectedPart"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for inspected part, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ScrapQuantity",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for scrap quantity, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ScrapQuantity",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ScrapQuantity"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for scrap quantity, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "GoodQuantity",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for good quantity, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#GoodQuantity",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "GoodQuantity"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for good quantity, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReworkQuantity",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for rework quantity, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ReworkQuantity",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReworkQuantity"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for rework quantity, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ProducedQuantity",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for produced quantity, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#ProducedQuantity",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ProducedQuantity"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for produced quantity, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PlannedBusyTime",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for planned busy time, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#PlannedBusyTime",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PlannedBusyTime"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for planned busy time, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PlannedRuntimePerItem",
+      "description": [
+        {
+          "language": "en",
+          "text": "Groups the data points for planned runtime per item, including key, current value, and comment."
+        }
+      ],
+      "id": "http://www.w3id.org/hsu-aut/ISO22400-2#PlannedRuntimePerUnit",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PlannedRuntimePerItem"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Groups the data points for planned runtime per item, including key, current value, and comment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
