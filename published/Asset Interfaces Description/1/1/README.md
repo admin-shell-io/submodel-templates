@@ -6,12 +6,15 @@ This is a Submodel template specification for the Asset Adminstration Shell.
 
 This Submodel specifies an information model and a common representation for describing the interface(s) of an asset service or asset-related service. Based on this information, it is possible to initiate a connection to such kind of service and start to request or subscribe to served datapoints, and/or perform operations. Such datapoints of a system service can be, for example, various sensor and/or status values, and an operation can trigger an actuator, such as switching a motor "on" or "off".
 The Asset Interfaces Description (AID) in version 1.1 supports the description of interfaces based on following specific protocols:
+
 - Modbus
 - HTTP
 - MQTT
 - OPC UA
 - BACnet
+  
 Informative, the IO-Link protocol that is bridged to REST/HTTP and PROFINET is introduced in AID 1.1 in Annex B. Any other protocols and interfaces will be addressed in upcoming versions of the AID.
+
 The W3C Web of Things Thing Description (WoT TD) as an open, royalty-free standard is considered as a baseline for the content and structure of the definition of this Submodel template. The protocol-specific information is taken from the official WoT bindings that are maintained by the W3C or other SDOs like the OPC Foundation (e.g., OPC 10101 for OPC UA Binding).
 In addition to the protocol-specific information provided by the AID, it also provides the ability to reference external descriptors such as GSD, GSDML, IO Device Description, native WoT TD (as a supplement), etc. This external descriptor is not restricted to the protocols currently defined in AID.
 As a complement to the AID, an Asset Interfaces Mapping Configuration (AIMC) Submodel can be used to map the received data from the asset services to a specific place within an AAS (e.g., an application-specific Submodel to monitor data). The principal scope and use of the AID Submodel in combination with an AIMC is explained in the following figure:
