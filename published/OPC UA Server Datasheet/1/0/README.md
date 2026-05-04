@@ -12,10 +12,12 @@ This document was developed by a Joint Working Group (JWG) consisting of members
 
 The usage of the OPC UA Server Datasheet in the operational phase of a device life cycle is in two parts. First is by a native OPC UA client (AAS user application, green square) in Figure 1 that uses the OPC UA Server Datasheet Submodel through AASX file or over AAS REST API [7] to understand what the OPC UA Server responsible for an asset offers. The other part is by an OPC UA client (asset integration, black square) in Figure 2 that is enabled by the Submodel template Asset Interfaces Description (AID).
 
-image.png
+<img width="1004" height="348" alt="image" src="https://github.com/user-attachments/assets/6cce0ce7-83a5-4e9b-8e4c-dd13eb16482e" />
+
 Figure 1: Overall blueprint of OPC UA asset integration with native OPC UA client.
 
-image.png
+<img width="1004" height="391" alt="image" src="https://github.com/user-attachments/assets/6ab5a057-d19f-4540-85a2-fb2d04a3fb06" />
+
 Figure 2: Overall blueprint of OPC UA asset integration with AID.
 
 ## About this version
