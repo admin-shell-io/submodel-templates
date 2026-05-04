@@ -1,0 +1,3002 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "OPCUAServerDataSheet",
+      "id": "https://admin-shell.io/idta/aas/opcuaserverdatasheet/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/opcuaserverdatasheet/1/0",
+        "defaultThumbnail": {
+          "path": "/aasx/files/title-page.png",
+          "contentType": "image/png"
+        }
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "UAServerDataSheet",
+      "description": [
+        {
+          "language": "en",
+          "text": "Definition of the Submodel OPC UA Server Datasheet identified by its semanticId. "
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "Configuration",
+          "description": [
+            {
+              "language": "en",
+              "text": "Indicates entry point for the configuration parameter of an OPC UA server application. "
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/Configuration"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "NodeSets",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides a container for nodeset files that is intended for configuring the server. By default, the UA nodeset is always included during configuration as base nodeset."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/NodeSets"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "typeValueListElement": "File",
+              "value": [
+                {
+                  "idShort": "DI",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Provides a placeholder for a nodeset file that an OPC UA server uses to create AddressSpace during configuration. The nodeset can be part of the machine\u2019s AASX file, in an OPC cloud library or in another downloadable endpoint. "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/NodeSetFile"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "value": "/aasx/files/Opc.Ua.Di.NodeSet2.xml",
+                  "contentType": "text/xml",
+                  "modelType": "File"
+                }
+              ],
+              "modelType": "SubmodelElementList"
+            },
+            {
+              "idShort": "AllowAnonymousUser",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates to the client application that the server allows or denies anonymous users."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/AllowAnonymous"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "SupportSecurityModeNone",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates to the client application that a server supports none security mode."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityModeNone"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:integer",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "SupportSecurityModeSign",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates to the client application that a server supports sign security mode"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityModeSign"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:integer",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "SupportSecurityModeSignEncrypt",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates to the client application that a server supports sign and encrypt security mode."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityModeSignEncrypt"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:integer",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "SupportSecurityPolicyUris",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides a container for list of security policies that the server supports."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SupportSecurityPolicyUris"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "typeValueListElement": "Property",
+              "valueTypeListElement": "xs:string",
+              "value": [
+                {
+                  "idShort": "SecurityPolicyUriBasic256Sha256",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Indicates the security policy uri supported by the server. For example, if the server supports basic128Rsa15, the value will be  http://opcfoundation.org/UA/SecurityPolicy#Basic128Rsa15."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityPolicyUri"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementList"
+            },
+            {
+              "idShort": "SupportRedundancy",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates to the client application that the server supports Redundancy. If the value is true, the type of redundancy supported can be found in RedundancySupport node (i=851)."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SupportRedundancy"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "Identification",
+          "description": [
+            {
+              "language": "en",
+              "text": "Indicates the entry point for Identification parameters of an OPC UA server application. The Identification uses BuildInfo structure defined in OPC UA Part 5 "
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/Identification"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "ProductUri",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "This is a URI that identifies the OPC UA server."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAY811#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "ManufacturerName",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates the name of the OPC UA Server application manufacturer."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO677#002"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "ProductName",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates the name of the OPC UA Server application."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/ProductName"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "SoftwareVersion",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates the software version of the OPC UA server application."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0112/2///61987#ABA601#008"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "BuildNumber",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates the build number of the OPC UA server application."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/BuildNumber"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "BuildDate",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Indicates the build date of the OPC UA Server application as UTC time with format YYYY-MM-DDTHH:MM:SS.sss."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/BuildDate"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:dateTime",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "EndpointDescriptions",
+          "description": [
+            {
+              "language": "en",
+              "text": "Indicates the entry point of an online OPC UA server access. The Endpoint description uses the EndpointDescription structure defined in OPC UA Part 4 [9]. "
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/EndpointDescriptions"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "EndpointDescription01",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Provides information on how to access an OPC UA server. "
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/EndpointDescription"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "EndpointUri",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Defines the URL for the server endpoint. "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/EndpointUri"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Server",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Defines the description of the server that the endpoint belongs to. "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/Server"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "ApplicationUri",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Defines a URI that uniquely identifies the application instance. "
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/ApplicationUri"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "ProductUri",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "This is a URI that identifies the OPC UA server."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-AAY811#001"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "ApplicationName",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Defines a localized descriptive name for the server application."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/ApplicationName"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "EMPTY"
+                        }
+                      ],
+                      "modelType": "MultiLanguageProperty"
+                    },
+                    {
+                      "idShort": "ApplicationType",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Defines the type of application as an enumeration. Acceptable values for this term are Server, Client, ClientAndServer, DiscoveryServer. For UAServerDataSheet Submodel, the focus is on OPC UA server so only Server and ClientAndServer value are valid for this Submodel."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/ApplicationType"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "GatewayServerUri",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Defines the URI that identifies the gateway server that is linked with the discovery Uris. If the server can be accessed directly, this term is not defined. "
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/GatewayServerUri"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "DiscoveryProfileUri",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Defines the URI that identifies the discovery profile that is supported by the URLs. "
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/DiscoveryProfileUri"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "DiscoveryUrls",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Provides a list of discovery endpoints used by the server application."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/DiscoveryUrls"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "typeValueListElement": "Property",
+                      "valueTypeListElement": "xs:string",
+                      "value": [
+                        {
+                          "idShort": "DiscoveryUrl",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Defines the discovery Url of the server application."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/DiscoveryUrl"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToMany"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementList"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "ServerCertificate",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "When a server is instantiated, a certificate is issued and the certificate contains information that a client can use to validate a server when establishing a session. The server certificate uses Application Instance Certificate model of the OPC UA part 2 [8] and 4[9] as byte64 encoded string."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/Servercertificate"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "contentType": "text/plain",
+                  "modelType": "Blob"
+                },
+                {
+                  "idShort": "SecurityMode",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Defines the type of security mode attached to the endpoint description. The mode can be one of the following values: None, Sign, SignAndEncrypt, Invalid."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityMode"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "SecurityPolicyUri",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Defines the security policy to use when securing messages."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityPolicyUri"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "UserIdentityTokens",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Defines the list of user identity tokens that the server will accept."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/UserIdentityTokens"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "typeValueListElement": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "UserIdentityToken",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Defines an identity token that can be used to access the server application."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/UserIdentityToken"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToMany"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "PolicyId",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "PolicyId is provided by a server application to defines an identifier for the token policy. "
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/PolicyId"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "TokenType",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Indicates the kind of user identity token required. This term us an enumeration with one of the following values Anonymous,Username,Certificate,IssueToken."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/TokenType"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "value": "Anonymous or UserName or Certificate or IssuedToken",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "IssuedTokenType",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Specified only when TokenType is IssuedToken to indicates the URI for the type of token."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/IssuedTokenType"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "IssuerEndpointUri",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Defines the endpoint of the authorization service. The value provided here depends on the IssuedTokenType term.  "
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/IssuerEndpointUri"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "SecurityPolicyUri",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Defines the security policy to use when encrypting or signing the UserIdentityToken when it is passed to the Server in the active session request."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityPolicyUri"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                },
+                {
+                  "idShort": "TransportProfileUri",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Defines the URI of the transport profile supported by the server endpoint. Because the transport profiles can be updated in the future, this value is intended to support both future and present transport profile uri officially defined by OPC UA."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/TransportProfileUri"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "SecurityLevel",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "A numeric value that indicates how secure the EndpointDescription is compared to other EndpointDescriptions for the same Server. A value of 0 indicates that the EndpointDescription is not recommended and is only supported for backward compatibility. A higher value indicates better security. "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityLevel"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:integer",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        },
+        {
+          "idShort": "DiscoveryUrls",
+          "description": [
+            {
+              "language": "en",
+              "text": "Provides a list of discovery endpoints used by the server application."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/DiscoveryUrls"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "typeValueListElement": "Property",
+          "valueTypeListElement": "xs:string",
+          "value": [
+            {
+              "idShort": "DiscoveryUrl",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Defines the discovery Url of the server application."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/DiscoveryUrl"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "UAServerDataSheet",
+      "description": [
+        {
+          "language": "en",
+          "text": "Definition of the Submodel OPC UA Server Datasheet identified by its semanticId. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "UAServerDataSheet"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Definition of the Submodel OPC UA Server Datasheet identified by its semanticId. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Configuration",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates entry point for the configuration parameter of an OPC UA server application. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/Configuration",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Configuration"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates entry point for the configuration parameter of an OPC UA server application. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NodeSets",
+      "description": [
+        {
+          "language": "en",
+          "text": "Provides a container for nodeset files that is intended for configuring the server. By default, the UA nodeset is always included during configuration as base nodeset."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/NodeSets",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "NodeSets"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Provides a container for nodeset files that is intended for configuring the server. By default, the UA nodeset is always included during configuration as base nodeset."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DI",
+      "description": [
+        {
+          "language": "en",
+          "text": "Provides a placeholder for a nodeset file that an OPC UA server uses to create AddressSpace during configuration. The nodeset can be part of the machine\u2019s AASX file, in an OPC cloud library or in another downloadable endpoint. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/NodeSetFile",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DI"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Provides a placeholder for a nodeset file that an OPC UA server uses to create AddressSpace during configuration. The nodeset can be part of the machine\u2019s AASX file, in an OPC cloud library or in another downloadable endpoint. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AllowAnonymousUser",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates to the client application that the server allows or denies anonymous users."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/AllowAnonymous",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AllowAnonymousUser"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates to the client application that the server allows or denies anonymous users."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SupportSecurityModeNone",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates to the client application that a server supports none security mode."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityModeNone",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SupportSecurityModeNone"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates to the client application that a server supports none security mode."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SupportSecurityModeSign",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates to the client application that a server supports sign security mode"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityModeSign",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SupportSecurityModeSign"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates to the client application that a server supports sign security mode"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SupportSecurityModeSignEncrypt",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates to the client application that a server supports sign and encrypt security mode."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityModeSignEncrypt",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SupportSecurityModeSignEncrypt"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates to the client application that a server supports sign and encrypt security mode."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SupportSecurityPolicyUris",
+      "description": [
+        {
+          "language": "en",
+          "text": "Provides a container for list of security policies that the server supports."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SupportSecurityPolicyUris",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SupportSecurityPolicyUris"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Provides a container for list of security policies that the server supports."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SecurityPolicyUriBasic256Sha256",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the security policy uri supported by the server. For example, if the server supports basic128Rsa15, the value will be  http://opcfoundation.org/UA/SecurityPolicy#Basic128Rsa15."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityPolicyUri",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SecurityPolicyUriBasic256Sha256"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the security policy uri supported by the server. For example, if the server supports basic128Rsa15, the value will be  http://opcfoundation.org/UA/SecurityPolicy#Basic128Rsa15."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SupportRedundancy",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates to the client application that the server supports Redundancy. If the value is true, the type of redundancy supported can be found in RedundancySupport node (i=851)."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SupportRedundancy",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SupportRedundancy"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates to the client application that the server supports Redundancy. If the value is true, the type of redundancy supported can be found in RedundancySupport node (i=851)."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Identification",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the entry point for Identification parameters of an OPC UA server application. The Identification uses BuildInfo structure defined in OPC UA Part 5 "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/Identification",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Identification"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the entry point for Identification parameters of an OPC UA server application. The Identification uses BuildInfo structure defined in OPC UA Part 5 "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ProductUri",
+      "description": [
+        {
+          "language": "en",
+          "text": "This is a URI that identifies the OPC UA server."
+        }
+      ],
+      "id": "0173-1#02-AAY811#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ProductUri"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This is a URI that identifies the OPC UA server."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the name of the OPC UA Server application manufacturer."
+        }
+      ],
+      "id": "0173-1#02-AAO677#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerName"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the name of the OPC UA Server application manufacturer."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ProductName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the name of the OPC UA Server application."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/ProductName",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ProductName"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the name of the OPC UA Server application."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SoftwareVersion",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the software version of the OPC UA server application."
+        }
+      ],
+      "id": "0112/2///61987#ABA601#008",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SoftwareVersion"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the software version of the OPC UA server application."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "BuildNumber",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the build number of the OPC UA server application."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/BuildNumber",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "BuildNumber"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the build number of the OPC UA server application."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "BuildDate",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the build date of the OPC UA Server application as UTC time with format YYYY-MM-DDTHH:MM:SS.sss."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SoftwareNameplate/1/0/SoftwareNameplate/SoftwareNameplateType/BuildDate",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "BuildDate"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the build date of the OPC UA Server application as UTC time with format YYYY-MM-DDTHH:MM:SS.sss."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "EndpointDescriptions",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the entry point of an online OPC UA server access. The Endpoint description uses the EndpointDescription structure defined in OPC UA Part 4 [9]. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/EndpointDescriptions",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "EndpointDescriptions"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the entry point of an online OPC UA server access. The Endpoint description uses the EndpointDescription structure defined in OPC UA Part 4 [9]. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "EndpointDescription01",
+      "description": [
+        {
+          "language": "en",
+          "text": "Provides information on how to access an OPC UA server. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/EndpointDescription",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "EndpointDescription01"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Provides information on how to access an OPC UA server. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "EndpointUri",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the URL for the server endpoint. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/EndpointUri",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "EndpointUri"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines the URL for the server endpoint. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Server",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the description of the server that the endpoint belongs to. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/Server",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Server"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines the description of the server that the endpoint belongs to. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ApplicationUri",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines a URI that uniquely identifies the application instance. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/ApplicationUri",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ApplicationUri"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines a URI that uniquely identifies the application instance. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ApplicationName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines a localized descriptive name for the server application."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/ApplicationName",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ApplicationName"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines a localized descriptive name for the server application."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ApplicationType",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the type of application as an enumeration. Acceptable values for this term are Server, Client, ClientAndServer, DiscoveryServer. For UAServerDataSheet Submodel, the focus is on OPC UA server so only Server and ClientAndServer value are valid for this Submodel."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/ApplicationType",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ApplicationType"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines the type of application as an enumeration. Acceptable values for this term are Server, Client, ClientAndServer, DiscoveryServer. For UAServerDataSheet Submodel, the focus is on OPC UA server so only Server and ClientAndServer value are valid for this Submodel."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "GatewayServerUri",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the URI that identifies the gateway server that is linked with the discovery Uris. If the server can be accessed directly, this term is not defined. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/GatewayServerUri",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "GatewayServerUri"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines the URI that identifies the gateway server that is linked with the discovery Uris. If the server can be accessed directly, this term is not defined. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DiscoveryProfileUri",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the URI that identifies the discovery profile that is supported by the URLs. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/DiscoveryProfileUri",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DiscoveryProfileUri"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines the URI that identifies the discovery profile that is supported by the URLs. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DiscoveryUrls",
+      "description": [
+        {
+          "language": "en",
+          "text": "Provides a list of discovery endpoints used by the server application."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/DiscoveryUrls",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DiscoveryUrls"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Provides a list of discovery endpoints used by the server application."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DiscoveryUrl",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the discovery Url of the server application."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/DiscoveryUrl",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DiscoveryUrl"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines the discovery Url of the server application."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ServerCertificate",
+      "description": [
+        {
+          "language": "en",
+          "text": "When a server is instantiated, a certificate is issued and the certificate contains information that a client can use to validate a server when establishing a session. The server certificate uses Application Instance Certificate model of the OPC UA part 2 [8] and 4[9] as byte64 encoded string."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/Servercertificate",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ServerCertificate"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "When a server is instantiated, a certificate is issued and the certificate contains information that a client can use to validate a server when establishing a session. The server certificate uses Application Instance Certificate model of the OPC UA part 2 [8] and 4[9] as byte64 encoded string."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SecurityMode",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the type of security mode attached to the endpoint description. The mode can be one of the following values: None, Sign, SignAndEncrypt, Invalid."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityMode",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SecurityMode"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines the type of security mode attached to the endpoint description. The mode can be one of the following values: None, Sign, SignAndEncrypt, Invalid."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "UserIdentityTokens",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the list of user identity tokens that the server will accept."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/UserIdentityTokens",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "UserIdentityTokens"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines the list of user identity tokens that the server will accept."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "UserIdentityToken",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines an identity token that can be used to access the server application."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/UserIdentityToken",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "User Identity Token"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines an identity token that can be used to access the server application."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PolicyId",
+      "description": [
+        {
+          "language": "en",
+          "text": "PolicyId is provided by a server application to defines an identifier for the token policy. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/PolicyId",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PolicyId"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "PolicyId is provided by a server application to defines an identifier for the token policy. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TokenType",
+      "description": [
+        {
+          "language": "en",
+          "text": "Indicates the kind of user identity token required. This term us an enumeration with one of the following values Anonymous,Username,Certificate,IssueToken."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/TokenType",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TokenType"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Indicates the kind of user identity token required. This term us an enumeration with one of the following values Anonymous,Username,Certificate,IssueToken."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IssuedTokenType",
+      "description": [
+        {
+          "language": "en",
+          "text": "Specified only when TokenType is IssuedToken to indicates the URI for the type of token."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/IssuedTokenType",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "IssuedTokenType"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Specified only when TokenType is IssuedToken to indicates the URI for the type of token."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IssuerEndpointUri",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the endpoint of the authorization service. The value provided here depends on the IssuedTokenType term.  "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/IssuerEndpointUri",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "IssuerEndpointUri"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines the endpoint of the authorization service. The value provided here depends on the IssuedTokenType term.  "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TransportProfileUri",
+      "description": [
+        {
+          "language": "en",
+          "text": "Defines the URI of the transport profile supported by the server endpoint. Because the transport profiles can be updated in the future, this value is intended to support both future and present transport profile uri officially defined by OPC UA."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/TransportProfileUri",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TransportProfileUri"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Defines the URI of the transport profile supported by the server endpoint. Because the transport profiles can be updated in the future, this value is intended to support both future and present transport profile uri officially defined by OPC UA."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SecurityLevel",
+      "description": [
+        {
+          "language": "en",
+          "text": "A numeric value that indicates how secure the EndpointDescription is compared to other EndpointDescriptions for the same Server. A value of 0 indicates that the EndpointDescription is not recommended and is only supported for backward compatibility. A higher value indicates better security. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/UAServerDatasheet/1/0/SecurityLevel",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SecurityLevel"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "EMPTY"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "A numeric value that indicates how secure the EndpointDescription is compared to other EndpointDescriptions for the same Server. A value of 0 indicates that the EndpointDescription is not recommended and is only supported for backward compatibility. A higher value indicates better security. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
