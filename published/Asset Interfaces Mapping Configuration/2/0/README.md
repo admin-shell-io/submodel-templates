@@ -28,6 +28,8 @@ Example AIMC usage patterns:
 
 The AIMC 2.0 adapts to the structure and protocols supported by the AID 1.1 standard: Modbus, HTTP, MQTT, OPC UA, BACnet. Subsequent releases of AID versions may trigger the release of adapted AIMC versions.
 
+<img width="501" height="204" alt="image" src="https://github.com/user-attachments/assets/3720ff4b-043a-4088-b114-2b19772e34f9" />
+
 Figure 1. AIMC Use Cases
 
 ## About this version
