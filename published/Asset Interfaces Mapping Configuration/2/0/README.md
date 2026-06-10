@@ -39,7 +39,3 @@ This version is the official Submodel template version 2.0 published by IDTA.
 ## Difference to prior versions
 
 This version is based on version 1.0 (IDTA-02027-1-0).
-
-## Status
-
-This version is in preparation for publication.
