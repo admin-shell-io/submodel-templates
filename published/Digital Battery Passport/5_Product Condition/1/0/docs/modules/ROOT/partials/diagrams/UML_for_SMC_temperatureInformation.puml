@@ -1,0 +1,21 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  TemperatureInformation
+
+class "TemperatureInformation" as ID00000001 <<SMC>> {
+  +MeasuredTemp : xs:float [0..1]
+  +TimeExtremeHighTemp : xs:float [0..1]
+  +TimeExtremeLowTemp : xs:float [0..1]
+  +TimeExtremeHighTempCharging  : xs:float [0..1]
+  +TimeExtremeLowTempCharging : xs:float [0..1]
+  +LastUpdate : xs:dateTime
+}
+
+@enduml
