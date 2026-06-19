@@ -1,0 +1,18 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  AddressOfSupplier
+
+class "AddressOfSupplier" as ID00000001 <<SMC>> {
+  +NationalCode : MLP
+  +PostalCode : MLP
+  +Street : MLP
+}
+
+@enduml

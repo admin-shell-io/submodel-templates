@@ -1,0 +1,46 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  SparePartSupplier
+
+class "SparePartSupplier" as ID00000001 <<SMC>> {
+  +NameOfSupplier : MLP
+  +AddressOfSupplier : SMC
+  +EmailAddressOfSupplier : SMC
+  +SupplierWebAddress : xs:string
+  +Components : SML
+}
+
+class "AddressOfSupplier" as ID00000002 <<SMC>> {
+  +NationalCode : MLP
+  +PostalCode : MLP
+  +Street : MLP
+}
+
+class "EmailAddressOfSupplier" as ID00000003 <<SMC>> {
+  +EmailAddress : xs:string
+  +PublicKey : MLP [0..1]
+  +TypeOfEmailAddress : xs:string [0..1]
+  +TypeOfPublicKey : MLP [0..1]
+}
+
+class "Components" as ID00000004 <<SML>> {
+  +[00] Component : SMC [1..*]
+}
+
+class "[00] Component" as ID00000005 <<SMC>> {
+  +PartName : xs:string
+  +PartNumber : xs:string
+}
+
+ID00000001 *--  ID00000002 : ""
+ID00000001 *--  ID00000003 : ""
+ID00000004 *--  ID00000005 : ""
+ID00000001 *--  ID00000004 : ""
+@enduml

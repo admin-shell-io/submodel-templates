@@ -1,0 +1,19 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  EmailAddressOfSupplier
+
+class "EmailAddressOfSupplier" as ID00000001 <<SMC>> {
+  +EmailAddress : xs:string
+  +PublicKey : MLP [0..1]
+  +TypeOfEmailAddress : xs:string [0..1]
+  +TypeOfPublicKey : MLP [0..1]
+}
+
+@enduml
