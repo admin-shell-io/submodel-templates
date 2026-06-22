@@ -1,0 +1,1712 @@
+
+
+= IDTA 02035-7 : Digital Battery Passport - Part 7: Circularity
+February 2026 - Joint Publication of IDTA and Catena-X 
+
+
+
+=== Imprint 
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+[cols="1,1,4"]
+|===
+
+h|Date
+h|Version
+h|Comment
+
+|24.03.2026
+|1.0.1
+a|
+* Bugfix Documentation Generation
+* Bugfix in aasx: correct typeValueListElement and valueTypeListElement in some SML
+* Remove Annex B. Changes to the submodel template: redundant to Version History at the beginning of the document
+* Correct ID of ConceptDescription for ExtinguishingAgent
+* Add Digital Battery Passport Guideline to Bibliography
+* Minor editorial changes
+
+
+
+|18.02.2026
+|1.0
+a|Release of the official Submodel Template published by IDTA – a joint result of the Model Expert Group comprising IDTA, Catena-X, and the Battery Pass Consortium.
+
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+
+=== About this document
+This document is a part of an overall specification series [4]. 
+Each part specifies the contents of a Submodel Template (SMT). 
+The  specifications of the Asset Administration Shell (AAS) are the basis for the Submodel Template specifications, see [3]. 
+
+The target audience of the specification are developers and editors of technical 
+documentation and manufacturer information, which are describing assets by means of the Asset Administration Shell (AAS) and 
+therefore need to create a Submodel instance with a hierarchy of 
+SubmodelElements. 
+This document especially details on the question, which SubmodelElements with which semantic identification shall be used for this purpose.
+
+This specification was created following the "semantic-driven workflow" as defined in [5] based on Aspect Models [6].
+There is no central dictionary or repository for Aspect Models. 
+In this specification the following sources are used for defining semantics:
+
+- Aspect Models published at link:https://industrialdigitaltwin.org/[IDTA] [7]: https://github.com/admin-shell-io/smt-semantic-models, models with namespace "io.admin-shell"
+
+- Aspect Models published by the link:https://thebatterypass.eu/[BatteryPass Consortium] (closed project) [8]: https://github.com/batterypass/BatteryPassDataModel, models with namespace "io.BatteryPass"
+
+- Aspect Models published at Tractus-X and used in standards published by link:https://catena-x.net/[Catena-X] [9]: https://github.com/eclipse-tractusx/sldt-semantic-models, models with namespace "io.catenax"
+
+
+
+
+
+
+
+
+=== Scope of the Submodel
+This Submodel template aims to define the data points related to circularity of a Battery Passport conformant to DIN DKE SPEC 99100 and the corresponding EU regulations.
+
+The battery passport consists of the following 7 parts:
+
+    Digital Battery Passport - Part 1: Digital Nameplate (IDTA-02035-1)
+    Digital Battery Passport - Part 2: Handover Documentation (IDTA-02035-2)
+    Digital Battery Passport - Part 3: Product Carbon Footprint (IDTA-02035-3)
+    Digital Battery Passport - Part 4: Technical Data (IDTA-02035-4)
+    Digital Battery Passport - Part 5: Product Condition (IDTA-02035-5)
+    Digital Battery Passport - Part 6: Material Composition (IDTA-02035-6)
+    Digital Battery Passport - Part 7: Circularity (IDTA-02035-7)
+    
+This specification is Part 7: Circularity (IDTA_02035-7).
+
+For more information see [10].
+
+
+
+
+
+=== Relevant standards for the Submodel Template
+This submodel template fulfills the requirements for data points related to circularity as defined in DIN DKE SPEC 99100 [1].
+DIN DKE SPEC 99100 "is based on the European Union and key Member States current regulatory requirements for battery passport information. 
+Mandatory information for the battery passport as stated in the EU Battery Regulation (EU)2023/1542, Article77 and AnnexXIII, 
+as well as the Ecodesign for Sustainable Products Regulation (ESPR), is supplemented by recommendations to increase sustainability and circularity. [1]"
+
+This document is valid for all battery categories. 
+Please be aware that for battery categories that have stronger requirements like industrial batteries with battery management systems etc. some of the data points are specified as optional although mandatory per regulation. 
+
+
+
+
+
+=== Explanations on used UML diagrams
+For clarity and an improved legibility readers suggested to go through this section at first before reading the following chapters.
+
+UML diagrams feature box-like elements, called "classes". These classes, typically Submodels, SubmodelElementCollections or SubmodelElementLists, typically feature a set of Properties or further SubmodelElements. These elements can have specific cardinalities.
+
+The single classes are hierarchally organized by aggregation relations, these can be seen as "contains" relation.
+
+For a further overview on UML diagrams please refer to [2] and [3]. 
+
+Further details about used table formats please refer to Annex A Explanations.
+
+
+
+
+== Information set for Submodel “Circularity”
+
+
+=== General
+The "Circularity" Submodel Template is part of the specification series for the Battery Passport.
+
+*Property specification*
+
+See <<_information_structures_and_attributes,clause 3 "Information structures and attributes">>.
+
+
+=== Overview UML model
+The SubmodelElements described in section 3 are structured in the following way (see <<UML_overview>>):
+
+[plantuml, UML_overview, svg, id="UML_overview", title="UML overview"]
+----
+include::partial$diagrams/UML_overview.puml[]
+----
+
+  
+  
+
+
+
+
+== Information structures and attributes
+
+=== Properties of the Submodel “Circularity”
+<<UML_Submodel>> shows the UML-diagram defining the relevant properties which need to be set. 
+
+[plantuml, UML_Submodel, svg, id="UML_Submodel", title="UML-Diagram for Submodel \"Circularity\""]
+----
+include::partial$diagrams/UML_Submodel.puml[]
+----
+
+  
+  
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_1_Submodel],[ReferenceElement, Table_Submodel]
+
+
+
+[width="100%", id="Table_Submodel", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Circularity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Dismantling information (including at least: exploded diagrams of the battery system/pack showing the location of battery cells; disassembly sequences; type and number of fastening techniques to be unlocked; tools required for disassembly; warnings if risk of damaging parts exists; amount of cells used and layout); part numbers for components and contact details of sources for replacement spares; safety measures 
+   
+   (Annex XIII (2b-d)); usable extinguishing agent (Annex VI, Part A(9)). 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SML]  +
+ +
+DismantlingAndRemovalInformation
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#dismantlingAndRemovalInformation  +
+ +
+
+   Dismantling and Removal information, including at least:
+   * Exploded diagrams of the battery system/pack showing the location of battery cells
+   * Disassembly sequences
+   * Type and number of fastening techniques to be unlocked
+   * Tools required for disassembly
+   * Warnings if risk of damaging parts exists
+   * Amount of cells used and layout. 
+   
+   BR Annex XIII (2c)
+
+DIN DKE Spec 99100 chapter reference: 6.6.1.2
+   
+    > NOTE: For more information on the document identified by its document ID please refer to the Handover Documentation of the battery.
+	 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+SparePartSources
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#sparePartSources  +
+ +
+Contact details of sources for replacement spares. Postal address, including name and brand names, postal code and place, street and number, country, telephone, if any. BR Annex XIII (2b)
+
+DIN DKE Spec 99100 chapter reference: 6.6.1.3 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+RecycledContentInformation
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledContent  +
+ +
+Share of material recovered from waste present in active materials for each battery model per year and per manufacturing plant.
+
+DIN DKE Spec 99100 chapter reference:  6.6.2.3 - 6.6.2.10 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SMC]  +
+ +
+SafetyMeasures
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyMeasures  +
+ +
+Safety measures and instructions should also take past negative and extreme events as well as the separate data attributes 'battery status' and 'battery composition/chemistry' into account.
+
+DIN DKE Spec 99100 chapter reference: 6.6.1.5 
+|[]  +
+ +
+2 elements
+|1
+
+
+
+|[SMC]  +
+ +
+EndOfLifeInformation
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#endOfLifeInformation  +
+ +
+Producer or producer responsibility organisations shall make information available to distributors and end-users on: the role of end-users in contributing to waste prevention, including by information on good practices and recommendations concerning the use of batteries aiming at extending their use phase and the possibilities of re-use, preparing for re-use, preparing for repurpose, repurposing and remanufacturing.
+
+DIN DKE Spec 99100 chapter reference: 6.6.3.2 - 6.6.3.4 
+|[]  +
+ +
+3 elements
+|1
+
+
+
+|[Prop]  +
+ +
+RenewableContent
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#renewableContent  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL867#001 +
+ +
+Share of renewable material content. A renewable material is a material made of natural resources that can be replenished. 
+
+DIN DKE Spec 99100 chapter reference: 6.6.2.11 
+|[Float]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+
+=== Properties of the SML "DismantlingAndRemovalInformation"
+
+<<UML_for_SML_dismantlingAndRemovalInformation>> shows the UML-diagram for `SML DismantlingAndRemovalInformation`.
+
+[plantuml, UML_for_SML_dismantlingAndRemovalInformation, svg, id="UML_for_SML_dismantlingAndRemovalInformation", title="UML-Diagram for SML \"DismantlingAndRemovalInformation\""]
+----
+include::partial$diagrams/UML_for_SML_dismantlingAndRemovalInformation.puml[]
+----
+
+List of data points related to dismantling and removal information.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_2_Properties_of_the_SML_dismantlingAndRemovalInformation],[ReferenceElement, Table_SML_dismantlingAndRemovalInformation]
+
+
+
+[width="100%", id="Table_SML_dismantlingAndRemovalInformation", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}DismantlingAndRemovalInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#dismantlingAndRemovalInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Circularity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=Property, valueTypeListElement=xs:string 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+DocumentIdentifier
+|urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier  +
+ +
+Alphanumeric character sequence uniquely identifying a document. 
+|[String]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "SparePartSources"
+
+<<UML_for_SML_sparePartSources>> shows the UML-diagram for `SML SparePartSources`.
+
+[plantuml, UML_for_SML_sparePartSources, svg, id="UML_for_SML_sparePartSources", title="UML-Diagram for SML \"sparePartSources\""]
+----
+include::partial$diagrams/UML_for_SML_sparePartSources.puml[]
+----
+
+List of data points related to spare part sources.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_3_Properties_of_the_SML_sparePartSources],[ReferenceElement, Table_SML_sparePartSources]
+
+
+
+[width="100%", id="Table_SML_sparePartSources", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}SparePartSources 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#sparePartSources 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Circularity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+SparePartSupplier
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSupplier  +
+ +
+The part numbers for components should be provided together with the postal address, e-mail address and web address of the sources for spare parts. \n\nDIN DKE Spec 99100 chapter reference: 6.6.1.3 
+|[]  +
+ +
+5 elements
+|0..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "RecycledContentInformation"
+
+<<UML_for_SML_recycledContent>> shows the UML-diagram for `SML RecycledContentInformation`.
+
+[plantuml, UML_for_SML_recycledContent, svg, id="UML_for_SML_recycledContent", title="UML-Diagram for SML \"RecycledContentInformation\""]
+----
+include::partial$diagrams/UML_for_SML_recycledContent.puml[]
+----
+
+List of data points related to recycled content.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_4_Properties_of_the_SML_recycledContent],[ReferenceElement, Table_recycledContent]
+
+
+
+[width="100%", id="Table_recycledContent", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RecycledContentInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledContent 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Circularity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+RecycledContent
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContent  +
+ +
+A battery passport must include recycled content information.\n\nThe content information must include the percentage share of nickel that is present in active materials and that has been recovered from battery manufacturing waste, for each battery model per year and per manufacturing plant. 
+|[]  +
+ +
+3 elements
+|1..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "SafetyMeasures"
+
+<<UML_for_SML_safetyMeasures>> shows the UML-diagram for `SML SafetyMeasures`.
+
+[plantuml, UML_for_SML_safetyMeasures, svg, id="UML_for_SML_safetyMeasures", title="UML-Diagram for SMC \"SafetyMeasures\""]
+----
+include::partial$diagrams/UML_for_SML_safetyMeasures.puml[]
+----
+
+Data points related to safety measures.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_5_Properties_of_the_SMC_safetyMeasures],[ReferenceElement, Table_safetyMeasures]
+
+
+
+[width="100%", id="Table_safetyMeasures", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}SafetyMeasures 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyMeasures 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Circularity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SML]  +
+ +
+SafetyInstructions
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyInstructions  +
+ +
+Necessary safety instructions to handle waste batteries, including in relation to the risks associated with, and the handling of, batteries containing lithium. 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+ExtinguishingAgents
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#extinguishingAgents  +
+ +
+Usable extinguishing agents refering to classes of extinguishers (A, B, C, D, K). EUBR: Annex XIII (1a), Annex VI Part A (9) 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "EndOfLifeInformation"
+
+<<UML_for_SMC_endOfLifeInformation>> shows the UML-diagram for `SMC EndOfLifeInformation`.
+
+[plantuml, UML_for_SMC_endOfLifeInformation, svg, id="UML_for_SMC_endOfLifeInformation", title="UML-Diagram for SMC \"EndOfLifeInformation\""]
+----
+include::partial$diagrams/UML_for_SMC_endOfLifeInformation.puml[]
+----
+
+Data points related to end of life information.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_6_Properties_of_the_SMC_endOfLifeInformation],[ReferenceElement, Table_endOfLifeInformation]
+
+
+
+[width="100%", id="Table_endOfLifeInformation", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}EndOfLifeInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#endOfLifeInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Circularity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SML]  +
+ +
+WastePrevention
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#wastePrevention  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL855#001 +
+ +
+Prevention and management of waste batteries: Point (a) of Article 60(1): Information on the role of end-users in contributing to waste prevention, including by information on good practices and recommendations concerning the use of batteries aiming at extending their use phase and the possibilities of re-use, preparing for re-use, preparing for repurpose, repurposing and remanufacturing 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+SeparateCollection
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#separateCollection  +
+ +
+supplementalSemanticId: urn:idi:0173-1#02-ABL854#001 +
+ +
+Prevention and management of waste batteries: Point (b) of Article 60(1): Information on the role of end-users in contributing to the separate collection of waste batteries in accordance with their obligations under Article 51 so as to allow their treatment 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+InformationOnCollection
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#informationOnCollection  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL856#001 +
+ +
+Prevention and management of waste batteries: Point (c) of Article 60(1): information on the separate collection, the take back, the collection points and preparing for re-use, preparing for repurposing, and recycling operations available for waste batteries 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "SparePartSupplier"
+
+<<UML_for_SMC_sparePartSupplier>> shows the UML-diagram for `SMC SparePartSupplier`.
+
+[plantuml, UML_for_SMC_sparePartSupplier, svg, id="UML_for_SMC_sparePartSupplier", title="UML-Diagram for SML \"SparePartSupplier\""]
+----
+include::partial$diagrams/UML_for_SMC_sparePartSupplier.puml[]
+----
+
+Data points related to a spare part supplier.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_7_Properties_of_the_SMC_sparePartSupplier],[ReferenceElement, Table_SMC_sparePartSupplier]
+
+
+
+[width="100%", id="Table_SMC_sparePartSupplier", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}SparePartSupplier 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSupplier 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}SparePartSources 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[MLP]  +
+ +
+NameOfSupplier
+|urn:samm:io.admin-shell.idta.contact_information:1.0.0#company  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-AAW001#001 +
+ +
+Name of the company. 
+|[]  +
+ +
+
+|1
+
+
+
+|[SMC]  +
+ +
+AddressOfSupplier
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#addressOfSupplier  +
+ +
+supplementalSemanticId: https://schema.org/PostalAddress +
+ +
+Postal address of supplier for spare parts. 
+|[]  +
+ +
+3 elements
+|1
+
+
+
+|[SMC]  +
+ +
+EmailAddressOfSupplier
+|urn:samm:io.admin-shell.idta.contact_information:1.0.0#email  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-AAQ836#005 +
+ +
+E-mail address and encryption method. 
+|[]  +
+ +
+4 elements
+|1
+
+
+
+|[Prop]  +
+ +
+SupplierWebAddress
+|urn:samm:io.admin-shell.idta.contact_information:1.0.0#addressOfAdditionalLink  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-AAQ326#002 +
+ +
+Web site address where information about the product or contact is given. 
+|[String]  +
+ +
+
+|1
+
+
+
+|[SML]  +
+ +
+Components
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#components  +
+ +
+Components available at supplier. 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "RecycledContent"
+
+<<UML_for_SMC_recycledContent>> shows the UML-diagram for `SMC RecycledContent`.
+
+[plantuml, UML_for_SMC_recycledContent, svg, id="UML_for_SMC_recycledContent", title="UML-Diagram for SML \"RecycledContent\""]
+----
+include::partial$diagrams/UML_for_SMC_recycledContent.puml[]
+----
+
+Data points related to recycled content.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_8_Properties_of_the_SMC_recycledContent],[ReferenceElement, Table_SMC_recycledContent]
+
+
+
+[width="100%", id="Table_SMC_recycledContent", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RecycledContent 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContent 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}RecycledContentInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+PreConsumerShare
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#preConsumerShare  +
+ +
+Recycled material share from pre-consumer waste (manufacturing waste, excluding run-around scrap) of the active material. 
+|[Float]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+RecycledMaterial
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledMaterial  +
+ +
+Name of recycled material 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+PostConsumerShare
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#postConsumerShare  +
+ +
+Recycled material share from post-consumer waste (end-of-life scrap) of the active material. 
+|[Float]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+ 
+The following values are allowed for ´RecycledMaterial´:
+ 
+- "Cobalt" 
+- "Nickel" "Lithium" 
+- "Lead" "Cobalt" 
+- "Nickel" 
+- "Lithium" 
+- "Lead" 
+
+=== Properties of the SML "SafetyInstructions"
+
+<<UML_for_SML_SafetyInstructions>> shows the UML-diagram for `SML SafetyInstructions`.
+
+[plantuml, UML_for_SML_SafetyInstructions, svg, id="UML_for_SML_SafetyInstructions", title="UML-Diagram for SML \"SafetyInstructions\""]
+----
+include::partial$diagrams/UML_for_SML_SafetyInstructions.puml[]
+----
+
+List of data points related to safety instructions.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_9_Properties_of_the_SML_SafetyInstructions],[ReferenceElement, Table_SML_SafetyInstructions]
+
+
+
+[width="100%", id="Table_SML_SafetyInstructions", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}SafetyInstructions 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyInstructions 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}SafetyMeasures 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=Property, valueTypeListElement=xs:string 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+DocumentIdentifier
+|urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier  +
+ +
+Alphanumeric character sequence uniquely identifying a document. 
+|[String]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "ExtinguishingAgents"
+
+<<UML_for_SML_extinguishingAgents>> shows the UML-diagram for `SML ExtinguishingAgents`.
+
+[plantuml, UML_for_SML_extinguishingAgents, svg, id="UML_for_SML_extinguishingAgents", title="UML-Diagram for SML \"ExtinguishingAgents\""]
+----
+include::partial$diagrams/UML_for_SML_extinguishingAgents.puml[]
+----
+
+List of data points related to extinguishing agents.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_10_Properties_of_the_SML_extinguishingAgents],[ReferenceElement, Table_SML_extinguishingAgents]
+
+
+
+[width="100%", id="Table_SML_extinguishingAgents", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}ExtinguishingAgents 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#extinguishingAgents 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}SafetyMeasures 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=Property, valueTypeListElement=xs:string 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ExtinguishingAgent
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ExtinguishingAgent  +
+ +
+Extinguishing agent. 
+|[String]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "WastePrevention"
+
+<<UML_for_SML_WastePrevention>> shows the UML-diagram for `SML WastePrevention`.
+
+[plantuml, UML_for_SML_WastePrevention, svg, id="UML_for_SML_WastePrevention", title="UML-Diagram for SML \"WastePrevention\""]
+----
+include::partial$diagrams/UML_for_SML_WastePrevention.puml[]
+----
+
+Set of document identifiers related to waste prevention.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_11_Properties_of_the_SML_WastePrevention],[ReferenceElement, Table_SML_WastePrevention]
+
+
+
+[width="100%", id="Table_SML_WastePrevention", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}WastePrevention 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#wastePrevention 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}EndOfLifeInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=Property, valueTypeListElement=xs:string 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+DocumentIdentifier
+|urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier  +
+ +
+Alphanumeric character sequence uniquely identifying a document. 
+|[String]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "SeparateCollection"
+
+<<UML_for_SML_SeparateCollection>> shows the UML-diagram for `SML SeparateCollection`.
+
+[plantuml, UML_for_SML_SeparateCollection, svg, id="UML_for_SML_SeparateCollection", title="UML-Diagram for SML \"SeparateCollection\""]
+----
+include::partial$diagrams/UML_for_SML_SeparateCollection.puml[]
+----
+
+Set of document identifiers.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_12_Properties_of_the_SML_SeparateCollection],[ReferenceElement, Table_SML_SeparateCollection]
+
+
+
+[width="100%", id="Table_SML_SeparateCollection", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}SeparateCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#separateCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}EndOfLifeInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=Property, valueTypeListElement=xs:string 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+DocumentIdentifier
+|urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier  +
+ +
+Alphanumeric character sequence uniquely identifying a document. 
+|[String]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "InformationOnCollection"
+
+<<UML_for_SML_InformationOnCollection>> shows the UML-diagram for `SML InformationOnCollection`.
+
+[plantuml, UML_for_SML_InformationOnCollection, svg, id="UML_for_SML_InformationOnCollection", title="UML-Diagram for SML \"WastePrevention\""]
+----
+include::partial$diagrams/UML_for_SML_InformationOnCollection.puml[]
+----
+
+Set of document identifiers.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_13_Properties_of_the_SML_InformationOnCollection],[ReferenceElement, Table_SML_InformationOnCollection]
+
+
+
+[width="100%", id="Table_SML_InformationOnCollection", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}InformationOnCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#informationOnCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}EndOfLifeInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=Property, valueTypeListElement=xs:string 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+DocumentIdentifier
+|urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier  +
+ +
+Alphanumeric character sequence uniquely identifying a document. 
+|[String]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "AddressOfSupplier"
+
+<<UML_for_SMC_addressOfSupplier>> shows the UML-diagram for `SMC_AddressOfSupplier`.
+
+[plantuml, UML_for_SMC_addressOfSupplier, svg, id="UML_for_SMC_addressOfSupplier", title="UML-Diagram for SMC \"AddressOfSupplier\""]
+----
+include::partial$diagrams/UML_for_SMC_addressOfSupplier.puml[]
+----
+
+Data points related to address of supplier of spare part sources.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_14_Properties_of_the_SMC_addressOfSupplier],[ReferenceElement, Table_SMC_addressOfSupplier]
+
+
+
+[width="100%", id="Table_SMC_addressOfSupplier", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}AddressOfSupplier 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#addressOfSupplier 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}SparePartSupplier 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[MLP]  +
+ +
+NationalCode
+|urn:samm:io.admin-shell.idta.contact_information:1.0.0#nationalCode  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-AAO134#002 +
+ +
+Code of a country (Country codes defined accord. to DIN EN ISO 3166-1). 
+|[]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+PostalCode
+|urn:samm:io.admin-shell.idta.contact_information:1.0.0#postalCode  +
+ +
+supplementalSemanticId: https://schema.org/postalCode, urn:irdi:0173-1#02-AAO129#002 +
+ +
+postal code of address. 
+|[]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+Street
+|urn:samm:io.admin-shell.idta.contact_information:1.0.0#street  +
+ +
+supplementalSemanticId: https://schema.org/streetAddress, urn:irdi:0173-1#02-AAO128#002 +
+ +
+Street name and house number. 
+|[]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "EmailAddressOfSupplier"
+
+<<UML_for_SMC_emailAddressOfSupplier>> shows the UML-diagram for `SMC EmailAddressOfSupplier`.
+
+[plantuml, UML_for_SMC_emailAddressOfSupplier, svg, id="UML_for_SMC_emailAddressOfSupplier", title="UML-Diagram for SMC \"EmailAddressOfSupplier\""]
+----
+include::partial$diagrams/UML_for_SMC_emailAddressOfSupplier.puml[]
+----
+
+Data points related to e-mail of supplier of spare part sources.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_15_Properties_of_the_SMC_emailAddressOfSupplier],[ReferenceElement, Table_SMC_emailAddressOfSupplier]
+
+
+
+[width="100%", id="Table_SMC_emailAddressOfSupplier", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}EmailAddressOfSupplier 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.contact_information:1.0.0#email 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}SparePartSupplier 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+EmailAddress
+|urn:samm:io.admin-shell.idta.contact_information:1.0.0#emailAddress  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-AAO198#002 +
+ +
+Electronic mail address of a business partner. 
+|[String]  +
+ +
+
+|1
+
+
+
+|[MLP]  +
+ +
+PublicKey
+|urn:samm:io.admin-shell.idta.contact_information:1.0.0#publicKey  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-AAO200#002 +
+ +
+Public part of an unsymmetrical key pair to sign or encrypt text or messages.  +
+Public part of an unsymmetrical key pair to sign or encrypt text or messages.
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+TypeOfEmailAddress
+|urn:samm:io.admin-shell.idta.contact_information:1.0.0#typeOfEmailAddress  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-AAO199#003 +
+ +
+Characterization of an e-mail address according to its location or usage
+enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home). 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|[MLP]  +
+ +
+TypeOfPublicKey
+|urn:samm:io.admin-shell.idta.contact_information:1.0.0#typeOfPublicKey  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-AAO201#002 +
+ +
+Characterization of a public key according to its encryption process. 
+|[]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "Components"
+
+<<UML_for_SML_components>> shows the UML-diagram for `SML Components`.
+
+[plantuml, UML_for_SML_components, svg, id="UML_for_SML_components", title="UML-Diagram for SML \"Components\""]
+----
+include::partial$diagrams/UML_for_SML_components.puml[]
+----
+
+List of data points related to components of spare part sources.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_16_Properties_of_the_SML_components],[ReferenceElement, Table_SML_components]
+
+
+
+[width="100%", id="Table_SML_components", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Components 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#components 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}SparePartSupplier 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+Component
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Component  +
+ +
+  +
+Components available at supplier
+|[]  +
+ +
+2 elements
+|1..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "Component"
+
+<<UML_for_SMC_Component>> shows the UML-diagram for `SMC Component`.
+
+[plantuml, UML_for_SMC_Component, svg, id="UML_for_SMC_Component", title="UML-Diagram for SMC \"Component\""]
+----
+include::partial$diagrams/UML_for_SMC_Component.puml[]
+----
+
+Data points related to a component of spare part sources.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#Circularity/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_17_Properties_of_the_SMC_Component],[ReferenceElement, Table_SMC_Component]
+
+
+
+[width="100%", id="Table_SMC_Component", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Component 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Component 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Components 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Components available at supplier 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+PartName
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partName  +
+ +
+Name of the part. 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+PartNumber
+|urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partNumber  +
+ +
+Part number of Component. 
+|[String]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+  
+  
+:sectnums!:
+
+== Annex A.	Explanations on used table formats
+
+=== 1. General
+
+The used tables in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The table heads abbreviate 'cardinality' with 'card'.
+* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. 
+* The types of SubmodelElements are abbreviated (see <<Table_SME_abbrev>>):
+
+[width="100%",cols="40%,60%", id="Table_SME_abbrev", title="Abbreviations for SubmodelElements", options="header"]
+|===
+|SME type |SubmodelElement type
+|Blob |Blob
+|Cap |Capability
+|Ent |Entity
+|Evt |Event
+|File |File
+|MLP |MultiLanguageProperty
+|Opr |Operation
+|Prop |Property
+|Range |Range
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|RelA |AnnotatedRelationshipElement
+|SMC |SubmodelElementCollection
+|SME |SubmodelElement
+|SML |SubmodelElementList
+|===
+
+
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* The [valueType] is only given for Properties.
+
+
+
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] | DIN DKE SPEC 99100, "Requirements for data attributes of the battery passport". February 2025.
+
+|[2] |"OMG Unified Modeling Language (OMG UML)", Formal/2017-12-05, Version 2.5.1. December 2018. [Online] Available: https://www.omg.org/spec/UML/
+
+|[3] |"Specification of the Asset Administration Shell", Publisher: Industrial Digital Twin Assocation (IDTA). [Online]. Available: https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+
+|[4] |"Submodel Templates", Publisher: Industrial Digital Twin Assocation (IDTA).  [Online]. Available: https://industrialdigitaltwin.org/en/content-hub/submodels
+
+|[5] |"How-to create a Submodel Template Specification", Publisher: Industrial Digital Twin Assocation (IDTA). June 2025. V1.1. [Online]. Available: https://industrialdigitaltwin.org/en/wp-content/uploads/sites/2/2025/06/IDTA_How-to-write-a-SMT-v1.1.pdf
+
+|[6] |"Semantic Aspect Meta Model (SAMM)", V2.2.0. [Online]. Available: https://eclipse-esmf.github.io/samm-specification/2.2.0/index.html
+
+|[7] |"Semantic Aspect Models - smt-semantic-models",  Publisher: Industrial Digital Twin Assocation (IDTA). [Online]. Available: https://github.com/admin-shell-io/smt-semantic-models
+
+|[8] |"Semantic Aspect Models - BatteryPassDataModel", Publisher: BatteryPass Consortium. [Online]. Available: https://github.com/batterypass/BatteryPassDataModel
+
+|[9] |"Semantic Aspect Models - Tractus-X - sldt-semantic-models", Publisher: Catena-X. [Online]. Available: https://github.com/eclipse-tractusx/sldt-semantic-models
+
+|[10] |"Digital Battery Passport: Use Case Guideline of the Asset Administration Shell", Guideline, Publisher: Industrial Digital Twin Assocation (IDTA). [Online]. Available: https://industrialdigitaltwin.org/content-hub/downloads
+
+|===

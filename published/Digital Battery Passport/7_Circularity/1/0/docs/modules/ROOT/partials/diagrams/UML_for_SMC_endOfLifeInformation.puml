@@ -1,0 +1,33 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  EndOfLifeInformation
+
+class "EndOfLifeInformation" as ID00000001 <<SMC>> {
+  +WastePrevention : SML
+  +SeparateCollection : SML
+  +InformationOnCollection : SML
+}
+
+class "WastePrevention" as ID00000002 <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+class "SeparateCollection" as ID00000003 <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+class "InformationOnCollection" as ID00000004 <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+ID00000001 *--  ID00000002 : ""
+ID00000001 *--  ID00000003 : ""
+ID00000001 *--  ID00000004 : ""
+@enduml
