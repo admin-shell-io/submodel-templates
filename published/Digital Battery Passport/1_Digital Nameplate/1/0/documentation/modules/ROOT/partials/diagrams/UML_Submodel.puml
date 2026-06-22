@@ -1,0 +1,57 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT BatteryNameplate
+
+class "BatteryNameplate" as ID00000001 <<SM>> {
+  +URIOfTheProduct : xs:anyURI
+  +ManufacturerName : MLP
+  +AddressInformation : SMC
+  +SerialNumber : xs:string
+  +DateOfManufacture : xs:date
+  +DateOfPuttingIntoService : xs:date [0..1]
+  +UniqueFacilityIdentifier : xs:string
+  +LifeCycleStage : xs:string
+  +OperatorIdentifier : xs:string [0..1]
+  +ManufacturerIdentifier : xs:string
+  +Markings : SML
+  +EUDeclarationOfConformity : SML
+  +ResultsOfTestReportsProvingCompliance : SML
+}
+
+class "AddressInformation" as ID00000002 <<SMC>> <<smt-dropin-use>> {
+}
+
+class "Markings" as ID00000003 <<SML>> {
+  +[00] Markings__00__ : SMC [1..*]
+}
+
+class "[00] Markings__00__" as ID00000004 <<SMC>> {
+  +MarkingName : xs:string
+  +DesignationOfCertificateOrApproval : xs:string [0..1]
+  +IssueDate : xs:date [0..1]
+  +ExpiryDate : xs:date [0..1]
+  +MarkingFile : File [0..1]
+  +MarkingAdditionalText : xs:string [0..*]
+}
+
+class "EUDeclarationOfConformity" as ID00000005 <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+class "ResultsOfTestReportsProvingCompliance" as ID00000006 <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+ID00000001 *--  ID00000002 : ""
+ID00000003 *--  ID00000004 : ""
+ID00000001 *--  ID00000003 : ""
+ID00000001 *--  ID00000005 : ""
+ID00000001 *--  ID00000006 : ""
+@enduml
