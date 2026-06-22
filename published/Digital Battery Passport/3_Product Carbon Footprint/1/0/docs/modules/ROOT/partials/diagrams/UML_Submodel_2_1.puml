@@ -1,0 +1,47 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT CarbonFootprint
+
+class "CarbonFootprint" as ID00000001 <<SM>> {
+  +ProductCarbonFootprints : SML
+}
+
+class "ProductCarbonFootprints" as ID00000002 <<SML>> {
+  +[00] ProductCarbonFootprint : SMC
+}
+
+class "[00] ProductCarbonFootprint" as ID00000003 <<SMC>> {
+  +PcfCalculationMethods : SML
+  +PcfCO2eq : xs:decimal
+  +ReferenceImpactUnitForCalculation : xs:string
+  +QuantityOfMeasureForCalculation : xs:double
+  +LifeCyclePhases : SML
+  +PerformanceClass : xs:string
+  +WebLinkToPublicCarbonFootprintStudy : SML
+}
+
+class "PcfCalculationMethods" as ID00000004 <<SML>> {
+  +[00] PcfCalculationMethod : xs:string
+}
+
+class "LifeCyclePhases" as ID00000005 <<SML>> {
+  +[00] LifeCyclePhase : xs:string
+}
+
+class "WebLinkToPublicCarbonFootprintStudy" as ID00000006 <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+ID00000003 *--  ID00000004 : ""
+ID00000003 *--  ID00000005 : ""
+ID00000003 *--  ID00000006 : ""
+ID00000002 *--  ID00000003 : ""
+ID00000001 *--  ID00000002 : ""
+@enduml
