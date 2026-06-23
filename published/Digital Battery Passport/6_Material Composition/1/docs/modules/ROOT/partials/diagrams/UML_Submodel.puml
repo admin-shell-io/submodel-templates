@@ -1,0 +1,53 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT MaterialComposition
+
+class "MaterialComposition" as ID00000001 <<SM>> {
+  +BatteryChemistry : SMC
+  +BatteryMaterials : SML
+  +HazardousSubstances : SML
+}
+
+class "BatteryChemistry" as ID00000002 <<SMC>> {
+  +ShortName : xs:string
+  +ClearName : xs:string
+}
+
+class "BatteryMaterials" as ID00000003 <<SML>> {
+  +[00] BatteryMaterial : SMC [1..*]
+}
+
+class "[00] BatteryMaterial" as ID00000004 <<SMC>> {
+  +BatteryMaterialLocation : SMC
+  +BatteryMaterialIdentifier : xs:string
+  +BatteryMaterialName : xs:string
+  +BatteryMaterialMass : xs:float [0..1]
+  +IsCriticalRawMaterial : xs:boolean
+}
+
+class "HazardousSubstances" as ID00000005 <<SML>> {
+  +[00] HazardousSubstance : SMC [0..*]
+}
+
+class "[00] HazardousSubstance" as ID00000006 <<SMC>> {
+  +HazardousSubstanceClass : xs:string [0..1]
+  +HazardousSubstanceName : xs:string
+  +HazardousSubstanceIdentifier : xs:string
+  +HazardousSubstanceConcentration : xs:double [0..1]
+  +HazardousSubstanceImpact : SML [0..1]
+  +HazardousSubstanceLocation : SMC [0..1]
+}
+
+ID00000001 *--  ID00000002 : ""
+ID00000003 *--  ID00000004 : ""
+ID00000001 *--  ID00000003 : ""
+ID00000005 *--  ID00000006 : ""
+ID00000001 *--  ID00000005 : ""
+@enduml
