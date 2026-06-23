@@ -1,0 +1,1946 @@
+
+
+= IDTA 02035-5 : Digital Battery Passport - Part 5: Product Condition
+April 2026 - Joint Publication of IDTA and Catena-X 
+
+=== Imprint 
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+For details see Changelog in Annex.
+
+[cols="1,1,4"]
+|===
+
+h|Date
+h|Version
+h|Comment
+
+| April 2026
+|1.0.1
+|Bugfix Release, for details see Changelog in Annex
+
+
+|18.02.2026
+|1.0
+|Release of the official Submodel Template published by IDTA – a joint result of the Model Expert Group comprising IDTA, Catena-X, and the Battery Pass Consortium.
+
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+
+=== About this document
+This document is a part of an overall specification series [4]. 
+Each part specifies the contents of a Submodel Template (SMT). 
+The  specifications of the Asset Administration Shell (AAS) are the basis for the Submodel Template specifications, see [3]. 
+
+The target audience of the specification are developers and editors of technical 
+documentation and manufacturer information, which are describing assets by means of the Asset Administration Shell (AAS) and 
+therefore need to create a Submodel instance with a hierarchy of 
+SubmodelElements. 
+This document especially details on the question, which SubmodelElements with which semantic identification shall be used for this purpose.
+
+This specification was created following the "semantic-driven workflow" as defined in [5] based on Aspect Models [6].
+There is no central dictionary or repository for Aspect Models. 
+In this specification the following sources are used for defining semantics:
+
+- Aspect Models published at link:https://industrialdigitaltwin.org/[IDTA] [7]: https://github.com/admin-shell-io/smt-semantic-models, models with namespace "io.admin-shell"
+
+- Aspect Models published at link:https://thebatterypass.eu/[BatteryPass Consortium] (closed project) [8]: https://github.com/batterypass/BatteryPassDataModel, models with namespace "io.BatteryPass"
+
+- Aspect Models published at Tractus-X and used in standards published by link:https://catena-x.net/[Catena-X] [9]: https://github.com/eclipse-tractusx/sldt-semantic-models, models with namespace "io.catenax"
+
+
+
+
+
+
+
+
+=== Scope of the Submodel
+This Submodel template aims to define the dynamic data points of a battery item required to be included in a Battery Passport conformant to DIN DKE SPEC 99100 and the corresponding EU regulations.
+
+The battery passport consists of the following 7 parts:
+
+    Digital Battery Passport - Part 1: Digital Nameplate (IDTA-02035-1)
+    Digital Battery Passport - Part 2: Handover Documentation (IDTA-02035-2)
+    Digital Battery Passport - Part 3: Product Carbon Footprint (IDTA-02035-3)
+    Digital Battery Passport - Part 4: Technical Data (IDTA-02035-4)
+    Digital Battery Passport - Part 5: Product Condition (IDTA-02035-5)
+    Digital Battery Passport - Part 6: Material Composition (IDTA-02035-6)
+    Digital Battery Passport - Part 7: Circularity (IDTA-02035-7)
+    
+This specification is Part 5: Product Condition (IDTA_02035-5).
+
+
+
+
+
+=== Relevant standards for the Submodel Template
+This submodel template fulfills the requirements for dynamic data points of a battery item as defined in DIN DKE SPEC 99100 [1].
+DIN DKE SPEC 99100 "is based on the European Union and key Member States current regulatory requirements for battery passport information. 
+Mandatory information for the battery passport as stated in the EU Battery Regulation (EU)2023/1542, Article77 and AnnexXIII, 
+as well as the Ecodesign for Sustainable Products Regulation (ESPR), is supplemented by recommendations to increase sustainability and circularity. [1]"
+
+This document is valid for all battery categories. 
+Please be aware that for battery categories that have stronger requirements like industrial batteries with battery management systems etc. some of the data points are specified as optional although mandatory per regulation. 
+
+
+
+
+=== Explanations on used UML diagrams
+For clarity and an improved legibility readers suggested to go through this section at first before reading the following chapters.
+
+UML diagrams feature box-like elements, called "classes". These classes, typically Submodels, SubmodelElementCollections or SubmodelElementLists, typically feature a set of Properties or further SubmodelElements. These elements can have specific cardinalities.
+
+The single classes are hierarchally organized by aggregation relations, these can be seen as "contains" relation.
+
+For a further overview on UML diagrams please refer to [2] and [3]. 
+
+Further details about used table formats please refer to Annex A Explanations.
+
+
+
+
+== Information set for Submodel “ProductCondition”
+
+
+=== General
+The "Product Condition" Submodel Template is part of the specification series for the Battery Passport.
+
+*Property specification*
+
+See <<_information_structures_and_attributes,clause 3 "Information structures and attributes">>.
+
+
+=== Overview UML model
+The SubmodelElements described in <<_information_structures_and_attributes,clause 3 "Information structures and attributes">> are structured in the following way (see <<UML_overview>>):
+
+[plantuml, UML_overview, svg, id="UML_overview", title="UML overview"]
+----
+include::partial$diagrams/UML_overview.puml[]
+----
+
+The following design principles were followed:
+
+- for all dynamic data points there is an attribute "lastUpdate" showing the last update time
+
+
+== Information structures and attributes
+
+=== Properties of the Submodel “ProductCondition”
+<<UML_Submodel>> shows the UML-diagram defining the relevant properties which need to be set. 
+
+[plantuml, UML_Submodel, svg, id="UML_Submodel", title="UML-Diagram for Submodel \"ProductCondition\""]
+----
+include::partial$diagrams/UML_Submodel.puml[]
+----
+
+  
+  
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_1_Submodel],[ReferenceElement, Table_Submodel]
+
+
+
+[width="100%", id="Table_Submodel", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Covers all battery lifetime relevant properties. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+EnergyThroughput
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#energyThroughput  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL850#001 +
+ +
+The data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity may add a further useful value that ensures comparability among battery sizes.
+
+DIN DKE Spec 99100 chapter reference: 6.7.6.7 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+CapacityThroughput
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#capacityThroughput  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL849#001 +
+ +
+The data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity may add a further useful value that ensures comparability among battery sizes.
+
+DIN DKE Spec 99100 chapter reference: 6.7.6.8 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+NumberOfFullCycles
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#numberOfFullCycles  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL868#001 +
+ +
+Number of (full) charging and discharging cycles.
+
+DIN DKE Spec 99100 chapter reference: 6.7.6.4 
+|[]  +
+ +
+2 elements
+|1
+
+
+
+|[SMC]  +
+ +
+StateOfCertifiedEnergy
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCertifiedEnergy  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL847#001 +
+ +
+Definition based on UNECE GTR 22: The measured or on-board UBE performance at a specific point in its lifetime, expressed as a percentage of the certified usable battery energy.
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.7 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+RemainingEnergy
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingEnergy  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL870#001 +
+ +
+Definition from UNECE GTR 22, applicable only to EVs.
+The energy supplied by the battery from the beginning of the test procedure used for certification until the applicable break-off criterion of the test procedure used for certification is reached.
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.6 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+RemainingCapacity
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingCapacity  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL840#001 +
+ +
+The in-use data attribute on capacity, corresponding with the definition of rated capacity.
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.3 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|[SML]  +
+ +
+NegativeEvents
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#negativeEvents  +
+ +
+The battery passport must contain information and data resulting from its use such as accidents. 
+
+DIN DKE Spec 99100 chapter reference: 6.7.8.4 
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SML]  +
+ +
+InformationOnAccidents
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#informationOnAccidents  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.shared:3.1.0#DocumentIdentifierSet, urn:irdi:0173-1#02-ABL848#001 +
+ +
+The battery passport must contain information and data resulting from its use such as accidents. 
+
+DIN DKE Spec 99100 chapter reference: 6.7.8.4 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SMC]  +
+ +
+TemperatureInformation
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#temperatureInformation  +
+ +
+The battery passport must include periodically recorded information on the operating environmental conditions, including temperature.
+
+DIN DKE Spec 99100 chapter reference: 6.7.7.5 - 8 
+|[]  +
+ +
+6 elements
+|1
+
+
+
+|[SMC]  +
+ +
+RemainingPowerCapability
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingPowerCapability  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL820#001 +
+ +
+Original power capability (in Watts) and limits, with temperature range when relevant.
+- The amount of energy that a battery is capable to provide over a given period of time under reference conditions.
+- Power capability at 80% and 20% state of charge.
+
+DIN DKE Spec 99100 chapter reference: 6.7.3.3 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+EvolutionOfSelfDischarge
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#evolutionOfSelfDischarge  +
+ +
+Evolution of self-discharge rates is the change of self-discharge over time and usage, as percentage calculated from the initial and current self-discharge rate.
+
+DIN DKE Spec 99100 chapter reference: 6.7.4.8 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+CurrentSelfDischargingRate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#currentSelfDischargingRate  +
+ +
+The current self-discharge rate is the change of the self-discharge rate in an idle state of the battery in reference conditions (temperature etc.) at aging parameter x, e.g. after a certain amount of storage time or, number of cycles.
+
+DIN DKE Spec 99100 chapter reference: 6.7.4.7 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+RemainingRoundTripEnergyEfficiency
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingRoundTripEnergyEfficiency  +
+ +
+The battery passport shall include information, where possible, about the remaining round trip energy efficiency as information on the state of health of the battery 
+
+The update frequency of remaining round trip energy efficiency should be aligned with the update frequency of round trip energy efficiency fade and should be provided upon change of the battery status.
+
+DIN DKE Spec 99100 chapter reference: 6.7.4.4 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+StateOfCharge
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCharge  +
+ +
+Available capacity in a battery expressed as a percentage of remaining capacity. 
+|[]  +
+ +
+2 elements
+|1
+
+
+
+|===
+
+
+
+
+=== Properties of the SMC "EnergyThroughput"
+
+<<UML_for_SMC_energyThroughput>> shows the UML-diagram for `SMC EnergyThroughput`.
+
+[plantuml, UML_for_SMC_energyThroughput, svg, id="UML_for_SMC_energyThroughput", title="UML-Diagram for SMC \"energyThroughput\""]
+----
+include::partial$diagrams/UML_for_SMC_energyThroughput.puml[]
+----
+
+Data points related to energy throughput.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_3_Properties_of_the_SMC_energyThroughput],[ReferenceElement, Table_SMC_energyThroughput]
+
+
+
+[width="100%", id="Table_SMC_energyThroughput", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}EnergyThroughput 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#energyThroughput 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+EnergyThroughputValue
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#energyThroughputValue  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL850#001 +
+ +
+Overall sum of the energy throughput over the battery lifetime (data attribute should be reported as measured for further potential processing. In addition, the normalisation by usable battery energy could add a further useful value that ensures comparability among battery sizes). 
+|[Float]  +
+ +
+100000
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "CapacityThroughput"
+
+<<UML_for_SMC_capacityThroughput>> shows the UML-diagram for `SMC capacityThroughput`.
+
+[plantuml, UML_for_SMC_capacityThroughput, svg, id="UML_for_SMC_capacityThroughput", title="UML-Diagram for SMC \"capacityThroughput\""]
+----
+include::partial$diagrams/UML_for_SMC_capacityThroughput.puml[]
+----
+
+Data points related to capacity throughput.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_3_Properties_of_the_SMC_capacityThroughput],[ReferenceElement, Table_SMC_CapacityThroughput]
+
+
+
+[width="100%", id="Table_SMC_CapacityThroughput", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}CapacityThroughput 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#capacityThroughput 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+CapacityThroughputValue
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#capacityThroughputValue  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL849#001 +
+ +
+Overall sum of the capacity throughput over the battery lifetime (data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity could add a further useful value that ensures comparability among battery sizes). 
+|[Float]  +
+ +
+214
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "NumberOfFullCycles"
+
+<<UML_for_SMC_NumberOfFullCycles>> shows the UML-diagram for `SMC numberOfFullCycles`.
+
+[plantuml, UML_for_SMC_NumberOfFullCycles, svg, id="UML_for_SMC_NumberOfFullCycles", title="UML-Diagram for SMC \"numberOfFullCycles\""]
+----
+include::partial$diagrams/UML_for_SMC_NumberOfFullCycles.puml[]
+----
+
+Data points related to number of full charging and discharging cycles.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_4_Properties_of_the_SMC_NumberOfFullCycles],[ReferenceElement, Table_SMC_NumberOfFullCycles]
+
+
+
+[width="100%", id="Table_SMC_NumberOfFullCycles", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}NumberOfFullCycles 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#numberOfFullCycles 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+NumberOfFullCyclesValue
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#numberOfFullCyclesValue  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL868#001 +
+ +
+Total count of times a battery has been fully charged from empty to full capacity and then fully discharged, used as an indicator of the battery's usage and lifespan. 
+|[UnsignedInt]  +
+ +
+600
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "StateOfCertifiedEnergy"
+
+<<UML_for_SMC_StateOfCertifiedEnergy>> shows the UML-diagram for `SMC stateOfCertifiedEnergy`.
+
+[plantuml, UML_for_SMC_StateOfCertifiedEnergy, svg, id="UML_for_SMC_StateOfCertifiedEnergy", title="UML-Diagram for SMC \"stateOfCertifiedEnergy\""]
+----
+include::partial$diagrams/UML_for_SMC_StateOfCertifiedEnergy.puml[]
+----
+
+Data points related to the state of certified energy.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_5_Properties_of_the_SMC_stateOfCertifiedEnergy],[ReferenceElement, Table_StateOfCertifiedEnergy]
+
+
+
+[width="100%", id="Table_StateOfCertifiedEnergy", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}StateOfCertifiedEnergy 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCertifiedEnergy 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+StateOfCertifiedEnergyValue
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCertifiedEnergyValue  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL847#001 +
+ +
+Measured or on-board UBE performance at a specific point in its lifetime, expressed as a percentage of the certified usable battery energy. 
+|[Float]  +
+ +
+70
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "RemainingEnergy"
+
+<<UML_for_SMC_remainingEnergy>> shows the UML-diagram for `SMC remainingEnergy`.
+
+[plantuml, UML_for_SMC_remainingEnergy, svg, id="UML_for_SMC_remainingEnergy", title="UML-Diagram for SMC \"remainingEnergy\""]
+----
+include::partial$diagrams/UML_for_SMC_remainingEnergy.puml[]
+----
+
+Data points related to remaining energy.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_6_Properties_of_the_SMC_remainingEnergy],[ReferenceElement, Table_remainingEnergy]
+
+
+
+[width="100%", id="Table_remainingEnergy", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RemainingEnergy 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingEnergy 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+RemainingEnergyValue
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingEnergyValue  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL870#001 +
+ +
+UBE determined at the present point in the lifetime of the vehicle by the test procedure used for certification. 
+|[Float]  +
+ +
+30
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC  "RemainingCapacity"
+
+<<UML_for_SMC_remainingCapacity>> shows the UML-diagram for `SMC remainingCapacity`.
+
+[plantuml, UML_for_SMC_remainingCapacity, svg, id="UML_for_SMC_remainingCapacity", title="UML-Diagram for SMC \"remainingCapacity\""]
+----
+include::partial$diagrams/UML_for_SMC_remainingCapacity.puml[]
+----
+
+Data points related to remaining capacity.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_7_Properties_of_the_SMC_remainingCapacity],[ReferenceElement, Table_remainingCapacity]
+
+
+
+[width="100%", id="Table_remainingCapacity", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RemainingCapacity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingCapacity 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+RemainingCapacityValue
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingCapacityValue  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL840#001 +
+ +
+In-use data attribute on capacity, corresponding with the definition of rated capacity. 
+|[Float]  +
+ +
+56
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "NegativeEvents"
+
+<<UML_for_SML_negativeEvents>> shows the UML-diagram for `SML NegativeEvents`.
+
+[plantuml, UML_for_SML_negativeEvents, svg, id="UML_for_SML_negativeEvents", title="UML-Diagram for SML \"negativeEvents\""]
+----
+include::partial$diagrams/UML_for_SML_negativeEvents.puml[]
+----
+
+Data points related to negative events.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_8_Properties_of_the_SML_negativeEvents],[ReferenceElement, Table_SML_negativeEvents]
+
+
+
+[width="100%", id="Table_SML_negativeEvents", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}NegativeEvents 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#negativeEvents 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+NegativeEvent
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#NegativeEvent  +
+ +
+  +
+The battery passport must contain information and data resulting from its use such as accidents. 
+
+DIN DKE Spec 99100 chapter reference: 6.7.8.4
+|[]  +
+ +
+2 elements
+|0..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "InformationOnAccidents"
+
+<<UML_for_SML_informationOnAccidents>> shows the UML-diagram for `SML InformationOnAccidents`.
+
+[plantuml, UML_for_SML_informationOnAccidents, svg, id="UML_for_SML_informationOnAccidents", title="UML-Diagram for SML \"InformationOnAccidents\""]
+----
+include::partial$diagrams/UML_for_SML_informationOnAccidents.puml[]
+----
+
+Data points related to a information on accidents.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_9_Properties_of_the_SML_informationOnAccidents],[ReferenceElement, Table_SML_informationOnAccidents]
+
+
+
+[width="100%", id="Table_SML_informationOnAccidents", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}InformationOnAccidents 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#informationOnAccidents 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=Property 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+DocumentIdentifier
+|urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier  +
+ +
+Alphanumeric character sequence uniquely identifying a document. 
+|[String]  +
+ +
+XF90-884
+|0..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "TemperatureInformation"
+
+<<UML_for_SMC_temperatureInformation>> shows the UML-diagram for `SMC TemperatureInformation`.
+
+[plantuml, UML_for_SMC_temperatureInformation, svg, id="UML_for_SMC_temperatureInformation", title="UML-Diagram for SMC \"temperatureInformation\""]
+----
+include::partial$diagrams/UML_for_SMC_temperatureInformation.puml[]
+----
+
+Data points related to temperature.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_10_Properties_of_the_SMC_temperatureInformation],[ReferenceElement, Table_SMC_temperatureInformation]
+
+
+
+[width="100%", id="Table_SMC_temperatureInformation", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}TemperatureInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#temperatureInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+MeasuredTemp
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#measuredTemp  +
+ +
+Temperature measured in degree Celsius. 
+|[Float]  +
+ +
+20
+|0..1
+
+
+
+|[Prop]  +
+ +
+TimeExtremeHighTemp
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeHighTemp  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL816#001 +
+ +
+Cumulated time spent above the given upper boundary of temperature. 
+|[Float]  +
+ +
+0
+|0..1
+
+
+
+|[Prop]  +
+ +
+TimeExtremeLowTemp
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeLowTemp  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL817#001 +
+ +
+Cumulated time spent below the given lower boundary of temperature. 
+|[Float]  +
+ +
+0
+|0..1
+
+
+
+|[Prop]  +
+ +
+TimeExtremeHighTempCharging 
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeHighTempCharging  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL818#001 +
+ +
+Cumulated time spent above the given upper boundary of temperature during Charging. 
+|[Float]  +
+ +
+0
+|0..1
+
+
+
+|[Prop]  +
+ +
+TimeExtremeLowTempCharging
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeLowTempCharging  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL819#001 +
+ +
+Cumulated time spent below the given lower boundary of temperature during charging. 
+|[Float]  +
+ +
+0
+|0..1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "RemainingPowerCapability"
+
+<<UML_for_SMC_remainingPowerCapability>> shows the UML-diagram for `SMC remainingPowerCapability`.
+
+[plantuml, UML_for_SMC_remainingPowerCapability, svg, id="UML_for_SMC_remainingPowerCapability", title="UML-Diagram for SMC \"remainingPowerCapability\""]
+----
+include::partial$diagrams/UML_for_SMC_remainingPowerCapability.puml[]
+----
+
+Data points related to remaining power capability.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_11_Properties_of_the_SMC_remainingPowerCapability],[ReferenceElement, Table_remainingPowerCapability]
+
+
+
+[width="100%", id="Table_remainingPowerCapability", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RemainingPowerCapability 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingPowerCapability 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+RemainingPowerCapabilityDynamicAt
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingPowerCapabilityDynamicAt  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL853#001 +
+ +
+Defined by 'pre-use power capability (definition of power capability as given in Battery Regulation. 
+|[]  +
+ +
+3 elements
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "EvolutionOfSelfDischarge"
+
+<<UML_for_SMC_evolutionOfSelfDischarge>> shows the UML-diagram for `SMC evolutionOfSelfDischarge`.
+
+[plantuml, UML_for_SMC_evolutionOfSelfDischarge, svg, id="UML_for_SMC_evolutionOfSelfDischarge", title="UML-Diagram for SMC \"evolutionOfSelfDischarge\""]
+----
+include::partial$diagrams/UML_for_SMC_evolutionOfSelfDischarge.puml[]
+----
+
+Data points related to evolution of self discharge.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_12_Properties_of_the_SMC_evolutionOfSelfDischarge],[ReferenceElement, Table_evolutionOfSelfDischarge]
+
+
+
+[width="100%", id="Table_evolutionOfSelfDischarge", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}EvolutionOfSelfDischarge 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#evolutionOfSelfDischarge 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+EvolutionOfSelfDischargeValue
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#evolutionOfSelfDischargeValue  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL834#001 +
+ +
+Total count of times a battery has been fully charged from empty to full capacity and then fully discharged, used as an indicator of the battery's usage and lifespan. 
+|[Float]  +
+ +
+1
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "CurrentSelfDischargingRate"
+
+<<UML_for_SMC_currentSelfDischargingRate>> shows the UML-diagram for `SMC currentSelfDischargingRate`.
+
+[plantuml, UML_for_SMC_currentSelfDischargingRate, svg, id="UML_for_SMC_currentSelfDischargingRate", title="UML-Diagram for SMC \"currentSelfDischargingRate\""]
+----
+include::partial$diagrams/UML_for_SMC_currentSelfDischargingRate.puml[]
+----
+
+Data points related to current self discharging rate.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_13_Properties_of_the_SMC_currentSelfDischargingRate],[ReferenceElement, Table_currentSelfDischargingRate]
+
+
+
+[width="100%", id="Table_currentSelfDischargingRate", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}CurrentSelfDischargingRate 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#currentSelfDischargingRate 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+CurrentSelfDischargingRateValue
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#currentSelfDischargingRateValue  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL825#001 +
+ +
+Current self-discharge in % of capacity per unit of time in defined conditions (temperature range) during the use phase. 
+|[Float]  +
+ +
+2
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "RemainingRoundTripEnergyEfficiency"
+
+<<UML_for_SMC_remainingRoundTripEnergyEfficiency>> shows the UML-diagram for `SMC remainingRoundTripEnergyEfficiency`.
+
+[plantuml, UML_for_SMC_remainingRoundTripEnergyEfficiency, svg, id="UML_for_SMC_remainingRoundTripEnergyEfficiency", title="UML-Diagram for SMC \"currentSelfDischargingRate\""]
+----
+include::partial$diagrams/UML_for_SMC_remainingRoundTripEnergyEfficiency.puml[]
+----
+
+Data points related to remaining round trip energy efficiency.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_14_Properties_of_the_SMC_remainingRoundTripEnergyEfficiency],[ReferenceElement, Table_remainingRoundTripEnergyEfficiency]
+
+
+
+[width="100%", id="Table_remainingRoundTripEnergyEfficiency", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RemainingRoundTripEnergyEfficiency 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingRoundTripEnergyEfficiency 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+RemainingRoundTripEnergyEfficiencyValue 
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingRoundTripEnergyEfficiencyValue  +
+ +
+supplementalSemanticId: urn:iridi:0173-1#02-ABL851#001 +
+ +
+Percentage of energy that can be recovered and used after a full charge and discharge cycle, reflecting the battery's ability to retain and return energy efficiently over time. 
+|[Float]  +
+ +
+80
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "StateOfCharge"
+
+<<UML_for_SMC_stateOfCharge>> shows the UML-diagram for `SMC stateOfCharge`.
+
+[plantuml, UML_for_SMC_stateOfCharge, svg, id="UML_for_SMC_stateOfCharge", title="UML-Diagram for SMC \"stateOfCharge\""]
+----
+include::partial$diagrams/UML_for_SMC_stateOfCharge.puml[]
+----
+
+Data points related to state of charge.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_15_Properties_of_the_SMC_stateOfCharge],[ReferenceElement, Table_SMC_stateOfCharge]
+
+
+
+[width="100%", id="Table_SMC_stateOfCharge", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}StateOfCharge 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCharge 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCondition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+StateOfChargeValue
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfChargeValue  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL821#001 +
+ +
+ Available capacity in a battery expressed as a percentage of remaining capacity. 
+|[Float]  +
+ +
+70
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "NegativeEvent"
+
+<<UML_for_SMC_NegativeEvent>> shows the UML-diagram for `SMC NegativeEvent`.
+
+[plantuml, UML_for_SMC_NegativeEvent, svg, id="UML_for_SMC_NegativeEvent", title="UML-Diagram for SMC \"NegativeEvent\""]
+----
+include::partial$diagrams/UML_for_SMC_NegativeEvent.puml[]
+----
+
+Data points related to a negative event.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_16_Properties_of_the_SMC_NegativeEvent],[ReferenceElement, Table_SMC_NegativeEvent]
+
+
+
+[width="100%", id="Table_SMC_NegativeEvent", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}NegativeEvent 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#NegativeEvent 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}NegativeEvents 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}The battery passport must contain information and data resulting from its use such as accidents. 
+
+DIN DKE Spec 99100 chapter reference: 6.7.8.4 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+NegativeEventValue
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#negativeEventValue  +
+ +
+Negative event, such as an accident. No further definition provided by regulation. 
+|[String]  +
+ +
+overcharged
+|1
+
+
+
+|[Prop]  +
+ +
+LastUpdate
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABG740#003 +
+ +
+Timestamp for dynamic data attributes show the last update time.
+
+Defined time within a time range, measured from the start time of the time range. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "RemainingPowerCapabilityDynamicAt"
+
+<<UML_for_SMC_remainingPowerCapabilityDynamicAt>> shows the UML-diagram for `SMC RemainingPowerCapabilityDynamicAt`.
+
+[plantuml, UML_for_SMC_remainingPowerCapabilityDynamicAt, svg, id="UML_for_SMC_remainingPowerCapabilityDynamicAt", title="UML-Diagram for SMC \"RemainingPowerCapabilityDynamicAt\""]
+----
+include::partial$diagrams/UML_for_SMC_remainingPowerCapabilityDynamicAt.puml[]
+----
+
+Data points of remaining power capability.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_17_Properties_of_the_SMC_remainingPowerCapabilityDynamicAt],[ReferenceElement, Table_SMC_remainingPowerCapabilityDynamicAt]
+
+
+
+[width="100%", id="Table_SMC_remainingPowerCapabilityDynamicAt", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RemainingPowerCapabilityDynamicAt 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingPowerCapabilityDynamicAt 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}RemainingPowerCapability 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+RPCLastUpdated
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#rPCLastUpdated  +
+ +
+RPC last updated. 
+|[DateTime]  +
+ +
+2000-01-01T14:23:00
+|1
+
+
+
+|[Prop]  +
+ +
+AtSoC
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#atSoC  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-ABL821#001 +
+ +
+Available capacity in a battery expressed as a percentage of remaining capacity. 
+|[Float]  +
+ +
+80
+|1
+
+
+
+|[Prop]  +
+ +
+PowerCapabilityAt 
+|urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#powerCapabilityAt  +
+ +
+Power capability at. 
+|[Float]  +
+ +
+95
+|1
+
+
+
+|===
+
+
+
+  
+  
+:sectnums!:
+
+== Annex A.	Explanations on used table formats
+
+=== 1. General
+
+The used tables in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The table heads abbreviate 'cardinality' with 'card'.
+* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. 
+* The types of SubmodelElements are abbreviated (see <<Table_SME_abbrev>>):
+
+[width="100%",cols="40%,60%", id="Table_SME_abbrev", title="Abbreviations for SubmodelElements", options="header"]
+|===
+|SME type |SubmodelElement type
+|Blob |Blob
+|Cap |Capability
+|Ent |Entity
+|Evt |Event
+|File |File
+|MLP |MultiLanguageProperty
+|Opr |Operation
+|Prop |Property
+|Range |Range
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|RelA |AnnotatedRelationshipElement
+|SMC |SubmodelElementCollection
+|SME |SubmodelElement
+|SML |SubmodelElementList
+|===
+
+
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* The [valueType] is only given for Properties.
+
+
+
+
+== Annex B.	Changes to the submodel template
+
+=== General
+
+This annex lists the changes from version to version of the Submodel, together with major changes in the overall document. 
+
+=== Changes Version 1.0.1
+	
+Major changes:
+
+* new optional property "measuredTemp" as part of TemperatureInformation (https://github.com/admin-shell-io/smt-semantic-models/issues/80)	
+	
+=== Changes Version 1.0
+
+
+* First Version conformant to DIN DKE SPEC 99100
+
+<<<
+
+
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] | DIN DKE SPEC 99100, "Requirements for data attributes of the battery passport". February 2025.
+
+|[2] |"OMG Unified Modeling Language (OMG UML)", Formal/2017-12-05, Version 2.5.1. December 2018. [Online] Available: https://www.omg.org/spec/UML/
+
+|[3] |"Specification of the Asset Administration Shell", Publisher: Industrial Digital Twin Assocation (IDTA). [Online]. Available: https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+
+|[4] |"Submodel Templates", Publisher: Industrial Digital Twin Assocation (IDTA).  [Online]. Available: https://industrialdigitaltwin.org/en/content-hub/submodels
+
+|[5] |"How-to create a Submodel Template Specification", Publisher: Industrial Digital Twin Assocation (IDTA). June 2025. V1.1. [Online]. Available: https://industrialdigitaltwin.org/en/wp-content/uploads/sites/2/2025/06/IDTA_How-to-write-a-SMT-v1.1.pdf
+
+|[6] |"Semantic Aspect Meta Model (SAMM)", V2.2.0. [Online]. Available: https://eclipse-esmf.github.io/samm-specification/2.2.0/index.html
+
+|[7] |"Semantic Aspect Models - smt-semantic-models",  Publisher: Industrial Digital Twin Assocation (IDTA). [Online]. Available: https://github.com/admin-shell-io/smt-semantic-models
+
+|[8] |"Semantic Aspect Models - BatteryPassDataModel", Publisher: BatteryPass Consortium. [Online]. Available: https://github.com/batterypass/BatteryPassDataModel
+
+|[9] |"Semantic Aspect Models - Tractus-X - sldt-semantic-models", [Online]. Publisher: Catena-X. [Online]. Available: https://github.com/eclipse-tractusx/sldt-semantic-modelsl
+
+|===
