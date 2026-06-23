@@ -14,7 +14,3 @@ This enables OEM tools to automatically export all TGA and hall data from author
 ## About this version
 
 Release of the official Submodel template published by IDTA. This is the initial version (V1.0).
-
-## Status
-
-This version is in productive use and supported by AASX Package Explorer (out of the box).
