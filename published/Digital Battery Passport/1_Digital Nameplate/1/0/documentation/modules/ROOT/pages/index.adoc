@@ -1,0 +1,733 @@
+
+
+= IDTA-02035-1 : Digital Battery Passport - Part 1: Digital Nameplate 1.0
+February 2026
+
+
+=== Imprint 
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+[cols="1,1,4"]
+|===
+
+h|Date
+h|Version
+h|Comment
+
+|February 2026
+|1.0
+|First version. Result of the joint Model Expert Group from IDTA, Catena-X and the BatteryPass Consortium.
+
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+
+=== About this document
+This document is a part of a specification series. Each part specifies the contents of a 
+Submodel template for the Asset Administration Shell (AAS). The AAS is described 
+in [1], [2], [3] and [6]. First exemplary Submodel contents were described in [4], 
+while the actual format of this document was derived by the 
+"Administration Shell in Practice" [5]. The format aims to be very concise, 
+giving only minimal necessary information for applying a Submodel template, 
+while leaving deeper descriptions and specification of concepts, structures and 
+mapping to the respective documents [1] to [6].
+Common terms and abbreviations can be found in [7]. 
+
+The target audience of the specification are developers and editors of technical 
+documentation and manufacturer information, which are describing assets in 
+smart manufacturing by means of the Asset Administration Shell (AAS) and 
+therefore need to create a Submodel instance with a hierarchy of 
+SubmodelElements. This document especially details on the question, 
+which SubmodelElements with which semantic identification shall be 
+used for this purpose.
+
+This SMT will only be fully supported as of metamodel V3.0.
+
+
+
+=== Scope of the Submodel
+This Submodel template aims to define the data points of a Battery Passport conformant to DIN DKE SPEC 99100 [12] and the corresponding EU regulations.
+
+The battery passport consists of the following 7 parts:
+
+    Digital Battery Passport - Part 1: Digital Nameplate (IDTA-02035-1)
+    Digital Battery Passport - Part 2: Handover Documentation (IDTA-02035-2)
+    Digital Battery Passport - Part 3: Product Carbon Footprint (IDTA-02035-3)
+    Digital Battery Passport - Part 4: Technical Data (IDTA-02035-4)
+    Digital Battery Passport - Part 5: Product Condition (IDTA-02035-5)
+    Digital Battery Passport - Part 6: Material Composition (IDTA-02035-6)
+    Digital Battery Passport - Part 7: Circularity (IDTA-02035-7)
+    
+This specification is Part 1: Digital Nameplate 1.0 (IDTA-02035-1).
+
+
+
+
+
+=== Relevant standards for the Submodel template
+This submodel template fulfills the requirements for data attributes as defined in DIN DKE SPEC 99100 [12].
+DIN DKE 99100 "is based on the European Union and key Member States current regulatory requirements for battery passport information. 
+Mandatory information for the battery passport as stated in the EU Battery Regulation (EU)2023/1542, Article77 and AnnexXIII, 
+as well as the Ecodesign for Sustainable Products Regulation (ESPR), is supplemented by recommendations to increase sustainability and circularity. [1]"
+
+This document is valid for all battery categories. 
+Please be aware that for battery categories that have stronger requirements like industrial batteries with battery management systems etc. some of the data points are specified as optional although mandatory per regulation. 
+
+
+
+
+=== Explanations on used UML diagrams
+For clarity and an improved legibility readers suggested to go through this section at first before reading the following chapters.
+
+UML diagrams feature box-like elements, called "classes". These classes, typically Submodels, SubmodelElementCollections or SubmodelElementLists, typically feature a set of Properties or further SubmodelElements. These elements can have specific cardinalities.
+
+The single classes are hierarchally organized by aggregation relations, these can be seen as "contains" relation.
+
+For a further overview on UML diagrams please refer to [6] and [10]. 
+
+Further details about used table formats please refer to Annex A.
+
+== Information set for Submodel “BatteryNameplate”
+
+
+=== General
+The "Digital Nameplate 1.0" Submodel Template is part of the specification series for the Battery Passport.
+
+The Submodel template is derived from "Digital Nameplate for Industrial Equiqment 3.0 (IDTA-02006)" and extended with battery specific attributes: The elements ManufacturerProductDesignation and OrderCodeOfManufacturer are not prescribed in the DIN DKE SPEC 99100 and not part of this specification. The complementary elements are LifeCycleStage, OperatorIdentifier, ManufacturerIdentifier, EUDeclarationOfConformity, and ResultsOfTestReportsProvingCompliance. Some optional elements in IDTA-02006 are mandatory in this specification, as they are required by DIN DKE SPEC 99100 (SerialNumber, DateOfManufacture, UniqueFacilityIdentifier, Markings).
+
+
+*Property specification*
+
+See <<_information_structures_and_attributes,clause 3 "Information structures and attributes">>.
+
+=== Overview UML model
+The SubmodelElements described in section 3 are structured in the following way (see <<UML_overview>>):
+For the overall Submodel template and its instances, some notes can be given:
+
+* The submodel instance `Nameplate` comprises a  set of elementary data elements of a nameplate for a
+battery. 
+* Address information of the economic operator is provided by a harmonized *SMT drop-in* `Address Information`.
+* Multiple `Markings` information are provided analogue to marking on the physical nameplate.
+
+
+
+== Information structures and attributes
+
+=== Properties of the Submodel “BatteryNameplate”
+<<UML_Submodel>> shows the UML-diagram defining the relevant properties which need to be set. 
+
+[plantuml, UML_Submodel, svg, id="UML_Submodel", title="UML-Diagram for Submodel properties of the Submodel \"Battery Nameplate\""]
+----
+include::partial$diagrams/UML_Submodel.puml[]
+----
+
+*Recommendation*: For multiple elements, declaration as MLP is required by its semantic definition (based on IEC CDD and ECLASS). As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice.
+
+The SubmodelElements for this first level are described as follows. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/DigitalNameplate/1/0],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_1_Submodel],[ReferenceElement, Table_Submodel]
+
+
+
+[width="100%", id="Table_Submodel", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}BatteryNameplate 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/digitalbatterypassport/nameplate/1/0/Nameplate 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Contains the static nameplate attributes attached to the battery. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+URIOfTheProduct
+|0112/2///61987#ABN590#002  +
+ +
+supplementalSemanticId: 0173-1#02-ABH173#003, urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#uriOfTheProduct +
+ +
+unique global identification of the product instance using an universal resource identifier (URI)  +
+The battery passport identifier is the unique identifier of a battery passport. 
+
+DIN DKE Spec 99100 chapter reference: 6.1.2.1
+|[AnyUri]  +
+ +
+https://dc-qr.com/?m=R123456789
+|1
+
+
+
+|[MLP]  +
+ +
+ManufacturerName
+|0112/2///61987#ABA565#009  +
+ +
+supplementalSemanticId: 0173-1#02-AAO677#004, urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#manufacturerName +
+ +
+legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation  +
+Information identifying the manufacturer with a name.
+
+
+DIN DKE Spec 99100 chapter reference: 6.1.2.4
+|[]  +
+ +
+Muster AG@de
+|1
+
+
+
+|[SMC]  +
+ +
+AddressInformation
+|https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation  +
+ +
+supplementalSemanticId: https://admin-shell.io/smt-dropin/smt-dropin-use/1/0, 0112/2///61360_7#AAS002#001, 0173-1#02-AAQ837#008/0173-1#01-ADR448#008, urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#addressInformation +
+ +
+  +
+The manufacturer information postal address, indicating a single contact point. Web address, if available; and web address, if available. 
+
+
+DIN DKE Spec 99100 chapter reference: 6.1.2.3
+
+
+Note: This is drop-in of the ContactInformation Submodel
+|[]  +
+ +
+0 elements
+|1
+
+
+
+|[Prop]  +
+ +
+SerialNumber
+|0112/2///61987#ABA951#009  +
+ +
+supplementalSemanticId: 0173-1#02-AAM556#004, urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#serialNumber +
+ +
+unique combination of numbers and letters used to identify the device once it has been manufactured  +
+The battery identifier should be serialised, i.e., identifying each battery via a serial number.
+
+
+DIN DKE Spec 99100 chapter reference: 6.1.2.2
+|[String]  +
+ +
+A12345-X75EN
+|1
+
+
+
+|[Prop]  +
+ +
+DateOfManufacture
+|0112/2///61987#ABB757#007  +
+ +
+supplementalSemanticId: 0173-1#02-AAR972#004, urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#dateOfManufacture +
+ +
+date when an item was manufactured  +
+The manufacturing date should not only relate to the battery model, but to the battery item.
+The date code should comply with DINISO8601-1:2020-12 and ISO8601-2:2019.
+
+
+DIN DKE Spec 99100 chapter reference: 6.1.3.2
+|[Date]  +
+ +
+2022-01-01
+|1
+
+
+
+|[Prop]  +
+ +
+DateOfPuttingIntoService
+|urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#dateOfPuttingIntoService  +
+ +
+Where appropriate, the battery passport must include information on the date of putting the battery into service. BR Annex VI Part A (1); Art. 3(33); Art. 38(7); ESPR Art. 2(32)\n\nDIN DKE Spec chapter reference: 6.1.3.3 
+|[Date]  +
+ +
+2022-06-01
+|0..1
+
+
+
+|[Prop]  +
+ +
+UniqueFacilityIdentifier
+|https://admin-shell.io/idta/nameplate/3/0/UniqueFacilityIdentifier  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#uniqueFacilityIdentifier, 0173-1#02-AAV646#003 +
+ +
+unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s value chain  +
+The manufacturing place should be uniquely identifiable.
+
+
+DIN DKE Spec 99100 chapter reference: 6.1.3.1
+|[String]  +
+ +
+987654321
+|1
+
+
+
+|[Prop]  +
+ +
+LifeCycleStage
+|0173-1#02-ABL841#001  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#batteryStatus +
+ +
+  +
+A battery passport must include information on the life cycle status of the battery.
+
+The status of the battery must be defined as 'original' (0173-1#07-ACC020#001), 'repurposed'(0173-1#07-ACC021#001), 're-used'(0173-1#07-ACC022#001), 'remanufactured' (0173-1#07-ACC023#001) or 'waste' (0173-1#07-ACC024#001).
+
+A new battery passport must be issued when a battery was subject to remanufacturing, repurpose or one of the treatment operations preparing for re-use and preparing for repurpose and is placed on the market again.
+
+
+DIN DKE Spec 99100 chapter reference: 6.1.3.7
+|[String]  +
+ +
+Original
+|1
+
+
+
+|[Prop]  +
+ +
+OperatorIdentifier
+|urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#operatorIdentifier  +
+ +
+The unique operator identifier should comply with ISO/IEC 15459 1:2014, ISO/IEC 15459 2:2015, ISO/IEC 15459 3:2014, ISO/IEC 15459 4:2014, ISO/IEC 15459 5:2014, ISO/IEC 15459 6:2014, or their equivalent until referenced harmonised standards are listed in the OJEU.
+
+DIN DKE Spec 99100 chapter reference: 6.1.2.3
+
+ 
+|[String]  +
+ +
+123456789
+|0..1
+
+
+
+|[Prop]  +
+ +
+ManufacturerIdentifier
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#manufacturerIdentifier  +
+ +
+A battery passport must include information identifying the manufacturer.
+
+
+DIN DKE Spec 99100 chapter reference: 6.1.2 
+|[String]  +
+ +
+XYZ-123456
+|1
+
+
+
+|[SML]  +
+ +
+Markings
+|0112/2///61360_7#AAS006  +
+ +
+supplementalSemanticId: 0173-1#02-ABI563#003/0173-1#01-AHF849#003, urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#markings +
+ +
+collection of several markings relevant to the product  +
+Should be used to provide all relevant marking information of the battery passport based on DIN DKE SPEC 99100 such as:
+
+* Separate collection symbol (6.2.2)
+
+* Symbols for cadmium and lead (6.2.3)
+
+* Carbon footprint label (6.2.4)
+
+* Extinguishing agent (6.2.5)
+
+* Meaning of labels and symbols (6.2.6)
+
+Note: CE marking is declared as mandatory according to EU Blue Guide
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+EUDeclarationOfConformity
+|urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#euDeclarationOfConformity  +
+ +
+supplementalSemanticId: 0173-1#02-ABA889#003 +
+ +
+A battery passport must include the EU declaration of conformity.
+
+  DIN DKE Spec 99100 chapter reference: 6.2.7 
+
+ Document identifiers (e.g., depending of different languages) of a document (e.g., PDF) that can be found in the Handover Documentation model.  +
+EU declaration of conformity
+
+DIN DKE Spec 99100 chapter reference: 6.2.7
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+ResultsOfTestReportsProvingCompliance
+|urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#resultsOfTestReportsProvingCompliance  +
+ +
+supplementalSemanticId: 0173-1#02-ABA705#003 +
+ +
+A battery passport must include the test report results that can prove the compliance with the requirements stated in the battery regulation.
+
+  DIN DKE Spec 99100 chapter reference: 6.2.8
+
+ Document identifiers (e.g., depending of different languages) of a document (e.g., PDF) that can be found in the Handover Documentation model.
+
+   +
+Results of test reports proving compliance
+DIN DKE Spec 99100 chapter reference: 6.2.8
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|===
+
+
+
+
+=== Mandatory information for address information
+In order to provide information about a physical address, the SMT drop-in `Address Information` defined by [11] is to be re-used in the context of digital nameplate.
+
+Note: SMC `AddressInformation` is part of SMC `ContactInformation` of SMT `ContactInformations` [11].
+
+As the SMC `AddressInformation` provides interoperable address information about asset’s manufacturer, all properties within this SMC are defined as optional. This section defines *properties that are required by DIN DKE SPEC 99100* to ensure the provision of physical address of the corresponding asset.
+
+The following SubmodelElements shall be specified within SMC `AddressInformation`:
+
+* MLP `Street`
+* MLP `Zipcode`
+* MLP `CityTown`
+* MLP `NationalCode`
+* SMC `Email`, if available
+* Property `AddressOfAdditionalLink`, if available for web address
+
+Additional elements from the SMT `ContactInformations` may be added.
+
+=== Properties of the SML “Markings”
+<<UML_for_SMC_Markings_and_a_single_Marking>> shows the UML-diagram for SML `Markings`.
+
+[plantuml, UML_for_SMC_Markings_and_a_single_Marking, svg, id="UML_for_SMC_Markings_and_a_single_Marking", title="UML-Diagram for SML \"Markings\" and SMC \"Markings++__00__++\""]
+----
+include::partial$diagrams/UML_for_SMC_Markings_and_a_single_Marking.puml[]
+----
+
+For a single SMC `Markings++__00__++`, the SubmodelElements are defined as follows. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/DigitalNameplate/1/0],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_3_Properties_of_the_SMC_Markings],[ReferenceElement, Table_Marking2]
+
+
+
+[width="100%", id="Table_Marking2", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Markings\__00__ 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0112/2///61360_7#AAS009#001 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}Markings 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Used to provide all relevant marking information of the battery passport based on DIN SPEC 99100. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+MarkingName
+|0112/2///61987#ABA231#009  +
+ +
+supplementalSemanticId: 0173-1#02-ABI190#003, urn:samm:io.admin-shell.idta.shared:3.1.0#markingName +
+ +
+common name of the marking  +
+Context name of the symbols, labels and documentation of conformity based on DIN DKE SPEC 99100:
+
+* "Separate collection symbol" (6.2.2)
+
+* "Symbols for cadmium and lead" (6.2.3)
+
+* "Carbon footprint label" (6.2.4)
+
+* "Extinguishing agent" (6.2.5)
+|[String]  +
+ +
+0173-1#07-DAA603#004
+|1
+
+
+
+|[Prop]  +
+ +
+DesignationOfCertificateOrApproval
+|0112/2///61987#ABH783#003  +
+ +
+supplementalSemanticId: 0173-1#02-ABI975#002, urn:samm:io.admin-shell.idta.shared:3.1.0#designationOfCertificateOrApproval +
+ +
+alphanumeric character sequence identifying a certificate or approval  +
+Note: Approval identifier, reference to the certificate number, to be entered without spaces 
+|[String]  +
+ +
+KEMA99IECEX1105/128
+|0..1
+
+
+
+|[Prop]  +
+ +
+IssueDate
+|0112/2///61987#ABO097#001  +
+ +
+supplementalSemanticId: 0173-1#02-ABL774#001, urn:samm:io.admin-shell.idta.shared:3.1.0#issueDate +
+ +
+date, at which the specified certificate is issued   +
+Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day 
+|[Date]  +
+ +
+2022-01-01
+|0..1
+
+
+
+|[Prop]  +
+ +
+ExpiryDate
+|0112/2///61987#ABH830#002  +
+ +
+supplementalSemanticId: 0173-1#02-ABL775#001, urn:samm:io.admin-shell.idta.shared:3.1.0#expiryDate +
+ +
+date, at which the specified certificate expires   +
+Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day 
+|[Date]  +
+ +
+2028-01-01
+|0..1
+
+
+
+|[File]  +
+ +
+MarkingFile
+|0112/2///61987#ABO100#002  +
+ +
+supplementalSemanticId: 0173-1#02-ABI191#003, urn:samm:io.admin-shell.idta.shared:3.1.0#markingFile +
+ +
+conformity symbol of the marking  
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+MarkingAdditionalText
+|0112/2///61987#ABB146#007  +
+ +
+supplementalSemanticId: 0173-1#02-ABI192#003, urn:samm:io.admin-shell.idta.shared:3.1.0#markingAdditionalText +
+ +
+where applicable, additional information on the marking in plain text, e.g. the ID-number of the notified body involved in the conformity process  +
+Text should be used to provide the meaning of labels and symbols.
+
+DIN DKE Spec 99100 chapter reference: 6.2.5, 6.2.6 
+|[String]  +
+ +
+0044
+|0..*
+
+
+
+|===
+
+
+
+Regarding property `MarkingName`, the preferable solution is to provide a valueId in IRDI originating from IEC CDD or ECLASS enumeration value list, e.g. "CE" (IRDI: 0112/2///61987#ABO409#003 or 0173-1#07-DAA603#004). In case none of the existing ECLASS enumeration values matches, filling plain string text into the “value” field of the property `MarkingName` can be accepted alternatively. It needs to be pointed out that ECLASS also provides marking definitions in terms of boolean property, e.g. “CE- qualification present” (IRDI: 0173-1#02-BAF053#008). In this case users should instead use a matching ECLASS enumeration value or, if not provided as enumeration, fill in plain string text.
+
+The following example (see <<Figure_5>>) illustrates how to model product marking in an AAS. On the left side there is a sample nameplate which contains two markings to be modelled: the CE marking and the WEEE marking with a crossed-out wheeled bin. Next to the nameplate a table lists all properties and their attributes. 
+
+
+image::Figure_5.png[id="Figure_5", width="80.0%",title="Example modelling of SMC 'Marking'"]
+
+:sectnums!:
+
+== Annex A.	Explanations on used table formats
+
+=== 1. General
+
+The used tables in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The tables follow in principle the same conventions as in [5].
+* The table heads abbreviate 'cardinality' with 'card'.
+* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+* The types of SubmodelElements are abbreviated (see <<Table_SME_abbrev>>):
+
+[width="100%",cols="40%,60%", id="Table_SME_abbrev", title="Abbreviations for SubmodelElements", options="header"]
+|===
+|SME type |SubmodelElement type
+|Blob |Blob
+|Cap |Capability
+|Ent |Entity
+|Evt |Event
+|File |File
+|MLP |MultiLanguageProperty
+|Opr |Operation
+|Prop |Property
+|Range |Range
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|RelA |AnnotatedRelationshipElement
+|SMC |SubmodelElementCollection
+|SME |SubmodelElement type
+|SML |SubmodelElementList
+|===
+
+* If an idShort ends with '++__00__++', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique. A different idShort might be choosen, as long as it is unique in the parent’s context.
+* The Keys of semanticId in the main section feature only idType and value, such as: https://admin-shell.io/vdi/2770/1/0/DocumentId/Id. The attribute "type" (typically "ConceptDescription" and "(local)" or "GlobalReference") need to be set accordingly; see [6].
+* If a table does not contain a column with "parent" heading, all represented attributes share the same parent. This parent is denoted in the head of the table.
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* The [valueType] is only given for Properties.
+
+
+
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] |“Recommendations for implementing the strategic initiative
+INDUSTRIE 4.0”, acatech, April 2013. [Online]. Available:
+https://en.acatech.de/publication/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+
+|[2] |“Implementation Strategy Industrie 4.0: Report on the results of
+the Industrie 4.0 Platform”; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April
+2015. [Online]. Available:
+https://www.bitkom.org/sites/main/files/file/import/2016-01-Implementation-Strategy-Industrie40.pdf
+
+|[3] |“The Structure of the Administration Shell: TRILATERAL
+PERSPECTIVES from France, Italy and Germany”, March 2018, [Online].
+Available:
+https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
+
+|[4] |“Examples of the Asset Administration Shell for Industrie 4.0 Components – Basic Part”; ZVEI e.V., Whitepaper, April 2017. [Online].
+Available:
+https://www.zvei.org/en/press-media/publications/examples-of-the-asset-administration-shell-for-industrie-40-components-basic-part
+
+|[5] |“Verwaltungsschale in der Praxis. Wie definiere ich Teilmodelle,
+beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen
+(in German)”, Version 1.0, April 2019, Plattform Industrie 4.0 in
+Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for
+Economic Affairs and Energy (BMWi), Available:
+https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
+
+|[6] |“Specification of the Asset Administration Shell - Part 1: Metamodel (Version 3.1.2)”, October 2025, [Online]. Available:
+https://industrialdigitaltwin.org/en/wp-content/uploads/sites/2/2025/11/IDTA-01001-3-1-2_AAS-Specification_Part1_Metamodel.pdf
+
+|[7] |“Semantic interoperability: challenges in the digital
+transformation age”; IEC, International Electronical Commission; 2019.
+[Online]. Available:
+https://www.iec.ch/system/files/2020-03/content/media/files/iec_wp_semantic_interoperability.pdf
+
+|[8] |“E DIN VDE V 0170-100 VDE V 0170-100:2019-10 Digitales Typenschild - Teil 100: Digitale Produktkennzeichnung”, October 2019, VDE VERLAG.
+
+|[9] |“IEC 61406-1:2022-09 Identification link - Part 1: General requirements”, September 2022.
+
+|[10] |“OMG Unified Modeling Language (OMG UML)”, Formal/2017-12-05, Version 2.5.1. December 2018. [Online] Available: https://www.omg.org/spec/UML/
+
+|[11] |“IDTA 02002-1-0 Submodel for Contact Information”, 24 May 2022, Industrial Digital Twin Association, [Online]. Available: 
+https://github.com/admin-shell-io/submodel-templates/blob/main/published/Contact%20Information/1/IDTA%2002002-1-0_Submodel_ContactInformation.pdf
+
+|[12] |DIN DKE SPEC 99100, "Requirements for data attributes of the battery passport". February 2025.
+
+|[13] |“The 'Blue Guide' on the implementation of EU product rules 2022”, June 2022. [Online]. Available:
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C_.2022.247.01.0001.01.ENG
+
+
+|===
