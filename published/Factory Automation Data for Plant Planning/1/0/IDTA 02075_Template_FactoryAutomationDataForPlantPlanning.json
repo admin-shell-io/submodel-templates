@@ -1,0 +1,5400 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "FactoryAutomationDataForPlantAAS",
+      "id": "https://admin-shell.io/idta/aas/FactoryAutomationDataForPlantPlanning/1/0",
+      "assetInformation": {
+        "assetKind": "Instance",
+        "globalAssetId": "https://admin-shell.io/idta/asset/FactoryAutomationDataForPlantPlanning/1/0",
+        "defaultThumbnail": {
+          "path": "/aasx/files/title-page.png",
+          "contentType": "image/png"
+        }
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "FactoryAutomationDataForPlant",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Factory Automation Data For Plant"
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0",
+        "templateId": "https://admin-shell.io/idta-02075"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/cds/factoryAutomationDataForPlant/1"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "AutomationMLData",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "AutomationML Data"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Reference to the AutomationML project file that contains the engineering information of the asset."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/automationMLData/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "SMT/Cardinality"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": "/IDTA_MediaTransferPoint.aml",
+          "contentType": "text/plain",
+          "modelType": "File"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "AutomationMLVersion",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "AutomationML Version"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "The AML version that the included AML file follows. This should be either 1 (i.e. CAEX 2.15) or 2 (i.e. CAEX 3.0)."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/automationMLVersion/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "SMT/Cardinality"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:positiveInteger",
+          "value": "2",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "AutomationMLElementReference",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "AutomationML Element Reference"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Reference to the AutomationML element hosting the engineering information of the asset."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/automationMLElementReference/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "SMT/Cardinality"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": {
+            "type": "ModelReference",
+            "keys": [
+              {
+                "type": "Submodel",
+                "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+              },
+              {
+                "type": "File",
+                "value": "AutomationMLData"
+              },
+              {
+                "type": "FragmentReference",
+                "value": "AML/ec23f160-5a4f-4cb4-b123-d787d5eae835"
+              }
+            ]
+          },
+          "modelType": "ReferenceElement"
+        },
+        {
+          "idShort": "AutomationMLAttributeAndInterfaceList",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "AutomationML Attribute and Interface List"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "List of AutomationML attributes to be published."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/automationMLAttributeAndInterfaceList/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "SMT/Cardinality"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "semanticIdListElement": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+              }
+            ]
+          },
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "OnOff",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "On/Off"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/onOff/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "onOff",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "On/Off"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "On/Off is a binary state with only two possible values: \u0027On\u0027 (true/active) or \u0027Off\u0027 (false/inactive)."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/onOff/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:boolean",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.onOff"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "0"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "onOff"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "articleNumber",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Article Number"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/articleNumber/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "ArticleNumber",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Article Number"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Unique product order identifier of the supplier"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/articleNumber/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.ArticleNumber"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "1"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "articleNumber"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "nameOfSupplier",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Name of Supplier"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/nameOfSupplier/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "NameOfSupplier",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Name of Supplier"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Name of supplier which provides the customer with a product or a service"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/nameOfSupplier/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.NameOfSupplier"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "2"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "nameOfSupplier"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "name",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Name"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/name/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "name",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Name"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Designation of the object"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/name/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.name"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "3"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "name"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "description",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Description"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                    }
+                  ]
+                },
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/description/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "description",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Description"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Describes the components."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/description/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.description"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "4"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "description"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "medium",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Medium"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/medium/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "medium",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Medium"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Designation of medium or air type name"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/medium/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.medium"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "5"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "medium"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "comment",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Comment"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/comment/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "comment",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Comment"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "A feature is generally a recognizable property"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/comment/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.comment"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "6"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "comment"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "plant",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Plant"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/plant/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "plant",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Plant"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Identifier of the plant"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/plant/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.plant"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "7"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "plant"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "diameter",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Diameter"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/diameter/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "diameter",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Diameter"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "The diameter is a straight line that passes through the center of a circle or sphere and connects two points on its boundary. It is the longest distance across the shape and is twice the length of the radius."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/diameter/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.diameter"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "8"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "diameter"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "overallLength",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Overall Length"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/overallLength/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "overallLength",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Overall Length"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Maximum length-wise expansion of the object"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/overallLength/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.overallLength"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "9"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "overallLength"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "NominalVoltage",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Nominal Voltage"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/nominalVoltage/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "NominalVoltage",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Nominal Voltage"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Describes the nominal voltage U"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/nominalVoltage/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:int",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.NominalVoltage"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "10"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "nominalVoltage"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "nominalPowerConsumption",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Nominal Power Consumption"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/nominalPowerConsumption/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "nominalPowerConsumption",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Nominal Power Consumption"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Describes the nominal power consumption"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/nominalPowerConsumption/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.nominalPowerConsumption"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "11"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "nominalPowerConsumption"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "maximalPowerConsumption",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Maximal Power Consumption"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/maximalPowerConsumption/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "maximalPowerConsumption",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Maximal Power Consumption"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Highest instantaneous power requirement of the device or component"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/maximalPowerConsumption/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.maximalPowerConsumption"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "12"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "maximalPowerConsumption"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "powerNominal",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Power Nominal"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/powerNominal/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "powerNominal",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Power Nominal"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Motor power in kW"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/powerNominal/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.powerNominal"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "13"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "powerNominal"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "powerMaximal",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Power Maximal"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/powerMaximal/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "powerMaximal",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Power Maximal"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Motor power in kW"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/powerMaximal/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.powerMaximal"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "14"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "powerMaximal"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "xframe",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "X Frame (Position X)"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/xframe/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "xframe",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "X Frame (Position X)"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "X-Position along the X-axis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/xframe/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.xframe"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "15"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "xframe"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "yframe",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Y Frame (Position Y)"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/yframe/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "yframe",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Y Frame (Position Y)"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Y-Position along the Y-axis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/yframe/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.yframe"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "16"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "yframe"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "zframe",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Z Frame (Position Z)"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/zframe/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "zframe",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Z Frame (Position Z)"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Z-Position along the Z-axis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/zframe/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.zframe"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "17"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "zframe"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "rxframe",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "RX Frame (Rotation X)"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/rxframe/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "rxframe",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "RX Frame (Rotation X)"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "RX-rotation over the X-axis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/rxframe/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.rxframe"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "18"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "rxframe"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "ryframe",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "RY Frame (Rotation Y)"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/ryframe/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "ryframe",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "RY Frame (Rotation Y)"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "RY-rotation along the Y-axis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/ryframe/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.ryframe"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "19"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "ryframe"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "rzframe",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "RZ Frame (Rotation Z)"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of AutomationML Attributes to be published as properties"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/attributeContainer/1"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/cds/rzframe/1"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "SMT/Cardinality"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "rzframe",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "RZ Frame (Rotation Z)"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Z-rotation along the Z-axis"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/rzframe/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "RelationBetweenPropertyAndAttribute",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Relation Between Property and Attribute"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "SMT/Cardinality"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "first": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "File",
+                        "value": "AutomationMLData"
+                      },
+                      {
+                        "type": "FragmentReference",
+                        "value": "AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.rzframe"
+                      }
+                    ]
+                  },
+                  "second": {
+                    "type": "ModelReference",
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0"
+                      },
+                      {
+                        "type": "SubmodelElementList",
+                        "value": "AutomationMLAttributeAndInterfaceList"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "20"
+                      },
+                      {
+                        "type": "Property",
+                        "value": "rzframe"
+                      }
+                    ]
+                  },
+                  "modelType": "RelationshipElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "FactoryAutomationDataForPlant",
+      "id": "https://admin-shell.io/idta/cds/factoryAutomationDataForPlant/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FactoryAutomationDataForPlant"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Standardized representation of engineering building services (TGA) data for digital factory and plant planning, enabling consistent exchange of AutomationML-based planning data via the Asset Administration Shell."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/BuildingServices"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AutomationMLData",
+      "id": "https://admin-shell.io/idta/cds/automationMLData/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AutomationMLData"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Reference to the AutomationML project file that contains the engineering information of the asset."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/General/FileReference"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AutomationMLVersion",
+      "description": [
+        {
+          "language": "en",
+          "text": "The AML version that the included AML file follows. This should be either 1 (i.e. CAEX 2.15) or 2 (i.e. CAEX 3.0)."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/automationMLVersion/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AutomationMLVersion"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The AML version that the included AML file follows. This should be either 1 (i.e. CAEX 2.15) or 2 (i.e. CAEX 3.0)."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/General/VersionNumber"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AutomationMLElementReference",
+      "description": [
+        {
+          "language": "en",
+          "text": "Reference to the AutomationML element hosting the engineering information of the asset."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/automationMLElementReference/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AutomationMLElementReference"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Reference to the AutomationML element hosting the engineering information of the asset."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/General/ElementReference"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AutomationMLAttributeAndInterfaceList",
+      "description": [
+        {
+          "language": "en",
+          "text": "List of AutomationML attributes to be published."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/automationMLAttributeAndInterfaceList/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AutomationMLAttributeAndInterfaceList"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "List of AutomationML attributes to be published."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/General/AttributeAndInterfaceList"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "OnOff",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/onOff/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "OnOff"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RelationBetweenPropertyAndAttribute",
+      "description": [
+        {
+          "language": "en",
+          "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "RelationBetweenPropertyAndAttribute"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Relation between related property SubmodelElements and corresponding AutomationML attribute."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AttributeRelation"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "articleNumber",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/articleNumber/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "articleNumber"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "nameOfSupplier",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/nameOfSupplier/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "nameOfSupplier"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "name",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/name/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "name"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "description",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/description/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "description"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "medium",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/medium/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "medium"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "comment",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/comment/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "comment"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "plant",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/plant/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "plant"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "diameter",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/diameter/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "diameter"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "overallLength",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/overallLength/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "overallLength"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NominalVoltage",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/nominalVoltage/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "NominalVoltage"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "nominalPowerConsumption",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/nominalPowerConsumption/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "nominalPowerConsumption"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "maximalPowerConsumption",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/maximalPowerConsumption/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "maximalPowerConsumption"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "powerNominal",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/powerNominal/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "powerNominal"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "powerMaximal",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/powerMaximal/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "powerMaximal"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "xframe",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/xframe/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "xframe"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "yframe",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/yframe/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "yframe"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "zframe",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/zframe/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "zframe"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "rxframe",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/rxframe/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "rxframe"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ryframe",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ryframe/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ryframe"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "rzframe",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of AutomationML Attributes to be published as properties"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/rzframe/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "rzframe"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of AutomationML Attributes to be published as properties"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AutomationMLAttribute"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AttributeContainer",
+      "id": "https://admin-shell.io/idta/cds/attributeContainer/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AttributeContainer"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Container grouping an AutomationML attribute that is published as a property together with its relation to the AutomationML source."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/FactoryAutomationDataForPlant/AttributeContainer"
+            }
+          ]
+        },
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://www.automationml.org/AutomationML_AAS_SemanticIDs/General/AttributeContainer"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
