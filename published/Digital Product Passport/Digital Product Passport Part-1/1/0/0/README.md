@@ -19,5 +19,12 @@ EN 18223 is part of a series of standards prepared by the Joint Technical Commit
 - EN 18220 - Module 2: Data Carriers and digital representation
 - EN 18246 - Module 7: Data authentication, reliability and integrity
 
+In this document they are referred to as the JTC24 specifications.
 
+## About this version
 
+This version is the first version officially published by IDTA.
+
+## Difference to prior versions
+
+No prior versions were officially published.

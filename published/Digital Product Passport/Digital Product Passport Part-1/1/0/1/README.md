@@ -1,4 +1,4 @@
-# Digital Product Passport - Part 1 (Version 1.0)
+# Digital Product Passport - Part 1 (Version 1.0.1)
 
 This is a Submodel template specification for the Asset Administration Shell.
 
@@ -19,5 +19,18 @@ EN 18223 is part of a series of standards prepared by the Joint Technical Commit
 - EN 18220 - Module 2: Data Carriers and digital representation
 - EN 18246 - Module 7: Data authentication, reliability and integrity
 
+In this document they are referred to as the JTC24 specifications.
 
+## About this version
 
+This is version 1.0.1 of the Submodel Template Specification.
+
+## Difference to prior versions
+
+**Prior version:** 1.0
+
+see changelog in document for details
+
+**Major changes:**
+
+- fix full expanded example 
