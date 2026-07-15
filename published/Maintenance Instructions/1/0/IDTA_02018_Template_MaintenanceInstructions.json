@@ -326,7 +326,7 @@
                         {
                           "type": "SMT/Cardinality",
                           "valueType": "xs:string",
-                          "value": "ZerotToOne"
+                          "value": "ZeroToOne"
                         }
                       ],
                       "valueType": "xs:string",
@@ -585,7 +585,7 @@
                     {
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
-                      "value": "ZerotoMany"
+                      "value": "ZeroToMany"
                     }
                   ],
                   "value": [
@@ -2516,7 +2516,7 @@
                     {
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
-                      "value": "ZerotToOne"
+                      "value": "ZeroToOne"
                     }
                   ],
                   "value": [
@@ -2546,7 +2546,7 @@
                         {
                           "type": "SMT/Cardinality",
                           "valueType": "xs:string",
-                          "value": "ZerotToOne"
+                          "value": "ZeroToOne"
                         }
                       ],
                       "value": [
@@ -2931,7 +2931,7 @@
                     {
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
-                      "value": "ZerotToOne"
+                      "value": "ZeroToOne"
                     }
                   ],
                   "value": [
@@ -2961,7 +2961,7 @@
                         {
                           "type": "SMT/Cardinality",
                           "valueType": "xs:string",
-                          "value": "ZerotToOne"
+                          "value": "ZeroToOne"
                         }
                       ],
                       "value": [
@@ -3091,7 +3091,7 @@
                     {
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
-                      "value": "ZerotToOne"
+                      "value": "ZeroToOne"
                     }
                   ],
                   "valueType": "xs:string",
@@ -3378,7 +3378,7 @@
                     {
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
-                      "value": "ZerotToOne"
+                      "value": "ZeroToOne"
                     }
                   ],
                   "modelType": "MultiLanguageProperty"
@@ -3409,13 +3409,13 @@
                     {
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
-                      "value": "ZerotToOne"
+                      "value": "ZeroToOne"
                     }
                   ],
                   "value": [
                     {
                       "category": "CONSTANT",
-                      "idShort": "CollectionQuantityOfSparepartForSpecificInterval__00__",
+                      "idShort": "CollectionQuantityOfSparePartForSpecificInterval__00__",
                       "description": [
                         {
                           "language": "de",
@@ -3439,7 +3439,7 @@
                         {
                           "type": "SMT/Cardinality",
                           "valueType": "xs:string",
-                          "value": "ZerotToOne"
+                          "value": "ZeroToOne"
                         }
                       ],
                       "value": [
@@ -3469,7 +3469,7 @@
                             {
                               "type": "SMT/Cardinality",
                               "valueType": "xs:string",
-                              "value": "ZerotToOne"
+                              "value": "ZeroToOne"
                             }
                           ],
                           "valueType": "xs:decimal",
@@ -3596,7 +3596,7 @@
                     {
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
-                      "value": "ZerotToOne"
+                      "value": "ZeroToOne"
                     }
                   ],
                   "valueType": "xs:string",
@@ -6987,7 +6987,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "CollectionQuantityOfSparepartForSpecificInterval_00",
+      "idShort": "CollectionQuantityOfSparePartForSpecificInterval_00",
       "description": [
         {
           "language": "de",
@@ -7014,7 +7014,7 @@
             "preferredName": [
               {
                 "language": "en",
-                "text": "CollectionQuantityOfSparepartForSpecificInterval_00"
+                "text": "CollectionQuantityOfSparePartForSpecificInterval_00"
               }
             ],
             "definition": [
