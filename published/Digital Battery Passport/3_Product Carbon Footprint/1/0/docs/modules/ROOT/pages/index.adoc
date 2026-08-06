@@ -1,0 +1,722 @@
+
+
+= IDTA 02035-3 : Digital Battery Passport - Part 3: Product Carbon Footprint 1.0 
+February 2026
+
+
+
+=== Imprint 
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+[cols="1,1,4"]
+|===
+
+h|Date
+h|Version
+h|Comment
+
+|18.02.2026
+|1.0
+|Release of the official Submodel Template published by IDTA – a joint result of the Model Expert Group comprising IDTA, Catena-X, and the Battery Pass Consortium.
+
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+
+=== About this document
+This document is a part of an overall specification series [4]. 
+Each part specifies the contents of a Submodel Template (SMT). 
+The  specifications of the Asset Administration Shell (AAS) are the basis for the Submodel Template specifications, see [3]. 
+
+The target audience of the specification are developers and editors of technical 
+documentation and manufacturer information, which are describing assets by means of the Asset Administration Shell (AAS) and 
+therefore need to create a Submodel instance with a hierarchy of 
+SubmodelElements. 
+This document especially details on the question, which SubmodelElements with which semantic identification shall be used for this purpose.
+
+This SMT will only be fully supported as of metamodel V3.1. 
+V3.1 allows to assign idShorts to Elements within a SubmodelElementList (SML).
+
+This specification was created following the "semantic-driven workflow" as defined in [5] based on Aspect Models [6].
+There is no central dictionary or repository for Aspect Models. 
+In this specification the following sources are used for defining semantics:
+
+- Aspect Models published at link:https://industrialdigitaltwin.org/[IDTA] [7]: https://github.com/admin-shell-io/smt-semantic-models
+
+- Aspect Models published by the link:https://thebatterypass.eu/[BatteryPass Consortium] (closed project) [8]: https://github.com/batterypass/BatteryPassDataModel
+
+- Aspect Models pubslihed at Tractus-X and used in standards published by link:https://catena-x.net/[Catena-X] [9]: https://github.com/eclipse-tractusx/sldt-semantic-modelsl
+
+
+
+
+
+=== Scope of the Submodel
+This Submodel template aims to define the dynamic data points of a Battery Passport conformant to DIN DKE SPEC 99100 and the corresponding EU regulations.
+
+The battery passport consists of the following 7 parts:
+
+    Digital Battery Passport - Part 1: Digital Nameplate (IDTA-02035-1)
+    Digital Battery Passport - Part 2: Handover Documentation (IDTA-02035-2)
+    Digital Battery Passport - Part 3: Product Carbon Footprint (IDTA-02035-3)
+    Digital Battery Passport - Part 4: Technical Data (IDTA-02035-4)
+    Digital Battery Passport - Part 5: Product Condition (IDTA-02035-5)
+    Digital Battery Passport - Part 6: Material Composition (IDTA-02035-6)
+    Digital Battery Passport - Part 7: Circularity (IDTA-02035-7)
+    
+This specification is Part 3: Product Carbon Footprint 1.0 (IDTA-02035-3).
+
+
+
+
+
+=== Relevant standards for the Submodel template
+This submodel template fulfills the requirements for dynamic data attributes as defined in DIN DKE SPEC 99100 [14].
+DIN DKE 99100 "is based on the European Union and key Member States current regulatory requirements for battery passport information. 
+Mandatory information for the battery passport as stated in the EU Battery Regulation (EU)2023/1542, Article77 and AnnexXIII, 
+as well as the Ecodesign for Sustainable Products Regulation (ESPR), is supplemented by recommendations to increase sustainability and circularity. [14]"
+
+This document is valid for all battery categories. 
+Please be aware that for battery categories that have stronger requirements like industrial batteries with battery management systems etc. some of the data points are specified as optional although mandatory per regulation. 
+
+
+
+
+=== Explanations on used UML diagrams
+For clarity and an improved legibility readers suggested to go through this section at first before reading the following chapters.
+
+UML diagrams feature box-like elements, called "classes". These classes, typically Submodels, SubmodelElementCollections or SubmodelElementLists, typically feature a set of Properties or further SubmodelElements. These elements can have specific cardinalities.
+
+The single classes are hierarchally organized by aggregation relations, these can be seen as "contains" relation.
+
+For a further overview on UML diagrams please refer to [6] and [10]. 
+
+Further details about used table formats please refer to Annex A.
+
+== Information set for Submodel ”CarbonFootprint”
+
+
+=== General
+The "Product Carbon Footprint 1.0" Submodel Template is part of the specification series for the Battery Passport.
+
+The Submodel template is a subset of the Submodel template "Carbon Footprint 1.0 (IDTA-02023)" with specific extensions for the Digital Battery Passport.
+
+The submodel instance `Product Carbon Footprint` is used to declared in terms of kg of carbon dioxide equivalent per one kWh of the total energy provided by the battery over its expected service life. This submodel is relevant to the corresponding attributes of the DIN DKE SPEC 99100:
+
+* Battery carbon footprint per Functional Unit
+* Contribution of raw material acquisition and pre-processing lifecycle stage
+* Contribution of main product production/manufacturing lifecycle stage
+* Contribution of distribution lifecycle stage
+* Contribution of end of life and recycling lifecycle stage
+* Carbon footprint performance class
+* Web link to public carbon footprint study
+* General battery and manufacturer information
+* Absolute battery carbon footprint
+
+
+
+<<UML_Submodel>> shows the UML-diagram defining the relevant properties which need to be set. 
+
+[plantuml, UML_Submodel_2_1, svg, id="UML_Submodel_2_1", title="UML-Diagram for Submodel \"Product Carbon Footprint\" for batteries"]
+----
+include::partial$diagrams/UML_Submodel_2_1.puml[]
+----
+
+The following attributes need to be set for the Submodel instance. The table convention is explained in Annex A.2.
+  
+The ECLASS IRDIs referenced in this Submodel are based on ECLASS Release 15. This version of the Submodel with these ECLASS IRDIs is also available in the download area of the ECLASS website: www.eclass.eu in form of the Asset.xml. The Asset.xml (Release 15) is the ECLASS file that contains Submodels. The use of these Submodels is free of charge.
+
+
+=== Properties of the Submodel “CarbonFootprint”
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/HandoverDocumentation/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_CarbonFootprint],[SubmodelElementCollection, Section_2_2_Submodel],[ReferenceElement, Table_Submodel]
+
+
+
+[width="100%", id="Table_Submodel", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}CarbonFootprint 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/CarbonFootprint/CarbonFootprint/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}The Submodel provides the means to access the Carbon Footprint of the asset. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SML]  +
+ +
+ProductCarbonFootprints
+|https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprints/1/0  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#CarbonFootprintBattery +
+ +
+  +
+Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use.
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|===
+
+
+
+
+=== Attributes of the SubmodelElemenList ProductCarbonFootprints
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/HandoverDocumentation/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_CarbonFootprint],[SubmodelElementCollection, Section_2_3_Attributes_of_the_SML_ProductCarbonFootprints_instance],[ReferenceElement, Table_123]
+
+
+
+[width="100%", id="Table_123", title="Attributes of the SubmodelElementList instance", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}ProductCarbonFootprints 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprints/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}CarbonFootprint 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprint/1/0], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+ProductCarbonFootprint
+|https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprint/1/0  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint +
+ +
+  +
+Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use.
+|[]  +
+ +
+7 elements
+|
+
+
+
+|===
+
+
+
+
+=== Attributes of the SubmodelElementCollection ProductCarbonFootprint
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/HandoverDocumentation/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_CarbonFootprint],[SubmodelElementCollection, Section_2_4_Attributes_of_the_SMC_ProductCarbonFootprint_instance],[ReferenceElement, Table_22]
+
+
+
+[width="100%", id="Table_22", title="Attributes of the SubmodelElementCollection instance", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}ProductCarbonFootprint 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprint/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCarbonFootprints 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SML]  +
+ +
+PcfCalculationMethods
+|https://admin-shell.io/idta/CarbonFootprint/PcfCalculationMethods/1/0  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCalculationMethods +
+ +
+  +
+Standards, methods for determining the greenhouse gas emissions of a product.
+
+This Value List is based on ECLASS 15 with IRDI 0173-1#09-AAO115#003. The full list can be found in Section 2.5 in "Product Carbon Footprint 1.0 (IDTA-02023)".
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[Prop]  +
+ +
+PcfCO2eq
+|0173-1#02-ABG855#003  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCo2eq +
+ +
+sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard  +
+DIN DKE Spec 99100 chapter reference: 6.3.2
+|[Decimal]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+ReferenceImpactUnitForCalculation
+|0173-1#02-ABG856#003  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#referenceImpactUnitForCalculation +
+ +
+Quantity unit of the product to which the PCF information on the CO2 footprint refers  +
+If a normalized product carbon footprint (PCF) value is provided, the reference value for calculation should be a specific unit such as 'kWh'. 
+If the total PCF value is provided the reference value for calculation should be 'piece'.
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+QuantityOfMeasureForCalculation
+|0173-1#02-ABG857#003  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#quantityOfMeasureForCalculation +
+ +
+provides the quantity number of pieces or mass or volume to compute the impact of climate change or product carbon footprint  +
+If a normalized product carbon footprint (PCF) value is provided, the quantity of measure for calculation should be 1.
+If the total PCF value is provided the quantity of measure for calculation should be 1.
+|[Double]  +
+ +
+
+|1
+
+
+
+|[SML]  +
+ +
+LifeCyclePhases
+|https://admin-shell.io/idta/CarbonFootprint/LifeCyclePhases/1/0  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#lifeCyclePhases, 0173-1#02-ABG858#003 +
+ +
+  +
+List of life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers.
+
+The string value in the value list is based on DIN DKE SPEC 99100: "A1 - raw material supply (and upstream production)" (6.3.5 required lify cycle mapping), "A3 - production" (6.3.4 Contribution of main product production/manufacturing lifecycle stage), "A4 - transport to final destination" (6.3.5 Contribution of distribution lifecycle stage), "C3 - recycling, waste treatment" (6.3.6 Contribution of end of life and recycling lifecycle stage)
+
+Please note that the model should always contain at least one Product Carbon Footprint entry that reflects the total PCF value (including all life cycle phases) of the battery.
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[Prop]  +
+ +
+PerformanceClass
+|urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#performanceClass  +
+ +
+The battery passport must include the carbon footprint performance class in accordance with the entry into force of the delegated and implementing acts on the carbon footprint performance classes per Article7 of the Battery Regulation.
+
+ DIN DKE Spec 99100 chapter reference: 6.3.7  
+|[String]  +
+ +
+
+|1
+
+
+
+|[SML]  +
+ +
+WebLinkToPublicCarbonFootprintStudy
+|urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#webLinkToPublicCarbonFootprintStudy  +
+ +
+One or more document identifiers (depending, for example, on the translation) of a specific document, which can be found in the 'HandoverDocumentation' model.
+
+ DIN DKE Spec 99100 chapter reference: 6.3.8 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|===
+
+
+
+
+=== Attributes of the SubmodelElemenList PcfCalculationMethods
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/HandoverDocumentation/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_CarbonFootprint],[SubmodelElementCollection, Section_2_5_Attributes_of_the_SML_PcfCalculationMethods_instance],[ReferenceElement, Table_222]
+
+
+
+[width="100%", id="Table_222", title="Attributes of the SubmodelElementList instance", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}PcfCalculationMethods 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/CarbonFootprint/PcfCalculationMethods/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCarbonFootprint 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Standards, methods for determining the greenhouse gas emissions of a product.
+
+This Value List is based on ECLASS 15 with IRDI 0173-1#09-AAO115#003. The full list can be found in Section 2.5 in "Product Carbon Footprint 1.0 (IDTA-02023)".
+ 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, 0173-1#02-ABG854#003], typeValueListElement=Property, valueTypeListElement=xs:string 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+PcfCalculationMethod
+|0173-1#02-ABG854#003  +
+ +
+standard, method for determining the greenhouse gas emissions of a product 
+|[String]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+
+=== Attributes of the SubmodelElemenList LifeCyclePhase
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/HandoverDocumentation/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_CarbonFootprint],[SubmodelElementCollection, Section_2_5_Attributes_of_the_SML_LifeCyclePhase],[ReferenceElement, Table_254]
+
+
+
+[width="100%", id="Table_254", title="Attributes of the SubmodelElementList instance", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}LifeCyclePhases 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/CarbonFootprint/LifeCyclePhases/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCarbonFootprint 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}List of life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers.
+
+The string value in the value list is based on DIN DKE SPEC 99100: "A1 - raw material supply (and upstream production)" (6.3.5 required lify cycle mapping), "A3 - production" (6.3.4 Contribution of main product production/manufacturing lifecycle stage), "A4 - transport to final destination" (6.3.5 Contribution of distribution lifecycle stage), "C3 - recycling, waste treatment" (6.3.6 Contribution of end of life and recycling lifecycle stage)
+
+Please note that the model should always contain at least one Product Carbon Footprint entry that reflects the total PCF value (including all life cycle phases) of the battery.
+ 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, 0173-1#02-ABG858#003], typeValueListElement=Property, valueTypeListElement=xs:string 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+LifeCyclePhase
+|0173-1#02-ABG858#004  +
+ +
+ 
+|[String]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+
+=== Attributes of the SubmodelElementList WebLinkToPublicCarbonFootprintStudy
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/HandoverDocumentation/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_CarbonFootprint],[SubmodelElementCollection, Section_2_8_Attributes_of_the_SML_WebLinkToPublicCarbonFootprintStudy_instance],[ReferenceElement, Table_2521]
+
+
+
+[width="100%", id="Table_2521", title="Attributes of the SubmodelElementList instance", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}WebLinkToPublicCarbonFootprintStudy 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#webLinkToPublicCarbonFootprintStudy 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}ProductCarbonFootprint 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=SubmodelElement 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+DocumentIdentifier
+|urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier  +
+ +
+supplementalSemanticId: 0173-1#02-AAO099#004 +
+ +
+  +
+Document identifier of the document (e.g., PDF) that can be found in the HandoverDocumentation Submodel.
+
+DIN DKE Spec 99100 chapter reference: 6.3.8 
+|[String]  +
+ +
+XF90-884
+|1..*
+
+
+
+|===
+
+
+
+:sectnums!:
+
+== Annex A.	Explanations on used table formats
+
+=== 1. General
+
+The used tables in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The tables follow in principle the same conventions as in [5].
+* The table heads abbreviate 'cardinality' with 'card'.
+* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+* The types of SubmodelElements are abbreviated (see <<Table_SME_abbrev>>):
+
+[width="100%",cols="40%,60%", id="Table_SME_abbrev", title="Abbreviations for SubmodelElements", options="header"]
+|===
+|SME type |SubmodelElement type
+|Blob |Blob
+|Cap |Capability
+|Ent |Entity
+|Evt |Event
+|File |File
+|MLP |MultiLanguageProperty
+|Opr |Operation
+|Prop |Property
+|Range |Range
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|RelA |AnnotatedRelationshipElement
+|SMC |SubmodelElementCollection
+|SME |SubmodelElement type
+|SML |SubmodelElementList
+|===
+
+* If an idShort ends with '++__00__++', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique. A different idShort might be choosen, as long as it is unique in the parent’s context.
+* The Keys of semanticId in the main section feature only idType and value, such as: https://admin-shell.io/vdi/2770/1/0/DocumentId/Id. The attribute "type" (typically "ConceptDescription" and "(local)" or "GlobalReference") need to be set accordingly; see [6].
+* If a table does not contain a column with "parent" heading, all represented attributes share the same parent. This parent is denoted in the head of the table.
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* The [valueType] is only given for Properties.
+
+
+
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] |“Recommendations for implementing the strategic initiative
+INDUSTRIE 4.0”, acatech, April 2013. [Online]. Available:
+https://en.acatech.de/publication/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+
+|[2] |“Implementation Strategy Industrie 4.0: Report on the results of
+the Industrie 4.0 Platform”; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April
+2015. [Online]. Available:
+https://www.bitkom.org/sites/main/files/file/import/2016-01-Implementation-Strategy-Industrie40.pdf
+
+|[3] |“The Structure of the Administration Shell: TRILATERAL
+PERSPECTIVES from France, Italy and Germany”, March 2018, [Online].
+Available:
+https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
+
+|[4] |“Examples of the Asset Administration Shell for Industrie 4.0 Components – Basic Part”; ZVEI e.V., Whitepaper, April 2017. [Online].
+Available:
+https://www.zvei.org/en/press-media/publications/examples-of-the-asset-administration-shell-for-industrie-40-components-basic-part
+
+|[5] |“Verwaltungsschale in der Praxis. Wie definiere ich Teilmodelle,
+beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen
+(in German)”, Version 1.0, April 2019, Plattform Industrie 4.0 in
+Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for
+Economic Affairs and Energy (BMWi), Available:
+https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
+
+|[6] |“Details of the Asset Administration Shell; Part 1 - The exchange
+of information between partners in the value chain of Industrie 4.0
+(Version 3.0RC01)”, November 2020, [Online]. Available:
+https://industrialdigitaltwin.org/wp-content/uploads/2021/09/07_details_of_the_asset_administration_shell_part1_v3_en_2020.pdf
+
+|[7] |“Semantic interoperability: challenges in the digital
+transformation age”; IEC, International Electronical Commission; 2019.
+[Online]. Available:
+https://www.iec.ch/system/files/2020-03/content/media/files/iec_wp_semantic_interoperability.pdf
+
+|[8] |“E DIN VDE V 0170-100 VDE V 0170-100:2019-10 Digitales Typenschild - Teil 100: Digitale Produktkennzeichnung”, October 2019, VDE VERLAG.
+
+|[9] |“IEC 61406-1:2022-09 Identification link - Part 1: General requirements”, September 2022.
+
+|[10] |“OMG Unified Modeling Language (OMG UML)”, Formal/2017-12-05, Version 2.5.1. December 2018. [Online] Available: https://www.omg.org/spec/UML/
+
+|[11] |“IDTA 02002-1-0 Submodel for Contact Information”, 24 May 2022, Industrial Digital Twin Association, [Online]. Available: 
+https://github.com/admin-shell-io/submodel-templates/blob/main/published/Contact%20Information/1/IDTA%2002002-1-0_Submodel_ContactInformation.pdf
+
+|[12] |“IDTA 02057-1-0 Submodel for Explosion Safety”, _in development_
+
+|[13] |“The 'Blue Guide' on the implementation of EU product rules 2022”, June 2022. [Online]. Available:
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C_.2022.247.01.0001.01.ENG
+
+|[14] |DIN DKE SPEC 99100, "Requirements for data attributes of the battery passport". February 2025.
+
+
+|===

@@ -1,0 +1,3652 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "CapabilityDescriptionAAS",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "CapabilityDescriptionAAS"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/aas/CapabilityDescription/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/CapabilityDescription/1/0",
+        "assetType": "Type",
+        "defaultThumbnail": {
+          "path": "/aasx/files/title-page.png",
+          "contentType": "image/png"
+        }
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/CapabilityDescription/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "CapabilityDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Submodel Template Capability Description"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Definition of the Submodel CapabilityDescription identified by its semanticId. The Submodel idShort can be picked freely."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/CapabilityDescription/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/CapabilityDescription/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "CapabilitySet",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Capability Set"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "A Set of CapabilityContainer for a Use Case for the asset."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "OneToMany"
+            },
+            {
+              "kind": "TemplateQualifier",
+              "type": "EditIdShort",
+              "valueType": "xs:string",
+              "value": "True"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "CapabilityContainer",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Capability Container"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "A Container for one capability and all its additional descriptive elements."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                },
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "EditIdShort",
+                  "valueType": "xs:string",
+                  "value": "True"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "Capability",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Capability"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "[A capability is a] implementation-independent specification of a function in industrial production to achieve an effect in the physical or virtual world. "
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/Capability/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRoleQualifier/Required/1/0"
+                          }
+                        ]
+                      },
+                      "type": "Required",
+                      "valueType": "xs:string",
+                      "value": "[1, 0]"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRoleQualifier/Offered/1/0"
+                          }
+                        ]
+                      },
+                      "type": "Offered",
+                      "valueType": "xs:string",
+                      "value": "[1, 0]"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRoleQualifier/NotAssigned/1/0"
+                          }
+                        ]
+                      },
+                      "type": "NotAssigned",
+                      "valueType": "xs:string",
+                      "value": "[1, 0]"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    },
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "EditIdShort",
+                      "valueType": "xs:string",
+                      "value": "True"
+                    }
+                  ],
+                  "modelType": "Capability"
+                },
+                {
+                  "idShort": "CapabilityComment",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Capability Comment"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Individual comment of the capability."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityComment/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "idShort": "PropertySet",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Property Set"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Set of properties describing the capability in more detail, if existing."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    },
+                    {
+                      "kind": "TemplateQualifier",
+                      "type": "EditIdShort",
+                      "valueType": "xs:string",
+                      "value": "True"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "PropertyContainer",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Property Container"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Information for a certain property as defined by CapabilityPropertyType and its descriptive elements."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "OneToMany"
+                        },
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "EditIdShort",
+                          "valueType": "xs:string",
+                          "value": "True"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "SameProperty",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Same Property"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Relationship of the Property described in the Property container as first element and the identical property as second element in another Submodel or an external information source."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityDescription/SameProperty/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToMany"
+                            }
+                          ],
+                          "first": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "urn:example:capability-description:same-property:first"
+                              }
+                            ]
+                          },
+                          "second": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "urn:example:capability-description:same-property:second"
+                              }
+                            ]
+                          },
+                          "modelType": "RelationshipElement"
+                        },
+                        {
+                          "idShort": "PropertyRange",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Property Range"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Range made of min and max values forming an interval. A valueId shall be set to define the semantic for the values."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityPropertyEnumType/Range/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToMany"
+                            },
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "EditIdShort",
+                              "valueType": "xs:string",
+                              "value": "True"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Range"
+                        },
+                        {
+                          "idShort": "PropertyProperty",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Property Property"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Property with a value describing an information data point. A valueId shall be set to define the semantic for the value."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityPropertyType/Property/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToMany"
+                            },
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "EditIdShort",
+                              "valueType": "xs:string",
+                              "value": "True"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "PropertyMultiLanguageProperty",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Property Multi Language Property"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Property with a value for one or more language entries with corresponding text describing an information data point. A valueId shall be set to define the semantic for the value."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityPropertyType/MultiLanguageProperty/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToMany"
+                            },
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "EditIdShort",
+                              "valueType": "xs:string",
+                              "value": "True"
+                            }
+                          ],
+                          "modelType": "MultiLanguageProperty"
+                        },
+                        {
+                          "idShort": "PropertySubmodelList",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Property Submodel List"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "A list of one or more elements defined by only the enum type CapabilityPropertyType. "
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityPropertyType/SubmodelElementList/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToMany"
+                            },
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Recursion/1/0"
+                                  }
+                                ]
+                              },
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "Recursive"
+                            },
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "EditIdShort",
+                              "valueType": "xs:string",
+                              "value": "True"
+                            }
+                          ],
+                          "typeValueListElement": "SubmodelElement",
+                          "value": [
+                            {
+                              "idShort": "PropertyRange",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Property Range"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Range made of min and max values forming an interval. A valueId shall be set to define the semantic for the values."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityPropertyType/Range/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToMany"
+                                },
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "EditIdShort",
+                                  "valueType": "xs:string",
+                                  "value": "True"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Range"
+                            },
+                            {
+                              "idShort": "PropertyProperty",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Property Property"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Property with a value describing an information data point. A valueId shall be set to define the semantic for the value."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityPropertyType/Property/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToMany"
+                                },
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "EditIdShort",
+                                  "valueType": "xs:string",
+                                  "value": "True"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "PropertyMultiLanguageProperty",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Property Multi Language Property"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Property with a value for one or more language entries with corresponding text describing an information data point. A valueId shall be set to define the semantic for the value."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityPropertyType/MultiLanguageProperty/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToMany"
+                                },
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "EditIdShort",
+                                  "valueType": "xs:string",
+                                  "value": "True"
+                                }
+                              ],
+                              "modelType": "MultiLanguageProperty"
+                            },
+                            {
+                              "idShort": "PropertySubmodelList",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Property Submodel List"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "A list of one or more elements defined by only the enum type CapabilityPropertyType. "
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityPropertyType/SubmodelElementList/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToMany"
+                                },
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Recursion/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "Recursive"
+                                },
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "EditIdShort",
+                                  "valueType": "xs:string",
+                                  "value": "True"
+                                }
+                              ],
+                              "typeValueListElement": "SubmodelElement",
+                              "modelType": "SubmodelElementList"
+                            }
+                          ],
+                          "modelType": "SubmodelElementList"
+                        },
+                        {
+                          "idShort": "PropertyComment",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Property Comment"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "General description of the property."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyComment/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "modelType": "MultiLanguageProperty"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "CapabilityRelations",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Capability Relations"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Collection of relationships for the capability, if existing."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "CapabilityRealizedBy",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Capability Realized By"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Relationship between the Capability element in the CapabilityContainer as first element and a Skill implementation, not defined in this Submodel template, as second element."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRealizedBy/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToMany"
+                        },
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "EditIdShort",
+                          "valueType": "xs:string",
+                          "value": "True"
+                        }
+                      ],
+                      "first": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "CapabilitySet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "CapabilityContainer"
+                          },
+                          {
+                            "type": "Capability",
+                            "value": "Capability"
+                          }
+                        ]
+                      },
+                      "second": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "urn:example:capability-description:capability-realized-by:skill"
+                          }
+                        ]
+                      },
+                      "modelType": "RelationshipElement"
+                    },
+                    {
+                      "idShort": "ComposedOfSet",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Composed Of Set"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "If composition(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/ComposedOfSet/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "ComposedOfContainer",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Composed Of Container"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Container corresponding to one composition for the Capability in the CapabilityContainer."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityDescription/ComposedOfContainer/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "OneToMany"
+                            },
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "EditIdShort",
+                              "valueType": "xs:string",
+                              "value": "True"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "idShort": "CapabilityComposedOf",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Capability Composed Of"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Relationship between a composed capability as first element and one of its minimum two subordinate capabilities as second element."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityComposedOf/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "TwoToMany"
+                                },
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "EditIdShort",
+                                  "valueType": "xs:string",
+                                  "value": "True"
+                                }
+                              ],
+                              "first": {
+                                "type": "ModelReference",
+                                "keys": [
+                                  {
+                                    "type": "Submodel",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilitySet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilityContainer"
+                                  },
+                                  {
+                                    "type": "Capability",
+                                    "value": "Capability"
+                                  }
+                                ]
+                              },
+                              "second": {
+                                "type": "ModelReference",
+                                "keys": [
+                                  {
+                                    "type": "Submodel",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilitySet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilityContainer"
+                                  },
+                                  {
+                                    "type": "Capability",
+                                    "value": "Capability"
+                                  }
+                                ]
+                              },
+                              "modelType": "RelationshipElement"
+                            },
+                            {
+                              "idShort": "ComposedOfComment",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Composed Of Comment"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Comment to describe the composition in human readable form."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/ComposedOfComment/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "modelType": "MultiLanguageProperty"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    },
+                    {
+                      "idShort": "GeneralizedBySet",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Generalized By Set"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "If generalization(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/GeneralizedBySet/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToMany"
+                        },
+                        {
+                          "kind": "TemplateQualifier",
+                          "type": "EditIdShort",
+                          "valueType": "xs:string",
+                          "value": "True"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "CapabilityGeneralizedBy",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Capability Generalized By"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Relationship between the Capability as first element, described in the CapabilityContainer, and a more general Capability as second element."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityGeneralizedBy/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "OneToMany"
+                            },
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "EditIdShort",
+                              "valueType": "xs:string",
+                              "value": "True"
+                            }
+                          ],
+                          "first": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilityContainer"
+                              },
+                              {
+                                "type": "Capability",
+                                "value": "Capability"
+                              }
+                            ]
+                          },
+                          "second": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilityContainer"
+                              },
+                              {
+                                "type": "Capability",
+                                "value": "Capability"
+                              }
+                            ]
+                          },
+                          "modelType": "RelationshipElement"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    },
+                    {
+                      "idShort": "ConstraintSet",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Constraint Set"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "If constraint(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/ConstraintSet/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToMany"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "PropertyConstraintContainer",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Property Constraint Container"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "If one or more constraints exist for a Capability Property, then for every constraint a PropertyConstraintContainer has to be created."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintContainer/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToMany"
+                            },
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "EditIdShort",
+                              "valueType": "xs:string",
+                              "value": "True"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "idShort": "BasicConstraint",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Basic Constraint"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Property element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/BasicConstraint/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                },
+                                {
+                                  "kind": "ConceptQualifier",
+                                  "type": "PredicateRelationTemplate",
+                                  "valueType": "xs:string",
+                                  "value": "ALL"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "CustomConstraint",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Custom Constraint"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "SubmodelElement which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties. This can be freely defined for the purpose of constraining a property and is not specified in this Submodel Template."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/CustomConstraint/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "modelType": "SubmodelElementCollection"
+                            },
+                            {
+                              "idShort": "OCLConstraint",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "OCL Constraint"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Object Contraint Language (OCL) as File element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/OCLConstraint/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "modelType": "File"
+                            },
+                            {
+                              "idShort": "OperationConstraint",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Operation Constraint"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Reference to an (external) Operation element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/OperationConstraint/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "value": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "urn:example:capability-description:operation-constraint"
+                                  }
+                                ]
+                              },
+                              "modelType": "ReferenceElement"
+                            },
+                            {
+                              "idShort": "ConstraintType",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Constraint Type"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Abstract Enum type of allowed SubmodelElements for these Properties constraints. Exactly one of the SubmodelElements below must be instanciated, e.g., similar to SubmodelElementList with exactly one element."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/ConstraintType/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                },
+                                {
+                                  "kind": "TemplateQualifier",
+                                  "type": "FormChoices",
+                                  "valueType": "xs:string",
+                                  "value": "OperationConstraint;OCLConstraint;BasicConstraint;CustomConstraint"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "PropertyConditionalType",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Property Conditional Type"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Defines the type of the property conditions as defined in the ConceptDescription with the same name (PropertyConditionalType)."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "ConstraintPropertyRelations",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Constraint Property Relations"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Contains all relationships for the constraint in the PropertyConstraintContainer."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/ConstraintPropertyRelations/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "value": [
+                                {
+                                  "idShort": "ConstraintHasProperty",
+                                  "displayName": [
+                                    {
+                                      "language": "en",
+                                      "text": "Constraint Has Property"
+                                    }
+                                  ],
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Relates the PropertyConstraint as first element to a Property from a PropertyContainer as second element."
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/idta/CapabilityDescription/ConstraintHasProperty/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                          {
+                                            "type": "GlobalReference",
+                                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                          }
+                                        ]
+                                      },
+                                      "kind": "TemplateQualifier",
+                                      "type": "SMT/Cardinality",
+                                      "valueType": "xs:string",
+                                      "value": "OneToMany"
+                                    },
+                                    {
+                                      "kind": "TemplateQualifier",
+                                      "type": "EditIdShort",
+                                      "valueType": "xs:string",
+                                      "value": "True"
+                                    }
+                                  ],
+                                  "first": {
+                                    "type": "ModelReference",
+                                    "keys": [
+                                      {
+                                        "type": "Submodel",
+                                        "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilitySet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilityContainer"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilityRelations"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "ConstraintSet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "PropertyConstraintContainer"
+                                      },
+                                      {
+                                        "type": "Property",
+                                        "value": "BasicConstraint"
+                                      }
+                                    ]
+                                  },
+                                  "second": {
+                                    "type": "ModelReference",
+                                    "keys": [
+                                      {
+                                        "type": "Submodel",
+                                        "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilitySet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilityContainer"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "PropertySet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "PropertyContainer"
+                                      },
+                                      {
+                                        "type": "Property",
+                                        "value": "PropertyProperty"
+                                      }
+                                    ]
+                                  },
+                                  "modelType": "RelationshipElement"
+                                }
+                              ],
+                              "modelType": "SubmodelElementCollection"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                          "idShort": "TransitionConstraintContainer",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Transition Constraint Container"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "If one or more constraints exist for a Capability, then for every transitional constraint a TransitionConstraintContainer has to be created."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConstraintContainer/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToMany"
+                            },
+                            {
+                              "kind": "TemplateQualifier",
+                              "type": "EditIdShort",
+                              "valueType": "xs:string",
+                              "value": "True"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "idShort": "TransitionConstrainedBy",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Transition Constrained By"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Relates the constrained Capability as first element to a constraining Capability from another CapabilityContainer as second element."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConstrainedBy/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "first": {
+                                "type": "ModelReference",
+                                "keys": [
+                                  {
+                                    "type": "Submodel",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilitySet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilityContainer"
+                                  },
+                                  {
+                                    "type": "Capability",
+                                    "value": "Capability"
+                                  }
+                                ]
+                              },
+                              "second": {
+                                "type": "ModelReference",
+                                "keys": [
+                                  {
+                                    "type": "Submodel",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilitySet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilityContainer"
+                                  },
+                                  {
+                                    "type": "Capability",
+                                    "value": "Capability"
+                                  }
+                                ]
+                              },
+                              "modelType": "RelationshipElement"
+                            },
+                            {
+                              "idShort": "TransitionConditionalType",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Transition Conditional Type"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Defines the element TransitionConstrainedBy of TransitionConstraintType."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "TransitionConditionalType",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Transition Conditional Type"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TransitionConditionalType"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Enumeration of transition conditional types for capability constraints: Pre, Post, Invariant, and combinations."
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "Pre",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/Pre/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Post",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/Post/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Invariant",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/Invariant/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "PrePost",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/PrePost/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "PreInvariant",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/PreInvariant/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "InvariantPost",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/InvariantPost/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "PrePostInvariant",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/PrePostInvariant/1/0"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PropertyConditionalType",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Property Conditional Type"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PropertyConditionalType"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Enumeration of property conditional types for capability constraints: Pre, Post, Invariant, and combinations."
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "Pre",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/Pre/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Post",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/Post/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Invariant",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/Invariant/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "PrePost",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/PrePost/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "PreInvariant",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/PreInvariant/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "InvariantPost",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/InvariantPost/1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "PrePostInvariant",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/PrePostInvariant/1/0"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CapabilityDescription",
+      "description": [
+        {
+          "language": "en",
+          "text": "Definition of the Submodel CapabilityDescription identified by its semanticId. The Submodel idShort can be picked freely."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/CapabilityDescription/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CapabilityDescription"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Definition of the Submodel CapabilityDescription identified by its semanticId. The Submodel idShort can be picked freely."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CapabilitySet",
+      "description": [
+        {
+          "language": "en",
+          "text": "A Set of CapabilityContainer for a Use Case for the asset."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CapabilitySet"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "A Set of CapabilityContainer for a Use Case for the asset."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CapabilityContainer",
+      "description": [
+        {
+          "language": "en",
+          "text": "A Container for one capability and all its additional descriptive elements."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CapabilityContainer"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "A Container for one capability and all its additional descriptive elements."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Capability",
+      "description": [
+        {
+          "language": "en",
+          "text": "[A capability is a] implementation-independent specification of a function in industrial production to achieve an effect in the physical or virtual world. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/Capability/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Capability"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "[A capability is a] implementation-independent specification of a function in industrial production to achieve an effect in the physical or virtual world. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CapabilityComment",
+      "description": [
+        {
+          "language": "en",
+          "text": "Individual comment of the capability."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/CapabilityComment/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CapabilityComment"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Individual comment of the capability."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PropertySet",
+      "description": [
+        {
+          "language": "en",
+          "text": "Set of properties describing the capability in more detail, if existing."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PropertySet"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Set of properties describing the capability in more detail, if existing."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PropertyContainer",
+      "description": [
+        {
+          "language": "en",
+          "text": "Information for a certain property as defined by CapabilityPropertyType and its descriptive elements."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PropertyContainer"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Information for a certain property as defined by CapabilityPropertyType and its descriptive elements."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SameProperty",
+      "description": [
+        {
+          "language": "en",
+          "text": "Relationship of the Property described in the Property container as first element and the identical property as second element in another Submodel or an external information source."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/SameProperty/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SameProperty"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Relationship of the Property described in the Property container as first element and the identical property as second element in another Submodel or an external information source."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PropertyRange",
+      "description": [
+        {
+          "language": "en",
+          "text": "Range made of min and max values forming an interval. A valueId shall be set to define the semantic for the values."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityPropertyEnumType/Range/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PropertyRange"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Range made of min and max values forming an interval. A valueId shall be set to define the semantic for the values."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PropertyProperty",
+      "description": [
+        {
+          "language": "en",
+          "text": "Property with a value describing an information data point. A valueId shall be set to define the semantic for the value."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityPropertyType/Property/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PropertyProperty"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Property with a value describing an information data point. A valueId shall be set to define the semantic for the value."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PropertyMultiLanguageProperty",
+      "description": [
+        {
+          "language": "en",
+          "text": "Property with a value for one or more language entries with corresponding text describing an information data point. A valueId shall be set to define the semantic for the value."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityPropertyType/MultiLanguageProperty/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PropertyMultiLanguageProperty"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Property with a value for one or more language entries with corresponding text describing an information data point. A valueId shall be set to define the semantic for the value."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PropertySubmodelList",
+      "description": [
+        {
+          "language": "en",
+          "text": "A list of one or more elements defined by only the enum type CapabilityPropertyType. "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityPropertyType/SubmodelElementList/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PropertySubmodelList"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "A list of one or more elements defined by only the enum type CapabilityPropertyType. "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PropertyRange",
+      "description": [
+        {
+          "language": "en",
+          "text": "Range made of min and max values forming an interval. A valueId shall be set to define the semantic for the values."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityPropertyType/Range/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PropertyRange"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Range made of min and max values forming an interval. A valueId shall be set to define the semantic for the values."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PropertyComment",
+      "description": [
+        {
+          "language": "en",
+          "text": "General description of the property."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/PropertyComment/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PropertyComment"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "General description of the property."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CapabilityRelations",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection of relationships for the capability, if existing."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CapabilityRelations"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection of relationships for the capability, if existing."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CapabilityRealizedBy",
+      "description": [
+        {
+          "language": "en",
+          "text": "Relationship between the Capability element in the CapabilityContainer as first element and a Skill implementation, not defined in this Submodel template, as second element."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRealizedBy/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CapabilityRealizedBy"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Relationship between the Capability element in the CapabilityContainer as first element and a Skill implementation, not defined in this Submodel template, as second element."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ComposedOfSet",
+      "description": [
+        {
+          "language": "en",
+          "text": "If composition(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/ComposedOfSet/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ComposedOfSet"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "If composition(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ComposedOfContainer",
+      "description": [
+        {
+          "language": "en",
+          "text": "Container corresponding to one composition for the Capability in the CapabilityContainer."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/ComposedOfContainer/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ComposedOfContainer"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Container corresponding to one composition for the Capability in the CapabilityContainer."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CapabilityComposedOf",
+      "description": [
+        {
+          "language": "en",
+          "text": "Relationship between a composed capability as first element and one of its minimum two subordinate capabilities as second element."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/CapabilityComposedOf/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CapabilityComposedOf"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Relationship between a composed capability as first element and one of its minimum two subordinate capabilities as second element."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ComposedOfComment",
+      "description": [
+        {
+          "language": "en",
+          "text": "Comment to describe the composition in human readable form."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/ComposedOfComment/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ComposedOfComment"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Comment to describe the composition in human readable form."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "GeneralizedBySet",
+      "description": [
+        {
+          "language": "en",
+          "text": "If generalization(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/GeneralizedBySet/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "GeneralizedBySet"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "If generalization(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CapabilityGeneralizedBy",
+      "description": [
+        {
+          "language": "en",
+          "text": "Relationship between the Capability as first element, described in the CapabilityContainer, and a more general Capability as second element."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/CapabilityGeneralizedBy/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CapabilityGeneralizedBy"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Relationship between the Capability as first element, described in the CapabilityContainer, and a more general Capability as second element."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConstraintSet",
+      "description": [
+        {
+          "language": "en",
+          "text": "If constraint(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/ConstraintSet/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ConstraintSet"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "If constraint(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PropertyConstraintContainer",
+      "description": [
+        {
+          "language": "en",
+          "text": "If one or more constraints exist for a Capability Property, then for every constraint a PropertyConstraintContainer has to be created."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintContainer/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PropertyConstraintContainer"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "If one or more constraints exist for a Capability Property, then for every constraint a PropertyConstraintContainer has to be created."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "BasicConstraint",
+      "description": [
+        {
+          "language": "en",
+          "text": "Property element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/BasicConstraint/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "BasicConstraint"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Property element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CustomConstraint",
+      "description": [
+        {
+          "language": "en",
+          "text": "SubmodelElement which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties. This can be freely defined for the purpose of constraining a property and is not specified in this Submodel Template."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/CustomConstraint/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CustomConstraint"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "SubmodelElement which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties. This can be freely defined for the purpose of constraining a property and is not specified in this Submodel Template."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "OCLConstraint",
+      "description": [
+        {
+          "language": "en",
+          "text": "Object Contraint Language (OCL) as File element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/OCLConstraint/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "OCLConstraint"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Object Contraint Language (OCL) as File element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "OperationConstraint",
+      "description": [
+        {
+          "language": "en",
+          "text": "Reference to an (external) Operation element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/OperationConstraint/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "OperationConstraint"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Reference to an (external) Operation element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConstraintType",
+      "description": [
+        {
+          "language": "en",
+          "text": "Abstract Enum type of allowed SubmodelElements for these Properties constraints. Exactly one of the SubmodelElements below must be instanciated, e.g., similar to SubmodelElementList with exactly one element."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/ConstraintType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ConstraintType"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Abstract Enum type of allowed SubmodelElements for these Properties constraints. Exactly one of the SubmodelElements below must be instanciated, e.g., similar to SubmodelElementList with exactly one element."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConstraintPropertyRelations",
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains all relationships for the constraint in the PropertyConstraintContainer."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/ConstraintPropertyRelations/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ConstraintPropertyRelations"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Contains all relationships for the constraint in the PropertyConstraintContainer."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ConstraintHasProperty",
+      "description": [
+        {
+          "language": "en",
+          "text": "Relates the PropertyConstraint as first element to a Property from a PropertyContainer as second element."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/ConstraintHasProperty/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ConstraintHasProperty"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Relates the PropertyConstraint as first element to a Property from a PropertyContainer as second element."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TransitionConstraintContainer",
+      "description": [
+        {
+          "language": "en",
+          "text": "If one or more constraints exist for a Capability, then for every transitional constraint a TransitionConstraintContainer has to be created."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/TransitionConstraintContainer/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TransitionConstraintContainer"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "If one or more constraints exist for a Capability, then for every transitional constraint a TransitionConstraintContainer has to be created."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TransitionConstrainedBy",
+      "description": [
+        {
+          "language": "en",
+          "text": "Relates the constrained Capability as first element to a constraining Capability from another CapabilityContainer as second element."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/CapabilityDescription/TransitionConstrainedBy/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TransitionConstrainedBy"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Relates the constrained Capability as first element to a constraining Capability from another CapabilityContainer as second element."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}

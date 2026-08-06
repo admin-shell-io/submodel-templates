@@ -1,0 +1,8 @@
+#!/bin/sh
+COMMIT_MSG_FILE="$1"
+if [ -f "$COMMIT_MSG_FILE" ]; then
+  sed -i.bak '/^Co-authored-by: Cursor <cursoragent@cursor.com>$/d' "$COMMIT_MSG_FILE"
+  sed -i.bak '/^Co-authored-by: cursoragent/d' "$COMMIT_MSG_FILE"
+  rm -f "${COMMIT_MSG_FILE}.bak"
+fi
+exit 0

@@ -1,0 +1,1644 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "CarbonFootprintForDBPAAS",
+      "id": "https://admin-shell.io/idta/aas/DigitalBatteryPassport/CarbonFootprint/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/DigitalBatteryPassport/CarbonFootprint/1/0"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/CarbonFootprint/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "carbon footprint for dbpaas"
+        }
+      ]
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "CarbonFootprint",
+      "displayName": [
+        {
+          "language": "de",
+          "text": "C02 Footprint"
+        },
+        {
+          "language": "en",
+          "text": "carbon footprint"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "The Submodel provides the means to access the Carbon Footprint of the asset."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0",
+        "templateId": "https://admin-shell.io/idta-02023-1-0"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/CarbonFootprint/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/CarbonFootprint/CarbonFootprint/1/0"
+          }
+        ]
+      },
+      "supplementalSemanticIds": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#CarbonFootprintBattery"
+            }
+          ]
+        }
+      ],
+      "submodelElements": [
+        {
+          "idShort": "ProductCarbonFootprints",
+          "displayName": [
+            {
+              "language": "de",
+              "text": "Produkt CO2-Fußabdruck"
+            },
+            {
+              "language": "en",
+              "text": "product carbon footprints"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprints/1/0"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#CarbonFootprintBattery"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "semanticIdListElement": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprint/1/0"
+              }
+            ]
+          },
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "ProductCarbonFootprint",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Produkt CO2-Fußabdruck"
+                },
+                {
+                  "language": "en",
+                  "text": "product carbon footprint"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprint/1/0"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint"
+                    }
+                  ]
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "PcfCalculationMethods",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Folgenabschätzungsmethoden"
+                    },
+                    {
+                      "language": "en",
+                      "text": "PCF calculation methods"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "de",
+                      "text": "Normen, Standards, Verfahren zur Ermittlung der Treibhausgas-Emissionen eines Produkts"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Standards, methods for determining the greenhouse gas emissions of a product.\n\nThis Value List is based on ECLASS 15 with IRDI 0173-1#09-AAO115#003. The full list can be found in Section 2.5 in \"Product Carbon Footprint 1.0 (IDTA-02023)\".\n"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CarbonFootprint/PcfCalculationMethods/1/0"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCalculationMethods"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "semanticIdListElement": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABG854#003"
+                      }
+                    ]
+                  },
+                  "typeValueListElement": "Property",
+                  "valueTypeListElement": "xs:string",
+                  "value": [
+                    {
+                      "category": "PARAMETER",
+                      "idShort": "PcfCalculationMethod",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Folgenabschätzungsmethode / Berechnungsmethode"
+                        },
+                        {
+                          "language": "en",
+                          "text": "PCF calculation method"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-ABG854#003"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "PcfCO2eq",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "CO2-Äquivalent"
+                    },
+                    {
+                      "language": "en",
+                      "text": "PCF co 2 eq"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "DIN DKE Spec 99100 chapter reference: 6.3.2"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABG855#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCo2eq"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:decimal",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ReferenceImpactUnitForCalculation",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Referenzeinheit für die Berechnung"
+                    },
+                    {
+                      "language": "en",
+                      "text": "reference impact unit for calculation"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "If a normalized product carbon footprint (PCF) value is provided, the reference value for calculation should be a specific unit such as 'kWh'. \nIf the total PCF value is provided the reference value for calculation should be 'piece'."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABG856#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#referenceImpactUnitForCalculation"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "QuantityOfMeasureForCalculation",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Mengenangabe für die Berechnung"
+                    },
+                    {
+                      "language": "en",
+                      "text": "quantity of measure for calculation"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "If a normalized product carbon footprint (PCF) value is provided, the quantity of measure for calculation should be 1.\nIf the total PCF value is provided the quantity of measure for calculation should be 1."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABG857#003"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#quantityOfMeasureForCalculation"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:double",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "LifeCyclePhases",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Lebenszyklusphasen"
+                    },
+                    {
+                      "language": "en",
+                      "text": "life cycle phases"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "List of life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers.\n\nThe string value in the value list is based on DIN DKE SPEC 99100: \"A1 - raw material supply (and upstream production)\" (6.3.5 required lify cycle mapping), \"A3 - production\" (6.3.4 Contribution of main product production/manufacturing lifecycle stage), \"A4 - transport to final destination\" (6.3.5 Contribution of distribution lifecycle stage), \"C3 - recycling, waste treatment\" (6.3.6 Contribution of end of life and recycling lifecycle stage)\n\nPlease note that the model should always contain at least one Product Carbon Footprint entry that reflects the total PCF value (including all life cycle phases) of the battery.\n"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CarbonFootprint/LifeCyclePhases/1/0"
+                      }
+                    ]
+                  },
+                  "supplementalSemanticIds": [
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#lifeCyclePhases"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "0173-1#02-ABG858#003"
+                        }
+                      ]
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "semanticIdListElement": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-ABG858#004"
+                      }
+                    ]
+                  },
+                  "typeValueListElement": "Property",
+                  "valueTypeListElement": "xs:string",
+                  "value": [
+                    {
+                      "category": "PARAMETER",
+                      "idShort": "LifeCyclePhase",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Lebenszyklusphase"
+                        },
+                        {
+                          "language": "en",
+                          "text": "life cycle phase"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "0173-1#02-ABG858#004"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementList"
+                },
+                {
+                  "idShort": "PerformanceClass",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#performanceClass"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "performance class"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "WebLinkToPublicCarbonFootprintStudy",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#webLinkToPublicCarbonFootprintStudy"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "typeValueListElement": "Property",
+                  "valueTypeListElement": "xs:string",
+                  "value": [
+                    {
+                      "idShort": "DocumentIdentifier",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Document identifier of the document (e.g., PDF) that can be found in the HandoverDocumentation Submodel.\n\nDIN DKE Spec 99100 chapter reference: 6.3.8 "
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
+                          }
+                        ]
+                      },
+                      "supplementalSemanticIds": [
+                        {
+                          "type": "ExternalReference",
+                          "keys": [
+                            {
+                              "type": "GlobalReference",
+                              "value": "0173-1#02-AAO099#004"
+                            }
+                          ]
+                        }
+                      ],
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "OneToMany"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "value": "XF90-884",
+                      "modelType": "Property",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "document identifier"
+                        }
+                      ]
+                    }
+                  ],
+                  "modelType": "SubmodelElementList",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "web link to public carbon footprint study"
+                    }
+                  ]
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "PcfCalculationMethod",
+      "id": "0173-1#02-ABG854#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "impact assessment method / calculation method"
+              },
+              {
+                "language": "de",
+                "text": "Folgenabschätzungsmethode / Berechnungsmethode"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Norm, Standard, Verfahren zur Ermittlung der Treibhausgas-Emissionen eines Produkts"
+              },
+              {
+                "language": "en",
+                "text": "standard, method for determining the greenhouse gas emissions of a product"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "EN 15804",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU223#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "GHG Protocol",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU221#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "IEC TS 63058",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU222#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "IEC 63366",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACA792#002"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "ISO 14040, ISO 14044",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV505#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "ISO 14067",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU218#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "PEP Ecopassport",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU220#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "PACT v1.0.1",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC004#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "PACT v2.0.0",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC003#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "PACT v3.0.0",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC012#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "TFS v2",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC005#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "TFS v3",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC010#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Catena-X v1",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC007#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Catena-X v2",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC006#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Catena-X v3",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC011#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "BS PAS 2050",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC008#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "IEC 63372",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC019#001"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "PCF calculation method"
+        }
+      ]
+    },
+    {
+      "idShort": "PcfCo2eq",
+      "id": "0173-1#02-ABG855#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CO2 eq Climate Change - total (for PCF and LCA)"
+              },
+              {
+                "language": "de",
+                "text": "CO2 eq Klimawandel - total (für PCF und LCA)"
+              }
+            ],
+            "unit": "CO2eq",
+            "dataType": "REAL_MEASURE",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Summe aller Treibhausgas-Emissionen eines Produkts gemäß der Quantifizierungsvorgaben der Norm"
+              },
+              {
+                "language": "en",
+                "text": "sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "PCF co 2 eq"
+        }
+      ]
+    },
+    {
+      "idShort": "ReferenceImpactUnitForCalculation",
+      "id": "0173-1#02-ABG856#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Reference value for calculation"
+              },
+              {
+                "language": "de",
+                "text": "Referenzeinheit für die Berechnung"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Quantity unit of the product to which the PCF information on the CO2 footprint refers"
+              },
+              {
+                "language": "de",
+                "text": "Mengeneinheit des Produktes, auf das sich die PCF-Angabe zum CO2-Fußabdruck bezieht"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "g",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ596#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "kg",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ597#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "t",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ598#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "ml",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ599#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "l",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ600#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "cbm",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ601#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "qm",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ602#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "piece",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ603#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "kWh",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACB997#001"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "reference impact unit for calculation"
+        }
+      ]
+    },
+    {
+      "idShort": "QuantityOfMeasureForCalculation",
+      "displayName": [
+        {
+          "language": "de",
+          "text": "Mengenangabe für die Berechnung"
+        },
+        {
+          "language": "en",
+          "text": "quantity of measure for calculation"
+        }
+      ],
+      "id": "0173-1#02-ABG857#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "quantity of measure for calculation"
+              },
+              {
+                "language": "de",
+                "text": "Mengenangabe für die Berechnung"
+              }
+            ],
+            "dataType": "REAL_COUNT",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Angabe der Stückzahl, Masse oder des Volumens zur Berechnung der Auswirkungen des Klimawandels oder des CO2-Fußabdrucks des Produktes"
+              },
+              {
+                "language": "en",
+                "text": "provides the quantity number of pieces or mass or volume to compute the impact of climate change or product carbon footprint"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LifeCyclePhase",
+      "id": "0173-1#02-ABG858#003",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "life cycle phase (acc. EN 15804)"
+              },
+              {
+                "language": "de",
+                "text": "Lebenszyklusphase (nach EN 15804)"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "life cycle phase"
+              },
+              {
+                "language": "de",
+                "text": "Lebenszyklusphase"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Lebenszyklusphase des Produktes gemäß den Quantifizierungsvorgaben der Norm, auf den sich die PCF-Angabe zum CO2-Fußabdruck bezieht"
+              },
+              {
+                "language": "en",
+                "text": "life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "A1 - raw material supply (and upstream production)",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU208#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "A2 - cradle-to-gate transport to factory",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU209#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "A3 - production",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU210#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "A1-A3",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABZ789#003 "
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "A4 - transport to final destination",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU211#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "A4-A5",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC013#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "A5 - Installation",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC016#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B1 - usage phase",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU212#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B1-B7",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC014#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B2 - maintenance",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV498#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B3 - repair",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV497#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B4 - Replacement",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC017#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B5 - update/upgrade, refurbishing",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV499#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B6 - usage energy consumption",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV500#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "B7 - usage water consumption",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV501#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "C1 - reassembly",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV502#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "C1-C4",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC015#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "C2 - transport to recycler",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU213#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "C2-C4",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ACC018#001"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "C3 - recycling, waste treatment",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV503#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "C4 - landfill",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABV504#003"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "D - reuse",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#07-ABU214#003"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "life cycle phase"
+        }
+      ]
+    },
+    {
+      "idShort": "performanceClass",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "performance class"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#performanceClass",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "carbon footprint performance class"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "performanceClass"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "The battery passport must include the carbon footprint performance class in accordance with the entry into force of the delegated and implementing acts on the carbon footprint performance classes per Article7 of the Battery Regulation.\n\n DIN DKE Spec 99100 chapter reference: 6.3.7 "
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "webLinkToPublicCarbonFootprintStudy",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "web link to public carbon footprint study"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#webLinkToPublicCarbonFootprintStudy",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "web link to public carbon footprint study"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "One or more document identifiers (depending, for example, on the translation) of a specific document, which can be found in the 'HandoverDocumentation' model.\n\n DIN DKE Spec 99100 chapter reference: 6.3.8"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "documentIdentifier",
+      "displayName": [
+        {
+          "language": "de",
+          "text": "Dokumentennummer"
+        },
+        {
+          "language": "en",
+          "text": "document identifier"
+        }
+      ],
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIdentifier",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "de",
+                "text": "Dokumentennummer"
+              },
+              {
+                "language": "en",
+                "text": "document identifier (ID)"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "documentIdentifier"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "de",
+                "text": "Alphanumerische Zeichenfolge, die ein Dokument eindeutig identifiziert."
+              },
+              {
+                "language": "en",
+                "text": "Alphanumeric character sequence uniquely identifying a document."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}

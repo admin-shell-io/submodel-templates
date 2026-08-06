@@ -1,0 +1,37 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  HazardousSubstances
+
+class "HazardousSubstances" as ID00000001 <<SML>> {
+  +[00] HazardousSubstance : SMC [0..*]
+}
+
+class "[00] HazardousSubstance" as ID00000002 <<SMC>> {
+  +HazardousSubstanceClass : xs:string [0..1]
+  +HazardousSubstanceName : xs:string
+  +HazardousSubstanceIdentifier : xs:string
+  +HazardousSubstanceConcentration : xs:double [0..1]
+  +HazardousSubstanceImpact : SML [0..1]
+  +HazardousSubstanceLocation : SMC [0..1]
+}
+
+class "HazardousSubstanceImpact" as ID00000003 <<SML>> {
+  +[00] Impact : xs:string [0..*]
+}
+
+class "HazardousSubstanceLocation" as ID00000004 <<SMC>> {
+  +ComponentName : xs:string [0..1]
+  +ComponentId : xs:string [0..1]
+}
+
+ID00000002 *--  ID00000003 : ""
+ID00000002 *--  ID00000004 : ""
+ID00000001 *--  ID00000002 : ""
+@enduml

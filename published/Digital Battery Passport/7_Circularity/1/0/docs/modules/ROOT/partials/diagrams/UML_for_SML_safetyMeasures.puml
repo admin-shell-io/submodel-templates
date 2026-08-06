@@ -1,0 +1,27 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  SafetyMeasures
+
+class "SafetyMeasures" as ID00000001 <<SMC>> {
+  +SafetyInstructions : SML
+  +ExtinguishingAgents : SML
+}
+
+class "SafetyInstructions" as ID00000002 <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+class "ExtinguishingAgents" as ID00000003 <<SML>> {
+  +[00] ExtinguishingAgent : xs:string [1..*]
+}
+
+ID00000001 *--  ID00000002 : ""
+ID00000001 *--  ID00000003 : ""
+@enduml

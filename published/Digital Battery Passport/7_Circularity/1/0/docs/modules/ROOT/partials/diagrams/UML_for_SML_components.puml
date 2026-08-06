@@ -1,0 +1,22 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  Components
+
+class "Components" as ID00000001 <<SML>> {
+  +[00] Component : SMC [1..*]
+}
+
+class "[00] Component" as ID00000002 <<SMC>> {
+  +PartName : xs:string
+  +PartNumber : xs:string
+}
+
+ID00000001 *--  ID00000002 : ""
+@enduml

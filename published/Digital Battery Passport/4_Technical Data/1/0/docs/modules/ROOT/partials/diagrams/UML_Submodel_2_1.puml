@@ -1,0 +1,103 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT TechnicalData
+
+class "TechnicalData" as ID00000001 <<SM>> {
+  +GeneralInformation : SMC
+  +TechnicalPropertyAreas : SMC
+}
+
+class "GeneralInformation" as ID00000002 <<SMC>> {
+  +ManufacturerName : xs:string
+  +CompanyLogo : File [0..1]
+  +ManufacturerIdentifier : xs:string
+  +BatteryCategory : xs:string
+  +BatteryMass : xs:float
+  +ProductImages : SML [0..1]
+  +WarrantyInformation : SMC
+}
+
+class "ProductImages" as ID00000003 <<SML>> {
+  +[00] ProductImage : File [1..*]
+}
+
+class "WarrantyInformation" as ID00000004 <<SMC>> {
+  +WarrantyPeriod : xs:string
+}
+
+class "TechnicalPropertyAreas" as ID00000005 <<SMC>> {
+  +CapacityEnergyVoltage : SMC
+  +RoundTripEnergyEfficiency : SMC
+  +Resistance : SMC
+  +PowerCapability : SMC
+  +Temperature : SMC
+  +Lifetime : SMC
+}
+
+class "CapacityEnergyVoltage" as ID00000006 <<SMC>> {
+  +NominalVoltage : xs:float
+  +MinVoltage : xs:float
+  +MaxVoltage : xs:float
+  +RatedCapacity : xs:float
+  +CapacityFade : xs:float [0..1]
+  +CertifiedUsableBatteryEnergy : xs:float [0..1]
+}
+
+class "RoundTripEnergyEfficiency" as ID00000007 <<SMC>> {
+  +InitialRoundTripEnergyEfficiency : xs:integer
+  +RoundTripEnergyEfficiencyAt50PercentOfCycleLife : xs:integer
+  +EnergyRoundTripEfficiencyFade : xs:float [0..1]
+  +InitialSelfDischargingRate : xs:integer [0..1]
+}
+
+class "Resistance" as ID00000008 <<SMC>> {
+  +InitialInternalResistanceOnBatteryCellLevel : xs:float
+  +InitialInternalResistanceOnBatteryPackLevel : xs:float
+  +InitialInternalResistanceOnBatteryModuleLevel : xs:float [0..1]
+  +InternalResistanceIncreaseOfBatteryCellLevel : xs:float [0..1]
+  +InternalResistanceIncreaseOfBatteryPackLevel : xs:float
+  +InternalResistanceIncreaseOfBatteryModuleLevel : xs:float [0..1]
+}
+
+class "PowerCapability" as ID00000009 <<SMC>> {
+  +MaximumPermittedBatteryPower : xs:float
+  +PowerFade : xs:float
+  +RatioNorminalBatteryPowerAndBatteryEnergy : xs:float [0..1]
+  +OriginalPowerCapability : SML
+}
+
+class "OriginalPowerCapability" as ID0000000A <<SML>> {
+  +[00] PowerCapabilityAt : SMC [1..*]
+}
+
+class "Temperature" as ID0000000B <<SMC>> {
+  +TemperatureRangeIdleState_LowerBoundary : xs:float
+  +TemperatureRangeIdleState_UpperBoundary : xs:float
+}
+
+class "Lifetime" as ID0000000C <<SMC>> {
+  +ExpectedLifetimeInCalendarYears  : xs:unsignedInt
+  +ExpectedNumberOfCycles : xs:unsignedInt
+  +CapacityThresholdExhaustion : xs:float [0..1]
+  +CRateOfRelevantCycleLifeTest : xs:decimal
+}
+
+ID00000002 *--  ID00000003 : ""
+ID00000002 *--  ID00000004 : ""
+ID00000001 *--  ID00000002 : ""
+ID00000005 *--  ID00000006 : ""
+ID00000005 *--  ID00000007 : ""
+ID00000005 *--  ID00000008 : ""
+ID00000009 *--  ID0000000A : ""
+ID00000005 *--  ID00000009 : ""
+ID00000005 *--  ID0000000B : ""
+ID00000005 *--  ID0000000C : ""
+ID00000001 *--  ID00000005 : ""
+@enduml

@@ -1,0 +1,1085 @@
+
+
+= IDTA 02035-6 : Digital Battery Passport - Part 6: Material Composition
+April 2026 - Joint Publication of IDTA and Catena-X 
+
+
+
+=== Imprint 
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+For a detailed change history see <<annex-changes-to-submodel-template>>.
+
+[cols="1,1,4"]
+|===
+
+h|Date
+h|Version
+h|Comment
+
+| April 2026
+|1.0.1
+| Bugfix Version, for a detailed change history see Annex.
+
+| February 2026
+|1.0
+|Release of the official Submodel Template published by IDTA – a joint result of the Model Expert Group comprising IDTA, Catena-X, and the Battery Pass Consortium.
+
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+
+=== About this document
+This document is a part of an overall specification series [4]. 
+Each part specifies the contents of a Submodel Template (SMT). 
+The  specifications of the Asset Administration Shell (AAS) are the basis for the Submodel Template specifications, see [3]. 
+
+The target audience of the specification are developers and editors of technical 
+documentation and manufacturer information, which are describing assets by means of the Asset Administration Shell (AAS) and 
+therefore need to create a Submodel instance with a hierarchy of 
+SubmodelElements. 
+This document especially details on the question, which SubmodelElements with which semantic identification shall be used for this purpose.
+
+This specification was created following the "semantic-driven workflow" as defined in [5] based on Aspect Models [6].
+There is no central dictionary or repository for Aspect Models. 
+In this specification the following sources are used for defining semantics:
+
+- Aspect Models published at link:https://industrialdigitaltwin.org/[IDTA] [7]: https://github.com/admin-shell-io/smt-semantic-models, models with namespace "io.admin-shell"
+
+- Aspect Models published by the link:https://thebatterypass.eu/[BatteryPass Consortium] (closed project) [8]: https://github.com/batterypass/BatteryPassDataModel, models with namespace "io.BatteryPass"
+
+- Aspect Models published at Tractus-X and used in standards published by link:https://catena-x.net/[Catena-X] [9]: https://github.com/eclipse-tractusx/sldt-semantic-models, models with namespace "io.catenax"
+
+
+
+
+
+
+=== Scope of the Submodel
+This Submodel template aims to define the material composition data points of a Battery Passport conformant to DIN DKE SPEC 99100 and the corresponding EU regulations.
+
+The battery passport consists of the following 7 parts:
+
+    Digital Battery Passport - Part 1: Digital Nameplate (IDTA-02035-1)
+    Digital Battery Passport - Part 2: Handover Documentation (IDTA-02035-2)
+    Digital Battery Passport - Part 3: Product Carbon Footprint (IDTA-02035-3)
+    Digital Battery Passport - Part 4: Technical Data (IDTA-02035-4)
+    Digital Battery Passport - Part 5: Product Condition (IDTA-02035-5)
+    Digital Battery Passport - Part 6: Material Composition (IDTA-02035-6)
+    Digital Battery Passport - Part 7: Circularity (IDTA-02035-7)
+    
+This specification is Part 5: Material Composition (IDTA_02035-6).
+
+
+
+
+
+=== Relevant standards for the Submodel Template
+This submodel template fulfills the requirements for dynamic data attributes as defined in DIN DKE SPEC 99100 [1].
+DIN DKE SPEC 99100 "is based on the European Union and key Member States current regulatory requirements for battery passport information. 
+Mandatory information for the battery passport as stated in the EU Battery Regulation (EU)2023/1542, Article77 and AnnexXIII, 
+as well as the Ecodesign for Sustainable Products Regulation (ESPR), is supplemented by recommendations to increase sustainability and circularity. [1]"
+
+This document is valid for all battery categories. 
+Please be aware that for battery categories that have stronger requirements like industrial batteries with battery management systems etc. some of the data points are specified as optional although mandatory per regulation. 
+
+
+
+
+=== Explanations on used UML diagrams
+For clarity and an improved legibility readers suggested to go through this section at first before reading the following chapters.
+
+UML diagrams feature box-like elements, called "classes". These classes, typically Submodels, SubmodelElementCollections or SubmodelElementLists, typically feature a set of Properties or further SubmodelElements. These elements can have specific cardinalities.
+
+The single classes are hierarchally organized by aggregation relations, these can be seen as "contains" relation.
+
+For a further overview on UML diagrams please refer to [2] and [3]. 
+
+Further details about used table formats please refer to Annex A Explanations.
+
+
+
+
+== Information set for Submodel “MaterialComposition”
+
+
+=== General
+The "Material Composition" Submodel Template is part of the specification series for the Battery Passport.
+
+*Property specification*
+
+See <<_information_structures_and_attributes,clause 3 "Information structures and attributes">>.
+
+
+=== Overview UML model
+The SubmodelElements described in section 3 are structured in the following way (see <<UML_overview>>):
+
+[plantuml, UML_overview, svg, id="UML_overview", title="UML overview"]
+----
+include::partial$diagrams/UML_overview.puml[]
+----
+
+
+
+
+== Information structures and attributes
+
+=== Properties of the Submodel “Material Composition”
+<<UML_Submodel>> shows the UML-diagram defining the relevant properties which need to be set. 
+
+[plantuml, UML_Submodel, svg, id="UML_Submodel", title="UML-Diagram for Submodel \"MaterialComposition\""]
+----
+include::partial$diagrams/UML_Submodel.puml[]
+----
+
+  
+  
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_1_Submodel],[ReferenceElement, Table_Submodel]
+
+
+
+[width="100%", id="Table_Submodel", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}MaterialComposition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Mandatory data: Battery chemistry; critical raw materials; materials used in the cathode, anode, and 
+electrolyte; hazardous substances; impact of substances on the environment and on human health or 
+safety. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+BatteryChemistry
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryChemistry  +
+ +
+Composition of a product in general terms by specifying the cathode and anode active material as well as electrolyte.
+
+DIN DKE Spec 99100 chapter reference: 6.5.2 
+|[]  +
+ +
+2 elements
+|1
+
+
+
+|[SML]  +
+ +
+BatteryMaterials
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterials  +
+ +
+"Component materials used" (No. 17.a-c): Naming the materials (as a composition of substances) in cathode, anode, electrolyte according to public standards, including specification of the corresponding component (i.e., cathode, anode, or electrolyte). We suggest a reporting threshold of 0.1 % weight by weight.
+
+DIN DKE Spec 99100 chapter reference: 6.5.3-6.5.4 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|[SML]  +
+ +
+HazardousSubstances
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstances  +
+ +
+"Hazardous substances" (No 20.a-e): Name (agreed substance nomenclature, e.g. IUPAC or chemical name) all hazardous substance (as 'any substance that poses a threat to human health and the environment'). Suggested above 0.1 % weight by weight within each (sub-)component.
+
+DIN DKE Spec 99100 chapter reference: 6.5.4 - 6.5.6 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|===
+
+
+
+
+=== Properties of the SMC "BatteryChemistry"
+
+<<UML_for_SMC_batteryChemistry>> shows the UML-diagram for `SMC BatteryChemistry`.
+
+[plantuml, UML_for_SMC_batteryChemistry, svg, id="UML_for_SMC_batteryChemistry", title="UML-Diagram for SMC \"BatteryChemistry\""]
+----
+include::partial$diagrams/UML_for_SMC_batteryChemistry.puml[]
+----
+
+Data points related to battery chemistry.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_2_Properties_of_the_SMC_batteryChemistry],[ReferenceElement, Table_CapacityThroughput]
+
+
+
+[width="100%", id="Table_CapacityThroughput", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}BatteryChemistry 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryChemistry 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}MaterialComposition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ShortName
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#shortName  +
+ +
+Short name. 
+|[String]  +
+ +
+NMC
+|1
+
+
+
+|[Prop]  +
+ +
+ClearName
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#clearName  +
+ +
+Clear name. 
+|[String]  +
+ +
+Lithium nickel manganese cobalt oxides
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "BatteryMaterials"
+
+<<UML_for_SML_batteryMaterials>> shows the UML-diagram for `SML batteryMaterials`.
+
+[plantuml, UML_for_SML_batteryMaterials, svg, id="UML_for_SML_batteryMaterials", title="UML-Diagram for SML \"BatteryMaterials\""]
+----
+include::partial$diagrams/UML_for_SML_batteryMaterials.puml[]
+----
+
+Data points related to a list of battery materials.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_3_Properties_of_the_SML_batteryMaterials],[ReferenceElement, Table_SML_batteryMaterials]
+
+
+
+[width="100%", id="Table_SML_batteryMaterials", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}BatteryMaterials 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterials 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}MaterialComposition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+BatteryMaterial
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#BatteryMaterial  +
+ +
+Material of battery. 
+|[]  +
+ +
+5 elements
+|1..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "HazardousSubstances"
+
+<<UML_for_SML_hazardousSubstances>> shows the UML-diagram for `SML hazardousSubstances`.
+
+[plantuml, UML_for_SML_hazardousSubstances, svg, id="UML_for_SML_hazardousSubstances", title="UML-Diagram for SML \"HazardousSubstances\""]
+----
+include::partial$diagrams/UML_for_SML_hazardousSubstances.puml[]
+----
+
+Data points related to a list of hazardous substances.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_4_Properties_of_the_SML_hazardousSubstances],[ReferenceElement, Table_SML_hazardousSubstances]
+
+
+
+[width="100%", id="Table_SML_hazardousSubstances", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}HazardousSubstances 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstances 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}MaterialComposition 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+HazardousSubstance
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#HazardousSubstance  +
+ +
+"Hazardous substance" (No 20.a-e): Name (agreed substance nomenclature, e.g. IUPAC or chemical name) a hazardous substance (as 'any substance that poses a threat to human health and the environment'). Suggested above 0.1 % weight by weight within each (sub-)component.
+
+DIN DKE Spec 99100 chapter reference: 6.5.4 - 6.5.6 
+|[]  +
+ +
+6 elements
+|0..*
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "BatteryMaterial"
+
+<<UML_for_SMC_batteryMaterial>> shows the UML-diagram for `SMC BatteryMaterial`.
+
+[plantuml, UML_for_SMC_batteryMaterial, svg, id="UML_for_SMC_batteryMaterial", title="UML-Diagram for SMC \"BatteryMaterial\""]
+----
+include::partial$diagrams/UML_for_SMC_batteryMaterial.puml[]
+----
+
+Data points related to a battery material.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_5_Properties_of_the_SMC_batteryMaterial],[ReferenceElement, Table_SMC_batteryMaterial]
+
+
+
+[width="100%", id="Table_SMC_batteryMaterial", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}BatteryMaterial 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#BatteryMaterial 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}BatteryMaterials 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+BatteryMaterialLocation
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialLocation  +
+ +
+Battery component that relates to the material. 
+|[]  +
+ +
+2 elements
+|1
+
+
+
+|[Prop]  +
+ +
+BatteryMaterialIdentifier
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialIdentifier  +
+ +
+supplementalSemanticId: https://www.cas.org/cas-data/cas-registry, urn:irdi:0173-1#02-ABH034#003 +
+ +
+Registration number of an international designation standard (CAS = Chemical Abstracts Service) for chemical substances. For each chemical substance registered in the CAS database (also biosequences, alloys, polymers) there is a unique CAS number. 
+|[String]  +
+ +
+7439-93-2
+|1
+
+
+
+|[Prop]  +
+ +
+BatteryMaterialName
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialName  +
+ +
+supplementalSemanticId: urn:irdi:0173-1#02-AAN920#003 +
+ +
+Clear name of Material.
+
+Alphanumeric character string which describes the object. 
+|[String]  +
+ +
+Lithium
+|1
+
+
+
+|[Prop]  +
+ +
+BatteryMaterialMass
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialMass  +
+ +
+Weight of component material in Kilogram. 
+|[Float]  +
+ +
+52
+|0..1
+
+
+
+|[Prop]  +
+ +
+IsCriticalRawMaterial
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#isCriticalRawMaterial  +
+ +
+The battery passport must contain information on the critical raw materials present in the battery.
+
+The information on the critical raw materials must also be provided on the battery label.
+Per Annex VI, Part A(10), critical raw materials must be reported if present in the battery in a concentration of more than 0,1 % weight by weight.  
+|[Boolean]  +
+ +
+true
+|1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SMC "HazardousSubstance"
+
+<<UML_for_SMC_hazardousSubstance>> shows the UML-diagram for `SMC HazardousSubstance`.
+
+[plantuml, UML_for_SMC_hazardousSubstance, svg, id="UML_for_SMC_hazardousSubstance", title="UML-Diagram for SMC \"HazardousSubstance\""]
+----
+include::partial$diagrams/UML_for_SMC_hazardousSubstance.puml[]
+----
+
+Data points related to a hazardous substance.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_6_Properties_of_the_SMC_hazardousSubstance],[ReferenceElement, Table_SMC_hazardousSubstance]
+
+
+
+[width="100%", id="Table_SMC_hazardousSubstance", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}HazardousSubstance 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#HazardousSubstance 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}HazardousSubstances 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+HazardousSubstanceClass
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceClass  +
+ +
+Battery Regulation narrows reporting to substances falling under defined hazard classes and categories of the CLP regulation. 
+|[String]  +
+ +
+SkinCorrosionOrIrritation
+|0..1
+
+
+
+|[Prop]  +
+ +
+HazardousSubstanceName
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceName  +
+ +
+Clear name of hazardous substance. 
+|[String]  +
+ +
+Cobalt (Co)
+|1
+
+
+
+|[Prop]  +
+ +
+HazardousSubstanceIdentifier
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceIdentifier  +
+ +
+supplementalSemanticId: https://www.cas.org/cas-data/cas-registry +
+ +
+CAS identifier of hazardous substance. 
+|[String]  +
+ +
+346417-97-8
+|1
+
+
+
+|[Prop]  +
+ +
+HazardousSubstanceConcentration
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceConcentration  +
+ +
+Concentration of hazardous substance. 
+|[Double]  +
+ +
+20
+|0..1
+
+
+
+|[SML]  +
+ +
+HazardousSubstanceImpact
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceImpact  +
+ +
+Impact statements based on, e.g., REACH or GHS for all hazard classes applicable to substances in the battery. 
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+HazardousSubstanceLocation
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceLocation  +
+ +
+Hazardous substances (No. 19-23): Location on a (sub-)component-level of all hazardous substances (as 'any substance that poses a threat to human health and the environment'). Suggested via a unique identifier or nomenclature. 
+|[]  +
+ +
+2 elements
+|0..1
+
+
+
+|===
+
+
+
+
+For hazardousSubstanceClass the following values are allowed:
+
+  - "AcuteToxicity" 
+  - "SkinCorrosionOrIrritation" 
+  - "EyeDamageOrIrritation"
+
+
+
+=== Properties of the SMC "BatteryMaterialLocation"
+
+<<UML_for_SMC_batteryMaterialLocation>> shows the UML-diagram for `SMC batteryMaterialLocation`.
+
+[plantuml, UML_for_SMC_batteryMaterialLocation, svg, id="UML_for_SMC_batteryMaterialLocation", title="UML-Diagram for SMC \"BatteryMaterialLocation\""]
+----
+include::partial$diagrams/UML_for_SMC_batteryMaterialLocation.puml[]
+----
+
+Data points related to battery material location.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_7_Properties_of_the_SMC_batteryMaterialLocation],[ReferenceElement, Table_SMC_batteryMaterialLocation]
+
+
+
+[width="100%", id="Table_SMC_batteryMaterialLocation", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}BatteryMaterialLocation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialLocation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}BatteryMaterial 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ComponentName
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#componentName  +
+ +
+Name of component. 
+|[String]  +
+ +
+Anode
+|0..1
+
+
+
+|[Prop]  +
+ +
+ComponentId
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#componentId  +
+ +
+Identifier of the component. 
+|[String]  +
+ +
+
+|0..1
+
+
+
+|===
+
+
+
+  
+  
+
+=== Properties of the SML "HazardousSubstanceImpact"
+
+<<UML_for_SML_hazardousSubstanceImpact>> shows the UML-diagram for `SML HazardousSubstanceImpact`.
+
+[plantuml, UML_for_SML_hazardousSubstanceImpact, svg, id="UML_for_SML_hazardousSubstanceImpact", title="UML-Diagram for SMC \"HazardousSubstanceImpact\""]
+----
+include::partial$diagrams/UML_for_SML_hazardousSubstanceImpact.puml[]
+----
+
+Data points related to a list of hazardous substances impacts.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_8_Properties_of_the_SML_hazardousSubstanceImpact],[ReferenceElement, Table_SML_hazardousSubstanceImpact]
+
+
+
+[width="100%", id="Table_SML_hazardousSubstanceImpact", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}HazardousSubstanceImpact 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceImpact 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}HazardousSubstance 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, typeValueListElement=Property, valueTypeListElement=xs:string 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+Impact
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#Impact  +
+ +
+Impact. 
+|[String]  +
+ +
+May cause an allergic skin reaction
+|0..*
+
+
+
+|===
+
+
+
+To ensure clear and consistent communication of risks, the impact is reported through Hazard (H) phrases and Precautionary (P) statements stipulated in the CLP Regulation (EC No 1272/2008). 
+
+Physical hazards include:
+
+* Highly flammable liquid and vapour
+* May be corrosive to metals
+
+Health hazards include:
+
+* May cause an allergic skin reaction
+* May cause allergy or asthma symptoms or breathing difficulties if inhaled
+* Suspected of causing cancer
+* May damage fertility
+
+Environmental hazards include:
+
+* Toxic to aquatic life with long lasting effects
+
+=== Properties of the SMC "HazardousSubstanceLocation"
+
+<<UML_for_SMC_hazardousSubstanceLocation>> shows the UML-diagram for `SMC HazardousSubstanceLocation`.
+
+[plantuml, UML_for_SMC_hazardousSubstanceLocation, svg, id="UML_for_SMC_hazardousSubstanceLocation", title="UML-Diagram for SMC \"HazardousSubstanceLocation\""]
+----
+include::partial$diagrams/UML_for_SMC_hazardousSubstanceLocation.puml[]
+----
+
+Data points related to hazardous substance location.
+
+// Table generated from [Submodel, urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition/submodel/asciidoc],[SubmodelElementCollection, Section_3_Information_Structures],[SubmodelElementCollection, Section_3_7_Properties_of_the_SMC_hazardousSubstanceLocation],[ReferenceElement, Table_SMC_hazardousSubstanceLocation]
+
+
+
+[width="100%", id="Table_SMC_hazardousSubstanceLocation", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}HazardousSubstanceLocation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceLocation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}HazardousSubstance 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ComponentName
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#componentName  +
+ +
+Name of component. 
+|[String]  +
+ +
+Anode
+|0..1
+
+
+
+|[Prop]  +
+ +
+ComponentId
+|urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#componentId  +
+ +
+Identifier of the component. 
+|[String]  +
+ +
+1234-344
+|0..1
+
+
+
+|===
+
+
+
+  
+  
+:sectnums!:
+
+== Annex A.	Explanations on used table formats
+
+=== 1. General
+
+The used tables in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The table heads abbreviate 'cardinality' with 'card'.
+* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. 
+* The types of SubmodelElements are abbreviated (see <<Table_SME_abbrev>>):
+
+[width="100%",cols="40%,60%", id="Table_SME_abbrev", title="Abbreviations for SubmodelElements", options="header"]
+|===
+|SME type |SubmodelElement type
+|Blob |Blob
+|Cap |Capability
+|Ent |Entity
+|Evt |Event
+|File |File
+|MLP |MultiLanguageProperty
+|Opr |Operation
+|Prop |Property
+|Range |Range
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|RelA |AnnotatedRelationshipElement
+|SMC |SubmodelElementCollection
+|SME |SubmodelElement
+|SML |SubmodelElementList
+|===
+
+
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* The [valueType] is only given for Properties.
+
+
+
+
+[[annex-changes-to-submodel-template]]
+== Annex B.	Changes to the submodel template
+
+=== General
+
+This annex lists the changes from version to version of the Submodel, together with major changes in the overall document. 
+	
+=== Changes Version 1.0.1
+
+Major Changes
+	
+* CHANGE - make BatteryMaterialMass optional (link:https://github.com/admin-shell-io/smt-semantic-models/issues/83[#83])
+* CHANGE - change measurement unit of BatteryMaterialMass from gram to kilogram 
+  (link:https://github.com/admin-shell-io/smt-semantic-models/issues/85[#85])
+* CHANGE - make HazardousSubstanceClass, HazardousSubstanceClass, HazardousSubstanceConcentration, HazardousSubstanceImpact and HazardousSubstanceLocation optional in HazardousSubstance (link:https://github.com/admin-shell-io/smt-semantic-models/issues/83[#83])
+                                                                                                                                                                                           * ADDED - add qualifier "EitherOr" to ComponentId and ComponentName in BatteryMaterialLocation and HazardousSubstanceLocation (as explained in definition of the concepts)
+
+	                                                                                                             
+Minor Changes
+	
+* add examples in text for hazardous substance impact
+* add unitId for Measurements, i.e. BatteryMaterialMass and HazardousSubstanceConcentration
+* add additional example values
+* editorial changes in descriptions
+* editorial changes
+	
+=== Changes Version 1.0
+
+
+* First Version conformant to DIN DKE SPEC 99100
+
+<<<
+
+
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] | DIN DKE SPEC 99100, "Requirements for data attributes of the battery passport". February 2025.
+
+|[2] |"OMG Unified Modeling Language (OMG UML)", Formal/2017-12-05, Version 2.5.1. December 2018. [Online] Available: https://www.omg.org/spec/UML/
+
+|[3] |"Specification of the Asset Administration Shell", Publisher: Industrial Digital Twin Assocation (IDTA). [Online]. Available: https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+
+|[4] |"Submodel Templates", Publisher: Industrial Digital Twin Assocation (IDTA).  [Online]. Available: https://industrialdigitaltwin.org/en/content-hub/submodels
+
+|[5] |"How-to create a Submodel Template Specification", Publisher: Industrial Digital Twin Assocation (IDTA). June 2025. V1.1. [Online]. Available: https://industrialdigitaltwin.org/en/wp-content/uploads/sites/2/2025/06/IDTA_How-to-write-a-SMT-v1.1.pdf
+
+|[6] |"Semantic Aspect Meta Model (SAMM)", V2.2.0. [Online]. Available: https://eclipse-esmf.github.io/samm-specification/2.2.0/index.html
+
+|[7] |"Semantic Aspect Models - smt-semantic-models",  Publisher: Industrial Digital Twin Assocation (IDTA). [Online]. Available: https://github.com/admin-shell-io/smt-semantic-models
+
+|[8] |"Semantic Aspect Models - BatteryPassDataModel", Publisher: BatteryPass Consortium. [Online]. Available: https://github.com/batterypass/BatteryPassDataModel
+
+|[9] |"Semantic Aspect Models - Tractus-X - sldt-semantic-models", [Online]. Publisher: Catena-X. [Online]. Available: https://github.com/eclipse-tractusx/sldt-semantic-modelsl
+
+|===

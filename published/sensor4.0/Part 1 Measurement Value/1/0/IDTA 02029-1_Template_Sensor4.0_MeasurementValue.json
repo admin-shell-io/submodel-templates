@@ -1,0 +1,1402 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "MeasurementValueAAS",
+      "id": "https://admin-shell.io/idta/aas/measurementvalue/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/measurementvalue/1/0",
+        "assetType": "Type",
+        "defaultThumbnail": {
+          "path": "/IM0082877_jpgBig.jpg",
+          "contentType": "image/png"
+        }
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/measurementValue/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "MeasurementValue",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Measurement Value"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "The Submodel Template for Measurement Value"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/measurementValue/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/measurementValue/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "MeasuredValue",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Measured Value"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "This is the measured value of the sensor output"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "category": "VARIABLE",
+              "idShort": "Value",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Value"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The value of the of measured sensor output"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/measurementvalue/value/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "17.356",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Unit",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Unit"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The unit of the measured value"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0112/2///62720#UBA000"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "m",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Kind",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Kind"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Kind of measured value"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0112/2///62683#ACI144"
+                  }
+                ]
+              },
+              "supplementalSemanticIds": [
+                {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "0112/2///62683#ACI144"
+                    }
+                  ]
+                }
+              ],
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "Distance",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "MeasuredValuePreDefined",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Measured Value Pre Defined"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "The predefined measured value of the sensor"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/measurementvalue/measuredvaluepredefined/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "Distance",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Distance"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The measured length between two points."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0112/2///61987#ABN718#001"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:float",
+              "value": "17.356",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "category": "VARIABLE",
+          "idShort": "MeasurementTimestamp",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Measurement Timestamp"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Date and time when the measurement was taken."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61360_7#CBA007"
+              }
+            ]
+          },
+          "supplementalSemanticIds": [
+            {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0112/2///61360_7#CBA008"
+                }
+              ]
+            }
+          ],
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:dateTime",
+          "value": "2024-09-29T09:05:00",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "Concept",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Concept"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "This collection defines which semantic definition is used for measuredvalue"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/measurementvalue/concept/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "Origin",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Origin"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The origin of the semantic description"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/measurementvalue/origin/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "IEC-CDD / ECLASS / Other",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "Version",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Version"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The version of the semantic defintion used"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/measurementvalue/version/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "001",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "Identifier",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Identifier"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "The identifier of the semantic definition used"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/measurementvalue/identifier/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "iec:62683:ACH695:Distance",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "MeasurementQualifier",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Measurement Qualifier"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "The Qualifier of the measurement"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/measurementvalue/measurementqualifier/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "category": "VARIABLE",
+              "idShort": "Quality",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Quality"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Quality of the measured value (e.g., Good, Bad, Uncertain and others like out of range)."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0112/2///61360_7#CBA006"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "ValueQualifier",
+                  "type": "SMT/AllowedValue",
+                  "valueType": "xs:string",
+                  "value": "good | bad | uncertain | others",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0112/2///61360_7#CTA052"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "good",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "Range",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Range"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Allowed minimum and maximum measurement limits."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/meaurementvalue/range/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:float",
+              "min": "-10.00",
+              "max": "100.00",
+              "modelType": "Range"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Scale",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Scale"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Factor used to convert or adjust the measured value."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/measurementvalue/scale/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:integer",
+              "value": "1",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "Tag",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Tag"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Identifier linking the measurement to its source or device."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0112/2///61987#ABB271"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/sensor/measurementTag/1/0"
+                      }
+                    ]
+                  },
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "Device @ Station 1",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "MeasurementValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "The Submodel Template for Measurement Value"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/measurementValue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MeasurementValue"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The Submodel Template for Measurement Value"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MeasuredValue",
+      "description": [
+        {
+          "language": "en",
+          "text": "This is the measured value of the sensor output"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MeasuredValue"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This is the measured value of the sensor output"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Value",
+      "description": [
+        {
+          "language": "en",
+          "text": "The value of the of measured sensor output"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/measurementvalue/value/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Value"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The value of the of measured sensor output"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Unit",
+      "description": [
+        {
+          "language": "en",
+          "text": "The unit of the measured value"
+        }
+      ],
+      "id": "0112/2///62720#UBA000",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Unit"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The unit of the measured value"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Kind",
+      "description": [
+        {
+          "language": "en",
+          "text": "Kind of measured value"
+        }
+      ],
+      "id": "0112/2///62683#ACI144",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Kind"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Kind of measured value"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MeasuredValuePreDefined",
+      "description": [
+        {
+          "language": "en",
+          "text": "The predefined measured value of the sensor"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/measurementvalue/measuredvaluepredefined/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MeasuredValuePreDefined"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The predefined measured value of the sensor"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Distance",
+      "description": [
+        {
+          "language": "en",
+          "text": "The measured length between two points."
+        }
+      ],
+      "id": "0112/2///61987#ABN718#001",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Distance"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The measured length between two points."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MeasurementTimestamp",
+      "description": [
+        {
+          "language": "en",
+          "text": "Date and time when the measurement was taken."
+        }
+      ],
+      "id": "0112/2///61360_7#CBA007",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MeasurementTimestamp"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Date and time when the measurement was taken."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Concept",
+      "description": [
+        {
+          "language": "en",
+          "text": "This collection defines which semantic definition is used for measuredvalue"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/measurementvalue/concept/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Concept"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This collection defines which semantic definition is used for measuredvalue"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Origin",
+      "description": [
+        {
+          "language": "en",
+          "text": "The origin of the semantic description"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/measurementvalue/origin/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Origin"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The origin of the semantic description"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Version",
+      "description": [
+        {
+          "language": "en",
+          "text": "The version of the semantic defintion used"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/measurementvalue/version/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Version"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The version of the semantic defintion used"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Identifier",
+      "description": [
+        {
+          "language": "en",
+          "text": "The identifier of the semantic definition used"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/measurementvalue/identifier/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Identifier"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The identifier of the semantic definition used"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MeasurementQualifier",
+      "description": [
+        {
+          "language": "en",
+          "text": "The Qualifier of the measurement"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/measurementvalue/measurementqualifier/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MeasurementQualifier"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The Qualifier of the measurement"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Quality",
+      "description": [
+        {
+          "language": "en",
+          "text": "Quality of the measured value (e.g., Good, Bad, Uncertain and others like out of range)."
+        }
+      ],
+      "id": "0112/2///61360_7#CBA006",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Quality"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Quality of the measured value (e.g., Good, Bad, Uncertain and others like out of range)."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Range",
+      "description": [
+        {
+          "language": "en",
+          "text": "Allowed minimum and maximum measurement limits."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/meaurementvalue/range/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Range"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Allowed minimum and maximum measurement limits."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Scale",
+      "description": [
+        {
+          "language": "en",
+          "text": "Factor used to convert or adjust the measured value."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/measurementvalue/scale/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Scale"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Factor used to convert or adjust the measured value."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Tag",
+      "description": [
+        {
+          "language": "en",
+          "text": "Identifier linking the measurement to its source or device."
+        }
+      ],
+      "id": "0112/2///61987#ABB271",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Tag"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Identifier linking the measurement to its source or device."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}

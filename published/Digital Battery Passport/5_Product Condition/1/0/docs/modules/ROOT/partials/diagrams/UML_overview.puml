@@ -1,0 +1,79 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT ProductCondition
+
+class "ProductCondition" as ID00000001 <<SM>> {
+}
+
+class "EnergyThroughput" as ID00000002 <<SMC>> {
+}
+
+class "CapacityThroughput" as ID00000003 <<SMC>> {
+}
+
+class "NumberOfFullCycles" as ID00000004 <<SMC>> {
+}
+
+class "StateOfCertifiedEnergy" as ID00000005 <<SMC>> {
+}
+
+class "RemainingEnergy" as ID00000006 <<SMC>> {
+}
+
+class "RemainingCapacity" as ID00000007 <<SMC>> {
+}
+
+class "NegativeEvents" as ID00000008 <<SML>> {
+}
+
+class "[00] NegativeEvent" as ID00000009 <<SMC>> {
+}
+
+class "InformationOnAccidents" as ID0000000A <<SML>> {
+}
+
+class "TemperatureInformation" as ID0000000B <<SMC>> {
+}
+
+class "RemainingPowerCapability" as ID0000000C <<SMC>> {
+}
+
+class "RemainingPowerCapabilityDynamicAt" as ID0000000D <<SMC>> {
+}
+
+class "EvolutionOfSelfDischarge" as ID0000000E <<SMC>> {
+}
+
+class "CurrentSelfDischargingRate" as ID0000000F <<SMC>> {
+}
+
+class "RemainingRoundTripEnergyEfficiency" as ID00000010 <<SMC>> {
+}
+
+class "StateOfCharge" as ID00000011 <<SMC>> {
+}
+
+ID00000001 *--  ID00000002 : ""
+ID00000001 *--  ID00000003 : ""
+ID00000001 *--  ID00000004 : ""
+ID00000001 *--  ID00000005 : ""
+ID00000001 *--  ID00000006 : ""
+ID00000001 *--  ID00000007 : ""
+ID00000008 *--  ID00000009 : ""
+ID00000001 *--  ID00000008 : ""
+ID00000001 *--  ID0000000A : ""
+ID00000001 *--  ID0000000B : ""
+ID0000000C *--  ID0000000D : ""
+ID00000001 *--  ID0000000C : ""
+ID00000001 *--  ID0000000E : ""
+ID00000001 *--  ID0000000F : ""
+ID00000001 *--  ID00000010 : ""
+ID00000001 *--  ID00000011 : ""
+@enduml

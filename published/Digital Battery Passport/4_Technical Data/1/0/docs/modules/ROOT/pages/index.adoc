@@ -1,0 +1,1619 @@
+
+
+= IDTA-02035-4 : Digital Battery Passport - Part 4: Technical Data 1.0.1 
+May 2026
+
+
+
+=== Imprint 
+
+Publisher
+[verse]
+____
+Industrial Digital Twin Association
+Lyoner Strasse 18
+60528 Frankfurt am Main
+Germany
+https://www.industrialdigitaltwin.org/
+____
+
+=== Version history
+
+For a detailed change history see <<annex-changes-to-submodel-template>>.
+
+[cols="1,1,4"]
+|===
+
+h|Date
+h|Version
+h|Comment
+
+|May 2026
+|1.0.1
+| Bugfix Version
+
+|December 2025
+|1.0
+|First version. Result of the joint Model Expert Group from IDTA, Catena-X and the BatteryPass Consortium.
+
+|===
+
+:sectnums:
+
+:toclevels: 3
+
+:xrefstyle: short
+
+<<<
+toc::[]
+<<<
+
+== General
+
+
+=== About this document
+This document is a part of an overall specification series [19]. 
+Each part specifies the contents of a Submodel Template (SMT). 
+The  specifications of the Asset Administration Shell (AAS) are the basis for the Submodel Template specifications, see [6]. 
+
+The target audience of the specification are developers and editors of technical 
+documentation and manufacturer information, which are describing assets by means of the Asset Administration Shell (AAS) and 
+therefore need to create a Submodel instance with a hierarchy of 
+SubmodelElements. 
+This document especially details on the question, which SubmodelElements with which semantic identification shall be used for this purpose.
+
+This specification was created following the "model based workflow" as defined in [18]. Additionally, Aspect Models were created [15,16].
+
+
+
+
+
+=== Scope of the Submodel
+This Submodel template aims to define the data points of a Battery Passport conformant to DIN DKE SPEC 99100 and the corresponding EU regulations.
+
+The battery passport consists of the following 7 parts:
+
+    Digital Battery Passport - Part 1: Digital Nameplate (IDTA-02035-1)
+    Digital Battery Passport - Part 2: Handover Documentation (IDTA-02035-2)
+    Digital Battery Passport - Part 3: Product Carbon Footprint (IDTA-02035-3)
+    Digital Battery Passport - Part 4: Technical Data (IDTA-02035-4)
+    Digital Battery Passport - Part 5: Product Condition (IDTA-02035-5)
+    Digital Battery Passport - Part 6: Material Composition (IDTA-02035-6)
+    Digital Battery Passport - Part 7: Circularity (IDTA-02035-7)
+    
+This specification is Part 4: Technical Data (IDTA-02035-4).
+
+
+
+
+
+=== Relevant standards for the Submodel template
+This submodel template fulfills the requirements for technical data attributes as defined in DIN DKE SPEC 99100 [14].
+DIN DKE 99100 "is based on the European Union and key Member States current regulatory requirements for battery passport information. 
+Mandatory information for the battery passport as stated in the EU Battery Regulation (EU)2023/1542, Article77 and AnnexXIII, 
+as well as the Ecodesign for Sustainable Products Regulation (ESPR), is supplemented by recommendations to increase sustainability and circularity. [14]"
+
+This document is valid for all battery categories. 
+Please be aware that for battery categories that have stronger requirements like industrial batteries with battery management systems etc. some of the data points are specified as optional although mandatory per regulation. 
+
+
+
+
+=== Explanations on used UML diagrams
+For clarity and an improved legibility readers suggested to go through this section at first before reading the following chapters.
+
+UML diagrams feature box-like elements, called "classes". These classes, typically Submodels, SubmodelElementCollections or SubmodelElementLists, typically feature a set of Properties or further SubmodelElements. These elements can have specific cardinalities.
+
+The single classes are hierarchally organized by aggregation relations, these can be seen as "contains" relation.
+
+For a further overview on UML diagrams please refer to [6, 19] and [10]. 
+
+Further details about used table formats please refer to Annex A.
+
+== Information set for Submodel ”TechnicalData”
+
+
+=== General
+The "Technical Data" Submodel Template is part of the specification series for the Battery Passport.
+
+The Submodel template is an instance of the Submodel template "Generic Technical Data 2.0 Submodel Template (IDTA-02003-2-0)" with battery specific extensions in the GeneralInformation SMC. Another deviation: SML TechnicalPropertyAreas is modelled as SMC.
+
+The submodel instance `Technical Data` is used to provide all static (model) technical based data attributes of a battery as declared in the DIN DKE SPEC 99100, exceptions are carbon footprint, materials, and circularity (each have their own submodels, see Section 1.2). 
+
+*Property specification*
+
+See <<_information_structures_and_attributes,clause 3 "Information structures and attributes">>.
+
+
+
+<<UML_Submodel_2_1>> shows the UML-diagram defining the relevant properties which need to be set. 
+
+[plantuml, UML_Submodel_2_1, svg, id="UML_Submodel_2_1", title="UML-Diagram for Submodel \"Technical Data\" for batteries"]
+----
+include::partial$diagrams/UML_Submodel_2_1.puml[]
+----
+
+
+=== Submodel TechnicalData
+The SubmodelElementCollection (SMC) "TechnicalData" contains general information around a battery. 
+The table convention is explained in Annex A.2.
+
+The _supplementalSemanticId_ of the Submodel is ´urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#TechnicalData´.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/TechnicalData_asciiDoc/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_TechnicalData],[SubmodelElementCollection, Section_2_2_SubmodelElements_of_TechnicalData],[ReferenceElement, Table_7a]
+
+
+
+[width="100%", id="Table_7a", title="SubmodelElements of TechnicalData", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}TechnicalData 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}Submodel 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}https://admin-shell.io/idta/digitalbatterypassport/TechnicalData/1/0 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Technical data of the battery. 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+GeneralInformation
+|0173-1#02-ABK161#002/0173-1#01-AHX838#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#generalInformation +
+ +
+General information, for example ordering and manufacturer information. 
+|[]  +
+ +
+7 elements
+|1
+
+
+
+|[SMC]  +
+ +
+TechnicalPropertyAreas
+|0173-1#02-ABK163#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABK163-002, urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#technicalPropertyAreas +
+ +
+Individual battery characteristics based on DIN DKE SPEC 99100. 
+|[]  +
+ +
+6 elements
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of GeneralInformation
+The SubmodelElementCollection (SMC) “GeneralInformation” contains general information around a battery. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/TechnicalData_asciiDoc/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_TechnicalData],[SubmodelElementCollection, Section_2_3_SubmodelElements_of_GeneralInformation],[ReferenceElement, Table_7c]
+
+
+
+[width="100%", id="Table_7c", title="SubmodelElements of GeneralInformation", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}GeneralInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABK161#002/0173-1#01-AHX838#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalData 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ManufacturerName
+|0173-1#02-AAO677#004  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-AAO677-004, urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#manufacturerName +
+ +
+  +
+Legally valid designation of the natural or judicial body which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into the market.
+
+DIN DKE Spec 99100 chapter reference: 6.1.2.4 c) 
+|[String]  +
+ +
+Example Company
+|1
+
+
+
+|[File]  +
+ +
+CompanyLogo
+|0173-1#02-ABI776#002  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABI776-002, urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#companyLogo +
+ +
+  +
+Imagefile for logo of manufacturer provided in common format (.png, .jpg).
+|[]  +
+ +
+
+|0..1
+
+
+
+|[Prop]  +
+ +
+ManufacturerIdentifier
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#manufacturerIdentifier  +
+ +
+A battery passport must include information identifying the manufacturer.
+
+ DIN DKE Spec 99100 chapter reference: 6.1.2.4 
+|[String]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+BatteryCategory
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#batteryCategory  +
+ +
+supplementalSemanticId: 0173-1#02-AAR724#007 +
+ +
+Categories relevant for the battery passport: LMT battery, electric vehicle battery, stationary or other industrial battery >2kWh.
+
+DIN DKE Spec chapter reference: 6.1.3.5  +
+A battery passport must include the battery category.
+
+The battery category must be provided on the battery label.
+
+The battery must be categorised by its intended use in (string values):
+- "lmt"
+- "ev" 
+- "industrial", or
+- "stationary"
+
+DIN DKE Spec 99100 chapter reference: 6.1.3.5
+|[String]  +
+ +
+ev
+|1
+
+
+
+|[Prop]  +
+ +
+BatteryMass
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#batteryMass  +
+ +
+supplementalSemanticId: 0173-1#02-AAF040#010 +
+ +
+Mass of the entire battery in kilograms. Voluntary: if the battery is defined on pack or module level: also weight of the modules and/or cells.
+
+DIN DKE Spec chapter reference: 6.1.3.6 
+|[Float]  +
+ +
+1007
+|1
+
+
+
+|[SML]  +
+ +
+ProductImages
+|0173-1#02-ABM220#001  +
+ +
+supplementalSemanticId: https://api.eclass-cdp.com/0173-1-02-ABM220-001, urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productImages +
+ +
+  +
+List for image file(s) for associated product provided in common format (.png, .jpg).
+|[]  +
+ +
+1 elements
+|0..1
+
+
+
+|[SMC]  +
+ +
+WarrantyInformation
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#warrantyInformation  +
+ +
+supplementalSemanticId: 0173-1#02-AAO677#004 +
+ +
+ The battery passport must include information about the period for which the commercial warranty applies.
+ 
+ DIN DKE Spec chapter reference: 6.1.3.4
+ 
+|[]  +
+ +
+1 elements
+|
+
+
+
+|===
+
+
+
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/TechnicalData_asciiDoc/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_TechnicalData],[SubmodelElementCollection, Section_2_3_SubmodelElements_of_GeneralInformation],[ReferenceElement, Table_7b]
+
+
+
+[width="100%", id="Table_7b", title="SubmodelElements of ProductImages", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}ProductImages 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABM220#001 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}GeneralInformation 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}List for image file(s) for associated product provided in common format (.png, .jpg). 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, 0173-1#02-ABM220#001/0173-1#01-AHY911#001], typeValueListElement=File 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[File]  +
+ +
+ProductImage
+|0173-1#02-ABM220#001/0173-1#01-AHY911#001  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.shared:3.1.0#ResourceWithContentType +
+ +
+  +
+Image file for associated product provided in common format (.png, .jpg).
+|[]  +
+ +
+
+|1..*
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of TechnicalPropertyAreas
+The following attributes need to be set for the Submodel instance. The table convention is explained in Annex A.2.
+
+The ECLASS IRDIs referenced in this Submodel are based on ECLASS Release 15. This version of the Submodel with these ECLASS IRDIs is also available in the download area of the ECLASS website: www.eclass.eu in form of the Asset.xml. The Asset.xml (Release 15) is the ECLASS file that contains Submodels. The use of these Submodels is free of charge.
+
+Note: Each of the elements within "TechnicalPropertyAreas" is a single "TechnicalPropertyArea", each with the supplementalSemanticId "0173-1#02-ABL358#002/0173-1#01-AHX773#002".
+
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/TechnicalData_asciiDoc/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_TechnicalData],[SubmodelElementCollection, Section_2_4_Attributes_of_the_Submodel_TechnicalPropertyAreas],[ReferenceElement, Table_2]
+
+
+
+[width="100%", id="Table_2", title="Attributes of the Submodel instance", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}TechnicalPropertyAreas 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABK163#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalData 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+CapacityEnergyVoltage
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityEnergyVoltage  +
+ +
+supplementalSemanticId: 0173-1#02-ABL358#002/0173-1#01-AHX773#002 +
+ +
+  +
+Information on battery capacity, energy and voltage.
+
+DIN DKE Spec 99100 chapter reference: 6.7.2
+|[]  +
+ +
+6 elements
+|1
+
+
+
+|[SMC]  +
+ +
+RoundTripEnergyEfficiency
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#roundTripEnergyEfficiency  +
+ +
+supplementalSemanticId: 0173-1#02-ABL358#002/0173-1#01-AHX773#002 +
+ +
+  +
+Information regarding round trip energy efficiency.
+
+DIN DKE Spec 99100 chapter reference: 6.7.4
+|[]  +
+ +
+4 elements
+|1
+
+
+
+|[SMC]  +
+ +
+Resistance
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#resistance  +
+ +
+supplementalSemanticId: 0173-1#02-ABL358#002/0173-1#01-AHX773#002 +
+ +
+  +
+Data elements regarding internal resistance and electrochemical impedance.
+
+DIN DKE Spec 99100 chapter reference: 6.7.5
+|[]  +
+ +
+6 elements
+|1
+
+
+
+|[SMC]  +
+ +
+PowerCapability
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapability  +
+ +
+supplementalSemanticId: 0173-1#02-ABL358#002/0173-1#01-AHX773#002 +
+ +
+  +
+Information regarding power capability.
+
+DIN DKE Spec 99100 chapter reference: 6.7.3
+|[]  +
+ +
+4 elements
+|1
+
+
+
+|[SMC]  +
+ +
+Temperature
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperature  +
+ +
+supplementalSemanticId: 0173-1#02-ABL358#002/0173-1#01-AHX773#002 +
+ +
+  +
+Information regarding temperature conditions.
+
+DIN DKE Spec 99100 chapter reference: 6.7.7
+|[]  +
+ +
+2 elements
+|1
+
+
+
+|[SMC]  +
+ +
+Lifetime
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#lifetime  +
+ +
+supplementalSemanticId: 0173-1#02-ABL358#002/0173-1#01-AHX773#002 +
+ +
+  +
+Information regarding battery lifetime.
+
+DIN DKE Spec 99100 chapter reference: 6.7.6
+|[]  +
+ +
+4 elements
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of CapacityEnergyVoltage
+The SubmodelElementCollection (SMC) “CapacityEnergyVoltage” contains capacity, energy and voltage relevant data elements. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/TechnicalData_asciiDoc/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_TechnicalData],[SubmodelElementCollection, Section_2_5_SubmodelElements_of_CapacityEnergyVoltage],[ReferenceElement, Table_3]
+
+
+
+[width="100%", id="Table_3", title="SubmodelElements of CapacityEnergyVoltage", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}CapacityEnergyVoltage 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityEnergyVoltage 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalPropertyAreas 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Information on battery capacity, energy and voltage.
+
+DIN DKE Spec 99100 chapter reference: 6.7.2 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+NominalVoltage
+|0173-1#02-ABL588#001  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#nominalVoltage +
+ +
+voltage the battery is rated for - NOM  +
+voltage - NOM
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.11
+|[Float]  +
+ +
+4.3
+|1
+
+
+
+|[Prop]  +
+ +
+MinVoltage
+|0173-1#02-ABL587#001  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#minimumVoltage +
+ +
+voltage the battery is rated for - MIN  +
+voltage - MIN
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.9
+|[Float]  +
+ +
+2.04
+|1
+
+
+
+|[Prop]  +
+ +
+MaxVoltage
+|0173-1#02-ABL589#001  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#maximumVoltage +
+ +
+voltage the battery is rated for - MAX  +
+voltage - MAX
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.10
+|[Float]  +
+ +
+6
+|1
+
+
+
+|[Prop]  +
+ +
+RatedCapacity
+|0173-1#02-ABL869#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#ratedCapacity +
+ +
+total number of ampere-hours (Ah) that can be withdrawn from a fully charged battery under specific conditions  +
+rated capacity
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.2
+|[Float]  +
+ +
+210
+|1
+
+
+
+|[Prop]  +
+ +
+CapacityFade
+|0173-1#02-ABL828#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityFade +
+ +
+decrease over time and upon usage in the amount of charge that a battery can deliver at the rated voltage, with respect to the original rated capacity declared by the manufacturer  +
+capacity fade
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.4
+|[Float]  +
+ +
+10
+|0..1
+
+
+
+|[Prop]  +
+ +
+CertifiedUsableBatteryEnergy
+|0173-1#02-ABL829#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#ratedEnergy +
+ +
+energy supplied by the battery from the beginning of the test procedure used for certification until the applicable break-off criterion of the test procedure used for certification is reached  +
+Certified usable battery energy (UBE certified)
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.5
+|[Float]  +
+ +
+100
+|0..1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of RoundTripEnergyEfficiency
+The SubmodelElementCollection (SMC) “RoundTripEnergyEfficiency” contains  round trip energy efficiency relevant data elements. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/TechnicalData_asciiDoc/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_TechnicalData],[SubmodelElementCollection, Section_2_6_SubmodelElements_of_RoundTripEnergyEfficiency],[ReferenceElement, Table_4]
+
+
+
+[width="100%", id="Table_4", title="SubmodelElements of RoundTripEnergyEfficiency", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}RoundTripEnergyEfficiency 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#roundTripEnergyEfficiency 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalPropertyAreas 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Information regarding round trip energy efficiency.
+
+DIN DKE Spec 99100 chapter reference: 6.7.4 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+InitialRoundTripEnergyEfficiency
+|0173-1#02-ABL833#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialRoundTripEnergyEfficiency +
+ +
+initial round trip energy efficiency means the ratio of the net energy delivered by a battery during a discharge test to the total energy required to restore the initial State of Charge by a standard charge  +
+initial round trip energy efficiency
+
+DIN DKE Spec 99100 chapter reference: 6.7.4.2
+|[Integer]  +
+ +
+100
+|1
+
+
+
+|[Prop]  +
+ +
+RoundTripEnergyEfficiencyAt50PercentOfCycleLife
+|0173-1#02-ABL866#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#roundTripEfficiencyAt50PercentCycleLife +
+ +
+round trip energy efficiency at 50% of cycle-life and measured at 50% of cycle life as determined in a pre-use standardized measurement  +
+round trip energy efficiency at 50% of cycle life
+
+DIN DKE Spec 99100 chapter reference:  6.7.4.3
+|[Integer]  +
+ +
+100
+|1
+
+
+
+|[Prop]  +
+ +
+EnergyRoundTripEfficiencyFade
+|0173-1#02-ABL827#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#energyRoundTripEfficiencyFade +
+ +
+decrease of round trip energy efficiency as percentage, calculated from remaining and initial round trip energy efficiency  +
+round trip energy efficiency fade
+
+DIN DKE Spec 99100 chapter reference:  6.7.4.5
+|[Float]  +
+ +
+10
+|0..1
+
+
+
+|[Prop]  +
+ +
+InitialSelfDischargingRate
+|0173-1#02-ABL834#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialSelfDischargingRate +
+ +
+initial self-discharge in % of capacity per unit of time in defined conditions (temperature range etc) as pre-use metric  +
+initial self-discharging rate
+
+DIN DKE Spec 99100 chapter reference:  6.7.4.6
+|[Integer]  +
+ +
+2
+|0..1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of Resistance
+The SubmodelElementCollection (SMC) “Resistance” contains resistance relevant data elements. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/TechnicalData_asciiDoc/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_TechnicalData],[SubmodelElementCollection, Section_2_7_SubmodelElements_of_Resistance],[ReferenceElement, Table_5]
+
+
+
+[width="100%", id="Table_5", title="SubmodelElements of Resistance", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Resistance 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#resistance 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalPropertyAreas 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Data elements regarding internal resistance and electrochemical impedance.
+
+DIN DKE Spec 99100 chapter reference: 6.7.5
+
+ 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+InitialInternalResistanceOnBatteryCellLevel
+|0173-1#02-ABL844#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryCell +
+ +
+measure of a battery cell's opposition to current flow at the beginning of its operational life, affecting its performance, efficiency, and heat generation (internal resistance means the absolute value of the quotient of the voltage drop between the terminals by the electric current increase in the battery circuit during a current pulse)  +
+Internal battery cell and pack resistance - Internal resistance (in Ohm)
+
+DIN DKE Spec 99100 chapter reference: 6.7.5.2
+|[Float]  +
+ +
+67
+|1
+
+
+
+|[Prop]  +
+ +
+InitialInternalResistanceOnBatteryPackLevel
+|0173-1#02-ABL846#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryPack +
+ +
+measure of opposition to current flow in an entire battery pack at the start of its operational life, affecting overall performance, efficiency, and heat generation (internal resistance means the absolute value of the quotient of the voltage drop between the terminals by the electric current increase in the battery circuit during a current pulse)  +
+Initial (Pre-Use) internal resistance on battery pack level. 
+
+DIN DKE Spec 99100 chapter reference: 6.7.5.2
+|[Float]  +
+ +
+23
+|1
+
+
+
+|[Prop]  +
+ +
+InitialInternalResistanceOnBatteryModuleLevel
+|0173-1#02-ABL832#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryModule +
+ +
+initial internal resistance means the absolute beginning value of the quotient of the voltage drop between the terminals by the electric current increase in the battery circuit during a current pulse  +
+Initial internal resistance on battery module level
+
+DIN DKE Spec 99100 chapter reference: 6.7.5.2
+|[Float]  +
+ +
+10
+|0..1
+
+
+
+|[Prop]  +
+ +
+InternalResistanceIncreaseOfBatteryCellLevel
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#internalResistanceIncreaseOfBatteryCell  +
+ +
+supplementalSemanticId: 0173-1#02-ABL831#002 +
+ +
+Internal resistance increase of battery cell.  +
+initial internal resistance on battery cell level
+
+DIN DKE Spec 99100 chapter reference: 6.7.5.3
+|[Float]  +
+ +
+10
+|0..1
+
+
+
+|[Prop]  +
+ +
+InternalResistanceIncreaseOfBatteryPackLevel
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#internalResistanceIncreaseOfBatteryPack  +
+ +
+supplementalSemanticId: 0173-1#02-ABL831#001 +
+ +
+increase of internal resistance in % as calculated from current and initial values (calculated from initial and current internal resistance on battery pack level)  +
+initial internal resistance on battery pack level
+
+DIN DKE Spec 99100 chapter reference: 6.7.5.3
+|[Float]  +
+ +
+10
+|1
+
+
+
+|[Prop]  +
+ +
+InternalResistanceIncreaseOfBatteryModuleLevel
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryModule  +
+ +
+supplementalSemanticId: 0173-1#02-ABL836#001 +
+ +
+Internal resistance increase of battery module. 
+|[Float]  +
+ +
+10
+|0..1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of PowerCapability
+The SubmodelElementCollection (SMC) “PowerCapability” contains power capability relevant data elements. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/TechnicalData_asciiDoc/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_TechnicalData],[SubmodelElementCollection, Section_2_8_SubmodelElements_of_PowerCapability],[ReferenceElement, Table_6a]
+
+
+
+[width="100%", id="Table_6a", title="SubmodelElements of PowerCapability", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}PowerCapability 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapability 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalPropertyAreas 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Information regarding power capability.
+
+DIN DKE Spec 99100 chapter reference: 6.7.3 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+MaximumPermittedBatteryPower
+|0173-1#02-ABL843#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#maximumPermittedBatteryPower +
+ +
+maximum permitted power the battery is rated for, includes the data relevant for power limits  +
+maximum permitted battery power
+
+DIN DKE Spec 99100 chapter reference:  6.7.3.5
+|[Float]  +
+ +
+-1.7976931348623157e+308
+|1
+
+
+
+|[Prop]  +
+ +
+PowerFade
+|0173-1#02-ABL852#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerFade +
+ +
+power capability at 80% and 20% state of charge (as defined in Battery Regulation Annex IV Part B)  +
+Power fade
+
+DIN DKE Spec 99100 chapter reference: 6.7.3.4
+|[Float]  +
+ +
+23
+|1
+
+
+
+|[Prop]  +
+ +
+RatioNorminalBatteryPowerAndBatteryEnergy
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapabilityRatio  +
+ +
+The nominal battery power is the suitable approximate value of the power capability used to designate or identify the battery, while the battery energy is determined in reference conditions to be defined.
+   
+   DIN DKE Spec 99100 chapter reference: 6.7.3.6
+    
+|[Float]  +
+ +
+0.611
+|0..1
+
+
+
+|[SML]  +
+ +
+OriginalPowerCapability
+|0173-1#02-ABL853#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#originalPowerCapability +
+ +
+List of pre-use power capabilities (definition of power capability as given in Battery Regulation).
+
+Power capability shall be measured at reference conditions, which must include measurements at 80% and 20% state of charge for EV and industrial batteries.
+
+DIN DKE Spec 99100 chapter reference: 6.7.3.2 
+|[]  +
+ +
+1 elements
+|1
+
+
+
+|===
+
+
+
+[width="100%", id="Table_6a", title="SubmodelElements of PowerCapability", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}OriginalPowerCapability 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementList 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}0173-1#02-ABL853#002 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}PowerCapability 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee} 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}orderRelevant=No, semanticIdListElement=[GlobalReference, urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAt], typeValueListElement=SubmodelElementCollection 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[SMC]  +
+ +
+PowerCapabilityAt
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAt  +
+ +
+  +
+Power capability measured at a reference condition, for example at 80% or 20% state of charge (SoC).
+
+DIN DKE Spec 99100 chapter reference: 6.7.3.2
+|[]  +
+ +
+2 elements
+|1..*
+
+
+
+|===
+
+
+
+[width="100%", id="Table_6a", title="SubmodelElements of PowerCapability", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}PowerCapabilityAt 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAt 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}OriginalPowerCapability 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Power capability measured at a reference condition, for example at 80% or 20% state of charge (SoC).
+
+DIN DKE Spec 99100 chapter reference: 6.7.3.2 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+atSoc
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#atSoC  +
+ +
+supplementalSemanticId: 0173-1#02-ABL821#001 +
+ +
+Power capability shall be measured at reference conditions, which must include measurements at 80% and 20% state of charge for EV and industrial batteries. 
+|[UnsignedInt]  +
+ +
+80
+|1
+
+
+
+|[Prop]  +
+ +
+powerCapabilityAt
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapabilityAt  +
+ +
+supplementalSemanticId: 0173-1#02-ABL853#001 +
+ +
+Power capability. 
+|[Float]  +
+ +
+500
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of Temperature
+The SubmodelElementCollection (SMC) “Temperature” contains temperature relevant data elements. The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/TechnicalData_asciiDoc/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_TechnicalData],[SubmodelElementCollection, Section_2_9_SubmodelElements_of_Temperature],[ReferenceElement, Table_6b]
+
+
+
+[width="100%", id="Table_6b", title="SubmodelElements of Temperature", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Temperature 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperature 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalPropertyAreas 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Information regarding temperature conditions.
+
+DIN DKE Spec 99100 chapter reference: 6.7.7 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+TemperatureRangeIdleState_LowerBoundary
+|0173-1#02-ABL842#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperatureRangeIdleStateLowerBoundary +
+ +
+lower boundary of the surrounding temperature range, which the battery can safely withstand  +
+temperature range idle state (lower boundary)
+
+DIN DKE Spec 99100 chapter reference:  6.7.7.3
+|[Float]  +
+ +
+-19
+|1
+
+
+
+|[Prop]  +
+ +
+TemperatureRangeIdleState_UpperBoundary
+|0173-1#02-ABL871#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperatureRangeIdleStateUpperBoundary +
+ +
+upper boundary of the surrounding temperature range, which the battery can safely withstand  +
+temperature range idle state (upper boundary)
+
+DIN DKE Spec 99100 chapter reference: 6.7.7.4
+|[Float]  +
+ +
+49
+|1
+
+
+
+|===
+
+
+
+
+=== SubmodelElements of Lifetime
+The SubmodelElementCollection (SMC) “Lifetime ” contains lifetime relevant data elements. Some other lifetime relvant information will be provided in the •	Digital Battery Passport - Part 2: Handover Documentation 1.0 (IDTA-02035-2). The table convention is explained in Annex A.2.
+
+// Table generated from [Submodel, https://admin-shell.io/idta/asciidoc/DigitalBatteryPassport/TechnicalData_asciiDoc/1/0],[SubmodelElementCollection, Section_2_Information_set_for_Submodel_TechnicalData],[SubmodelElementCollection, Section_2_10_SubmodelElements_of_Lifetime],[ReferenceElement, Table_7z]
+
+
+
+[width="100%", id="Table_7z", title="SubmodelElements of Lifetime", cols="15%,55%,15%,15%"]
+|===
+s|{set:cellbgcolor:#0029cc} [white]#idShort:#
+3+s|{set:cellbgcolor:#eeeeee}Lifetime 
+
+s|{set:cellbgcolor:#0029cc} [white]#Class:#
+3+|{set:cellbgcolor:#eeeeee}SubmodelElementCollection 
+
+s|{set:cellbgcolor:#0029cc} [white]#semanticId:#
+3+|{set:cellbgcolor:#eeeeee}urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#lifetime 
+
+s|{set:cellbgcolor:#0029cc} [white]#Parent:#
+3+|{set:cellbgcolor:#eeeeee}TechnicalPropertyAreas 
+
+s|{set:cellbgcolor:#0029cc} [white]#Explanation:#
+3+|{set:cellbgcolor:#eeeeee}Information regarding battery lifetime.
+
+DIN DKE Spec 99100 chapter reference: 6.7.6 
+
+s|{set:cellbgcolor:#0029cc} [white]#Element details:#
+3+|{set:cellbgcolor:#eeeeee}- 
+
+|{set:cellbgcolor:#0029cc} [white]#[SME type] +
+ +
+idShort#
+| [white]#semanticId +
+ +
+Description@en#
+| [white]#[valueType] +
+ +
+example#
+| [white]#card.#
+
+
+
+|{set:cellbgcolor:#eeeeee}[Prop]  +
+ +
+ExpectedLifetimeInCalendarYears 
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#expectedLifetime  +
+ +
+The battery passport must include information about the expected battery lifetime in calendar years.
+
+The update interval must be upon placement on the market and upon change of the battery status.
+
+DIN DKE Spec 99100 chapter reference: 6.7.6.2 
+|[UnsignedInt]  +
+ +
+15
+|1
+
+
+
+|[Prop]  +
+ +
+ExpectedNumberOfCycles
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#expectedNumberOfCycles  +
+ +
+supplementalSemanticId: 0173-1#02-ABL830#001 +
+ +
+Expected battery lifetime expressed in cycles.
+The exception for non-cycle applications in Article 10 appears sensible, but is not included in the Annex XIII provision.
+The data attribute is defined by measurement conditions of the cycle-life test such as the C-Rate (see below) and the depth of discharge in the cycle-life test
+
+DIN DKE Spec 99100 chapter reference: 6.7.6.3 
+|[UnsignedInt]  +
+ +
+
+|1
+
+
+
+|[Prop]  +
+ +
+CapacityThresholdExhaustion
+|0173-1#02-ABL838#002  +
+ +
+supplementalSemanticId: urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityThresholdForExhaustion +
+ +
+interpreted as minimum percentage of rated capacity, above which the battery is still considered operational as EV battery in its current life. The value has to be provided by the economic operator. This metric may serve as indicator for a necessary end of current life as EV and may be understood in the context of warranty.  +
+interpreted as minimum percentage of rated capacity, above which the battery is still considered operational as EV battery in its current life. The value has to be provided by the economic operator. This metric may serve as indicator for a necessary end of current life as EV and may be understood in the context of warranty.
+
+DIN DKE Spec 99100 chapter reference:  6.7.6.9
+|[Float]  +
+ +
+23
+|0..1
+
+
+
+|[Prop]  +
+ +
+CRateOfRelevantCycleLifeTest
+|urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#cRateLifeCycleTest  +
+ +
+The C-rate should be provided separately for both the charge and discharge of the battery, if applicable.
+
+The exception for non-cycle applications as mentioned in "Expected lifetime: Number of charge-discharge cycles" should apply to this data attribute as well.
+
+DIN DKE Spec 99100 chapter reference: 6.7.6.6  +
+This data attribute is a measurement parameter for “Expected lifetime: Number of charge-discharge cycles”: Applied charge and discharge rate in terms of rated capacity (C-rate) of relevant cycle-life reference test.
+
+DIN DKE Spec 99100 chapter reference:  6.7.6.6
+|[Decimal]  +
+ +
+
+|1
+
+
+
+|===
+
+
+
+:sectnums!:
+
+== Annex A.	Explanations on used table formats
+
+=== 1. General
+
+The used tables in this document try to outline information as concise as possible. They do not convey all information on Submodels and SubmodelElements. For this purpose, the definitive definitions are given by a separate file in form of an AASX file of the Submodel template and its elements.
+
+=== 2. Tables on Submodels and SubmodelElements
+
+For clarity and brevity, a set of rules is used for the tables for describing Submodels and SubmodelElements.
+
+* The tables follow in principle the same conventions as in [5].
+* The table heads abbreviate 'cardinality' with 'card'.
+* The tables often place two informations in different rows of the same table cell. In this case, the first information is marked out by sharp brackets [] form the second information. A special case are the semanticIds, which are marked out by the format: (type)(local)[idType]value.
+* The types of SubmodelElements are abbreviated (see <<Table_SME_abbrev>>):
+
+[width="100%",cols="40%,60%", id="Table_SME_abbrev", title="Abbreviations for SubmodelElements", options="header"]
+|===
+|SME type |SubmodelElement type
+|Blob |Blob
+|Cap |Capability
+|Ent |Entity
+|Evt |Event
+|File |File
+|MLP |MultiLanguageProperty
+|Opr |Operation
+|Prop |Property
+|Range |Range
+|Ref |ReferenceElement
+|Rel |RelationshipElement
+|RelA |AnnotatedRelationshipElement
+|SMC |SubmodelElementCollection
+|SME |SubmodelElement type
+|SML |SubmodelElementList
+|===
+
+* If an idShort ends with '++__00__++', this indicates a suffix of the respective length (here: 2) of decimal digits, in order to make the idShort unique. A different idShort might be choosen, as long as it is unique in the parent’s context.
+* The Keys of semanticId in the main section feature only idType and value, such as: https://admin-shell.io/vdi/2770/1/0/DocumentId/Id. The attribute "type" (typically "ConceptDescription" and "(local)" or "GlobalReference") need to be set accordingly; see [6].
+* If a table does not contain a column with "parent" heading, all represented attributes share the same parent. This parent is denoted in the head of the table.
+* Multi-language strings are represented by the text value, followed by '@'-character and the ISO 639 language code: example@EN.
+* The [valueType] is only given for Properties.
+
+
+
+
+[[annex-changes-to-submodel-template]]
+== Annex B.	Changes to the submodel template
+
+=== General
+
+This annex lists the changes from version to version of the Submodel, together with major changes in the overall document. 
+	
+=== Changes Version 1.0.1
+
+Major Changes:
+
+* DELETED: remove properties ManufacturerProductDesignation, ManufacturerArticleNumber and ManufacturerOrderCode (https://github.com/admin-shell-io/smt-semantic-models/issues/82[#82])
+* CHANGED: data type of WarrantyPeriod changed to xsd:string with regex constraint conformant to ISO 8601 duration format (https://github.com/admin-shell-io/smt-semantic-models/issues/89[#89])
+* CHANGE: WarrantyPeriod now property of entity WarrantyInformation, within GenerationInformation WarrantyPeriod substituted by WarrantyInformation (https://github.com/admin-shell-io/smt-semantic-models/issues/89[#89])
+	                                                                                                                                                                                                                                                                                                                                                                                                  
+* CHANGED: add IRDI to :TechnicalAttributes to be compliant to IDTA-02003-2-0 Generic Technical Data 2.0.1 (https://github.com/admin-shell-io/smt-semantic-models/issues/88[#88]
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              * CHANGED: mention supplementalSemanticId of Submodel in Text
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+	
+=== Changes Version 1.0
+
+
+* First Version conformant to DIN DKE SPEC 99100
+
+<<<
+
+
+
+:sectnums!:
+
+== Bibliography
+
+[width="100%",cols="10%,90%", frame=none, grid=none]
+|===
+
+|[1] |“Recommendations for implementing the strategic initiative
+INDUSTRIE 4.0”, acatech, April 2013. [Online]. Available:
+https://en.acatech.de/publication/recommendations-for-implementing-the-strategic-initiative-industrie-4-0-final-report-of-the-industrie-4-0-working-group/
+
+|[2] |“Implementation Strategy Industrie 4.0: Report on the results of
+the Industrie 4.0 Platform”; BITKOM e.V. / VDMA e.V., /ZVEI e.V., April
+2015. [Online]. Available:
+https://www.bitkom.org/sites/main/files/file/import/2016-01-Implementation-Strategy-Industrie40.pdf
+
+|[3] |“The Structure of the Administration Shell: TRILATERAL
+PERSPECTIVES from France, Italy and Germany”, March 2018, [Online].
+Available:
+https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/hm-2018-trilaterale-coop.html
+
+|[4] |“Examples of the Asset Administration Shell for Industrie 4.0 Components – Basic Part”; ZVEI e.V., Whitepaper, April 2017. [Online].
+Available:
+https://www.zvei.org/en/press-media/publications/examples-of-the-asset-administration-shell-for-industrie-40-components-basic-part
+
+|[5] |“Verwaltungsschale in der Praxis. Wie definiere ich Teilmodelle,
+beispielhafte Teilmodelle und Interaktion zwischen Verwaltungsschalen
+(in German)”, Version 1.0, April 2019, Plattform Industrie 4.0 in
+Kooperation mit VDE GMA Fachausschuss 7.20, Federal Ministry for
+Economic Affairs and Energy (BMWi), Available:
+https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2019-verwaltungsschale-in-der-praxis.html
+
+|[6] |“Specification of the Asset Administration Shell", Publisher: Industrial Digital Twin Association (IDTA). 
+[Online]. 
+Available: https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+
+|[7] |“Semantic interoperability: challenges in the digital
+transformation age”; IEC, International Electronical Commission; 2019.
+[Online]. Available:
+https://www.iec.ch/system/files/2020-03/content/media/files/iec_wp_semantic_interoperability.pdf
+
+|[8] |“E DIN VDE V 0170-100 VDE V 0170-100:2019-10 Digitales Typenschild - Teil 100: Digitale Produktkennzeichnung”, October 2019, VDE VERLAG.
+
+|[9] |“IEC 61406-1:2022-09 Identification link - Part 1: General requirements”, September 2022.
+
+|[10] |“OMG Unified Modeling Language (OMG UML)”, Formal/2017-12-05, Version 2.5.1. December 2018. [Online] Available: https://www.omg.org/spec/UML/
+
+|[11] |“IDTA 02002-1-0 Submodel for Contact Information”, 24 May 2022, Industrial Digital Twin Association, [Online]. Available: 
+https://github.com/admin-shell-io/submodel-templates/blob/main/published/Contact%20Information/1/IDTA%2002002-1-0_Submodel_ContactInformation.pdf
+
+|[12] |“IDTA 02057-1-0 Submodel for Explosion Safety”, _in development_
+
+|[13] |“The 'Blue Guide' on the implementation of EU product rules 2022”, June 2022. [Online]. Available:
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C_.2022.247.01.0001.01.ENG
+
+|[14] |DIN DKE SPEC 99100, "Requirements for data attributes of the battery passport". February 2025.
+
+|[15] |"Semantic Aspect Meta Model (SAMM)", V2.2.0. [Online]. Available: https://eclipse-esmf.github.io/samm-specification/2.2.0/index.html
+
+|[16] |"Semantic Aspect Models - smt-semantic-models",  Publisher: Industrial Digital Twin Assocation (IDTA). [Online]. Available: https://github.com/admin-shell-io/smt-semantic-models
+
+|[17] |"Semantic Aspect Models - BatteryPassDataModel", Publisher: BatteryPass Consortium. [Online]. Available: https://github.com/batterypass/BatteryPassDataModel
+
+|[18] |“How-to create a Submodel Template Specification", Publisher: Industrial Digital Twin Association (IDTA). June 2025. V1.1. [Online]. Available: https://industrialdigitaltwin.org/en/wp-content/uploads/sites/2/2025/06/IDTA_How-to-write-a-SMT-v1.1.pdf
+
+|[19] |“Submodel Templates", Publisher: Industrial Digital Twin Assocation (IDTA).  [Online]. Available: https://industrialdigitaltwin.org/en/content-hub/submodels
+
+|===

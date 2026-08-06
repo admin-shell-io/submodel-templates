@@ -1,0 +1,3360 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "AIDatasetAAS",
+      "id": "https://admin-shell.io/idta/aas/AIDataset/1/0",
+      "assetInformation": {
+        "assetKind": "Instance",
+        "globalAssetId": "https://admin-shell.io/idta/asset/AIDataset/1/0"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/AIDataset/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "AIDataset",
+      "description": [
+        {
+          "language": "en",
+          "text": "Categories and Information of the aidataset@en "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/AIDataset/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/AIDataset/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "category": "PARAMETER",
+          "idShort": "URIOfTheProduct",
+          "description": [
+            {
+              "language": "de",
+              "text": "eindeutige globale Identifizierung der Produktinstanz unter Verwendung eines universellen Ressourcenbezeichners (URI)"
+            },
+            {
+              "language": "en",
+              "text": "unique global identification of the product instance using an universal resource identifier (URI)"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABN590#002 "
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "Version",
+          "description": [
+            {
+              "language": "de",
+              "text": "Version des Datensatzes"
+            },
+            {
+              "language": "en",
+              "text": "Version of the dataset"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0173-1#02-AAS354#002"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "ContactInformation",
+          "description": [
+            {
+              "language": "en",
+              "text": "Refernce to the Contact Information IDTA Submodel to describe the responsible person for the Submodel"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIDataset/ContactInformation/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "modelType": "ReferenceElement"
+        },
+        {
+          "category": "PARAMETER",
+          "idShort": "Storage",
+          "description": [
+            {
+              "language": "en",
+              "text": "Path to the dataset (e.g. local path, serverpath,...)"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIDataset/Storage/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "Labeled",
+          "description": [
+            {
+              "language": "en",
+              "text": "Additional Information typical for labeled datasets"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIDataset/labeled/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "Classification",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Information about labeled data for classification"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/Labeled/Classification/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "NumberLables",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Number of the different labels in the dataset"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/NumberLabels/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Labels",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Every label as a property and the number of samples"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/Labels/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "category": "PARAMETER",
+                      "idShort": "ExampleLabel",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Additional information about one label"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/Labels/Label/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "OneToMany"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "category": "PARAMETER",
+                          "idShort": "ClassName",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Name of the class"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/Labels/Label/ClassName/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "category": "PARAMETER",
+                          "idShort": "NumberOfSamples",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Number of occurrences of the label in the dataset"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/Labels/Label/NumberOfSamples/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "SingleFiles",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Collection containing every dataset element individuallly"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "ExampleSingleFile",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Collection for features and the annotatin file for a single dataset element"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "OneToMany"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "category": "PARAMETER",
+                          "idShort": "Name",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Name of the file"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/Name/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "Labels",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Collection containing all the labels within the dataset element"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/Labels/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "category": "PARAMETER",
+                              "idShort": "NumberLabels",
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Number of labels in this dataset element"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/Labels/NumberLabels/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            },
+                            {
+                              "category": "PARAMETER",
+                              "idShort": "Label",
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Example label, this property should be existing for every label with the labelname as value"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/Labels/Label/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToMany"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                          "category": "PARAMETER",
+                          "idShort": "SingleFilePath",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Path to the dataset element"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/SingleFilePath/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "category": "PARAMETER",
+                          "idShort": "AnnotationFile",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Annotation file with labeling information about the dataset element"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/AnnotationFile/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "contentType": "application/json",
+                          "modelType": "File"
+                        },
+                        {
+                          "idShort": "SingleFileDetails",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Collection to add addtional information about the dataset element (e.g. speaker information for audio data)"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/SingleFileDetails/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne "
+                            }
+                          ],
+                          "value": [
+                            {
+                              "category": "PARAMETER",
+                              "idShort": "ExampleSingleFileDetail",
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "additional information about the dataset element"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/SingleFileDetails/SingleFileDetail/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Balance",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Balance between the classes"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/Balance/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "AnnotationFile",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Annotation file of the dataset (e.g. CSV,JSON,Path...)"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIDataset/labeled/Classification/AnnotationFile/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "contentType": "application/json",
+                  "modelType": "File"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "Regression",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Information about labeled data for regression"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/Labeled/Regression/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "labeledescription",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "The meaning of the label"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIDataset/labeled/Regression/labeledescription/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "EMPTY"
+                    }
+                  ],
+                  "modelType": "MultiLanguageProperty"
+                },
+                {
+                  "category": "PARAMETER",
+                  "idShort": "AnnotationFile",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Annotation file of the labeled data"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIDataset/labeled/Regression/AnnotationFile/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "contentType": "text/plain",
+                  "modelType": "File"
+                },
+                {
+                  "idShort": "SingleFiles",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Collection containing every dataset element individually"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIDataset/labeled/Regression/SingleFiles/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "ExampleAnnotation",
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "Collection for a single annotation of a dataset element"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/AIDataset/labeled/Regression/SingleFiles/Annotation/1/0"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "OneToMany"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "category": "PARAMETER",
+                          "idShort": "AnnotationFile",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Annotation file with labeling information about the dataset element"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/AIDataset/labeled/Regression/SingleFiles/Annotation/AnnotationFile/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "contentType": "text/plain",
+                          "modelType": "File"
+                        },
+                        {
+                          "idShort": "SingleFileDetails",
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Collection to add addtional information about the dataset element"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/AIDataset/labeled/Regression/SingleFiles/Annotation/SingleFileDetails/1/0"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "category": "PARAMETER",
+                              "idShort": "ExampleDetails",
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "This is a property for a specific metainformation for single regressionfiles"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/AIDataset/labeled/Regression/SingleFiles/Annotation/SingleFileDetails/Detail/1/0"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToMany"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "SizeInformation",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection about the number of dataset elements in the dataset and subsets"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIDataset/SizeInformation/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "CompleteSize",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Number of all samples in the dataset"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset//SizeInformation/CompleteSize/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "TrainSize",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Number of all dataset elements in the training subset"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/SizeInformation/TrainSize/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "ValSize",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Number of all dataset elements in the validation subset"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/SizeInformationValSize/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "VARIABLE",
+              "idShort": "TestSize",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Number of all dataset elements in the test subset"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/SizeInformation/TestSize/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "SplitRatio",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Splitratio between the sets, notate as value1:value2:value3 if all three exist, else value1:value2"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/SizeInformation/SplitRatio/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "category": "CONSTANT",
+          "idShort": "MetaData",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of meta data information about the dataset"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIDataset/MetaData/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "FileType",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Data type of the dataset elements (e.g. .WAV, .JPEG, ... )"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/MetaData/FileType/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "AdditionalInformation",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection of additional meta information of the dataset"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/MetaData/AdditionalInformation/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ExampleInfo",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Meta data information of the dataset"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIDataset/MetaData/AdditionalInformation/Info/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "Metrics",
+          "description": [
+            {
+              "language": "en",
+              "text": "Collection of different metrics"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIDataset/Metrics/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "category": "PARAMETER",
+              "idShort": "ExampleMetric",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "metric of the dataset"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/MetaData/Metrics/Metric/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "BoundaryConditions",
+          "description": [
+            {
+              "language": "en",
+              "text": "Boundary conditions in which the dataset was created"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "DataCollectors",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Information about the datacollector (e.g. a sensor)."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/DataCollectors/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "Collector",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Reference to the data collector"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/DataCollectors/CollectorDescription/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToMany"
+                    }
+                  ],
+                  "modelType": "ReferenceElement"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "EnviromentConditions",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Collection about environmental conditions the dataset was created with"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/EnviromentConditions/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "value": [
+                {
+                  "category": "PARAMETER",
+                  "idShort": "ExampleCondition",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Condition about the enviroment"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/EnviromentConditions/Condition/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "ZeroToOne"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "PARAMETER",
+              "idShort": "SyntheticData",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Information, if the dataset is synthetic, real or mixed"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/SyntheticData/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "URIOfTheProduct",
+      "description": [
+        {
+          "language": "de",
+          "text": "URI des Produkts"
+        },
+        {
+          "language": "en",
+          "text": "URI of the product"
+        }
+      ],
+      "id": "0112/2///61987#ABN590#002 ",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "URIOfTheProduct"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "URI of the product"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Version",
+      "description": [
+        {
+          "language": "de",
+          "text": "Version"
+        },
+        {
+          "language": "en",
+          "text": "Version"
+        }
+      ],
+      "id": "0173-1#02-AAS354#002",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Version"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Version"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ContactInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "Refernce to the Contact Information IDTA Submodel to describe the responsible person for the Submodel"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/ContactInformation/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ContactInformation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Refernce to the Contact Information IDTA Submodel to describe the responsible person for the Submodel"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Storage",
+      "description": [
+        {
+          "language": "en",
+          "text": "Path to the dataset (e.g. local path, serverpath,...)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/Storage/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Storage"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Path to the dataset (e.g. local path, serverpath,...)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Labeled",
+      "description": [
+        {
+          "language": "en",
+          "text": "Additional Information typical for labeled Datasets."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Labeled"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Additional Information typical for labeled Datasets."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ClassificationExample1",
+      "description": [
+        {
+          "language": "en",
+          "text": "Information about labeled data for classification."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ClassificationExample1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Information about labeled data for classification."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NumberLables",
+      "description": [
+        {
+          "language": "en",
+          "text": "Number of the different labels in the dataset."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/NumberLabels/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "NumberLables"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Number of the different labels in the dataset."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Labels",
+      "description": [
+        {
+          "language": "en",
+          "text": "possibility to define every lable as a property and the number of samples."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/Labels/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Labels"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "possibility to define every lable as a property and the number of samples."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExampleLabel1",
+      "description": [
+        {
+          "language": "en",
+          "text": "ExampleCollection for ClassName and Number of class samples"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/Labels/Label/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExampleLabel1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "ExampleCollection for ClassName and Number of class samples"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ClassName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Name of the Class"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/Labels/Label/ClassName!/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ClassName"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Name of the Class"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NumberOfSamples",
+      "description": [
+        {
+          "language": "en",
+          "text": "Number of the label in the dataset"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/Labels/Label/NumberOfSamples/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "NumberOfSamples"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Number of the label in the dataset"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Balance",
+      "description": [
+        {
+          "language": "en",
+          "text": "Balance between classes"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/Balance/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Balance"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Balance between classes"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AnnotationFile",
+      "description": [
+        {
+          "language": "en",
+          "text": "Annotationfile of the dataset (e.g. CSV,JSON,...)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/AnnotationFile/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AnnotationFile"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Annotationfile of the dataset (e.g. CSV,JSON,...)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SingleFiles",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection to describe annotations and additional information for every single file in the dataset"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SingleFiles"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection to describe annotations and additional information for every single file in the dataset"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExampleSingleFile1",
+      "description": [
+        {
+          "language": "en",
+          "text": "Example for a SingleFile"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExampleSingleFile1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Example for a SingleFile"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Name",
+      "description": [
+        {
+          "language": "en",
+          "text": "Name of the file"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/Name/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Name"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Name of the file"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Labels",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection with the labels existing in this file."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/Labels/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Labels"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection with the labels existing in this file."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NumberLabels",
+      "description": [
+        {
+          "language": "en",
+          "text": "Number of labels in this file"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/Labels/NumberLabels/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "NumberLabels"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Number of labels in this file"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Label1",
+      "description": [
+        {
+          "language": "en",
+          "text": "ExampleLabel, this property should be existing for every label with the labelname as value"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/Labels/Label/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Label1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "ExampleLabel, this property should be existing for every label with the labelname as value"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SingleFilePath",
+      "description": [
+        {
+          "language": "en",
+          "text": "Path to the single file"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/SingleFilePath/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SingleFilePath"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Path to the single file"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AnnotationFile",
+      "description": [
+        {
+          "language": "en",
+          "text": "AnnotationFile with labelinginformation about the file"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/AnnotationFile/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AnnotationFile"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "AnnotationFile with labelinginformation about the file"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SingleFileDetails",
+      "description": [
+        {
+          "language": "en",
+          "text": "Collection to add addtional information about the file (e.g. speakerinformation for audiodata)"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/SingleFileDetails/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SingleFileDetails"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Collection to add addtional information about the file (e.g. speakerinformation for audiodata)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExampleSingleFileDetail1",
+      "description": [
+        {
+          "language": "en",
+          "text": "This is an exampleproperty for addional information"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Classification/SingleFiles/SingleFile/SingleFileDetails/SingleFileDetail/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExampleSingleFileDetail1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This is an exampleproperty for addional information"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RegressionExample1",
+      "description": [
+        {
+          "language": "en",
+          "text": "Information about labled data for regression."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/labeled/Regression/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "RegressionExample1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Information about labled data for regression."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "labeledescription",
+      "description": [
+        {
+          "language": "en",
+          "text": "This property describes the meaning of the label"
+        }
+      ],
+      "id": "https://admin-shell.io/id/idta/AIDataset/labeled/Regression/labeledescription",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "labeledescription"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This property describes the meaning of the label"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AnnotationFile",
+      "description": [
+        {
+          "language": "en",
+          "text": "The annotationfile of the labeled data."
+        }
+      ],
+      "id": "https://admin-shell.io/id/idta/AIDataset/labeled/Regression/AnnotationFile",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AnnotationFile"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The annotationfile of the labeled data."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SingleFiles",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC is used to document the labeled dataset by every file for regression."
+        }
+      ],
+      "id": "https://admin-shell.io/id/idta/AIDataset/labeled/Regression/SingleFiles",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SingleFiles"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC is used to document the labeled dataset by every file for regression."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExampleAnnotation",
+      "description": [
+        {
+          "language": "en",
+          "text": "This is an examplecollection for a single annotation."
+        }
+      ],
+      "id": "https://admin-shell.io/id/idta/AIDataset/labeled/Regression/SingleFiles/Annotation",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExampleAnnotation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This is an examplecollection for a single annotation."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AnnotationFile1",
+      "description": [
+        {
+          "language": "en",
+          "text": "The single annotationfile can be stored here as a file."
+        }
+      ],
+      "id": "https://admin-shell.io/id/idta/AIDataset/labeled/Regression/SingleFiles/Annotation/AnnotationFile",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AnnotationFile1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The single annotationfile can be stored here as a file."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SingleFileDetails",
+      "description": [
+        {
+          "language": "en",
+          "text": "This SMC can be used to document specific details for your data if you need it."
+        }
+      ],
+      "id": "https://admin-shell.io/id/idta/AIDataset/labeled/Regression/SingleFiles/Annotation/SongleFileDetails",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SingleFileDetails"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This SMC can be used to document specific details for your data if you need it."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExampleDetails1",
+      "description": [
+        {
+          "language": "en",
+          "text": "This is a porperty for a specific metainforamtion for single regressionfiles."
+        }
+      ],
+      "id": "https://admin-shell.io/id/idta/AIDataset/labeled/Regression/SingleFiles/Annotation/SingleFileDetails/Detail",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExampleDetails1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This is a porperty for a specific metainforamtion for single regressionfiles."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SizeInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "Information about the number of samples in the dataset."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/SizeInformation/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SizeInformation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Information about the number of samples in the dataset."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CompleteSize",
+      "description": [
+        {
+          "language": "en",
+          "text": "Number of all samples in the dataset."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset//SizeInformation/CompleteSize/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CompleteSize"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Number of all samples in the dataset."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TrainSize",
+      "description": [
+        {
+          "language": "en",
+          "text": "The number of the training data, if the dataset is split."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/SizeInformation/TrainSize/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TrainSize"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The number of the training data, if the dataset is split."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ValSize",
+      "description": [
+        {
+          "language": "en",
+          "text": "The number of the validation data, if the dataset is split."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/SizeInformationValSize/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ValSize"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The number of the validation data, if the dataset is split."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestSize",
+      "description": [
+        {
+          "language": "en",
+          "text": "The number of the test data, if the dataset is split."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/SizeInformation/TestSize/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestSize"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The number of the test data, if the dataset is split."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SplitRatio",
+      "description": [
+        {
+          "language": "en",
+          "text": "Splitratio between the sets, notate as value1:value2:value3 if all three exist, else value1:value2"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/SizeInformation/SplitRatio/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SplitRatio"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Splitratio between the sets, notate as value1:value2:value3 if all three exist, else value1:value2"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MetaData",
+      "description": [
+        {
+          "language": "en",
+          "text": "Metadatainformation about the Dataset."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/MetaData/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MetaData"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Metadatainformation about the Dataset."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FileType",
+      "description": [
+        {
+          "language": "en",
+          "text": "Datatype of the samples (e.g. .WAV, .JPEG, ... )"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/MetaData/FileType/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DataType"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Datatype of the samples (e.g. .WAV, .JPEG, ... )"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "AdditionalInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "AdditionalInformation-collection if needed."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/MetaData/AdditionalInformation/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "AdditionalInformation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "AdditionalInformation-collection if needed."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExampleInfo1",
+      "description": [
+        {
+          "language": "en",
+          "text": "Placeholder example for a additional infoproperty"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/MetaData/AdditionalInformation/Info/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExampleInfo1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Placeholder example for a additional infoproperty"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Metrics",
+      "description": [
+        {
+          "language": "en",
+          "text": "Information about different metrics of the dataset."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/Metrics/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Metrics"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Information about different metrics of the dataset."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExampleMetric",
+      "description": [
+        {
+          "language": "en",
+          "text": "metric of the dataset"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/MetaData/Metrics/Metric/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExampleMetric1"
+              }
+            ],
+            "shortName": [
+              {
+                "language": "en",
+                "text": "ExampleMetric"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This is an example metricproperty."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "BoundaryConditions",
+      "description": [
+        {
+          "language": "en",
+          "text": "Boundaryconditions in which the dataset was created."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "BoundaryConditions"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Boundaryconditions in which the dataset was created."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DataCollectors",
+      "description": [
+        {
+          "language": "en",
+          "text": "Information about the Datacollector (e.g. a sensor)."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/DataCollectors/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DataCollectors"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Information about the Datacollector (e.g. a sensor)."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Collector",
+      "description": [
+        {
+          "language": "en",
+          "text": "Description of the collector."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/DataCollectors/CollectorDescription/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Collector"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Description of the collector."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "EnviromentConditions",
+      "description": [
+        {
+          "language": "en",
+          "text": "Conditions about the enviroment the dataset was created."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/EnviromentConditions/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "EnviromentConditions"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Conditions about the enviroment the dataset was created."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ExampleCondition1",
+      "description": [
+        {
+          "language": "en",
+          "text": "Condiiton about the enviroment."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/EnviromentConditions/Condition/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ExampleCondition1"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Condiiton about the enviroment."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SyntheticData",
+      "description": [
+        {
+          "language": "en",
+          "text": "This property contains information, if the dataset is synthetic, real or mixed."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/AIDataset/BoundaryConditions/SyntheticData/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SyntheticData"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "This property contains information, if the dataset is synthetic, real or mixed."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}

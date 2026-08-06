@@ -1,0 +1,23 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  RecycledContentInformation
+
+class "RecycledContentInformation" as ID00000001 <<SML>> {
+  +[00] RecycledContent : SMC [1..*]
+}
+
+class "[00] RecycledContent" as ID00000002 <<SMC>> {
+  +PreConsumerShare : xs:float [0..1]
+  +RecycledMaterial : xs:string
+  +PostConsumerShare : xs:float [0..1]
+}
+
+ID00000001 *--  ID00000002 : ""
+@enduml

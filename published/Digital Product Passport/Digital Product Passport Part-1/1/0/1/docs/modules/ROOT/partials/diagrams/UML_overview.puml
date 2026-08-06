@@ -1,0 +1,19 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT DppMetadata
+
+class "DppMetadata" as ID00000001 <<SM>> {
+}
+
+class "contentSpecificationIds" as ID00000002 <<SML>> {
+}
+
+ID00000001 *--  ID00000002 : ""
+@enduml

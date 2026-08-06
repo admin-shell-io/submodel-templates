@@ -1,0 +1,128 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT ProductCondition
+
+class "ProductCondition" as ID00000001 <<SM>> {
+  +EnergyThroughput : SMC [0..1]
+  +CapacityThroughput : SMC [0..1]
+  +NumberOfFullCycles : SMC
+  +StateOfCertifiedEnergy : SMC [0..1]
+  +RemainingEnergy : SMC [0..1]
+  +RemainingCapacity : SMC [0..1]
+  +NegativeEvents : SML [0..1]
+  +InformationOnAccidents : SML
+  +TemperatureInformation : SMC
+  +RemainingPowerCapability : SMC [0..1]
+  +EvolutionOfSelfDischarge : SMC [0..1]
+  +CurrentSelfDischargingRate : SMC [0..1]
+  +RemainingRoundTripEnergyEfficiency : SMC [0..1]
+  +StateOfCharge : SMC
+}
+
+class "EnergyThroughput" as ID00000002 <<SMC>> {
+  +EnergyThroughputValue : xs:float
+  +LastUpdate : xs:dateTime
+}
+
+class "CapacityThroughput" as ID00000003 <<SMC>> {
+  +CapacityThroughputValue : xs:float
+  +LastUpdate : xs:dateTime
+}
+
+class "NumberOfFullCycles" as ID00000004 <<SMC>> {
+  +NumberOfFullCyclesValue : xs:unsignedInt
+  +LastUpdate : xs:dateTime
+}
+
+class "StateOfCertifiedEnergy" as ID00000005 <<SMC>> {
+  +StateOfCertifiedEnergyValue : xs:float
+  +LastUpdate : xs:dateTime
+}
+
+class "RemainingEnergy" as ID00000006 <<SMC>> {
+  +RemainingEnergyValue : xs:float
+  +LastUpdate : xs:dateTime
+}
+
+class "RemainingCapacity" as ID00000007 <<SMC>> {
+  +RemainingCapacityValue : xs:float
+  +LastUpdate : xs:dateTime
+}
+
+class "NegativeEvents" as ID00000008 <<SML>> {
+  +[00] NegativeEvent : SMC [0..*]
+}
+
+class "[00] NegativeEvent" as ID00000009 <<SMC>> {
+  +NegativeEventValue : xs:string
+  +LastUpdate : xs:dateTime
+}
+
+class "InformationOnAccidents" as ID0000000A <<SML>> {
+  +[00] DocumentIdentifier : xs:string [0..*]
+}
+
+class "TemperatureInformation" as ID0000000B <<SMC>> {
+  +MeasuredTemp : xs:float [0..1]
+  +TimeExtremeHighTemp : xs:float [0..1]
+  +TimeExtremeLowTemp : xs:float [0..1]
+  +TimeExtremeHighTempCharging  : xs:float [0..1]
+  +TimeExtremeLowTempCharging : xs:float [0..1]
+  +LastUpdate : xs:dateTime
+}
+
+class "RemainingPowerCapability" as ID0000000C <<SMC>> {
+  +RemainingPowerCapabilityDynamicAt : SMC
+  +LastUpdate : xs:dateTime
+}
+
+class "RemainingPowerCapabilityDynamicAt" as ID0000000D <<SMC>> {
+  +RPCLastUpdated : xs:dateTime
+  +AtSoC : xs:float
+  +PowerCapabilityAt  : xs:float
+}
+
+class "EvolutionOfSelfDischarge" as ID0000000E <<SMC>> {
+  +EvolutionOfSelfDischargeValue : xs:float
+  +LastUpdate : xs:dateTime
+}
+
+class "CurrentSelfDischargingRate" as ID0000000F <<SMC>> {
+  +CurrentSelfDischargingRateValue : xs:float
+  +LastUpdate : xs:dateTime
+}
+
+class "RemainingRoundTripEnergyEfficiency" as ID00000010 <<SMC>> {
+  +RemainingRoundTripEnergyEfficiencyValue  : xs:float
+  +LastUpdate : xs:dateTime
+}
+
+class "StateOfCharge" as ID00000011 <<SMC>> {
+  +StateOfChargeValue : xs:float
+  +LastUpdate : xs:dateTime
+}
+
+ID00000001 *--  ID00000002 : ""
+ID00000001 *--  ID00000003 : ""
+ID00000001 *--  ID00000004 : ""
+ID00000001 *--  ID00000005 : ""
+ID00000001 *--  ID00000006 : ""
+ID00000001 *--  ID00000007 : ""
+ID00000008 *--  ID00000009 : ""
+ID00000001 *--  ID00000008 : ""
+ID00000001 *--  ID0000000A : ""
+ID00000001 *--  ID0000000B : ""
+ID0000000C *--  ID0000000D : ""
+ID00000001 *--  ID0000000C : ""
+ID00000001 *--  ID0000000E : ""
+ID00000001 *--  ID0000000F : ""
+ID00000001 *--  ID00000010 : ""
+ID00000001 *--  ID00000011 : ""
+@enduml

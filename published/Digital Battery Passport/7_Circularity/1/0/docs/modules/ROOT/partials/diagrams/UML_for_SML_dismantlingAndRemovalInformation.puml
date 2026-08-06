@@ -1,0 +1,16 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  DismantlingAndRemovalInformation
+
+class "DismantlingAndRemovalInformation" as ID00000001 <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+@enduml

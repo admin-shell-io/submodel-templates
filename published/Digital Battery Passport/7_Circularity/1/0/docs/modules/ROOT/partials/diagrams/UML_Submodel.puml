@@ -1,0 +1,90 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT Circularity
+
+class "Circularity" as ID00000001 <<SM>> {
+  +DismantlingAndRemovalInformation : SML
+  +SparePartSources : SML
+  +RecycledContentInformation : SML
+  +SafetyMeasures : SMC
+  +EndOfLifeInformation : SMC
+  +RenewableContent : xs:float
+}
+
+class "DismantlingAndRemovalInformation" as ID00000002 <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+class "SparePartSources" as ID00000003 <<SML>> {
+  +[00] SparePartSupplier : SMC [0..*]
+}
+
+class "[00] SparePartSupplier" as ID00000004 <<SMC>> {
+  +NameOfSupplier : MLP
+  +AddressOfSupplier : SMC
+  +EmailAddressOfSupplier : SMC
+  +SupplierWebAddress : xs:string
+  +Components : SML
+}
+
+class "RecycledContentInformation" as ID00000005 <<SML>> {
+  +[00] RecycledContent : SMC [1..*]
+}
+
+class "[00] RecycledContent" as ID00000006 <<SMC>> {
+  +PreConsumerShare : xs:float [0..1]
+  +RecycledMaterial : xs:string
+  +PostConsumerShare : xs:float [0..1]
+}
+
+class "SafetyMeasures" as ID00000007 <<SMC>> {
+  +SafetyInstructions : SML
+  +ExtinguishingAgents : SML
+}
+
+class "SafetyInstructions" as ID00000008 <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+class "ExtinguishingAgents" as ID00000009 <<SML>> {
+  +[00] ExtinguishingAgent : xs:string [1..*]
+}
+
+class "EndOfLifeInformation" as ID0000000A <<SMC>> {
+  +WastePrevention : SML
+  +SeparateCollection : SML
+  +InformationOnCollection : SML
+}
+
+class "WastePrevention" as ID0000000B <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+class "SeparateCollection" as ID0000000C <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+class "InformationOnCollection" as ID0000000D <<SML>> {
+  +[00] DocumentIdentifier : xs:string [1..*]
+}
+
+ID00000001 *--  ID00000002 : ""
+ID00000003 *--  ID00000004 : ""
+ID00000001 *--  ID00000003 : ""
+ID00000005 *--  ID00000006 : ""
+ID00000001 *--  ID00000005 : ""
+ID00000007 *--  ID00000008 : ""
+ID00000007 *--  ID00000009 : ""
+ID00000001 *--  ID00000007 : ""
+ID0000000A *--  ID0000000B : ""
+ID0000000A *--  ID0000000C : ""
+ID0000000A *--  ID0000000D : ""
+ID00000001 *--  ID0000000A : ""
+@enduml
