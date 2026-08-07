@@ -1,0 +1,17 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  StateOfCharge
+
+class "StateOfCharge" as ID00000001 <<SMC>> {
+  +StateOfChargeValue : xs:float
+  +LastUpdate : xs:dateTime
+}
+
+@enduml
