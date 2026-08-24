@@ -1,0 +1,3088 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "AASwithSMRailwayFireProtectionExample",
+      "id": "https://admin-shell.io/idta/aas/RailwayFireProtection/Example/1/0",
+      "assetInformation": {
+        "assetKind": "NotApplicable",
+        "globalAssetId": "https://admin-shell.io/idta/asset/RailwayFireProtection/Example/1/0"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/Submodel/RailwayFireProtection/Example/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "RailwayFireProtection",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Railway Fire Protection Submodel"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains the fire protection information associated with the product or component."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/Submodel/RailwayFireProtection/Example/1/0",
+      "kind": "Instance",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/RailwayFireProtection/1"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "ManufacturerInformation",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Manufacturer information"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "identifies the material or component and its manufacturer, including product designation and reference identifiers, ensuring unambiguous attribution of the fire protection data."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/ManufacturerInformation/1"
+              }
+            ]
+          },
+          "value": [
+            {
+              "idShort": "ManufacturerName",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Manufacturer name"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "name of the organization legally responsible for manufacturing the product or component."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/ManufacturerName/1"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "BIW Isolierstoffe GmbH"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "idShort": "ManufacturerProductDesignation",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Manufacturer product designation"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "designation assigned by the manufacturer to identify the product or component within its product portfolio."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/ManufacturerProductDesignation/1"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "Silicone-Schaum RF035"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "idShort": "OrderCodeOfManufacturer",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Order code of manufacturer"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "ordering identifier defined by the manufacturer to uniquely reference the product or component for purchasing purposes."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/OrderCodeOfManufacturer/1"
+                  }
+                ]
+              },
+              "valueType": "xs:string",
+              "value": "tbd",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "ProductArticleNumberOfManufacturer",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Product article number of manufacturer"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "article number used by the manufacturer to uniquely identify the product or component in catalogs and information systems"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/ProductArticleNumberOfManufacturer/1"
+                  }
+                ]
+              },
+              "valueType": "xs:string",
+              "value": "tbd",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "FireProtectionCertificates",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Fire certificate inventory list"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "structures fire protection compliance by linking applicable requirements with their verification evidence, such as test reports and certificates in accordance with EN 45545\u20112."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/FireProtectionCertificates/1"
+              }
+            ]
+          },
+          "value": [
+            {
+              "idShort": "RequirementsSets",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Reqirements sets"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "list of requirement sets defining applicable fire protection requirements"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/RequirementsSets/1"
+                  }
+                ]
+              },
+              "typeValueListElement": "SubmodelElementCollection",
+              "value": [
+                {
+                  "idShort": "R22",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Requirement set"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "collection of fire protection requirements applicable to a specific product, component, or material."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/RequirementsSet/1"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "HazardLevel",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Hazard level"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "hazard level indicating the achieved fire hazard classification of the product, component, or material according to the applicable fire protection standard.\n\n\nFollowing values can be assigned:\n\n\u0022Compliant: Hazard Level 1\u0022\n\n\u0022Compliant: Hazard Level 2\u0022\n\n\u0022Compliant: Hazard Level 3\u0022\n\n\u0022Approved Functional Necessity Report\u0022\n\n\u0022Missing Test Results\u0022\n\n\u0022Not Compliant\u0022"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/RailwayFireProtection/Submodel/1/HazardLevel"
+                          }
+                        ]
+                      },
+                      "valueType": "xs:string",
+                      "value": "\u0022Compliant: Hazard Level 3\u0022",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "ReportReferences",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Report references"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "list of references to reports providing evidence for compliance with requirements"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/ReportReferences/1"
+                          }
+                        ]
+                      },
+                      "typeValueListElement": "ReferenceElement",
+                      "value": [
+                        {
+                          "idShort": "ReportReference",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Report reference"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "reference linking a requirement to the corresponding verification report or certificate"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/ReportReference/1"
+                              }
+                            ]
+                          },
+                          "value": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://admin-shell.io/idta/Submodel/RailwayFireProtection/Example/1/0"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "FCIL"
+                              },
+                              {
+                                "type": "SubmodelElementList",
+                                "value": "Reports"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "0"
+                              }
+                            ]
+                          },
+                          "modelType": "ReferenceElement"
+                        }
+                      ],
+                      "modelType": "SubmodelElementList"
+                    },
+                    {
+                      "idShort": "Requirement",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Requirement"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "individual fire protection requirement to be fulfilled according to the applicable standard"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/Requirement/1"
+                          }
+                        ]
+                      },
+                      "valueType": "xs:string",
+                      "value": "\u0022R22 requirement for hazard level HL3 according to EN 45545-2\u0022",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "R23",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Requirement set"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "collection of fire protection requirements applicable to a specific product, component, or material."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/RequirementsSet/1"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "HazardLevel",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Hazard level"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "hazard level indicating the achieved fire hazard classification of the product, component, or material according to the applicable fire protection standard.\n\n\nFollowing values can be assigned:\n\n\u0022Compliant: Hazard Level 1\u0022\n\n\u0022Compliant: Hazard Level 2\u0022\n\n\u0022Compliant: Hazard Level 3\u0022\n\n\u0022Approved Functional Necessity Report\u0022\n\n\u0022Missing Test Results\u0022\n\n\u0022Not Compliant\u0022"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/RailwayFireProtection/Submodel/1/HazardLevel"
+                          }
+                        ]
+                      },
+                      "valueType": "xs:string",
+                      "value": "\u0022Compliant: Hazard Level 3\u0022",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "ReportReferences",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Report references"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "list of references to reports providing evidence for compliance with requirements"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/ReportReferences/1"
+                          }
+                        ]
+                      },
+                      "typeValueListElement": "ReferenceElement",
+                      "value": [
+                        {
+                          "idShort": "ReportReference",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Report reference"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "reference linking a requirement to the corresponding verification report or certificate"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/ReportReference/1"
+                              }
+                            ]
+                          },
+                          "value": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://admin-shell.io/idta/Submodel/RailwayFireProtection/Example/1/0"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "FCIL"
+                              },
+                              {
+                                "type": "SubmodelElementList",
+                                "value": "Reports"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "0"
+                              }
+                            ]
+                          },
+                          "modelType": "ReferenceElement"
+                        }
+                      ],
+                      "modelType": "SubmodelElementList"
+                    },
+                    {
+                      "idShort": "Requirement",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Requirement"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "individual fire protection requirement to be fulfilled according to the applicable standard"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/Requirement/1"
+                          }
+                        ]
+                      },
+                      "valueType": "xs:string",
+                      "value": "\u0022R23 requirement for hazard level HL3 according to EN 45545-2\u0022",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementList"
+            },
+            {
+              "idShort": "Reports",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Reports"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "list of reports providing verification evidence for fire protection compliance."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/Reports/1"
+                  }
+                ]
+              },
+              "typeValueListElement": "SubmodelElementCollection",
+              "value": [
+                {
+                  "idShort": "Report",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Report"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "collection of a report providing verification evidence for fire protection compliance."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/Report/1"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "ReportFile",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Report file"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "digital file containing the report document, such as a test report or certificate"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/ReportFile/1"
+                          }
+                        ]
+                      },
+                      "value": "/aasx/files/BIW_RF035_25MM_BRM_2024-1176_2024-06-06.PDF",
+                      "contentType": "application/pdf",
+                      "modelType": "File"
+                    },
+                    {
+                      "idShort": "Tests",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Tests"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "list of tests performed to verify conformity with specified fire protection requirements."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/Tests/1"
+                          }
+                        ]
+                      },
+                      "typeValueListElement": "SubmodelElementCollection",
+                      "value": [
+                        {
+                          "idShort": "ISO5659",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Test"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "collection of test-related information"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/Test/1"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "TestProcedure",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test procedure"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "description of the test method or procedure applied to verify fire protection requirements"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestProcedure/1"
+                                  }
+                                ]
+                              },
+                              "valueType": "xs:string",
+                              "value": "DIN EN ISO 5659-2; T10.03",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "TestResult",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test result"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "outcome of the performed fire protection test, indicating conformity or non\u2011conformity"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestResult/1"
+                                  }
+                                ]
+                              },
+                              "valueType": "xs:string",
+                              "value": "74,0",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "TestDate",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test date"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "date on which the fire protection test was performed"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestDate/1"
+                                  }
+                                ]
+                              },
+                              "valueType": "xs:date",
+                              "value": "2024-06-06",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "TestReportNumber",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test report number"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "unique identifier assigned to the fire protection test report by the issuing body"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestReportNumber/1"
+                                  }
+                                ]
+                              },
+                              "valueType": "xs:string",
+                              "value": "2024-1176",
+                              "modelType": "Property"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                          "idShort": "EN17084",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Test"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "collection of test-related information"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/Test/1"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "TestProcedure",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test procedure"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "description of the test method or procedure applied to verify fire protection requirements"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestProcedure/1"
+                                  }
+                                ]
+                              },
+                              "valueType": "xs:string",
+                              "value": "EN 17084 Verfahren 1; T11.02",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "TestResult",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test result"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "outcome of the performed fire protection test, indicating conformity or non\u2011conformity"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestResult/1"
+                                  }
+                                ]
+                              },
+                              "valueType": "xs:string",
+                              "value": "0,0477",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "TestDate",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test date"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "date on which the fire protection test was performed"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestDate/1"
+                                  }
+                                ]
+                              },
+                              "valueType": "xs:date",
+                              "value": "2024-06-06",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "TestReportNumber",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test report number"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "unique identifier assigned to the fire protection test report by the issuing body"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestReportNumber/1"
+                                  }
+                                ]
+                              },
+                              "valueType": "xs:string",
+                              "value": "2024-1176",
+                              "modelType": "Property"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        }
+                      ],
+                      "modelType": "SubmodelElementList"
+                    },
+                    {
+                      "idShort": "LabInformation",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Lab information"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "collection of information describing the laboratory responsible for performing the tests"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/ReportComment/1"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "LabName",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Lab name"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "name of the laboratory that carried out the fire protection test"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/LabName/1"
+                              }
+                            ]
+                          },
+                          "valueType": "xs:string",
+                          "value": "Brandhaus Rhein-Main GmbH \u0026 Co. KG",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "LabAddress",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Lab address"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "reference to the address or contact information of the testing laboratory\n\n\ndrop\u2011in definition of the Contact Information 1.0 Submodel; all or a subset of the defined elements of the Contact Information 1.0 Submodel may be used within this SMC."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation"
+                              }
+                            ]
+                          },
+                          "supplementalSemanticIds": [
+                            {
+                              "type": "ExternalReference",
+                              "keys": [
+                                {
+                                  "type": "GlobalReference",
+                                  "value": "https://admin-shell.io/smt-dropin/smt-dropin-use/1/0"
+                                }
+                              ]
+                            }
+                          ],
+                          "value": [
+                            {
+                              "idShort": "AddressOfAdditionalLink",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "0173-1#02-AAQ326#002"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "ConceptQualifier",
+                                  "type": "Multiplicity",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "value": "www.brandhaus-RM.de",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "NationalCode",
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": " Note: country codes defined accord. to ISO 3166-1. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "0173-1#02-AAO134#002"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "ConceptQualifier",
+                                  "type": "Multiplicity",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "value": [
+                                {
+                                  "language": "en",
+                                  "text": "DE"
+                                }
+                              ],
+                              "modelType": "MultiLanguageProperty"
+                            },
+                            {
+                              "idShort": "CityTown",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "0173-1#02-AAO132#002"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "ConceptQualifier",
+                                  "type": "Multiplicity",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "value": [
+                                {
+                                  "language": "de",
+                                  "text": "H\u00FCnstetten"
+                                }
+                              ],
+                              "modelType": "MultiLanguageProperty"
+                            },
+                            {
+                              "idShort": "Company",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "0173-1#02-AAW001#001"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "ConceptQualifier",
+                                  "type": "Multiplicity",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "value": [
+                                {
+                                  "language": "en",
+                                  "text": "Brandhaus Rhein-Main GmbH \u0026 Co. KG"
+                                }
+                              ],
+                              "modelType": "MultiLanguageProperty"
+                            },
+                            {
+                              "idShort": "Phone",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "ConceptQualifier",
+                                  "type": "Multiplicity",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "value": [
+                                {
+                                  "idShort": "TelephoneNumber",
+                                  "description": [
+                                    {
+                                      "language": "en",
+                                      "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                                    }
+                                  ],
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-AAO136#002"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "ConceptQualifier",
+                                      "type": "Multiplicity",
+                                      "valueType": "xs:string",
+                                      "value": "One"
+                                    }
+                                  ],
+                                  "value": [
+                                    {
+                                      "language": "en",
+                                      "text": ": \u002B49 (0) 69 93 99 74 94"
+                                    }
+                                  ],
+                                  "modelType": "MultiLanguageProperty"
+                                }
+                              ],
+                              "modelType": "SubmodelElementCollection"
+                            },
+                            {
+                              "idShort": "Email",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "0173-1#02-AAQ836#005"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "ConceptQualifier",
+                                  "type": "Multiplicity",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "value": [
+                                {
+                                  "idShort": "EmailAddress",
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "0173-1#02-AAO198#002"
+                                      }
+                                    ]
+                                  },
+                                  "qualifiers": [
+                                    {
+                                      "kind": "ConceptQualifier",
+                                      "type": "Multiplicity",
+                                      "valueType": "xs:string",
+                                      "value": "One"
+                                    }
+                                  ],
+                                  "valueType": "xs:string",
+                                  "value": "kontakt@brandhaus-RM.de",
+                                  "modelType": "Property"
+                                }
+                              ],
+                              "modelType": "SubmodelElementCollection"
+                            },
+                            {
+                              "idShort": "Street",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "0173-1#02-AAO128#002"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "ConceptQualifier",
+                                  "type": "Multiplicity",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "value": [
+                                {
+                                  "language": "de",
+                                  "text": " Am Holzweg 6"
+                                }
+                              ],
+                              "modelType": "MultiLanguageProperty"
+                            },
+                            {
+                              "idShort": "Zipcode",
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "0173-1#02-AAO129#002"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "kind": "ConceptQualifier",
+                                  "type": "Multiplicity",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                }
+                              ],
+                              "value": [
+                                {
+                                  "language": "de",
+                                  "text": "65510"
+                                }
+                              ],
+                              "modelType": "MultiLanguageProperty"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                          "idShort": "LabAccreditation",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Lab accreditation"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "information about the laboratory\u2019s accreditation according to relevant standards or schemes"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/LabAccreditation/1"
+                              }
+                            ]
+                          },
+                          "valueType": "xs:string",
+                          "value": "\u0022accredited according to ISO/IEC 17025 for fire testing methods (EN ISO 5660-1, EN ISO 5659-2)\u0022",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "ReportAuthor",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Report author"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "name of the person or organization responsible for creating or issuing the report"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/ReportAuthor/1"
+                              }
+                            ]
+                          },
+                          "valueType": "xs:string",
+                          "value": "\u0022Fire Testing Laboratory Certification Body\u0022",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementList"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "Material",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Material information"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "describes the fire\u2011relevant characteristics of the materials used, providing the technical basis for fire behavior assessment and interpretation of test results."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/Material/1"
+              }
+            ]
+          },
+          "value": [
+            {
+              "idShort": "MaterialName",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Material name"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "name of the material used "
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/MaterialName/1"
+                  }
+                ]
+              },
+              "valueType": "xs:string",
+              "value": "Silicone-Schaum RF035",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "MaterialCharacteristics",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Material characteristics"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "normalized index (0\u2013100) derived from fire performance parameters according to EN\u202F45545\u20112"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/MaterialCharacteristics/1"
+                  }
+                ]
+              },
+              "valueType": "xs:int",
+              "min": "25",
+              "max": "25",
+              "modelType": "Range"
+            },
+            {
+              "idShort": "Masses",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/Masses/1"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "TotalMassPerUnit",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "total mass of the material per defined unit, used for fire behavior assessment"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/TotalMassPerUnit/1"
+                      }
+                    ]
+                  },
+                  "valueType": "xs:float",
+                  "value": "0.35",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "CombustibleMassPerUnit",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "portion of the material mass per unit that is combustible"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/CombustibleMassPerUnit/1"
+                      }
+                    ]
+                  },
+                  "valueType": "xs:float",
+                  "value": "0.36",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Unit",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/Unit/1"
+                      }
+                    ]
+                  },
+                  "valueType": "xs:string",
+                  "value": "kg/m\u00B2",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "TestedMaterialCombinationDescription",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Tested material combination description"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "description of the material combination as tested in fire protection assessments"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/TestedMaterialCombinationDescription/1"
+                  }
+                ]
+              },
+              "valueType": "xs:string",
+              "value": "Silicon-Schaum mit geschlossener Au\u00DFenhaut; ",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "RailwayFireProtection",
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains the fire protection information associated with the product or component."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/RailwayFireProtection/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "RailwayFireProtection"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Contains the fire protection information associated with the product or component."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "identifies the material or component and its manufacturer, including product designation and reference identifiers, ensuring unambiguous attribution of the fire protection data."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ManufacturerInformation/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerInformation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "identifies the material or component and its manufacturer, including product designation and reference identifiers, ensuring unambiguous attribution of the fire protection data."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerName",
+      "description": [
+        {
+          "language": "en",
+          "text": "name of the organization legally responsible for manufacturing the product or component."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ManufacturerName/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerName"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the organization legally responsible for manufacturing the product or component."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerProductDesignation",
+      "description": [
+        {
+          "language": "en",
+          "text": "designation assigned by the manufacturer to identify the product or component within its product portfolio."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ManufacturerProductDesignation/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerProductDesignation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "designation assigned by the manufacturer to identify the product or component within its product portfolio."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "OrderCodeOfManufacturer",
+      "description": [
+        {
+          "language": "en",
+          "text": "ordering identifier defined by the manufacturer to uniquely reference the product or component for purchasing purposes."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/OrderCodeOfManufacturer/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "OrderCodeOfManufacturer"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "ordering identifier defined by the manufacturer to uniquely reference the product or component for purchasing purposes."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ProductArticleNumberOfManufacturer",
+      "description": [
+        {
+          "language": "en",
+          "text": "article number used by the manufacturer to uniquely identify the product or component in catalogs and information systems"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ProductArticleNumberOfManufacturer/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Product article number of manufacturer"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "article number used by the manufacturer to uniquely identify the product or component in catalogs and information systems"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FireProtectionCertificates",
+      "description": [
+        {
+          "language": "en",
+          "text": "structures fire protection compliance by linking applicable requirements with their verification evidence, such as test reports and certificates in accordance with EN 45545\u20112."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/FireProtectionCertificates/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FCIL"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "structures fire protection compliance by linking applicable requirements with their verification evidence, such as test reports and certificates in accordance with EN 45545\u20112."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "HazardLevel",
+      "description": [
+        {
+          "language": "en",
+          "text": "hazard level indicating the achieved fire hazard classification of the product, component, or material according to the applicable fire protection standard.\n\n\nFollowing values can be assigned:\n\n\u0022Compliant: Hazard Level 1\u0022\n\n\u0022Compliant: Hazard Level 2\u0022\n\n\u0022Compliant: Hazard Level 3\u0022\n\n\u0022Approved Functional Necessity Report\u0022\n\n\u0022Missing Test Results\u0022\n\n\u0022Not Compliant\u0022"
+        }
+      ],
+      "id": "https://admin-shell.io/RailwayFireProtection/Submodel/1/HazardLevel",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "HazardLevel"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "hazard level indicating the achieved fire hazard classification of the product, component, or material according to the applicable fire protection standard.\n\nFollowing values can be assigned:\n\n\u0022Compliant: Hazard Level 1\u0022\n\n\u0022Compliant: Hazard Level 2\u0022\n\n\u0022Compliant: Hazard Level 3\u0022\n\n\u0022Approved Functional Necessity Report\u0022\n\n\u0022Missing Test Results\u0022\n\n\u0022Not Compliant\u0022"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "Compliant: Hazard Level 1",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/HazardLevelValue/HL1/1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Compliant: Hazard Level 2",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/HazardLevelValue/HL2/1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Compliant: Hazard Level 3",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/HazardLevelValue/HL3/1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Approved Functional Necessity Report",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/HazardLevelValue/AFNR/1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Missing Test Results",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/HazardLevelValue/MTR/1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Not Compliant",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": " https://admin-shell.io/idta/cds/HazardLevelValue/NC/1"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RequirementsSets",
+      "description": [
+        {
+          "language": "en",
+          "text": "list of requirement sets defining applicable fire protection requirements"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/RequirementsSets/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "RequirementsSets"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "list of requirement sets defining applicable fire protection requirements"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RequirementsSet",
+      "description": [
+        {
+          "language": "en",
+          "text": "collection of fire protection requirements applicable to a specific product, component, or material."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/RequirementsSet/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "RequirementsSet"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "collection of fire protection requirements applicable to a specific product, component, or material."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReportReferences",
+      "description": [
+        {
+          "language": "en",
+          "text": "list of references to reports providing evidence for compliance with requirements"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ReportReferences/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReportReferences"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "list of references to reports providing evidence for compliance with requirements"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReportReference",
+      "description": [
+        {
+          "language": "en",
+          "text": "reference linking a requirement to the corresponding verification report or certificate"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ReportReference/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReportReference"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "reference linking a requirement to the corresponding verification report or certificate"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Requirement",
+      "description": [
+        {
+          "language": "en",
+          "text": "individual fire protection requirement to be fulfilled according to the applicable standard"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Requirement/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Requirement"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "individual fire protection requirement to be fulfilled according to the applicable standard"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Reports",
+      "description": [
+        {
+          "language": "en",
+          "text": "list of reports providing verification evidence for fire protection compliance."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Reports/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Reports"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "list of reports providing verification evidence for fire protection compliance."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Report",
+      "description": [
+        {
+          "language": "en",
+          "text": "collection of a report providing verification evidence for fire protection compliance."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Report/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Report"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "collection of a report providing verification evidence for fire protection compliance."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReportFile",
+      "description": [
+        {
+          "language": "en",
+          "text": "digital file containing the report document, such as a test report or certificate"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ReportFile/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReportFile"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "digital file containing the report document, such as a test report or certificate"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Tests",
+      "description": [
+        {
+          "language": "en",
+          "text": "list of tests performed to verify conformity with specified fire protection requirements."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Tests/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Tests"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "list of tests performed to verify conformity with specified fire protection requirements."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Test",
+      "description": [
+        {
+          "language": "en",
+          "text": "collection of test-related information"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Test/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Test"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "collection of test-related information"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestProcedure",
+      "description": [
+        {
+          "language": "en",
+          "text": "description of the test method or procedure applied to verify fire protection requirements"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestProcedure/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestProcedure"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "description of the test method or procedure applied to verify fire protection requirements"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestResult",
+      "description": [
+        {
+          "language": "en",
+          "text": "outcome of the performed fire protection test, indicating conformity or non\u2011conformity"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestResult/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestResult"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "outcome of the performed fire protection test, indicating conformity or non\u2011conformity"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestDate",
+      "description": [
+        {
+          "language": "en",
+          "text": "date on which the fire protection test was performed"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestDate/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestDate"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "date on which the fire protection test was performed"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestComment",
+      "description": [
+        {
+          "language": "en",
+          "text": "additional remarks or observations related to the performed test"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestComment/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestComment"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "additional remarks or observations related to the performed test"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestReportNumber",
+      "description": [
+        {
+          "language": "en",
+          "text": "unique identifier assigned to the fire protection test report by the issuing body"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestReportNumber/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestReportNumber"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "unique identifier assigned to the fire protection test report by the issuing body"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReportComment",
+      "description": [
+        {
+          "language": "en",
+          "text": "additional remarks or notes related to the report and its content"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ReportComment/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReportComment"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "additional remarks or notes related to the report and its content"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LabName",
+      "description": [
+        {
+          "language": "en",
+          "text": "name of the laboratory that carried out the fire protection test"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/LabName/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LabName"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the laboratory that carried out the fire protection test"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LabAddress",
+      "description": [
+        {
+          "language": "en",
+          "text": "reference to the address or contact information of the testing laboratory\n\n\ndrop\u2011in definition of the Contact Information 1.0 Submodel; all or a subset of the defined elements of the Contact Information 1.0 Submodel may be used within this SMC."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/LabAddress/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LabAddress"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "reference to the address or contact information of the testing laboratory\n\n\ndrop\u2011in definition of the Contact Information 1.0 Submodel; all or a subset of the defined elements of the Contact Information 1.0 Submodel may be used within this SMC."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LabAccreditation",
+      "description": [
+        {
+          "language": "en",
+          "text": "information about the laboratory\u2019s accreditation according to relevant standards or schemes"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/LabAccreditation/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LabAccreditation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "information about the laboratory\u2019s accreditation according to relevant standards or schemes"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReportAuthor",
+      "description": [
+        {
+          "language": "en",
+          "text": "name of the person or organization responsible for creating or issuing the report"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ReportAuthor/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReportAuthor"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the person or organization responsible for creating or issuing the report"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Material",
+      "description": [
+        {
+          "language": "en",
+          "text": "describes the fire\u2011relevant characteristics of the materials used, providing the technical basis for fire behavior assessment and interpretation of test results."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Material/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Material"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "describes the fire\u2011relevant characteristics of the materials used, providing the technical basis for fire behavior assessment and interpretation of test results."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MaterialName",
+      "description": [
+        {
+          "language": "en",
+          "text": "name of the material used "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/MaterialName/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MaterialName"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the material used"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MaterialManufacturer",
+      "description": [
+        {
+          "language": "en",
+          "text": "name of the organization responsible for producing the material"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/MaterialManufacturer/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MaterialManufacturer"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the organization responsible for producing the"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MaterialCharacteristics",
+      "description": [
+        {
+          "language": "en",
+          "text": "normalized index (0\u2013100) derived from fire performance parameters according to EN\u202F45545\u20112"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/MaterialCharacteristics/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MaterialCharacteristics"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "normalized index (0\u2013100) derived from fire performance parameters according to EN\u202F45545\u20112"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestedMaterialCombinationDescription",
+      "description": [
+        {
+          "language": "en",
+          "text": "description of the material combination as tested in fire protection assessments"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestedMaterialCombinationDescription/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestedMaterialCombinationDescription"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "description of the material combination as tested in fire protection assessments"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Masses",
+      "id": "https://admin-shell.io/idta/cds/Masses/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Masses"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "mass-related characteristics of the material, used for fire behavior assessment"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TotalMassPerUnit",
+      "id": "https://admin-shell.io/idta/cds/TotalMassPerUnit/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TotalMassPerUnit"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "total mass of the material per defined unit, used for fire behavior assessment"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CombustibleMassPerUnit",
+      "id": "https://admin-shell.io/idta/cds/CombustibleMassPerUnit/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CombustibleMassPerUnit"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "portion of the material mass per unit that is combustible"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Unit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Unit should be one of kg, kg/m, kg/m\u00B2 or kg/m\u00B3"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Unit/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Unit"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "unit of measure for the stated masses; should be one of kg, kg/m, kg/m\u00B2 or kg/m\u00B3"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LabInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "collection of information describing the laboratory responsible for performing the tests"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/LabInformation/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LabInformation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "collection of information describing the laboratory responsible for performing the tests"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
