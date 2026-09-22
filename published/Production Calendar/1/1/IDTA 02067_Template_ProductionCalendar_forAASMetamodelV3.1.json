@@ -1,0 +1,745 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "ProductionCalendarAAS",
+      "id": "https://admin-shell.io/idta/aas/ProductionCalendar/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/ProductionCalendar/1/0",
+        "assetType": "Type",
+        "defaultThumbnail": {
+          "path": "/aasx/files/IDTA-02067_Submodel_ProductionCalendar_Title.jpg",
+          "contentType": "image/jpeg"
+        }
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/ProductionCalendar/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "ProductionCalendar",
+      "description": [
+        {
+          "language": "en",
+          "text": "The Submodel allows the storage of one production calendar for e.g. a machine, work station, department, production location etc."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ProductionCalendar/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/ProductionCalendar/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "calendar",
+          "description": [
+            {
+              "language": "en",
+              "text": "Contains the iCalendar file with mimeType text/calendar. The format should comply to the standard RFC 5545."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ProductionCalendar/calendar/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "contentType": "text/calendar",
+          "modelType": "File"
+        },
+        {
+          "idShort": "inheritedFrom",
+          "description": [
+            {
+              "language": "en",
+              "text": "Reference to a superordinate calendar from which this Submodel inherits."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ProductionCalendar/inheritedFrom/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToOne"
+            }
+          ],
+          "modelType": "ReferenceElement"
+        },
+        {
+          "idShort": "specificationExtensionVariables",
+          "description": [
+            {
+              "language": "en",
+              "text": "List of additional variables which extends the iCalendar file format."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/ProductionCalendar/specificationExtensionVariables/1/0"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Groups the specification details for every variable extension."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProductionCalendar/specificationExtensionVariables/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "variableName",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Variable which is used to define time slots in a calendar that are breaks."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ProductionCalendar/variableName/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "X_BREAK",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "variableSpecification",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Human readable description to specify the extension variable and its correct interpretation within an application."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ProductionCalendar/variableSpecification/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "value": "/aasx/files/RFC5545-X-BREAK.txt",
+                  "contentType": "text/plain",
+                  "modelType": "File"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Groups the specification details for every variable extension."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProductionCalendar/specificationExtensionVariables/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "variableName",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Variable which is used to define time slots in a calendar when the asset is producing."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ProductionCalendar/variableName/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "X_PRODUCTION_DAY",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "variableSpecification",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Human readable description to specify the extension variable and its correct interpretation within an application."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ProductionCalendar/variableSpecification/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "value": "/aasx/files/RFC5545-X-PRODUCTION-DAY.txt",
+                  "contentType": "text/plain",
+                  "modelType": "File"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Groups the specification details for every variable extension."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/ProductionCalendar/specificationExtensionVariables/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "variableName",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Variable which is used to define time slots in a calendar when the asset is in maintenance or repair."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ProductionCalendar/variableName/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "X_MAINTENANCE",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "variableSpecification",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Human readable description to specify the extension variable and its correct interpretation within an application."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/ProductionCalendar/variableSpecification/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "value": "/aasx/files/RFC5545-X-MAINTENANCE.txt",
+                  "contentType": "text/plain",
+                  "modelType": "File"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementList"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "ProductionCalendar",
+      "description": [
+        {
+          "language": "en",
+          "text": "The Submodel allows the storage of one production calendar for e.g. a machine, work station, department, production location etc."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ProductionCalendar/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ProductionCalendar"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "The Submodel allows the storage of one production calendar for e.g. a machine, work station, department, production location etc."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "calendar",
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains the iCalendar file with mimeType text/calendar. The format should comply to the standard RFC 5545."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ProductionCalendar/calendar/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "calendar"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Contains the iCalendar file with mimeType text/calendar. The format should comply to the standard RFC 5545."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "inheritedFrom",
+      "description": [
+        {
+          "language": "en",
+          "text": "Reference to a superordinate calendar from which this Submodel inherits."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ProductionCalendar/inheritedFrom/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "inheritedFrom"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Reference to a superordinate calendar from which this Submodel inherits."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "specificationExtensionVariables",
+      "description": [
+        {
+          "language": "en",
+          "text": "List of additional variables which extends the iCalendar file format."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ProductionCalendar/specificationExtensionVariables/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "specificationExtensionVariables"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "List of additional variables which extends the iCalendar file format."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "variableName",
+      "description": [
+        {
+          "language": "en",
+          "text": "Variable which is used to define time slots in a calendar that are breaks."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ProductionCalendar/variableName/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "variableName"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Variable which is used to define time slots in a calendar that are breaks."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "variableSpecification",
+      "description": [
+        {
+          "language": "en",
+          "text": "Human readable description to specify the extension variable and its correct interpretation within an application."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/ProductionCalendar/variableSpecification/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "variableSpecification"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "Human readable description to specify the extension variable and its correct interpretation within an application."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
