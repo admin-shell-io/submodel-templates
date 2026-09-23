@@ -19,7 +19,7 @@ The Submodel covers the following subject areas:
 - **Loop test data**: the loop tests performed on the function and their results
 - **Performance measures**: the reliability performance achieved by the function
 
-Information about the individual devices realising the function is not covered here; it is provided by the SIS Device Submodel. The safety instrumented system as a whole is described by the Safety Instrumented System Submodel.
+Information about the individual devices realising the function is not covered here; it is provided by the Safety Instrumented System Device Submodel. The safety instrumented system as a whole is described by the Safety Instrumented System Submodel.
 
 ## About this version
 

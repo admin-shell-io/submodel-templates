@@ -15,7 +15,7 @@ The Submodel covers the following subject areas:
 - **Interfacing systems**: the systems the SIS interfaces with, such as the process control system, the operator interface or another SIS, together with the network type and the nature of the links
 - **Supporting documents**: the performance standard, the application program safety requirements, the design accidental load specification and further relevant documents
 
-The individual safety instrumented functions the system implements are described by the Safety Instrumented Function Submodel, and the devices making up the system by the SIS Device Submodel.
+The individual safety instrumented functions the system implements are described by the Safety Instrumented Function Submodel, and the devices making up the system by the Safety Instrumented System Device Submodel.
 
 ## About this version
 

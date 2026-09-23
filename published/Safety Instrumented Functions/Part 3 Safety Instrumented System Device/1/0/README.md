@@ -1,10 +1,10 @@
-# SIS Device (Version 1.0)
+# Safety Instrumented System Device (Version 1.0)
 
 This is a Submodel template specification for the Asset Administration Shell.
 
 ## Scope of the Submodel
 
-A SIS Device is an individual device forming part of a Safety Instrumented System: a sensor, a logic solver or a final element. The reliability of each such device determines whether the safety instrumented functions it participates in can achieve their required Safety Integrity Level.
+A Safety Instrumented System Device is an individual device forming part of a Safety Instrumented System: a sensor, a logic solver or a final element. The reliability of each such device determines whether the safety instrumented functions it participates in can achieve their required Safety Integrity Level.
 
 This Submodel aims to provide a standardized and machine-readable way to exchange the functional safety data of a device across its lifecycle, covering both the reliability data stated by the manufacturer at design time and the reliability data observed by the operator during operation. This allows design assumptions to be verified against field experience and supports the systematic evaluation of operational reliability.
 
