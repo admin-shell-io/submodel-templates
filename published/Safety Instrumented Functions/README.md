@@ -30,9 +30,3 @@ Each part provides, for version 1.0:
 - `IDTA xxxxx_Example_<Name>.json` — the same example as JSON
 
 The JSON artifacts are generated from the AASX packages and match them exactly.
-
-## Status
-
-The templates pass the IDTA working-group submodel template checklist, and every
-semantic identifier in each template appears in its specification. See each
-part's README for its verification result and any remaining issues.
