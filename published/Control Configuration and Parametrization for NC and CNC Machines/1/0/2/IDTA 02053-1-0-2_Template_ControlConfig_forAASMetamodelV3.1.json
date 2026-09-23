@@ -83,6 +83,7 @@
               "value": "Submodel Element reference to the digital nameplate of the control."
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "One"
@@ -120,6 +121,7 @@
               "value": "List of controller types."
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "One"
@@ -163,6 +165,7 @@
               "value": "Time unit (s, ms, us)"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "One"
@@ -201,6 +204,7 @@
               "value": "Length type of the CNC"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToOne"
@@ -239,6 +243,7 @@
               "value": "Fieldbus type of the CNC"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToOne"
@@ -277,6 +282,7 @@
               "value": "Cycle time of the CNC"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToOne"
@@ -315,6 +321,7 @@
               "value": "Cycle time of the PLC"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToOne"
@@ -353,6 +360,7 @@
               "value": "Cycle time of the fieldbus"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToOne"
@@ -391,6 +399,7 @@
               "value": "Velocity unit of the CNC"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToOne"
@@ -429,6 +438,7 @@
               "value": "Acceleration unit of the CNC"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToOne"
@@ -467,6 +477,7 @@
               "value": "Jerk unit of the CNC"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToOne"
@@ -509,6 +520,7 @@
               "value": "Provide the configuration data for the controler."
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToMany"
@@ -545,6 +557,7 @@
                   "value": "Filename of the configuration file."
                 },
                 {
+                  "kind": "TemplateQualifier",
                   "type": "SMT/Cardinality",
                   "valueType": "xs:string",
                   "value": "One"
@@ -583,6 +596,7 @@
                   "value": "Configuration file of the controler."
                 },
                 {
+                  "kind": "TemplateQualifier",
                   "type": "SMT/Cardinality",
                   "valueType": "xs:string",
                   "value": "One"
@@ -624,6 +638,7 @@
               "value": "Provides access to the paramtization of the channels/axes/drives"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToMany"
@@ -660,6 +675,7 @@
                   "value": "Channel"
                 },
                 {
+                  "kind": "TemplateQualifier",
                   "type": "SMT/Cardinality",
                   "valueType": "xs:string",
                   "value": "One"
@@ -696,6 +712,7 @@
                       "value": "Identification number of the channel"
                     },
                     {
+                      "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
                       "value": "One"
@@ -890,6 +907,7 @@
               "value": "List of axes of the specific channel"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "OneToMany"
@@ -926,6 +944,7 @@
                   "value": "List of axis specific configuration data"
                 },
                 {
+                  "kind": "TemplateQualifier",
                   "type": "SMT/Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -962,6 +981,7 @@
                       "value": "Name of the specific axis"
                     },
                     {
+                      "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1000,6 +1020,7 @@
                       "value": "Type of the specific axis"
                     },
                     {
+                      "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1038,6 +1059,7 @@
                       "value": "Axis is a simulated or real one"
                     },
                     {
+                      "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1076,6 +1098,7 @@
                       "value": "Software limit switch negative"
                     },
                     {
+                      "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1114,6 +1137,7 @@
                       "value": "Software limit switch positive"
                     },
                     {
+                      "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1151,6 +1175,7 @@
                       "value": "Velocity limit of the axis"
                     },
                     {
+                      "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1189,6 +1214,7 @@
                       "value": "Acceleration limit of the axis"
                     },
                     {
+                      "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1227,6 +1253,7 @@
                       "value": "Jerk limit of the axis"
                     },
                     {
+                      "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1265,6 +1292,7 @@
                       "value": "Collection of axis configuration data"
                     },
                     {
+                      "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1301,6 +1329,7 @@
                           "value": "Configuration filename of the axis"
                         },
                         {
+                          "kind": "TemplateQualifier",
                           "type": "SMT/Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -1338,6 +1367,7 @@
                           "value": "Axis configuration file"
                         },
                         {
+                          "kind": "TemplateQualifier",
                           "type": "SMT/Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -1379,6 +1409,7 @@
                       "value": "To be filled; longer explanation"
                     },
                     {
+                      "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1415,6 +1446,7 @@
                           "value": "Manual file of the drive"
                         },
                         {
+                          "kind": "TemplateQualifier",
                           "type": "SMT/Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -1453,6 +1485,7 @@
                           "value": "Reference to the technical Data of the drive"
                         },
                         {
+                          "kind": "TemplateQualifier",
                           "type": "SMT/Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -1490,6 +1523,7 @@
                           "value": "Drive configuration data"
                         },
                         {
+                          "kind": "TemplateQualifier",
                           "type": "SMT/Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -1526,6 +1560,7 @@
                               "value": "Filename of of the configuration file"
                             },
                             {
+                              "kind": "TemplateQualifier",
                               "type": "SMT/Cardinality",
                               "valueType": "xs:string",
                               "value": "ZeroToOne"
@@ -1563,6 +1598,7 @@
                               "value": "Drive configuration file"
                             },
                             {
+                              "kind": "TemplateQualifier",
                               "type": "SMT/Cardinality",
                               "valueType": "xs:string",
                               "value": "ZeroToOne"
@@ -1613,6 +1649,7 @@
               "value": "Provides NC program informations"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToOne"
@@ -1649,6 +1686,7 @@
                   "value": "File type (extension) of the NC program file"
                 },
                 {
+                  "kind": "TemplateQualifier",
                   "type": "SMT/Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -1687,6 +1725,7 @@
                   "value": "Syntax of the NC program"
                 },
                 {
+                  "kind": "TemplateQualifier",
                   "type": "SMT/Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -1725,6 +1764,7 @@
                   "value": "The description of the synatx of the machine code implementation of the cnc machine"
                 },
                 {
+                  "kind": "TemplateQualifier",
                   "type": "SMT/Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToMany"
@@ -1766,6 +1806,7 @@
               "value": "Provides the communication information to access the CNC."
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "ZeroToOne"
@@ -1802,6 +1843,7 @@
                   "value": "Type of the communication access to the CNC."
                 },
                 {
+                  "kind": "TemplateQualifier",
                   "type": "SMT/Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -1840,6 +1882,7 @@
                   "value": "Type of the communication access to the CNC."
                 },
                 {
+                  "kind": "TemplateQualifier",
                   "type": "SMT/Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -1878,6 +1921,7 @@
                   "value": "Information model of the communication configuration"
                 },
                 {
+                  "kind": "TemplateQualifier",
                   "type": "SMT/Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -1967,6 +2011,7 @@
               "value": "List of tools"
             },
             {
+              "kind": "TemplateQualifier",
               "type": "SMT/Cardinality",
               "valueType": "xs:string",
               "value": "OneToMany"
@@ -2003,6 +2048,7 @@
                   "value": "One tool of the CNC"
                 },
                 {
+                  "kind": "TemplateQualifier",
                   "type": "SMT/Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToMany"
