@@ -58,6 +58,7 @@
                   }
                 ]
               },
+              "kind": "TemplateQualifier",
               "type": "Cardinality",
               "valueType": "xs:string",
               "value": "One"
@@ -86,6 +87,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -124,6 +126,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -162,6 +165,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -200,6 +204,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -238,6 +243,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -276,6 +282,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -321,6 +328,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -366,6 +374,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -411,6 +420,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -456,6 +466,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -501,6 +512,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -560,6 +572,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -591,6 +604,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -636,6 +650,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -681,6 +696,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -726,6 +742,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -771,6 +788,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -816,6 +834,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -861,6 +880,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -897,6 +917,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -933,6 +954,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -969,6 +991,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToMany"
@@ -1005,6 +1028,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToMany"
@@ -1053,6 +1077,7 @@
                   }
                 ]
               },
+              "kind": "TemplateQualifier",
               "type": "Cardinality",
               "valueType": "xs:string",
               "value": "OneToMany"
@@ -1081,6 +1106,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "One"
@@ -1109,6 +1135,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1154,6 +1181,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1193,6 +1221,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1238,6 +1267,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1283,6 +1313,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1328,6 +1359,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1373,6 +1405,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1418,6 +1451,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1463,6 +1497,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1502,6 +1537,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1550,6 +1586,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "One"
@@ -1581,6 +1618,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -1612,6 +1650,7 @@
                       }
                     ]
                   },
+                  "kind": "TemplateQualifier",
                   "type": "Cardinality",
                   "valueType": "xs:string",
                   "value": "ZeroToOne"
@@ -1640,6 +1679,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1668,6 +1708,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -1699,6 +1740,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -1730,6 +1772,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -1752,6 +1795,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -1814,6 +1858,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -1842,6 +1887,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -1873,6 +1919,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -1904,6 +1951,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -1926,6 +1974,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -1988,6 +2037,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -2016,6 +2066,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2047,6 +2098,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -2078,6 +2130,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2100,6 +2153,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2162,6 +2216,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -2190,6 +2245,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2221,6 +2277,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -2252,6 +2309,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2274,6 +2332,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2336,6 +2395,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -2364,6 +2424,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2395,6 +2456,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -2426,6 +2488,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2448,6 +2511,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2510,6 +2574,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -2538,6 +2603,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2569,6 +2635,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -2600,6 +2667,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2622,6 +2690,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2684,6 +2753,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -2712,6 +2782,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2743,6 +2814,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -2774,6 +2846,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2796,6 +2869,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2858,6 +2932,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -2886,6 +2961,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2917,6 +2993,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -2948,6 +3025,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -2970,6 +3048,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3032,6 +3111,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -3060,6 +3140,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3091,6 +3172,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -3122,6 +3204,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3144,6 +3227,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3206,6 +3290,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -3234,6 +3319,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3265,6 +3351,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -3296,6 +3383,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3318,6 +3406,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3380,6 +3469,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -3408,6 +3498,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3439,6 +3530,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -3470,6 +3562,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3492,6 +3585,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3554,6 +3648,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -3582,6 +3677,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3613,6 +3709,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -3644,6 +3741,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3666,6 +3764,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3728,6 +3827,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -3756,6 +3856,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3787,6 +3888,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3818,6 +3920,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -3849,6 +3952,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3871,6 +3975,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3933,6 +4038,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -3961,6 +4067,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -3992,6 +4099,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4023,6 +4131,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -4054,6 +4163,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4076,6 +4186,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4138,6 +4249,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -4166,6 +4278,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4197,6 +4310,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4228,6 +4342,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -4259,6 +4374,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4281,6 +4397,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4343,6 +4460,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -4371,6 +4489,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4402,6 +4521,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4433,6 +4553,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -4464,6 +4585,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4486,6 +4608,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4548,6 +4671,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -4576,6 +4700,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4607,6 +4732,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4638,6 +4764,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -4669,6 +4796,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4691,6 +4819,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4753,6 +4882,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -4781,6 +4911,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4812,6 +4943,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4843,6 +4975,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -4874,6 +5007,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4896,6 +5030,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -4958,6 +5093,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -4986,6 +5122,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5017,6 +5154,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5048,6 +5186,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -5079,6 +5218,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5101,6 +5241,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5163,6 +5304,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -5191,6 +5333,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5222,6 +5365,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5253,6 +5397,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -5284,6 +5429,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5306,6 +5452,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5368,6 +5515,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -5396,6 +5544,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5427,6 +5576,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5458,6 +5608,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -5489,6 +5640,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5511,6 +5663,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5573,6 +5726,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -5601,6 +5755,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5632,6 +5787,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5663,6 +5819,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -5694,6 +5851,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5716,6 +5874,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5778,6 +5937,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -5806,6 +5966,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5837,6 +5998,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5868,6 +6030,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -5899,6 +6062,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5921,6 +6085,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -5983,6 +6148,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -6011,6 +6177,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6042,6 +6209,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6073,6 +6241,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -6104,6 +6273,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6126,6 +6296,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6188,6 +6359,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -6216,6 +6388,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6247,6 +6420,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6278,6 +6452,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -6309,6 +6484,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6331,6 +6507,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6393,6 +6570,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -6421,6 +6599,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6452,6 +6631,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6483,6 +6663,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -6514,6 +6695,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6536,6 +6718,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6598,6 +6781,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -6626,6 +6810,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6657,6 +6842,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6688,6 +6874,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -6719,6 +6906,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6741,6 +6929,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6803,6 +6992,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -6831,6 +7021,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6862,6 +7053,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6893,6 +7085,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -6924,6 +7117,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -6946,6 +7140,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7008,6 +7203,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -7036,6 +7232,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7067,6 +7264,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7098,6 +7296,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -7129,6 +7328,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7151,6 +7351,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7213,6 +7414,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -7241,6 +7443,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7272,6 +7475,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7303,6 +7507,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -7334,6 +7539,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7356,6 +7562,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7418,6 +7625,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -7446,6 +7654,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7477,6 +7686,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7508,6 +7718,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -7539,6 +7750,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7561,6 +7773,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7623,6 +7836,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -7651,6 +7865,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7682,6 +7897,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7713,6 +7929,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -7744,6 +7961,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7766,6 +7984,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7828,6 +8047,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -7856,6 +8076,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7887,6 +8108,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7918,6 +8140,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -7949,6 +8172,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -7971,6 +8195,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8033,6 +8258,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -8061,6 +8287,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8092,6 +8319,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8123,6 +8351,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -8154,6 +8383,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8176,6 +8406,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8238,6 +8469,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -8266,6 +8498,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8297,6 +8530,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8328,6 +8562,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -8359,6 +8594,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8381,6 +8617,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8443,6 +8680,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -8471,6 +8709,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8502,6 +8741,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8533,6 +8773,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -8564,6 +8805,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8586,6 +8828,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8648,6 +8891,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -8676,6 +8920,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8707,6 +8952,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8738,6 +8984,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -8769,6 +9016,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8791,6 +9039,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8853,6 +9102,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -8881,6 +9131,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8912,6 +9163,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8943,6 +9195,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -8974,6 +9227,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -8996,6 +9250,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9058,6 +9313,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -9086,6 +9342,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9117,6 +9374,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9148,6 +9406,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -9179,6 +9438,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9201,6 +9461,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9263,6 +9524,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -9291,6 +9553,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9322,6 +9585,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9353,6 +9617,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -9384,6 +9649,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9406,6 +9672,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9468,6 +9735,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -9496,6 +9764,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9527,6 +9796,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9558,6 +9828,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -9589,6 +9860,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9611,6 +9883,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9673,6 +9946,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -9701,6 +9975,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9732,6 +10007,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9763,6 +10039,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -9794,6 +10071,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9816,6 +10094,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9878,6 +10157,7 @@
                           }
                         ]
                       },
+                      "kind": "TemplateQualifier",
                       "type": "Cardinality",
                       "valueType": "xs:string",
                       "value": "ZeroToOne"
@@ -9906,6 +10186,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9937,6 +10218,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -9968,6 +10250,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "ZeroToOne"
@@ -9999,6 +10282,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
@@ -10021,6 +10305,7 @@
                               }
                             ]
                           },
+                          "kind": "TemplateQualifier",
                           "type": "Cardinality",
                           "valueType": "xs:string",
                           "value": "One"
