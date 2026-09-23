@@ -1,0 +1,1144 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "SafetyInstrumentedSystemAAS",
+      "id": "https://admin-shell.io/idta/aas/SafetyInstrumentedSystem/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/SafetyInstrumentedSystem/1/0",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/SafetyInstrumentedSystem/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "SafetyInstrumentedSystem",
+      "description": [
+        {
+          "language": "en",
+          "text": "The submodel Safety Instrumented System is a collection of properties about the functional safety requirements and information for the lifecycle of a device of a safety instrumented system realising one or more safety instrumented functions."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0",
+        "templateId": "https://admin-shell.io/idta-02097-1-0"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/SafetyInstrumentedSystem/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/SafetyInstrumentedSystem/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "SISName",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "SIS name"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "gives relevant information about the SIS"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/SISName/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "valueType": "xs:string",
+          "value": "ESD system",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "SRSRequirements",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "SRS requirements"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "SRS requirement(s) according to IEC 61511"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/SRSRequirements/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "SurvivabilityRequirement",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "survivability requirement"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "SRS requirement(s) according to IEC 61511"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/SurvivabilityRequirement/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "The SIF shall remain functional during and after a design accidental event and maintain integrity for a minimum of 30 minutes",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "RequirementForStartingUpAndRestartingSIS",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "requirement for starting up and restarting SIS"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "SRS requirement(s) according to IEC 61511"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/RequirementForStartingUpAndRestartingSIS/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "during start-up of the F&G logic solvers none of the inputs should be inhibited/bypassed (to prevent spurious manipulation of outputs",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "InterfacingSystemSpecification",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "interfacing system specification"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives relevant information about the SIS"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/InterfacingSystemSpecification/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "InterfacingSystem",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Interfacing system"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "gives relevant information about the SIS"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/InterfacingSystem/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": "PCS",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "NetworkType",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "type of network"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "gives relevant information about the SIS"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/SafetyInstrumentedSystem/TypeOfNetwork/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ValueQualifier",
+                      "type": "enumeration",
+                      "valueType": "xs:string",
+                      "value": "control network, safety network"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "TypeOfLinksHardwiredOrSoftware",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "type of links"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "gives relevant information about the SIS"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/SafetyInstrumentedSystem/TypeOfLinks/1/0"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ValueQualifier",
+                      "type": "enumeration",
+                      "valueType": "xs:string",
+                      "value": "hardwired, software"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "idShort": "PerformanceStandard",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "performance standard"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives relevant information about the SIS"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/PerformanceStandard/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "contentType": "application/octet-stream",
+              "modelType": "File"
+            },
+            {
+              "idShort": "ApplicationProgramSafetyRequirements",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "application program safety requirements"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "SRS requirement(s) according to IEC 61511"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/ApplicationProgramSafetyRequirements/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "contentType": "application/octet-stream",
+              "modelType": "File"
+            },
+            {
+              "idShort": "DALSpec",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "DAL spec"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "SRS requirement(s) according to IEC 61511"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/DALSpec/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "contentType": "application/octet-stream",
+              "modelType": "File"
+            },
+            {
+              "idShort": "Document",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "URL of document"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about relevant document(s)"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/Document/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "contentType": "application/octet-stream",
+              "modelType": "File"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "SISName",
+      "id": "https://admin-shell.io/idta/cds/SISName/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SISName"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of safety instrumented system (SIS), e.g. ESD system, PSD system, Fire&Gas system, etc."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SurvivabilityRequirement",
+      "id": "https://admin-shell.io/idta/cds/SurvivabilityRequirement/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SurvivabilityRequirement"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "requirements for the safety systems and barriers to function in or after a design accidental event"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RequirementForStartingUpAndRestartingSIS",
+      "id": "https://admin-shell.io/idta/cds/RequirementForStartingUpAndRestartingSIS/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "RequirementForStartingUpAndRestartingSIS"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "any specific requirements related to the procedures for starting up and restarting the SIS"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IntefacingSystem",
+      "id": "https://admin-shell.io/idta/SIS/SISSpecification/InterfacingSystemSpecification/InterfacingSystem",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "InterfacingSystem"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "system that interface to the SIS system. Can include, but are not limited to process control system (PCS), operator interface (HMI) or other SIS system (ESD, PSD, F&G, etc.)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "NetworkType",
+      "id": "https://admin-shell.io/idta/SafetyInstrumentedSystem/TypeOfNetwork/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TypeOfNetwork"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "specifies whether the interfacing system is a control network or a safety network"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "control network",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "001//2/0#APOS#228"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "safety network",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "001//2/0#APOS#228"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TypeOfLinksHardwiredOrSoftware",
+      "id": "https://admin-shell.io/idta/SafetyInstrumentedSystem/TypeOfLinks/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TypeOfLinks"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "specifies whether the interfacing system has hardwired links or software links"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "hardwired",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "001//2/0#APOS#229"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "software",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "001//2/0#APOS#229"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SRSRequirements",
+      "id": "https://admin-shell.io/idta/cds/SRSRequirements/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SRSRequirements"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "list of functional safety and reliability requirements in the safey requirement specificatoin (SRS) characterizing the ability to perform a required function under given conditions for a given period of time"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0112/2///61987#ABI478#001"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InterfacingSystemSpecification",
+      "id": "https://admin-shell.io/idta/cds/InterfacingSystemSpecification/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "InterfacingSystemSpecification"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "specification or description of an interfacing system"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PerformanceStandard",
+      "id": "https://admin-shell.io/idta/cds/PerformanceStandard/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PerformanceStandard"
+              }
+            ],
+            "dataType": "FILE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "statement of the performance required of a system, device, person or procedure, which is used as the basis for managing the hazard through the lifecycle of the plant"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ApplicationProgramSafetyRequirements",
+      "id": "https://admin-shell.io/idta/cds/ApplicationProgramSafetyRequirements/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ApplicationProgramSafetyRequirements"
+              }
+            ],
+            "dataType": "FILE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "separate document or part of the SRS that defines how an application software must be designed, implemented, tested, and operated to ensure safety"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "DALSpec",
+      "id": "https://admin-shell.io/idta/cds/DALSpec/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "DALSpec"
+              }
+            ],
+            "dataType": "FILE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "document that defines the design accidental loads (DALs) that a structure, system, or facility must be able to withstand, including the basis of selection, the associated accidental scenarios, load magnitudes, durations, and acceptance criteria used in the design"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Document",
+      "id": "https://admin-shell.io/idta/cds/Document/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Document"
+              }
+            ],
+            "dataType": "IRI",
+            "definition": [
+              {
+                "language": "en",
+                "text": "link of the document using a universal resource locator (URL)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0112/2///61987#ABN598#002"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "id": "https://admin-shell.io/idta/SafetyInstrumentedSystem/SISName/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SISName"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of safety instrumented system (SIS), e.g. ESD system, PSD system, Fire&Gas system, etc."
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "InterfacingSystem",
+      "id": "https://admin-shell.io/idta/cds/InterfacingSystem/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Interfacing system"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "system that interface to the SIS system. Can include, but are not limited to process control system (PCS), operator interface (HMI) or other SIS system (ESD, PSD, F&G, etc.)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}

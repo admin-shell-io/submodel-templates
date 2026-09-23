@@ -1,0 +1,1543 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "EquipmentUnderControlAAS",
+      "id": "https://admin-shell.io/idta/aas/EquipmentUnderControl/1/0",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "https://admin-shell.io/idta/asset/EquipmentUnderControl/1/0",
+        "assetType": "Type"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/EquipmentUnderControl/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "EquipmentUnderControl",
+      "description": [
+        {
+          "language": "en",
+          "text": "The submodel Equipment Under Control is a collection of properties about the functional safety requirements and information for the lifecycle of a device of an equipment under control protected by one or more protection layer(s) / safety instrumented function(s)."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0",
+        "templateId": "https://admin-shell.io/idta-02096-1-0"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/EquipmentUnderControl/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/EquipmentUnderControl/1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "EUCSpecification",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "EUC specification"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "gives information about the EUC that the SIF protects"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/EUCSpecification/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "TagName",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "tag name"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the tag that the device represents"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/TagName/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "PIDName",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "PID name"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the EUC that the SIF protects"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/PIDName/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "TagDescription",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "tag description"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives relevant information about the tag that the device represents"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/TagDescription/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "Boundary",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "EUC boundary"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the EUC that the SIF protects"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/EquipmentUnderControl/EUCBoundary/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "EUCControlSystem",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "EUC control system"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the EUC that the SIF protects"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/EUCControlSystem/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "ProcessSafetyTime",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "process safety time"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the EUC that the SIF protects"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/ProcessSafetyTime/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "unit",
+                  "valueType": "xs:string",
+                  "value": "seconds"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:decimal",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "LinkedSIF",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "reference to SIF"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "SRS requirement(s) according to IEC 61511"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/EquipmentUnderControl/ReferenceToSIF/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "modelType": "ReferenceElement"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "HazardousEvent",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "hazardous event"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "gives information about the EUC that the SIF protects"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/HazardousEvent/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "OneToMany"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "HazardousEventDescription",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "hazardous event description"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the hazardous event related to the SIF"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/HazardousEventDescription/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "HazardID",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "hazard ID"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the hazardous event related to the SIF"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/HazardID/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "IndependentProtectionLayer",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "independent protection layer"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the hazardous event related to the SIF"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/IndependentProtectionLayer/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "HazardFromCombinedSafeProcessStates",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "hazard from combined safe process states"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "gives information about the EUC that the SIF protects"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/HazardFromCombinedSafeProcessStates/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "OneToMany"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "HazardousEventDescription",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "hazardous event description"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the hazardous event related to the SIF"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/HazardousEventDescription/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "HazardID",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "hazard ID"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the hazardous event related to the SIF"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/HazardID/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "MeasuresToAvoidHazardFromCombinedSafeProcessStates",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "measure to avoid hazard from combined safe process states"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the hazardous event related to the SIF"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/EquipmentUnderControl/MeasureToAvoidHazardFromCombinedSafeProcessStates/1/0"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "ReferenceToHazardousEvent",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "reference to hazardous event"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the SIF"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/ReferenceToHazardousEvent/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "OneToMany"
+                }
+              ],
+              "modelType": "ReferenceElement"
+            },
+            {
+              "idShort": "IndependentProtectionLayer",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "independent protection layer"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "gives information about the hazardous event related to the SIF"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/IndependentProtectionLayer/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToMany"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "SILAllocationReport",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "SIL allocation report"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "gives information about the EUC that the SIF protects"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/SILAllocationReport/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "contentType": "application/octet-stream",
+          "modelType": "File"
+        },
+        {
+          "idShort": "HazardAndRiskAssessmentReport",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "hazard and risk assessment report"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "gives information about the EUC that the SIF protects"
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/HazardAndRiskAssessmentReport/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "ZeroToMany"
+            }
+          ],
+          "contentType": "application/octet-stream",
+          "modelType": "File"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "TagName",
+      "id": "https://admin-shell.io/idta/cds/TagName/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TagName"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "alphanumeric character sequence uniquely identifying a measuring or control point"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0112/2///61987#ABB271#009"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "PIDName",
+      "id": "https://admin-shell.io/idta/cds/PIDName/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "PIDName"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "corresponding name in the P&ID diagram"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TagDescription",
+      "id": "https://admin-shell.io/idta/cds/TagDescription/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TagDescription"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "plain text characterizing a process control engineering request"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "isCaseOf": [
+        {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0112/2///61987#ABA578#007"
+            }
+          ]
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Boundary",
+      "id": "https://admin-shell.io/idta/EquipmentUnderControl/EUCBoundary/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "EUCBoundary"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "the defined limit that separates what is considered part of the equipment under control from what is outside its scope"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "EUCControlSystem",
+      "id": "https://admin-shell.io/idta/cds/EUCControlSystem/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "EUCControlSystem"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "systems involved for regular (normal) control, e.g. process control system (PCS), control of standalone and/or utility systems"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ProcessSafetyTime",
+      "id": "https://admin-shell.io/idta/cds/ProcessSafetyTime/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ProcessSafetyTime"
+              }
+            ],
+            "unit": "seconds",
+            "dataType": "REAL_COUNT",
+            "definition": [
+              {
+                "language": "en",
+                "text": "period of time between a failure occurring in the process or the basic process control system (with the potential to give rise to a hazardous event) and the occurrence of the hazardous event if the SIF is not performed"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "HazardousEventDescription",
+      "id": "https://admin-shell.io/idta/cds/HazardousEventDescription/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "HazardousEventDescription"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "textual description of the hazardous event, i.e. an event that can cause harm"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "HazardID",
+      "id": "https://admin-shell.io/idta/cds/HazardID/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "HazardID"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "identifier of a hazardous event"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "IndependentProtectionLayer",
+      "id": "https://admin-shell.io/idta/cds/IndependentProtectionLayer/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "IndependentProtectionLayer"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "any independent mechanism that reduces risk by control, prevention or mitigation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MeasuresToAvoidHazardFromCombinedSafeProcessStates",
+      "id": "https://admin-shell.io/idta/EquipmentUnderControl/MeasureToAvoidHazardFromCombinedSafeProcessStates/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MeasureToAvoidHazardFromCombinedSafeProcessStates"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "specific action or intentionally designed measure to reduce the probability of a hazard from combined safe process state"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "EUCSpecification",
+      "id": "https://admin-shell.io/idta/cds/EUCSpecification/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "EUCSpecification"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "description of an equipment under control (EUC)"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "HazardousEvent",
+      "id": "https://admin-shell.io/idta/cds/HazardousEvent/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "HazardousEvent"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "event that can cause harm"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "HazardFromCombinedSafeProcessStates",
+      "id": "https://admin-shell.io/idta/cds/HazardFromCombinedSafeProcessStates/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "HazardFromCombinedSafeProcessStates"
+              }
+            ],
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "hazard that is due to a dangerous combination of output safe states of the safety instrumented system (SIS)"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "true",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/true/1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "false",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/false/1"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "SILAllocationReport",
+      "id": "https://admin-shell.io/idta/cds/SILAllocationReport/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "SILAllocationReport"
+              }
+            ],
+            "dataType": "FILE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "report documenting a SIL allocation process, e.g. a layer of protection analysis"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "HazardAndRiskAssessmentReport",
+      "id": "https://admin-shell.io/idta/cds/HazardAndRiskAssessmentReport/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "HazardAndRiskAssessmentReport"
+              }
+            ],
+            "dataType": "FILE",
+            "definition": [
+              {
+                "language": "en",
+                "text": "report documenting a hazard identification or risk assessment, e.g. a HAZOP, QRA, PHA, or other hazards and risk assessments"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LinkedSIF",
+      "id": "https://admin-shell.io/idta/EquipmentUnderControl/ReferenceToSIF/1/0",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReferenceToSIF"
+              }
+            ],
+            "dataType": "IRI",
+            "definition": [
+              {
+                "language": "en",
+                "text": "reference to block SafetyInstrumentedFunction"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReferenceToHazardousEvent",
+      "id": "https://admin-shell.io/idta/cds/ReferenceToHazardousEvent/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReferenceToHazardousEvent"
+              }
+            ],
+            "dataType": "IRI",
+            "definition": [
+              {
+                "language": "en",
+                "text": "reference to block HazardousEvent"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          },
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}
