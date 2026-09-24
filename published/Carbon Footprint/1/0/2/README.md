@@ -12,24 +12,14 @@ is carried over unchanged.
 - AASX: IDTA 02023-1-0-2 _Template_CarbonFootprint_forAASMetamodelV3.1.aasx
 - JSON: IDTA 02023-1-0-2 _Template_CarbonFootprint_forAASMetamodelV3.1.json
 
-### Corrections applied
+### Issues fixed in this release
 
-These are defect classes reported against the submodel templates. Each was
-applied to every JSON and AASX artifact in this folder.
-
-- **CO2 spelled with a digit zero** ([#135](https://github.com/admin-shell-io/submodel-templates/issues/135)). Two German display texts read `C02 Footprint` and `Produkt C02-Fußabdruck`, using the digit `0` where the chemical formula `CO2` is meant. Corrected in the `displayName` text only; no identifier contains the string, so nothing resolvable changed.
-
-- **Cardinality of repeated lists** ([#124](https://github.com/admin-shell-io/submodel-templates/issues/124)). `PcfCalculationMethods` and `LifeCyclePhases` are SubmodelElementLists holding repeated values, but carried `SMT/Cardinality = One`, permitting only a single occurrence. Corrected to `OneToMany` (3 qualifiers per artifact). `ProductCarbonFootprints` keeps `One`, since exactly one such list belongs in the submodel.
-
-- **Whitespace and stray prefixes inside identifier URIs** ([#208](https://github.com/admin-shell-io/submodel-templates/issues/208), [#210](https://github.com/admin-shell-io/submodel-templates/issues/210)). Identifier values such as `https://admin-shell.io/idta/X /1/0`, values carrying an `[IRI]` or `]` prefix, and identifiers with an escaped newline prevent exact identifier matching. Identifier values and the references pointing at them were corrected together so that they continue to resolve.
-
-- **AASd-120**: a SubmodelElement that is a direct child of a SubmodelElementList must not carry an `idShort`. The offending `idShort` values were removed.
-
-- **Non-unique language entries** ([#187](https://github.com/admin-shell-io/submodel-templates/issues/187), [#207](https://github.com/admin-shell-io/submodel-templates/issues/207)). A language-string set may hold only one text per language. Three distinct shapes were found and handled without discarding any content: exact repeats were collapsed; entries whose text was in the other language were **retagged** (for example German text tagged `en`) rather than deleted, so no translation is lost; and several separate notes sharing one language tag were **merged into a single entry**, joined in their original order.
-
-- **AASd-118**: elements carrying `supplementalSemanticIds` without a main `semanticId`. The single supplemental identifier was promoted to be the main semantic identifier.
-
-- **Missing `contentType` on a File element**, which is required by the metamodel and caused the template to fail deserialization entirely. Set to `application/octet-stream`, the neutral default for a template placeholder with no value.
+- [#124](https://github.com/admin-shell-io/submodel-templates/issues/124)
+- [#135](https://github.com/admin-shell-io/submodel-templates/issues/135)
+- [#187](https://github.com/admin-shell-io/submodel-templates/issues/187)
+- [#207](https://github.com/admin-shell-io/submodel-templates/issues/207)
+- [#208](https://github.com/admin-shell-io/submodel-templates/issues/208)
+- [#210](https://github.com/admin-shell-io/submodel-templates/issues/210)
 
 ### Known remaining issues
 

@@ -9,34 +9,9 @@ The specification PDF is carried over from version 1.0 unchanged.
 - JSON: IDTA_02018-1-0-1_Template_MaintenanceInstructions.json
 - PDF: IDTA_02018_Submodel_MaintenanceInstructions.pdf (unchanged from version 1.0)
 
-### Bug fixes applied
+### Issues fixed in this release
 
-- [#245](https://github.com/admin-shell-io/submodel-templates/issues/245) -
-  Constraint violations in template IDTA_02018_Submodel_MaintenanceInstructions.
-  The template could not be parsed by a conformant BaSyx workflow. All reported
-  constraint violations are corrected:
-
-  - Invalid KeyType `Identifiable` replaced with `GlobalReference`, and the
-    enclosing reference changed from `ModelReference` to `ExternalReference`
-    (a reference whose key is a GlobalReference must be an ExternalReference,
-    AASd-123).
-  - AASd-120: idShort removed from SubmodelElements that are direct children of a
-    SubmodelElementList (3 elements).
-  - Duplicate `ReferenceNameOfMaintenance` idShorts within the same collection
-    resolved. Three collections each contained two sibling ReferenceElements with
-    the same idShort. In each case the element whose description reads
-    "Referenz zur ID eines spezifischen Wartungsintervals" / "Reference to ID of
-    specific maintenance interval" was renamed to `ReferenceToMaintenanceID`, as
-    the issue proposes, and its semanticId retargeted to
-    `.../referencetomaintenanceid/1/0`. One sibling in the tool collection had the
-    opposite mislabeling and was aligned to its own semanticId.
-
-### Additional corrections
-
-- Non-unique language entries in `description` sets. Three sets carried two
-  entries both tagged `de`, where the second held the ENGLISH text. Rather than
-  dropping an entry (which would lose the translation), the mislabeled entry was
-  retagged `en`.
+- [#245](https://github.com/admin-shell-io/submodel-templates/issues/245)
 
 ### Issues reviewed but not changed
 

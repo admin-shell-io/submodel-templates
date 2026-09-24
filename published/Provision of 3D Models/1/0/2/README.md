@@ -10,12 +10,6 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
 - JSON: IDTA 02026-1-0-2_Template_ProvisionOf3DModels.json
 - JSON: IDTA 02026-1-0-2_Template_ProvisionOf3DModels_forAASMetamodelV3.1.json
 
-### Bug fixes applied in 1.0.2
-
-- Qualifier kind corrected: `ConceptQualifier` -> `TemplateQualifier`
-  (117 occurrences per JSON artifact). A qualifier that constrains the template
-  itself, rather than the concept, must carry kind `TemplateQualifier`.
-
 ### Deliberately not fixed in this release
 
 - [#272](https://github.com/admin-shell-io/submodel-templates/issues/272) -

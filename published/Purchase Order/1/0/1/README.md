@@ -19,24 +19,9 @@ from version 1.0 unchanged.
 
 ## Changes in Version 1.0.1
 
-### Bug Fixes
+### Issues fixed in this release
 
-- [#223](https://github.com/admin-shell-io/submodel-templates/issues/223) -
-  [Purchase Order 1.0] PurchaseRequestResponseReferene typo.
-  The misspelled idShort `PurchaseRequestResponseReferene` was corrected to
-  `PurchaseRequestResponseReference` (4 occurrences in each artifact).
-
-### Additional corrections
-
-The following defects were found while fixing the above and are corrected here.
-They were not raised as separate GitHub issues.
-
-- Whitespace embedded in semantic identifier URIs. 37 `ConceptDescription`
-  identifiers and the references pointing at them contained spaces or an escaped
-  newline inside the URI (for example
-  `https://admin-shell.io/idta/PurchaseOrder/TaxRate /1/0`), which prevents exact
-  identifier matching. Identifiers and their references were corrected together so
-  that they continue to resolve.
+- [#223](https://github.com/admin-shell-io/submodel-templates/issues/223)
 
 ## Verification
 

@@ -12,30 +12,8 @@ specification PDF is carried over unchanged.
 - JSON: IDTA 02011-1-1-2_Template_HSEBoM_forAASMetamodelV3.1.json
 - PDF: IDTA 02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf (unchanged)
 
-### Bug fixes applied
+### Issues fixed in this release
 
-- [#209](https://github.com/admin-shell-io/submodel-templates/issues/209) -
-  [Hierarchical Structures enabling Bill of Materials 1.1.1] Multiple issues.
-  Partially addressed:
-
-  - **Deprecated `category` field removed** from all artifacts. Schema-conformant
-    APIs reject templates that still populate it.
-  - Whitespace inside semantic identifier URIs removed, and AASd-120 idShorts
-    removed from direct children of SubmodelElementLists (see below).
-
-  Two parts of this issue are **not** addressed here:
-
-  - *Missing administration/version information on the submodel.* Adding it means
-    choosing the `version` and `revision` values to publish, which is a release
-    decision rather than a correction.
-  - *Submodel semanticId modelled as a ModelReference to itself.* This is
-    schema-valid, and the repository is split between the two styles
-    (110 ModelReference against 67 ExternalReference), so it belongs with the
-    repository-wide identifier policy discussed in
-    [#224](https://github.com/admin-shell-io/submodel-templates/issues/224) and
-    [#152](https://github.com/admin-shell-io/submodel-templates/issues/152)
-    rather than being changed in one template.
-
-  The issue also mentions a deprecated spelling. `ArcheType` is used consistently
-  (19 occurrences across the repository) and matches the specification's own
-  wording, so it was left unchanged.
+- [#152](https://github.com/admin-shell-io/submodel-templates/issues/152)
+- [#209](https://github.com/admin-shell-io/submodel-templates/issues/209)
+- [#224](https://github.com/admin-shell-io/submodel-templates/issues/224)

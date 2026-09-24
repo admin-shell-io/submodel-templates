@@ -10,34 +10,11 @@ specification PDF is carried over from version 1.0 unchanged.
 - JSON: IDTA 02012-1-0-1_Template_DEXPI.json
 - PDF: IDTA 02012-1-0_Submodel_DEXPI.pdf (unchanged from version 1.0)
 
-### Bug fixes applied
+### Issues fixed in this release
 
-- [#79](https://github.com/admin-shell-io/submodel-templates/issues/79) -
-  AASConstraintViolation when reading the DEXPI template in basyx-python-sdk.
-  Two distinct invalid reference shapes were the cause, both corrected:
-
-  - **AASd-127 (43 occurrences)**: a ModelReference key path
-    `Submodel / SubmodelElementCollection / SubmodelElement / FragmentReference`.
-    A FragmentReference must be preceded by a `File` or `Blob` key. The element
-    being referenced is `ModelFile`, which is a File in this template, so the
-    generic `SubmodelElement` key type was wrong and is now `File`.
-  - **AASd-121 and AASd-123 (5 occurrences)**: a ModelReference whose only key
-    was of type `Entity` pointing at `http://example.com/id/...`. A reference to
-    an external identifier is an ExternalReference with a GlobalReference key,
-    not a ModelReference into the AAS, and is now modelled as such.
-
-- [#93](https://github.com/admin-shell-io/submodel-templates/issues/93),
-  [#94](https://github.com/admin-shell-io/submodel-templates/issues/94) -
-  DEXPI template IRIs not following specification IRIs / semanticId deviation.
-  The admin-shell DEXPI namespace was spelled two ways in the same template:
-  `http://admin-shell.io/dexpi/...` (199 occurrences) and
-  `http://admin-shell.io/DEXPI/...` (12 occurrences, all
-  `.../DEXPI/1/0/TagMapping`). Since exact string matching is what resolves a
-  semantic identifier, the minority spelling was normalised to the dominant
-  lowercase form.
-
-  Note: the `http://sandbox.dexpi.org/...` identifiers are external DEXPI
-  identifiers and are deliberately left as they are.
+- [#79](https://github.com/admin-shell-io/submodel-templates/issues/79)
+- [#93](https://github.com/admin-shell-io/submodel-templates/issues/93)
+- [#94](https://github.com/admin-shell-io/submodel-templates/issues/94)
 
 ### Known remaining issues
 

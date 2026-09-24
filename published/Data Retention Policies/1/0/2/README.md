@@ -12,11 +12,6 @@ unchanged. The specification PDF, where present, is carried over unchanged.
 - AASX: IDTA 02056-1-0-2_Template_Data Retention Policies_forAASMetamodelV3.1.aasx
 - JSON: IDTA 02056-1-0-2_Template_Data Retention Policies_forAASMetamodelV3.1.json
 
-### Corrections applied
+### Issues fixed in this release
 
-- **Qualifier kind** ([#159](https://github.com/admin-shell-io/submodel-templates/issues/159)).
-  Qualifiers constraining the submodel template itself carried
-  `kind: ConceptQualifier`. A qualifier that restricts the template rather than
-  the concept it is based on must carry `kind: TemplateQualifier`. Corrected in
-  every JSON and AASX artifact in this folder (25 occurrences per JSON
-  artifact).
+- [#159](https://github.com/admin-shell-io/submodel-templates/issues/159)

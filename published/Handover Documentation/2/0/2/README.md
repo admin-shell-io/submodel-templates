@@ -15,45 +15,16 @@ is carried over unchanged.
 - AASX: IDTA 02004-2-0-2_Template_sample_HandoverDocumentation_forAASMetamodelV3.1.aasx
 - AASX: IDTA 02004-2-0_Template_sample_HandoverDocumentation.aasx
 
-### Corrections applied
+### Issues fixed in this release
 
-These are defect classes reported against the submodel templates. Each was
-applied to every JSON and AASX artifact in this folder.
-
-- **Misspelled display text** ([#236](https://github.com/admin-shell-io/submodel-templates/issues/236)). The `DocumentIds` English `displayName` read "Document identifyers"; corrected to "identifiers". Display text only, so no identifier or reference changed.
-
-- **Whitespace and stray prefixes inside identifier URIs** ([#208](https://github.com/admin-shell-io/submodel-templates/issues/208), [#210](https://github.com/admin-shell-io/submodel-templates/issues/210)). Identifier values such as `https://admin-shell.io/idta/X /1/0`, values carrying an `[IRI]` or `]` prefix, and identifiers with an escaped newline prevent exact identifier matching. Identifier values and the references pointing at them were corrected together so that they continue to resolve.
-
-- **AASd-120**: a SubmodelElement that is a direct child of a SubmodelElementList must not carry an `idShort`. The offending `idShort` values were removed.
-
-- **Non-unique language entries** ([#187](https://github.com/admin-shell-io/submodel-templates/issues/187), [#207](https://github.com/admin-shell-io/submodel-templates/issues/207)). A language-string set may hold only one text per language. Three distinct shapes were found and handled without discarding any content: exact repeats were collapsed; entries whose text was in the other language were **retagged** (for example German text tagged `en`) rather than deleted, so no translation is lost; and several separate notes sharing one language tag were **merged into a single entry**, joined in their original order.
-
-- **AASd-118**: elements carrying `supplementalSemanticIds` without a main `semanticId`. The single supplemental identifier was promoted to be the main semantic identifier.
-
-- **Missing `contentType` on a File element**, which is required by the metamodel and caused the template to fail deserialization entirely. Set to `application/octet-stream`, the neutral default for a template placeholder with no value.
-
-### Issue-specific fixes in this release
-
-- [#235](https://github.com/admin-shell-io/submodel-templates/issues/235) -
-  syntactically wrong supplementalSemanticId. Four supplemental references each
-  carried TWO GlobalReference keys: an ECLASS IRDI
-  (`0173-1#02-ABI500#003~0/0173-1#01-AHF579#003`) and the same concept as a URL
-  (`https://api.eclass-cdp.com/...`). A Reference's keys form a path to ONE
-  referent, not a list of alternative identifiers, so each was split into two
-  separate single-key supplemental references. Both identifiers are preserved.
-  8 references split in JSON, 30 in the AASX payloads.
-
-- [#238](https://github.com/admin-shell-io/submodel-templates/issues/238) -
-  ConceptDescription DigitalFile is not an enumeration. The `DigitalFile`
-  ConceptDescription carried a `valueList` with a single entry ("File"), which
-  wrongly presents it as an enumeration. The single-entry value list was removed;
-  the ConceptDescription and its `dataType: STRING` are otherwise unchanged.
-
-- [#251](https://github.com/admin-shell-io/submodel-templates/issues/251) -
-  Invalid Example Value for VDI 2770 Classification System. The
-  ClassificationSystem example value `VDI2770:2020` was replaced with the
-  standardized wording `VDI 2770 Blatt 1:2020`. No `VDI2770:2018` references
-  remain in these artifacts.
+- [#187](https://github.com/admin-shell-io/submodel-templates/issues/187)
+- [#207](https://github.com/admin-shell-io/submodel-templates/issues/207)
+- [#208](https://github.com/admin-shell-io/submodel-templates/issues/208)
+- [#210](https://github.com/admin-shell-io/submodel-templates/issues/210)
+- [#235](https://github.com/admin-shell-io/submodel-templates/issues/235)
+- [#236](https://github.com/admin-shell-io/submodel-templates/issues/236)
+- [#238](https://github.com/admin-shell-io/submodel-templates/issues/238)
+- [#251](https://github.com/admin-shell-io/submodel-templates/issues/251)
 
 ### Issues reviewed but not fixable in these artifacts
 
