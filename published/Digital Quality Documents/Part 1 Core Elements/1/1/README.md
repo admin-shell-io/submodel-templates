@@ -58,6 +58,18 @@ These were not corrected here, because the correct value is not determinable fro
   `https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0`. Both permitted
   values are preserved in their original order.
 
+- [#275](https://github.com/admin-shell-io/submodel-templates/issues/275) -
+  Invalid semanticId. One `refType` semanticId held two IRIs concatenated with
+  no separator: the parent collection's own identifier immediately followed by
+  the intended `.../Identifications/refType`. The sibling elements of that
+  collection use the `.../Identifications/<name>` form (`refID`, `ID`,
+  `IdentificationIssuer`), so the trailing half is the correct value and the
+  leading half is a copy/paste artifact.
+
+  Corrected in the JSON and the AASX (3 occurrences each), including the
+  ConceptDescription `id` that carried the same malformed string, so no
+  dangling reference is left behind.
+
 ### Issues reviewed but not changed
 
 - [#275](https://github.com/admin-shell-io/submodel-templates/issues/275) -

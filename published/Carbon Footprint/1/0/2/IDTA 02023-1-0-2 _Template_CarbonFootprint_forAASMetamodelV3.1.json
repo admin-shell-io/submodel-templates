@@ -67,7 +67,7 @@
           "displayName": [
             {
               "language": "de",
-              "text": "Produkt CO2-Fu\u00DFabdruck"
+              "text": "Produkt CO2-Fußabdruck"
             },
             {
               "language": "en",
@@ -112,7 +112,7 @@
               "displayName": [
                 {
                   "language": "de",
-                  "text": "Produkt CO2-Fu\u00DFabdruck"
+                  "text": "Produkt CO2-Fußabdruck"
                 },
                 {
                   "language": "en",
@@ -140,7 +140,7 @@
                   "displayName": [
                     {
                       "language": "de",
-                      "text": "Folgenabsch\u00E4tzungsmethoden"
+                      "text": "Folgenabschätzungsmethoden"
                     },
                     {
                       "language": "en",
@@ -171,7 +171,7 @@
                       "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
-                      "value": "One"
+                      "value": "OneToMany"
                     }
                   ],
                   "semanticIdListElement": {
@@ -191,7 +191,7 @@
                       "displayName": [
                         {
                           "language": "de",
-                          "text": "Folgenabsch\u00E4tzungsmethode / Berechnungsmethode"
+                          "text": "Folgenabschätzungsmethode / Berechnungsmethode"
                         },
                         {
                           "language": "en",
@@ -237,7 +237,7 @@
                   "displayName": [
                     {
                       "language": "de",
-                      "text": "CO2-\u00C4quivalent"
+                      "text": "CO2-Äquivalent"
                     },
                     {
                       "language": "en",
@@ -276,7 +276,7 @@
                   "displayName": [
                     {
                       "language": "de",
-                      "text": "Referenzeinheit f\u00FCr die Berechnung"
+                      "text": "Referenzeinheit für die Berechnung"
                     },
                     {
                       "language": "en",
@@ -315,7 +315,7 @@
                   "displayName": [
                     {
                       "language": "de",
-                      "text": "Mengenangabe f\u00FCr die Berechnung"
+                      "text": "Mengenangabe für die Berechnung"
                     },
                     {
                       "language": "en",
@@ -380,7 +380,7 @@
                       "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
-                      "value": "One"
+                      "value": "OneToMany"
                     }
                   ],
                   "semanticIdListElement": {
@@ -442,7 +442,7 @@
                   "displayName": [
                     {
                       "language": "de",
-                      "text": "Erkl\u00E4rung"
+                      "text": "Erklärung"
                     },
                     {
                       "language": "en",
@@ -480,7 +480,7 @@
                   "displayName": [
                     {
                       "language": "de",
-                      "text": "Waren\u00FCbergabeadresse"
+                      "text": "Warenübergabeadresse"
                     },
                     {
                       "language": "en",
@@ -547,7 +547,7 @@
                   "displayName": [
                     {
                       "language": "de",
-                      "text": "Ver\u00F6ffentlichungsdatum"
+                      "text": "Veröffentlichungsdatum"
                     },
                     {
                       "language": "en",
@@ -557,7 +557,7 @@
                   "description": [
                     {
                       "language": "en",
-                      "text": "The UTC timestamp on which a Product Carbon Footprint (PCF) - a calculation of a product\u0027s total greenhouse gas emissions - was created and published"
+                      "text": "The UTC timestamp on which a Product Carbon Footprint (PCF) - a calculation of a product's total greenhouse gas emissions - was created and published"
                     }
                   ],
                   "semanticId": {
@@ -689,7 +689,7 @@
                   "displayName": [
                     {
                       "language": "de",
-                      "text": "Folgenabsch\u00E4tzungsmethoden"
+                      "text": "Folgenabschätzungsmethoden"
                     },
                     {
                       "language": "en",
@@ -720,7 +720,7 @@
                       "kind": "TemplateQualifier",
                       "type": "SMT/Cardinality",
                       "valueType": "xs:string",
-                      "value": "One"
+                      "value": "OneToMany"
                     }
                   ],
                   "semanticIdListElement": {
@@ -740,7 +740,7 @@
                       "displayName": [
                         {
                           "language": "de",
-                          "text": "Folgenabsch\u00E4tzungsmethode / Berechnungsmethode"
+                          "text": "Folgenabschätzungsmethode / Berechnungsmethode"
                         },
                         {
                           "language": "en",
@@ -795,7 +795,7 @@
                   "description": [
                     {
                       "language": "de",
-                      "text": "Beinhaltet weiterf\u00FChrende Informationen zur produktspezifischen oder sektorspezifischen Regel, welche zur Berechnung des CO2-Fu\u00DFabdrucks eingesetzt wird. "
+                      "text": "Beinhaltet weiterführende Informationen zur produktspezifischen oder sektorspezifischen Regel, welche zur Berechnung des CO2-Fußabdrucks eingesetzt wird. "
                     },
                     {
                       "language": "en",
@@ -835,7 +835,7 @@
                       "description": [
                         {
                           "language": "de",
-                          "text": "Einrichtung, welche spezifische Anweisungen und Methoden zur Berechnung und \u00DCberwachung des CO2-Fu\u00DFabdrucks eines Produkts oder Sektors definiert und umsetzt."
+                          "text": "Einrichtung, welche spezifische Anweisungen und Methoden zur Berechnung und Überwachung des CO2-Fußabdrucks eines Produkts oder Sektors definiert und umsetzt."
                         },
                         {
                           "language": "en",
@@ -877,7 +877,7 @@
                       "description": [
                         {
                           "language": "de",
-                          "text": "Folgenabsch\u00E4tzungsmethode / Berechnungsmethode"
+                          "text": "Folgenabschätzungsmethode / Berechnungsmethode"
                         },
                         {
                           "language": "en",
@@ -919,7 +919,7 @@
                       "description": [
                         {
                           "language": "de",
-                          "text": "Spezifische Ausgabe oder Revision der Regel, die zur Berechnung des CO2-Fu\u00DFabdrucks eines Produkts verwendet wird."
+                          "text": "Spezifische Ausgabe oder Revision der Regel, die zur Berechnung des CO2-Fußabdrucks eines Produkts verwendet wird."
                         },
                         {
                           "language": "en",
@@ -961,11 +961,11 @@
                       "description": [
                         {
                           "language": "de",
-                          "text": "Online-Referenz zur PCF-Berechnungsmethodik, die detaillierte Anweisungen und Richtlinien zur Berechnung des CO2-Fu\u00DFabdrucks eines Produkts bereitstellt."
+                          "text": "Online-Referenz zur PCF-Berechnungsmethodik, die detaillierte Anweisungen und Richtlinien zur Berechnung des CO2-Fußabdrucks eines Produkts bereitstellt."
                         },
                         {
                           "language": "en",
-                          "text": "Online PCF calculation methodology reference that provides detailed instructions and guidelines for calculating a product\u0027s carbon footprint."
+                          "text": "Online PCF calculation methodology reference that provides detailed instructions and guidelines for calculating a product's carbon footprint."
                         }
                       ],
                       "semanticId": {
@@ -996,7 +996,7 @@
                   "displayName": [
                     {
                       "language": "de",
-                      "text": "Externe API f\u00FCr PCF Informationen"
+                      "text": "Externe API für PCF Informationen"
                     },
                     {
                       "language": "en",
@@ -1006,7 +1006,7 @@
                   "description": [
                     {
                       "language": "de",
-                      "text": "Ein externer Dienst, der \u00FCber eine Schnittstelle Informationen zum CO2-Fu\u00DFabdruck bereitstellt und den Abruf dieser Daten auf Abruf erm\u00F6glicht."
+                      "text": "Ein externer Dienst, der über eine Schnittstelle Informationen zum CO2-Fußabdruck bereitstellt und den Abruf dieser Daten auf Abruf ermöglicht."
                     },
                     {
                       "language": "en",
@@ -1046,7 +1046,7 @@
                       "description": [
                         {
                           "language": "de",
-                          "text": "Spezifische URL oder Adresse, \u00FCber die Daten zur Berechnung des CO2-Fu\u00DFabdrucks eines Produkts von externen Quellen abgerufen werden k\u00F6nnen."
+                          "text": "Spezifische URL oder Adresse, über die Daten zur Berechnung des CO2-Fußabdrucks eines Produkts von externen Quellen abgerufen werden können."
                         },
                         {
                           "language": "en",
@@ -1088,7 +1088,7 @@
                       "description": [
                         {
                           "language": "de",
-                          "text": "Spezifische Abfrage, \u00FCber die Daten zur Berechnung des CO2-Fu\u00DFabdrucks eines Produkts von externen Quellen abgerufen werden k\u00F6nnen."
+                          "text": "Spezifische Abfrage, über die Daten zur Berechnung des CO2-Fußabdrucks eines Produkts von externen Quellen abgerufen werden können."
                         },
                         {
                           "language": "en",
@@ -1123,7 +1123,7 @@
                   "description": [
                     {
                       "language": "de",
-                      "text": "Ein Abschnitt, in dem weitere Inhalte entsprechend der Berechnungsmethode zum Product Carbon Footprint aufgef\u00FChrt werden."
+                      "text": "Ein Abschnitt, in dem weitere Inhalte entsprechend der Berechnungsmethode zum Product Carbon Footprint aufgeführt werden."
                     },
                     {
                       "language": "en",
@@ -1212,7 +1212,7 @@
             "preferredName": [
               {
                 "language": "de",
-                "text": "Erkl\u00E4rung"
+                "text": "Erklärung"
               },
               {
                 "language": "en",
@@ -1222,7 +1222,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Erforderliche oder vorhandene Erkl\u00E4rung, um sicherzustellen, dass eine Fu\u00DFabdruckkommunikation von einem K\u00E4ufer, potentiellen K\u00E4ufer oder Anender des Produktes richtig verstanden werden kann"
+                "text": "Erforderliche oder vorhandene Erklärung, um sicherzustellen, dass eine Fußabdruckkommunikation von einem Käufer, potentiellen Käufer oder Anender des Produktes richtig verstanden werden kann"
               },
               {
                 "language": "en",
@@ -1257,7 +1257,7 @@
             "preferredName": [
               {
                 "language": "de",
-                "text": "Ver\u00F6ffentlichungsdatum"
+                "text": "Veröffentlichungsdatum"
               },
               {
                 "language": "en",
@@ -1274,11 +1274,11 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Der UTC Zeitstempel, an dem ein Product Carbon Footprint (PCF) \u2013 eine Berechnung der gesamten Treibhausgasemissionen eines Produkts \u2013 erstellt und ver\u00F6ffentlicht wurde"
+                "text": "Der UTC Zeitstempel, an dem ein Product Carbon Footprint (PCF) – eine Berechnung der gesamten Treibhausgasemissionen eines Produkts – erstellt und veröffentlicht wurde"
               },
               {
                 "language": "en",
-                "text": "The UTC timestamp on which a Product Carbon Footprint (PCF) - a calculation of a product\u0027s total greenhouse gas emissions - was created and published"
+                "text": "The UTC timestamp on which a Product Carbon Footprint (PCF) - a calculation of a product's total greenhouse gas emissions - was created and published"
               }
             ],
             "modelType": "DataSpecificationIec61360"
@@ -1320,7 +1320,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Enddatum, bis zu dem eine Studie oder Datenerhebung zur Berechnung eines \u00F6kologischen Fu\u00DFabdrucks als aktuell und g\u00FCltig betrachtet wird, bevor eine Aktualisierung oder neue Berechnung erforderlich ist."
+                "text": "Enddatum, bis zu dem eine Studie oder Datenerhebung zur Berechnung eines ökologischen Fußabdrucks als aktuell und gültig betrachtet wird, bevor eine Aktualisierung oder neue Berechnung erforderlich ist."
               },
               {
                 "language": "en",
@@ -1355,7 +1355,7 @@
               },
               {
                 "language": "de",
-                "text": "Folgenabsch\u00E4tzungsmethode / Berechnungsmethode"
+                "text": "Folgenabschätzungsmethode / Berechnungsmethode"
               }
             ],
             "dataType": "STRING",
@@ -1605,7 +1605,7 @@
               },
               {
                 "language": "de",
-                "text": "CO2-\u00C4quivalent - total (f\u00FCr PCF und LCA)"
+                "text": "CO2-Äquivalent - total (für PCF und LCA)"
               }
             ],
             "unit": "CO2eq",
@@ -1613,7 +1613,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Summe aller Treibhausgas-Emissionen eines Produkts gem\u00E4\u00DF der Quantifizierungsvorgaben der Norm"
+                "text": "Summe aller Treibhausgas-Emissionen eines Produkts gemäß der Quantifizierungsvorgaben der Norm"
               },
               {
                 "language": "en",
@@ -1648,7 +1648,7 @@
               },
               {
                 "language": "de",
-                "text": "Referenzeinheit f\u00FCr die Berechnung"
+                "text": "Referenzeinheit für die Berechnung"
               }
             ],
             "dataType": "STRING",
@@ -1659,7 +1659,7 @@
               },
               {
                 "language": "de",
-                "text": "Mengeneinheit des Produktes, auf das sich die PCF-Angabe zum CO2-Fu\u00DFabdruck bezieht"
+                "text": "Mengeneinheit des Produktes, auf das sich die PCF-Angabe zum CO2-Fußabdruck bezieht"
               }
             ],
             "valueList": {
@@ -1785,7 +1785,7 @@
       "displayName": [
         {
           "language": "de",
-          "text": "Mengenangabe f\u00FCr die Berechnung"
+          "text": "Mengenangabe für die Berechnung"
         },
         {
           "language": "en",
@@ -1812,14 +1812,14 @@
               },
               {
                 "language": "de",
-                "text": "Mengenangabe f\u00FCr die Berechnung"
+                "text": "Mengenangabe für die Berechnung"
               }
             ],
             "dataType": "REAL_COUNT",
             "definition": [
               {
                 "language": "de",
-                "text": "Angabe der St\u00FCckzahl, Masse oder des Volumens zur Berechnung der Auswirkungen des Klimawandels oder des CO2-Fu\u00DFabdrucks des Produktes"
+                "text": "Angabe der Stückzahl, Masse oder des Volumens zur Berechnung der Auswirkungen des Klimawandels oder des CO2-Fußabdrucks des Produktes"
               },
               {
                 "language": "en",
@@ -1871,7 +1871,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Lebenszyklusphase des Produktes gem\u00E4\u00DF den Quantifizierungsvorgaben der Norm, auf den sich die PCF-Angabe zum CO2-Fu\u00DFabdruck bezieht"
+                "text": "Lebenszyklusphase des Produktes gemäß den Quantifizierungsvorgaben der Norm, auf den sich die PCF-Angabe zum CO2-Fußabdruck bezieht"
               },
               {
                 "language": "en",
@@ -2174,13 +2174,13 @@
               },
               {
                 "language": "de",
-                "text": "PCF Waren\u00FCbergabeadresse"
+                "text": "PCF Warenübergabeadresse"
               }
             ],
             "definition": [
               {
                 "language": "de",
-                "text": "Bezeichnet den Ort der \u00DCbergabe der Ware"
+                "text": "Bezeichnet den Ort der Übergabe der Ware"
               },
               {
                 "language": "en",
@@ -2215,14 +2215,14 @@
               },
               {
                 "language": "de",
-                "text": "Stra\u00DFe"
+                "text": "Straße"
               }
             ],
             "dataType": "STRING",
             "definition": [
               {
                 "language": "de",
-                "text": "Stra\u00DFenangabe des Waren\u00FCbergabeortes"
+                "text": "Straßenangabe des Warenübergabeortes"
               },
               {
                 "language": "en",
@@ -2264,7 +2264,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Nummer zur Identifikation bzw. Unterscheidung einzelner H\u00E4user einer Stra\u00DFe"
+                "text": "Nummer zur Identifikation bzw. Unterscheidung einzelner Häuser einer Straße"
               },
               {
                 "language": "en",
@@ -2306,7 +2306,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Postleitzahl der Waren\u00FCbergabeadresse"
+                "text": "Postleitzahl der Warenübergabeadresse"
               },
               {
                 "language": "en",
@@ -2348,7 +2348,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Angabe der Stadt oder des Ortes der Waren\u00FCbergabe"
+                "text": "Angabe der Stadt oder des Ortes der Warenübergabe"
               },
               {
                 "language": "en",
@@ -2451,7 +2451,7 @@
       "displayName": [
         {
           "language": "de",
-          "text": "Produkt CO2-Fu\u00DFabdruck"
+          "text": "Produkt CO2-Fußabdruck"
         },
         {
           "language": "en",
@@ -2482,7 +2482,7 @@
               },
               {
                 "language": "de",
-                "text": "Produkt CO2-Fu\u00DFabdruck"
+                "text": "Produkt CO2-Fußabdruck"
               }
             ],
             "definition": [
@@ -2539,7 +2539,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Beinhaltet weiterf\u00FChrende Informationen zur produktspezifischen oder sektorspezifischen Regel, welche zur Berechnung des CO2-Fu\u00DFabdrucks eingesetzt wird. "
+                "text": "Beinhaltet weiterführende Informationen zur produktspezifischen oder sektorspezifischen Regel, welche zur Berechnung des CO2-Fußabdrucks eingesetzt wird. "
               },
               {
                 "language": "en",
@@ -2585,7 +2585,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Einrichtung, welche spezifische Anweisungen und Methoden zur Berechnung und \u00DCberwachung des CO2-Fu\u00DFabdrucks eines Produkts oder Sektors definiert und umsetzt."
+                "text": "Einrichtung, welche spezifische Anweisungen und Methoden zur Berechnung und Überwachung des CO2-Fußabdrucks eines Produkts oder Sektors definiert und umsetzt."
               },
               {
                 "language": "en",
@@ -2641,7 +2641,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Folgenabsch\u00E4tzungsmethode / Berechnungsmethode"
+                "text": "Folgenabschätzungsmethode / Berechnungsmethode"
               },
               {
                 "language": "en",
@@ -2697,7 +2697,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Spezifische Ausgabe oder Revision der Regel, die zur Berechnung des CO2-Fu\u00DFabdrucks eines Produkts verwendet wird."
+                "text": "Spezifische Ausgabe oder Revision der Regel, die zur Berechnung des CO2-Fußabdrucks eines Produkts verwendet wird."
               },
               {
                 "language": "en",
@@ -2754,11 +2754,11 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Online-Referenz zur PCF-Berechnungsmethodik, die detaillierte Anweisungen und Richtlinien zur Berechnung des CO2-Fu\u00DFabdrucks eines Produkts bereitstellt."
+                "text": "Online-Referenz zur PCF-Berechnungsmethodik, die detaillierte Anweisungen und Richtlinien zur Berechnung des CO2-Fußabdrucks eines Produkts bereitstellt."
               },
               {
                 "language": "en",
-                "text": "Online PCF calculation methodology reference that provides detailed instructions and guidelines for calculating a product\u0027s carbon footprint."
+                "text": "Online PCF calculation methodology reference that provides detailed instructions and guidelines for calculating a product's carbon footprint."
               }
             ],
             "modelType": "DataSpecificationIec61360"
@@ -2793,7 +2793,7 @@
               },
               {
                 "language": "de",
-                "text": "Ein externer Dienst, der \u00FCber eine Schnittstelle Informationen zum CO2-Fu\u00DFabdruck bereitstellt und den Abruf dieser Daten auf Abruf erm\u00F6glicht."
+                "text": "Ein externer Dienst, der über eine Schnittstelle Informationen zum CO2-Fußabdruck bereitstellt und den Abruf dieser Daten auf Abruf ermöglicht."
               }
             ],
             "definition": [
@@ -2803,7 +2803,7 @@
               },
               {
                 "language": "de",
-                "text": "Ein externer Dienst, der \u00FCber eine Schnittstelle Informationen zum CO2-Fu\u00DFabdruck bereitstellt und den Abruf dieser Daten auf Abruf erm\u00F6glicht."
+                "text": "Ein externer Dienst, der über eine Schnittstelle Informationen zum CO2-Fußabdruck bereitstellt und den Abruf dieser Daten auf Abruf ermöglicht."
               }
             ],
             "modelType": "DataSpecificationIec61360"
@@ -2817,7 +2817,7 @@
       "displayName": [
         {
           "language": "de",
-          "text": "Folgenabsch\u00E4tzungsmethoden"
+          "text": "Folgenabschätzungsmethoden"
         },
         {
           "language": "en",
@@ -2844,7 +2844,7 @@
             "preferredName": [
               {
                 "language": "de",
-                "text": "Folgenabsch\u00E4tzungsmethoden"
+                "text": "Folgenabschätzungsmethoden"
               },
               {
                 "language": "en",
@@ -2900,7 +2900,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Spezifische URL oder Adresse, \u00FCber die Daten zur Berechnung des CO2-Fu\u00DFabdrucks eines Produkts von externen Quellen abgerufen werden k\u00F6nnen."
+                "text": "Spezifische URL oder Adresse, über die Daten zur Berechnung des CO2-Fußabdrucks eines Produkts von externen Quellen abgerufen werden können."
               },
               {
                 "language": "en",
@@ -2928,7 +2928,7 @@
       "description": [
         {
           "language": "de",
-          "text": "Spezifische Abfrage, \u00FCber die Daten zur Berechnung des CO2-Fu\u00DFabdrucks eines Produkts von externen Quellen abgerufen werden k\u00F6nnen."
+          "text": "Spezifische Abfrage, über die Daten zur Berechnung des CO2-Fußabdrucks eines Produkts von externen Quellen abgerufen werden können."
         },
         {
           "language": "en",
@@ -2970,7 +2970,7 @@
               },
               {
                 "language": "de",
-                "text": "Spezifische Abfrage, \u00FCber die Daten zur Berechnung des CO2-Fu\u00DFabdrucks eines Produkts von externen Quellen abgerufen werden k\u00F6nnen."
+                "text": "Spezifische Abfrage, über die Daten zur Berechnung des CO2-Fußabdrucks eines Produkts von externen Quellen abgerufen werden können."
               }
             ],
             "modelType": "DataSpecificationIec61360"
@@ -3025,7 +3025,7 @@
               },
               {
                 "language": "de",
-                "text": "Ein Abschnitt, in dem weitere Inhalte entsprechend der Berechnungsmethode zum Product Carbon Footprint aufgef\u00FChrt werden."
+                "text": "Ein Abschnitt, in dem weitere Inhalte entsprechend der Berechnungsmethode zum Product Carbon Footprint aufgeführt werden."
               }
             ],
             "modelType": "DataSpecificationIec61360"
@@ -3066,7 +3066,7 @@
             "definition": [
               {
                 "language": "de",
-                "text": "Lebenszyklusphasen des Produktes gem\u00E4\u00DF den Quantifizierungsvorgaben der Norm, auf den sich die PCF-Angabe zum CO2-Fu\u00DFabdruck bezieht"
+                "text": "Lebenszyklusphasen des Produktes gemäß den Quantifizierungsvorgaben der Norm, auf den sich die PCF-Angabe zum CO2-Fußabdruck bezieht"
               },
               {
                 "language": "en",
@@ -3084,7 +3084,7 @@
       "displayName": [
         {
           "language": "de",
-          "text": "Produkt CO2-Fu\u00DFabdruck"
+          "text": "Produkt CO2-Fußabdruck"
         },
         {
           "language": "en",
@@ -3115,7 +3115,7 @@
               },
               {
                 "language": "de",
-                "text": "Produkt C02-Fu\u00DFabdruck"
+                "text": "Produkt C02-Fußabdruck"
               }
             ],
             "definition": [
