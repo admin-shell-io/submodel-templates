@@ -32,16 +32,6 @@ applied to every JSON and AASX artifact in this folder.
 
 - **Missing `contentType` on a File element**, which is required by the metamodel and caused the template to fail deserialization entirely. Set to `application/octet-stream`, the neutral default for a template placeholder with no value.
 
-### Verification
-
-- Every JSON artifact deserializes under `aas-core3` and was re-verified after
-  the changes.
-- Every AASX package opens as a valid OPC package and its XML payload is
-  well-formed. All non-payload package entries (relationships, content types,
-  embedded files) are byte-identical to the previous release.
-- Constraint violations in this folder: **0** (all constraint violations resolved).
-
-
 ### Issue-specific fixes in this release
 
 - [#235](https://github.com/admin-shell-io/submodel-templates/issues/235) -

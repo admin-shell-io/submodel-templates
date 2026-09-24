@@ -28,13 +28,6 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
   from identifier and reference values so that exact identifier matching succeeds.
   4 occurrences across the artifacts.
 
-### Verification
-
-- Both JSON artifacts deserialize and pass `aas-core3` constraint verification
-  with 0 violations.
-- Both AASX packages open as valid OPC packages with well-formed XML payloads.
-  All non-payload package entries are byte-identical to version 1.0.1.
-
 ### Issues reviewed but not changed
 
 - [#306](https://github.com/admin-shell-io/submodel-templates/issues/306) -

@@ -25,11 +25,3 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
 - Whitespace embedded in semantic identifier URIs (for example
   `https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation `)
   was removed so that exact identifier matching succeeds. 8 occurrences before, 0 after.
-
-### Verification
-
-- Both JSON artifacts deserialize and pass `aas-core3` constraint verification
-  with 0 violations.
-- Both AASX packages open as valid OPC packages with well-formed XML payloads.
-  All non-payload package entries are byte-identical to version 1.0.1.
-- Residual `category` occurrences in any artifact: 0.

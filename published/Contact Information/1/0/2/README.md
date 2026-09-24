@@ -33,11 +33,3 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
   Note: the issue also reports missing administration/version information on the
   submodel. That part is not addressed here, as it requires deciding the version
   and revision values to publish.
-
-### Verification
-
-- Both JSON artifacts deserialize and pass `aas-core3` constraint verification
-  with 0 violations.
-- Both AASX packages open as valid OPC packages with well-formed XML payloads.
-  All non-payload package entries are byte-identical to version 1.0.1.
-- Whitespace-bearing identifier URIs: 4 before, 0 after.

@@ -26,13 +26,6 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
   path, which is out of scope for a patch release. The issue is left open for
   the working group to schedule into a minor version.
 
-### Verification
-
-- Both JSON artifacts deserialize and pass `aas-core3` constraint verification.
-- Both AASX packages open as valid OPC packages with well-formed XML payloads.
-  All non-payload package entries are byte-identical to version 1.0.1.
-- The X/Y/Z idShorts are unchanged from version 1.0.1.
-
 ### Known remaining issues
 
 - One constraint violation remains in each JSON artifact: "The value must
