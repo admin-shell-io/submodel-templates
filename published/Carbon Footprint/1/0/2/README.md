@@ -17,6 +17,8 @@ is carried over unchanged.
 These are defect classes reported against the submodel templates. Each was
 applied to every JSON and AASX artifact in this folder.
 
+- **CO2 spelled with a digit zero** ([#135](https://github.com/admin-shell-io/submodel-templates/issues/135)). Two German display texts read `C02 Footprint` and `Produkt C02-Fußabdruck`, using the digit `0` where the chemical formula `CO2` is meant. Corrected in the `displayName` text only; no identifier contains the string, so nothing resolvable changed.
+
 - **Cardinality of repeated lists** ([#124](https://github.com/admin-shell-io/submodel-templates/issues/124)). `PcfCalculationMethods` and `LifeCyclePhases` are SubmodelElementLists holding repeated values, but carried `SMT/Cardinality = One`, permitting only a single occurrence. Corrected to `OneToMany` (3 qualifiers per artifact). `ProductCarbonFootprints` keeps `One`, since exactly one such list belongs in the submodel.
 
 - **Whitespace and stray prefixes inside identifier URIs** ([#208](https://github.com/admin-shell-io/submodel-templates/issues/208), [#210](https://github.com/admin-shell-io/submodel-templates/issues/210)). Identifier values such as `https://admin-shell.io/idta/X /1/0`, values carrying an `[IRI]` or `]` prefix, and identifiers with an escaped newline prevent exact identifier matching. Identifier values and the references pointing at them were corrected together so that they continue to resolve.
