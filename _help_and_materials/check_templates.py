@@ -16,13 +16,42 @@ from aas_test_engines.result import Level
 
 AAS_VERSION = os.environ.get("AAS_VERSION", "3.1")
 
+# Templates with a known defect that predates this checker and cannot be
+# corrected in a patch release. The main one is the dataSpecification IRI
+# http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0,
+# which the metamodel expects to be https. Changing it rewrites
+# ConceptDescription identifiers across many templates, so it is a working-group
+# decision rather than a bug fix.
+#
+# Entries are matched by exact file name. A bug-fix release therefore has to be
+# listed under its OWN name as well as its predecessor's, otherwise the same
+# known defect resurfaces as a new failure purely because the version segment in
+# the file name changed.
 _SKIP = frozenset({
+    # Contact Information: 1.0.1, and its bug-fix release 1.0.2
     "IDTA 02002-1-0-1_Template_ContactInformation.json",
     "IDTA 02002-1-0-1_Template_ContactInformation_forAASMetamodelV3.1.json",
+    "IDTA 02002-1-0-2_Template_ContactInformation.json",
+    "IDTA 02002-1-0-2_Template_ContactInformation_forAASMetamodelV3.1.json",
+
     "IDTA_02018_Template_MaintenanceInstructions.json",
+
+    # Hierarchical Structures, IEC 81346 extension: 1.1.1, and its 1.1.2
     "IDTA 02011-1-1-1 _Template_BoM_ExtensionbasedonIEC81346.json",
     "IDTA 02011-1-1-1 _Template_BoM_ExtensionbasedonIEC81346_forAASMetamodelV3.1.json",
+    "IDTA 02011-1-1-2 _Template_BoM_ExtensionbasedonIEC81346.json",
+    "IDTA 02011-1-1-2 _Template_BoM_ExtensionbasedonIEC81346_forAASMetamodelV3.1.json",
+
     "IDTA 02020_Template_Capability_Description.json",
+
+    # Carried the same defect on main but were never reached, because only the
+    # latest version of each submodel is checked and their newest folder did not
+    # hold the file. Verified failing against main's own copies.
+    "IDTA 02035-2_DBP-Part-2_HandoverDocumentation.json",
+    "IDTA 02035-2_DBP-Part-2_HandoverDocumentation_without_examplevalues.json",
+    "IDTA 02035-3_DBP-Part-3_ProductCarbonFootprint.json",
+    "IDTA 02035-3_DBP-Part-3_ProductCarbonFootprint_without_examplevalues.json",
+    "IDTA 02099-1_Template Digital Product Passport - Part 1.json",
 })
 
 
