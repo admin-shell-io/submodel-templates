@@ -20,6 +20,8 @@ is carried over unchanged.
 These are defect classes reported against the submodel templates. Each was
 applied to every JSON and AASX artifact in this folder.
 
+- **Misspelled display text** ([#236](https://github.com/admin-shell-io/submodel-templates/issues/236)). The `DocumentIds` English `displayName` read "Document identifyers"; corrected to "identifiers". Display text only, so no identifier or reference changed.
+
 - **Whitespace and stray prefixes inside identifier URIs** ([#208](https://github.com/admin-shell-io/submodel-templates/issues/208), [#210](https://github.com/admin-shell-io/submodel-templates/issues/210)). Identifier values such as `https://admin-shell.io/idta/X /1/0`, values carrying an `[IRI]` or `]` prefix, and identifiers with an escaped newline prevent exact identifier matching. Identifier values and the references pointing at them were corrected together so that they continue to resolve.
 
 - **AASd-120**: a SubmodelElement that is a direct child of a SubmodelElementList must not carry an `idShort`. The offending `idShort` values were removed.
