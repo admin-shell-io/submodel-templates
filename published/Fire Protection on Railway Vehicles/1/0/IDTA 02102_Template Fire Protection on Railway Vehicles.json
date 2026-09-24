@@ -1,0 +1,3525 @@
+{
+  "assetAdministrationShells": [
+    {
+      "idShort": "AASwithSMRailwayFireProtection",
+      "id": "https://admin-shell.io/idta/aas/RailwayFireProtection/1/0",
+      "assetInformation": {
+        "assetKind": "NotApplicable",
+        "globalAssetId": "https://admin-shell.io/idta/asset/RailwayFireProtection/1/0"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://admin-shell.io/idta/SubmodelTemplate/RailwayFireProtection/1/0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "RailwayFireProtection",
+      "displayName": [
+        {
+          "language": "en",
+          "text": "Railway Fire Protection Submodel"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains the fire protection information associated with the product or component."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0"
+      },
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/RailwayFireProtection/1/0",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/cds/RailwayFireProtection/1"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "ManufacturerInformation",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Manufacturer information"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "identifies the material or component and its manufacturer, including product designation and reference identifiers, ensuring unambiguous attribution of the fire protection data."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/ManufacturerInformation/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "ManufacturerName",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Manufacturer name"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "name of the organization legally responsible for manufacturing the product or component."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/ManufacturerName/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "Generic Manufacturing Corp."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "idShort": "ManufacturerProductDesignation",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Manufacturer product designation"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "designation assigned by the manufacturer to identify the product or component within its product portfolio."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/ManufacturerProductDesignation/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "Modular FireSafe Component X100"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "idShort": "OrderCodeOfManufacturer",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Order code of manufacturer"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "ordering identifier defined by the manufacturer to uniquely reference the product or component for purchasing purposes."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/OrderCodeOfManufacturer/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "ORD-XS-000123"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "ProductArticleNumberOfManufacturer",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Product article number of manufacturer"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "article number used by the manufacturer to uniquely identify the product or component in catalogs and information systems"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/ProductArticleNumberOfManufacturer/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "PAN-4587-AX9"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "FireProtectionCertificates",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Fire certificate inventory list"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "structures fire protection compliance by linking applicable requirements with their verification evidence, such as test reports and certificates in accordance with EN 45545‑2."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/FireProtectionCertificates/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "RequirementsSets",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Requirements sets"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "list of requirement sets defining applicable fire protection requirements"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/RequirementsSets/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "RequirementsSet",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Requirement set"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "collection of fire protection requirements applicable to a specific product, component, or material."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/RequirementsSet/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "HazardLevel",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Hazard level"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "hazard level indicating the achieved fire hazard classification of the product, component, or material according to the applicable fire protection standard.\n\nFollowing values can be assigned:\n\n\"Compliant: Hazard Level 1\"\n\n\"Compliant: Hazard Level 2\"\n\n\"Compliant: Hazard Level 3\"\n\n\"Approved Functional Necessity Report\"\n\n\"Missing Test Results\"\n\n\"Not Compliant\""
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "ConceptDescription",
+                            "value": "https://admin-shell.io/RailwayFireProtection/Submodel/1/HazardLevel"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        },
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "ValueQualifier",
+                          "type": "SMT/ExampleValue",
+                          "valueType": "xs:string",
+                          "value": "Compliant: Hazard Level 3"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "ReportReferences",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Report references"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "list of references to reports providing evidence for compliance with requirements"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/ReportReferences/1"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "ReportReference",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Report reference"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "reference linking a requirement to the corresponding verification report or certificate"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/ReportReference/1"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "OneToMany"
+                            },
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "ValueQualifier",
+                              "type": "SMT/ExampleValue",
+                              "valueType": "xs:string",
+                              "value": "file://report.pdf"
+                            }
+                          ],
+                          "modelType": "ReferenceElement"
+                        }
+                      ],
+                      "typeValueListElement": "ReferenceElement",
+                      "modelType": "SubmodelElementList"
+                    },
+                    {
+                      "idShort": "Requirement",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Requirement"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "individual fire protection requirement to be fulfilled according to the applicable standard"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/Requirement/1"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        },
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "ValueQualifier",
+                          "type": "SMT/ExampleValue",
+                          "valueType": "xs:string",
+                          "value": "R1 requirement for hazard level HL3 according to EN 45545-2"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "typeValueListElement": "SubmodelElementCollection",
+              "modelType": "SubmodelElementList"
+            },
+            {
+              "idShort": "Reports",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Reports"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "list of reports providing verification evidence for fire protection compliance."
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/Reports/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "Report",
+                  "displayName": [
+                    {
+                      "language": "en",
+                      "text": "Report"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "collection of a report providing verification evidence for fire protection compliance."
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/Report/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "OneToMany"
+                    }
+                  ],
+                  "value": [
+                    {
+                      "idShort": "ReportFile",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Report file"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "digital file containing the report document, such as a test report or certificate"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/ReportFile/1"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        },
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "ValueQualifier",
+                          "type": "SMT/ExampleValue",
+                          "valueType": "xs:string",
+                          "value": "/aasx/files/datasheet_en.pdf"
+                        }
+                      ],
+                      "contentType": "application/pdf",
+                      "modelType": "File"
+                    },
+                    {
+                      "idShort": "Tests",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Tests"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "list of tests performed to verify conformity with specified fire protection requirements."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/Tests/1"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "Test",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Test"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "collection of test-related information"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/Test/1"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "OneToMany"
+                            }
+                          ],
+                          "value": [
+                            {
+                              "idShort": "TestProcedure",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test procedure"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "description of the test method or procedure applied to verify fire protection requirements"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestProcedure/1"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                },
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "ValueQualifier",
+                                  "type": "SMT/ExampleValue",
+                                  "valueType": "xs:string",
+                                  "value": "cone calorimeter test according to EN ISO 5660-1"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "TestResult",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test result"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "outcome of the performed fire protection test, indicating conformity or non‑conformity"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestResult/1"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                },
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "ValueQualifier",
+                                  "type": "SMT/ExampleValue",
+                                  "valueType": "xs:string",
+                                  "value": "requirement R1 fulfilled for hazard level HL3"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "TestDate",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test date"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "date on which the fire protection test was performed"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestDate/1"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                },
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "ValueQualifier",
+                                  "type": "SMT/ExampleValue",
+                                  "valueType": "xs:date",
+                                  "value": "2026-07-22"
+                                }
+                              ],
+                              "valueType": "xs:date",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "TestComment",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test comment"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "additional remarks or observations related to the performed test"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestComment/1"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "ZeroToOne"
+                                },
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "ValueQualifier",
+                                  "type": "SMT/ExampleValue",
+                                  "valueType": "xs:string",
+                                  "value": "measured heat release rate and MARHE values within specified limits"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            },
+                            {
+                              "idShort": "TestReportNumber",
+                              "displayName": [
+                                {
+                                  "language": "en",
+                                  "text": "Test report number"
+                                }
+                              ],
+                              "description": [
+                                {
+                                  "language": "en",
+                                  "text": "unique identifier assigned to the fire protection test report by the issuing body"
+                                }
+                              ],
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/cds/TestReportNumber/1"
+                                  }
+                                ]
+                              },
+                              "qualifiers": [
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "TemplateQualifier",
+                                  "type": "SMT/Cardinality",
+                                  "valueType": "xs:string",
+                                  "value": "One"
+                                },
+                                {
+                                  "semanticId": {
+                                    "type": "ExternalReference",
+                                    "keys": [
+                                      {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                      }
+                                    ]
+                                  },
+                                  "kind": "ValueQualifier",
+                                  "type": "SMT/ExampleValue",
+                                  "valueType": "xs:string",
+                                  "value": "FR-TEST-2026-00123"
+                                }
+                              ],
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        }
+                      ],
+                      "typeValueListElement": "SubmodelElementCollection",
+                      "modelType": "SubmodelElementList"
+                    },
+                    {
+                      "idShort": "ReportComment",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Report comment"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "additional remarks or notes related to the report and its content"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/ReportComment/1"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "ZeroToOne"
+                        },
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "ValueQualifier",
+                          "type": "SMT/ExampleValue",
+                          "valueType": "xs:string",
+                          "value": "test results demonstrate compliance with EN 45545-2 requirements for the intended application"
+                        }
+                      ],
+                      "valueType": "xs:string",
+                      "modelType": "Property"
+                    },
+                    {
+                      "idShort": "LabInformation",
+                      "displayName": [
+                        {
+                          "language": "en",
+                          "text": "Lab information"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "en",
+                          "text": "collection of information describing the laboratory responsible for performing the tests"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/cds/LabInformation/1"
+                          }
+                        ]
+                      },
+                      "qualifiers": [
+                        {
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                              }
+                            ]
+                          },
+                          "kind": "TemplateQualifier",
+                          "type": "SMT/Cardinality",
+                          "valueType": "xs:string",
+                          "value": "One"
+                        }
+                      ],
+                      "value": [
+                        {
+                          "idShort": "LabName",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Lab name"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "name of the laboratory that carried out the fire protection test"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/LabName/1"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            },
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "ValueQualifier",
+                              "type": "SMT/ExampleValue",
+                              "valueType": "xs:string",
+                              "value": "Independent Fire Testing Laboratory Ltd."
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "LabAddress",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Lab address"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "reference to the address or contact information of the testing laboratory\n\n\ndrop‑in definition of the Contact Information 1.0 Submodel; all or a subset of the defined elements of the Contact Information 1.0 Submodel may be used within this SMC."
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/LabAddress/1"
+                              }
+                            ]
+                          },
+                          "supplementalSemanticIds": [
+                            {
+                              "type": "ExternalReference",
+                              "keys": [
+                                {
+                                  "type": "GlobalReference",
+                                  "value": "https://admin-shell.io/smt-dropin/smt-dropin-use/1/0"
+                                }
+                              ]
+                            }
+                          ],
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "One"
+                            }
+                          ],
+                          "modelType": "SubmodelElementCollection"
+                        },
+                        {
+                          "idShort": "LabAccreditation",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Lab accreditation"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "information about the laboratory’s accreditation according to relevant standards or schemes"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/LabAccreditation/1"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            },
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "ValueQualifier",
+                              "type": "SMT/ExampleValue",
+                              "valueType": "xs:string",
+                              "value": "accredited according to ISO/IEC 17025 for fire testing methods (EN ISO 5660-1, EN ISO 5659-2)"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "ReportAuthor",
+                          "displayName": [
+                            {
+                              "language": "en",
+                              "text": "Report author"
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "name of the person or organization responsible for creating or issuing the report"
+                            }
+                          ],
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/cds/ReportAuthor/1"
+                              }
+                            ]
+                          },
+                          "qualifiers": [
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "TemplateQualifier",
+                              "type": "SMT/Cardinality",
+                              "valueType": "xs:string",
+                              "value": "ZeroToOne"
+                            },
+                            {
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                                  }
+                                ]
+                              },
+                              "kind": "ValueQualifier",
+                              "type": "SMT/ExampleValue",
+                              "valueType": "xs:string",
+                              "value": "Fire Testing Laboratory Certification Body"
+                            }
+                          ],
+                          "valueType": "xs:string",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "typeValueListElement": "SubmodelElementCollection",
+              "modelType": "SubmodelElementList"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "Material",
+          "displayName": [
+            {
+              "language": "en",
+              "text": "Material information"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "describes the fire‑relevant characteristics of the materials used, providing the technical basis for fire behavior assessment and interpretation of test results."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/cds/Material/1"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                  }
+                ]
+              },
+              "kind": "TemplateQualifier",
+              "type": "SMT/Cardinality",
+              "valueType": "xs:string",
+              "value": "One"
+            }
+          ],
+          "value": [
+            {
+              "idShort": "MaterialName",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "name of the material used"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/MaterialName/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "flame-retardant polymer composite"
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "idShort": "MaterialManufacturer",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "name of the organization responsible for producing the"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/MaterialManufacturer/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "Advanced Materials Solutions Ltd."
+                }
+              ],
+              "modelType": "MultiLanguageProperty"
+            },
+            {
+              "idShort": "Masses",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/Masses/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "value": [
+                {
+                  "idShort": "TotalMassPerUnit",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "total mass of the material per defined unit, used for fire behavior assessment"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/TotalMassPerUnit/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "ValueQualifier",
+                      "type": "SMT/ExampleValue",
+                      "valueType": "xs:float",
+                      "value": "12.324"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "CombustibleMassPerUnit",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "portion of the material mass per unit that is combustible"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/CombustibleMassPerUnit/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "ValueQualifier",
+                      "type": "SMT/ExampleValue",
+                      "valueType": "xs:float",
+                      "value": "1.543"
+                    }
+                  ],
+                  "valueType": "xs:float",
+                  "modelType": "Property"
+                },
+                {
+                  "idShort": "Unit",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/Unit/1"
+                      }
+                    ]
+                  },
+                  "qualifiers": [
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "TemplateQualifier",
+                      "type": "SMT/Cardinality",
+                      "valueType": "xs:string",
+                      "value": "One"
+                    },
+                    {
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                          }
+                        ]
+                      },
+                      "kind": "ValueQualifier",
+                      "type": "SMT/ExampleValue",
+                      "valueType": "xs:string",
+                      "value": "kg/m²"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "modelType": "Property",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "unit of measure for the stated masses; should be one of kg, kg/m, kg/m² or kg/m³"
+                    }
+                  ]
+                }
+              ],
+              "modelType": "SubmodelElementCollection",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "mass-related characteristics of the material, used for fire behavior assessment"
+                }
+              ]
+            },
+            {
+              "idShort": "MaterialCharacteristics",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Material characteristics"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "normalized index (0–100) derived from fire performance parameters according to EN 45545‑2"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/MaterialCharacteristics/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "One"
+                }
+              ],
+              "valueType": "xs:int",
+              "min": "0",
+              "max": "100",
+              "modelType": "Range"
+            },
+            {
+              "idShort": "TestedMaterialCombinationDescription",
+              "displayName": [
+                {
+                  "language": "en",
+                  "text": "Tested material combination description"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "description of the material combination as tested in fire protection assessments"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/cds/TestedMaterialCombinationDescription/1"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "TemplateQualifier",
+                  "type": "SMT/Cardinality",
+                  "valueType": "xs:string",
+                  "value": "ZeroToOne"
+                },
+                {
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0"
+                      }
+                    ]
+                  },
+                  "kind": "ValueQualifier",
+                  "type": "SMT/ExampleValue",
+                  "valueType": "xs:string",
+                  "value": "multi-layer assembly consisting of polymer composite panel with surface coating and insulation substrate"
+                }
+              ],
+              "valueType": "xs:string",
+              "modelType": "Property"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": [
+    {
+      "idShort": "RailwayFireProtection",
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains the fire protection information associated with the product or component."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/RailwayFireProtection/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "RailwayFireProtection"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "Contains the fire protection information associated with the product or component."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "identifies the material or component and its manufacturer, including product designation and reference identifiers, ensuring unambiguous attribution of the fire protection data."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ManufacturerInformation/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerInformation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "identifies the material or component and its manufacturer, including product designation and reference identifiers, ensuring unambiguous attribution of the fire protection data."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerName",
+      "description": [
+        {
+          "language": "en",
+          "text": "name of the organization legally responsible for manufacturing the product or component."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ManufacturerName/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerName"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the organization legally responsible for manufacturing the product or component."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ManufacturerProductDesignation",
+      "description": [
+        {
+          "language": "en",
+          "text": "designation assigned by the manufacturer to identify the product or component within its product portfolio."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ManufacturerProductDesignation/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ManufacturerProductDesignation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "designation assigned by the manufacturer to identify the product or component within its product portfolio."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "OrderCodeOfManufacturer",
+      "description": [
+        {
+          "language": "en",
+          "text": "ordering identifier defined by the manufacturer to uniquely reference the product or component for purchasing purposes."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/OrderCodeOfManufacturer/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "OrderCodeOfManufacturer"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "ordering identifier defined by the manufacturer to uniquely reference the product or component for purchasing purposes."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ProductArticleNumberOfManufacturer",
+      "description": [
+        {
+          "language": "en",
+          "text": "article number used by the manufacturer to uniquely identify the product or component in catalogs and information systems"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ProductArticleNumberOfManufacturer/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Product article number of manufacturer"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "article number used by the manufacturer to uniquely identify the product or component in catalogs and information systems"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "FireProtectionCertificates",
+      "description": [
+        {
+          "language": "en",
+          "text": "structures fire protection compliance by linking applicable requirements with their verification evidence, such as test reports and certificates in accordance with EN 45545‑2."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/FireProtectionCertificates/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "FCIL"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "structures fire protection compliance by linking applicable requirements with their verification evidence, such as test reports and certificates in accordance with EN 45545‑2."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "HazardLevel",
+      "description": [
+        {
+          "language": "en",
+          "text": "hazard level indicating the achieved fire hazard classification of the product, component, or material according to the applicable fire protection standard.\n\n\nFollowing values can be assigned:\n\n\"Compliant: Hazard Level 1\"\n\n\"Compliant: Hazard Level 2\"\n\n\"Compliant: Hazard Level 3\"\n\n\"Approved Functional Necessity Report\"\n\n\"Missing Test Results\"\n\n\"Not Compliant\""
+        }
+      ],
+      "id": "https://admin-shell.io/RailwayFireProtection/Submodel/1/HazardLevel",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "HazardLevel"
+              }
+            ],
+            "valueList": {
+              "valueReferencePairs": [
+                {
+                  "value": "Compliant: Hazard Level 1",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/HazardLevelValue/HL1/1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Compliant: Hazard Level 2",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/HazardLevelValue/HL2/1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Compliant: Hazard Level 3",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/HazardLevelValue/HL3/1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Approved Functional Necessity Report",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/HazardLevelValue/AFNR/1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Missing Test Results",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/HazardLevelValue/MTR/1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "value": "Not Compliant",
+                  "valueId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/cds/HazardLevelValue/NC/1"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "modelType": "DataSpecificationIec61360",
+            "dataType": "STRING",
+            "definition": [
+              {
+                "language": "en",
+                "text": "hazard level indicating the achieved fire hazard classification of the product, component, or material according to the applicable fire protection standard.\n\nFollowing values can be assigned:\n\n\"Compliant: Hazard Level 1\"\n\n\"Compliant: Hazard Level 2\"\n\n\"Compliant: Hazard Level 3\"\n\n\"Approved Functional Necessity Report\"\n\n\"Missing Test Results\"\n\n\"Not Compliant\""
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RequirementsSets",
+      "description": [
+        {
+          "language": "en",
+          "text": "list of requirement sets defining applicable fire protection requirements"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/RequirementsSets/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "RequirementsSets"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "list of requirement sets defining applicable fire protection requirements"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "RequirementsSet",
+      "description": [
+        {
+          "language": "en",
+          "text": "collection of fire protection requirements applicable to a specific product, component, or material."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/RequirementsSet/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "RequirementsSet"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "collection of fire protection requirements applicable to a specific product, component, or material."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReportReferences",
+      "description": [
+        {
+          "language": "en",
+          "text": "list of references to reports providing evidence for compliance with requirements"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ReportReferences/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReportReferences"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "list of references to reports providing evidence for compliance with requirements"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReportReference",
+      "description": [
+        {
+          "language": "en",
+          "text": "reference linking a requirement to the corresponding verification report or certificate"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ReportReference/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReportReference"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "reference linking a requirement to the corresponding verification report or certificate"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Requirement",
+      "description": [
+        {
+          "language": "en",
+          "text": "individual fire protection requirement to be fulfilled according to the applicable standard"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Requirement/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Requirement"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "individual fire protection requirement to be fulfilled according to the applicable standard"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Reports",
+      "description": [
+        {
+          "language": "en",
+          "text": "list of reports providing verification evidence for fire protection compliance."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Reports/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Reports"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "list of reports providing verification evidence for fire protection compliance."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Report",
+      "description": [
+        {
+          "language": "en",
+          "text": "collection of a report providing verification evidence for fire protection compliance."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Report/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Report"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "collection of a report providing verification evidence for fire protection compliance."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReportFile",
+      "description": [
+        {
+          "language": "en",
+          "text": "digital file containing the report document, such as a test report or certificate"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ReportFile/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReportFile"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "digital file containing the report document, such as a test report or certificate"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Tests",
+      "description": [
+        {
+          "language": "en",
+          "text": "list of tests performed to verify conformity with specified fire protection requirements."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Tests/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Tests"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "list of tests performed to verify conformity with specified fire protection requirements."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Test",
+      "description": [
+        {
+          "language": "en",
+          "text": "collection of test-related information"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Test/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Test"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "collection of test-related information"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestProcedure",
+      "description": [
+        {
+          "language": "en",
+          "text": "description of the test method or procedure applied to verify fire protection requirements"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestProcedure/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestProcedure"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "description of the test method or procedure applied to verify fire protection requirements"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestResult",
+      "description": [
+        {
+          "language": "en",
+          "text": "outcome of the performed fire protection test, indicating conformity or non‑conformity"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestResult/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestResult"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "outcome of the performed fire protection test, indicating conformity or non‑conformity"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestDate",
+      "description": [
+        {
+          "language": "en",
+          "text": "date on which the fire protection test was performed"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestDate/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestDate"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "date on which the fire protection test was performed"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestComment",
+      "description": [
+        {
+          "language": "en",
+          "text": "additional remarks or observations related to the performed test"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestComment/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestComment"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "additional remarks or observations related to the performed test"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestReportNumber",
+      "description": [
+        {
+          "language": "en",
+          "text": "unique identifier assigned to the fire protection test report by the issuing body"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestReportNumber/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestReportNumber"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "unique identifier assigned to the fire protection test report by the issuing body"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReportComment",
+      "description": [
+        {
+          "language": "en",
+          "text": "additional remarks or notes related to the report and its content"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ReportComment/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReportComment"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "additional remarks or notes related to the report and its content"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LabName",
+      "description": [
+        {
+          "language": "en",
+          "text": "name of the laboratory that carried out the fire protection test"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/LabName/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LabName"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the laboratory that carried out the fire protection test"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LabAddress",
+      "description": [
+        {
+          "language": "en",
+          "text": "reference to the address or contact information of the testing laboratory\n\n\ndrop‑in definition of the Contact Information 1.0 Submodel; all or a subset of the defined elements of the Contact Information 1.0 Submodel may be used within this SMC."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/LabAddress/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LabAddress"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "reference to the address or contact information of the testing laboratory\n\n\ndrop‑in definition of the Contact Information 1.0 Submodel; all or a subset of the defined elements of the Contact Information 1.0 Submodel may be used within this SMC."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LabInformation",
+      "description": [
+        {
+          "language": "en",
+          "text": "collection of information describing the laboratory responsible for performing the tests"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/LabInformation/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LabInformation"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "collection of information describing the laboratory responsible for performing the tests"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "LabAccreditation",
+      "description": [
+        {
+          "language": "en",
+          "text": "information about the laboratory’s accreditation according to relevant standards or schemes"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/LabAccreditation/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "LabAccreditation"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "information about the laboratory’s accreditation according to relevant standards or schemes"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "ReportAuthor",
+      "description": [
+        {
+          "language": "en",
+          "text": "name of the person or organization responsible for creating or issuing the report"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/ReportAuthor/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "ReportAuthor"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the person or organization responsible for creating or issuing the report"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Material",
+      "description": [
+        {
+          "language": "en",
+          "text": "describes the fire‑relevant characteristics of the materials used, providing the technical basis for fire behavior assessment and interpretation of test results."
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Material/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Material"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "describes the fire‑relevant characteristics of the materials used, providing the technical basis for fire behavior assessment and interpretation of test results."
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MaterialName",
+      "description": [
+        {
+          "language": "en",
+          "text": "name of the material used "
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/MaterialName/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MaterialName"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the material used"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MaterialManufacturer",
+      "description": [
+        {
+          "language": "en",
+          "text": "name of the organization responsible for producing the material"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/MaterialManufacturer/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MaterialManufacturer"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "name of the organization responsible for producing the"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "MaterialCharacteristics",
+      "description": [
+        {
+          "language": "en",
+          "text": "normalized index (0–100) derived from fire performance parameters according to EN 45545‑2"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/MaterialCharacteristics/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "MaterialCharacteristics"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "normalized index (0–100) derived from fire performance parameters according to EN 45545‑2"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TestedMaterialCombinationDescription",
+      "description": [
+        {
+          "language": "en",
+          "text": "description of the material combination as tested in fire protection assessments"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/TestedMaterialCombinationDescription/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TestedMaterialCombinationDescription"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "description of the material combination as tested in fire protection assessments"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Masses",
+      "id": "https://admin-shell.io/idta/cds/Masses/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Masses"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "mass-related characteristics of the material, used for fire behavior assessment"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "TotalMassPerUnit",
+      "id": "https://admin-shell.io/idta/cds/TotalMassPerUnit/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "TotalMassPerUnit"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "total mass of the material per defined unit, used for fire behavior assessment"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "CombustibleMassPerUnit",
+      "id": "https://admin-shell.io/idta/cds/CombustibleMassPerUnit/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "CombustibleMassPerUnit"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360",
+            "definition": [
+              {
+                "language": "en",
+                "text": "portion of the material mass per unit that is combustible"
+              }
+            ]
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    },
+    {
+      "idShort": "Unit",
+      "description": [
+        {
+          "language": "en",
+          "text": "Unit should be one of kg, kg/m, kg/m² or kg/m³"
+        }
+      ],
+      "id": "https://admin-shell.io/idta/cds/Unit/1",
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+              }
+            ]
+          },
+          "dataSpecificationContent": {
+            "preferredName": [
+              {
+                "language": "en",
+                "text": "Unit"
+              }
+            ],
+            "definition": [
+              {
+                "language": "en",
+                "text": "unit of measure for the stated masses; should be one of kg, kg/m, kg/m² or kg/m³"
+              }
+            ],
+            "modelType": "DataSpecificationIec61360"
+          }
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}

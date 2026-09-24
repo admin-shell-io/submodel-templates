@@ -1,7 +1,9 @@
 #! /usr/bin/env python3
 
+import json
 import os
 import pathlib
+import re
 import sys
 from typing import Iterator, Tuple
 
@@ -9,6 +11,8 @@ try:
     from aas_test_engines_exclusive.v3_1 import file as aas_file
 except ImportError:
     from aas_test_engines import file as aas_file
+
+from aas_test_engines.result import Level
 
 AAS_VERSION = os.environ.get("AAS_VERSION", "3.1")
 
@@ -20,6 +24,57 @@ _SKIP = frozenset({
     "IDTA 02011-1-1-1 _Template_BoM_ExtensionbasedonIEC81346_forAASMetamodelV3.1.json",
     "IDTA 02020_Template_Capability_Description.json",
 })
+
+
+# The submodel-template checks in aas_test_engines parse a submodel as if it were
+# an *instance*: every mandatory element must carry a concrete value. A submodel
+# template legitimately leaves those values empty -- defining that an instance has
+# to supply e.g. ManufacturerName is exactly what makes it a template. The engine
+# never looks at Submodel/kind before doing so, which turns each unset mandatory
+# element into a spurious ERROR.
+#
+# We therefore demote only that specific diagnostic, and only for files that really
+# do declare kind=Template. Every other finding (wrong modelType, bad valueType,
+# failed constraint, ...) keeps its original severity.
+_NO_VALUE_RE = re.compile(r"^Cannot convert to [a-z ]+: no value @ ")
+
+
+def declares_template_kind(path: pathlib.Path) -> bool:
+    """True if every submodel in the file is flagged as kind=Template."""
+    try:
+        with open(path, "rb") as f:
+            data = json.load(f)
+    except Exception:
+        return False
+    submodels = data.get("submodels") or []
+    if not submodels:
+        return False
+    return all(sm.get("kind") == "Template" for sm in submodels)
+
+
+def relax_template_no_value(result) -> int:
+    """Demote 'no value' ERRORs to WARNINGs, then recompute levels bottom-up.
+
+    AasTestResult caches its level at append() time (parent |= child), so the
+    parents must be recomputed once the leaves change.
+    """
+    demoted = 0
+
+    def walk(node):
+        nonlocal demoted
+        if not node.sub_results:
+            if node.level == Level.ERROR and _NO_VALUE_RE.match(node.message):
+                node.level = Level.WARNING
+                demoted += 1
+            return node.level
+        level = Level.INFO
+        for sub in node.sub_results:
+            level = level | walk(sub)
+        node.level = level
+        return level
+
+    walk(result)
+    return demoted
 
 
 def print_red(msg: str):
@@ -73,8 +128,14 @@ def check_template(path: pathlib.Path, root: pathlib.Path) -> bool:
         try:
             with open(i, "rb") as f:
                 result = aas_file.check_json_file(f, version=AAS_VERSION)
+            demoted = 0
+            if not result.ok() and declares_template_kind(i):
+                demoted = relax_template_no_value(result)
             if result.ok():
-                print_green(f"- {i.relative_to(root)} is ok")
+                note = ""
+                if demoted:
+                    note = f" ({demoted} unset mandatory element(s) allowed: kind=Template)"
+                print_green(f"- {i.relative_to(root)} is ok{note}")
             else:
                 print_red(f"- {i.relative_to(root)} is invalid")
                 for line in result.to_lines():
