@@ -28,13 +28,6 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
   SubmodelElementList (4 in JSON, 2 in the AASX payload). These violations were
   present in versions 1.0 and 1.0.1.
 
-### Verification
-
-- Both JSON artifacts deserialize and pass `aas-core3` constraint verification.
-  Violations reduced from 3 to 1 per artifact.
-- The AASX package opens as a valid OPC package with a well-formed XML payload.
-  All non-payload package entries are byte-identical to version 1.0.1.
-
 ### Known remaining issues
 
 - One constraint violation remains per JSON artifact: "The value must represent a

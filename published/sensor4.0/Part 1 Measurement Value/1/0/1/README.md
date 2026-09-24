@@ -25,12 +25,6 @@ specification PDF is carried over from version 1.0 unchanged.
   values can be split reliably by a consumer. All four values are preserved in
   their original order.
 
-### Verification
-
-- The JSON artifact deserializes and was re-verified after the change.
-- The AASX package opens as a valid OPC package with a well-formed XML payload.
-  All non-payload package entries are byte-identical to version 1.0.
-
 ### Known remaining issues
 
 - 1 constraint violation remains, a file-URI form (`/aasx/...` rather than an

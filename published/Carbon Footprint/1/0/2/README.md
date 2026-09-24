@@ -31,15 +31,6 @@ applied to every JSON and AASX artifact in this folder.
 
 - **Missing `contentType` on a File element**, which is required by the metamodel and caused the template to fail deserialization entirely. Set to `application/octet-stream`, the neutral default for a template placeholder with no value.
 
-### Verification
-
-- Every JSON artifact deserializes under `aas-core3` and was re-verified after
-  the changes.
-- Every AASX package opens as a valid OPC package and its XML payload is
-  well-formed. All non-payload package entries (relationships, content types,
-  embedded files) are byte-identical to the previous release.
-- Constraint violations in this folder: **2**.
-
 ### Known remaining issues
 
 These were not corrected here, because the correct value is not determinable from the template alone.

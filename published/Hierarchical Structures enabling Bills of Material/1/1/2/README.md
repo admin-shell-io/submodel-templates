@@ -39,10 +39,3 @@ specification PDF is carried over unchanged.
   The issue also mentions a deprecated spelling. `ArcheType` is used consistently
   (19 occurrences across the repository) and matches the specification's own
   wording, so it was left unchanged.
-
-### Verification
-
-- Both JSON artifacts deserialize and pass `aas-core3` constraint verification
-  with **0 violations**.
-- Both AASX packages open as valid OPC packages with well-formed XML payloads.
-  All non-payload package entries are byte-identical to version 1.1.1.

@@ -38,13 +38,6 @@ The specification PDF is carried over from version 1.0 unchanged.
   dropping an entry (which would lose the translation), the mislabeled entry was
   retagged `en`.
 
-### Verification
-
-- The JSON artifact deserializes and passes `aas-core3` constraint verification
-  with 0 violations (7 before this release).
-- The AASX package opens as a valid OPC package with a well-formed XML payload.
-  All non-payload package entries are byte-identical to version 1.0.
-
 ### Issues reviewed but not changed
 
 - [#279](https://github.com/admin-shell-io/submodel-templates/issues/279) -

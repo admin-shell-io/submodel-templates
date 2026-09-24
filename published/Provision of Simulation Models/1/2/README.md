@@ -18,9 +18,3 @@ unchanged. The specification PDF, where present, is carried over unchanged.
   the concept it is based on must carry `kind: TemplateQualifier`. Corrected in
   every JSON and AASX artifact in this folder (75 occurrences per JSON
   artifact).
-
-### Verification
-
-- Every JSON artifact deserializes and was re-verified with `aas-core3`.
-- Every AASX package opens as a valid OPC package with a well-formed XML
-  payload; all non-payload package entries are byte-identical to version 1.1.

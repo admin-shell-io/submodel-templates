@@ -41,11 +41,3 @@ specification PDF is carried over from version 1.0 unchanged.
   from identifier and reference values so exact identifier matching succeeds.
 - AASd-120: idShort removed from SubmodelElements that are direct children of a
   SubmodelElementList.
-
-### Verification
-
-- Both JSON artifacts deserialize and pass `aas-core3` constraint verification
-  with **0 violations** (18 before this release).
-- Both AASX packages open as valid OPC packages with well-formed XML payloads.
-  All non-payload package entries are byte-identical to version 1.0.
-- `MainAccount` is preserved in every artifact.

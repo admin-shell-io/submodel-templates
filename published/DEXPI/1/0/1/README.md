@@ -39,12 +39,6 @@ specification PDF is carried over from version 1.0 unchanged.
   Note: the `http://sandbox.dexpi.org/...` identifiers are external DEXPI
   identifiers and are deliberately left as they are.
 
-### Verification
-
-- Constraint violations in the JSON artifact fell from **55 to 2**.
-- The AASX package opens as a valid OPC package with a well-formed XML payload.
-  All non-payload package entries are byte-identical to version 1.0.
-
 ### Known remaining issues
 
 - [#281](https://github.com/admin-shell-io/submodel-templates/issues/281) -
