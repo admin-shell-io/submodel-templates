@@ -2149,7 +2149,7 @@
                                   ],
                                   "value": [
                                     {
-                                      "idShort": "XCoordinate",
+                                      "idShort": "X",
                                       "semanticId": {
                                         "type": "ExternalReference",
                                         "keys": [
@@ -2171,7 +2171,7 @@
                                       "modelType": "Property"
                                     },
                                     {
-                                      "idShort": "YCoordinate",
+                                      "idShort": "Y",
                                       "semanticId": {
                                         "type": "ExternalReference",
                                         "keys": [
@@ -2193,7 +2193,7 @@
                                       "modelType": "Property"
                                     },
                                     {
-                                      "idShort": "ZCoordinate",
+                                      "idShort": "Z",
                                       "semanticId": {
                                         "type": "ExternalReference",
                                         "keys": [
@@ -2259,7 +2259,7 @@
                                       ],
                                       "value": [
                                         {
-                                          "idShort": "XCoordinate",
+                                          "idShort": "X",
                                           "semanticId": {
                                             "type": "ExternalReference",
                                             "keys": [
@@ -2281,7 +2281,7 @@
                                           "modelType": "Property"
                                         },
                                         {
-                                          "idShort": "YCoordinate",
+                                          "idShort": "Y",
                                           "semanticId": {
                                             "type": "ExternalReference",
                                             "keys": [
@@ -2303,7 +2303,7 @@
                                           "modelType": "Property"
                                         },
                                         {
-                                          "idShort": "ZCoordinate",
+                                          "idShort": "Z",
                                           "semanticId": {
                                             "type": "ExternalReference",
                                             "keys": [
@@ -2354,7 +2354,7 @@
                               ],
                               "value": [
                                 {
-                                  "idShort": "XCoordinate",
+                                  "idShort": "X",
                                   "semanticId": {
                                     "type": "ExternalReference",
                                     "keys": [
@@ -2376,7 +2376,7 @@
                                   "modelType": "Property"
                                 },
                                 {
-                                  "idShort": "YCoordinate",
+                                  "idShort": "Y",
                                   "semanticId": {
                                     "type": "ExternalReference",
                                     "keys": [
@@ -2398,7 +2398,7 @@
                                   "modelType": "Property"
                                 },
                                 {
-                                  "idShort": "ZCoordinate",
+                                  "idShort": "Z",
                                   "semanticId": {
                                     "type": "ExternalReference",
                                     "keys": [
@@ -2490,7 +2490,7 @@
                               ],
                               "value": [
                                 {
-                                  "idShort": "XCoordinate",
+                                  "idShort": "X",
                                   "semanticId": {
                                     "type": "ExternalReference",
                                     "keys": [
@@ -2512,7 +2512,7 @@
                                   "modelType": "Property"
                                 },
                                 {
-                                  "idShort": "YCoordinate",
+                                  "idShort": "Y",
                                   "semanticId": {
                                     "type": "ExternalReference",
                                     "keys": [
@@ -2534,7 +2534,7 @@
                                   "modelType": "Property"
                                 },
                                 {
-                                  "idShort": "ZCoordinate",
+                                  "idShort": "Z",
                                   "semanticId": {
                                     "type": "ExternalReference",
                                     "keys": [
@@ -2600,7 +2600,7 @@
                                   ],
                                   "value": [
                                     {
-                                      "idShort": "XCoordinate",
+                                      "idShort": "X",
                                       "semanticId": {
                                         "type": "ExternalReference",
                                         "keys": [
@@ -2622,7 +2622,7 @@
                                       "modelType": "Property"
                                     },
                                     {
-                                      "idShort": "YCoordinate",
+                                      "idShort": "Y",
                                       "semanticId": {
                                         "type": "ExternalReference",
                                         "keys": [
@@ -2644,7 +2644,7 @@
                                       "modelType": "Property"
                                     },
                                     {
-                                      "idShort": "ZCoordinate",
+                                      "idShort": "Z",
                                       "semanticId": {
                                         "type": "ExternalReference",
                                         "keys": [
@@ -2731,7 +2731,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "ZCoordinate",
+      "idShort": "Z",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Z/1/0",
       "embeddedDataSpecifications": [
         {
@@ -5773,7 +5773,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "XCoordinate",
+      "idShort": "X",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/X/1/0",
       "embeddedDataSpecifications": [
         {
@@ -5812,7 +5812,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "YCoordinate",
+      "idShort": "Y",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Y/1/0",
       "embeddedDataSpecifications": [
         {
@@ -5851,7 +5851,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "ZCoordinate",
+      "idShort": "Z",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Z/1/0",
       "embeddedDataSpecifications": [
         {
@@ -5929,7 +5929,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "XCoordinate",
+      "idShort": "X",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/X/1/0",
       "embeddedDataSpecifications": [
         {
@@ -5968,7 +5968,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "YCoordinate",
+      "idShort": "Y",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Y/1/0",
       "embeddedDataSpecifications": [
         {
@@ -6007,7 +6007,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "ZCoordinate",
+      "idShort": "Z",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Z/1/0",
       "embeddedDataSpecifications": [
         {
@@ -6085,7 +6085,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "XCoordinate",
+      "idShort": "X",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/X/1/0",
       "embeddedDataSpecifications": [
         {
@@ -6124,7 +6124,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "YCoordinate",
+      "idShort": "Y",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Y/1/0",
       "embeddedDataSpecifications": [
         {
@@ -6163,7 +6163,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "ZCoordinate",
+      "idShort": "Z",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Z/1/0",
       "embeddedDataSpecifications": [
         {
@@ -6280,7 +6280,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "XCoordinate",
+      "idShort": "X",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/X/1/0",
       "embeddedDataSpecifications": [
         {
@@ -6319,7 +6319,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "YCoordinate",
+      "idShort": "Y",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Y/1/0",
       "embeddedDataSpecifications": [
         {
@@ -6358,7 +6358,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "ZCoordinate",
+      "idShort": "Z",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Z/1/0",
       "embeddedDataSpecifications": [
         {
@@ -6436,7 +6436,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "XCoordinate",
+      "idShort": "X",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/X/1/0",
       "embeddedDataSpecifications": [
         {
@@ -6475,7 +6475,7 @@
       "modelType": "ConceptDescription"
     },
     {
-      "idShort": "YCoordinate",
+      "idShort": "Y",
       "id": "https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Y/1/0",
       "embeddedDataSpecifications": [
         {

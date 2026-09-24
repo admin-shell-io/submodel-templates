@@ -12,28 +12,26 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
 
 ### Bug fixes applied in 1.0.2
 
+- Qualifier kind corrected: `ConceptQualifier` -> `TemplateQualifier`
+  (117 occurrences per JSON artifact). A qualifier that constrains the template
+  itself, rather than the concept, must carry kind `TemplateQualifier`.
+
+### Deliberately not fixed in this release
+
 - [#272](https://github.com/admin-shell-io/submodel-templates/issues/272) -
   [Provision of 3D Models] one-character X/Y/Z idShorts.
   The idShort values `X`, `Y` and `Z` violate AAS constraint AASd-002, which
-  requires an idShort of at least two characters. They were renamed to
-  `XCoordinate`, `YCoordinate` and `ZCoordinate` (120 occurrences across the four
-  artifacts).
-
-  The renamed elements are bound to their ConceptDescriptions by semanticId URI
-  (for example `https://admin-shell.io/idta/prop/x/1/0`), not by idShort, so the
-  rename does not affect semantic resolution. The `displayName` entries
-  ("X-coordinate" / "X-Koordinate") are unchanged, so the elements still present
-  the same labels to users.
-
-  Note for implementers: this is a breaking change for any consumer that
-  addresses these elements by idShort path.
+  requires an idShort of at least two characters. Renaming them would be a
+  breaking change for any consumer that addresses these elements by idShort
+  path, which is out of scope for a patch release. The issue is left open for
+  the working group to schedule into a minor version.
 
 ### Verification
 
 - Both JSON artifacts deserialize and pass `aas-core3` constraint verification.
 - Both AASX packages open as valid OPC packages with well-formed XML payloads.
   All non-payload package entries are byte-identical to version 1.0.1.
-- No one-character idShort remains in any artifact (120 before, 0 after).
+- The X/Y/Z idShorts are unchanged from version 1.0.1.
 
 ### Known remaining issues
 
