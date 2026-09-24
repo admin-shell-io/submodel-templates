@@ -13,14 +13,3 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
 ### Issues fixed in this release
 
 - [#305](https://github.com/admin-shell-io/submodel-templates/issues/305)
-
-### Issues reviewed but not changed
-
-- [#306](https://github.com/admin-shell-io/submodel-templates/issues/306) -
-  Software Nameplate: ConfigurationType value-type mismatch.
-  The issue reports that the JSON template types `ConfigurationType` as
-  `xs:integer` while the specification defines it as a string. In the artifacts of
-  versions 1.0, 1.0.1 and 1.0.2 this element is already typed `xs:string`, so no
-  change was applied. This issue appears to be resolved, or to refer to a
-  different artifact; it should be confirmed against the specification PDF before
-  being closed.

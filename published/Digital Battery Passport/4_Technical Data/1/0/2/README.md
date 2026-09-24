@@ -13,10 +13,3 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
 ### Issues fixed in this release
 
 - [#263](https://github.com/admin-shell-io/submodel-templates/issues/263)
-
-### Known remaining issues
-
-- One constraint violation remains per JSON artifact: "The value must represent a
-  valid file URI scheme according to RFC 8089." This was present in versions 1.0
-  and 1.0.1 and is not addressed here, as correcting it requires deciding the
-  intended file reference value.

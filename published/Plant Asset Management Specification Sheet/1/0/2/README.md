@@ -16,9 +16,3 @@ is carried over unchanged.
 - [#207](https://github.com/admin-shell-io/submodel-templates/issues/207)
 - [#208](https://github.com/admin-shell-io/submodel-templates/issues/208)
 - [#210](https://github.com/admin-shell-io/submodel-templates/issues/210)
-
-### Known remaining issues
-
-These were not corrected here, because the correct value is not determinable from the template alone.
-
-- **AASd-021** (1): Qualifiers with the same type appear more than once on one element. Which qualifier is authoritative is a content decision.
