@@ -10,23 +10,9 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
 - JSON: IDTA 02007-1-0-2_Template_Software Nameplate.json
 - JSON: IDTA 02007-1-0-2_Template_Software Nameplate_forAASMetamodelV3.1.json
 
-### Bug fixes applied in 1.0.2
+### Issues fixed in this release
 
-- [#305](https://github.com/admin-shell-io/submodel-templates/issues/305) -
-  Software Nameplate: wrong semanticId for ConfigurationURI.
-  The Property with idShort `ConfigurationURI` carried the semantic identifier of
-  `ConfigurationPath` (`.../SoftwareNameplateInstance/ConfigurationPath`). It now
-  references `.../SoftwareNameplateInstance/ConfigurationURI`, which already
-  existed as a ConceptDescription in the template but was not referenced by any
-  element. The separate `ConfigurationPath` Property, which legitimately uses the
-  `ConfigurationPath` identifier, is unchanged.
-
-### Additional corrections
-
-- Whitespace embedded in semantic identifier URIs (for example
-  `https://admin-shell.io/zvei/nameplate/1/0/ ContactInformations/...`) was removed
-  from identifier and reference values so that exact identifier matching succeeds.
-  4 occurrences across the artifacts.
+- [#305](https://github.com/admin-shell-io/submodel-templates/issues/305)
 
 ### Issues reviewed but not changed
 

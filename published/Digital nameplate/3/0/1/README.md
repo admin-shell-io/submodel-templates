@@ -8,14 +8,12 @@ This version 3.0.1 is a bug fix release that addresses GitHub issues identified 
 
 ## Changes in Version 3.0.1
 
-### Bug Fixes
+### Issues fixed in this release
 
-This version addresses the following GitHub issues:
-
-- [#155](https://github.com/admin-shell-io/submodel-templates/issues/155) - DigitalNameplate 3.0: Invalid TypeValueListElement for Markings
-- [#131](https://github.com/admin-shell-io/submodel-templates/issues/131) - SMT: DigitalNameplate --> idShort empty
-- [#123](https://github.com/admin-shell-io/submodel-templates/issues/123) - Potentially erroneous ECLASS IRDI for "FirmwareVersion"
-- [#116](https://github.com/admin-shell-io/submodel-templates/issues/116) - faulty formatted administration.templateId in digital nameplate
+- [#116](https://github.com/admin-shell-io/submodel-templates/issues/116)
+- [#123](https://github.com/admin-shell-io/submodel-templates/issues/123)
+- [#131](https://github.com/admin-shell-io/submodel-templates/issues/131)
+- [#155](https://github.com/admin-shell-io/submodel-templates/issues/155)
 
 ## Status
 
