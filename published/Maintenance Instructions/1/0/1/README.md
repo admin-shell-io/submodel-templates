@@ -12,12 +12,3 @@ The specification PDF is carried over from version 1.0 unchanged.
 ### Issues fixed in this release
 
 - [#245](https://github.com/admin-shell-io/submodel-templates/issues/245)
-
-### Issues reviewed but not changed
-
-- [#279](https://github.com/admin-shell-io/submodel-templates/issues/279) -
-  Maintenance Instructions: typos in cardinalities. The reported invalid
-  multiplicity literals (`ZerotoMany`, `ZerotToOne`) are not present in version
-  1.0; only valid `ZeroToOne`, `ZeroToMany` and `One` values occur, and the
-  `SparePart` spelling is consistent throughout. This issue appears to have been
-  fixed already and can be confirmed and closed.

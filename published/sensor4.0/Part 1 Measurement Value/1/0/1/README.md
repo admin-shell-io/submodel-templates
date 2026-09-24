@@ -13,9 +13,3 @@ specification PDF is carried over from version 1.0 unchanged.
 ### Issues fixed in this release
 
 - [#303](https://github.com/admin-shell-io/submodel-templates/issues/303)
-
-### Known remaining issues
-
-- 1 constraint violation remains, a file-URI form (`/aasx/...` rather than an
-  RFC 8089 `file:` URI). This is the convention used throughout this repository
-  and predates this release.

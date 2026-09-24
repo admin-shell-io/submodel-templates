@@ -10,19 +10,6 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
 - JSON: IDTA 02026-1-0-2_Template_ProvisionOf3DModels.json
 - JSON: IDTA 02026-1-0-2_Template_ProvisionOf3DModels_forAASMetamodelV3.1.json
 
-### Deliberately not fixed in this release
+### Issues fixed in this release
 
-- [#272](https://github.com/admin-shell-io/submodel-templates/issues/272) -
-  [Provision of 3D Models] one-character X/Y/Z idShorts.
-  The idShort values `X`, `Y` and `Z` violate AAS constraint AASd-002, which
-  requires an idShort of at least two characters. Renaming them would be a
-  breaking change for any consumer that addresses these elements by idShort
-  path, which is out of scope for a patch release. The issue is left open for
-  the working group to schedule into a minor version.
-
-### Known remaining issues
-
-- One constraint violation remains in each JSON artifact: "The value must
-  represent a valid file URI scheme according to RFC 8089." This is present
-  identically in versions 1.0 and 1.0.1 and is not addressed by this release, as
-  correcting it requires deciding the intended file reference value.
+- [#159](https://github.com/admin-shell-io/submodel-templates/issues/159)
