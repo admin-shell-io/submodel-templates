@@ -1,0 +1,47 @@
+# On every push to a bug-fix branch: rebuild the AASX packages of the changed
+# release folders from their template JSON, commit them back, then run the
+# release checks. The maintainer only ever edits the JSON.
+#
+# A push made with the default GITHUB_TOKEN does not start new workflow runs, so
+# the rebuilt commit gets no checks of its own. If branch protection requires
+# status checks, add a BOT_TOKEN secret (a GitHub App or fine-grained token with
+# contents: write) so the rebuilt commit is checked too.
+name: Bug fix - build
+
+on:
+  push:
+    branches: ['bugfix/**']
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r tools/requirements.txt
+
+      - name: Rebuild AASX from JSON
+        run: python tools/build_aasx.py --changed-since origin/main
+
+      - name: Commit rebuilt packages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add published
+          if ! git diff --cached --quiet; then
+            git commit -m "Rebuild AASX from template JSON"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
+
+      - name: Release checks
+        run: python tools/check_release.py --base origin/main

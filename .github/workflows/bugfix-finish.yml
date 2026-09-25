@@ -1,0 +1,28 @@
+# After a bug-fix PR is merged: tell each fixed issue which release fixed it.
+# (The issues themselves are closed by GitHub through the "Fixes #n" lines.)
+name: Bug fix - finish
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  issues: write
+
+jobs:
+  finish:
+    if: github.event.pull_request.merged && startsWith(github.event.pull_request.head.ref, 'bugfix/')
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      BODY: ${{ github.event.pull_request.body }}
+      TITLE: ${{ github.event.pull_request.title }}
+      PR_URL: ${{ github.event.pull_request.html_url }}
+    steps:
+      - name: Comment on fixed issues
+        run: |
+          release="${TITLE#Bug fix: }"
+          for n in $(grep -oE 'Fixes #[0-9]+' <<<"$BODY" | grep -oE '[0-9]+' | sort -u); do
+            gh issue comment "$n" --body "Fixed in $release ($PR_URL)."
+          done

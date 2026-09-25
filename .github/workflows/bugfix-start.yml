@@ -1,0 +1,115 @@
+# Label an issue with `bugfix` + an SMT label (e.g. "IDTA 02006") + a version
+# label (e.g. "v3.0") and this workflow opens (or extends) the bug-fix PR:
+#   - creates published/<SMT>/<major>/<minor>/<next patch>/ with the JSON, the
+#     AASX packages built from it and a README listing the issue, or, if a
+#     bug-fix PR for that SMT version is already open, adds the issue to it;
+#   - opens a draft PR "Fixes #<issue>" and links it on the issue.
+# The actual correction is then made in the JSON on that PR.
+#
+# Repository setting needed: Settings > Actions > General > "Allow GitHub
+# Actions to create and approve pull requests".
+name: Bug fix - start
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: bugfix-start        # one at a time: two issues for one SMT share a branch
+  cancel-in-progress: false
+
+jobs:
+  start:
+    if: github.event.issue.pull_request == null
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r tools/requirements.txt
+
+      - name: Read labels
+        id: labels
+        run: |
+          echo "list=$(jq -r '[.issue.labels[].name] | join(",")' "$GITHUB_EVENT_PATH")" >> "$GITHUB_OUTPUT"
+
+      - name: Resolve SMT and version
+        id: resolve
+        env:
+          LABELS: ${{ steps.labels.outputs.list }}
+        run: |
+          set +e
+          python tools/new_bugfix.py --labels "$LABELS" --issue "$ISSUE" --resolve-only
+          rc=$?
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+          [ $rc -eq 0 ] || [ $rc -eq 3 ]   # 3 = labels not complete yet: stop quietly
+
+      - name: Check out the bug-fix branch
+        if: steps.resolve.outputs.rc == '0'
+        env:
+          BRANCH: ${{ steps.resolve.outputs.branch }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null; then
+            git checkout -B "$BRANCH" "origin/$BRANCH"
+          else
+            git checkout -B "$BRANCH" origin/main
+          fi
+
+      - name: Create or extend the bug-fix folder
+        id: bugfix
+        if: steps.resolve.outputs.rc == '0'
+        env:
+          LABELS: ${{ steps.labels.outputs.list }}
+        run: python tools/new_bugfix.py --labels "$LABELS" --issue "$ISSUE" --base-ref origin/main
+
+      - name: Commit and push
+        if: steps.bugfix.outputs.changed == 'true'
+        env:
+          BRANCH: ${{ steps.bugfix.outputs.branch }}
+          RELEASE: ${{ steps.bugfix.outputs.release }}
+        run: |
+          git add published
+          git diff --cached --quiet || git commit -m "Start bug fix $RELEASE for #$ISSUE"
+          git push origin "HEAD:$BRANCH"
+
+      - name: Open or update the pull request
+        if: steps.bugfix.outputs.changed == 'true'
+        env:
+          BRANCH: ${{ steps.bugfix.outputs.branch }}
+          RELEASE: ${{ steps.bugfix.outputs.release }}
+          SMT: ${{ steps.bugfix.outputs.smt }}
+          FOLDER: ${{ steps.bugfix.outputs.folder }}
+        run: |
+          pr=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          if [ -z "$pr" ]; then
+            body=$(printf 'Bug-fix release **%s** of %s.\n\nFolder: `%s`\n\nEdit the template JSON in that folder. The AASX packages are rebuilt from it automatically on every push.\n\nFixes #%s\n' "$RELEASE" "$SMT" "$FOLDER" "$ISSUE")
+            url=$(gh pr create --draft --base main --head "$BRANCH" --title "Bug fix: $SMT $RELEASE" --body "$body")
+          else
+            body=$(gh pr view "$pr" --json body --jq .body)
+            if ! grep -q "Fixes #$ISSUE\b" <<<"$body"; then
+              gh pr edit "$pr" --body "$(printf '%s\nFixes #%s\n' "$body" "$ISSUE")"
+            fi
+            url=$(gh pr view "$pr" --json url --jq .url)
+          fi
+          gh issue comment "$ISSUE" --body "Bug-fix PR for $SMT $RELEASE: $url"
+
+      - name: Report a label problem on the issue
+        if: failure() && steps.resolve.outputs.rc == '2'
+        run: |
+          gh issue comment "$ISSUE" --body "The bug-fix automation could not start. See the labels on this issue: it needs \`bugfix\`, one SMT label (e.g. \`IDTA 02006\`) and one version label (e.g. \`v3.0\`) matching a published folder. Log: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

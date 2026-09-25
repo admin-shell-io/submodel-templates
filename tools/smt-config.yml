@@ -1,0 +1,81 @@
+# Settings for the bug-fix automation (tools/*.py, .github/workflows/bugfix-*.yml).
+
+# AAS metamodel versions a NEW bug-fix release is published for. Each one gets
+# its own AASX, built from the single template JSON. Adding a version here (and
+# its aas-core package to tools/requirements.txt) is all a new metamodel needs.
+# Existing releases are never touched.
+aas_versions: ["3.0", "3.1"]
+
+# Issue labels. An issue becomes a bug-fix PR once it carries all three:
+#   the bugfix label, one SMT label (a key below), one version label (v<major>.<minor>).
+bugfix_label: "bugfix"
+version_label_prefix: "v"
+
+# SMT label -> folder under published/. Keep label names <= 50 characters
+# (GitHub's limit); the IDTA number is used because it is short and stable.
+smts:
+  "IDTA 02001": "MTP"
+  "IDTA 02002": "Contact Information"
+  "IDTA 02003": "Technical_Data"
+  "IDTA 02004": "Handover Documentation"
+  "IDTA 02005": "Provision of Simulation Models"
+  "IDTA 02006": "Digital nameplate"
+  "IDTA 02007": "Software Nameplate"
+  "IDTA 02008": "Time Series Data"
+  "IDTA 02009": "OPC UA Server Datasheet"
+  "IDTA 02010": "Service Request Notification"
+  "IDTA 02011": "Hierarchical Structures enabling Bills of Material"
+  "IDTA 02011 IEC 81346": "Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346"  # files use both 02011 and 02011-1; confirm the official number
+  "IDTA 02012": "DEXPI"
+  "IDTA 02013": "Reliability"
+  "IDTA 02014": "Functional Safety"
+  "IDTA 02015": "Control Component Type"
+  "IDTA 02016": "Control Component Instance"
+  "IDTA 02017": "Asset Interfaces Description"
+  "IDTA 02018": "Maintenance Instructions"
+  "IDTA 02019": "Plant Asset Management Specification Sheet"
+  "IDTA 02020": "Capability Description"
+  "IDTA 02021": "Sizing of Power Drive Trains"
+  "IDTA 02022": "Wireless Communication"
+  "IDTA 02023": "Carbon Footprint"
+  "IDTA 02026": "Provision of 3D Models"
+  "IDTA 02027": "Asset Interfaces Mapping Configuration"
+  "IDTA 02029-1": "sensor4.0/Part 1 Measurement Value"  # files use 02029, 02029-1
+  "IDTA 02031-1": "Process Parameters Type"
+  "IDTA 02031-2": "Process Parameters Instance"
+  "IDTA 02032": "Inspection Documents of Steel Products"
+  "IDTA 02034": "Creation and Classification of Materials"
+  "IDTA 02035-1": "Digital Battery Passport/1_Digital Nameplate"
+  "IDTA 02035-2": "Digital Battery Passport/2_Handover Documentation"
+  "IDTA 02035-3": "Digital Battery Passport/3_Product Carbon Footprint"
+  "IDTA 02035-4": "Digital Battery Passport/4_Technical Data"
+  "IDTA 02035-5": "Digital Battery Passport/5_Product Condition"
+  "IDTA 02035-6": "Digital Battery Passport/6_Material Composition"
+  "IDTA 02035-7": "Digital Battery Passport/7_Circularity"
+  "IDTA 02036": "Product Change Notifications"
+  "IDTA 02038-1": "Plastic and Rubber Moulds/Part 1 Identification"
+  "IDTA 02045": "Data Model for Asset Location"
+  "IDTA 02046": "Worskstation Worker Matching Data"
+  "IDTA 02047": "Technical Data for Automated Guided Vehicles"
+  "IDTA 02048": "Predictive Maintenance"
+  "IDTA 02049": "Quality Control for Machining"
+  "IDTA 02050": "Purchase Order"
+  "IDTA 02053": "Control Configuration and Parametrization for NC and CNC Machines"
+  "IDTA 02056": "Data Retention Policies"
+  "IDTA 02058": "Artificial Intelligence Dataset"
+  "IDTA 02059": "Artificial Intelligence Deployment"
+  "IDTA 02060": "Artificial Intelligence Model Nameplate"
+  "IDTA 02063": "Intelligent Information  for Use"
+  "IDTA 02064": "Safety Instrumented Functions/Part 1 Safety Instrumented Function"
+  "IDTA 02065-1": "Digital Quality Documents/Part 1 Core Elements"
+  "IDTA 02066": "Process Variables for Manufacturing Key Performance Indicators"
+  "IDTA 02067": "Production Calendar"
+  "IDTA 02068": "Provision of Company Data"
+  "IDTA 02075": "Factory Automation Data for Plant Planning"
+  "IDTA 02076": "Energy Flexibility Data Model"
+  "IDTA 02079": "Safety Instrumented Functions/Part 3 Safety Instrumented System Device"
+  "IDTA 02080": "Material Data for Plastic Waste"
+  "IDTA 02096": "Safety Instrumented Functions/Part 4 Equipment Under Control"
+  "IDTA 02097": "Safety Instrumented Functions/Part 2 Safety Instrumented System"
+  "IDTA 02099-1": "Digital Product Passport/Digital Product Passport Part-1"
+  "IDTA 02102": "Fire Protection on Railway Vehicles"
