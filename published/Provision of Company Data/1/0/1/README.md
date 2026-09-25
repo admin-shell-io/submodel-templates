@@ -1,8 +1,8 @@
 ## Provision of Company Data bug-fix version 1.0.1
 
 This folder contains a bug-fix release of the submodel template artifacts.
-Only the machine-readable artifacts (JSON and AASX) were corrected; the
-specification PDF is carried over from version 1.0 unchanged.
+The machine-readable artifacts (JSON and AASX) and the specification PDF
+were corrected.
 
 ### Artifacts in this directory
 
@@ -10,7 +10,7 @@ specification PDF is carried over from version 1.0 unchanged.
 - AASX: IDTA 02068_Template_Provision Of Company Data_forAASMetamodelV3.1.aasx
 - JSON: IDTA 02068_Template_Provision Of Company Data.json
 - JSON: IDTA 02068_Template_Provision Of Company Data_forAASMetamodelV3.1.json
-- PDF: IDTA 02068_Submodel Provision of Company Data.pdf (unchanged)
+- PDF: IDTA 02068_Submodel Provision of Company Data.pdf (corrected: stray space in the CompanyData/DocumentationURI IRI)
 
 ### Issues fixed in this release
 

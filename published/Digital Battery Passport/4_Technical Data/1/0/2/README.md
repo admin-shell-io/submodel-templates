@@ -8,7 +8,7 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
 - AASX: IDTA 02035-4_DBP-Part-4_TechnicalData.aasx
 - JSON: IDTA 02035-4_DBP-Part-4_TechnicalData.json
 - JSON: IDTA 02035-4_DBP-Part-4_TechnicalData_without_examplevalues.json
-- PDF: IDTA 02035-4_DBP-Part-4_TechnicalData.pdf (unchanged)
+- PDF: IDTA 02035-4_DBP-Part-4_TechnicalData.pdf (corrected: RatioNorminal -> RatioNominal)
 
 ### Issues fixed in this release
 

@@ -8,7 +8,7 @@ This is a Submodel template specification for the Asset Administration Shell.
 - AASX: IDTA-02050-1-0-1_Template_PurchaseOrder_forAASMetamodelV3.1.aasx (AAS metamodel V3.1)
 - JSON: IDTA-02050-1-0-1_Template_PurchaseOrder.json
 - JSON: IDTA-02050-1-0-1_Template_PurchaseOrder_forAASMetamodelV3.1.json
-- PDF: IDTA-02050_Submodel_PurchaseOrder.pdf (unchanged from version 1.0)
+- PDF: IDTA-02050_Submodel_PurchaseOrder.pdf (corrected: 26 IRIs with a space before /1/0, PurchaseRequestResponseReferene)
 
 ### Issues fixed in this release
 
