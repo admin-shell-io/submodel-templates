@@ -1,0 +1,6 @@
+# Bug-fix tooling (tools/*.py). One aas-core package per AAS metamodel version
+# listed in smt-config.yml aas_versions. Latest releases as of 2026-09; there is
+# no aas-core package for AAS metamodel 3.2 yet.
+aas-core3.0==1.1.4
+aas-core3.1==1.0.0
+PyYAML>=6.0

@@ -29,3 +29,21 @@ jobs:
         env:
           AAS_VERSION: "3.1"
         run: python ./_help_and_materials/check_templates.py
+
+  release-checks:
+    # Released files unchanged, AASX == JSON, README links resolve (tools/check_release.py)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r tools/requirements.txt
+
+      - run: python tools/check_release.py --base origin/main
