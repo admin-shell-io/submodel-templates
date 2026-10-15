@@ -1,0 +1,47 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe SMT MaterialComposition
+
+class "MaterialComposition" as ID00000001 <<SM>> {
+}
+
+class "BatteryChemistry" as ID00000002 <<SMC>> {
+}
+
+class "BatteryMaterials" as ID00000003 <<SML>> {
+}
+
+class "[00] BatteryMaterial" as ID00000004 <<SMC>> {
+}
+
+class "BatteryMaterialLocation" as ID00000005 <<SMC>> {
+}
+
+class "HazardousSubstances" as ID00000006 <<SML>> {
+}
+
+class "[00] HazardousSubstance" as ID00000007 <<SMC>> {
+}
+
+class "HazardousSubstanceImpact" as ID00000008 <<SML>> {
+}
+
+class "HazardousSubstanceLocation" as ID00000009 <<SMC>> {
+}
+
+ID00000001 *--  ID00000002 : ""
+ID00000004 *--  ID00000005 : ""
+ID00000003 *--  ID00000004 : ""
+ID00000001 *--  ID00000003 : ""
+ID00000007 *--  ID00000008 : ""
+ID00000007 *--  ID00000009 : ""
+ID00000006 *--  ID00000007 : ""
+ID00000001 *--  ID00000006 : ""
+@enduml
