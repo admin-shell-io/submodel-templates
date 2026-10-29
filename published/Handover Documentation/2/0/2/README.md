@@ -17,11 +17,10 @@ is carried over unchanged.
 
 ### Issues fixed in this release
 
+- [#159](https://github.com/admin-shell-io/submodel-templates/issues/159) (qualifier kind set to TemplateQualifier)
 - [#187](https://github.com/admin-shell-io/submodel-templates/issues/187)
-- [#207](https://github.com/admin-shell-io/submodel-templates/issues/207)
-- [#208](https://github.com/admin-shell-io/submodel-templates/issues/208)
-- [#210](https://github.com/admin-shell-io/submodel-templates/issues/210)
-- [#235](https://github.com/admin-shell-io/submodel-templates/issues/235)
-- [#236](https://github.com/admin-shell-io/submodel-templates/issues/236)
+- [#207](https://github.com/admin-shell-io/submodel-templates/issues/207) (partly; completed in 2.0.3)
+- [#235](https://github.com/admin-shell-io/submodel-templates/issues/235) (already fixed in 2.0.1)
+- [#236](https://github.com/admin-shell-io/submodel-templates/issues/236) (partly; completed in 2.0.3)
 - [#238](https://github.com/admin-shell-io/submodel-templates/issues/238)
 - [#251](https://github.com/admin-shell-io/submodel-templates/issues/251)

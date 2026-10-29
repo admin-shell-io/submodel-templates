@@ -144,8 +144,14 @@ def plan_packages(src: pathlib.Path, aas_versions: list) -> list:
 
 def package_name(src_aasx: pathlib.Path, json_stem: str, version: str) -> str:
     """Keep the source package's name for its own version; name an added
-    version ``<json stem>_forAASMetamodelV<version>.aasx``."""
-    if src_aasx.stem in (json_stem, f"{json_stem}_forAASMetamodelV{version}"):
+    version ``<json stem>_forAASMetamodelV<version>.aasx``.
+
+    A package built for a version its source does not have always gets the
+    suffixed name, otherwise it would overwrite the source's own package
+    (e.g. a 3.1 package built on ``<json stem>.aasx`` of version 3.0)."""
+    if src_aasx.stem == f"{json_stem}_forAASMetamodelV{version}":
+        return None
+    if src_aasx.stem == json_stem and aas_io.aasx_version(src_aasx) == version:
         return None
     return f"{json_stem}_forAASMetamodelV{version}.aasx"
 

@@ -50,6 +50,7 @@ python tools/new_bugfix.py --labels "bugfix,IDTA 02002,v1.0" --issue 206
 python tools/build_aasx.py "published/Contact Information/1/0/2"
 python tools/build_aasx.py --check --changed-since origin/main
 python tools/check_release.py --base origin/main
+python tools/readme_table.py             # refresh the SMT table in the top-level README
 python tools/create_labels.py            # dry run
 ```
 

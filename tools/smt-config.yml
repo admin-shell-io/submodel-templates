@@ -79,3 +79,24 @@ smts:
   "IDTA 02097": "Safety Instrumented Functions/Part 2 Safety Instrumented System"
   "IDTA 02099-1": "Digital Product Passport/Digital Product Passport Part-1"
   "IDTA 02102": "Fire Protection on Railway Vehicles"
+
+# Release folders moved to their correct place (folder under published/ -> new folder).
+# The 2026-09 bug-fix releases of these SMTs were filed under a minor version
+# (e.g. 2/1) although they fix x.0 and keep its version, so they now live in the
+# patch folder (e.g. 2/0/1). tools/check_release.py allows exactly these moves:
+# files unchanged, only the README.md may be edited.
+relocations:
+  "Asset Interfaces Mapping Configuration/2/1": "Asset Interfaces Mapping Configuration/2/0/1"
+  "Digital Battery Passport/1_Digital Nameplate/1/1": "Digital Battery Passport/1_Digital Nameplate/1/0/1"
+  "Digital Battery Passport/2_Handover Documentation/1/1": "Digital Battery Passport/2_Handover Documentation/1/0/1"
+  "Digital Battery Passport/3_Product Carbon Footprint/1/1": "Digital Battery Passport/3_Product Carbon Footprint/1/0/1"
+  "Digital Quality Documents/Part 1 Core Elements/1/1": "Digital Quality Documents/Part 1 Core Elements/1/0/1"
+  "Energy Flexibility Data Model/1/1": "Energy Flexibility Data Model/1/0/1"
+  "Factory Automation Data for Plant Planning/1/1": "Factory Automation Data for Plant Planning/1/0/1"
+  "Material Data for Plastic Waste/1/1": "Material Data for Plastic Waste/1/0/1"
+  "OPC UA Server Datasheet/1/1": "OPC UA Server Datasheet/1/0/1"
+  "Plastic and Rubber Moulds/Part 1 Identification/1/1": "Plastic and Rubber Moulds/Part 1 Identification/1/0/1"
+  "Product Change Notifications/1/1": "Product Change Notifications/1/0/1"
+  "Production Calendar/1/1": "Production Calendar/1/0/1"
+  "Provision of Simulation Models/1/2": "Provision of Simulation Models/1/1/1"
+  "Quality Control for Machining/1/1": "Quality Control for Machining/1/0/1"

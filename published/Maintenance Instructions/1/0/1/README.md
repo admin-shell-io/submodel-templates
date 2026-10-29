@@ -11,4 +11,6 @@ The specification PDF is carried over from version 1.0 unchanged.
 
 ### Issues fixed in this release
 
+- [#159](https://github.com/admin-shell-io/submodel-templates/issues/159) (qualifier kind set to TemplateQualifier)
+- [#187](https://github.com/admin-shell-io/submodel-templates/issues/187)
 - [#245](https://github.com/admin-shell-io/submodel-templates/issues/245)

@@ -18,7 +18,5 @@ is carried over unchanged.
 
 ### Issues fixed in this release
 
-- [#187](https://github.com/admin-shell-io/submodel-templates/issues/187)
-- [#207](https://github.com/admin-shell-io/submodel-templates/issues/207)
-- [#208](https://github.com/admin-shell-io/submodel-templates/issues/208)
-- [#210](https://github.com/admin-shell-io/submodel-templates/issues/210)
+- [#159](https://github.com/admin-shell-io/submodel-templates/issues/159) (qualifier kind set to TemplateQualifier)
+- [#210](https://github.com/admin-shell-io/submodel-templates/issues/210) (same defect as reported there for Contact Information (space in a reference))
