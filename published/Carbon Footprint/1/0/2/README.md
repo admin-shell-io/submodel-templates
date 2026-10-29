@@ -14,9 +14,6 @@ machine-readable artifacts (JSON and AASX) and to the specification PDF.
 
 ### Issues fixed in this release
 
-- [#124](https://github.com/admin-shell-io/submodel-templates/issues/124)
+- [#124](https://github.com/admin-shell-io/submodel-templates/issues/124) (changed the wrong way in this release; corrected in 1.0.3)
 - [#135](https://github.com/admin-shell-io/submodel-templates/issues/135)
-- [#187](https://github.com/admin-shell-io/submodel-templates/issues/187)
-- [#207](https://github.com/admin-shell-io/submodel-templates/issues/207)
-- [#208](https://github.com/admin-shell-io/submodel-templates/issues/208)
-- [#210](https://github.com/admin-shell-io/submodel-templates/issues/210)
+- [#159](https://github.com/admin-shell-io/submodel-templates/issues/159) (qualifier kind set to TemplateQualifier)

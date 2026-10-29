@@ -7,8 +7,9 @@ Compares the working tree with the merge base of --base and fails if:
 
 1. a released file under published/ or deprecated/ was changed or deleted.
    Released artifacts are immutable; a correction is a new bug-fix folder.
-   Allowed: editing a README.md, and moving a file unchanged from published/
-   to deprecated/ (the deprecation step).
+   Allowed: editing a README.md, moving a file unchanged from published/
+   to deprecated/ (the deprecation step), and moving a release folder listed
+   under ``relocations`` in smt-config.yml (files unchanged, README editable).
 2. an AASX in an added or changed release folder does not match its template
    JSON (see tools/build_aasx.py).
 3. a relative link in an added or changed README.md does not resolve, or any
@@ -48,18 +49,41 @@ def name_status(base: str) -> list:
     return rows
 
 
+def relocations() -> dict:
+    """Release folder moves allowed by smt-config.yml, as {"published/old/": "published/new/"}."""
+    moves = repo.load_config().get("relocations") or {}
+    return {f"published/{src.strip('/')}/": f"published/{dst.strip('/')}/" for src, dst in moves.items()}
+
+
+def relocated_path(path: str, moves: dict) -> str:
+    """Where ``path`` belongs after the allowed folder moves, or '' if none applies."""
+    for src, dst in moves.items():
+        if path.startswith(src):
+            return dst + path[len(src):]
+    return ""
+
+
 def check_immutable(rows: list) -> list:
     errors = []
+    moves = relocations()
+    added = {new for s, _, new in rows if s == "A"}
     for status, old, new in rows:
         if not old.startswith(RELEASED) or status == "A":
             continue
+        is_readme = pathlib.PurePosixPath(old).name == "README.md"
+        target = relocated_path(old, moves)
         if status.startswith("R"):
             moved_to_deprecated = old.startswith("published/") and new == "deprecated/" + old[len("published/"):]
             if status == "R100" and moved_to_deprecated:
                 continue
-            errors.append(f"{old}: released file renamed/moved to {new} (only an unchanged move to deprecated/ is allowed)")
-        elif pathlib.PurePosixPath(old).name == "README.md" and status == "M":
+            if target and new == target and (status == "R100" or is_readme):
+                continue
+            errors.append(f"{old}: released file renamed/moved to {new} (only an unchanged move to deprecated/ "
+                          "or a relocation listed in smt-config.yml is allowed)")
+        elif is_readme and status == "M":
             continue
+        elif is_readme and status == "D" and target in added:
+            continue  # a relocated README edited enough for git to see delete + add
         elif status == "M":
             errors.append(f"{old}: released file was changed. Put the corrected file in a new bug-fix folder instead")
         elif status == "D":

@@ -14,3 +14,4 @@ It builds on version 1.0.1; the artifacts of 1.0.1 are unchanged.
 ### Issues fixed in this release
 
 - [#58](https://github.com/admin-shell-io/submodel-templates/issues/58)
+- [#159](https://github.com/admin-shell-io/submodel-templates/issues/159) (qualifier kind set to TemplateQualifier)

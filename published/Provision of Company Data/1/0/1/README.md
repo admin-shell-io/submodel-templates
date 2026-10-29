@@ -14,4 +14,5 @@ were corrected.
 
 ### Issues fixed in this release
 
-- [#267](https://github.com/admin-shell-io/submodel-templates/issues/267)
+- [#159](https://github.com/admin-shell-io/submodel-templates/issues/159) (qualifier kind set to TemplateQualifier)
+- [#267](https://github.com/admin-shell-io/submodel-templates/issues/267) (the restructuring contradicts the specification and is reverted in 1.0.2)

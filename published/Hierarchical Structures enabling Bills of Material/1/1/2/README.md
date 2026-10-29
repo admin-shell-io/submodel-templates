@@ -14,6 +14,5 @@ specification PDF is carried over unchanged.
 
 ### Issues fixed in this release
 
-- [#152](https://github.com/admin-shell-io/submodel-templates/issues/152)
-- [#209](https://github.com/admin-shell-io/submodel-templates/issues/209)
-- [#224](https://github.com/admin-shell-io/submodel-templates/issues/224)
+- [#209](https://github.com/admin-shell-io/submodel-templates/issues/209) (partly: deprecated category removed; completed in 1.1.3)
+- [#224](https://github.com/admin-shell-io/submodel-templates/issues/224) (not fixed in this release; fixed in 1.1.3)

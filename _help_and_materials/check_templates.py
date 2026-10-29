@@ -28,11 +28,12 @@ AAS_VERSION = os.environ.get("AAS_VERSION", "3.1")
 # known defect resurfaces as a new failure purely because the version segment in
 # the file name changed.
 _SKIP = frozenset({
-    # Contact Information: 1.0.1, and its bug-fix release 1.0.2
+    # Contact Information: 1.0.1, and its bug-fix releases 1.0.2 and 1.0.3
     "IDTA 02002-1-0-1_Template_ContactInformation.json",
     "IDTA 02002-1-0-1_Template_ContactInformation_forAASMetamodelV3.1.json",
     "IDTA 02002-1-0-2_Template_ContactInformation.json",
     "IDTA 02002-1-0-2_Template_ContactInformation_forAASMetamodelV3.1.json",
+    "IDTA 02002-1-0-3_Template_ContactInformation.json",
 
     "IDTA_02018_Template_MaintenanceInstructions.json",
 
