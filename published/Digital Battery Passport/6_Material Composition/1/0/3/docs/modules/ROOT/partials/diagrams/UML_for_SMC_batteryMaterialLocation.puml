@@ -1,0 +1,17 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  BatteryMaterialLocation
+
+class "BatteryMaterialLocation" as ID00000001 <<SMC>> {
+  +ComponentName : xs:string [0..1]
+  +ComponentId : xs:string [0..1]
+}
+
+@enduml

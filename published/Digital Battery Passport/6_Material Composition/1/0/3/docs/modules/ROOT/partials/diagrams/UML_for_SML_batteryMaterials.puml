@@ -1,0 +1,31 @@
+@startuml
+!theme plain
+left to right direction
+hide class circle
+hide class methods
+skinparam classAttributeIconSize 0
+' skinparam linetype polyline
+skinparam linetype ortho
+
+mainframe  BatteryMaterials
+
+class "BatteryMaterials" as ID00000001 <<SML>> {
+  +[00] BatteryMaterial : SMC [1..*]
+}
+
+class "[00] BatteryMaterial" as ID00000002 <<SMC>> {
+  +BatteryMaterialLocation : SMC
+  +BatteryMaterialIdentifier : xs:string
+  +BatteryMaterialName : xs:string
+  +BatteryMaterialMass : xs:float [0..1]
+  +IsCriticalRawMaterial : xs:boolean
+}
+
+class "BatteryMaterialLocation" as ID00000003 <<SMC>> {
+  +ComponentName : xs:string [0..1]
+  +ComponentId : xs:string [0..1]
+}
+
+ID00000002 *--  ID00000003 : ""
+ID00000001 *--  ID00000002 : ""
+@enduml
